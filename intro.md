@@ -13,7 +13,9 @@ Overarching aims of the course are the following:
 
 If you are an interested researcher wanting to know more about either the DH or the teaching format, please do not hesitate to contact me (<phillip.stroebel@uzh.ch>).
 
-Should you spot any typos or methdological flaws and issues, please contact me (or the authors) as well!
+Should you spot any typos or methodological flaws and issues, please contact me (or the authors) as well!
+
+Are you a publisher and would like to publish the book? Pleas contact me.
 
 We hope you enjoy the result.
 
