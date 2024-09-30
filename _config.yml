@@ -18,6 +18,10 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references_chapter9.bib
+sphinx:
+  config:
+    bibtex_bibfiles:
+      - references_chapter9.bib
 
 # Information about where the book exists on the web
 repository:
