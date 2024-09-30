@@ -1,0 +1,10 @@
+@article{citationKey,
+  author    = {First Author and Second Author},
+  title     = {example Title of the Article},
+  journal   = {Name of the Journal},
+  year      = {2024},
+  volume    = {12},
+  number    = {3},
+  pages     = {45-67},
+  doi       = {10.1234/example},
+}
