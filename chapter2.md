@@ -85,6 +85,54 @@ if __name__ == "__main__":
     main()
 ```
 
+For ROUGE-L:
+```python
+import csv
+import sys
+from rouge_score import rouge_scorer
+
+def calculate_rouge_l(reference, hypothesis):
+    # Initialize the scorer with ROUGE-L only
+    scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
+    scores = scorer.score(reference, hypothesis)
+    return scores['rougeL'].fmeasure * 100  # Convert to percentage for readability
+
+def process_csv(file_path):
+    with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        
+        # Skip the header row
+        headers = next(reader)
+        
+        # Iterate through rows and calculate ROUGE-L scores
+        for row_num, row in enumerate(reader, start=2):  # Start from row 2 to reflect actual CSV row numbers
+            reference = row[3]  # Column D
+            
+            # Calculate and print ROUGE-L scores for each comparison
+            gpt_score = calculate_rouge_l(reference, row[4])  # Column E
+            gemini_score = calculate_rouge_l(reference, row[5])  # Column F
+            gt_score = calculate_rouge_l(reference, row[6])  # Column G
+            yandex_score = calculate_rouge_l(reference, row[7])  # Column H
+            llama_score = calculate_rouge_l(reference, row[8])  # Column I
+
+            print(f"Row {row_num} - GPT score: {gpt_score:.2f}")
+            print(f"Row {row_num} - Gemini score: {gemini_score:.2f}")
+            print(f"Row {row_num} - GT score: {gt_score:.2f}")
+            print(f"Row {row_num} - Yandex score: {yandex_score:.2f}")
+            print(f"Row {row_num} - LLaMa score: {llama_score:.2f}\n")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <csv_file_path>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    process_csv(file_path)
+
+if __name__ == "__main__":
+    main()
+```
+
 ## Experiments
 We ran one test sentence through all machine translation systems selected to make sure that Latin translation was basically possible.
 - Prompt for ChatGPT (GPT-4) and Gemini: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases.
@@ -94,12 +142,20 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 |--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
 | Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
 
-This we scored with BLEU from 0 to 100:
+Score with BLEU from 0 to 100:
 Row 2 - GPT score: 41.11
 Row 2 - Gemini score: 13.13
 Row 2 - GT score: 30.74
 Row 2 - Yandex score: 14.32
 Row 2 - LLaMa score: 0.00
+
+Score with ROUGE-L from 0 to 100:
+Row 2 - GPT score: 80.00
+Row 2 - Gemini score: 60.00
+Row 2 - GT score: 66.67
+Row 2 - Yandex score: 66.67
+Row 2 - LLaMa score: 0.00
+
 
 ## Results & Discussion
 
