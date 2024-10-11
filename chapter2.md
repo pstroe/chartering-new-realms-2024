@@ -6,7 +6,11 @@ Stefano Staffa, Andrea Scheck
 ## Relevant Literature
 
 ## Methods & Data
-As data, we are using the Biblia Sacra iuxta Vulgatam Clementinam released in released in 2006 by Michaele Tweedale as stored in the MLAT database. From this Bible, we have extracted 11 Latin passages that represent a mixture of neutral language (e.g. in historical descriptions, genealogical record and legal rules), psalms and poems. This resulted in 603 Latin words. For each passage, we have collected three English translations: the translation in the English Standard Version bible (ESV, 2001), in the Douay-Rheims 1899 American Edition bible (DRB, 1899) and in the King James Version bible (KJV, 1611). This resulted in 2558 English words.
+As *data*, we are using Latin texts with different writing styles.
+
+### Religious text
+For the religious text, we are using the Biblia Sacra iuxta Vulgatam Clementinam released in 2006 by Michaele Tweedale as stored in the MLAT database. From this Bible, we have extracted 11 Latin passages that represent a mixture of neutral language (e.g. in historical descriptions, genealogical record and legal rules), psalms and poems. This resulted in 603 Latin words. For each passage, we have collected three English translations: the translation in the English Standard Version bible (ESV, 2001), in the Douay-Rheims 1899 American Edition bible (DRB, 1899) and in the King James Version bible (KJV, 1611). This resulted in 2558 English words.
+
 - Category: Primary source / raw data?
 - Degrees of processing: The texts are minimally processed versions. Any annotations or digital enhancements were deleted. However, the translation into different bibles have obvious differences - which could be attributed to processing by the author due to theological priorities and cultural conventions of the time (e.g. the psalms in the DRB seem closer to narrative prose than the lyrical and poetic style in other translations).
 - Results in different levels of data???
@@ -15,11 +19,34 @@ The Bible is also a collection of texts from different authors, time periods, an
 Parts of the Bible, such as the historical books (e.g. Chronicles) and the laws, serve as **records** of events and rules observed by the authors. They were intended to document a continuous record.
 - Collection: Resource/community data collection because it was preserved, maintained, and accessed by communities for ongoing reference, teaching, and study.
 
-For more “neutral” texts, we are using De Legibus by Cicero and the Historia Regum Britanniae by Geoffrey of Monmouth...
+### Non religious text
+For the more “neutral” texts, we are using De Legibus by Cicero and the Historia Regum Britanniae by Geoffrey of Monmouth.
+#### De Legibus (On the Laws) by Cicero
+- Category: Primary Source / Raw Data
+- Degrees of Processing: The Latin text we use is minimally processed in terms of formatting and digital enhancement, preserving Cicero's original structure and language. The English translation might have interpretative layers added by later authors.
+- Results in different levels of data: Due to its nature, this text remains in the category of raw data for legal and philosophical analysis, maintaining its primary role as a philosophical record.
+- Origin: **observational data**, because the text documents Cicero’s observations and reflections on Roman law and governance, shaped by his legal experience and philosophical studies. Though authored by Cicero, it integrates various philosophical and legal theories, **gathering** ideas from multiple influences like Greek philosophy. In sections, it serves as a **record** of Roman legal ideals.
+- Collection: Resource/community data collection? Reference? since it is consistently referenced in philosophy, legal studies, and historical scholarship.
 
+#### Historia Regum Britanniae (The History of the Kings of Britain) by Geoffrey of Monmouth
+- Category: Primary Source / Raw Data
+- Degrees of Processing: The Latin text we use is minimally processed in terms of formatting and digital enhancement, but Geoffrey’s own authorial choices reflect a certain degree of “editorializing” of Britain’s legends through cultural and political priorities (e.g., framing Britain’s past as noble and legendary).
+- Results in different levels of data: The text remains a primary source
+- Origin: The work **observes** medieval British lore and perceived historical events, blending observation with legend. The text **gathers** various legends and historical anecdotes from British, Welsh, and other regional sources. Parts of Historia act as quasi-historical records.
+- Collection: Resource/community data collection?
 
+### Methods
+As *methods* we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa
 
 ## Experiments
+We ran one test sentence through all machine translation systems selected to make sure that Latin translation was basically possible.
+- ChatGPT-4: Prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases.
+
+Translate this to English: Ī, curre per Alpīs."
+
+ChatGPT said:
+"Go, run through the Alps."
+
 
 ## Results & Discussion
 
