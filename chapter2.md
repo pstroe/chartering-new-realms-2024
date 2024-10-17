@@ -36,7 +36,9 @@ Stefano Staffa, Andrea Scheck
 
 ## Relevant Literature
 Volk, Martin; Fischer, Dominic P; Fischer, Lukas; Scheurer, Patricia; Ströbel, Phillip (2024): LLM-based Machine Translation  and Summarization for Latin
+
 Bamman, David; Burns, Patrick J. (2020): Latin BERT: A contextual language model for classical philology
+
 Ogrodniczuk, M.; Kryńska, K. (2022): Evaluating Machine Translation of Latin Interjections in the Digital Library of Polish and Poland-related News Pamphlets
 
 ## Methods & Data
