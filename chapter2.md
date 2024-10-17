@@ -133,6 +133,100 @@ if __name__ == "__main__":
     main()
 ```
 
+For chrF:
+```python
+import csv
+import sys
+from sacrebleu.metrics import CHRF
+
+def calculate_chrf(reference, hypothesis):
+    # Initialize the chrF scorer
+    chrf_scorer = CHRF()
+    score = chrf_scorer.sentence_score(hypothesis, [reference])
+    return score.score  # Return the chrF score directly
+
+def process_csv(file_path):
+    with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        
+        # Skip the header row
+        headers = next(reader)
+        
+        # Iterate through rows and calculate chrF scores
+        for row_num, row in enumerate(reader, start=2):  # Start from row 2 to reflect actual CSV row numbers
+            reference = row[3]  # Column D
+            
+            # Calculate and print chrF scores for each comparison
+            gpt_score = calculate_chrf(reference, row[4])  # Column E
+            gemini_score = calculate_chrf(reference, row[5])  # Column F
+            gt_score = calculate_chrf(reference, row[6])  # Column G
+            yandex_score = calculate_chrf(reference, row[7])  # Column H
+            llama_score = calculate_chrf(reference, row[8])  # Column I
+
+            print(f"Row {row_num} - GPT score: {gpt_score:.2f}")
+            print(f"Row {row_num} - Gemini score: {gemini_score:.2f}")
+            print(f"Row {row_num} - GT score: {gt_score:.2f}")
+            print(f"Row {row_num} - Yandex score: {yandex_score:.2f}")
+            print(f"Row {row_num} - LLaMa score: {llama_score:.2f}\n")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <csv_file_path>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    process_csv(file_path)
+
+if __name__ == "__main__":
+    main()
+```
+
+For METEOR:
+```python
+import csv
+import sys
+from nltk.translate.meteor_score import meteor_score
+
+def calculate_meteor(reference, hypothesis):
+    # Calculate METEOR score between reference and hypothesis
+    return meteor_score([reference], hypothesis) * 100  # Convert to percentage for readability
+
+def process_csv(file_path):
+    with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        
+        # Skip the header row
+        headers = next(reader)
+        
+        # Iterate through rows and calculate METEOR scores
+        for row_num, row in enumerate(reader, start=2):  # Start from row 2 to reflect actual CSV row numbers
+            reference = row[3]  # Column D
+            
+            # Calculate and print METEOR scores for each comparison
+            gpt_score = calculate_meteor(reference, row[4])  # Column E
+            gemini_score = calculate_meteor(reference, row[5])  # Column F
+            gt_score = calculate_meteor(reference, row[6])  # Column G
+            yandex_score = calculate_meteor(reference, row[7])  # Column H
+            llama_score = calculate_meteor(reference, row[8])  # Column I
+
+            print(f"Row {row_num} - GPT score: {gpt_score:.2f}")
+            print(f"Row {row_num} - Gemini score: {gemini_score:.2f}")
+            print(f"Row {row_num} - GT score: {gt_score:.2f}")
+            print(f"Row {row_num} - Yandex score: {yandex_score:.2f}")
+            print(f"Row {row_num} - LLaMa score: {llama_score:.2f}\n")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <csv_file_path>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    process_csv(file_path)
+
+if __name__ == "__main__":
+    main()
+```
+
 ## Experiments
 We ran one test sentence through all machine translation systems selected to make sure that Latin translation was basically possible.
 - Prompt for ChatGPT (GPT-4) and Gemini: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases.
