@@ -1,9 +1,49 @@
 # Chapter 2: How good are LLMs at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
+## To Dos
+Determine data amount: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
+Find paragraphs:
+• Bible: Neutral text, Psalms, Poetry -> try and find a good mix (Andrea) ***Done, around 800-900 words***
+• De legibus (Cicero): Neutral (Stefano)
+• Historia (Monmouth): Neutral (Stefano)
+Enter original + gold standard translation into Excel
+Describe data in chapter: Categorization, token number, languages
+
+Write python script to execute the translation scores
+	• BLEU -> ***Done***
+	• ROUGE -> ***Done***
+	• chrF -> ***Done***
+	• METEOR -> ***Done***
+
+Test LLMs to make sure if they work with Latin at all:
+	• Google Gemini -> ***Done***
+	• GPT-4 -> ***Done***
+	• Google Translator -> ***Done***
+	• Yandex Translate -> ***Done***
+	• LLaMa -> Not available yet, emailed them
+
+Test the translations with the script against the gold standard -> ***Done***
+
+---
+Run each paragraph through each MT
+
+Enter MT result into Excel
+
+---
+Score translations
+
+Identify "bad" results
+
+Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
+
+
 ## Introduction
 
 ## Relevant Literature
+Volk, Martin; Fischer, Dominic P; Fischer, Lukas; Scheurer, Patricia; Ströbel, Phillip (2024): LLM-based Machine Translation  and Summarization for Latin
+Bamman, David; Burns, Patrick J. (2020): Latin BERT: A contextual language model for classical philology
+Ogrodniczuk, M.; Kryńska, K. (2022): Evaluating Machine Translation of Latin Interjections in the Digital Library of Polish and Poland-related News Pamphlets
 
 ## Methods & Data
 As *data*, we are using Latin texts with different writing styles.
@@ -250,33 +290,14 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 |--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
 | Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
 
-Score with BLEU from 0 to 100:
-- GPT score: 41.11
-- Gemini score: 13.13
-- GT score: 30.74
-- Yandex score: 14.32
-- LLaMa score: 0.00
+Here's the data formatted as a table:
 
-Score with ROUGE-L from 0 to 100:
-- GPT score: 80.00
-- Gemini score: 60.00
-- GT score: 66.67
-- Yandex score: 66.67
-- LLaMa score: 0.00
-
-Score with chrF from 0 to 100:
-- GPT score: 51.95
-- Gemini score: 29.43
-- GT score: 42.11
-- Yandex score: 32.51
-- LLaMa score: 2.01
-
-Score with METEOR from 0 to 100:
-- GPT score: 84.13
-- Gemini score: 36.51
-- GT score: 69.14
-- Yandex score: 55.15
-- LLaMa score: 0.00
+| Score with...   | GPT Score | Gemini Score | GT Score | Yandex Score | LLaMa Score |
+|------------------|-----------|--------------|----------|---------------|--------------|
+| **BLEU**         | 41.11     | 13.13        | 30.74    | 14.32         | 0.00         |
+| **ROUGE-L**      | 80.00     | 60.00        | 66.67    | 66.67         | 0.00         |
+| **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
+| **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
 
 ## Results & Discussion
