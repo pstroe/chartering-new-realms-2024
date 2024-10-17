@@ -2,40 +2,34 @@
 Stefano Staffa, Andrea Scheck
 
 ## To Dos
-Determine data amount: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
-Find paragraphs:
-• Bible: Neutral text, Psalms, Poetry -> try and find a good mix (Andrea) ***Done, around 800-900 words***
-• De legibus (Cicero): Neutral (Stefano)
-• Historia (Monmouth): Neutral (Stefano)
-Enter original + gold standard translation into Excel
-Describe data in chapter: Categorization, token number, languages
-
-Write python script to execute the translation scores
-	• BLEU -> ***Done***
-	• ROUGE -> ***Done***
-	• chrF -> ***Done***
-	• METEOR -> ***Done***
-
-Test LLMs to make sure if they work with Latin at all:
-	• Google Gemini -> ***Done***
-	• GPT-4 -> ***Done***
-	• Google Translator -> ***Done***
-	• Yandex Translate -> ***Done***
-	• LLaMa -> Not available yet, emailed them
-
-Test the translations with the script against the gold standard -> ***Done***
+- Determine data amount: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
+- Find paragraphs:
+	- Bible: Neutral text, Psalms, Poetry -> try and find a good mix (Andrea) ***Done, around 800-900 words***
+	- De legibus (Cicero): Neutral (Stefano)
+	- Historia (Monmouth): Neutral (Stefano)
+- Enter original + gold standard translation into Excel
+- Describe data in chapter: Categorization, token number, languages
+- Write python script to execute the translation scores
+	- BLEU -> ***Done***
+	- ROUGE -> ***Done***
+	- chrF -> ***Done***
+	- METEOR -> ***Done***
+- Test LLMs to make sure if they work with Latin at all:
+	- Google Gemini -> ***Done***
+	- GPT-4 -> ***Done***
+	- Google Translator -> ***Done***
+	- Yandex Translate -> ***Done***
+	- LLaMa -> Not available yet, emailed them
+- Test the translations with the script against the gold standard -> ***Done***
 
 ---
-Run each paragraph through each MT
-
-Enter MT result into Excel
+- Run each paragraph through each MT
+- Enter MT result into Excel
 
 ---
-Score translations
-
-Identify "bad" results
-
-Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
+- Score translations
+- Identify "bad" results
+- Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
 
 
 ## Introduction
