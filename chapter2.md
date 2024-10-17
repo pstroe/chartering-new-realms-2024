@@ -183,13 +183,27 @@ if __name__ == "__main__":
 
 For METEOR:
 ```python
+# for me it was necessary to run the two following commands in a python shell before running the code:
+# import nltk
+# nltk.download('wordnet')
+
 import csv
 import sys
 from nltk.translate.meteor_score import meteor_score
+from nltk.tokenize import word_tokenize
+import nltk
+
+# Download necessary NLTK resources
+nltk.download('punkt')
+nltk.download('punkt_tab')  # Explicitly download punkt_tab
 
 def calculate_meteor(reference, hypothesis):
+    # Tokenize the reference and hypothesis
+    reference_tokens = word_tokenize(reference)
+    hypothesis_tokens = word_tokenize(hypothesis)
+    
     # Calculate METEOR score between reference and hypothesis
-    return meteor_score([reference], hypothesis) * 100  # Convert to percentage for readability
+    return meteor_score([reference_tokens], hypothesis_tokens) * 100  # Convert to percentage for readability
 
 def process_csv(file_path):
     with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
@@ -237,18 +251,32 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 | Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
 
 Score with BLEU from 0 to 100:
-Row 2 - GPT score: 41.11
-Row 2 - Gemini score: 13.13
-Row 2 - GT score: 30.74
-Row 2 - Yandex score: 14.32
-Row 2 - LLaMa score: 0.00
+- GPT score: 41.11
+- Gemini score: 13.13
+- GT score: 30.74
+- Yandex score: 14.32
+- LLaMa score: 0.00
 
 Score with ROUGE-L from 0 to 100:
-Row 2 - GPT score: 80.00
-Row 2 - Gemini score: 60.00
-Row 2 - GT score: 66.67
-Row 2 - Yandex score: 66.67
-Row 2 - LLaMa score: 0.00
+- GPT score: 80.00
+- Gemini score: 60.00
+- GT score: 66.67
+- Yandex score: 66.67
+- LLaMa score: 0.00
+
+Score with chrF from 0 to 100:
+- GPT score: 51.95
+- Gemini score: 29.43
+- GT score: 42.11
+- Yandex score: 32.51
+- LLaMa score: 2.01
+
+Score with METEOR from 0 to 100:
+- GPT score: 84.13
+- Gemini score: 36.51
+- GT score: 69.14
+- Yandex score: 55.15
+- LLaMa score: 0.00
 
 
 ## Results & Discussion
