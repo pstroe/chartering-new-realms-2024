@@ -2,25 +2,23 @@
 Stefano Staffa, Andrea Scheck
 
 ## To Dos
-- Determine data amount: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
-- Find paragraphs:
+- Find paragraphs: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
 	- Bible: Neutral text, Psalms, Poetry -> ***Done, around 800-900 words*** (Andrea)
 	- De legibus (Cicero): Neutral (Stefano)
 	- Historia (Monmouth): Neutral (Stefano)
 - Enter original + gold standard translation into Excel (both)
 - Describe data in chapter: Categorization, token number, languages -> ***Done, around 800-900 words*** (Andrea)
-- Write python script to execute the translation scores
-	- BLEU -> ***Done*** (Andrea)
-	- ROUGE -> ***Done*** (Andrea)
-	- chrF -> ***Done*** (Andrea)
-	- METEOR -> ***Done*** (Andrea)
+- Write python script to execute the translation scores and test
+	- BLEU -> ***Done***
+	- ROUGE -> ***Done***
+	- chrF -> ***Done***
+	- METEOR -> ***Done***
 - Test LLMs to make sure if they work with Latin at all:
-	- Google Gemini -> ***Done*** (Andrea)
-	- GPT-4 -> ***Done*** (Andrea)
-	- Google Translator -> ***Done*** (Andrea)
-	- Yandex Translate -> ***Done*** (Andrea)
-	- LLaMa -> Not available yet, emailed them
-- Test the translations with the script against the gold standard -> ***Done*** (Andrea)
+	- Google Gemini -> ***Done***
+	- GPT-4 -> ***Done***
+	- Google Translator -> ***Done***
+	- Yandex Translate -> ***Done***
+	- LLaMa -> Not available yet
 
 ---
 - Run each paragraph through each MT
@@ -31,6 +29,8 @@ Stefano Staffa, Andrea Scheck
 - Identify "bad" results
 - Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
 
+---
+- Analyse and write
 
 ## Introduction
 
