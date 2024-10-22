@@ -3,21 +3,14 @@ Stefano Staffa, Andrea Scheck
 
 ## To Dos
 - Find paragraphs: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
-	- Bible: Neutral text, Psalms, Poetry -> ***Done, around 800-900 words*** (Andrea)
-	- De legibus (Cicero): Neutral (Stefano)
-	- Historia (Monmouth): Neutral (Stefano)
-- Enter original + gold standard translation into Excel (both)
-- Describe data in chapter: Categorization, token number, languages -> ***Done, around 800-900 words*** (Andrea)
-- Write python script to execute the translation scores and test
-	- BLEU -> ***Done***
-	- ROUGE -> ***Done***
-	- chrF -> ***Done***
-	- METEOR -> ***Done***
-- Test LLMs to make sure if they work with Latin at all:
-	- Google Gemini -> ***Done***
-	- GPT-4 -> ***Done***
-	- Google Translator -> ***Done***
-	- Yandex Translate -> ***Done***
+	- Bible: Neutral text, Psalms, Poetry
+	- De legibus (Cicero): Neutral
+	- Historia (Monmouth): Neutral
+	- ***Done, around 1000 words each***
+- Enter original + gold standard translation into Excel -> ***Done***
+- Describe data in chapter: Categorization, token number, languages -> ***Done***
+- Write python script to execute the translation scores and test for BLEU, ROUGE, chrF, METEOR -> ***Done***
+- Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex -> ***Done***
 	- LLaMa -> Not available yet
 
 ---
