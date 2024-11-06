@@ -277,7 +277,6 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 |--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
 | Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
 
-Here's the data formatted as a table:
 
 | Score with...   | GPT Score | Gemini Score | GT Score | Yandex Score | LLaMa Score |
 |------------------|-----------|--------------|----------|---------------|--------------|
@@ -286,8 +285,17 @@ Here's the data formatted as a table:
 | **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
 | **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
+Then we translated all texts bla bla 
+and scored the results
+We considered the scores as bad or good if...
+For BLEU: scores below 30 (source: https://cloud.google.com/translate/docs/advanced/automl-evaluate)
+For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
+For chrF: no universally agreed threshold for good or bad translation, took scores below 30
+For METEOR
+
 
 ## Results & Discussion
+
 
 ## Conclusion
 
