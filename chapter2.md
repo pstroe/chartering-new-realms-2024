@@ -12,10 +12,8 @@ Stefano Staffa, Andrea Scheck
 - Write python script to execute the translation scores and test for BLEU, ROUGE, chrF, METEOR -> ***Done***
 - Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex -> ***Done***
 	- LLaMa -> Not available yet
-
----
-- Run each paragraph through each MT
-- Enter MT result into Excel
+- Run each paragraph through each MT -> ***Done***
+- Enter MT result into Excel -> ***Done***
 
 ---
 - Score translations
