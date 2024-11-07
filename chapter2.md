@@ -1,27 +1,25 @@
 # Chapter 2: How good are LLMs at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
-## To Dos
+### Done
 - Find paragraphs: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
 	- Bible: Neutral text, Psalms, Poetry
 	- De legibus (Cicero): Neutral
 	- Historia (Monmouth): Neutral
-	- ***Done, around 1000 words each***
-- Enter original + gold standard translation into Excel -> ***Done***
-- Describe data in chapter: Categorization, token number, languages -> ***Done***
-- Write python script to execute the translation scores and test for BLEU, ROUGE, chrF, METEOR -> ***Done***
-- Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex -> ***Done***
-	- LLaMa -> Not available yet
-- Run each paragraph through each MT -> ***Done***
-- Enter MT result into Excel -> ***Done***
+- Enter original + gold standard translation into Excel
+- Describe data in chapter: Categorization, token number, languages
+- Write python script to execute the translation scores and test for BLEU, ROUGE, chrF, METEOR
+- Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex
+- Run each paragraph through each MT
+- Enter MT result into Excel
 
----
+### To Dos
 - Score translations
 - Identify "bad" results
 - Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
-
----
 - Analyse and write
+- LLaMa -> Not available yet
+---
 
 ## Introduction
 
@@ -291,8 +289,7 @@ We considered the scores as bad or good if...
 For BLEU: scores below 30 (source: https://cloud.google.com/translate/docs/advanced/automl-evaluate)
 For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
 For chrF: no universally agreed threshold for good or bad translation, took scores below 30
-For METEOR
-
+For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
 ## Results & Discussion
 
