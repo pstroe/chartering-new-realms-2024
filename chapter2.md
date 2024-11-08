@@ -23,6 +23,10 @@ Stefano Staffa, Andrea Scheck
 
 ## Introduction
 
+Bible was the first book to be translated in many languages, by hand, high-effort
+What if it hadn’t been translated? Imagine a bible translation in 2024 – using modern tools – will we get the same book?
+Our hypothesis is: no
+
 ## Relevant Literature
 Volk, Martin; Fischer, Dominic P; Fischer, Lukas; Scheurer, Patricia; Ströbel, Phillip (2024): LLM-based Machine Translation  and Summarization for Latin
 
@@ -265,6 +269,16 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+### Metrics
+BLEU:
+ROUGE-L:
+METEOR:
+chrF:
+
+For BLEU: scores below 30 (source: https://cloud.google.com/translate/docs/advanced/automl-evaluate)
+For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
+For chrF: no universally agreed threshold for good or bad translation, took scores below 30
+For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
 ## Experiments
 We ran one test sentence through all machine translation systems selected to make sure that Latin translation was basically possible.
@@ -283,13 +297,9 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 | **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
 | **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
-Then we translated all texts bla bla 
-and scored the results
-We considered the scores as bad or good if...
-For BLEU: scores below 30 (source: https://cloud.google.com/translate/docs/advanced/automl-evaluate)
-For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
-For chrF: no universally agreed threshold for good or bad translation, took scores below 30
-For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
+
+Then we translated all texts and scored the results. We considered the scores as bad or good if...
+
 
 ## Results & Discussion
 
