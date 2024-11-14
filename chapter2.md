@@ -22,10 +22,13 @@ Stefano Staffa, Andrea Scheck
 ---
 
 ## Introduction
+Machine Translation (MT) has revolutionized the process of translating low-resource languages, significantly reducing the effort previously involved in such translations. When, for instance, the Latin Bible was first translated into French, English and German, it required enormous human effort, extensive knowledge of both Latin and the vernacular language and the year-long labor of many religious scholars. The result of this translation - a religious text that could be understood by common people - were groundbreaking for both culture and religion, with far-reaching effects on society. It is difficult to say what would have happened if the Bible had never been translated - or if the translation had been less nuanced and careful.
 
-Bible was the first book to be translated in many languages, by hand, high-effort
-What if it hadn’t been translated? Imagine a bible translation in 2024 – using modern tools – will we get the same book?
-Our hypothesis is: no
+Almost 650 years after the first translation of the Latin Bible to English by John Wycliffe, most translations are no longer dependent on such intense labor. Even translations from low-resource languages, like Latin, instead often at least partly depend on the assistance of MT. Even so, many ancient scientific and medical texts written in Greek and Latin remain untranslated in any modern language due to the difficulty and resource limitations involved (source). While MT systems perform efficiently on many genres, they still face challenges when dealing with more creative and complex works, requiring some degrees of post-editing (Cespedosa & Mitkov, 2023).
+
+In this chapter, we explore possible differences in the performance of various advanced AI translation tools when handling Latin religious texts versus when translating more neutral, descriptive Latin passages. We score the results of four systems which can be used for MT — GPT-4o-mini, Gemini, Google Translate, and Yandex Translate - when compared to the manual human translations done in different past decades. While GPT-4 and Gemini are not strictly traditional MT systems, but rather large language models and AI-powered tools, they have shown promise in Latin translation tasks and are increasingly used in the field (source will follow). Previous research (Volk et al., 2024) has also highlighted the variation in the Latin translation quality of these systems, further motivating this comparison.
+
+ith this chapter, we hope to shed some light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific texts. By understanding these distinctions, we might inform future developments in MT with low-resource classical languages and possibly even assist the translation of the vast untranslated ancient texts which might hold crucial knowledge to further our understanding the historical and intellectual development of the Western world.
 
 ## Relevant Literature
 Volk, Martin; Fischer, Dominic P; Fischer, Lukas; Scheurer, Patricia; Ströbel, Phillip (2024): LLM-based Machine Translation  and Summarization for Latin
