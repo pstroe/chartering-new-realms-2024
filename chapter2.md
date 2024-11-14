@@ -12,11 +12,11 @@ Stefano Staffa, Andrea Scheck
 - Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex
 - Run each paragraph through each MT
 - Enter MT result into Excel
-
-### To Dos
 - Score translations
 - Identify "bad" results
 - Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
+
+### To Dos
 - Analyse and write
 - LLaMa -> Not available yet
 ---
