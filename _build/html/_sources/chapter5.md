@@ -38,7 +38,7 @@ with open("KJV_old_testament.tsv", "r") as f:
         if 0 < i > 4:
             print(c)
         i += 1
-        if i < 4:
+        if i > 4:
             break
 ```
 The WEB keeps the same basic structure as the KJV but modernizes the language to make it clearer. Meanwhile, the OEB focuses on being as readable as possible, using simple and straightforward language. To illustrate this, in Psalm 23:1, the KJV says, “The Lord is my shepherd; I shall not want,” which uses an older way of saying that God provides everything we need. The OEB translates this as, “The Lord is my shepherd; I have all that I need,” which is much clearer for today’s readers. These differences show how translations can make the text more or less accessible, depending on the language they use (citation??).
