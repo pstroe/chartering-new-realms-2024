@@ -493,8 +493,31 @@ Parts of the Bible, such as the historical books (e.g. Chronicles) and the laws,
 </section>
 <section id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h3>
-<p>As <em>methods</em> we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa</p>
+<p>As <em>methods</em> we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa.</p>
 <p>To score we wrote python scripts.</p>
+<!-- Configure and load Thebe -->
+<script type="text/x-thebe-config">
+  {
+    "requestKernel": true,
+    "binderOptions": {
+      "repo": "pstroe/chartering-new-realms-2024/chapter_2"
+    }
+  }
+</script>
+<!-- Load Thebe from CDN -->
+<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
+<!-- Button to activate Thebe -->
+<p><button id="activateButton"  style="width: 100px; height: 40px; font-size: 1em;">Activate</button></p>
+<script>
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+
+document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
+</script>
+<pre data-executable="true" data-language="python">
+print("Hello")
+</pre>
 </section>
 <section id="metrics">
 <h3>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h3>

@@ -68,13 +68,37 @@ For the more “neutral” texts, we are using De Legibus by Cicero and the Hist
 - Collection: Resource/community data collection?
 
 ### Methods
-As *methods* we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa
+As *methods* we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa.
 
 To score we wrote python scripts.
 
-```{code-cell} python
+<!-- Configure and load Thebe -->
+<script type="text/x-thebe-config">
+  {
+    "requestKernel": true,
+    "binderOptions": {
+      "repo": "pstroe/chartering-new-realms-2024/chapter_2"
+    }
+  }
+</script>
+
+<!-- Load Thebe from CDN -->
+<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
+
+<!-- Button to activate Thebe -->
+<button id="activateButton"  style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
+<script>
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+
+document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
+</script>
+
+<pre data-executable="true" data-language="python">
 print("Hello")
-```
+</pre>
+
 
 
 ### Metrics

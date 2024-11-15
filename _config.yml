@@ -31,7 +31,22 @@ html:
   use_issues_button: true
   use_repository_button: true
 
+sphinx:
+  config:
+    bibtext_reference_style: author_year
+
+execute:
+  execute_notebooks: auto
+
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2?urlpath=lab
   binder_url: https://mybinder.org
+
+# Thebe configuration
+thebe:
+  activated: true  # Ensure Thebe is activated
+  binderOptions:
+    repo: "pstroe/chartering-new-realms-2024"  # Change this to match your repo
+  use_jupyterlite: true
+  lite_url: "build/html/_static/lite"
