@@ -13,7 +13,7 @@ In this chapter, we focus on tracing theological shifts over time by examining f
  
 The King James Version (KJV), Douay-Rheims Version (DRV), World English Bible (WEB), and Open English Bible (OEB) each offer a unique approach to translating the Bible, and they highlight how language and interpretation have changed over time. Each translation was created with different goals and priorities, which affect how we read and understand the text. The KJV, published in 1611, is known for its formal, poetic language and is based on manuscripts called the Textus Receptus. It has been very influential in shaping English-speaking Christianity. The DRV, published in 1582 (New Testament) and 1610 (Old Testament) and translated from the Latin Vulgate, is the Catholic counterpart and has a similar formal style (Britannica). On the other hand, the WEB and OEB are modern translations. The WEB updates the language of the [American Standard Version](https://ebible.org/eng-web/webfaq.htm#WhatRevision), which is based on the KJV, to make it easier to read , while the [OEB](https://openenglishbible.org/faq/) uses simple, everyday language to make the Bible more accessible to a wider audience . Together, these four translations let us see how biblical language has evolved and how translation choices influence how people connect with the text.
 One big difference among these versions is how they handle language and readability. The KJV and DRV use older, more complex English, which can be hard for modern readers to understand. 
-```python
+```{code-cell} ipython3
 import pandas as pd
 data = pd.read_csv("KJV_old_testament.tsv", sep="\t")
 # Text example from KGV old testament
