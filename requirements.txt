@@ -2,7 +2,7 @@ jupyter-book
 matplotlib
 numpy
 pandas
-csv
 sacrebleu
 rouge-score
 nltk
+thebe
