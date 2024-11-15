@@ -35,7 +35,7 @@ with open("KJV_old_testament.tsv", "r") as f:
     i = 0
     for line in f.readlines():
         a,b,c = line.split("\t")
-        if 0 < i <> 4:
+        if 0 < i < 4:
             print(c)
         i += 1
         if i > 4:
