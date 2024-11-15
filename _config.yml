@@ -30,3 +30,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  thebe: true
+  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2
+
