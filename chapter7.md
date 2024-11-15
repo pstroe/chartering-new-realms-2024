@@ -9,6 +9,7 @@ Go into methods, but not too long so reader still stays entertained.
 -> By creating this blind character, there are some emotional stakes to our work. I.e. if we fail, our blind friend will not be able to listen to comics. This can make the reader get emotionally invested and pay attention.
 
 
+
 Structure:
 
 Anecdote/something entertaining to draw the reader's attention
