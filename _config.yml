@@ -33,5 +33,5 @@ html:
 
 launch_buttons:
   thebe: true
-  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2
-
+  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2?urlpath=lab
+  binder_url: https://mybinder.org
