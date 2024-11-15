@@ -1,3 +1,10 @@
 # Chapter 9
 ```{bibliography} references_chapter9.bib
-:style: plain
+
+# Introduction
+
+As digital technology has advanced, more academic papers and historical documents have been saved and shared in PDF format, which has provided researchers with a large collection of resources. However, as these collections have grown, the need to extract key information, or metadata, from each document has become important. Metadata contains essential details, such as the author, title, publication date, and keywords, which help people organize, search, and archive content. The ability to automate metadata extraction has allowed people to make this process faster and more consistent, especially for large volumes of data.
+
+Over the years, different methods have been developed for extracting metadata, including rule-based approaches, machine learning, deep learning, hybrid models, and specialized tools. Each technique has offered specific advantages and faced challenges when people have applied it to different types of documents. People have found that rule-based methods perform well with structured documents, although they often fail when used with more varied ones. People have used machine learning and deep learning approaches to handle complex document structures. Still, they have found that these methods require a large amount of labeled data and high computational power. Researchers have also turned to hybrid methods and specialized tools, such as GROBID and CERMINE, which offer a combination of flexibility and accuracy to make them useful for handling a wider range of document formats.
+
+In this project, our goal is to create a digital archive of metadata for documents that focus on the American feminist movement. Because our project works with text-based PDF documents and does not involve converting images to text, we chose GROBID as our primary tool for metadata extraction. GROBID has provided support for batch processing, offered API access, and shown compatibility with different document formats, which makes it a good choice for managing
