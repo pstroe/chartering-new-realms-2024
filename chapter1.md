@@ -22,25 +22,27 @@ Possibilities of LLMs in cleaning up data lakes
 
 ### Method 
 #### Large Language Models 
-To adhere to the FAIR principles the decision was made to harness the capabilities of the LLaMA Large Language Model family, which is developped by Meta {cite:p}`Touvron_2023`. The LLaMA families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`Touvron_2023`. It was thus possible to release the LLaMA models as open access. This chapter uses the newest release of the model family, LLaMA 3, of which the largest model employs 405 bilion parameters {cite:p}`Dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`Dubey_2024`.
+To adhere to the FAIR principles the decision was made to harness the capabilities of the LLaMA Large Language Model family, which is developped by Meta {cite:p}`Touvron_2023, Dubey_2024`. The LLaMA models are based on a Transformer architercture {cite:p}`Dubey_2024`. The LLaMA families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`Touvron_2023`. It was thus possible to release the LLaMA models as open source with some restrictions to access. This chapter uses the newest release of the model family, LLaMA 3, of which the largest model employs 405 bilion parameters {cite:p}`Dubey_2024`. However, LLaMA makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`Dubey_2024;2`  . The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`Dubey_2024`.
 ```{image} ../images/llama_3.png
 :alt: llama 3 model family
 :width: 400px
 :align: center
 ```
-Furthermore, LLaMA makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. 
-
-A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. (i'll say this in the previous research problem) Whilst there is an effort to sleaken down models, it is still not possible to train a LLM locally on a standard issue laptop {cite:p}``. But it is possible to run some pretrained models locally. This is dependent on the parameter size, thus, to run the models locally, smaller parameter models were chosen. 
 
 
-
+A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. (i'll say this in the previous research problem) Whilst there is an effort to sleaken down models, it is still not possible to train a LLM locally on a standard issue laptop {cite:p}``. But it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. Here again, LLaMA offers promising options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`Dubey_2024`. 
 **Models Used**
-- 
+- Llama 3.2 1B
+- Llama 3.2 3B
+- Llama 3 8B 
+
+
+
 
 ### Data
 The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
 
-The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim and the English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - or parliamentary proceedings" https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40. Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:t}`Kotze2020, Hibbert2016, Hibbert2003` [^mylabel]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`Hibbert2016, Hibbert2003`.
+The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim and the English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - or parliamentary proceedings" https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40. Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:t}`Kotze_2020, Hibbert_2016, Hibbert_2003` [^mylabel]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`Hibbert_2016, Hibbert_2003`.
 
 
 The decision was made to process all reports of 2019 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. 2019 was chosen as it constituted an election year, thus giving the opportunity of potentially harnessing more speakers as the NA's composition was altered after elections. Furthermore, as the NA is the largest body in Parliament, it was chosen to again maximise speaker count. 
