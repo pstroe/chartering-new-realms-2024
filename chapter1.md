@@ -1,6 +1,11 @@
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
 ## Introduction
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`Chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`Wilkinson_2016` have become a focus area of constructing data collections {cite:p}`Ide_2004, König_2021`. #I feel we need some more here?
+
+In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing. This approach serves especially well in cases where there is much raw data but which has not been structured into data collections, as is the case for the variations of South African English {cite:p}`Barnard_2014, Jeffery_2003, Pienaar_2011`. One such source of raw data constitutes the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to format this data into the ParliMINT scheme, an interoperable XML scheme for transcripts of parliamentary proceedings, the attempt has been labour intensive and done only on a small scale {cite:p}`Ogrodniczuk_2024`. This chapter thus shall attempt to format the parliamentary proceedings into an interoperable XML scheme with the aid of different LLMs without the use of industrial strength hardware. 
+
+
 Research Motivation
 Definition of a Corpus 
 End with Research Question 
@@ -13,6 +18,8 @@ Section on South African English as a low resource language
 The Difficulties of Parlimint (not sure if it should go here or rather in between South african english as low resource and llms? (I've now moved it here, I think that's much better)
 
 Possibilities of LLMs in cleaning up data lakes
+#that's shit
+The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks. In this they are more flexible than specialized tools, for example such tools built for converting file formats. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances. They display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. 
 - More general: Beck et al., Curry et al., Letinier et al., Naryan et al., Pookandy, Zappavigna, 
 - Arora et al., Chen et al. 
 
