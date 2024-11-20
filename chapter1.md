@@ -18,10 +18,13 @@ Section on South African English as a low resource language
 The Difficulties of Parlimint (not sure if it should go here or rather in between South african english as low resource and llms? (I've now moved it here, I think that's much better)
 
 Possibilities of LLMs in cleaning up data lakes
+
 #that's shit
-The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks. In this they are more flexible than specialized tools, for example such tools built for converting file formats. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances. They display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. 
-- More general: Beck et al., Curry et al., Letinier et al., Naryan et al., Pookandy, Zappavigna, 
-- Arora et al., Chen et al. 
+
+The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`Zhang_jellyfish_2024, Narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`Zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`Zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`Curry_2024`. As to the knowledge of these #ambigous_language_use authors, no attempts at harnessing LLMs for corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`Letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`Beck_2022`. These adaptations of LLMs are highly specialized for their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}``. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, respectively correct these errors, such as in customer databases {cite:p}`Pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
+
+In light of these added difficulties when it comes to language data where the language itself is of importance, research has largerly been based on developping a tool that in its foundations is based on LLMs but that also includes rule based code to wrangle data {cite:p}`Chen_2023, Zhang_jellyfish_2024, Arora_2023` [^mylabel]: SEED is currently undergoing restructuring and thus cannot be used. It seems to be a promising project for further investigation into processing raw data via LLM, see [SEED repository](https://anonymous.4open.science/r/SEED/paper.pdf). These tools display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. However, this comes at a greater computational cost than non-LLM tools. Nonetheless, they again are relatively restrictive in their output and are geared more towards data extraction from unstructed data rather than formatting into a customisable format.   
+
 
 
 
@@ -41,15 +44,18 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
-- Llama 3 8B 
-
+- Llama 3 8B
+- Jellyfish
+- 
 
 
 
 ### Data
 The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
 
-The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim and the English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - or parliamentary proceedings" https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40. Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:t}`Kotze_2020, Hibbert_2016, Hibbert_2003` [^mylabel]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`Hibbert_2016, Hibbert_2003`.
+The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim and the English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - or parliamentary proceedings" https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40. Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:t}`Kotze_2020, Hibbert_2016, Hibbert_2003` 
+
+[^mylabel]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`Hibbert_2016, Hibbert_2003`.
 
 
 The decision was made to process all reports of 2019 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. 2019 was chosen as it constituted an election year, thus giving the opportunity of potentially harnessing more speakers as the NA's composition was altered after elections. Furthermore, as the NA is the largest body in Parliament, it was chosen to again maximise speaker count. 
