@@ -1,7 +1,6 @@
 # Chapter 2: How good are LLMs at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
-### Done
 - Find paragraphs: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
 	- Bible: Neutral text, Psalms, Poetry
 	- De legibus (Cicero): Neutral
@@ -15,10 +14,7 @@ Stefano Staffa, Andrea Scheck
 - Score translations
 - Identify "bad" results
 - Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
-
-### To Dos
 - Analyse and write
-- LLaMa -> Not available yet
 ---
 
 ## Introduction
@@ -134,6 +130,21 @@ Then we translated all texts and scored the results. We considered the scores as
 
 
 ## Results & Discussion
+Vergleich Bibelübersetzungen (Teil Andrea):
+For our non-religious texts, we had chosen X extracts from History of the Kings of Britain by Aaron Thompson and X extracts from De Legibus by Cicero. Their nature was mostly descriptive (with History of the Kings of Britain mostly describing either historical events, battles or geography) or argumentative (with de Legibus making arguments for legal consequences). We faced some difficulty in finding truly “neutral” texts, as History of the Kings of Britain is not entirely factual and sometimes even comedic in tone, while de Legibus is written in the form of a dialogue between X and Y, therefore sometimes taking on personal statements.
+Considering the average and median values of all chosen metrics, we compared the translation quality between the different genres of text.
+All translations of De Legibus have a metric average above the threshold of 30%, 5 out of 6 scored above 41% when averaging all metrics and above 45% when considering the median. 
+The lowest score was a 33.61 metric average for Book 1 Section 40. Reasons: the gold standard translation appears incomplete relative to the Latin source. The gold standard uses fewer details and simplifies concepts, e.g., replacing long descriptive clauses with brief summaries. This leads to fewer overlapping n-grams with translations that attempt a closer adherence to the source text. The gold standard adopts a clearer, more modernized tone, losing some of the source's complexity. Certain phrases or ideas (e.g., justification of crimes via "naturae iure" or the vivid imagery of conscience tortures) are omitted or paraphrased. This semantic divergence reduces matches in metrics like METEOR and chrF, which evaluate meaning preservation.
+
+3 of 4 translations of History of the Kings of Britain have a metric average above the threshold of 30%, but none of them above 40%. Considering the metric median instead, they scored between 30.30 and 40.59.
+The lowest score was a 27.33 metric average for  Book 1 Chapter 13. Reasons: The Latin source uses vivid, descriptive language typical of medieval chronicles, emphasizing the intensity of Corineus’s actions. Some translations like GPT-4 preserve more of the specific actions (e.g., severing arms, decapitation), which align closely with the source. In contrast, the gold standard simplifies these details, e.g., grouping multiple actions into generalized descriptions. The gold standard introduces modernized sentence structures and summarizes events, which differ from the Latin’s elaborate narrative style. might result in mismatches in literal metrics like BLEU.
+
+The bible translations using the Douay-Rheims 1899 American Edition (DRB) as the gold standard all received a metric average above 45.41%, with the best metric average score as high as 67.65%. Remarkably, even the translation of Job 3: 11-13, which led to problems and low scores for both of the other bible versions, was passed with a metric average of 45.41 %. The Douay-Rheims gold standard was the only comparison project in which no text had a translation metric average under 30.
+For the bible translations using the English Standard Version (ESV) as the gold standard, 12 of 13 texts received a metric average above 35.85 %, with the best metric average score at 65.43 %. The worst score was received for Job 3: 11-13, which was at 27.54 %. The ESV gold standard was the comparison project in which the largest number of texts (3) had a translation metric average above 60.
+For the bible translations using the King James Version (KJV) as the gold standard, again 12 of 13 texts received a metric average above 32.75 %, with the best metric average score as high at 64.05 %. The worst score was received for Job 3: 11-13, which was at 28.44 %.
+
+![Scatter plot](https://github.com/user-attachments/assets/f86b18c9-e09b-4607-8be7-c755181ba1e9)
+
 
 
 ## Conclusion
