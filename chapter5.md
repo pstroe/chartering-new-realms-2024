@@ -1,6 +1,7 @@
 ---
+thebe: true
 jupytext:
-    formats: ipynb,md:myst
+    formats: md:myst
     text_representation:
         extension: .md
         format_name: myst
