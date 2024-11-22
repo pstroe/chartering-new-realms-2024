@@ -1,3 +1,18 @@
+---
+thebe: true
+kernelspec:
+  display_name: Python 3
+  language: pyhton
+  name: python3
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: "0.13"
+    jupytext_version: 1.11.5
+---
+
 # Chapter 7
 
 The medium of the graphic novel is an under-researched topic in field of the digital humanities. Datasets and corpora are few and far between and the ones that exist are very limited and take a long time to be annotated. This chapter aims to train a multimodal language model to automatically annotate graphic narrative media, using the COMICS dataset, developed by Iyyer et al. (2017) as training data and based on software from the Graphic Narrative Corpus from Dunst et al.(2017). The annotation data will be in the format of Dunst et al.'s Graphic Narrative Markup Language (GNML). Both Iyyer et al. and Dunst et al. have developed resources to annotate graphic narratives or comics, but neither the code used in the COMICS dataset or the M3-editor software of the GNC are fully automated, an goal we seek to achieve. All in all, the work we need to do now will automatically annotate graphic narrative media, allowing for the quick digitisation of comics data.
