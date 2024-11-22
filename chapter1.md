@@ -1,3 +1,18 @@
+---
+thebe: true 
+kernelspec: 
+  display_name: Python 3
+  language: python 
+  name: python3
+jupytext: 
+  format: md:myst
+  text_representation: 
+    extension: .md
+    format_name: myst
+    format_version: '0.13'
+    jupytext_version: 1.11.5
+--- 
+
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
 ## Introduction
@@ -27,7 +42,7 @@ In light of these added difficulties when it comes to language data where the la
 
 [^mylabel]: SEED is currently undergoing restructuring and thus cannot be used. It seems to be a promising project for further investigation into processing raw data via LLM, see [SEED repository](https://anonymous.4open.science/r/SEED/paper.pdf). 
 
-These tools display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. However, this comes at a greater computational cost than non-LLM tools. Nonetheless, they again are relatively restrictive in their output and are geared more towards data extraction from unstructed data rather than formatting into a customisable format.   
+These tools display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. However, this comes at a greater computational cost than non-LLM tools. Nonetheless, they again are relatively restrictive in their output and are geared more towards data extraction from unstructed data rather than formatting into a customisable format, where one talks to their .   
 
 
 
@@ -99,10 +114,12 @@ By adopting ParlaMint and adhering to the FAIR principles, our methodology ensur
 Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
 To exit Ollama in the command line press ctrl + c.
 ```
-```python
-#code goes here
 
 
+
+
+```{code-cell} python
+print("hello, world")
 ```
 ## Results & Discussion 
 
