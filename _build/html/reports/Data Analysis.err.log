@@ -1,0 +1,132 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# open The King James Bible and read it
+digitlinescounter = 0
+old_testament_books = ["The First Book of Moses: Called Genesis", "The Second Book of Moses: Called Exodus", "The Third Book of Moses: Called Leviticus",
+"The Fourth Book of Moses: Called Numbers","The Fifth Book of Moses: Called Deuteronomy","The Book of Joshua","The Book of Judges",
+"The Book of Ruth","The First Book of Samuel","The Second Book of Samuel","The First Book of the Kings","The Second Book of the Kings",
+"The First Book of the Chronicles","The Second Book of the Chronicles","Ezra","The Book of Nehemiah","The Book of Esther","The Book of Job",
+"The Book of Psalms","The Proverbs","Ecclesiastes","The Song of Solomon","The Book of the Prophet Isaiah","The Book of the Prophet Jeremiah",
+"The Lamentations of Jeremiah","The Book of the Prophet Ezekiel","The Book of Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum",
+"Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"]
+old_test_book_id=0
+new_testament_books = [
+"The Gospel According to Saint Matthew","The Gospel According to Saint Mark","The Gospel According to Saint Luke",
+"The Gospel According to Saint John","The Acts of the Apostles","The Epistle of Paul the Apostle to the Romans",
+"The First Epistle of Paul the Apostle to the Corinthians","The Second Epistle of Paul the Apostle to the Corinthians",
+"The Epistle of Paul the Apostle to the Galatians","The Epistle of Paul the Apostle to the Ephesians",
+"The Epistle of Paul the Apostle to the Philippians","The Epistle of Paul the Apostle to the Colossians",
+"The First Epistle of Paul the Apostle to the Thessalonians","The Second Epistle of Paul the Apostle to the Thessalonians",
+"The First Epistle of Paul the Apostle to Timothy","The Second Epistle of Paul the Apostle to Timothy",
+"The Epistle of Paul the Apostle to Titus","The Epistle of Paul the Apostle to Philemon",
+"The Epistle of Paul the Apostle to the Hebrews","The General Epistle of James","The First Epistle General of Peter",
+"The Second General Epistle of Peter","The First Epistle General of John","The Second Epistle General of John",
+"The Third Epistle General of John","The General Epistle of Jude","The Revelation of Saint John the Divine"]
+new_test_book_id=0
+with open('The King James Version of the Bible.txt') as f:
+    start = False
+    line_counter = 0
+    
+    print(line_counter)
+    old_testament_book = "The First Book of Moses: Called Genesis"
+    new_testament_book = "The Gospel According to Saint Matthew"
+    old_test = False
+    new_test = False
+    with open("KGV_new_testament.tsv","w") as new_testament_file:
+        with open("KGV_old_testament.tsv","w") as old_testament_file:
+            for line in f:
+                line_counter += 1
+                if "START OF THE PROJECT GUTENBERG EBOOK THE KING JAMES VERSION OF THE BIBLE" in line or start:
+                    start = True
+                    
+                    if start and line_counter > 92:
+                        if "The Old Testament" in line or old_test and "New Testament" not in line:
+                            # with a with statement, open a text file called old_testament.txt for writing
+                            
+                            old_test = True
+                            new_test = False
+                            if old_testament_book != old_testament_books[-1]:
+                                if old_testament_books[old_test_book_id+1] in line:
+                                    old_test_book_id += 1
+                            old_testament_book = old_testament_books[old_test_book_id]
+                                
+                            if line[0].isdigit():
+                                digitlinescounter += 1
+                                # Find ID of first whitespace
+                                whitespace_id = line.find(' ')
+                                # split into what is before and what is after the whitespace without the whitespace
+                                a,b = line[:whitespace_id] , line[whitespace_id+1:-2]
+                                writingline = "\t".join([old_testament_book, a,b])
+                                
+                                withnewline = writingline + "\n"
+                                old_testament_file.write(withnewline)
+                                
+                        elif "New Testament" in line or new_test:
+                            
+                            old_test = False
+                            new_test = True
+                            if new_testament_book != new_testament_books[-1]:
+                                if new_testament_books[new_test_book_id+1] in line:
+                                    new_test_book_id += 1
+                            new_testament_book = new_testament_books[new_test_book_id]
+                                
+                            if line[0].isdigit():
+                                digitlinescounter += 1
+                                # Find ID of first whitespace
+                                whitespace_id = line.find(' ')
+                                # split into what is before and what is after the whitespace without the whitespace
+                                a,b = line[:whitespace_id] , line[whitespace_id+1:-2]
+                                writingline = "\t".join([new_testament_book, a,b])
+                                withnewline = writingline + "\n"
+                                
+                                new_testament_file.write(withnewline)
+
+                        
+                elif "END OF THIS PROJECT GUTENBERG EBOOK THE KING JAMES VERSION OF THE BIBLE" in line:
+                    break
+
+print("Done with KGV Bible")
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[1], line 24[0m
+[1;32m     11[0m new_testament_books [38;5;241m=[39m [
+[1;32m     12[0m [38;5;124m"[39m[38;5;124mThe Gospel According to Saint Matthew[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Gospel According to Saint Mark[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Gospel According to Saint Luke[39m[38;5;124m"[39m,
+[1;32m     13[0m [38;5;124m"[39m[38;5;124mThe Gospel According to Saint John[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Acts of the Apostles[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Epistle of Paul the Apostle to the Romans[39m[38;5;124m"[39m,
+[0;32m   (...)[0m
+[1;32m     21[0m [38;5;124m"[39m[38;5;124mThe Second General Epistle of Peter[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe First Epistle General of John[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Second Epistle General of John[39m[38;5;124m"[39m,
+[1;32m     22[0m [38;5;124m"[39m[38;5;124mThe Third Epistle General of John[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe General Epistle of Jude[39m[38;5;124m"[39m,[38;5;124m"[39m[38;5;124mThe Revelation of Saint John the Divine[39m[38;5;124m"[39m]
+[1;32m     23[0m new_test_book_id[38;5;241m=[39m[38;5;241m0[39m
+[0;32m---> 24[0m [38;5;28;01mwith[39;00m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mThe King James Version of the Bible.txt[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m f:
+[1;32m     25[0m     start [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[1;32m     26[0m     line_counter [38;5;241m=[39m [38;5;241m0[39m
+
+File [0;32m/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/IPython/core/interactiveshell.py:310[0m, in [0;36m_modified_open[0;34m(file, *args, **kwargs)[0m
+[1;32m    303[0m [38;5;28;01mif[39;00m file [38;5;129;01min[39;00m {[38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m2[39m}:
+[1;32m    304[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    305[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mIPython won[39m[38;5;124m'[39m[38;5;124mt let you open fd=[39m[38;5;132;01m{[39;00mfile[38;5;132;01m}[39;00m[38;5;124m by default [39m[38;5;124m"[39m
+[1;32m    306[0m         [38;5;124m"[39m[38;5;124mas it is likely to crash IPython. If you know what you are doing, [39m[38;5;124m"[39m
+[1;32m    307[0m         [38;5;124m"[39m[38;5;124myou can use builtins[39m[38;5;124m'[39m[38;5;124m open.[39m[38;5;124m"[39m
+[1;32m    308[0m     )
+[0;32m--> 310[0m [38;5;28;01mreturn[39;00m [43mio_open[49m[43m([49m[43mfile[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'The King James Version of the Bible.txt'
+
