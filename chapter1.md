@@ -1,3 +1,18 @@
+---
+thebe: true 
+kernelspec: 
+  display_name: Python 3
+  language: python 
+  name: python3
+jupytext: 
+  format: md:myst
+  text_representation: 
+    extension: .md
+    format_name: myst
+    format_version: '0.13'
+    jupytext_version: 1.11.5
+--- 
+
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
 ## Introduction
@@ -99,10 +114,12 @@ By adopting ParlaMint and adhering to the FAIR principles, our methodology ensur
 Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
 To exit Ollama in the command line press ctrl + c.
 ```
-```python
-#code goes here
 
 
+
+
+```{code-cell} python
+print("hello, world")
 ```
 ## Results & Discussion 
 
