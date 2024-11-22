@@ -53,6 +53,13 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 - Jellyfish
 - 
 
+Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
+
+TODO 
+- Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work. 
+- Fine-Tuning issue: possibly could be done with unsloth? I do this this weekend, issue of computational power, time frame, etc. 
+- Utilizing jellyfish/evaporate (so half and half, possibly if it works the best solution?)
+- 
 
 
 ### Data
