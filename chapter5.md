@@ -32,7 +32,7 @@ The King James Version (KJV), Douay-Rheims Version (DRV), World English Bible (W
 One big difference among these versions is how they handle language and readability. The KJV and DRV use older, more complex English, which can be hard for modern readers to understand. 
 ```{code-cell} python
 
-with open("KJV_old_testament.tsv", "r") as f:
+with open("/Users/laurachristoph/Library/CloudStorage/OneDrive-UniversitätZürichUZH/CL/06_H24_AI_DigitalHumanities/chartering-new-realms-2024/KJV_old_testament.tsv", "r") as f:
     i = 0
     for line in f.readlines():
         a,b,c = line.split("\t")
