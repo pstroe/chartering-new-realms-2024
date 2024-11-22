@@ -110,3 +110,8 @@ To exit Ollama in the command line press ctrl + c.
 
 ## Conclusion 
 
+## bibliography
+```{bibliography}
+:style: plain
+```
+
