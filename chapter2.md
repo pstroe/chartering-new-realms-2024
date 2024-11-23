@@ -1,20 +1,27 @@
 # Chapter 2: How good are LLMs at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
-- Find paragraphs: at least 400 words per text, more if possible (Paper by Volk et al. had 1240 words in Latin)
-	- Bible: Neutral text, Psalms, Poetry
-	- De legibus (Cicero): Neutral
-	- Historia (Monmouth): Neutral
-- Enter original + gold standard translation into Excel
-- Describe data in chapter: Categorization, token number, languages
-- Write python script to execute the translation scores and test for BLEU, ROUGE, chrF, METEOR
-- Test LLMs to make sure if they work with Latin at all: Gemini, GPT-4, Google Translator, Yandex
-- Run each paragraph through each MT
-- Enter MT result into Excel
-- Score translations
-- Identify "bad" results
-- Run "bad" paragraphs through MT 1 sentence at a time and see if it changes
-- Analyse and write
+## TO DOS
+- Write "Relevant Literature" (400 words)
+- Write "Methods & Data" (200 words)
+	- Describe data based on what we already wrote (but more like other papers, take Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" as example): how many words, tokens, sentences, what sources we used (Versions, translation,  Ausgabe etc.), how many neutral, psalms, songs, what languages, what year, literal or non literal translation, why did we use 3 bibles -> check if you can cut & paste some from what we wrote in "Results"
+	- In short: Describe metrics: what do they measure? what do we consider a bad score (below 30) or a good score (above 60)? What variations lead to a bad score for each metric? -> check if you can cut & paste some from what we wrote in "Results"
+ 	- In short: Descibe tools: how do they work? -> check if you can cut & paste some from what we wrote in "Results"
+- Write "Experiments" (650 words?)
+	- Explain process for translation (example sentence translation experiment can be deleted)
+		- Run each paragraph through each MT
+		- Enter MT result into Excel
+	- Explain process for scoring (code, averaging scores)
+ 	- Explain how we handled "bad" results (<30%), by running through MT 1 sentence at a time and see if it changes
+  	- Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
+- Revise "Results" and shorten (650 words?), answer questions:
+  	- What tool has shown the best performance at translating Latin-English?
+ 	- What metric has shown the best performance at scoring Latin-English translation? Or do we suggest using all 4 and averaging?
+	- Is it easier for MT to translate neutral text than religious text?
+- Write "Conclusion" (200 words)
+- Revise "Introduction" and shorten (300 words)
+- Write "Abstract" (max. 100 words)
+
 ---
 
 ## Introduction
@@ -27,7 +34,8 @@ In this chapter, we explore possible differences in the performance of various a
 ith this chapter, we hope to shed some light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific texts. By understanding these distinctions, we might inform future developments in MT with low-resource classical languages and possibly even assist the translation of the vast untranslated ancient texts which might hold crucial knowledge to further our understanding the historical and intellectual development of the Western world.
 
 ## Relevant Literature
-Volk, Martin; Fischer, Dominic P; Fischer, Lukas; Scheurer, Patricia; Ströbel, Phillip (2024): LLM-based Machine Translation  and Summarization for Latin
+
+Volk et al. (2024): LLM-based Machine Translation  and Summarization for Latin
 
 Bamman, David; Burns, Patrick J. (2020): Latin BERT: A contextual language model for classical philology
 
@@ -68,35 +76,6 @@ As *methods* we are using machine translation with the programs Google Gemini, G
 
 To score we wrote python scripts.
 
-<!-- Configure and load Thebe -->
-<script type="text/x-thebe-config">
-  {
-    "requestKernel": true,
-    "binderOptions": {
-      "repo": "pstroe/chartering-new-realms-2024/chapter_2"
-    }
-  }
-</script>
-
-<!-- Load Thebe from CDN -->
-<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
-
-<!-- Button to activate Thebe -->
-<button id="activateButton"  style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
-<script>
-var bootstrapThebe = function() {
-    thebelab.bootstrap();
-}
-
-document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
-</script>
-
-<pre data-executable="true" data-language="python">
-print("Hello")
-</pre>
-
-
-
 ### Metrics
 BLEU:
 ROUGE-L:
@@ -126,7 +105,34 @@ Translate this from Latin to English: Ī, curre per Alpīs."
 | **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
 
-Then we translated all texts and scored the results. We considered the scores as bad or good if...
+Then we translated all texts and scored the results
+
+<!-- Configure and load Thebe -->
+<script type="text/x-thebe-config">
+  {
+    "requestKernel": true,
+    "binderOptions": {
+      "repo": "pstroe/chartering-new-realms-2024/chapter_2"
+    }
+  }
+</script>
+
+<!-- Load Thebe from CDN -->
+<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
+
+<!-- Button to activate Thebe -->
+<button id="activateButton"  style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
+<script>
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+
+document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
+</script>
+
+<pre data-executable="true" data-language="python">
+print("Hello")
+</pre>
 
 
 ## Results & Discussion
