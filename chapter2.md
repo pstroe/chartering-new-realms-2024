@@ -107,18 +107,53 @@ For METEOR: no universally agreed threshold for good or bad translation, took sc
 ## Experiments - 650 words (or less)
 The experimental setup for this project began with the selection and preparation of texts, where original Latin excerpts and their corresponding gold standard translations were aligned and organized into a CSV table. The Latin excerpts were translated one at a time through the web interface of Google Translate and Yandex. For ChatGPT (GPT-4o) and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the MT outputs, focusing instead on the sentence structure and vocabulary of the Latin text. (Endnote mit dem spezifischen Prompt). Each translated result was added to the table and the scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF), calculated with a Python script.
 
-thebe 1: randomly return one Latin and all its translations
+Table 1:
+```{code-cell} python
+import pandas as pd
+import random
+from IPython.display import display, Markdown
+
+csv_path = "data/translations.csv"  # CSV with all translations
+data = pd.read_csv(csv_path, delimiter=';')
+
+random_row = data.sample(n=1).iloc[0]  # Select a random row
+
+# Show in a table
+table = "| Header | Content |\n"
+table += "|--------|---------|\n"
+for column, value in random_row.items():
+    # Only show the first 400 characters
+    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
+    table += f"| {column} | {truncated_value} |\n"
+display(Markdown(table))
+```
+
+### Low BLEU scores
+After examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores. This allowed for a more balanced representation of translation quality across metrics.
 
 thebe 2: randomly return one translation and all its scores
 
 table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?
 
 ```{code-cell} python
-print("Hello")
-```
+import pandas as pd
+import random
+from IPython.display import display, Markdown
 
-### Low BLEU scores
-After examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores. This allowed for a more balanced representation of translation quality across metrics.
+csv_path = "data/translations.csv"  # CSV with all translations
+data = pd.read_csv(csv_path, delimiter=';')
+
+random_row = data.sample(n=1).iloc[0]  # Select a random row
+
+# Show in a table
+table = "| Header | Content |\n"
+table += "|--------|---------|\n"
+for column, value in random_row.items():
+    # Only show the first 400 characters
+    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
+    table += f"| {column} | {truncated_value} |\n"
+display(Markdown(table))
+```
 
 ### Error identification 
 In regards to the scores, six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. To identify the issues, we revisited the gold standard translations and upon review, found three errors. For Psalm 88: 3-7 and Psalm 23: 4-6 (DRB), incorrect gold standard translations were initially used due to differences in Psalm numbering between the Latin Vulgate and the Douay-Rheims Bible. Correcting these discrepancies raised their score averages to X and Y respectively. For Book 1 Section 40 of De Legibus, a formatting issue in the used gold standard translation source had resulted in the omission of the final sentence from the gold standard. Once this was corrected, its score average also rose to X.
