@@ -89,49 +89,19 @@ For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
 For chrF: no universally agreed threshold for good or bad translation, took scores below 30
 For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
-## Experiments
-650 words (or less)
-Explain process for translation (example sentence translation experiment can be deleted)
-- Finding original text in Latin and gold standard, put into Excel / csv table
-- Run each paragraph through each MT: Google Translate and Yandex directly, ChatGPT (GPT-4) and Gemini with the prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases." + sentence.
-- Enter MT result into Excel / csv table
-- Wrote a python script that would calculate the BLEU, ROUGE, METEOR and chrF scores for each MT result compared to its gold standard
-- First results: BLEU scores very low, several (6) texts with a score average below 30%: 
-	- Psalm 88: 3-7 (Douay-Rheims)
-	- Psalm 23: 4-6 (Douay-Rheims)
-	- History of the Kings of Britain, Book 1 Chapter 13
-	- Job 3: 11-13 (ESV)
-	- Job 3: 11-13 (King James Version)
-	- De Legibus, Book 1 Section 40
-- Adaptation:
-	- We calculated the median as well as the average to alleviate the negative impact of the BLEU scores
- 	- We examined the 6 texts with inadequate scores again and discovered the following mistakes:
-		- Psalm 88: 3-7 (Douay-Rheims): We had gotten the wrong gold standard translation due to a shift in the Psalm numbers for the DRB
-		- Psalm 23: 4-6 (Douay-Rheims): We had gotten the wrong gold standard translation due to a shift in the Psalm numbers for the DRB
-		- De Legibus, Book 1 Section 40: The gold standard was not complete, the last sentence had been missing in the excel due to a formatting error
-  	- The correction of these 3 texts' gold standards moved their score averages above 30 %
-  	- The 3 texts that still had a score average below 30% were retranslated by each MT system 1 sentence at a time instead of as a paragraph. This improved the results for each text, but not dramatically (and not above an average of 30%)
- 
+## Experiments - 650 words (or less)
+The experimental setup for this project began with the selection and preparation of texts, where original Latin excerpts and their corresponding gold standard translations were aligned and organized into a CSV table. The Latin excerpts were translated one at a time through the web interface of Google Translate and Yandex. For ChatGPT (GPT-4o) and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the MT outputs, focusing instead on the sentence structure and vocabulary of the Latin text. (Endnote mit dem spezifischen Prompt). Each translated result was added to the table and the scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF), calculated with a Python script.
+
+***Thebe***
 Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
 
-Translate this from Latin to English: Ī, curre per Alpīs."
+<button id="activateButton" style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
 
-| Assessment of tone | Source | Latin              | Gold standard translation      | GPT-4 (ChatGPT)              | Google Gemini             | Google Translate            | Yandex                    | LLaMa                   |
-|--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
-| Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
+<pre data-executable="true" data-language="python">
+print("Hello")
+</pre>
 
-
-| Score with...   | GPT Score | Gemini Score | GT Score | Yandex Score | LLaMa Score |
-|------------------|-----------|--------------|----------|---------------|--------------|
-| **BLEU**         | 41.11     | 13.13        | 30.74    | 14.32         | 0.00         |
-| **ROUGE-L**      | 80.00     | 60.00        | 66.67    | 66.67         | 0.00         |
-| **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
-| **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
-
-
-Then we translated all texts and scored the results
-
-<!-- Configure and load Thebe -->
+<!-- Thebe initialization -->
 <script type="text/x-thebe-config">
   {
     "requestKernel": true,
@@ -141,11 +111,8 @@ Then we translated all texts and scored the results
   }
 </script>
 
-<!-- Load Thebe from CDN -->
 <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
 
-<!-- Button to activate Thebe -->
-<button id="activateButton"  style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
 <script>
 var bootstrapThebe = function() {
     thebelab.bootstrap();
@@ -154,10 +121,14 @@ var bootstrapThebe = function() {
 document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
 </script>
 
-<pre data-executable="true" data-language="python">
-print("Hello")
-</pre>
+### Low BLEU scores
+After examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores. This allowed for a more balanced representation of translation quality across metrics.
 
+### Error identification 
+In regards to the scores, six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. To identify the issues, we revisited the gold standard translations and upon review, found three errors. For Psalm 88: 3-7 and Psalm 23: 4-6 (DRB), incorrect gold standard translations were initially used due to differences in Psalm numbering between the Latin Vulgate and the Douay-Rheims Bible. Correcting these discrepancies raised their score averages to X and Y respectively. For Book 1 Section 40 of De Legibus, a formatting issue in the used gold standard translation source had resulted in the omission of the final sentence from the gold standard. Once this was corrected, its score average also rose to X.
+
+### Retranslations
+Despite these corrections, three texts — Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV — remained below the 30% threshold which we deemed an acceptable translation. For these texts, we modified the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to reduce the impact of long, syntactically complex sentences, which are particularly challenging for MT systems. While this method resulted in slight improvements for all three texts, their average scores remained below 30%. Possible reasons are discussed in details in the following chapter.
 
 ## Results & Discussion
 
@@ -284,10 +255,26 @@ Across all tools, the metrics reveal a consistent trend: translations of non-bib
 ## Conclusion
 
 
+## Bibliography
 {cite:p}``
 ```{bibliography} references_chap2.bib
 :style: plain
 :filter: docname in docnames
 ```
+
+## Notes / Things that were deleted 
+The prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases."
+
+| Assessment of tone | Source | Latin              | Gold standard translation      | GPT-4 (ChatGPT)              | Google Gemini             | Google Translate            | Yandex                    | LLaMa                   |
+|--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
+| Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
+
+
+| Score with...   | GPT Score | Gemini Score | GT Score | Yandex Score | LLaMa Score |
+|------------------|-----------|--------------|----------|---------------|--------------|
+| **BLEU**         | 41.11     | 13.13        | 30.74    | 14.32         | 0.00         |
+| **ROUGE-L**      | 80.00     | 60.00        | 66.67    | 66.67         | 0.00         |
+| **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
+| **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
 
