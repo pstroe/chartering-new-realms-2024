@@ -110,26 +110,9 @@ The experimental setup for this project began with the selection and preparation
 ***Thebe***
 Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
 
-
-<!-- Thebe initialization -->
-<script type="text/x-thebe-config">
-  {
-    "requestKernel": true,
-    "binderOptions": {
-      "repo": "pstroe/chartering-new-realms-2024/chapter_2"
-    }
-  }
-</script>
-
-<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
-
-<script>
-var bootstrapThebe = function() {
-    thebelab.bootstrap();
-}
-
-document.querySelector("#activateButton").addEventListener('click', bootstrapThebe);
-</script>
+```{code-cell} python
+print("Hello")
+```
 
 ### Low BLEU scores
 After examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores. This allowed for a more balanced representation of translation quality across metrics.

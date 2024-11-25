@@ -11,6 +11,7 @@ execute:
   execute_notebooks: force
   execute_notebooks: auto
   execution_cache_path: _build/.jupyter_cache
+  
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:

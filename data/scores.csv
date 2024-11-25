@@ -1,0 +1,110 @@
+﻿Source;Average ROUGE score;Average chrF score;Average METEOR score;;;
+"History of the Kings of Britain, Book 1 Chapter 13
+Aaron Thompson";28.24;42.37;33.05;;;
+"Job 3: 11-13
+ESV";37.98;30.65;33.63;;;
+"Job 3: 11-13
+King James Version";40.11;31.14;33.74;;;
+"De Legibus, Book 1 Section 40
+Cicero";29.35;43.46;38.08;;;
+"Job 14: 1-3
+King James Version";40.49;40.67;36.34;;;
+"Psalm 88: 3-7
+King James Version
+
+(Psalm 87: 4-8 in the Vulgate)";42.23;39.36;41.17;;;
+"Deuteronomy 19: 15-17
+ESV";45.49;41.15;43.15;;;
+"History of the Kings of Britain, Book 1 Chapter 6
+Aaron Thompson";41.71;49.33;36.73;;;
+"History of the Kings of Britain, Book 3 Chapter 4
+Aaron Thompson";42.37;46.88;41.01;;;
+"History of the Kings of Britain, Book 1 Chapter 2
+Aaron Thompson";40.68;51.54;41.09;;;
+"Psalm 88: 3-7
+ESV
+
+(Psalm 87: 4-8 in the Vulgate)";44.96;41.46;47.56;;;
+"Deuteronomy 19: 15-17
+King James Version";49.50;46.04;40.46;;;
+"Song of Solomon 5: 12-14
+King James Version";48.94;47.38;43.43;;;
+"Habakkuk 3:17-19
+ESV";46.61;47.32;52.33;;;
+"Isaiah 38:9-20
+King James Version";50.07;48.32;42.88;;;
+"Job 14: 1-3
+ESV";49.54;45.63;52.76;;;
+"De Legibus, Book 1 Section 28, III
+Cicero";52.34;48.43;47.69;;;
+"Isaiah 38:9-20
+ESV";53.22;49.70;45.36;;;
+"De Legibus, Book 1 Section 15, I
+Cicero";56.59;44.68;56.49;;;
+"De Legibus, Book 1 Section 58
+Cicero";47.68;53.76;54.27;;;
+"Habakkuk 3:17-19
+King James Version";47.13;52.27;56.23;;;
+"Psalm 88: 4-8
+Douay-Rheims 1899 American Edition
+
+(Psalm 87: 4-8 in the Vulgate)";57.44;49.63;49.28;;;
+"Exodus 1: 8-14
+King James Version";51.43;55.77;50.88;;;
+"Psalm 149: 5-9
+King James Version";58.90;51.36;58.64;;;
+"Job 3: 11-13
+Douay-Rheims 1899 American Edition";56.31;45.85;58.90;;;
+"De Legibus, Book 1 Section 60
+Cicero";54.41;52.73;50.50;;;
+"Psalm 149: 5-9
+ESV";61.05;54.97;52.03;;;
+"Song of Solomon 5: 12-14
+ESV";53.18;51.41;55.19;;;
+"Job 14: 1-3
+Douay-Rheims 1899 American Edition";57.26;50.74;53.42;;;
+"Song of Solomon 5: 12-14
+Douay-Rheims 1899 American Edition";58.99;52.71;56.49;;;
+"De Legibus, Book 1 Section 28, II
+Cicero";58.11;52.38;57.56;;;
+"Exodus 1: 8-14
+ESV";57.36;56.81;52.75;;;
+"Habakkuk 3:17-19
+Douay-Rheims 1899
+American Edition";56.34;58.17;65.41;;;
+"Exodus 1: 8-14
+Douay-Rheims 1899 American Edition";61.29;62.38;54.09;;;
+"Isaiah 38:9-20
+Douay-Rheims 1899 American Edition";61.22;57.36;55.63;;;
+"1 Chronicles 2: 21-23
+Douay-Rheims 1899 American Edition";65.21;55.70;62.19;;;
+"1 Chronicles 2: 21-23
+King James Version";64.83;55.29;60.65;;;
+"Psalm 149: 5-9
+Douay-Rheims 1899 American Edition";68.02;58.18;59.79;;;
+"Psalm 23: 4-6
+King James Version
+
+(Psalm 22: 4-6 in the Vulgate)";65.32;58.25;60.26;;;
+"Psalm 22: 4-6
+Douay-Rheims 1899 American Edition";69.08;56.35;59.79;;;
+"Exodus 7: 20-24
+ESV";64.88;61.87;60.36;;;
+"Deuteronomy 19: 15-17
+Douay-Rheims 1899 American Edition";68.05;62.16;63.15;;;
+"Exodus 7: 20-24
+King James Version";71.72;63.83;64.40;;;
+"1 Chronicles 2: 21-23
+ESV";70.49;65.14;69.78;;;
+"Ecclesiastes 3: 7-8
+Douay-Rheims 1899 American Edition";77.24;61.03;72.61;;;
+"Ecclesiastes 3: 7-8
+King James Version";77.10;61.58;70.94;;;
+"Ecclesiastes 3: 7-8
+ESV";78.38;61.49;70.37;;;
+"Psalm 23: 4-6
+ESV
+
+(Psalm 22: 4-6 in the Vulgate)";76.08;66.15;71.26;;;
+"Exodus 7: 20-24
+Douay-Rheims 1899 American Edition";78.31;71.40;71.00;;;
