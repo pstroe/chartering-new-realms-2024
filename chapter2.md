@@ -107,8 +107,11 @@ For METEOR: no universally agreed threshold for good or bad translation, took sc
 ## Experiments - 650 words (or less)
 The experimental setup for this project began with the selection and preparation of texts, where original Latin excerpts and their corresponding gold standard translations were aligned and organized into a CSV table. The Latin excerpts were translated one at a time through the web interface of Google Translate and Yandex. For ChatGPT (GPT-4o) and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the MT outputs, focusing instead on the sentence structure and vocabulary of the Latin text. (Endnote mit dem spezifischen Prompt). Each translated result was added to the table and the scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF), calculated with a Python script.
 
-***Thebe***
-Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
+thebe 1: randomly return one Latin and all its translations
+
+thebe 2: randomly return one translation and all its scores
+
+table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?
 
 ```{code-cell} python
 print("Hello")
