@@ -9,7 +9,8 @@ logo: chartering-new-realms-logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-
+  execute_notebooks: auto
+  execution_cache_path: _build/.jupyter_cache
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -35,9 +36,6 @@ sphinx:
   config:
     bibtext_reference_style: author_year
 
-execute:
-  execute_notebooks: auto
-
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2?urlpath=lab
@@ -45,8 +43,8 @@ launch_buttons:
 
 # Thebe configuration
 thebe:
-  activated: true  # Ensure Thebe is activated
+  activated: true
   binderOptions:
-    repo: "pstroe/chartering-new-realms-2024"  # Change this to match your repo
+    repo: "pstroe/chartering-new-realms-2024"
   use_jupyterlite: true
-  lite_url: "build/html/_static/lite"
+  lite_url: "_static/lite"

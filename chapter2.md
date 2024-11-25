@@ -1,3 +1,18 @@
+---
+thebe: true
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: "0.13"
+    jupytext_version: "1.11.5"
+---
+
 # Chapter 2: How good are LLMs at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
@@ -95,11 +110,6 @@ The experimental setup for this project began with the selection and preparation
 ***Thebe***
 Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
 
-<button id="activateButton" style="width: 100px; height: 40px; font-size: 1em;">Activate</button>
-
-<pre data-executable="true" data-language="python">
-print("Hello")
-</pre>
 
 <!-- Thebe initialization -->
 <script type="text/x-thebe-config">
