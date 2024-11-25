@@ -2,24 +2,26 @@
 Stefano Staffa, Andrea Scheck
 
 ## TO DOS
-- Write "Relevant Literature" (400 words)
-- Write "Methods & Data" (200 words)
+1. Write "Relevant Literature" (400 words)
+2. Write "Methods & Data" (200 words)
 	- Describe data based on what we already wrote (but more like other papers, take Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" as example): how many words, tokens, sentences, what sources we used (Versions, translation,  Ausgabe etc.), how many neutral, psalms, songs, what languages, what year, literal or non literal translation, why did we use 3 bibles -> check if you can cut & paste some from what we wrote in "Results"
 	- In short: Describe metrics: what do they measure? what do we consider a bad score (below 30) or a good score (above 60)? What variations lead to a bad score for each metric? -> check if you can cut & paste some from what we wrote in "Results"
  	- In short: Descibe tools: how do they work? -> check if you can cut & paste some from what we wrote in "Results"
-- Write "Experiments" (650 words?)
+3. Write "Experiments" (650 words?)
 	- Explain process for translation (example sentence translation experiment can be deleted)
 		- Run each paragraph through each MT
 		- Enter MT result into Excel
 	- Explain process for scoring (code, averaging scores)
  	- Explain how we handled "bad" results (<30%), by running through MT 1 sentence at a time and see if it changes
   	- Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
+4. Write "Conclusion" (200 words)
+5. Revise "Introduction" and shorten (300 words)
+
+After:
 - Revise "Results" and shorten (650 words?), answer questions:
   	- What tool has shown the best performance at translating Latin-English?
  	- What metric has shown the best performance at scoring Latin-English translation? Or do we suggest using all 4 and averaging?
 	- Is it easier for MT to translate neutral text than religious text?
-- Write "Conclusion" (200 words)
-- Revise "Introduction" and shorten (300 words)
 - Write "Abstract" (max. 100 words)
 
 ---
@@ -88,8 +90,30 @@ For chrF: no universally agreed threshold for good or bad translation, took scor
 For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
 ## Experiments
-We ran one test sentence through all machine translation systems selected to make sure that Latin translation was basically possible.
-- Prompt for ChatGPT (GPT-4) and Gemini: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases.
+650 words (or less)
+Explain process for translation (example sentence translation experiment can be deleted)
+- Finding original text in Latin and gold standard, put into Excel / csv table
+- Run each paragraph through each MT: Google Translate and Yandex directly, ChatGPT (GPT-4) and Gemini with the prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases." + sentence.
+- Enter MT result into Excel / csv table
+- Wrote a python script that would calculate the BLEU, ROUGE, METEOR and chrF scores for each MT result compared to its gold standard
+- First results: BLEU scores very low, several (6) texts with a score average below 30%: 
+	- Psalm 88: 3-7 (Douay-Rheims)
+	- Psalm 23: 4-6 (Douay-Rheims)
+	- History of the Kings of Britain, Book 1 Chapter 13
+	- Job 3: 11-13 (ESV)
+	- Job 3: 11-13 (King James Version)
+	- De Legibus, Book 1 Section 40
+- Adaptation:
+	- We calculated the median as well as the average to alleviate the negative impact of the BLEU scores
+ 	- We examined the 6 texts with inadequate scores again and discovered the following mistakes:
+		- Psalm 88: 3-7 (Douay-Rheims): We had gotten the wrong gold standard translation due to a shift in the Psalm numbers for the DRB
+		- Psalm 23: 4-6 (Douay-Rheims): We had gotten the wrong gold standard translation due to a shift in the Psalm numbers for the DRB
+		- De Legibus, Book 1 Section 40: The gold standard was not complete, the last sentence had been missing in the excel due to a formatting error
+  	- The correction of these 3 texts' gold standards moved their score averages above 30 %
+  	- The 3 texts that still had a score average below 30% were retranslated by each MT system 1 sentence at a time instead of as a paragraph. This improved the results for each text, but not dramatically (and not above an average of 30%)
+ 
+Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
+
 Translate this from Latin to English: Ī, curre per Alpīs."
 
 | Assessment of tone | Source | Latin              | Gold standard translation      | GPT-4 (ChatGPT)              | Google Gemini             | Google Translate            | Yandex                    | LLaMa                   |
