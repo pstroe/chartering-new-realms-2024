@@ -73,13 +73,13 @@ To enhance the relevance and quality of the extracted n-grams, a t-score was use
 - Improve Theological Relevance: By focusing on statistically significant n-grams, the analysis captures patterns that are more likely to reflect underlying theological or linguistic intent.
 The t-score is calculated using the formula:
 
-\[
+$$
 t = \frac{(O - E)}{\sqrt{O}}
-\]
+$$
 
 Where:
-- \( O \): Observed frequency of the n-gram.
-- \( E \): Expected frequency under independence.
+- $ O $: Observed frequency of the n-gram.
+- $ E $: Expected frequency under independence.
 
 N-grams with higher t-scores were prioritized for analysis, as they are more likely to represent meaningful patterns in the text.
 
