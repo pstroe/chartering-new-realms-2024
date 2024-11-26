@@ -54,7 +54,45 @@ In summary, the KJV, DRV, WEB, and OEB give us a wide view of how Bible translat
 
 
 ## Methodology
+### N-Grams and Collocations
+This chapter outlines the methodology used to analyze n-grams in Bible translations as a means to trace linguistic and theological shifts over time. The goal of this analysis was to identify meaningful lexical patterns across translations and evaluate their relevance to changes in theological emphasis and linguistic style. The methodological steps included extracting n-grams, employing statistical measures to improve relevance, and filtering results to ensure quality and interpretability.
 
+#### N-Gram Extraction
+
+The first step in the analysis involved extracting n-grams from the text of each Bible translation. N-grams are contiguous sequences of n words, and in this study, bi-grams (2-grams), tri-grams (3-grams), and quad-grams (4-grams) were selected for analysis. This range of n-grams was chosen to capture both simple lexical co-occurrences and more complex phrasal structures. The rationale for selecting 2-grams to 4-grams is twofold:
+
+- Granularity: Bi-grams often reveal fundamental lexical relationships, such as key theological terms (e.g., "Holy Spirit", "Jesus Christ"), while tri-grams and quad-grams provide deeper insight into recurring doctrinal or narrative expressions (e.g., "In the name of Jesus", "Kingdom of God is") that are vital to understanding theological framing.
+- Interpretability: Longer n-grams, while potentially more informative, may become less frequent and more difficult to interpret. Thus, 2-grams to 4-grams strike a balance between capturing meaningful patterns and maintaining interpretability.
+For each book in the Bible, n-grams were extracted individually across the selected translations, allowing for book-level comparisons. This approach ensured that the analysis remained sensitive to the unique thematic and linguistic characteristics of each text.
+
+#### Statistical Filtering with T-Score
+
+To enhance the relevance and quality of the extracted n-grams, a t-score was used as a statistical measure. The t-score evaluates the strength of association between words in an n-gram by comparing their observed frequency to what would be expected if their occurrences were independent. This approach helps to:
+
+- Prioritize Collocations: Highlight meaningful word pairings and phrases that occur more frequently than chance, filtering out incidental word combinations.
+- Improve Theological Relevance: By focusing on statistically significant n-grams, the analysis captures patterns that are more likely to reflect underlying theological or linguistic intent.
+The t-score is calculated using the formula:
+
+\[
+t = \frac{(O - E)}{\sqrt{O}}
+\]
+
+Where:
+- \( O \): Observed frequency of the n-gram.
+- \( E \): Expected frequency under independence.
+
+N-grams with higher t-scores were prioritized for analysis, as they are more likely to represent meaningful patterns in the text.
+
+#### Stop Word Filtering
+
+To further refine the n-gram results, a stop word filtering process was applied. Stop words—common function words such as "and", "the", and "of"—tend to dominate n-gram extractions but often contribute little to understanding thematic or theological shifts. By excluding stop words, the analysis was able to focus on content words that carry semantic weight. However, stop words were not completely disregarded; their inclusion was allowed in specific cases where they formed integral parts of theological phrases (e.g., "Kingdom of God" or "The Lord Jesus").
+
+A custom stop word list was developed to balance relevance and theological significance, ensuring that key collocations involving function words were retained, also considering the linguistic differences between the older and newer versions.
+
+Several challenges were encountered during the extraction and analysis of n-grams:
+
+Noise from Common Phrases: Frequent generic phrases like "said unto them" or "came to pass" appeared across translations but contributed little to the analysis. These were managed by excluding phrases with high occurrence across all translations unless they carried theological significance.
+Textual Variability: Differences in translation practices and textual traditions led to variations in word choice and phrasing. To address this, n-grams were analyzed within aligned sections of the text to ensure comparability.
 
 ## Results and Analysis
 
