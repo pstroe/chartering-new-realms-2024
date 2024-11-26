@@ -102,24 +102,24 @@ For chrF: no universally agreed threshold for good or bad translation, took scor
 For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
 ## Experiments
-We began the experimental setup by selecting original Latin excerpts from the aforementioned books and bibles and aligning them with their gold standard translations. The excerpts were translated from Latin to English one at a time through the web interface of Google Translate and Yandex. For GPT-4o and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the outputs. (*here will follow and end note to the specific prompt*). Each translated result was then scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF). This resulted in a matrix with 4 translations per excerpt and 4 scores per translation.
+The experimental setup began with selecting original Latin excerpts from the aforementioned sources and their corresponding gold-standard translations. The excerpts were translated from Latin to English individually using the web interfaces of Google Translate and Yandex. For GPT-4o and Gemini, translations were conducted in separate conversations, preceded by a standardized prompt to limit the influence of prior knowledge or external context on the outputs (*here will follow an end note to the specific prompt*). Each translation was then scored against the gold standard using the four metrics (BLEU, ROUGE, METEOR, and chrF), resulting in a matrix with four translations per excerpt and four scores per translation.
 
-Table 1 below allows for a look into the translation results:
+Table 1 allows for a look into the translation results:
 (*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its translation by all MT systems*)
 
 ### Low BLEU scores
-Examining the results of the scoring process, we were surprised at the low BLEU scores across texts (with an overall BLEU average of 24.86%). Out of 49 translations, BLEU was below the threshold of 30% for 35, indicating significant errors in the translation Since we averaged the metric scores, these low BLEU scores resulted in a  negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores.
+Examining the scoring results, we observed low BLEU scores across texts, with an overall BLEU average of 24.86%. Of the 49 translations, 35 received a BLEU score below the threshold of 30%, indicating notable errors in lexical or syntactic accuracy. Since the scores of all metrics were averaged, these low BLEU scores negatively influenced the overall results of almost every translation. To address this, we also considered the median of the metrics alongside the average, mitigating the impact of outliers caused by low BLEU scores.
 
-Despite seeming low, these BLEU scores seem in line with previous research: Volk et al. (2024) observed a BLEU score of 25.22% for Google Translate and 34.50% for GPT-4. Our BLEU averages of 25.32 % for Google Translate and 56.69 % for GPT-4 indicate no major errors during the experiments, but, notably, a marked improvement for GPT-4.
+While seemingly low, these scores align with prior research: Volk et al. (2024) observed a BLEU score of 25.22% for Google Translate and 34.50% for GPT-4. Our findings, with BLEU averages of 25.32% for Google Translate and 56.69% for GPT-4, indicate no major errors during the experiments but consistency in the outputs, while also highlighting a notable improvement in GPT-4’s performance compared to earlier projects.
 
 Table 2 allows for a look into the scores for a random translation:
 (*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its scores in all metrics*)
 
 ### Error proofing 
-Six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. Upon review, we were able to identify issues with three gold standard translations, where they had been incorrectly or incompletely processed. Correcting these discrepancies raised the average score of the effected excerpts to slightly above 30%, signifying an acceptable translation.
+Six translations received an overall average score below 30%, indicating significant errors in the translation. These included Psalm 88:3-7 (DRB), Psalm 23:4-6 (DRB), Book 1 Chapter 13 of The History of the Kings of Britain, Job 3:11-13 (in both the ESV and KJV), and Book 1 Section 40 of De Legibus. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30%, marking them as acceptable translations.
 
 ### Retranslations
-After these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. For these texts, we modified the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to reduce the impact of long, syntactically complex sentences, which are challenging for MT systems (source). This method resulted in an improvement of 1.8 % for Book 1 Chapter of History of the Kings of Britain, but no significant change for the scores of Job 3: 11-13. The average scores of all 3 excerpts remained below 30%. Possible reasons are discussed in detail in the following chapter.
+After these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, which are particularly difficult for MT systems to handle (He, 2023). While this method improved the score for The History of the Kings of Britain by 1.8%, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remained below 30%. Possible reasons for these results are explored in detail in the following chapter.
 
 ## Results & Discussion
 
@@ -247,6 +247,9 @@ Across all tools, the metrics reveal a consistent trend: translations of non-bib
 :style: plain
 :filter: docname in docnames
 ```
+
+He, Hengheng. "An intelligent algorithm for fast machine translation of long English sentences" Journal of Intelligent Systems, vol. 32, no. 1, 2023, pp. 20220257. https://doi.org/10.1515/jisys-2022-0257
+
 
 ## Notes / Things that were deleted 
 
