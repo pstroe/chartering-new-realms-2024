@@ -106,6 +106,25 @@ The experimental setup began with selecting original Latin excerpts from the afo
 
 Table 1 allows for a look into the translation results:
 (*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its translation by all MT systems*)
+```{code-cell} python
+import pandas as pd
+import random
+from IPython.display import display, Markdown
+
+csv_path = "data/translations.csv"  # CSV with all translations
+data = pd.read_csv(csv_path, delimiter=';')
+
+random_row = data.sample(n=1).iloc[0]  # Select a random row
+
+# Show in a table
+table = "| Header | Content |\n"
+table += "|--------|---------|\n"
+for column, value in random_row.items():
+    # Only show the first 400 characters
+    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
+    table += f"| {column} | {truncated_value} |\n"
+display(Markdown(table))
+```
 
 ### Low BLEU scores
 Examining the scoring results, we observed low BLEU scores across texts, with an overall BLEU average of 24.86%. Of the 49 translations, 35 received a BLEU score below the threshold of 30%, indicating notable errors in lexical or syntactic accuracy. Since the scores of all metrics were averaged, these low BLEU scores negatively influenced the overall results of almost every translation. To address this, we also considered the median of the metrics alongside the average, mitigating the impact of outliers caused by low BLEU scores.
@@ -114,6 +133,26 @@ While seemingly low, these scores align with prior research: Volk et al. (2024) 
 
 Table 2 allows for a look into the scores for a random translation:
 (*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its scores in all metrics*)
+```{code-cell} python
+import pandas as pd
+import random
+from IPython.display import display, Markdown
+
+csv_path_scores = "data/scores.csv"  # CSV with all scores
+data_scores = pd.read_csv(csv_path_scores, delimiter=';')
+
+random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
+
+# Show in a table
+table_scores = "| Source | BLEU average | ROUGE average | chrF average | METEOR average |\n"
+table_scores += "|--------|--------------|---------------|--------------|----------------|\n"
+for column, value in random_row_scores.items():
+    # Only show the first 400 characters for the Source (although it shouldn't exceed 400 characters)
+    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
+    table_scores += f"| {truncated_value} " if column == 'Source' else f"| {truncated_value} "
+table_scores += "|\n"
+display(Markdown(table_scores))
+```
 
 ### Error proofing 
 Six translations received an overall average score below 30%, indicating significant errors in the translation. These included Psalm 88:3-7 (DRB), Psalm 23:4-6 (DRB), Book 1 Chapter 13 of The History of the Kings of Britain, Job 3:11-13 (in both the ESV and KJV), and Book 1 Section 40 of De Legibus. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30%, marking them as acceptable translations.
