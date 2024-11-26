@@ -209,6 +209,11 @@ Fig. 3: _Character Network Kalkstein_
 ![alt text](images/Katzensilber.png)
 Fig. 4: _Character Network Katzensilber_
 
+![alt text](images/Turmalin.png)
+Fig. 5: _Character Network Turmalin_
+
+![alt text](images/Bergkristall.png)
+Fig. 6: _Character Network Bergkristall_
 
 [reread 1-2 of the stories]
 
