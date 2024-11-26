@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: preface
 - file: introduction
+- file: chapter4.md

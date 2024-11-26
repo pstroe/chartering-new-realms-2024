@@ -8,7 +8,8 @@ logo: chartering-new-realms-logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: false
+  execution_cache_path: _build/.jupyter_cache
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -18,6 +19,7 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+  - references_chapter4.bib
 
 # Information about where the book exists on the web
 repository:
@@ -30,3 +32,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+
+launch_buttons:
+    thebe: true
+
+thebe:
+    use_jupyterlite: true
+    lite_url: "_static/lite"
