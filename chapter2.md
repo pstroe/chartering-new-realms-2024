@@ -42,13 +42,10 @@ After:
 ---
 
 ## Introduction
-Machine Translation (MT) has revolutionized the process of translating low-resource languages, significantly reducing the effort previously involved in such translations. When, for instance, the Latin Bible was first translated into French, English and German, it required enormous human effort, extensive knowledge of both Latin and the vernacular language and the year-long labor of many religious scholars. The result of this translation - a religious text that could be understood by common people - were groundbreaking for both culture and religion, with far-reaching effects on society. It is difficult to say what would have happened if the Bible had never been translated - or if the translation had been less nuanced and careful.
-
-Almost 650 years after the first translation of the Latin Bible to English by John Wycliffe, most translations are no longer dependent on such intense labor. Even translations from low-resource languages, like Latin, instead often at least partly depend on the assistance of MT. Even so, many ancient scientific and medical texts written in Greek and Latin remain untranslated in any modern language due to the difficulty and resource limitations involved (source). While MT systems perform efficiently on many genres, they still face challenges when dealing with more creative and complex works, requiring some degrees of post-editing (Cespedosa & Mitkov, 2023).
-
-In this chapter, we explore possible differences in the performance of various advanced AI translation tools when handling Latin religious texts versus when translating more neutral, descriptive Latin passages. We score the results of four systems which can be used for MT — GPT-4o-mini, Gemini, Google Translate, and Yandex Translate - when compared to the manual human translations done in different past decades. While GPT-4 and Gemini are not strictly traditional MT systems, but rather large language models and AI-powered tools, they have shown promise in Latin translation tasks and are increasingly used in the field (source will follow). Previous research (Volk et al., 2024) has also highlighted the variation in the Latin translation quality of these systems, further motivating this comparison.
-
-ith this chapter, we hope to shed some light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific texts. By understanding these distinctions, we might inform future developments in MT with low-resource classical languages and possibly even assist the translation of the vast untranslated ancient texts which might hold crucial knowledge to further our understanding the historical and intellectual development of the Western world.
+In 1382, when the Latin Bible was first translated English by John Wycliffe, this process required enormous human effort, extensive knowledge of both Latin and the vernacular, and years of labor by many religious scholars. The result of this translation - a religious text which could be understood by the common population - had groundbreaking and far-reaching impacts on culture and religion. One can hardly imagine how history might have changed had the Bible never been translated into English—or translated less carefully.
+Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting MT can achieve a reasonably good translation quality (source). However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works (Cespedosa & Mitkov, 2023), of which the Bible with its poems and psalms contains many.
+Given that there are many Latin religious texts which remain untranslated to this day, this chapter raise the question: Does MT serve as a fitting tool for translating Latin religious text to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
+By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts which could provide valuable insights into the historical and intellectual evolution of the Western world.
 
 ## Relevant Literature
 
@@ -284,6 +281,8 @@ Across all tools, the metrics reveal a consistent trend: translations of non-bib
 ```
 
 ## Notes / Things that were deleted 
+
+From experiments:
 The prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases."
 
 | Assessment of tone | Source | Latin              | Gold standard translation      | GPT-4 (ChatGPT)              | Google Gemini             | Google Translate            | Yandex                    | LLaMa                   |
@@ -298,4 +297,6 @@ The prompt: "Approach this sentence translation without drawing on any pre-exist
 | **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
 | **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
 
+from intro:
+While GPT-4 and Gemini are not strictly traditional MT systems, but rather large language models and AI-powered tools, they have shown promise in Latin translation tasks and are increasingly used in the field (source will follow). Previous research (Volk et al., 2024) has also highlighted the variation in the Latin translation quality of these systems, further motivating this comparison.
 
