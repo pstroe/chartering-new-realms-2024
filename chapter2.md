@@ -13,7 +13,7 @@ jupytext:
     jupytext_version: "1.11.5"
 ---
 
-# Chapter 2: How good are LLMs at translating Latin religious texts?
+# Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
 ## TO DOS
@@ -102,51 +102,24 @@ For chrF: no universally agreed threshold for good or bad translation, took scor
 For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
 
 ## Experiments
-We began the experimental setup by selecting original Latin excerpts from the aforementioned books and bibles and aligning them with their gold standard translations. The excerpts were translated from Latin to English one at a time through the web interface of Google Translate and Yandex. For ChatGPT (GPT-4o) and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the outputs. (Endnote mit dem spezifischen Prompt). Each translated result was then scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF). This resulted in a matrix with 4 translations per excerpt and 4 scores per translation.
+We began the experimental setup by selecting original Latin excerpts from the aforementioned books and bibles and aligning them with their gold standard translations. The excerpts were translated from Latin to English one at a time through the web interface of Google Translate and Yandex. For GPT-4o and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the outputs. (*here will follow and end note to the specific prompt*). Each translated result was then scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF). This resulted in a matrix with 4 translations per excerpt and 4 scores per translation.
 
 Table 1 below allows for a look into the translation results:
-
-```{code-cell} python
-import pandas as pd
-import random
-from IPython.display import display, Markdown
-
-csv_path = "data/translations.csv"  # CSV with all translations
-data = pd.read_csv(csv_path, delimiter=';')
-
-random_row = data.sample(n=1).iloc[0]  # Select a random row
-
-# Show in a table
-table = "| Header | Content |\n"
-table += "|--------|---------|\n"
-for column, value in random_row.items():
-    # Only show the first 400 characters
-    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
-    table += f"| {column} | {truncated_value} |\n"
-display(Markdown(table))
-```
-
-<button onclick="thebeButton()">Regenerate</button>
-
-<script>
-    function thebeButton() {
-        Jupyter.notebook.execute_cells([0]);  // 0 is the index of the hidden cell with your function
-    }
-</script>
-
+(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its translation by all MT systems*)
 
 ### Low BLEU scores
-Examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores.
-Volk et al. (2024) observed a BLEU score of 25.22 for Google Translate and 34.50 for GPT-4. (compare to our results)
+Examining the results of the scoring process, we were surprised at the low BLEU scores across texts (with an overall BLEU average of 24.86%). Out of 49 translations, BLEU was below the threshold of 30% for 35, indicating significant errors in the translation Since we averaged the metric scores, these low BLEU scores resulted in a  negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores.
+
+Despite seeming low, these BLEU scores seem in line with previous research: Volk et al. (2024) observed a BLEU score of 25.22% for Google Translate and 34.50% for GPT-4. Our BLEU averages of 25.32 % for Google Translate and 56.69 % for GPT-4 indicate no major errors during the experiments, but, notably, a marked improvement for GPT-4.
 
 Table 2 allows for a look into the scores for a random translation:
-...
+(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its scores in all metrics*)
 
 ### Error proofing 
-Six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. Upon review, we were able to identify issues with three gold standard translations, where they had been incorrectly or incompletely processed. Correcting these discrepancies raised the average score of the effected excerpts to X, Y and Z respectively.
+Six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. Upon review, we were able to identify issues with three gold standard translations, where they had been incorrectly or incompletely processed. Correcting these discrepancies raised the average score of the effected excerpts to slightly above 30%, signifying an acceptable translation.
 
 ### Retranslations
-Despite these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. For these texts, we modified the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to reduce the impact of long, syntactically complex sentences, which are challenging for MT systems (source). While this method resulted in slight improvements for all three texts, their average scores remained below 30%. Possible reasons are discussed in detail in the following chapter.
+After these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. For these texts, we modified the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to reduce the impact of long, syntactically complex sentences, which are challenging for MT systems (source). This method resulted in an improvement of 1.8 % for Book 1 Chapter of History of the Kings of Britain, but no significant change for the scores of Job 3: 11-13. The average scores of all 3 excerpts remained below 30%. Possible reasons are discussed in detail in the following chapter.
 
 ## Results & Discussion
 
@@ -264,11 +237,6 @@ For non-Bible texts, BLEU again shows the largest variability, with scores spann
 
 Across all tools, the metrics reveal a consistent trend: translations of non-biblical texts score lower due to their greater stylistic variability and linguistic complexity. BLEU and ROUGE, which emphasize precision and recall for specific lexical and syntactic features, show sharper declines for such texts, highlighting the difficulty in preserving structural elements. Meanwhile, chrF, which balances character-level precision and recall and METEOR, which incorporates synonym matching and semantic alignment, show relatively smaller variations between text types. This suggests that even when lexical and stylistic accuracy falters, tools maintain a fair degree of meaning preservation. Overall, the trend underscores the challenges posed by diverse linguistic structures and the importance of metric selection for evaluating translation quality in varying contexts.
 
-
-
-
-
----
 
 ## Conclusion
 
