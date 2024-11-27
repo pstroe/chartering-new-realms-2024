@@ -16,7 +16,7 @@ jupytext:
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
 ## Introduction
-Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. #I feel we need some more here?
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. It has moved data processing and data preprocessing from being a fringe concern into its own field. 
 
 In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing. This approach serves especially well in cases where there is much raw data but which has not been structured into data collections, as is the case for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data constitutes the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to format this data into the ParliMINT scheme, an interoperable XML scheme for transcripts of parliamentary proceedings, the attempt has been labour intensive and done only on a small scale {cite:p}`ogrodniczuk_2024`. This chapter thus shall attempt to format the parliamentary proceedings into an interoperable XML scheme with the aid of different LLMs without the use of industrial strength hardware. 
 
@@ -108,7 +108,24 @@ By adopting ParlaMint and adhering to the FAIR principles, our methodology ensur
 
 
 ## Experiments and Results
-In a primary approach, the attempt was made to guide an LLM via prompt engineering. 
+In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a few-shot approach. For this Ollama was chosen as basesoftware as Ollama offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`matra_2024`. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of dataformatting would be detrimental.
+
+[^footnote]: For the newest updates and developments concerning Ollama consult their [blog](https://ollama.com/blog).
+
+In the first attempt the model was given a prompt of the structure: 
+
+```{code-cell} python
+example = f" "
+prompt = f" {chunk}"
+```
+
+
+```{tip}
+Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
+To exit Ollama in the command line press ctrl + c.
+```
+
+A code example is given below with the specification of 
 ```{code-cell} python
 import os
 from langchain_core.prompts import ChatPromptTemplate
@@ -154,10 +171,7 @@ for filename in os.listdir(folder_path):
             print(f"Error reading file {filename}: {e}")
 ```
 
-```{tip}
-Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
-To exit Ollama in the command line press ctrl + c.
-```
+
 
 
 
