@@ -113,16 +113,75 @@ Here we describe the use of the gold-standard xml for training etc.
 
 
 ## Experiments and Results
+In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This decision to utilize a standard prompting appraoch was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of dataformatting would be detrimental.
+
+Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`matra_2024`. 
+
+[^footnote]: For the newest updates and developments concerning Ollama consult their [blog](https://ollama.com/blog).
+
+In the first attempt the model was given a prompt of the structure: 
+
+```{code-cell} python
+example_xml = f" <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+            <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> 
+                <seg xml:lang="en">
+                    Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
+                </seg>"
+example_txt = f"The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed."
+question_1 = f" If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?"
+```
+
 ```{tip}
 Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
 To exit Ollama in the command line press ctrl + c.
 ```
 
-
-
-
+A code example is given below with Llama 3.2 configured: 
 ```{code-cell} python
-print("hello, world")
+import os
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_ollama.llms import OllamaLLM
+
+folder_path = r'test_objects'
+
+
+template = """Question: {question}
+
+Answer: Let's think step by step."""
+
+prompt = ChatPromptTemplate.from_template(template)
+model = OllamaLLM(model="llama3.2")
+
+
+def chunk_text(text, chunk_size=5000):
+    words = text.split()
+    for i in range(0, len(words), chunk_size):
+        yield ' '.join(words[i:i + chunk_size])
+
+for filename in os.listdir(folder_path):
+    if filename.endswith('.txt'):
+        file_path = os.path.join(folder_path, filename)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                print(f'Processing file: {filename}')
+                content = file.read()
+                document_list = []
+                i = 0
+                for chunk in chunk_text(content, chunk_size=1000):
+                    try:
+                        question = question_1
+                        response = model(prompt.format(question=question))
+                        document_list.append(response)
+                        i += 1
+                        if i == 4:  # Limit iterations for testing
+                            break
+                    except Exception as e:
+                        print(f"Error processing chunk: {e}")
+                output_file = os.path.join(folder_path, f"{os.path.splitext(filename)[0]}.xml")
+                with open(output_file, 'w', encoding='utf-8') as output:
+                    output.write('\n'.join(document_list))
+        except Exception as e:
+            print(f"Error reading file {filename}: {e}")
 ```
 ## Results & Discussion 
 
