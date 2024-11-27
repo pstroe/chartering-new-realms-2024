@@ -40,8 +40,12 @@ html:
   use_issues_button: true
   use_repository_button: true
 
+parse:
+  myst_enable_extensions:
+    - "cite"
 
 sphinx:
   config:
     bibtex_bibfiles:
       - references_chapter1.bib
+    bibtex_reference_style: author_year

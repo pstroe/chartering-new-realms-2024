@@ -24,6 +24,7 @@ In this chapter, we propose an approach to the construction of structured data c
 Research Motivation
 Definition of a Corpus 
 End with Research Question 
+
 ## Relevant Literature 
 The Republic of South Africa 
 Section on South African English as a low resource language 
@@ -45,6 +46,39 @@ In light of these added difficulties when it comes to language data where the la
 
 ## Methods and Data 
 
+### Data
+The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
+
+The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim, and no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). {cite:t}`kotze_2020` Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`.[^footnote2] 
+
+[^footnote2]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`hibbert_2016, hibbert_2003`.
+
+
+The decision was made to process all reports of 2019 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. 2019 was chosen as it constituted an election year, thus giving the opportunity of potentially harnessing more speakers as the NA's composition was altered after elections. Furthermore, as the NA is the largest body in Parliament, it was chosen to again maximise speaker count. 
+
+Do we give speaker counts? How many people spoke?
+
+In total 51 sessions were held in 2019.
+
+#### ParlaMint
+
+Please ignore the lackluster title. I'll come up with something else. Here, I want to introduce xml, TEI and ParlaMint and our approach. Lmk if it goes somewhere else. 
+
+To ensure that the data in this corpus remains both human- and machine-readable while adhering to widely accepted standards, it was decided to encode the transcriptions in XML using the ParlaMint schema {cite:p}`erjavec_2023`, a customisation of the Parla-Clarina schema, which itself is based on the Text Encoding Initiative (TEI) guidelines {cite:p}`tei_consortium_guidelines`. This approach allows the corpus to maintain a consistent structure while also providing a way to encode the specific nuances of parliamentary discourse.
+
+The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including metadata about speakers, speech acts, and contextual annotations. The ParlaMint schema, as a specialized extension of TEI, is particularly suited for parliamentary corpora. It was designed to allow the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2023`. This would allow this corpus to seamlessly integrate with other corpora encoded with the ParlaMint schema.
+
+In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2023`.
+
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African Parliament's website {cite:p}`hansardSA_2020` into txt files, which were then used to create the XML files. 
+The content of these txt-files was barely edited, save for occassional spelling errors within headers and subtitles. 
+
+By adopting ParlaMint and adhering to the FAIR principles, our methodology ensures the creation of a high-quality, standardized corpus that serves as a robust resource for the research community while preserving the integrity and richness of parliamentary discourse.
+
+#### Pre-Processing
+Here I'll describe how I created the XML.
+
+
 ### Method 
 
 #### Large Language Models 
@@ -64,7 +98,7 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 - Llama 3.2 3B
 - Llama 3 8B
 - Jellyfish
-- 
+
 
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 
@@ -72,39 +106,10 @@ TODO
 - Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work. 
 - Fine-Tuning issue: possibly could be done with unsloth? I do this this weekend, issue of computational power, time frame, etc. 
 - Utilizing jellyfish/evaporate (so half and half, possibly if it works the best solution?)
-- 
 
+#### Experiment Setup
+Here we describe the use of the gold-standard xml for training etc.
 
-### Data
-The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
-
-The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim, and no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). {cite:t}`kotze_2020` Kotze and Van Rooy remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`. [^footnote2] 
-
-[^footnote2]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`hibbert_2016, hibbert_2003`.
-
-
-The decision was made to process all reports of 2019 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. 2019 was chosen as it constituted an election year, thus giving the opportunity of potentially harnessing more speakers as the NA's composition was altered after elections. Furthermore, as the NA is the largest body in Parliament, it was chosen to again maximise speaker count. 
-
-Do we give speaker counts? How many people spoke?
-
-In total 51 sessions were held in 2019.
-
-#### Data Processing (Parlamint)
-
-Please ignore the lackluster title. I'll come up with something else. Here, I want to introduce xml, TEI and ParlaMint and our approach. Lmk if it goes somewhere else. 
-
-To ensure that the data in this corpus remains both human- and machine-readable while adhering to widely accepted standards, it was decided to encode the transcriptions in XML using the ParlaMint schema {cite:p}`erjavec_2023`, a customisation of the Parla-Clarina schema, which itself is based on the Text Encoding Initiative (TEI) guidelines {cite:p}`tei_consortium_guidelines`. This approach allows the corpus to maintain a consistent structure while also providing a way to encode the specific nuances of parliamentary discourse.
-
-The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including metadata about speakers, speech acts, and contextual annotations. The ParlaMint schema, as a specialized extension of TEI, is particularly suited for parliamentary corpora. It was designed to allow the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2023`. This would allow this corpus to seamlessly integrate with other corpora encoded with the ParlaMint schema.
-
-In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2023`.
-
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African Parliament's website {cite:p}`hansardSA_2020` into txt files, which were then used to create the XML files. 
-The content of these txt-files was barely edited, save for occassional spelling errors within headers and subtitles. 
-
-Here I need to describe how I created the xml Vorlage file. 
-
-By adopting ParlaMint and adhering to the FAIR principles, our methodology ensures the creation of a high-quality, standardized corpus that serves as a robust resource for the research community while preserving the integrity and richness of parliamentary discourse.
 
 
 ## Experiments and Results
