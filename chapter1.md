@@ -16,12 +16,10 @@ jupytext:
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
 ## Introduction
-Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. It has moved data processing and data preprocessing from being a fringe concern into its own field. 
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. #I feel we need some more here?
 
 In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing. This approach serves especially well in cases where there is much raw data but which has not been structured into data collections, as is the case for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data constitutes the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to format this data into the ParliMINT scheme, an interoperable XML scheme for transcripts of parliamentary proceedings, the attempt has been labour intensive and done only on a small scale {cite:p}`ogrodniczuk_2024`. This chapter thus shall attempt to format the parliamentary proceedings into an interoperable XML scheme with the aid of different LLMs without the use of industrial strength hardware. 
 
-
-Probably a paragraph on what we are choosing?
 
 Research Motivation
 Definition of a Corpus 
@@ -33,6 +31,10 @@ Section on South African English as a low resource language
 - ParlaMint test study
 
 The Difficulties of Parlimint (not sure if it should go here or rather in between South african english as low resource and llms?) (I've now moved it here, I think that's much better)
+
+Possibilities of LLMs in cleaning up data lakes
+
+#that's shit
 
 The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of these #ambigous_language_use authors, no attempts at harnessing LLMs for corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized for their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`..`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, respectively correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
 
@@ -106,70 +108,10 @@ By adopting ParlaMint and adhering to the FAIR principles, our methodology ensur
 
 
 ## Experiments and Results
-In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a few-shot approach. For this Ollama was chosen as basesoftware as Ollama offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`matra_2024`. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of dataformatting would be detrimental.
-
-[^footnote]: For the newest updates and developments concerning Ollama consult their [blog](https://ollama.com/blog).
-
-In the first attempt the model was given a prompt of the structure: 
-
-```{code-cell} python
-example = f" "
-prompt = f" {chunk}"
-```
-
-
 ```{tip}
 Make sure that you close Ollama before serving it on the command line, otherwise it will not work.
 To exit Ollama in the command line press ctrl + c.
 ```
-
-A code example is given below with the specification of 
-```{code-cell} python
-import os
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama.llms import OllamaLLM
-
-template = """Question: {question}
-
-Answer: Let's think step by step."""
-
-prompt = ChatPromptTemplate.from_template(template)
-model = OllamaLLM(model="llama3.2")
-
-folder_path = r'test_objects'  # Folder path
-
-def chunk_text(text, chunk_size=5000):
-    words = text.split()
-    for i in range(0, len(words), chunk_size):
-        yield ' '.join(words[i:i + chunk_size])
-
-for filename in os.listdir(folder_path):
-    if filename.endswith('.txt'):
-        file_path = os.path.join(folder_path, filename)
-        try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                print(f'Processing file: {filename}')
-                content = file.read()
-                document_list = []
-                i = 0
-                for chunk in chunk_text(content, chunk_size=1000):
-                    try:
-                        question = f"Do not comment it, do not alter the utterances. Can you adapt the following utterances: {chunk} into a structured XML where you mark the speaker as a tag and copy the utterances into a content field?"
-                        response = model(prompt.format(question=question))
-                        document_list.append(response)
-                        i += 1
-                        if i == 4:  # Limit iterations for debugging
-                            break
-                    except Exception as e:
-                        print(f"Error processing chunk: {e}")
-                output_file = os.path.join(folder_path, f"{os.path.splitext(filename)[0]}.xml")
-                with open(output_file, 'w', encoding='utf-8') as output:
-                    output.write('\n'.join(document_list))
-        except Exception as e:
-            print(f"Error reading file {filename}: {e}")
-```
-
-
 
 
 
