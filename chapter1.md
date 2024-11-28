@@ -31,7 +31,7 @@ Section on South African English as a low resource language
 - Previous corpora: Barnard et al., Jeffrey, ICE corpus, Pienaar and de Klerk, 
 - ParlaMint test study
 
-The Difficulties of Parlimint (not sure if it should go here or rather in between South african english as low resource and llms?) (I've now moved it here, I think that's much better)
+The Difficulties of ParlaMint (not sure if it should go here or rather in between South african english as low resource and llms?) (I've now moved it here, I think that's much better)
 
 Possibilities of LLMs in cleaning up data lakes
 
@@ -60,23 +60,18 @@ Do we give speaker counts? How many people spoke?
 
 In total 51 sessions were held in 2019.
 
-#### ParlaMint
+#### ParlaMint 
 
-Please ignore the lackluster title. I'll come up with something else. Here, I want to introduce xml, TEI and ParlaMint and our approach. Lmk if it goes somewhere else. 
+To ensure that the data in this corpus remains both human- and machine-readable while adhering to widely accepted standards, it was decided to encode the transcriptions in XML using the ParlaMint schema {cite:p}`erjavec_2022`, a customisation of the Parla-Clarina schema, which itself is based on the Text Encoding Initiative (TEI) guidelines {cite:p}`tei_consortium_guidelines`. This approach allows the corpus to maintain a consistent structure while also providing a way to encode the specific nuances of parliamentary discourse.
 
-To ensure that the data in this corpus remains both human- and machine-readable while adhering to widely accepted standards, it was decided to encode the transcriptions in XML using the ParlaMint schema {cite:p}`erjavec_2023`, a customisation of the Parla-Clarina schema, which itself is based on the Text Encoding Initiative (TEI) guidelines {cite:p}`tei_consortium_guidelines`. This approach allows the corpus to maintain a consistent structure while also providing a way to encode the specific nuances of parliamentary discourse.
+The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including but not limited to metadata about speakers. The ParlaMint schema, as a specialized extension of TEI, was designed standardise the encoding of parliamentary data across various languages and regions {cite:p}`ogrodniczuk_2024` and allows for the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2022`. In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2022`. The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`.
 
-The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including metadata about speakers, speech acts, and contextual annotations. The ParlaMint schema, as a specialized extension of TEI, is particularly suited for parliamentary corpora. It was designed to allow the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2023`. This would allow this corpus to seamlessly integrate with other corpora encoded with the ParlaMint schema.
+Adhering to ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
-In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2023`.
-
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African Parliament's website {cite:p}`hansardSA_2020` into txt files, which were then used to create the XML files. 
-The content of these txt-files was barely edited, save for occassional spelling errors within headers and subtitles. 
-
-By adopting ParlaMint and adhering to the FAIR principles, our methodology ensures the creation of a high-quality, standardized corpus that serves as a robust resource for the research community while preserving the integrity and richness of parliamentary discourse.
 
 #### Pre-Processing
-Here I'll describe how I created the XML.
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files, which were then used to create the XML files. 
+The content of these txt-files was barely edited, save for occassional spelling errors within headers and subtitles. 
 
 
 ### Method 
