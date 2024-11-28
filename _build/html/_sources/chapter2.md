@@ -17,95 +17,79 @@ jupytext:
 Stefano Staffa, Andrea Scheck
 
 ## TO DOS
-1. Write "Relevant Literature" (400 words)
-2. Write "Methods & Data" (200 words)
-	- Describe data based on what we already wrote (but more like other papers, take Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" as example): how many words, tokens, sentences, what sources we used (Versions, translation,  Ausgabe etc.), how many neutral, psalms, songs, what languages, what year, literal or non literal translation, why did we use 3 bibles -> check if you can cut & paste some from what we wrote in "Results"
-	- In short: Describe metrics: what do they measure? what do we consider a bad score (below 30) or a good score (above 60)? What variations lead to a bad score for each metric? -> check if you can cut & paste some from what we wrote in "Results"
- 	- In short: Descibe tools: how do they work? -> check if you can cut & paste some from what we wrote in "Results"
-3. Write "Experiments" (650 words?)
-	- Explain process for translation (example sentence translation experiment can be deleted)
-		- Run each paragraph through each MT
-		- Enter MT result into Excel
-	- Explain process for scoring (code, averaging scores)
- 	- Explain how we handled "bad" results (<30%), by running through MT 1 sentence at a time and see if it changes
-  	- Get Thebe to work and insert code which randomly returns one translation + scores for the reader (see table 1 and 2 on Volk et al. (2024): "LLM-based Machine Translation  and Summarization for Latin" page 4 as example - could also be 2 tables for us (translation first in all systems, then all average scores?)
-4. Write "Conclusion" (200 words)
-5. Revise "Introduction" and shorten (300 words)
+~1. Write "Relevant Literature" (400 words)~
 
-After:
-- Revise "Results" and shorten (650 words?), answer questions:
+~2. Write "Methods & Data" (200 words)~
+
+~3. Write "Experiments" (650 words?)~
+
+~4. Write "Conclusion" (200 words)~
+
+~5. Revise "Introduction" and shorten (300 words)~
+
+6. Revise "Results" and shorten (650 words?), answer questions:
   	- What tool has shown the best performance at translating Latin-English?
  	- What metric has shown the best performance at scoring Latin-English translation? Or do we suggest using all 4 and averaging?
 	- Is it easier for MT to translate neutral text than religious text?
-- Write "Abstract" (max. 100 words)
+  
+7. Write "Abstract" (max. 100 words)
 
 ---
 
 ## Introduction
 In 1382, when the Latin Bible was first translated English by John Wycliffe, this process required enormous human effort, extensive knowledge of both Latin and the vernacular, and years of labor by many religious scholars. The result of this translation - a religious text which could be understood by the common population - had groundbreaking and far-reaching impacts on culture and religion. One can hardly imagine how history might have changed had the Bible never been translated into English—or translated less carefully.
-Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting MT can achieve a reasonably good translation quality (source). However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works (Cespedosa & Mitkov, 2023), of which the Bible with its poems and psalms contains many.
+
+Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting MT can achieve a reasonably good translation quality (source). However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works ({cite:p}`Cespedosa2023`), of which the Bible with its poems and psalms contains many.
+
 Given that there are many Latin religious texts which remain untranslated to this day, this chapter raise the question: Does MT serve as a fitting tool for translating Latin religious text to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
 By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts which could provide valuable insights into the historical and intellectual evolution of the Western world.
 
-## Relevant Literature
+## Previous Work
+Work on MT and language modelling for Latin has progressed significantly since the advent of MT, leveraging both traditional and modern approaches. Martínez Garcia and García Tejedor ({cite:t}`Martinez2020`) utilized the Bible as a parallel corpus to build a Transformer-based Neural Machine Translation (NMT) system for Latin-Spanish, addressing challenges associated with Latin's complex morphology and low-resource nature. Similarly, Christodouloupoulos and Steedman ({cite:t}`Christodoulopoulos2014`) demonstrated the utility of the Bible as a parallel corpus in over 100 languages, including Latin, highlighting its structure and consistency as beneficial for multilingual NLP tasks. Liu et al. ({cite:t}`Liu2021`) further confirmed the effectiveness of using biblical texts for improving MT in low-resource settings, underscoring their relevance for Latin translation tasks. 
 
-Volk et al. (2024): LLM-based Machine Translation  and Summarization for Latin
+Beyond religious texts, Fischer et al. ({cite:t}`Fischer2022`) explored translating 16th-century Latin letters into German, emphasizing the importance of tailored training data for domain-specific translation. Bistafa ({cite:t}`Bistafa2024`) examined the challenges of translating Latin scientific texts, particularly the works of mathematician Leonhard Euler, using artificial intelligence and revealing complexities in specialized vocabulary and syntax. These studies highlight the diversity of Latin translation tasks and the potential of MT systems in addressing them. 
 
-Bamman, David; Burns, Patrick J. (2020): Latin BERT: A contextual language model for classical philology
-
-Ogrodniczuk, M.; Kryńska, K. (2022): Evaluating Machine Translation of Latin Interjections in the Digital Library of Polish and Poland-related News Pamphlets
+Recent advancements in Large Language Models (LLMs) have further expanded the possibilities for Latin MT. Volk et al. ({cite:p}`Volk2024`) evaluated GPT-4’s performance on both translation and summarization of Latin texts, achieving superior results compared to traditional MT systems and showcasing LLMs' capabilities in handling historical and low-resource languages. Riemenschneider and Frank ({cite:t}`Riemenschneider2023`) trained multilingual LLMs on Latin corpora, achieving state-of-the-art results for part-of-speech tagging and lemmatization, evaluated against the EvaLatin 2022 dataset. These works collectively provide a strong foundation for investigating LLM-based translation for Latin texts across religious and non-religious domains, as undertaken in this project. 
 
 ## Methods & Data
-As *data*, we are using Latin texts with different writing styles.
+We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
-### Religious text
-For the religious text, we are using the Biblia Sacra iuxta Vulgatam Clementinam released in 2006 by Michaele Tweedale as stored in the MLAT database. From this Bible, we have extracted 11 Latin passages that represent a mixture of neutral language (e.g. in historical descriptions, genealogical record and legal rules), psalms and poems. This resulted in 603 Latin words. For each passage, we have collected three English translations: the translation in the English Standard Version bible (ESV, 2001), in the Douay-Rheims 1899 American Edition bible (DRB, 1899) and in the King James Version bible (KJV, 1611). This resulted in 2558 English words.
+### Data
+Religious texts were sourced from the Biblia Sacra iuxta Vulgatam Clementinam and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the English Standard Version ({cite:p}`ESV2001`), Douay-Rheims ({cite:p}`DRB1899`), and King James Version ({cite:p}`KJV1611`). The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the DRB was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The KJV and the ESV drew from Hebrew, Greek and Latin and adopt a modernized style. 
 
-- Category: Primary source / raw data?
-- Degrees of processing: The texts are minimally processed versions. Any annotations or digital enhancements were deleted. However, the translation into different bibles have obvious differences - which could be attributed to processing by the author due to theological priorities and cultural conventions of the time (e.g. the psalms in the DRB seem closer to narrative prose than the lyrical and poetic style in other translations).
-- Results in different levels of data???
-- Origin: The Bible can be considered **observational data** in the sense that it documents the beliefs, historical events, societal norms, and cultural practices as observed or understood by its authors at the time. Unlike experimental data, the content was observed within the natural context of its time.
-The Bible is also a collection of texts from different authors, time periods, and cultural contexts. These individual books were **gathered** over centuries and assembled into a cohesive canon. In this sense, it represents gathered data.
-Parts of the Bible, such as the historical books (e.g. Chronicles) and the laws, serve as **records** of events and rules observed by the authors. They were intended to document a continuous record.
-- Collection: Resource/community data collection because it was preserved, maintained, and accessed by communities for ongoing reference, teaching, and study.
+To allow for an optimal comparison of MT performance, we aimed to chose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s De Legibus, a key legal text, and Geoffrey of Monmouth’s Historia Regum Britanniae, which includes descriptive historical narratives. 
 
-### Non religious text
-For the more “neutral” texts, we are using De Legibus by Cicero and the Historia Regum Britanniae by Geoffrey of Monmouth.
-#### De Legibus (On the Laws) by Cicero
-- Category: Primary Source / Raw Data
-- Degrees of Processing: The Latin text we use is minimally processed in terms of formatting and digital enhancement, preserving Cicero's original structure and language. The English translation might have interpretative layers added by later authors.
-- Results in different levels of data: Due to its nature, this text remains in the category of raw data for legal and philosophical analysis, maintaining its primary role as a philosophical record.
-- Origin: **observational data**, because the text documents Cicero’s observations and reflections on Roman law and governance, shaped by his legal experience and philosophical studies. Though authored by Cicero, it integrates various philosophical and legal theories, **gathering** ideas from multiple influences like Greek philosophy. In sections, it serves as a **record** of Roman legal ideals.
-- Collection: Resource/community data collection? Reference? since it is consistently referenced in philosophy, legal studies, and historical scholarship.
-
-#### Historia Regum Britanniae (The History of the Kings of Britain) by Geoffrey of Monmouth
-- Category: Primary Source / Raw Data
-- Degrees of Processing: The Latin text we use is minimally processed in terms of formatting and digital enhancement, but Geoffrey’s own authorial choices reflect a certain degree of “editorializing” of Britain’s legends through cultural and political priorities (e.g., framing Britain’s past as noble and legendary).
-- Results in different levels of data: The text remains a primary source
-- Origin: The work **observes** medieval British lore and perceived historical events, blending observation with legend. The text **gathers** various legends and historical anecdotes from British, Welsh, and other regional sources. Parts of Historia act as quasi-historical records.
-- Collection: Resource/community data collection?
-
-### Methods
-As *methods* we are using machine translation with the programs Google Gemini, GPT-4, Google Translator, Yandex Translate, LLaMa.
-
-To score we wrote python scripts.
+This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations. 
 
 ### Metrics
-BLEU:
-ROUGE-L:
-METEOR:
-chrF:
+Translation quality was assessed using four widely recognized metrics: BLEU, ROUGE-L, METEOR, and chrF. Each metric captures a distinct dimension of translation quality, providing a comprehensive evaluation framework. All scores were calculated as percentages from 0 to 100. Thresholds were set to classify scores, with scores below 30 seen as faulty translations and scores exceeding 60 seen as high-quality translations.  
 
-For BLEU: scores below 30 (source: https://cloud.google.com/translate/docs/advanced/automl-evaluate)
-For ROUGE-L: scores below 30 (source: https://klu.ai/glossary/rouge-score)
-For chrF: no universally agreed threshold for good or bad translation, took scores below 30
-For METEOR: no universally agreed threshold for good or bad translation, took scores below 30
+**Bilingual Evaluation Understudy (BLEU)**
+
+BLEU measures the overlap of n-grams (sequences of 1 to 4 words) between the MT and one or more reference translations ({cite:p}`Papineni2002`). It calculates precision for these n-grams and includes a brevity penalty to discourage overly short translations. The metric is particularly suited for evaluating literal translations where exact word matches are critical. However, BLEU is less effective for assessing translations with valid paraphrasing or synonym use, as it does not account for semantic similarity or contextual nuance. A BLEU score of 75 implies high fidelity, while scores below 30 suggest significant deviations from the reference. 
+
+**Recall-Oriented Understudy for Gisting Evaluation (ROUGE-l)** 
+
+ROUGE-L evaluates the longest common subsequence (LCS) between the machine-generated translation and the reference text ({cite:p}`Lin2004`). This emphasizes structural similarity, focusing on recall—the proportion of the reference that appears in the generated text. Unlike BLEU, ROUGE-L is not limited to contiguous n-grams, making it useful for evaluating texts with more flexible word order, such as Latin prose and poetry. It excels in identifying translations that preserve the overall structure and flow of the reference, even if individual word choices differ.   
+
+**Metric for Evaluation of Translation with Explicit ORdering (METEOR)**
+
+METEOR extends beyond BLEU and ROUGE-L by incorporating precision, recall, and additional linguistic features such as stemming (reducing words to their root forms) and synonym matching ({cite:p}`Banerjee2005`). It aligns words semantically rather than strictly lexically, enabling a better assessment of idiomatic expressions, paraphrasing, and non-literal translations. METEOR also assigns higher weights to exact matches while still rewarding partial matches and correct word order. This makes it particularly effective for evaluating poetic and figurative texts where semantic equivalence outweighs literal fidelity. Higher scores reflect greater similarity to the reference, factoring in synonyms and rephrased segments.  
+
+**Character n-gram F-score (chrF)**
+
+chrF operates at the character level, comparing sequences of character n-grams between the machine translation and the reference text ({cite:p}`Popovic2015`). This fine-grained approach is especially advantageous for highly inflectional languages like Latin, where slight morphological differences (e.g., verb conjugations or noun declensions) can significantly alter meaning. By focusing on characters rather than words, chrF provides sensitivity to subtle grammatical nuances that may not be captured by word-based metrics. It also avoids penalizing legitimate variations in word segmentation or inflection. For Latin translations, chrF is particularly valuable for detecting morphological accuracy and alignment with the reference text. 
+
+### Tools 
+Machine translations were generated using GPT-4, Google Translate, Gemini, and Yandex Translate. These systems leverage either pre-trained language models or statistical algorithms to translate Latin texts into English. Each system has strengths suited to specific text types: GPT-4 excels at contextual and semantic nuances, while Google Translate often delivers consistent outputs for literal translations. 
+
+Automated scoring scripts, written in Python, were used to evaluate the MT against gold-standard references. By combining diverse data sources, detailed metrics, and advanced translation systems, this methodology provides a comprehensive framework for evaluating machine translation performance on Latin texts of varying complexity and stylistic nuance. 
 
 ## Experiments
-We began the experimental setup by selecting original Latin excerpts from the aforementioned books and bibles and aligning them with their gold standard translations. The excerpts were translated from Latin to English one at a time through the web interface of Google Translate and Yandex. For ChatGPT (GPT-4o) and Gemini, the excerpts were translated in separate conversations, always preceeded by the same prompt to limit the influence of prior knowledge or external context on the outputs. (Endnote mit dem spezifischen Prompt). Each translated result was then scored against the gold standard using all four chosen metrics (BLEU, ROUGE, METEOR, and chrF). This resulted in a matrix with 4 translations per excerpt and 4 scores per translation.
+The experimental setup began with selecting original Latin excerpts from the aforementioned sources and their corresponding gold-standard translations. The excerpts were translated from Latin to English individually using the web interfaces of Google Translate and Yandex. For GPT-4o and Gemini, translations were conducted in separate conversations, preceded by a standardized prompt to limit the influence of prior knowledge or external context on the outputs<sup>1</sup>. Each translation was then scored against the gold standard using the four metrics (BLEU, ROUGE, METEOR, and chrF), resulting in a matrix with four translations per excerpt and four scores per translation.
 
-Table 1 below allows for a look into the translation results:
-
+Table 1 allows for a look into the translation results:
+(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its translation by all MT systems*)
 ```{code-cell} python
 import pandas as pd
 import random
@@ -126,31 +110,41 @@ for column, value in random_row.items():
 display(Markdown(table))
 ```
 
-<button onclick="thebeButton()">Regenerate</button>
-
-<script>
-    function thebeButton() {
-        Jupyter.notebook.execute_cells([0]);  // 0 is the index of the hidden cell with your function
-    }
-</script>
-
-
 ### Low BLEU scores
-Examining the results of the scoring process, we were surprised at the low BLEU scores across most texts (average...). Out of X translations, BLEU was below the threshold of 30% for X, indicating significant errors in the translation. As we averaged the metric scores, the low BLEU scores resulted in a considerable negative impact for most results. To address this, the median of the metrics was considered additionally to the average to mitigate the disproportionate impact of low BLEU scores.
-Volk et al. (2024) observed a BLEU score of 25.22 for Google Translate and 34.50 for GPT-4. (compare to our results)
+Examining the scoring results, we observed low BLEU scores across texts, with an overall BLEU average of 24.86%. Of the 49 translations, 35 received a BLEU score below the threshold of 30%, indicating notable errors in lexical or syntactic accuracy. Since the scores of all metrics were averaged, these low BLEU scores negatively influenced the overall results of almost every translation. To address this, we also considered the median of the metrics alongside the average, mitigating the impact of outliers caused by low BLEU scores.
+
+While seemingly low, these scores align with prior research: Volk et al. (2024) observed a BLEU score of 25.22% for Google Translate and 34.50% for GPT-4. Our findings, with BLEU averages of 25.32% for Google Translate and 56.69% for GPT-4, indicate no major errors during the experiments but consistency in the outputs, while also highlighting a notable improvement in GPT-4’s performance compared to earlier projects.
 
 Table 2 allows for a look into the scores for a random translation:
-...
+(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its scores in all metrics*)
+```{code-cell} python
+import pandas as pd
+import random
+from IPython.display import display, Markdown
+
+csv_path_scores = "data/scores.csv"  # CSV with all scores
+data_scores = pd.read_csv(csv_path_scores, delimiter=';')
+
+random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
+
+# Show in a table
+table_scores = "| Source | BLEU average | ROUGE average | chrF average | METEOR average |\n"
+table_scores += "|--------|--------------|---------------|--------------|----------------|\n"
+for column, value in random_row_scores.items():
+    # Only show the first 400 characters for the Source (although it shouldn't exceed 400 characters)
+    truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
+    table_scores += f"| {truncated_value} " if column == 'Source' else f"| {truncated_value} "
+table_scores += "|\n"
+display(Markdown(table_scores))
+```
 
 ### Error proofing 
-Six translations received an average score below 30%, indicating they contained significant errors. These included Psalm 88: 3-7 (DRB), Psalm 23: 4-6 (DRB), Book 1 Chapter 13 of the History of the Kings of Britain, Job 3: 11-13 (in both the ESV and the KJV), and Book 1 Section 40 of De Legibus. Upon review, we were able to identify issues with three gold standard translations, where they had been incorrectly or incompletely processed. Correcting these discrepancies raised the average score of the effected excerpts to X, Y and Z respectively.
+Six translations received an overall average score below 30%, indicating significant errors in the translation. These included Psalm 88:3-7 (DRB), Psalm 23:4-6 (DRB), Book 1 Chapter 13 of The History of the Kings of Britain, Job 3:11-13 (in both the ESV and KJV), and Book 1 Section 40 of De Legibus. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30%, marking them as acceptable translations.
 
 ### Retranslations
-Despite these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. For these texts, we modified the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to reduce the impact of long, syntactically complex sentences, which are challenging for MT systems (source). While this method resulted in slight improvements for all three texts, their average scores remained below 30%. Possible reasons are discussed in detail in the following chapter.
+After these corrections, three texts remained with an average score below 30%: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, which are particularly difficult for MT systems to handle (He, 2023). While this method improved the score for The History of the Kings of Britain by 1.8%, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remained below 30%. Possible reasons for these results are explored in detail in the following chapter.
 
 ## Results & Discussion
-
-(Teil Andrea)
 ### Analysing scores
 Considering the average and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
 ![Scatter plot](https://github.com/user-attachments/assets/f86b18c9-e09b-4607-8be7-c755181ba1e9)
@@ -166,7 +160,6 @@ The translations for History of the Kings of Britain show a wider range of score
 Examining **Book 1, Chapter 13** in detail, the Latin source used a vivid, descriptive language, explicitely depicting the violence of Corineus’s actions. For example, the original described him severing arms, decapitating enemies, and engaging in  physical combat. The gold standard translation simplified this text by consolidating actions and reducing the intensity. For example, the gold standard translation used phrases like “terrible slaughter” and omitted the specific actions, which could lead to lower BLEU scores due to discrepancies in n-gram matches.
 
 As this text fell below the threshold of 30%, we also retranslated it with each MT system sentence by sentence instead of as a whole paragraph, to ensure that the length of the text was not a negative influence on the scores. This marginally improved the scores, with the average rising from 27.33 to 29.13, a percentage-wise improvement of approximately 6.57 %. Still, even the improved score from sentence-to-sentence-translation was not adequate enough to reach the 30%-threshold. (Gehört ev. mehr Richtung Methods)
-
 
 #### Religious texts
 For the bible translations, we translated the Latin Vulgate as the original source and compared the outcomes to three different English versions of the bible.
@@ -225,8 +218,6 @@ Additionally, whether neutral-tone texts generally performed better than poetry 
 - Songs consistently scored higher than poetry. Examples include Psalm 23 and Psalm 149, which averaged 46-65%.
 
 (*Notizen, die nicht zu meinem Vergleich gehören, aber aufgefallen sind*
-- Across the board, the median scores were slightly higher than the averages, indicating that a substantial proportion of translations performed better than the average, with a few outliers pulling down the overall mean. This suggests that while some translations may struggle, the general performance of MT systems remains relatively high and consistent.
-- The BLEU scores tended to be lower compared to other metrics, reflecting the common limitations of this metric in evaluating creative or interpretive translation tasks. BLEU’s strict adherence to exact n-gram matches means that translations which paraphrase or modify sentence structure (such as in the gold standard) are penalized, regardless of their accuracy or faithfulness to the source content.
 - The BLEU scores for this source were notably low, especially for Book 1, Chapter 13, where it was just 6.71%. This highlights the difficulty of machine translation in retaining exact word matches when the source text is rich in descriptive detail. This also lead to a noticeable gap between average and median scores, indicating that most translations performed better than the overall average, but the BLEU scores pulled down the mean scores significantly.)
 
 ### Possible explanations
@@ -237,8 +228,6 @@ Machine translations, often designed to process texts literally, are more likely
 
 When comparing the scores between the DRB and De Legibus and History of the Kings, the latter two often feature complex sentence structures, with frequent use of subordinate clauses, legal jargon, or historical references. De Legibus in particular uses legal and philosophical terminology, which seems challenging for MT models. On the other hand, the DRB has a very formal, literal language, with the bible in general having a highly consistent structure, which MT systems can more easily map.
 Religious texts, particularly those like the DRB, often have a well-established vocabulary and phrasing that aligns with traditional theological discourse. MT systems may have encountered similar texts during training, allowing for more accurate translations. De Legibus and History of the Kings of Britain belong to genres (philosophy, law, and history) that may not be as heavily represented in training data for machine translation systems.
-(Ende Teil Andrea)
-
 
 #### GPT-4o:
 GPT-4o emerges as the most versatile and reliable performer across all evaluated metrics. For biblical texts, it achieves the best results with a BLEU score of 28.74 and a ROUGE score of 58.27, reflecting a high degree of accuracy in both lexical and structural reproduction. The chrF score of 54.44 and METEOR score of 57.28 further underscore its ability to maintain semantic and stylistic alignment.
@@ -264,9 +253,12 @@ For non-Bible texts, BLEU again shows the largest variability, with scores spann
 
 Across all tools, the metrics reveal a consistent trend: translations of non-biblical texts score lower due to their greater stylistic variability and linguistic complexity. BLEU and ROUGE, which emphasize precision and recall for specific lexical and syntactic features, show sharper declines for such texts, highlighting the difficulty in preserving structural elements. Meanwhile, chrF, which balances character-level precision and recall and METEOR, which incorporates synonym matching and semantic alignment, show relatively smaller variations between text types. This suggests that even when lexical and stylistic accuracy falters, tools maintain a fair degree of meaning preservation. Overall, the trend underscores the challenges posed by diverse linguistic structures and the importance of metric selection for evaluating translation quality in varying contexts.
 
-
 ## Conclusion
+This study highlights the varied performance of MT systems in translating Latin texts, revealing distinct strengths and weaknesses across different text types and evaluation metrics. GPT-4o consistently outperformed other systems, particularly with structured and repetitive content like religious texts, achieving the highest scores across BLEU, ROUGE-L, METEOR, and chrF metrics. In contrast, systems like Yandex struggled significantly, especially with stylistically diverse and complex texts. 
 
+Religious texts demonstrated higher overall translation quality compared to neutral texts, likely due to the structured and consistent nature of their source material. Notably, the Douay-Rheims Bible provided the most favorable benchmark, suggesting that older, more literal translations align better with MT capabilities. Here, it is importatnt to note that the best scoring translation does not automatically equate to the most readable translation for modern readers. Additional challenges persisted with poetic and highly emotional passages, as MT systems often failed to replicate nuanced tone and rhetorical complexity.  
+
+The findings underscore the importance of text type and evaluation metric selection in MT research. While MT has advanced significantly, translating low-resource languages like Latin still demands refinements, particularly for creative and interpretive content. Future work could explore improved contextual understanding in MT systems and expand training datasets to include more diverse examples, aiding the broader goals of digital humanities and classical studies. 
 
 ## Bibliography
 {cite:p}``
@@ -275,23 +267,5 @@ Across all tools, the metrics reveal a consistent trend: translations of non-bib
 :filter: docname in docnames
 ```
 
-## Notes / Things that were deleted 
-
-From experiments:
-The prompt: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases."
-
-| Assessment of tone | Source | Latin              | Gold standard translation      | GPT-4 (ChatGPT)              | Google Gemini             | Google Translate            | Yandex                    | LLaMa                   |
-|--------------------|--------|--------------------|--------------------------------|------------------------------|----------------------------|-----------------------------|---------------------------|-------------------------|
-| Test               | Test   | Ī, curre per Alpīs. | Go, run across the Alps.       | Go, run through the Alps.    | Hey! Run through the Alps! | Ī, run through the Alps.    | Run through The Alps.     | N/A                     |
-
-
-| Score with...   | GPT Score | Gemini Score | GT Score | Yandex Score | LLaMa Score |
-|------------------|-----------|--------------|----------|---------------|--------------|
-| **BLEU**         | 41.11     | 13.13        | 30.74    | 14.32         | 0.00         |
-| **ROUGE-L**      | 80.00     | 60.00        | 66.67    | 66.67         | 0.00         |
-| **chrF**         | 51.95     | 29.43        | 42.11    | 32.51         | 2.01         |
-| **METEOR**       | 84.13     | 36.51        | 69.14    | 55.15         | 0.00         |
-
-from intro:
-While GPT-4 and Gemini are not strictly traditional MT systems, but rather large language models and AI-powered tools, they have shown promise in Latin translation tasks and are increasingly used in the field (source will follow). Previous research (Volk et al., 2024) has also highlighted the variation in the Latin translation quality of these systems, further motivating this comparison.
-
+## Appendix
+<sup>1</sup>	Prompt used for GPT-4o and Gemini during the experiments: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases." (followed by Latin excerpt)
