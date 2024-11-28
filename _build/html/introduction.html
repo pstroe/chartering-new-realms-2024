@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -38,11 +36,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -66,7 +63,6 @@
     <link rel="prev" title="Preface" href="preface.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,8 +78,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -91,6 +98,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -98,8 +106,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -115,8 +123,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -146,17 +153,21 @@
     
     
     <img src="_static/chartering-new-realms-logo.png" class="logo__image only-light" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
-    <img src="_static/chartering-new-realms-logo.png" class="logo__image only-dark pst-js-only" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
+    <script>document.write(`<img src="_static/chartering-new-realms-logo.png" class="logo__image only-dark" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -324,16 +335,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -364,62 +383,62 @@
 <p>The origins of AI have long been debated. Some claim it to go back to the ancient Egyptians <span id="id1">[<a class="reference internal" href="#id21" title="Alexandre Gefen, Léa Saint-Raymond, and Tommaso Venturini. AI for Digital Humanities and Computational Social Sciences, pages 191–202. Springer International Publishing, Cham, 2021. URL: https://doi.org/10.1007/978-3-030-69128-8_12, doi:10.1007/978-3-030-69128-8_12.">Gefen <em>et al.</em>, 2021</a>]</span>. <span id="id2">Gefen <em>et al.</em> [<a class="reference internal" href="#id21" title="Alexandre Gefen, Léa Saint-Raymond, and Tommaso Venturini. AI for Digital Humanities and Computational Social Sciences, pages 191–202. Springer International Publishing, Cham, 2021. URL: https://doi.org/10.1007/978-3-030-69128-8_12, doi:10.1007/978-3-030-69128-8_12.">2021</a>]</span> makes it clear that …</p>
 <div class="docutils container" id="id3">
 <div role="list" class="citation-list">
-<div class="citation" id="id7" role="doc-biblioentry">
+<div class="citation" id="id25" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p><strong>missing editor in KJV1611</strong></p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p><strong>missing editor in ESV2001</strong></p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>English College at Rheims and Douay. <em>DRB</em>. Douay Bible, 1899.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
 <p>Satanjeev Banerjee and Alon Lavie. METEOR: an automatic metric for MT evaluation with improved correlation with human judgments. In Jade Goldstein, Alon Lavie, Chin-Yew Lin, and Clare Voss, editors, <em>Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization</em>, 65–72. Ann Arbor, Michigan, 2005. Association for Computational Linguistics. URL: <a class="reference external" href="https://aclanthology.org/W05-0909">https://aclanthology.org/W05-0909</a>.</p>
 </div>
-<div class="citation" id="id25" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
-<p>King James Bible. <em>KJV</em>. Robert Barker, 1611. Standard Protestant Bible translation.</p>
-</div>
 <div class="citation" id="id12" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
 <p>Sylvio R. Bistafa. Translating scientific latin texts with artificial intelligence: the works of euler and contemporaries. 2024. URL: <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">https://doi.org/10.48550/arXiv.2307.07520</a>, <a class="reference external" href="https://arxiv.org/abs/2307.07520">arXiv:2307.07520</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">doi:10.48550/arXiv.2307.07520</a>.</p>
 </div>
 <div class="citation" id="id22" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
 <p>Ana Isabel Cespedosa Vázquez and Ruslan Mitkov. Machine translation of literary texts: genres, times and systems. In Raquel Lázaro Gutiérrez, Antonio Pareja, and Ruslan Mitkov, editors, <em>Proceedings of the First Workshop on NLP Tools and Resources for Translation and Interpreting Applications</em>, 48–53. Varna, Bulgaria, September 2023. INCOMA Ltd., Shoumen, Bulgaria. URL: <a class="reference external" href="https://aclanthology.org/2023.nlp4tia-1.7">https://aclanthology.org/2023.nlp4tia-1.7</a>.</p>
 </div>
 <div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
 <p>Christos Christodoulopoulos and Mark Steedman. A massively parallel corpus: the bible in 100 languages. <em>Language Resources and Evaluation</em>, 49:1–21, 06 2014. URL: <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">https://doi.org/10.1007/s10579-014-9287-y</a>, <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">doi:10.1007/s10579-014-9287-y</a>.</p>
 </div>
-<div class="citation" id="id23" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
-<p>Crossway. <em>ESV</em>. Crossway, 2001. English translation.</p>
-</div>
 <div class="citation" id="id15" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
 <p>Lukas Fischer, Patricia Scheurer, Raphael Schwitter, and Martin Volk. Machine translation of 16th century letters from latin to german. In <em>Proceedings of the Workshop on Computational Methods for Historical Texts</em>. 01 2022.</p>
 </div>
 <div class="citation" id="id21" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
 <p>Alexandre Gefen, Léa Saint-Raymond, and Tommaso Venturini. <em>AI for Digital Humanities and Computational Social Sciences</em>, pages 191–202. Springer International Publishing, Cham, 2021. URL: <a class="reference external" href="https://doi.org/10.1007/978-3-030-69128-8_12">https://doi.org/10.1007/978-3-030-69128-8_12</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-030-69128-8_12">doi:10.1007/978-3-030-69128-8_12</a>.</p>
 </div>
 <div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
 <p>Chin-Yew Lin and Franz Josef Och. Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In <em>Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04)</em>, 605–612. Barcelona, Spain, 2004. URL: <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">https://doi.org/10.3115/1218955.1219032</a>, <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">doi:10.3115/1218955.1219032</a>.</p>
 </div>
 <div class="citation" id="id11" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
 <p>Ling Liu, Zach Ryan, and Mans Hulden. The usefulness of bibles in low-resource machine translation. <em>Proceedings of the Workshop on Computational Methods for Endangered Languages</em>, 1:, 01 2021. URL: <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">https://doi.org/10.33011/computel.v1i.957</a>, <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">doi:10.33011/computel.v1i.957</a>.</p>
 </div>
 <div class="citation" id="id9" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
 <p>Eva Martínez Garcia and Álvaro García Tejedor. Latin-Spanish neural machine translation: from the Bible to saint augustine. In Rachele Sprugnoli and Marco Passarotti, editors, <em>Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages</em>, 94–99. Marseille, France, 2020. European Language Resources Association (ELRA). URL: <a class="reference external" href="https://aclanthology.org/2020.lt4hala-1.14">https://aclanthology.org/2020.lt4hala-1.14</a>.</p>
 </div>
 <div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
 <p>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. Bleu: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, <em>Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics</em>, 311–318. Philadelphia, Pennsylvania, USA, 2002. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">https://doi.org/10.3115/1073083.1073135</a>, <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">doi:10.3115/1073083.1073135</a>.</p>
 </div>
 <div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
-<p>Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, <em>Proceedings of the Tenth Workshop on Statistical Machine Translation</em>, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">https://doi.org/10.18653/v1/W15-3049</a>, <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">doi:10.18653/v1/W15-3049</a>.</p>
-</div>
-<div class="citation" id="id24" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
-<p>The Challoner Revision. <em>DRB</em>. Douay Bible, 1899. Catholic Bible translation.</p>
+<p>Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, <em>Proceedings of the Tenth Workshop on Statistical Machine Translation</em>, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">https://doi.org/10.18653/v1/W15-3049</a>, <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">doi:10.18653/v1/W15-3049</a>.</p>
 </div>
 <div class="citation" id="id16" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
@@ -522,8 +541,8 @@ By Phillip B. Ströbel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
