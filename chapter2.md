@@ -32,7 +32,9 @@ Stefano Staffa, Andrea Scheck
 
 ## Introduction
 In 1382, when the Latin Bible was first translated English by John Wycliffe, this process required enormous human effort, extensive knowledge of both Latin and the vernacular, and years of labor by many religious scholars. The result of this translation - a religious text which could be understood by the common population - had groundbreaking and far-reaching impacts on culture and religion. One can hardly imagine how history might have changed had the Bible never been translated into English—or translated less carefully.
+
 Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting MT can achieve a reasonably good translation quality (source). However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works (Cespedosa & Mitkov, 2023), of which the Bible with its poems and psalms contains many.
+
 Given that there are many Latin religious texts which remain untranslated to this day, this chapter raise the question: Does MT serve as a fitting tool for translating Latin religious text to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
 By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts which could provide valuable insights into the historical and intellectual evolution of the Western world.
 
@@ -56,20 +58,25 @@ This combination of literal and non-literal translations was expected to highlig
 ### Metrics
 Translation quality was assessed using four widely recognized metrics: BLEU, ROUGE-L, METEOR, and chrF. Each metric captures a distinct dimension of translation quality, providing a comprehensive evaluation framework. All scores were calculated as percentages from 0 to 100. Thresholds were set to classify scores, with scores below 30 seen as faulty translations and scores exceeding 60 seen as high-quality translations.  
 
-**Bilingual Evaluation Understudy (BLEU)** 
+**Bilingual Evaluation Understudy (BLEU)**
+
 BLEU measures the overlap of n-grams (sequences of 1 to 4 words) between the MT and one or more reference translations (Papineni et al., 2002). It calculates precision for these n-grams and includes a brevity penalty to discourage overly short translations. The metric is particularly suited for evaluating literal translations where exact word matches are critical. However, BLEU is less effective for assessing translations with valid paraphrasing or synonym use, as it does not account for semantic similarity or contextual nuance. A BLEU score of 75 implies high fidelity, while scores below 30 suggest significant deviations from the reference. 
 
 **Recall-Oriented Understudy for Gisting Evaluation (ROUGE-l)** 
+
 ROUGE-L evaluates the longest common subsequence (LCS) between the machine-generated translation and the reference text (Lin and Och, 2004). This emphasizes structural similarity, focusing on recall—the proportion of the reference that appears in the generated text. Unlike BLEU, ROUGE-L is not limited to contiguous n-grams, making it useful for evaluating texts with more flexible word order, such as Latin prose and poetry. It excels in identifying translations that preserve the overall structure and flow of the reference, even if individual word choices differ.   
 
 **Metric for Evaluation of Translation with Explicit ORdering (METEOR)**
+
 METEOR extends beyond BLEU and ROUGE-L by incorporating precision, recall, and additional linguistic features such as stemming (reducing words to their root forms) and synonym matching (Banerjee and Lavie, 2005). It aligns words semantically rather than strictly lexically, enabling a better assessment of idiomatic expressions, paraphrasing, and non-literal translations. METEOR also assigns higher weights to exact matches while still rewarding partial matches and correct word order. This makes it particularly effective for evaluating poetic and figurative texts where semantic equivalence outweighs literal fidelity. Higher scores reflect greater similarity to the reference, factoring in synonyms and rephrased segments.  
 
 **Character n-gram F-score (chrF)**
+
 chrF operates at the character level, comparing sequences of character n-grams between the machine translation and the reference text (Popovic, 2015). This fine-grained approach is especially advantageous for highly inflectional languages like Latin, where slight morphological differences (e.g., verb conjugations or noun declensions) can significantly alter meaning. By focusing on characters rather than words, chrF provides sensitivity to subtle grammatical nuances that may not be captured by word-based metrics. It also avoids penalizing legitimate variations in word segmentation or inflection. For Latin translations, chrF is particularly valuable for detecting morphological accuracy and alignment with the reference text. 
 
 ### Tools 
 Machine translations were generated using GPT-4, Google Translate, Gemini, and Yandex Translate. These systems leverage either pre-trained language models or statistical algorithms to translate Latin texts into English. Each system has strengths suited to specific text types: GPT-4 excels at contextual and semantic nuances, while Google Translate often delivers consistent outputs for literal translations. 
+
 Automated scoring scripts, written in Python, were used to evaluate the MT against gold-standard references. By combining diverse data sources, detailed metrics, and advanced translation systems, this methodology provides a comprehensive framework for evaluating machine translation performance on Latin texts of varying complexity and stylistic nuance. 
 
 ## Experiments
@@ -205,8 +212,6 @@ Additionally, whether neutral-tone texts generally performed better than poetry 
 - Songs consistently scored higher than poetry. Examples include Psalm 23 and Psalm 149, which averaged 46-65%.
 
 (*Notizen, die nicht zu meinem Vergleich gehören, aber aufgefallen sind*
-- Across the board, the median scores were slightly higher than the averages, indicating that a substantial proportion of translations performed better than the average, with a few outliers pulling down the overall mean. This suggests that while some translations may struggle, the general performance of MT systems remains relatively high and consistent.
-- The BLEU scores tended to be lower compared to other metrics, reflecting the common limitations of this metric in evaluating creative or interpretive translation tasks. BLEU’s strict adherence to exact n-gram matches means that translations which paraphrase or modify sentence structure (such as in the gold standard) are penalized, regardless of their accuracy or faithfulness to the source content.
 - The BLEU scores for this source were notably low, especially for Book 1, Chapter 13, where it was just 6.71%. This highlights the difficulty of machine translation in retaining exact word matches when the source text is rich in descriptive detail. This also lead to a noticeable gap between average and median scores, indicating that most translations performed better than the overall average, but the BLEU scores pulled down the mean scores significantly.)
 
 ### Possible explanations
