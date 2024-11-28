@@ -50,14 +50,49 @@ The decision was made to process all reports of 2020 from the National Assembly,
 
 To ensure that the data in this corpus remains both human- and machine-readable while adhering to widely accepted standards, it was decided to encode the transcriptions in XML using the ParlaMint schema {cite:p}`erjavec_2022`, a customisation of the Parla-Clarina schema, which itself is based on the Text Encoding Initiative (TEI) guidelines {cite:p}`tei_consortium_guidelines`. This approach allows the corpus to maintain a consistent structure while also providing a way to encode the specific nuances of parliamentary discourse.
 
-The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including but not limited to metadata about speakers. The ParlaMint schema, as a specialized extension of TEI, was designed standardise the encoding of parliamentary data across various languages and regions {cite:p}`ogrodniczuk_2024` and allows for the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2022`. In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2022`. The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`.
+The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including but not limited to metadata about speakers. The ParlaMint schema, as a specialized extension of TEI, was designed standardise the encoding of parliamentary data across various languages and regions {cite:p}`ogrodniczuk_2024` and allows for the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2022`. In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2022`. 
+The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`. Each corpus was prepared in two versions, one being the filly marked-up corpus with speeches in plain text, the other being identical to the first but with added linguistic annotation {cite:p}`erjavec_2022`.
 
 Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
 
 #### Pre-Processing
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files, which were then used to create the XML files. 
-The content of these txt-files was barely edited, save for occassional spelling errors within headers and subtitles. 
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files, which were then used to create the XML files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. 
+
+A ParlaMint corpus is contained within a <teiCorpus> element, which includes a <teiHeader> for overarching metadata and multiple <TEI> elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. 
+
+To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. 
+
+Example structure of the corpus root file:
+
+```{code-cell} xml
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>...</teiHeader>
+  <TEI>...</TEI> <!-- Corpus component -->
+  <TEI>...</TEI> <!-- Corpus component -->
+  ...            <!-- More corpus components -->
+</teiCorpus>
+```
+
+A corpus component file consists of one <TEI> element. The <teiHeader> within the <TEI> element contains metadata specific to the component, such as details about the parliamentary session, date, and participants. The <text> element holds the actual transcription of the parliamentary proceedings. This transcription is organized into divisions like <div>, which may represent different sessions or segments, and further into <u> elements for individual utterances. Each <u> element is typically associated with a speaker, identified through attributes that link to the metadata in the <teiHeader>.
+
+Example structure of a corpus component file:
+
+```{code-cell} xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>...</teiHeader>
+ <text>
+    <body>
+      <div type="commentSection">...</div>
+      <div type="debateSection">...</div>
+      <div type="debateSection">...</div>
+    ...
+    </body>
+ </text>
+</TEI>
+```
+
+The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary. For the purposes of this paper, this extensive amount of metadata will be forgone.
 
 
 ### Method 
