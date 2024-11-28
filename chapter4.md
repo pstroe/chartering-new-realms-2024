@@ -18,7 +18,7 @@ jupytext:
 *Sonja Huber*
 
 note for the reviewers of the first draft:
-see [in brackets] what I plan on adding / changing or general notes.
+see [in brackets] what I plan on adding / changing or general notes. also, the chapters consisting mostly out of bullet points I still need to write.
 
 ## Abstract
 
@@ -49,7 +49,7 @@ From the perspective of literary studies, where close readings have a long tradi
 
 In other words: if we want to see things that are not visible from up close, we need to "zoom out", while being aware of the fact that we are losing some of the things that were visible from up close in turn.
 Some examples for different approaches that examine different topics of interest in literature studies using computational methods, such as can for instance be found here{cite:p}`rosendahlthomsen2023`
-While Moretti was, in 2013, mostly thinking about how in a few years it would be possible to investigate stylistic structures in large corpora,[TODO: find this passage and reference to it] we might right now even be able to investigate more complicated matters such as semantic structures or speech assignment, that deterministic algorithms struggle with.
+While Moretti was, in 2013, mostly thinking about how in a few years it would be possible to investigate stylistic structures of novels in large corpora{cite:p}`{see}moretti2013{p. 164}`, we might right now even be able to investigate more complicated matters such as semantic structures or speech assignment, that deterministic algorithms struggle with.
 Some examples for different approaches that examine topics of interest in literature studies, such as Genre, Rhythm or ehtics, usind computational methods can for instance be found here{cite:p}`rosendahlthomsen2023`, an introductory website by Aarhus University.
 
 But now on to the possibilities of character networks for literary studies. To Moretti, character-networks extracted from plays and visualised in graphs are "Time turned into space"{cite:p}`moretti2011{p. 83}` and can be useful to examine the plot as a whole:
@@ -84,7 +84,7 @@ For visualising the free and simple tool Graphviz will be used. It is under a co
 ### Data
 
 The Data used in this experiment are the six german *Erzählungen* contained in Adalbert Stifter(* 1805, † 1868)'s *Bunte Steine* ("colorful stones"): *Granit, Kalkstein, Turmalin, Bergkristall, Katzensilber, Bergmilch*. The text of these stories is freely available on projekt-gutenberg.org {cite:p}`stiftera`.
-*Bunte Steine* is associated with the german literary epoch of *Biedermeier*, which is often telling stories of a small scale, nature and families, staying away from the political or epic storylines [in Handbuch nachschlagen].
+*Bunte Steine* is associated with the german literary epoch of *Biedermeier*, which is often telling stories of a small scale, nature and families, staying away from the political or epic storylines [add some info about Bunte Steine].
 
 The tales have the following word- and line-counts:
 
@@ -101,17 +101,17 @@ Following the dimensions of data classification suggested by {cite:t}`borgman201
 
 
 
-## Experiments
+## Experiment
 
 
-### Experiment setup / Ablauf
+### Experiment Workflow
 
-Due to reasons of accessability, the LLM GPT-4o, as used in the Chat-environmane of ChatGPT was used. In order to ensure no influences from prior conversations, the memory setting was turned off, and for each story a new conversation was started.
+Due to reasons of accessability, the LLM GPT-4o, as used in the Chat-environment of ChatGPT with the Personal Plus plan was used. In order to ensure no influences from prior conversations, the memory setting was turned off, and for each tale or each time the prompt changed, a new conversation was started.
+Through the iterative process of refining the prompts and the approach in general until the results were of acceptable quality, the following prompting-strategy was developed. Early on in the prompt refining process, the prompts were chosen to be in english as equivalent german prompts did perform considerably worse than english ones.
+Since the research on prompting so far has found that well-performing prompts on one model has no guarantee to work well with another {cite}`leidinger2023`, it has to be said here that the following might need to be adjusted to any following research that is is examining different texts or using a different model.
+The following is the first prompt for each conversation, that instructed the model about the task ahead:
 
-Through the iterative process of refining the prompts and the Vorgehen in general until the results were of acceptable quality, the following prompting-strategy was developed. The prompts are in english even though the text is in german as german prompts seem to have computed worse than german ones.[das kann man fix von irgendwo zitieren...]
-Since the research on prompting so far has found out that well-performing prompts on one model has no guarantee to work well with another {cite}`leidinger2023`, be aware that
-
-1. **The first prompt**:
+_The first prompt_:
 
     I will provide you consecutively with multiple parts of a story. Do the following:
 
@@ -123,11 +123,18 @@ Since the research on prompting so far has found out that well-performing prompt
 
     Ready?
 
-Then, after the response from the LLM, follows the first 150 lines of the text. That length was chosen to be below the context of [...] one can enter in the ChatGPT interface.
+Then, after the response from the LLM, follows the first 100 lines of the text. That length was approximated to be, on the upper end, below the context of 128k tokens {cite:p}`zotero-2625` one can enter in the ChatGPT interface using the model GPT-4o, but also be short enough to ensure reliable output, as with about 150 lines, instability in the ouput was experienced.
 
-The output from the LLM then might look like this [insert image of output]. The examples, the LLM has to provide and the comments to said examples are supposed to show on what sentence the model makes the decision wheter two characters are speaking to each other or not. At the end, a downloadable tsv containing a matrix of speaking characters is provided by the LLM. This I then stored locally, to provide to the model in the following prompt:
+The output from the LLM then might look like this:
 
-2. **every prompt except the first, followed by more literary text**
+![alt text](images/chatgpt_output_example.png)
+Fig. 3: _Example Output in ChatGPT_
+
+
+The examples the LLM has to provide and the comments to said examples are supposed to show on what sentence the model makes the decision wheter two characters are speaking to each other or not. Additionally, the listing of the references to the characters are supposed to help the model disambiguate. Whether these additional outputs have a measurable effect on the output cannot be evaluated in this experiment, but they do provide a sort of transparency or explainability on a high level to what the model could extract from the literary text.
+At the end, a tsv containing a matrix of speaking characters is provided, which can be copied into an empty tsv. This I then store locally, to provide to the model in the following prompt:
+
+_Every prompt except the first, followed by more literary text_:
 
     Here is the next part of the story and the interaction-table so far. Remember the prompt:
 
@@ -141,14 +148,12 @@ The output from the LLM then might look like this [insert image of output]. The 
     Do all of these steps! Do not skip any of them.
 
 
+The next 100 or so lines of the literary text are inserted at the end of this prompt. Additionally, I attach the previously produced tsv-file. This, as well as the constant repeating of the prompt is necessary to not let the LLM "lose sight of" the exact prompt and previous interactions as the context largens.
+This iterative process continues, until all the text has been given to the model and the last update to the character-matrix in tsv-form has been provided.
 
-Following this prompt, the next 150 or so lines of the literary text are inserted. Also, I attach the previously produced tsv-file. This, as well as the constant repeating of the prompt, is necessary to not let the LLM "lose sight of" the prompt as the context largens.
+Now it is necessary to check the final tsv for obvious errors. Often, as can also be seen in Fig.3, the diagonal that should be all 0, is all 1. Sometimes, the LLM will enter some characters twice into the matrix, or assign values higher than 1 if two characters spoke more than once. For the sake of what the result should be -- a graph only displaying that characters spoke, but not how often -- these small things can be changed by hand.
 
-This iterative process continues, until all the text has been given to the model and the last update to the character-matrix tsv has been provided for download.
-
-Now, as I will explain further in chapter [problems that occurred], it is necessary to check the tsv for obvious errors. Sometimes, the LLM will enter some characters twice into the matrix, or assign values higher than 1 if two characters spoke more than once. For the sake of what the result should be -- a graph only displaying that characters spoke, but not how often -- these small things can be changed by hand.
-
-Then, to finally get from the tsv to a .dot file that can be used to produce a graph using graphviz, it is possible to either, prompt the LLM again to convert the file, or do it with a simple script yourself. As the script is a more reliable option -- without very specific prompt, the LLM will vary in the way it makes the graphes look -- I chose that one, click to test with an example tsv of the tale _Bergkristall_:
+Then, to finally get from the tsv to a .dot file that can be used to produce a graph using graphviz, it is possible to either prompt the LLM again to convert the file, or do it with a simple script yourself. As the script is a more reliable option -- without very specific prompt, the LLM will vary in the way it makes the graphes look -- I recomment the script. Click below to test with an example tsv of the tale _Bergkristall_:
 
 
 ``` {code-block} python
@@ -183,73 +188,61 @@ tsv_to_dot(input_tsv, output_dot)
 ```
 
 
-first experiments results:
-
-Here the example images:
-
-![alt text](images/Bergkristall_network.png)
-Fig. 1: _Character Network Bergkristall_
-
-1. using chatgpt, as I am paying that anyways. separate sessions. seems to have a length limit though... split it?
-    might have to split the stories as the inputs can become is quite long. tried once in english, once in german, german was noticably worse.
-
-[tried to incorporate explainability]
-
-[always send about 100 txt-file lines, as they vary in content-length]
+### Challenges and possible Improvements to the Experiment Workflow
 
 
-
-### Problems that occurred
+In future employment of this workflow in a funded project, working with the GPT-API would provide considerable benefits to the approach shown here in the chat interface:
 
 - Too long texts made the ouptut unusable a lot of the times, so the context should be restricted, which ideally would be done using the api and a tokenizer that can estimate the token length of the next input.
 - First, I tried to ouput a file that I could then download, but that output was less stable than asking the LLM to provide the table in the text output to copy directly. In an API setting, the copying should be possible to automate.
 - On a day I prompted a lot, I reached the limit for the GPT-4o model, even though I was using my subscription. So, for large inputs and projects with funding, the API is commendable.
+- overall automating and reliefing the researcher of tedious task
 
 
-
-## Results & Discussion
+## Results  & Discussion
 
 As this is a quite experimental setting, evaluation can be done only approximately, firstly because there are a lot of cases where one can debate whether in a literary text that is not a drama, two people are for certain talking to each other, see also {cite}`moretti2011`
 
 ![alt text](images/Bergmilch.png)
-Fig. 1: _Character Network Bergmilch_
+Fig. 4: _Character Network Bergmilch_
 
 ![alt text](images/Granit.png)
-Fig. 2: _Character Network Granit_
+Fig. 5: _Character Network Granit_
 
 ![alt text](images/Kalkstein.png)
-Fig. 3: _Character Network Kalkstein_
+Fig. 6: _Character Network Kalkstein_
 
 ![alt text](images/Katzensilber.png)
-Fig. 4: _Character Network Katzensilber_
+Fig. 7: _Character Network Katzensilber_
 
 ![alt text](images/Turmalin.png)
-Fig. 5: _Character Network Turmalin_
+Fig. 8: _Character Network Turmalin_
 
 ![alt text](images/Bergkristall.png)
-Fig. 6: _Character Network Bergkristall_
+Fig. 9: _Character Network Bergkristall_
 
 
-[connectedness of nodes and the relevance of the characters]
+questions betreffend the quality:
+- character disambiguation is still imperfect (alter Andreas == Wagenschmiermann)
+- what sort of interactions are seen as interactions? even though I clearly prompted
+- what happens in Binnenerzählungen (Granit und Turmalin)
+- compare to my own network of 1-2 stories I will reread
+- How well are the results explainable by what the model did output as well
 
-[Binnenerzählungen (Granit und Turmalin)]
-
-[reread 1-2 of the stories]
-
-[Methodenreflektion]
-
-- Sprachnachricht vom 12.11. einarbeiten / Link to the comparison of texts from different genres
-
-[Reflektion von warum das DH ist]
-
+some Interpretation of the results
+- connectedness of nodes and the relevance of the characters
+- similar networks? differences?
 
 
-
-### How well are the results explainable by what the model did output as well
+Methodenreflektion
+- Link to the comparison of texts from different genres, outside the canon that are fastly emerging (AI generated, fanfiction) that are too large for 1 or a group of researchers to read
+- What about this is DH (to me?)
 
 
 ## Conclusion
 
+
+## Ethics
 
 ## Bibliography
 
