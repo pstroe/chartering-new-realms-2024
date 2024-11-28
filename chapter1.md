@@ -15,6 +15,11 @@ jupytext:
 
 # Chapter 1: From Data to Corpus
 Anouk Menzi, Elizabeth Wagner
+
+## Abstract 
+
+Written in the end
+
 ## Introduction
 Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. #I feel we need some more here?
 
