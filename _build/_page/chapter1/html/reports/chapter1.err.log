@@ -28,19 +28,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
-            <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> 
-                <seg xml:lang="en">
-                    Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
-                </seg>'
-example_txt = f'The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.'
-question_1 = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
+ <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>...</teiHeader>
+   <TEI>...</TEI> <!-- Corpus component -->
+   <TEI>...</TEI> <!-- Corpus component -->
+   ...            <!-- More corpus components -->
+ </teiCorpus>
 ------------------
 
 
 [1;36m  Cell [1;32mIn[1], line 1[1;36m[0m
-[1;33m    example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>[0m
-[1;37m                  ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m unterminated f-string literal (detected at line 1)
+[1;33m    <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">[0m
+[1;37m    ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
 
 
