@@ -163,6 +163,22 @@ for filename in os.listdir(folder_path):
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
+
+
+### Image testing
+
+Here is a beautiful image.
+
+```{image} images_chapter1/Elizabeth-I.png
+:alt: Alternative Text
+:width: 100px
+:align: center
+:figclass: align-center
+:name: fig-elizabeth-i
+:figcaption: This is a caption for Elizabeth I.
+``` 
+
+
 ## Conclusion 
 
 ## Bibliography

@@ -43,6 +43,7 @@ html:
 parse:
   myst_enable_extensions:
     - "cite"
+    - html_image
 
 sphinx:
   config:
