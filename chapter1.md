@@ -57,11 +57,9 @@ Adhering to the ParlaMint schema while encoding the South African Hansard papers
 
 
 #### Pre-Processing
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files, which were then used to create the XML files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. 
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
 
-A ParlaMint corpus is contained within a <teiCorpus> element, which includes a <teiHeader> for overarching metadata and multiple <TEI> elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. 
-
-To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. 
+A ParlaMint corpus is contained within a <teiCorpus> element, which includes a <teiHeader> for overarching metadata and multiple <TEI> elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
 
 Example structure of the corpus root file:
 
@@ -74,7 +72,7 @@ Example structure of the corpus root file:
 </teiCorpus>
 ```
 
-A corpus component file consists of one <TEI> element. The <teiHeader> within the <TEI> element contains metadata specific to the component, such as details about the parliamentary session, date, and participants. The <text> element holds the actual transcription of the parliamentary proceedings. This transcription is organized into divisions like <div>, which may represent different sessions or segments, and further into <u> elements for individual utterances. Each <u> element is typically associated with a speaker, identified through attributes that link to the metadata in the <teiHeader>.
+A corpus component file consists of one <TEI> element. The <teiHeader> within the <TEI> element contains metadata specific to the component, such as details about the parliamentary session, date, and participants. The <text> element holds the actual transcription of the parliamentary proceedings. This transcription is organized into divisions like <div>, which may represent different sessions or segments, and further into <u> elements for individual utterances. Each <u> element is typically associated with a speaker, identified through attributes that link to the metadata in the <teiHeader>. {cite:p}`ParlaMint_2024`
 
 Example structure of a corpus component file:
 
@@ -92,8 +90,9 @@ Example structure of a corpus component file:
 </TEI>
 ```
 
-The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary. For the purposes of this paper, this extensive amount of metadata will be forgone.
+The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary. For the purposes of this paper, this extensive amount of metadata will be forgone.[^footnote3]
 
+[^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
 ### Method 
 
