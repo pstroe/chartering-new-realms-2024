@@ -18,7 +18,7 @@ Anouk Menzi, Elizabeth Wagner
 
 ## Abstract 
 
-Written in the end
+#We will write this in the end
 
 ## Introduction
 Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. An attempt at making data accessible, interoprable, and reusable can be found in the Text Encoding Initiative {cite:p}`burnard_2013`. In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing using the ParliMINT scheme, an interoperable TEI xml scheme for transcripts of parliamentary proceedings. This approach serves especially well in cases where there is much raw data but which has not been structured into data collections, as is the case for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data constitutes the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to format this data into the ParliMINT scheme, the attempt has been labour intensive and done only on a small scale {cite:p}`ogrodniczuk_2024`. This chapter thus shall attempt to format the parliamentary proceedings into an interoperable XML scheme with the aid of different LLMs without the use of industrial strength hardware. 
@@ -52,7 +52,7 @@ To ensure that the data in this corpus remains both human- and machine-readable 
 
 The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including but not limited to metadata about speakers. The ParlaMint schema, as a specialized extension of TEI, was designed standardise the encoding of parliamentary data across various languages and regions {cite:p}`ogrodniczuk_2024` and allows for the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2022`. In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2022`. The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`.
 
-Adhering to ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
+Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
 
 #### Pre-Processing
@@ -83,7 +83,6 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 
 #### Experiment Setup
 Here we describe the use of the gold-standard xml for training etc.
-
 
 
 ## Experiments and Results
@@ -165,20 +164,6 @@ for filename in os.listdir(folder_path):
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
-
-
-### Image testing
-
-Here is a beautiful image.
-
-```{image} images_chapter1/Elizabeth-I.png
-:alt: Alternative Text
-:width: 100px
-:align: center
-:figclass: align-center
-:name: fig-elizabeth-i
-:figcaption: This is a caption for Elizabeth I.
-``` 
 
 
 ## Conclusion 
