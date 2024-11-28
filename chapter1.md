@@ -90,7 +90,7 @@ Example structure of a corpus component file:
 </TEI>
 ```
 
-The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary. For the purposes of this paper, this extensive amount of metadata will be forgone.[^footnote3]
+The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary.[^footnote3]
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
