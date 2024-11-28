@@ -21,49 +21,34 @@ Anouk Menzi, Elizabeth Wagner
 Written in the end
 
 ## Introduction
-Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. #I feel we need some more here?
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. To ensure this 
+
+#TEI as good. 
 
 In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing. This approach serves especially well in cases where there is much raw data but which has not been structured into data collections, as is the case for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data constitutes the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to format this data into the ParliMINT scheme, an interoperable XML scheme for transcripts of parliamentary proceedings, the attempt has been labour intensive and done only on a small scale {cite:p}`ogrodniczuk_2024`. This chapter thus shall attempt to format the parliamentary proceedings into an interoperable XML scheme with the aid of different LLMs without the use of industrial strength hardware. 
 
-
-Research Motivation
-Definition of a Corpus 
-End with Research Question 
-
 ## Relevant Literature 
-The Republic of South Africa 
-Section on South African English as a low resource language 
-- Previous corpora: Barnard et al., Jeffrey, ICE corpus, Pienaar and de Klerk, 
-- ParlaMint test study
+>Parliamentary proceedings (PP) are a rich source of data used by e.g. scholars in historiography, sociology, political science, linguistics, economics and economic history. As opposed to sources of most other language corpora, PP are not subject to copyright or personal privacy protections, and are typically available on-line thus making them ideal for compilation into corpora and open distribution. For these reasons many countries have already produced PP corpora, but each typically in their own encoding, thus limiting their comparability and utilisation in a multilingual setting {cite:p}`erjavec_2019`.
 
-The Difficulties of ParlaMint (not sure if it should go here or rather in between South african english as low resource and llms?) (I've now moved it here, I think that's much better)
+ParlaMint was suggested as interoperable, adaptive framework of formatting non-standardised parliamentary proceedings {cite:p}`truan_2021`. A first attempt at including the South African Parliamentary Proceedings has been made by Ogrodniczuk {cite:t}`ogrodniczuk_2024`, highlighting the difficulties of formatting an unstructed document into the ParlaMint scheme. The experiment was conducted on a singular session with a rule based approach {cite:p}`ogrodniczuk_2024`. This proved difficult as all quotations had to be marked manually, thus making it a labour intensive process when considering the 25 years of proceedings available for download on [the website of the South African Parliament](https://www.parliament.gov.za/hansard) {cite:p}`ogrodniczuk_2024, truan_2021`. 
 
-Possibilities of LLMs in cleaning up data lakes
+The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of these #ambigous_language_use authors, no attempts at harnessing LLMs for corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized for their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`chen_2024`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, respectively correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
 
-#that's shit
-
-The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of these #ambigous_language_use authors, no attempts at harnessing LLMs for corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized for their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`..`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, respectively correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
-
-In light of these added difficulties when it comes to language data where the language itself is of importance, research has largerly been based on developping a tool that in its foundations is based on LLMs but that also includes rule based code to wrangle data {cite:p}`chen_2023, zhang_jellyfish_2024, arora_2023`[^footnote1]. These tools display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting. However, this comes at a greater computational cost than non-LLM tools. Nonetheless, they again are relatively restrictive in their output and are geared more towards data extraction from unstructed data rather than formatting into a customisable format, where one talks to their .   
+In light of these added difficulties when it comes to language data where the language itself is of importance, research has largely been based on developping a tool that in its foundations is based on LLMs but that also includes rule based code to wrangle data {cite:p}`chen_2023, arora_2023`. Evaporate is capable of transforming various, semistructured inputs into a table output, however it's LLM components are based on using cloud solutions to run LLMs {cite:p}`arora_2023`. SEED works on a similar basis, though it's output format can be customised [^footnote1]. A model specifically fine-tuned for dataprocessing is the jellyfish family as proposed by Zhang et al. which is based on the smaller models of the Llama 3 family {cite:t}`zhang_jellyfish_2024`. These tools display a remarkable adaptivity to new tasks, especially when employing a technique called few-shot prompting, where a model, or tool, is supplied with several examples before it is set to the task {cite:p}`chen_2023`. However, this comes at a greater computational cost than when employing non-LLM tools or rule-based tools {cite:p}`arora_2023`. In this the trade-off between robustness and human-costliness, and energy efficience must be a carefully calculated balance.
 
 [^footnote1]: SEED is currently undergoing restructuring and thus cannot be used. It seems to be a promising project for further investigation into processing raw data via LLM, see [SEED repository](https://anonymous.4open.science/r/SEED/paper.pdf). 
 
 
-## Methods and Data 
+## Data and Methods
 
 ### Data
 The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
 
-The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed ad verbatim, and no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). {cite:t}`kotze_2020` remark that it is and remains unclear what substantially verbatim conotes in the sense of correction towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`.[^footnote2] 
+The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed, and no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). {cite:t}`kotze_2020` remark that it is and remains unclear what substantially verbatim conotes in the sense of corrections towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`.[^footnote2] 
 
 [^footnote2]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`hibbert_2016, hibbert_2003`.
 
-
-The decision was made to process all reports of 2019 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. 2019 was chosen as it constituted an election year, thus giving the opportunity of potentially harnessing more speakers as the NA's composition was altered after elections. Furthermore, as the NA is the largest body in Parliament, it was chosen to again maximise speaker count. 
-
-Do we give speaker counts? How many people spoke?
-
-In total 51 sessions were held in 2019.
+The decision was made to process all reports of 2020 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. The decision to look at the NA was made to maximise the possible speaker count and because it holds the most sessions of all parliamentray chambers. In total 51 sessions were held in 2020.
 
 #### ParlaMint 
 
@@ -82,25 +67,23 @@ The content of these txt-files was barely edited, save for occassional spelling 
 ### Method 
 
 #### Large Language Models 
-To adhere to the FAIR principles the decision was made to harness the capabilities of the LLaMA Large Language Model family, which is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The LLaMA models are based on a Transformer architercture {cite:p}`dubey_2024`. The LLaMA families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the LLaMA models as open source with some restrictions to access. This chapter uses the newest release of the model family, LLaMA 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, LLaMA makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
+To adhere to the FAIR principles the decision was made to harness the capabilities of the Llama Large Language Model family, which was and is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The Llama models are based on a Transformer architercture {cite:p}`dubey_2024`. The Llama families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the Llama models as open source with some restrictions to access. This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
 
 
 ```{image} ../images/llama_3.png
-:alt: llama 3 model family
+:alt: llama 3 model family {cite:p}`dubey_2024`
 :width: 400px
 :align: center
 ```
 
-A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. (i'll say this in the previous research problem) Whilst there is an effort to sleaken down models, it is still not possible to train a LLM locally on a standard issue laptop {cite:p}`..`. But it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. Here again, LLaMA offers promising options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. 
+A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. Whilst there is an effort to sleaken down models, it is still not possible to train a LLM locally on a standard issue laptop {cite:p}`..`. But it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. Here again, LLaMA offers promising options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. 
 
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
-- Llama 3 8B
+- Llama 3 8B 
 - Jellyfish
 
-
-Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 
 TODO 
 - Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work. 
@@ -186,7 +169,7 @@ for filename in os.listdir(folder_path):
 ## Results & Discussion 
 
 ### Limitations
-
+Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 ## Conclusion 
 
 ## Bibliography
