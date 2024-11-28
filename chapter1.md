@@ -66,9 +66,7 @@ The content of these txt-files was barely edited, save for occassional spelling 
 
 ### Method 
 
-#### Large Language Models 
 To adhere to the FAIR principles the decision was made to harness the capabilities of the Llama Large Language Model family, which was and is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The Llama models are based on a Transformer architercture {cite:p}`dubey_2024`. The Llama families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the Llama models as open source with some restrictions to access. This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
-
 
 ```{image} ../images/llama_3.png
 :alt: llama 3 model family {cite:p}`dubey_2024`
@@ -76,19 +74,13 @@ To adhere to the FAIR principles the decision was made to harness the capabiliti
 :align: center
 ```
 
-A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. Whilst there is an effort to sleaken down models, it is still not possible to train a LLM locally on a standard issue laptop {cite:p}`..`. But it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. Here again, LLaMA offers promising options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. 
+A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. As the Jellyfish family by Zhan et al. is also based on Llama but finetuned to data processing, it will also be included in the experiments {cite:p}`zhang_jellyfish_2024`.
 
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
 - Llama 3 8B 
 - Jellyfish
-
-
-TODO 
-- Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work. 
-- Fine-Tuning issue: possibly could be done with unsloth? I do this this weekend, issue of computational power, time frame, etc. 
-- Utilizing jellyfish/evaporate (so half and half, possibly if it works the best solution?)
 
 #### Experiment Setup
 Here we describe the use of the gold-standard xml for training etc.
@@ -170,6 +162,7 @@ for filename in os.listdir(folder_path):
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
+Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
 ## Conclusion 
 
 ## Bibliography
