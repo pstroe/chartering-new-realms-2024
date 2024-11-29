@@ -131,13 +131,8 @@ Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a
 In the first attempt the model was given a prompt of the structure: 
 
 ```{code-cell} python
-example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
-            <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> 
-                <seg xml:lang="en">
-                    Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
-                </seg>'
+example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>'
 example_txt = f'The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.'
-question_1 = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
 ```
 
 
@@ -181,7 +176,7 @@ for filename in os.listdir(folder_path):
                 i = 0
                 for chunk in chunk_text(content, chunk_size=1000):
                     try:
-                        question = question_1
+                        question = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
                         response = model(prompt.format(question=question))
                         document_list.append(response)
                         i += 1
