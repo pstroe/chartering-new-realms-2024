@@ -1,0 +1,11 @@
+## Deleted:
+
+From "comparing tools":
+(Overall, the metrics highlight GPT-4o's superior performance, with Yandex trailing across all measures.)
+
+(GPT-4o stands out as the most capable translation tool across all metrics, excelling in fluency, precision and semantic preservation, particularly for highly structured content such as biblical texts. Google Translate delivers competitive results and performs closely to Gemini, especially for structured texts, though both tools show some decline with informal or stylistically diverse material. Gemini matches Google Translate in many respects, providing reliable translations with solid coherence and meaning preservation but it still encounters challenges with more nuanced and descriptive linguistic structures. Yandex, on the other hand, demonstrates significant limitations across all text types, particularly struggling with stylistic and semantic consistency. This comparison underscores the importance of evaluating translation tools comprehensively, as different metrics highlight distinct strengths and weaknesses, particularly when tackling content with varying linguistic complexity and stylistic variability.)
+(Overall, Gemini is a robust tool, excelling in structured contexts and showing promise for handling more complex linguistic tasks with further refinement.)
+
+From "comparing metrics":
+
+Overall, the trend underscores the challenges posed by diverse linguistic structures and the importance of metric selection for evaluating translation quality in varying contexts.

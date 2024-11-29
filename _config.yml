@@ -8,8 +8,7 @@ logo: chartering-new-realms-logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
-  execute_notebooks: auto
+  execute_notebooks: false
   execution_cache_path: _build/.jupyter_cache
   
 # Define the name of the latex output file for PDF builds
@@ -39,7 +38,7 @@ sphinx:
 
 launch_buttons:
   thebe: true
-  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2?urlpath=lab
+  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2
   binder_url: https://mybinder.org
 
 # Thebe configuration

@@ -69,9 +69,9 @@ Automated scoring scripts, written in Python, were used to evaluate the MT again
 ## Experiments
 The experimental setup began with selecting original Latin excerpts from the aforementioned sources and their corresponding gold-standard translations. The excerpts were translated from Latin to English individually using the web interfaces of Google Translate and Yandex. For GPT-4o and Gemini, translations were conducted in separate conversations, preceded by a standardized prompt to limit the influence of prior knowledge or external context on the outputs<sup>1</sup>. Each translation was then scored against the gold standard using the four metrics (BLEU, ROUGE, METEOR, and chrF), resulting in a matrix with four translations per excerpt and four scores per translation.
 
-Table 1 allows for a look into the translation results:
-(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its translation by all MT systems*)
+Executing code block 2 allows for a look into a random translation result:
 ```{code-cell} python
+:thebe:
 import pandas as pd
 import random
 from IPython.display import display, Markdown
@@ -96,9 +96,9 @@ Examining the scoring results, we observed low BLEU scores across texts, with an
 
 While seemingly low, these scores align with prior research: Volk et al. (2024) observed a BLEU score of 25.22 % for Google Translate and 34.50 % for GPT-4o. Our findings, with BLEU averages of 25.32 % for Google Translate and 56.69 % for GPT-4o, indicate no major errors during the experiments but consistency in the outputs, while also highlighting a notable improvement in GPT-4o’s performance compared to earlier projects.
 
-Table 2 allows for a look into the scores for a random translation:
-(*here will follow an interactive code block which the reader can run to see a random example of one Latin excerpt and its scores in all metrics*)
+Executing code block 2 allows for a look into the scores for a random translation:
 ```{code-cell} python
+:thebe:
 import pandas as pd
 import random
 from IPython.display import display, Markdown
