@@ -70,7 +70,6 @@ Example structure of the corpus root file:
    <teiHeader>...</teiHeader>
    <TEI>...</TEI> <!-- Corpus component -->
    <TEI>...</TEI> <!-- Corpus component -->
-   ...            <!-- More corpus components -->
  </teiCorpus>
 ```
 
@@ -102,9 +101,9 @@ To adhere to the FAIR principles the decision was made to harness the capabiliti
 
 ```{figure} images_chapter1/llama_3.jpg
 ---
-:width: 500px
-:align: center
-:name: fig-llama_3
+width: 650px
+align: center
+name: fig-llama_3
 ---
 Here is the caption for llama 3 {cite:p}`dubey_2024`
 ```
