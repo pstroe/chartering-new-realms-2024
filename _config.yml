@@ -43,7 +43,6 @@ launch_buttons:
 
 # Thebe configuration
 thebe:
-  activated: true
   binderOptions:
     repo: "pstroe/chartering-new-realms-2024"
   use_jupyterlite: true
