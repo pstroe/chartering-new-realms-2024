@@ -76,9 +76,9 @@ In literature studies, there have been attempts to visualise data and extract in
 ### Method
 
 The experiment is to give a LLM the stories as input, with a prompt that lets it extract the relations between the characters in the stories in a manner that can be used as input to a graph software in order to create a graph for each of the stories in the corpus.
-Due to it being well-known and, even though not free but still accessible, this experiment will use ChatGPT's Chatinterface with the model GPT-4o.[do tools section] This method shows the capabilities of a LLM in the area of creating character networks that should be possible to scale up to bigger datasets than the one chosen in this experiment is.
+Due to it being well-known and, even though not free but still accessible, this experiment will use ChatGPT's Chatinterface with the model GPT-4o{cite:p}`openai2024`. This method shows the capabilities of a LLM in the area of creating character networks that should be possible to scale up to bigger datasets than the one chosen in this experiment is.
 
-For visualising the free and simple tool Graphviz will be used. It is under a common public license and can be freely downloaded from [webpage]. Additionally, it can create graphs on basis of text-files with the .dot extension, that should be fairly easy for LLMs to produce as well. So, to summarize, the reasons to choose this tool in particular were 1) it is a free and actively maintained open source tool to secure accessibility, 2) the simplicity of its input format that could also easily be adjusted by a hand if it is found to be faulty.
+For visualising the free and simple tool Graphviz{cite:p}`zotero-2457` will be used. It is under a common public license and can be freely downloaded. Additionally, it can create graphs on basis of text-files with the .dot extension, that should be fairly easy for LLMs to produce as well. So, to summarize, the reasons to choose this tool in particular were 1) it is a free and actively maintained open source tool to secure accessibility, 2) the simplicity of its input format that could also easily be adjusted by a hand if it is found to be faulty.
 
 
 ### Data
@@ -128,6 +128,7 @@ Then, after the response from the LLM, follows the first 100 lines of the text. 
 The output from the LLM then might look like this:
 
 ![alt text](images/chatgpt_output_example.png)
+
 Fig. 3: _Example Output in ChatGPT_
 
 
@@ -187,16 +188,21 @@ tsv_to_dot(input_tsv, output_dot)
 ```{thebe-button}
 ```
 
+The resulting .dot file can then be converted into a .png using a bash-prompt:
+
+```bash
+dot -Tpng Bergkristall.dot -o Bergkristall.png
+```
+
 
 ### Challenges and possible Improvements to the Experiment Workflow
 
+One problem that I was not able to solve in this experiment was that on occasions, the character-matrix is, when copied out of the chat-output, not usable, as it did not contain tabs but four spaces as delimiters. In these cases, I had to remind the model to give me copyable outputs, which solved the problem. Maybe more strict prompting might solve this issue.
 
-In future employment of this workflow in a funded project, working with the GPT-API would provide considerable benefits to the approach shown here in the chat interface:
+In future employment of this workflow in a funded project, working with the GPT-API would provide considerable benefits to the approach shown here using the chat interface, as this would overall automate the process and relieve the researcher of the tedious task of entering many prompts:
 
-- Too long texts made the ouptut unusable a lot of the times, so the context should be restricted, which ideally would be done using the api and a tokenizer that can estimate the token length of the next input.
-- First, I tried to ouput a file that I could then download, but that output was less stable than asking the LLM to provide the table in the text output to copy directly. In an API setting, the copying should be possible to automate.
-- On a day I prompted a lot, I reached the limit for the GPT-4o model, even though I was using my subscription. So, for large inputs and projects with funding, the API is commendable.
-- overall automating and reliefing the researcher of tedious task
+As the 100 lines used for each input were just an approximation to a number of tokens that would stay within the context-limit of the model, using a tokenizer to split the text in accurate pieces of a certain number of tokens would probably ensure the stability of the output even more. These automatically split pieces could be then via a program be passed to the GPT-API automatically. Another problem with the Chat-interface use of GPT-4o is that there is a limit for prompting in a certain time-frame,{cite:p}`zotero-2629` depending on the plan. after reaching the limit, the service is suspended for some hours. This makes the Chat-interface unusable for automatic processing of large corpora.
+To make the API fully automated, there would need to be a script that would extract the tsv-output directly from the API output.
 
 
 ## Results  & Discussion
@@ -222,7 +228,7 @@ Fig. 8: _Character Network Turmalin_
 Fig. 9: _Character Network Bergkristall_
 
 
-questions betreffend the quality:
+questions concerning the quality:
 - character disambiguation is still imperfect (alter Andreas == Wagenschmiermann)
 - what sort of interactions are seen as interactions? even though I clearly prompted
 - what happens in Binnenerzählungen (Granit und Turmalin)
@@ -250,3 +256,7 @@ Methodenreflektion
 :style: plain
 ```
 ## Tools
+
+```{bibliography} tools_refs_chapter4.bib
+:style: plain
+```
