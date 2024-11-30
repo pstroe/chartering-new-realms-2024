@@ -18,6 +18,12 @@ bibliography: references_chapter5.bib
 
 ## Abstract
 
+This chapter explores the linguistic and theological evolution of English Bible translations, highlighting how shifts in language, culture, and interpretive frameworks influence theological understanding over time. By examining translations such as the Douay-Rheims Bible (1582–1610), King James Version (1611), World English Bible (2000), and Open English Bible (2010), we reveal the interplay between tradition and modernity in sacred text translation.
+
+Utilizing computational methods like n-gram analysis, collocations, and sentiment analysis, this study identifies stylistic, thematic, and lexical patterns that reflect broader cultural and linguistic changes. The findings demonstrate how modern translations prioritize accessibility and engagement, adapting to contemporary readers while balancing theological fidelity. Sentiment analysis underscores the predominantly positive tone of the texts, with nuanced variations influenced by translation choices.
+
+This chapter contributes to the study of digital humanities and theology by offering empirical insights into the dynamic evolution of religious texts. It underscores the critical role of language as a medium for reshaping theological discourse and enriching spiritual engagement across historical and cultural contexts.
+
 ## Introduction
 Religious texts, like the Bible, are cornerstones of spiritual and cultural guidance, shaping societies and beliefs for centuries. Each new translation of these texts is not a simple linguistic substitution but reflects shifts in language, culture, and theology. This chapter investigates how incremental changes in translation influence theological understanding, subtly reshaping interpretations over time. By examining major English Bible translations, including the Douay-Rheims (1582–1610), King James Version (1611), World English Bible (2000), and Open English Bible (2010), we uncover how scripture evolves to reflect its socio-historical context.
 
