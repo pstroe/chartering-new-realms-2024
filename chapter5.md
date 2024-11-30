@@ -272,4 +272,16 @@ Sentiment analysis confirms a predominantly positive tone across most Bible book
 The scope of this study is also limited by its selection of books, as not all books of the Bible were analyzed. To mitigate this, the same books were used across all translations for consistency. Furthermore, while this study identifies important themes, expert input could provide deeper insights into theological and linguistic nuances, verifying and refining the results.
 
 ## References
+
+Richard Brown, 2010. Naturalizing Biblical Hermeneutics: A Case for Grounding Hermeneutical Theory in the Sociocognitive Sciences. (Doctoral dissertation, Brunel University).
+
+Kevin Gary Smith 2008. Direct Translation: Striving for Complete Resemblance. South African Theological Seminary.
+
+Philip C. Stine 2018. From Good News for Modern Man to Good News Bible: Origins and Early Issues. The Bible Translator, 69(3), p.335–346.
+
+Adeyefa, D. 2023. BIBLE TRANSLATION: REASONS, APPROACHES AND IMPLICATIONS.
+
+Wendland, E. 2023. Exploring the Theory and Practice of Modern Bible Translating: A Selective Overview. HIPHIL Novum, HIPHIL Novum, p.5-27.
+
+
 ```{bibliography}
