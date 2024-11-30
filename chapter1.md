@@ -91,11 +91,12 @@ A ParlaMint corpus is contained within a teiCorpus element, which includes a tei
 Example structure of the corpus root file:
 
 ```{code-cell} xml
- <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>...</teiHeader>
-   <TEI>...</TEI> 
-   <TEI>...</TEI> 
- </teiCorpus>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>...</teiHeader>
+ <TEI>...</TEI>
+ <TEI>...</TEI>
+ ...
+</teiCorpus>
 ```
 
 A corpus component file consists of one TEI element. The teiHeader element within the TEI element contains metadata specific to the component, such as details about the parliamentary session, date, and participants. The text element holds the actual transcription of the parliamentary proceedings. This transcription is organized into divisions, which may represent different sessions or segments, and further into individual utterances. Each utterance is typically associated with a speaker, identified through attributes that link to the metadata in the teiHeader. {cite:p}`ParlaMint_2024`
