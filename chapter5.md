@@ -11,6 +11,7 @@ kernelspec:
     display_name: Python 3
     language: Python
     name: python3
+bibliography: references_chapter5.bib
 ---
 
 # Chapter 5
