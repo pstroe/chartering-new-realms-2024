@@ -10,8 +10,27 @@
       {
         "extension": "./extension",
         "liteExtension": false,
+<<<<<<< HEAD
+        "load": "static/remoteEntry.b2792fe643cae74ea824.js",
+        "name": "@jupyter-notebook/lab-extension",
+        "style": "./style"
+      },
+      {
+        "extension": "./extension",
+        "liteExtension": false,
+        "load": "static/remoteEntry.a37e37c87d212fe85e13.js",
+        "name": "@jupyter-widgets/jupyterlab-manager"
+      },
+      {
+        "extension": "./extension",
+        "liteExtension": false,
+        "load": "static/remoteEntry.aa1060b2d1221f8e5688.js",
+        "name": "jupyterlab_pygments",
+        "style": "./style"
+=======
         "load": "static/remoteEntry.16a093c9a1666f11d1df.js",
         "name": "jupyterlab-jupytext"
+>>>>>>> 7dd5bbe155f3445cda95b8096894f86926dafae7
       }
     ],
     "fileTypes": {
