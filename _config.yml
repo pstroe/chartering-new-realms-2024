@@ -28,7 +28,6 @@ latex:
 bibtex_bibfiles:
   - references_chapter5.bib
 
-bibtex_reference_style: plain
 
 
 # Information about where the book exists on the web
