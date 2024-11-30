@@ -242,7 +242,7 @@ These changes highlight the tension between staying true to the original text an
 
 
 ## Sentiment Analysis
-The sentiment analysis of Bible books across various translations reveals that most books predominantly have a positive tone. As shown in {numref}sentiment_per_book, the ratio of positive to negative verses in each book indicates how often positive sentiment is expressed compared to negative sentiment. A ratio of 1 serves as the threshold, meaning an equal number of positive and negative verses, with ratios above 1 signaling more positivity and those below 1 suggesting more negativity. Interestingly, very few books come close to this threshold, and even fewer fall below it, highlighting the overall positive sentiment trend in the dataset.
+The sentiment analysis of Bible books across various translations reveals that most books predominantly have a positive tone. As shown in {numref}`sentiment_per_book`, the ratio of positive to negative verses in each book indicates how often positive sentiment is expressed compared to negative sentiment. A ratio of 1 serves as the threshold, meaning an equal number of positive and negative verses, with ratios above 1 signaling more positivity and those below 1 suggesting more negativity. Interestingly, very few books come close to this threshold, and even fewer fall below it, highlighting the overall positive sentiment trend in the dataset.
 
 ```{figure} sentiment_per_book_by_version.png
 ---
