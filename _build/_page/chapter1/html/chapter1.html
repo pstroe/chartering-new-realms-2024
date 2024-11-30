@@ -819,11 +819,12 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <p>Example structure of the corpus root file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="o">&lt;</span><span class="n">teiCorpus</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">teiHeader</span><span class="o">&gt;...&lt;/</span><span class="n">teiHeader</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="n">TEI</span><span class="o">&gt;...&lt;/</span><span class="n">TEI</span><span class="o">&gt;</span> 
-   <span class="o">&lt;</span><span class="n">TEI</span><span class="o">&gt;...&lt;/</span><span class="n">TEI</span><span class="o">&gt;</span> 
- <span class="o">&lt;/</span><span class="n">teiCorpus</span><span class="o">&gt;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">teiCorpus</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">teiHeader</span><span class="o">&gt;...&lt;/</span><span class="n">teiHeader</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">TEI</span><span class="o">&gt;...&lt;/</span><span class="n">TEI</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">TEI</span><span class="o">&gt;...&lt;/</span><span class="n">TEI</span><span class="o">&gt;</span>
+ <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">teiCorpus</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -890,7 +891,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 </div>
 <p>As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file. This ID is used in the component file to identify the speaker and link them to the metadata file. In a first step, it was decided to forgo this handling of speaker data. (To test the LLM without the added difficulty of separate files… how to say?)</p>
 <p>Example snippet from the converted xml file, showing part of text element, containing the speeches:</p>
-<div class="cell tag_full-width docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
@@ -971,7 +972,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <p>Make sure that you close Ollama before serving it on the command line, otherwise it will not work.</p>
 <p>To exit Ollama in the command line press ctrl + c.</p>
 </div>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
@@ -1020,6 +1021,10 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This code will fail unless langchain and Ollama are installed!</p>
 </div>
 </section>
 <section id="results-discussion">

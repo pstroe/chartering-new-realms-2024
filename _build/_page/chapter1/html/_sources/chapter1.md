@@ -91,11 +91,12 @@ A ParlaMint corpus is contained within a teiCorpus element, which includes a tei
 Example structure of the corpus root file:
 
 ```{code-cell} xml
- <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>...</teiHeader>
-   <TEI>...</TEI> 
-   <TEI>...</TEI> 
- </teiCorpus>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>...</teiHeader>
+ <TEI>...</TEI>
+ <TEI>...</TEI>
+ ...
+</teiCorpus>
 ```
 
 A corpus component file consists of one TEI element. The teiHeader element within the TEI element contains metadata specific to the component, such as details about the parliamentary session, date, and participants. The text element holds the actual transcription of the parliamentary proceedings. This transcription is organized into divisions, which may represent different sessions or segments, and further into individual utterances. Each utterance is typically associated with a speaker, identified through attributes that link to the metadata in the teiHeader. {cite:p}`ParlaMint_2024`
@@ -155,7 +156,6 @@ As described above, speaker metadata is stored in a separate file, which is refe
 Example snippet from the converted xml file, showing part of text element, containing the speeches:
 
 ```{code-cell} xml
-:tags: ["full-width"]
 <text>
   <body>
     <div type="debateSection">
@@ -238,7 +238,6 @@ To exit Ollama in the command line press ctrl + c.
 ```
 
 ```{code-cell} python
-:tags: ["raises-exception"]
 import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
@@ -283,6 +282,9 @@ for filename in os.listdir(folder_path):
                     output.write('\n'.join(document_list))
         except Exception as e:
             print(f"Error reading file {filename}: {e}")
+```
+
+```{attention} This code will fail unless langchain and Ollama are installed!
 ```
 ## Results & Discussion 
 
