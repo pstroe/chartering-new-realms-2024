@@ -27,6 +27,34 @@ By tracing these changes, this research provides empirical evidence of the inter
 
 ## Related Work
 
+The translation of religious texts, particularly the Bible, represents a unique intersection of linguistic fidelity, theological intent, and cultural adaptation. Scholars have extensively analyzed how translation methodologies reflect and shape broader societal and theological frameworks, offering a rich foundation for understanding their evolution.
+ 
+Stine (2018) investigates the historical challenges of translating the Bible, focusing on the Good News Bible as a case study. His work explores how dynamic equivalence—a translation strategy prioritizing accessibility—reshapes the interpretive experience of scripture.
+Stine demonstrates how the Good News Bible sought to make biblical texts comprehensible to modern readers by rephrasing theological and linguistic constructs to align with contemporary language norms. However, this strategy often required interpretive decisions that subtly redefined theological emphases to achieve clarity and inclusivity.
+Stine’s analysis highlights the trade-offs inherent in dynamic equivalence, where the prioritization of readability can lead to shifts in theological meaning. These findings underscore the complexity of translation as a process that balances audience comprehension with doctrinal fidelity.
+ 
+Smith (2008) offers a complementary perspective by championing direct translation, a method grounded in relevance theory, which prioritizes retaining the interpretive framework of the source text.
+Smith’s approach emphasizes preserving linguistic structures and cultural nuances to enable readers to reconstruct the original intent within its historical context. He argues that while this method demands more effort from readers, it ensures theological precision by minimizing the translator’s interpretive influence.
+Smith’s work provides a theoretical counterpoint to Stine, advocating for a more literal approach that prioritizes faithfulness to the original text. His insights highlight the tension between textual fidelity and accessibility, which remains central to debates on translation methodologies.
+ 
+Brown (2010) extends the discourse by introducing a sociocognitive framework for hermeneutics, grounding biblical interpretation in empirical sciences to better understand the relationship between texts and their readers.
+Brown emphasizes the role of cognitive schemas and social contexts in shaping both the production and reception of biblical texts. His work bridges traditional hermeneutical theory with cognitive science, providing a model for reconstructing the communicative events of ancient scripture in modern contexts.
+By situating interpretation within a sociocognitive paradigm, Brown offers tools to address the cultural and linguistic gaps inherent in biblical texts. His approach complements the translation methodologies of Stine and Smith, emphasizing the mental frameworks that underpin theological understanding. 
+
+Adeyefa (2023) critiques contemporary translation practices by exploring the socio-linguistic dynamics driving retranslation efforts, identifying key factors that influence modern versions of the Bible.
+Adeyefa identifies five primary drivers of retranslation, including advancements in textual scholarship, the dynamism of language, and cultural shifts. He highlights how translators must navigate these forces while balancing theological fidelity with the expectations of modern audiences.
+This critique underscores the translator’s role as a cultural mediator, negotiating between the preservation of sacred meaning and the demands of contemporary readability. Adeyefa’s work enriches the discussion by emphasizing the broader societal forces shaping translation practices over time.
+ 
+Wendland (2023) introduces the literary-functional equivalence (LiFE) approach, which seeks to integrate literary aesthetics with functional goals in Bible translation.
+Wendland argues that existing paradigms, such as dynamic equivalence and direct translation, often overlook the literary and rhetorical qualities of the source text. His LiFE model advocates for preserving these artistic dimensions while adapting the text to the linguistic and cultural norms of the target audience.
+By combining literary fidelity with functional clarity, Wendland’s approach offers a holistic framework that addresses the dual challenges of preserving theological depth and engaging diverse audiences. His insights provide a nuanced strategy for navigating the complexities of sacred text translation.
+
+Together, these works illustrate the multifaceted challenges of religious text translation, where linguistic, theological, and cultural factors intersect. They provide valuable theoretical and practical insights into the evolving priorities of translators.
+While Stine and Smith examine the trade-offs between readability and fidelity, Brown’s sociocognitive model situates these debates within the broader framework of human cognition. Adeyefa highlights the socio-linguistic forces shaping retranslation efforts, and Wendland integrates literary and functional goals to create a balanced translation strategy.
+
+Building on these foundations, our study employs computational text mining to trace the theological and linguistic shifts in English Bible translations over time. By systematically analyzing thematic patterns and linguistic trends, we provide a data-driven perspective that complements and extends the theoretical and qualitative frameworks established by prior research.
+
+
 
 ## Data
 
