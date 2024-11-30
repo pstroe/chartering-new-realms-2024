@@ -132,7 +132,7 @@ Example snippet from the converted xml file, showing part of the teiHeader eleme
     <teiHeader>
      <fileDesc>
        <titleStmt>
-            <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
+            <title type="main" xml:lang="en">South African Hansard papers</title>
             <title type="sub">Minutes of the National Assembly of South Africa</title>
             <meeting n="1" corresp="#DZ" </meeting> 
        </titleStmt>
@@ -155,6 +155,7 @@ As described above, speaker metadata is stored in a separate file, which is refe
 Example snippet from the converted xml file, showing part of text element, containing the speeches:
 
 ```{code-cell} xml
+:tags: ["full-width"]
 <text>
   <body>
     <div type="debateSection">
@@ -237,6 +238,7 @@ To exit Ollama in the command line press ctrl + c.
 ```
 
 ```{code-cell} python
+:tags: ["raises-exception"]
 import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM

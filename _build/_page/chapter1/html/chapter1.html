@@ -868,7 +868,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
     <span class="o">&lt;</span><span class="n">teiHeader</span><span class="o">&gt;</span>
      <span class="o">&lt;</span><span class="n">fileDesc</span><span class="o">&gt;</span>
        <span class="o">&lt;</span><span class="n">titleStmt</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">title</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;main&quot;</span> <span class="n">xml</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span><span class="n">South</span> <span class="n">African</span> <span class="n">parliamentary</span> <span class="n">Hansard</span> <span class="n">papers</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">title</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;main&quot;</span> <span class="n">xml</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span><span class="n">South</span> <span class="n">African</span> <span class="n">Hansard</span> <span class="n">papers</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="n">title</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;sub&quot;</span><span class="o">&gt;</span><span class="n">Minutes</span> <span class="n">of</span> <span class="n">the</span> <span class="n">National</span> <span class="n">Assembly</span> <span class="n">of</span> <span class="n">South</span> <span class="n">Africa</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="n">meeting</span> <span class="n">n</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">corresp</span><span class="o">=</span><span class="s2">&quot;#DZ&quot;</span> <span class="o">&lt;/</span><span class="n">meeting</span><span class="o">&gt;</span> 
        <span class="o">&lt;/</span><span class="n">titleStmt</span><span class="o">&gt;</span>
@@ -890,7 +890,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 </div>
 <p>As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file. This ID is used in the component file to identify the speaker and link them to the metadata file. In a first step, it was decided to forgo this handling of speaker data. (To test the LLM without the added difficulty of separate files… how to say?)</p>
 <p>Example snippet from the converted xml file, showing part of text element, containing the speeches:</p>
-<div class="cell docutils container">
+<div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
@@ -971,7 +971,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <p>Make sure that you close Ollama before serving it on the command line, otherwise it will not work.</p>
 <p>To exit Ollama in the command line press ctrl + c.</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>

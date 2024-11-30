@@ -155,7 +155,6 @@ As described above, speaker metadata is stored in a separate file, which is refe
 Example snippet from the converted xml file, showing part of text element, containing the speeches:
 
 ```{code-cell} xml
-:tags: ["full-width"]
 <text>
   <body>
     <div type="debateSection">
@@ -238,7 +237,6 @@ To exit Ollama in the command line press ctrl + c.
 ```
 
 ```{code-cell} python
-:tags: ["raises-exception"]
 import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
@@ -283,6 +281,9 @@ for filename in os.listdir(folder_path):
                     output.write('\n'.join(document_list))
         except Exception as e:
             print(f"Error reading file {filename}: {e}")
+```
+
+```{attention} This code will fail unless langchain and Ollama are installed!
 ```
 ## Results & Discussion 
 
