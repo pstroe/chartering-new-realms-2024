@@ -68,8 +68,8 @@ Example structure of the corpus root file:
 ```{code-cell} xml
  <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>...</teiHeader>
-   <TEI>...</TEI> <!-- Corpus component -->
-   <TEI>...</TEI> <!-- Corpus component -->
+   <TEI>...</TEI> 
+   <TEI>...</TEI> 
  </teiCorpus>
 ```
 

@@ -57,19 +57,16 @@ The concluded ParlaMint I project entailed the encoding of corpora containing tr
 
 Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
-
-#### Pre-Processing
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
-
-A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
+A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. This corpus root encodes information such as the title and language of the corresponding transcripts, the number of speakers and speeches contained within them, and the time the transcriptions span. The corpus root file also contains information about the license the transcripts are published under and the place online where they can be downloaded. 
+To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
 
 Example structure of the corpus root file:
 
 ```{code-cell} xml
  <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>...</teiHeader>
-   <TEI>...</TEI> <!-- Corpus component -->
-   <TEI>...</TEI> <!-- Corpus component -->
+   <TEI>...</TEI> 
+   <TEI>...</TEI> 
  </teiCorpus>
 ```
 
@@ -94,6 +91,74 @@ Example structure of a corpus component file:
 The ParlaMint schema also allows for the encoding of extensive metadata around speakers and organisations, all of which are stored in separate files, which are referenced when necessary.[^footnote3]
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
+
+#### Pre-Processing
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
+
+The first step was to prepare the corpus root file, containing the metadata about the South African Hansard papers. In a next step, a sample xml file was prepared. For this purpose, the txt file containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short txt was then converted into an xml file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different xml elements and attributes wihtin the xml file. 
+
+Example snippet from the converted xml file, showing part of the teiHeader element:
+
+```{code-cell} xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
+    <teiHeader>
+     <fileDesc>
+       <titleStmt>
+            <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
+            <title type="sub">Minutes of the National Assembly of South Africa</title>
+            <meeting n="1" corresp="#DZ" </meeting> 
+       </titleStmt>
+       ...
+      <profileDesc>
+        <settingDesc>
+            <setting> 
+                <name type="place">Houses of Parliament</name>
+                <name type="city">Cape Town</name>
+                <name type="country" key="ZA">South Africa</name>
+                <date when="2020-02-25">25.02.2020</>
+            </setting>
+        </settingDesc>
+     </profileDesc>
+</TEI>
+```
+
+As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file. This ID is used in the component file to identify the speaker and link them to the metadata file. In a first step, it was decided to forgo this handling of speaker data. (To test the LLM without the added difficulty of separate files... how to say?)
+
+Example snippet from the converted xml file, showing part of text element, containing the speeches:
+
+```{code-cell} xml
+<text>
+  <body>
+    <div type="debateSection">
+      <pb n="1"/>
+      <note type="time">The House met at <time when="2020-02-25T014:00:00">14:00</time>.</note>
+      <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
+      <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+      <u xml:id="25-02-2020_u1" who="#houseChairperson">
+        <seg xml:lang="en">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of
+            amendments to our rules. Some of the amendments pertain to thesequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.
+            </seg>
+        <pb n="2"/>
+        <seg xml:lang="en">The Rules Committee further agreed that the number of Ministers’ Responses be increased from six to seven and that time allowed for ministers’ Responses be increased from two minutes to three minutes. With that background, I will now take the first item on the Order Paper which is Members’ Statements. Does any member of the ANC wish to make a statement?
+        </seg>
+      </u>
+      <note type="speaker">The CHIEF WHIP OF THE OPPOSITION:</note>
+      <u xml:id="25-02-2020_u2" who="#ChiefWhipOfOpposition"> 
+        <seg xml:lang="en">
+            Sorry Chair, on a point of order.
+        </seg>
+      </u>
+      <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+      <u xml:id="25-02-2020_u3" who="#houseChairperson">
+        <seg xml:lang="en">
+            Please take your seat. Yes, what’s your point of order?
+        </seg>
+      </u>
+      ...
+    </div>
+  </body>
+</text>
+```
 
 ### Method 
 
