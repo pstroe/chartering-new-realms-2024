@@ -1,0 +1,11 @@
+sentence,sentiment
+" The Revelation of Jesus Christ, which God gave to him to make known to his servants, concerning what must shortly take place, and which he sent and revealed by his angel to his servant John,","{'label': 'POSITIVE', 'score': 0.9690009355545044}"
+" who testified to the message of God and to the testimony to Jesus Christ, omitting nothing of what he had seen.","{'label': 'NEGATIVE', 'score': 0.9986544847488403}"
+" Blessed is the one who reads, and blessed are they who listen to, the words of this prophecy, and lay to heart what is here written; for the time is near.","{'label': 'POSITIVE', 'score': 0.997977077960968}"
+" From John, to the seven churches which are in Roman Asia. Blessing and peace be yours from him who is, and who was, and who will be, and from the seven spirits that are before his throne,","{'label': 'POSITIVE', 'score': 0.9991126656532288}"
+" and from Jesus Christ, the faithful witness, the firstborn from the dead, and the Ruler of all the kings of the earth. To him who loves us and freed us from our sins by his own blood –","{'label': 'POSITIVE', 'score': 0.9972661733627319}"
+" and he made us a kingdom of priests in the service of God, his Father! – to him be ascribed glory and dominion for ever. Amen.","{'label': 'POSITIVE', 'score': 0.9917591214179993}"
+" He is coming among the clouds! Every eye will see him, even those who pierced him and all the nations of the earth will mourn over him. So will it be. Amen.","{'label': 'POSITIVE', 'score': 0.9755560159683228}"
+" ‘I am the Alpha and the Omega,’  says the Lord,  the God who is, and who was, and who will be, the Almighty.","{'label': 'POSITIVE', 'score': 0.9979348182678223}"
+" I, John, who am your brother, and who share with you in the suffering and kingship and endurance of Jesus, found myself on the island called Patmos, for the sake of the message of God and the testimony to Jesus.","{'label': 'NEGATIVE', 'score': 0.9167594909667969}"
+" I fell into a trance on the Lord’s day, and I heard behind me a loud voice, like the blast of a trumpet.","{'label': 'POSITIVE', 'score': 0.9935044050216675}"
