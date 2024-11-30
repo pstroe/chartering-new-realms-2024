@@ -26,8 +26,10 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
   - references_chapter5.bib.txt
+
+bibtex_reference_style: plain
+
 
 # Information about where the book exists on the web
 repository:
