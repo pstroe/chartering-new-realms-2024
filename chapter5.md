@@ -260,9 +260,6 @@ The results also highlight potential limitations of the sentiment analysis model
 
 To summarize our findings, the sentiment analysis reveals consistent positive tones across Bible books and translations, with modern translations slightly amplifying positivity, possibly through simpler language. Books like Ephesians and Philemon align with their themes of unity and reconciliation, while Revelation and Esther display sentiment trends that challenge initial assumptions. These findings emphasize the interplay between translation choices, thematic focus, and linguistic style, demonstrating how these elements influence sentiment interpretation in religious texts.
 
-## Discussion
-
-
 ## Conclusion
 
 Our application of n-grams, collocations, and sentiment across Bible translations shows how religious texts adapt to evolving linguistic, cultural, and theological contexts. Traditional translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) retain formal, archaic language emphasizing doctrinal fidelity, while modern translations such as the World English Bible (WEB) and Open English Bible (OEB) prioritize accessibility and engagement through simplified, conversational language. These stylistic differences influence both linguistic framing and sentiment interpretation.
