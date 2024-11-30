@@ -144,14 +144,14 @@ N-grams with higher t-scores were prioritized for analysis, as they are more lik
 
 #### Stop Word Filtering
 
-To further refine the n-gram results, a stop word filtering process was applied. Stop words—common function words such as "and", "the", and "of"—tend to dominate n-gram extractions but often contribute little to understanding thematic or theological shifts. By excluding stop words, the analysis was able to focus on content words that carry semantic weight. However, stop words were not completely disregarded; their inclusion was allowed in specific cases where they formed integral parts of theological phrases (e.g., "Kingdom of God" or "The Lord Jesus").
+To make the n-gram results more useful, we applied a process to filter out "stop words." These are common words like "and," "the," and "of," which often appear frequently in texts but don't really help in understanding the main themes or theological ideas. By removing these words, we were able to focus on more meaningful terms that carry weight in the analysis. However, we didn’t completely ignore stop words. In some cases, they were kept when they were part of important theological phrases, like "Kingdom of God" or "The Lord Jesus."
 
-A custom stop word list was developed to balance relevance and theological significance, ensuring that key collocations involving function words were retained, also considering the linguistic differences between the older and newer versions.
+We created a custom list of stop words to strike a balance between filtering out irrelevant words and keeping phrases that are theologically significant. This list also took into account the differences in language styles between older and newer Bible translations.
 
-Several challenges were encountered during the extraction and analysis of n-grams:
+There were some challenges during this process:
 
-- Noise from Common Phrases: Frequent generic phrases like "said unto them" or "came to pass" appeared across translations but contributed little to the analysis. These were managed by excluding phrases with high occurrence across all translations unless they carried theological significance.
-- Textual Variability: Differences in translation practices and textual traditions led to variations in word choice and phrasing. To address this, n-grams were analyzed within aligned sections of the text to ensure comparability.
+- Common Phrases Creating Noise: Phrases like "said unto them" or "came to pass" showed up a lot but didn’t add much to the analysis. We excluded these unless they had a clear theological meaning.
+- Text Differences Between Translations: Each Bible version uses slightly different wording and phrasing, which made it tricky to compare them directly. To handle this, we analyzed the n-grams in aligned sections of the text to keep things consistent.
 
 ### Sentiment Analysis
 The following section discusses the methodology used to analyze the sentiment of the books across the different Bible versions.
