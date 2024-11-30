@@ -58,7 +58,30 @@ The concluded ParlaMint I project entailed the encoding of corpora containing tr
 Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
 
-#### Pre-Processing
+### Method 
+
+To adhere to the FAIR principles the decision was made to harness the capabilities of the Llama Large Language Model family, which was and is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The Llama models are based on a Transformer architercture {cite:p}`dubey_2024`. The Llama families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the Llama models as open source with some restrictions to access. This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
+
+```{figure} images_chapter1/llama_3.jpg
+---
+width: 650px
+align: center
+name: fig-llama_3
+---
+Here is the caption for llama 3 {cite:p}`dubey_2024`
+```
+
+A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. As the Jellyfish family by Zhan et al. is also based on Llama but finetuned to data processing, it will also be included in the experiments {cite:p}`zhang_jellyfish_2024`.
+
+**Models Used**
+- Llama 3.2 1B
+- Llama 3.2 3B
+- Llama 3 8B 
+- Jellyfish [^footnote4]
+
+[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
+
+#### Training Data
 The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
 
 A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
@@ -95,33 +118,9 @@ The ParlaMint schema also allows for the encoding of extensive metadata around s
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
-### Method 
-
-To adhere to the FAIR principles the decision was made to harness the capabilities of the Llama Large Language Model family, which was and is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The Llama models are based on a Transformer architercture {cite:p}`dubey_2024`. The Llama families "only use[s] publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the Llama models as open source with some restrictions to access. This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes available multiple sets of pretrained models with different quantities of parameters, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
-
-```{figure} images_chapter1/llama_3.jpg
----
-width: 650px
-align: center
-name: fig-llama_3
----
-Here is the caption for llama 3 {cite:p}`dubey_2024`
-```
-
-A further issue in harnessing LLMs for data formatting lies in the costliness of training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. As the Jellyfish family by Zhan et al. is also based on Llama but finetuned to data processing, it will also be included in the experiments {cite:p}`zhang_jellyfish_2024`.
-
-**Models Used**
-- Llama 3.2 1B
-- Llama 3.2 3B
-- Llama 3 8B 
-- Jellyfish
-
-#### Experiment Setup
-Here we describe the use of the gold-standard xml for training etc.
-
 
 ## Experiments and Results
-In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This decision to utilize a standard prompting appraoch was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of dataformatting would be detrimental.
+In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of dataformatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. 
 
@@ -130,13 +129,8 @@ Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a
 In the first attempt the model was given a prompt of the structure: 
 
 ```{code-cell} python
-example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
-            <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> 
-                <seg xml:lang="en">
-                    Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
-                </seg>'
+example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>'
 example_txt = f'The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.'
-question_1 = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
 ```
 
 
@@ -180,7 +174,7 @@ for filename in os.listdir(folder_path):
                 i = 0
                 for chunk in chunk_text(content, chunk_size=1000):
                     try:
-                        question = question_1
+                        question = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
                         response = model(prompt.format(question=question))
                         document_list.append(response)
                         i += 1
@@ -199,6 +193,9 @@ for filename in os.listdir(folder_path):
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
+
+Note for limitations: we do not populate the metadata files, because very specific real world knowledge would be needed, and it is easier and computationally more efficient to populate this metadate with a rule-based approach once the base xml of the speeches themselves are parsed/created by the LLM. 
+Many members of the SA parliament do not have their birth date published online. 
 
 
 ## Conclusion 
