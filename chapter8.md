@@ -1,3 +1,17 @@
+---
+thebe: true
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.13'
+    jupytext_version: 1.11.5
+---
 # Chapter 8: Evaluation of multimodal LM trained on graphic images from specific historical period
 by Blagoja Trajkovski
 ## Abstract
