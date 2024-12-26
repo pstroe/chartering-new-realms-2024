@@ -266,7 +266,17 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
+The input prompt were varied, and the global setting for the Llama model family adapted to a few settings. View the appendix for the specific settings and their corresponding results. 
+
 ## Results & Discussion 
+
+### Llama Herd 
+
+#### Llama 3 1B Parameters 
+
+#### Llama 3 2B Parameters
+
+#### Llama 3 8B Parameters
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
