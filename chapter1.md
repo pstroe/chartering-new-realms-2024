@@ -191,6 +191,7 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 [^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
 
 ## Experiments and Results
+### Llama herd
 In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. 
@@ -266,7 +267,13 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
-The input prompt were varied, and the global setting for the Llama model family adapted to a few settings. View the appendix for the specific settings and their corresponding results. 
+The input prompt were varied, and the global setting for the Llama model family adapted concerning the temperature and the approach setting. View the results section for the specific settings and their corresponding results. 
+
+As the results of the llama herd were relatively disappointing both in terms of structure and content, we turned towards larger models that may not be open source, but are more powerful and possibly capable in adapting the data into the parlaMint scheme. 
+
+### GPT-4o 
+
+### Gemini
 
 ## Results & Discussion 
 
@@ -274,7 +281,8 @@ The input prompt were varied, and the global setting for the Llama model family 
 
 #### Llama 3 1B Parameters 
 
-#### Llama 3 2B Parameters
+
+#### Llama 3 3B Parameters
 
 #### Llama 3 8B Parameters
 
