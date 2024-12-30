@@ -188,8 +188,159 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 
 [^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
 
+#### Evaluation
+To evaluate the work of the llms automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
+
+##### Evaluation XML Schema
+To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was selected as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
+
+Using a short Python script, the adapted RelaxNG file was used to evaluate and validate all XML files:
+
+```{code-cell} python
+from lxml import etree
+from collections import Counter
+
+def validate_xml(relaxng_file, xml_file):
+    """
+    Validates an XML file against a RelaxNG schema and prints detailed error messages,
+    along with a total count of errors and a count of each error type.
+
+    :param relaxng_file: Path to the RelaxNG schema file.
+    :param xml_file: Path to the XML file to be validated.
+    """
+    try:
+        with open(relaxng_file, 'r', encoding='utf-8') as rng_file:
+            relaxng_doc = etree.parse(rng_file)
+            relaxng = etree.RelaxNG(relaxng_doc)
+        
+        with open(xml_file, 'r', encoding='utf-8') as xml_file_obj:
+            xml_doc = etree.parse(xml_file_obj)
+        
+        if relaxng.validate(xml_doc):
+            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema.")
+        else:
+            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema.\n")
+            print("Validation errors:")
+
+            error_count = 0
+            error_type_counter = Counter()
+
+            # Process and print each error
+            for error in relaxng.error_log:
+                error_count += 1
+                error_type_counter[error.type_name] += 1
+                print(f"Line {error.line}, Column {error.column}: {error.message}")
+                print(f"  Domain: {error.domain_name}, Type: {error.type_name}\n")
+
+            # Print total error summary
+            print("Summary of Validation Errors:")
+            print(f"Total Errors: {error_count}")
+            for error_type, count in error_type_counter.items():
+                print(f"  {error_type}: {count} occurrences")
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    relaxng_file = "Adapted_ParlaMint.rng" 
+    xml_file = "uh_25.02_short.xml"    
+
+    validate_xml(relaxng_file, xml_file)
+
+```
+If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema.". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
+
+[^footnote9]: This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
+
+##### Evaluation Content
+To evaluate the content of the output of the llms tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original txt file on a token basis. 
+
+```{attention} This code needs to be configured for the xml tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag, though it is customisbale, to allow for output from llms which configure this tag wrongly, to allow for a consistent check of content. The code below is configured for the gold standard.
+```
+
+```{code-cell} python
+import xml.etree.ElementTree as ET
+import random
+import re
+
+# Path to the XML and txt file
+xml_file_path = 'test_objects/gold_standard.xml'  
+txt_file_path = 'test_objects/gold_standard.txt'  
+
+# Parse the XML file
+tree = ET.parse(xml_file_path)
+root = tree.getroot()
+
+# Define the namespace for TEI XML
+namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
+
+"""initiates the segment that the llm assigns to the text elements. Can be variable. 
+Correct tag: seg 
+Common other tags: note, 
+"""
+text_seg = "seg"
+
+#configures the sampler size. 
+sampler = 10
+
+# Find all the text elements within the XML
+segments = root.findall(f'.//tei:{text_seg}', namespace)
+
+# List to store all sentences
+all_sentences = []
+
+# Function to split text into sentences
+def split_into_sentences(text):
+    # sentence splitting 
+    return re.split(r'(?<=\w[.!?]) +', text)
+
+# Loop through each text element, split text into sentences, and add to the list
+for seg in segments:
+    if seg.text:
+        sentences = split_into_sentences(seg.text.strip())
+        all_sentences.extend(sentences)
+
+# Randomly pick sentences
+random_sentences = random.sample(all_sentences, sampler) if len(all_sentences) >= 10 else all_sentences
+
+# Remove newline characters and extra spaces from the random sentences
+random_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in random_sentences]
+
+
+
+# Open the text file and read its content
+with open(txt_file_path, 'r', encoding='utf-8') as file:
+    txt_content = file.read()
+
+# Remove newline characters and extra spaces from the txt file content
+txt_content = re.sub(r'\s+', ' ', txt_content.replace('\n', ' ').strip())
+
+# calculates how much of the sentence is found
+def calculate_match_percentage(sentence, txt_content):
+    # Find the longest substring match in the text content
+    match = re.search(re.escape(sentence), txt_content)
+    if match:
+        match_len = len(match.group(0))  # Length of the match
+        sentence_len = len(sentence)  # Length of the original sentence
+        return (match_len / sentence_len) * 100  # Percentage of the sentence found
+    return 0  # No match found
+
+# Check how many of the sentences are present in the TXT file
+print("\nChecking how much of the sentences are present in the TXT file:")
+for sentence in random_sentences:
+    match_percentage = calculate_match_percentage(sentence, txt_content)
+    if match_percentage > 0:
+        print(f"Found: {match_percentage:.2f}% of the sentence: {sentence}")
+    else:
+        print(f"Not found: {sentence}")
+
+```
+
 ## Experiments
-In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
+
+### LLama Herd 
+In a primary approach, the attempt was made to guide a locally run, smaller, LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The setting of the model was varied to test whether different base settings would alter the responses given by the model. 
 
@@ -263,74 +414,46 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
-The input prompt were varied, and the global setting for the Llama model family adapted to a few settings. View the appendix for the specific settings and their corresponding results. 
+The input prompt was varied, and the global setting for the Llama model family adapted. View the appendix for the specific settings and their corresponding results. 
 
+### Gemini 
+To assess whether a larger LLM gave a better output, Gemini 1.5 Flash was tested in its online space. As it does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of Gemini. Every conversation was held thrice to assess the answer scheme of the LLM. 
 
-### Evaluation
-
-To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was selected as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
-
-Using a short Python script, the adapted RelaxNG file was used to evaluate and validate all XML files:
-
-```{code-cell} python
-from lxml import etree
-from collections import Counter
-
-def validate_xml(relaxng_file, xml_file):
-    """
-    Validates an XML file against a RelaxNG schema and prints detailed error messages,
-    along with a total count of errors and a count of each error type.
-
-    :param relaxng_file: Path to the RelaxNG schema file.
-    :param xml_file: Path to the XML file to be validated.
-    """
-    try:
-        with open(relaxng_file, 'r', encoding='utf-8') as rng_file:
-            relaxng_doc = etree.parse(rng_file)
-            relaxng = etree.RelaxNG(relaxng_doc)
-        
-        with open(xml_file, 'r', encoding='utf-8') as xml_file_obj:
-            xml_doc = etree.parse(xml_file_obj)
-        
-        if relaxng.validate(xml_doc):
-            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema.")
-        else:
-            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema.\n")
-            print("Validation errors:")
-
-            error_count = 0
-            error_type_counter = Counter()
-
-            # Process and print each error
-            for error in relaxng.error_log:
-                error_count += 1
-                error_type_counter[error.type_name] += 1
-                print(f"Line {error.line}, Column {error.column}: {error.message}")
-                print(f"  Domain: {error.domain_name}, Type: {error.type_name}\n")
-
-            # Print total error summary
-            print("Summary of Validation Errors:")
-            print(f"Total Errors: {error_count}")
-            for error_type, count in error_type_counter.items():
-                print(f"  {error_type}: {count} occurrences")
-    
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-if __name__ == "__main__":
-    relaxng_file = "Adapted_ParlaMint.rng" 
-    xml_file = "uh_25.02_short.xml"    
-
-    validate_xml(relaxng_file, xml_file)
-
+```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same xml format. Format all of the text.
+[UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 1
+TUESDAY, 25 FEBRUARY 2020
+____
+PROCEEDINGS OF THE NATIONAL ASSEMBLY
+____
+The House met at 14:00.
+House Chairperson Ms M G Boroto took the Chair and requested
+members to observe a moment of silence for prayer or
+meditation.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would
+like to remind you that on 4 December 2019 the House adopted
+the Rules Committee report which introduced a number of
+amendments to our rules. Some of the amendments pertain to the
+sequence of proceedings and Members’ Statements. To facilitate
+sufficient opportunity for Ministers’ Responses to Members’
+Statements, the sequence of proceedings has been amended so
+that Members’ Statements are now at the start of the
+proceedings on days that they are scheduled by the programming
+committee.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 2
 ```
-If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema.". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
 
-[^footnote9]: This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
+It's output however, was unusable, as it refused to attempt the task and gave answers such as: 
 
+- Sorry, I can't help you with that. (test_8, 27.12.2024)
+- I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12.2024)
 
-## Results & Discussion 
+## Discussion 
 
 ### Llama Herd 
 
