@@ -286,9 +286,9 @@ The prompts were run three times, always in new chat windows. It was attempted t
 
 ### Evaluation
 
-To validate the XML schema of the files output by the LLMs, a RelaxNG file was created and a short Python script was written. The RelaxNG format was chosen, as there already exists an official RelaxNG file to validate the ParlaMint XML schema [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the official RelaxNG file was adapted. 
+To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was chosen as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
 
-Using a short Python script, this file was then used to evaluate and validate all XML files:
+Using a short Python script, the adapted RelaxNG file was used to evaluate and validate all XML files:
 
 ```{code-cell} python
 from lxml import etree
