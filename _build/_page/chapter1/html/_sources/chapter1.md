@@ -190,7 +190,81 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 
 [^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
 
+#### Verification Processes 
+To assess whether the llms are capable of formatting the data, a two-fold approach was attempted. Firstly the structure of the xml was assessed. Secondly, the content of the xml is matched to the original txt file. To lighten the processing load, the decision was made to select 10 random sentences from the xml file, and match it to its corresponding sentences in the original file. To asses the correctness of the copied content, a percentage is calculated from the matching, or not matching, token. 
+
+
+```{code-cell} python
+import xml.etree.ElementTree as ET
+import random
+import re
+
+# Path to the XML file
+xml_file_path = 'test_objects/xml_25.02.xml'  # Replace with the actual path to your XML file
+txt_file_path = 'test_objects/uh_25.02.txt'  # Replace with the actual path to your TXT file
+
+# Parse the XML file
+try: 
+  tree = ET.parse(xml_file_path)
+else: 
+  print("error in the xml file")
+root = tree.getroot()
+
+# Define the namespace for TEI XML
+namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
+
+# Find all the <seg> elements within the XML
+segments = root.findall('.//tei:seg', namespace)
+
+# List to store all sentences
+all_sentences = []
+
+# Function to split text into sentences
+def split_into_sentences(text):
+    # Basic sentence splitting (you can adjust this regex based on your needs)
+    return re.split(r'(?<=\w[.!?]) +', text)
+
+# Loop through each <seg> element, split text into sentences, and add to the list
+for seg in segments:
+    if seg.text:
+        sentences = split_into_sentences(seg.text.strip())
+        all_sentences.extend(sentences)
+
+# Randomly pick 10 sentences
+random_sentences = random.sample(all_sentences, 10) if len(all_sentences) >= 10 else all_sentences
+
+# Remove newline characters and extra spaces from the random sentences
+random_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in random_sentences]
+
+# Open the text file and read its content
+with open(txt_file_path, 'r', encoding='utf-8') as file:
+    txt_content = file.read()
+
+# Remove newline characters and extra spaces from the txt file content
+txt_content = re.sub(r'\s+', ' ', txt_content.replace('\n', ' ').strip())
+
+# Function to calculate how much of the sentence is found
+def calculate_match_percentage(sentence, txt_content):
+    # Find the longest substring match in the text content
+    match = re.search(re.escape(sentence), txt_content)
+    if match:
+        match_len = len(match.group(0))  # Length of the match
+        sentence_len = len(sentence)  # Length of the original sentence
+        return (match_len / sentence_len) * 100  # Percentage of the sentence found
+    return 0  # No match found
+
+# Check how much of the sentences are present in the TXT file
+print("\nChecking how much of the sentences are present in the TXT file:")
+for sentence in random_sentences:
+    match_percentage = calculate_match_percentage(sentence, txt_content)
+    if match_percentage > 0:
+        print(f"Found: {match_percentage:.2f}% of the sentence: {sentence}")
+    else:
+        print(f"Not found: {sentence}")
+```
+
 ## Experiments and Results
+### Llama herd
 In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. 
@@ -266,7 +340,24 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
+The input prompt were varied, and the global setting for the Llama model family adapted concerning the temperature and the approach setting. View the results section for the specific settings and their corresponding results. 
+
+As the results of the llama herd were relatively disappointing both in terms of structure and content, we turned towards larger models that may not be open source, but are more powerful and possibly capable in adapting the data into the parlaMint scheme. 
+
+### GPT-4o 
+
+### Gemini
+
 ## Results & Discussion 
+
+### Llama Herd 
+
+#### Llama 3 1B Parameters 
+
+
+#### Llama 3 3B Parameters
+
+#### Llama 3 8B Parameters
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 

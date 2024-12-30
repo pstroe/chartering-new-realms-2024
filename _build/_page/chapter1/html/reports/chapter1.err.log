@@ -15,7 +15,7 @@ Traceback (most recent call last):
   File "C:\Users\lizzi\Downloads\git_projects\chartering\chart_env\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.240.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 721, in run_until_complete
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.496.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 720, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
   File "C:\Users\lizzi\Downloads\git_projects\chartering\chart_env\Lib\site-packages\nbclient\client.py", line 709, in async_execute
