@@ -183,13 +183,12 @@ A further issue in harnessing LLMs for data formatting lies in the costliness of
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
-- Llama 3 8B 
-- Jellyfish [^footnote4]
-
-[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
+- Llama 3 8B
+- Gemini 1.5 Flash
+- GPT 4o
 
 #### Evaluation
-To evaluate the work of the llms automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
+To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
 
 ##### Evaluation XML Schema
 To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was selected as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
@@ -338,9 +337,10 @@ for sentence in random_sentences:
 ```
 
 ## Experiments
+In a primary approach, the attempt was made to guide a locally run, smaller, LLM, Llama, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fullfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
 
 ### LLama Herd 
-In a primary approach, the attempt was made to guide a locally run, smaller, LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
+The prompt for the Llama herd is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The setting of the model was varied to test whether different base settings would alter the responses given by the model. 
 
@@ -414,10 +414,12 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
-The input prompt was varied, and the global setting for the Llama model family adapted. View the appendix for the specific settings and their corresponding results. 
+The input prompt was varied, and the global setting for the Llama family adapted. View the appendix for the specific settings and their corresponding results. 
+
+INPUT A TABLE WITH ALL OF THE EXPERIMENTS AND THEIR EVALUATION SCORES
 
 ### Gemini 
-To assess whether a larger LLM gave a better output, Gemini 1.5 Flash was tested in its online space. As it does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of Gemini. Every conversation was held thrice to assess the answer scheme of the LLM. 
+To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. As it does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of Gemini. Every conversation was held thrice to assess the answer scheme of the LLM. 
 
 ```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same xml format. Format all of the text.
 [UNREVISED HANSARD
@@ -452,6 +454,8 @@ It's output however, was unusable, as it refused to attempt the task and gave an
 
 - Sorry, I can't help you with that. (test_8, 27.12.2024)
 - I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12.2024)
+
+It thus cannot be evaluated with the prepared scripts. 
 
 ## Discussion 
 
