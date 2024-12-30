@@ -284,6 +284,69 @@ The prompts were run three times, always in new chat windows. It was attempted t
 
 ### GPT-4o Experiments
 
+### Evaluation
+
+To validate the XML schema of the files output by the LLMs, a RelaxNG file was created and a short Python script was written. The RelaxNG format was chosen, as there already exists an official RelaxNG file to validate the ParlaMint XML schema [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the official RelaxNG file was adapted. 
+
+Using a short Python script, this file was then used to evaluate and validate all XML files:
+
+```{code-cell} python
+from lxml import etree
+from collections import Counter
+
+def validate_xml(relaxng_file, xml_file):
+    """
+    Validates an XML file against a RelaxNG schema and prints detailed error messages,
+    along with a total count of errors and a count of each error type.
+
+    :param relaxng_file: Path to the RelaxNG schema file.
+    :param xml_file: Path to the XML file to be validated.
+    """
+    try:
+        with open(relaxng_file, 'r', encoding='utf-8') as rng_file:
+            relaxng_doc = etree.parse(rng_file)
+            relaxng = etree.RelaxNG(relaxng_doc)
+        
+        with open(xml_file, 'r', encoding='utf-8') as xml_file_obj:
+            xml_doc = etree.parse(xml_file_obj)
+        
+        if relaxng.validate(xml_doc):
+            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema.")
+        else:
+            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema.\n")
+            print("Validation errors:")
+
+            error_count = 0
+            error_type_counter = Counter()
+
+            # Process and print each error
+            for error in relaxng.error_log:
+                error_count += 1
+                error_type_counter[error.type_name] += 1
+                print(f"Line {error.line}, Column {error.column}: {error.message}")
+                print(f"  Domain: {error.domain_name}, Type: {error.type_name}\n")
+
+            # Print total error summary
+            print("Summary of Validation Errors:")
+            print(f"Total Errors: {error_count}")
+            for error_type, count in error_type_counter.items():
+                print(f"  {error_type}: {count} occurrences")
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    relaxng_file = "Adapted_ParlaMint.rng" 
+    xml_file = "uh_25.02_short.xml"    
+
+    validate_xml(relaxng_file, xml_file)
+
+```
+If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema.". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
+
+[^footnote9] This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
+
 ## Discussion 
 
 ### Llama Herd 
