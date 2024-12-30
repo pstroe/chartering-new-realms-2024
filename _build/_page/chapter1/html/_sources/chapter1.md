@@ -29,10 +29,11 @@ Scholars spend many hours on preprocessing raw data into structured collections 
 
 ParlaMint was suggested as an interoperable, adaptive framework of formatting non-standardised parliamentary proceedings {cite:p}`erjavec_2023`. A first attempt at including the South African Parliamentary Proceedings has been made by Ogrodniczuk {cite:t}`ogrodniczuk_2024`, highlighting again the difficulties of formatting an unstructed document into the ParlaMint scheme {cite:p}`erjavec_2023`. The experiment was conducted on a singular session with a rule based approach {cite:p}`ogrodniczuk_2024`. This proved difficult as all quotations had to be marked manually, thus making it a labour intensive process when considering the 25 years of proceedings available for download on [the website of the South African Parliament](https://www.parliament.gov.za/hansard) {cite:p}`ogrodniczuk_2024, truan_2021`. 
 
-The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of the authors of this chapter, no attempts at harnessing LLMs for parliamentary corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized to their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`chen_2023`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, respectively correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
+The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of the authors of this chapter, no attempts at harnessing LLMs for parliamentary corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized to their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`chen_2023`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, or rather correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
 
-In light of these added difficulties when it comes to language data, where the language itself is of importance, research has largely been based on developping a tool that, in its foundations, is based on LLMs but that also includes code with a rule-based approach to wrangle data {cite:p}`chen_2023, arora_2023`. Evaporate is capable of transforming various, semistructured inputs into a table output, however its LLM components are based on using cloud solutions to run LLMs {cite:p}`arora_2023`. SEED works on a similar basis, though its output format can be customised [^footnote1]. A model specifically fine-tuned for dataprocessing is the jellyfish family, as proposed by Zhang et al. which is based on the smaller models of the Llama 3 family {cite:t}`zhang_jellyfish_2024`. These tools display a remarkable adaptivity to new tasks, especially with few-shot prompting, where a model or tool is supplied with several examples before it is set to the task {cite:p}`chen_2023`. However, this comes at a greater computational cost than when employing non-LLM or rule-based tools {cite:p}`arora_2023`. Considering this trade-off between robustness, human-costliness and energy-efficiency, any approach must be carefully calculated and balanced.
+In light of these added difficulties when it comes to language data, where the language itself is of importance, research has largely been based on developping a tool that, in its foundations, is based on LLMs but that also includes code with a rule-based approach to wrangle data {cite:p}`chen_2023, arora_2023`. Evaporate is capable of transforming various, semistructured inputs into a table output, its LLM components are based on using cloud solutions to run LLMs {cite:p}`arora_2023`. SEED works on a similar basis, though its output format can be customised [^footnote1]. A model specifically fine-tuned for dataprocessing is the jellyfish family [^footnote4], as proposed by Zhang et al. which is based on the smaller models of the Llama 3 family {cite:t}`zhang_jellyfish_2024`. These tools display a remarkable adaptivity to new tasks, especially with few-shot prompting, where a model or tool is supplied with several examples before it is set to the task {cite:p}`chen_2023`. However, this comes at a greater computational cost than when employing non-LLM or rule-based tools {cite:p}`arora_2023`. Considering this trade-off between robustness, human-costliness and energy-efficiency, any approach must be carefully calculated and balanced.
 
+[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
 
 [^footnote1]: SEED is currently undergoing restructuring and thus cannot be used. It seems to be a promising project for further investigation into processing raw data via LLM, see [SEED repository](https://anonymous.4open.science/r/SEED/paper.pdf). 
 
@@ -130,7 +131,7 @@ Example snippet from the converted xml file, showing part of the teiHeader eleme
 
 As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file. This ID is used in the component file to identify the speaker and link them to the metadata file. In a first step, it was decided to forgo this handling of speaker data. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context, to ensure a clean run of the LLM and then afterwards call the speaker element to insert the ID.
 
-Example snippet from the converted xml file, showing part of text element, containing the speeches:
+Example snippet from the converted xml file, showing part of text element containing the speeches:
 
 ```{code-cell} xml
 <text>
@@ -168,8 +169,7 @@ Example snippet from the converted xml file, showing part of text element, conta
 
 
 ### Method 
-
-To adhere to the FAIR principles the decision was made to harness the capabilities of the Llama Large Language Model family, which was and is developped by Meta {cite:p}`touvron_2023, dubey_2024`. The Llama models are based on a Transformer architercture {cite:p}`dubey_2024`. The Llama families "only use publicly available data, making [their] work compatible with open-sourcing" {cite:p}`touvron_2023`. It was thus possible to release the Llama models as open source with some restrictions to access. This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
+This chapter uses the newest release of the Llama 3 model family, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
 
 ```{figure} images_chapter1/llama_3.jpg
 ---
@@ -180,20 +180,21 @@ name: fig-llama_3
 Llama 3 herd with parameters {cite:p}`dubey_2024`
 ```
 
-A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. As the Jellyfish family by Zhan et al. is also based on Llama but finetuned to data processing, it will also be included in the experiments {cite:p}`zhang_jellyfish_2024`.
+A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. 
 
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
 - Llama 3 8B 
-- Jellyfish [^footnote4]
-
-[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
+- Gemini Flash 1.5
+- GPT-4o
 
 ## Experiments and Results
-In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
-Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. 
+### Llama Experiments
+In a primary approach, the attempt was made to guide a locally run LLM via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. The example is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The chunks were set at a 1000 token per run. The model was supplied with the same prompt and example at each run. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
+
+Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in a downloadable fashion. Furthermore, Ollama linked to langchain to customise its prompting abilities as Ollama offers limited customization options, though this is subject to swift changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity in responsiveness. The setting of the model was varied to test whether different base settings would alter the responses given by the model. 
 
 [^footnote]: For the newest updates and developments concerning Ollama consult their [blog](https://ollama.com/blog).
 
@@ -241,7 +242,6 @@ for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
-              #status of the processing.
                 print(f'Processing file: {filename}')
                 content = file.read()
                 document_list = []
@@ -266,7 +266,96 @@ for filename in os.listdir(folder_path):
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
-## Results & Discussion 
+ View the appendix for the specific settings and their corresponding results. Or look here? Maybe table of results? 
+
+### Gemini Experiments 
+The model Gemini 1.5 Flash was tested through the chat function and the online version [^footnote8]. As the online Gemini platform does not allow a file to be its input, the input was constructed to include a short example of both the original file and the target xml schema and be followed by the data in the prompt. The prompt was varied according to the appendix. Furthermore, as the input restriction lay at 5108 token for the online service of Gemini, the input data was chunked into bits of 5000 tokens. 
+
+EXAMPLE INPUT 
+
+Gemini was unable to structure the input, giving replies to the prompts such as: 
+
+- This conversation doesn't seem safe or appropriate, so I've stopped it. You can start a new chat if you want to talk about something else (test_6, 27.12) 
+- I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12)
+
+The prompts were run three times, always in new chat windows. It was attempted to guide the LLM through conversation. Gemini was overall unable to attempt to format the text. 
+
+[^footnote8] At the time of the set up of the experiment, we were unable to gain access to an API key for Gemini. This was due to restrictions from Google which did not allow us to access the website for the generation of Gemini API keys. 
+
+### GPT-4o Experiments
+
+### Evaluation
+
+To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was chosen as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
+
+Using a short Python script, the adapted RelaxNG file was used to evaluate and validate all XML files:
+
+```{code-cell} python
+from lxml import etree
+from collections import Counter
+
+def validate_xml(relaxng_file, xml_file):
+    """
+    Validates an XML file against a RelaxNG schema and prints detailed error messages,
+    along with a total count of errors and a count of each error type.
+
+    :param relaxng_file: Path to the RelaxNG schema file.
+    :param xml_file: Path to the XML file to be validated.
+    """
+    try:
+        with open(relaxng_file, 'r', encoding='utf-8') as rng_file:
+            relaxng_doc = etree.parse(rng_file)
+            relaxng = etree.RelaxNG(relaxng_doc)
+        
+        with open(xml_file, 'r', encoding='utf-8') as xml_file_obj:
+            xml_doc = etree.parse(xml_file_obj)
+        
+        if relaxng.validate(xml_doc):
+            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema.")
+        else:
+            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema.\n")
+            print("Validation errors:")
+
+            error_count = 0
+            error_type_counter = Counter()
+
+            # Process and print each error
+            for error in relaxng.error_log:
+                error_count += 1
+                error_type_counter[error.type_name] += 1
+                print(f"Line {error.line}, Column {error.column}: {error.message}")
+                print(f"  Domain: {error.domain_name}, Type: {error.type_name}\n")
+
+            # Print total error summary
+            print("Summary of Validation Errors:")
+            print(f"Total Errors: {error_count}")
+            for error_type, count in error_type_counter.items():
+                print(f"  {error_type}: {count} occurrences")
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    relaxng_file = "Adapted_ParlaMint.rng" 
+    xml_file = "uh_25.02_short.xml"    
+
+    validate_xml(relaxng_file, xml_file)
+
+```
+If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema.". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
+
+[^footnote9] This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
+
+## Discussion 
+
+### Llama Herd 
+
+#### Llama 3 1B Parameters 
+
+#### Llama 3 2B Parameters
+
+#### Llama 3 8B Parameters
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
@@ -278,6 +367,7 @@ Many members of the SA parliament do not have their birth date published online.
 
 ## Conclusion 
 
+As pretrained LLMs show difficulties in formatting a large amount of documents into a highly specific format such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, whene again available, can be adapted better to the task. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`.
 ## Bibliography
 ```{bibliography}
 :style: plain
