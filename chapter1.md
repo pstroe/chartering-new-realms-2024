@@ -131,7 +131,7 @@ Example snippet from the converted xml file, showing part of the teiHeader eleme
 
 As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file. This ID is used in the component file to identify the speaker and link them to the metadata file. In a first step, it was decided to forgo this handling of speaker data. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context, to ensure a clean run of the LLM and then afterwards call the speaker element to insert the ID.
 
-Example snippet from the converted xml file, showing part of text element, containing the speeches:
+Example snippet from the converted xml file, showing part of text element containing the speeches:
 
 ```{code-cell} xml
 <text>
@@ -169,7 +169,7 @@ Example snippet from the converted xml file, showing part of text element, conta
 
 
 ### Method 
-This chapter uses the newest release of the model family, Llama 3, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
+This chapter uses the newest release of the Llama 3 model family, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
 
 ```{figure} images_chapter1/llama_3.jpg
 ---
@@ -242,7 +242,6 @@ for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
-              #status of the processing.
                 print(f'Processing file: {filename}')
                 content = file.read()
                 document_list = []
@@ -279,9 +278,9 @@ Gemini was unable to structure the input, giving replies to the prompts such as:
 - This conversation doesn't seem safe or appropriate, so I've stopped it. You can start a new chat if you want to talk about something else (test_6, 27.12) 
 - I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12)
 
-The prompts were run three times, always in new chat windows. It was attempted to guide the llm through conversation. Gemini was overall unable to attempt to format the text. 
+The prompts were run three times, always in new chat windows. It was attempted to guide the LLM through conversation. Gemini was overall unable to attempt to format the text. 
 
-[^footnote8] At the time of the set up of the experiment, we were unable to gain access to an API key for Gemini. This was due to restrictions from google which did not allow us to access the website for the generation of Gemini API keys. 
+[^footnote8] At the time of the set up of the experiment, we were unable to gain access to an API key for Gemini. This was due to restrictions from Google which did not allow us to access the website for the generation of Gemini API keys. 
 
 ### GPT-4o Experiments
 
