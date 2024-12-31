@@ -253,9 +253,9 @@ If the XML file is valid, the output consists of a single line: "The XML file '{
 [^footnote9]: This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
 
 ##### Evaluation Content
-To evaluate the content of the output of the llms tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original txt file on a token basis. 
+To evaluate the content of the output of the LLMs tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original txt file on a token basis. 
 
-```{attention} This code needs to be configured for the xml tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag, though it is customisbale, to allow for output from llms which configure this tag wrongly, to allow for a consistent check of content. The code below is configured for the gold standard.
+```{attention} This code needs to be configured for the xml tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag, though it is customisbale, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. The code below is configured for the gold standard.
 ```
 
 ```{code-cell} python
@@ -416,10 +416,21 @@ for filename in os.listdir(folder_path):
 ```
 The input prompt was varied, and the global setting for the Llama family adapted. View the appendix for the specific settings and their corresponding results. 
 
-INPUT A TABLE WITH ALL OF THE EXPERIMENTS AND THEIR EVALUATION SCORES
+ADAPT THE STYLE APPROPRIATELY 
+```{code-cell} python
+import pandas as pd
 
-### Gemini 
-To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. As it does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of Gemini. Every conversation was held thrice to assess the answer scheme of the LLM. 
+pd.set_option('display.max_colwidth', 0)
+excel_file = "ZA-content/comments.xlsx"
+sn = "13.12"
+
+comments = pd.read_excel(excel_file, sheet_name=sn)
+
+print(comments)
+```
+
+### Gemini 1.5 Flash
+To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether it's answers are similar in content. 
 
 ```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same xml format. Format all of the text.
 [UNREVISED HANSARD
@@ -455,22 +466,19 @@ It's output however, was unusable, as it refused to attempt the task and gave an
 - Sorry, I can't help you with that. (test_8, 27.12.2024)
 - I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12.2024)
 
-It thus cannot be evaluated with the prepared scripts. 
+The output can thus not be evaluated with the prepared scripts. 
 
 ## Discussion 
-
+STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
 ### Llama Herd 
 
-#### Llama 3 1B Parameters 
+### Gemini 1.5 Flash 
 
-
-#### Llama 3 3B Parameters
-
-#### Llama 3 8B Parameters
+### GPT-4o 
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
-Prompt Engineering on local llms (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
+Prompt Engineering on local LLMs (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
 
 Note for limitations: we do not populate the metadata files, because very specific real world knowledge would be needed, and it is easier and computationally more efficient to populate this metadate with a rule-based approach once the base xml of the speeches themselves are parsed/created by the LLM. 
 Many members of the SA parliament do not have their birth date published online. 
