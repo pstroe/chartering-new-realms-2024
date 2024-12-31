@@ -204,10 +204,39 @@ In future employment of this workflow in a funded project, working with the GPT-
 As the 100 lines used for each input were just an approximation to a number of tokens that would stay within the context-limit of the model, using a tokenizer to split the text in accurate pieces of a certain number of tokens would probably ensure the stability of the output even more. These automatically split pieces could be then via a program be passed to the GPT-API automatically. Another problem with the Chat-interface use of GPT-4o is that there is a limit for prompting in a certain time-frame,{cite:p}`zotero-2629` depending on the plan. after reaching the limit, the service is suspended for some hours. This makes the Chat-interface unusable for automatic processing of large corpora.
 To make the API fully automated, there would need to be a script that would extract the tsv-output directly from the API output.
 
+However, I do think that in the context of a first experiment for AI to create character networks this approach was well chosen, especially if less tech-savvy scholars or students in similar contexts to mine might want to recreate the experiment with their own texts on a small scale without having to first learn how to use or pay for the API.
+
+Another element that might help the analysis is to insert coreference resolution into the text beforehand. How realiably this can be done in prose text, is however, also questionable. The same problems might arise as in the experiment later on, when the model cannot make the connection between two mentioned characters that are only mentioned at the end to be the same person (see Turmalin).
 
 ## Results  & Discussion
 
-As this is a quite experimental setting, evaluation can be done only approximately, firstly because there are a lot of cases where one can debate whether in a literary text that is not a drama, two people are for certain talking to each other, see also {cite}`moretti2011`
+As this is a quite experimental setting, evaluation can be done only approximately, firstly because there are a lot of cases where it is debatable whether prose text, two people are for certain talking to each other, see also {cite}`moretti2011`. As a result, I do think it is of much use to assign some score to the outputs of the LLMs, as in this quite complex process a lot of factors can influence the results and reliably examining each aspect is far beyond the scope of this chapter. However, I would like to have a look at some [TODO: specify] of the stories and what was produced, and compare the networks to character network propositions that I have made.
+
+Figure 4 shows the network produced for the tale _Turmalin_. As we will see, the extraction process did work quite poorly with this example.
+
+![image of the generated character network of Turmalin](images/Turmalin_colored2.png)
+Fig. 4: _generated Character Network Turmalin, colored for comparison with Figure 5_
+
+The six characters shown in Figure 4 show very little connection, implicating three pairs of characters only interacting with each other. The character network I created manually, reading the story and keeping track of when characters spoke to each other (or were reported to do so) is displayed in Figure 5. 
+
+![image of the manually created character network of Turmalin](images/Turmalin_M_colored3.png)
+Fig. 5: _manually created Character Network Turmalin, coloring for comparison with Figure 4_
+
+First of, the character disambiguation [TODO: ist es wirklich das?] of _Der Rentherr_ (orange), which is the same character as _Der Pförtner (des Perronschen Hauses)(orange)_ was not successful. However, the fact that this is the same person is only revealed towards the end of the tale. It seems that the LLM either did not recognise this connection, or did not go back to edit past entries in the interaction matrix. The last output showing the different names for the characters, as seen in Figure 6, is mentioning the characters seperately, so this is consistent with the generated network in Figure 4. 
+Apart from the possibly challenging late revelation of how the characters relate to each other, it is unclear why GPT 4o produced such a poor character network for this tale in particular. As can be seen in Figure 5, most of the characters do not appear in the network at all, edges are missing and also an explicit conversation between _Professor Andorf_ (green) and _Erzählerin_ was not caught but one that I could not reconstruct between _Professor Andorf_ and _Der Pförtner_ was drawn. The attempt at explainability with the sentences that should show the textpassages where the interactions happen did fail here as well, as interactions between _Professor Andorf_ and _Erzählerin_ are reported, but are not in the matrix. 
+
+![screenshot of the character names generated for Turmalin](images/chatgpt_turmalin_character_names.png)
+Fig. 6: _generated character names for Turmalin_
+
+The second tale I had a look at manually is _Granit_. The generated and mannualy created networks look quite similar, as is visible in Figures 7 and 8. This network did turn out quite well. The only problem here are the "Binnenerzählungen". The main one in _Granit_ is told by _Großvater_(color) and handlet von _Pechbrenner's Son_ (color). The two character did not interact themselves. Also, a shorter story, containing the interaction between _Bauer_ and _Pfarrer_, that _Großvater_ told was not detected at all. Interestingly, GPT 4o did find an interaction between a bird and a person, which is in the text simply that the bird was disturbed by the person.
+Overall however, this network is of pretty high quality.
+
+![image of generated character network of Granit](images/Granit_colored2.png)
+Fig. 7: _generated Character Network Granit, colored for comparison with Figure 8_
+
+![image of manually character network of Granit](images/Granit_M_colored2.png)
+Fig. 8: manually created Character Network Granit, colored for comparison with Figure 7_
+
 
 ![alt text](images/Bergmilch.png)
 Fig. 4: _Character Network Bergmilch_
@@ -228,9 +257,12 @@ Fig. 8: _Character Network Turmalin_
 Fig. 9: _Character Network Bergkristall_
 
 
+
+
+
 questions concerning the quality:
-- character disambiguation is still imperfect (alter Andreas == Wagenschmiermann)
-- what sort of interactions are seen as interactions? even though I clearly prompted
+- character disambiguation is still imperfect (see example turmalin)
+- what sort of interactions are seen as interactions? even though I clearly prompted (well debatable)
 - what happens in Binnenerzählungen (Granit und Turmalin)
 - compare to my own network of 1-2 stories I will reread
 - How well are the results explainable by what the model did output as well
@@ -239,14 +271,24 @@ some Interpretation of the results
 - connectedness of nodes and the relevance of the characters
 - similar networks? differences?
 
-
 Methodenreflektion
 - Link to the comparison of texts from different genres, outside the canon that are fastly emerging (AI generated, fanfiction) that are too large for 1 or a group of researchers to read
 - What about this is DH (to me?)
 
+Since this 
+
 
 ## Conclusion
 
+What did become clear the most during the evaluation of the results to me was that each step of this undertaking I did could be researched further. First of, prose being a more difficult textform to extract interactions from than dramas, where do humans see interactions, where does the AI? can these things be aligned with prompt engineering, or is it not necessarily in the most interest to do so?
+
+- what i could not show
+- what should be researched further
+- what i could show
+- potentials of AI in this field
+
+open questions:
+- what do I do with the networks I do not correct
 
 ## Ethics
 
