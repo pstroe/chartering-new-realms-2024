@@ -169,7 +169,7 @@ Example snippet from the converted xml file, showing part of text element contai
 ### Method 
 This chapter uses the newest release of the Llama 3 model family, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
 
-```{figure} images_chapter1/llama_3.jpg
+```{figure} ZA-content/images/llama_3.jpg
 ---
 width: 650px
 align: center
