@@ -167,9 +167,11 @@ Example snippet from the converted xml file, showing part of text element contai
 
 
 ### Method 
-This chapter uses the newest release of the Llama 3 model family, of which the largest model employs 405 bilion parameters {cite:p}`dubey_2024`. However, Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`.
+This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Flash and GPT-4o. 
 
-```{figure} ZA-content/images/llama_3.jpg
+Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`. 
+
+```{figure} chapter1_ZA-content/images/llama_3.jpg
 ---
 width: 650px
 align: center
@@ -178,14 +180,18 @@ name: fig-llama_3
 Llama 3 herd with parameters {cite:p}`dubey_2024`
 ```
 
-A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. 
+Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model with GPT-4 capabilities but a longer context window {cite:p}`gemini_2024`. It promises accuracy across a context window of 10 million token, whilst being relatively efficient and more efficient to serve then the Gemini 1.0 models {cite:p}`gemini_2024`. 
+
+ADD GPT-4O TO THIS.
 
 **Models Used**
 - Llama 3.2 1B
 - Llama 3.2 3B
 - Llama 3 8B
 - Gemini 1.5 Flash
-- GPT 4o
+- GPT-4o
+
+Because of the various implementations of the LLMs, witch the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding xml section and instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through the repetition of the instruction, or through a guiding conversation. For a detailed description of the approaches, please view the [Experiments and Results](#Experiments and Results) section.
 
 #### Evaluation
 To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
@@ -336,7 +342,7 @@ for sentence in random_sentences:
 
 ```
 
-## Experiments
+## Experiments and Results
 In a primary approach, the attempt was made to guide a locally run, smaller, LLM, Llama, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fullfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
 
 ### LLama Herd 
