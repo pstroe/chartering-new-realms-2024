@@ -505,13 +505,47 @@ It's output however, was unusable, as it refused to attempt the task and gave an
 The output can thus not be evaluated with the prepared scripts. 
 
 ### GPT-4o
+With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. 
+(Something something about usefulness of these, find sources again)
 
-| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
-|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/converted_hansard.xml>` |
-| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/converted_hansard_full.xml>`      |
-|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/converted_hansard_adapted.xml>` |
-| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/converted_hansard_complete.xml>`  |
+#### Try 1
+
+Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. 
+
+Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema
+
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/converted_hansard_25_02_2020.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/complete_converted_hansard_25_02_2020.xml>`|
+|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/updated_converted_hansard_25_02_2020.xml>` |
+|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
+
+#### Try 2
+
+Instructions: You are a txt to xml converter. You are given a txt file which you will convert into a downloadable xml file following the RelaxNG file which you were given.
+
+Knowledge: the RNG file used to validate the ParlaMint schema
+
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_full.xml>`| 
+|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_updated.xml>` |
+|4| You have now stored the entirety of the speeches in the txt file in one <u> element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_final.xml>`  |
+
+#### Try 3
+
+Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. Additionally, you were also given a RelaxNG file which can be used to validate the xml files and illustrates the xml schema you will be following.
+
+Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema, the RNG file used to validate the ParlaMint schema
+
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_full.xml>`      |
+|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_adapted.xml>` |
+|4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_complete.xml>`  |
 
 
 ## Discussion 
