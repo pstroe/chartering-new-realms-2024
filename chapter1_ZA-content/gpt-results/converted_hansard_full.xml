@@ -1,0 +1,2458 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
+        <title type="sub">Minutes of the National Assembly of South Africa</title>
+        <meeting n="1" corresp="#DZ" ana="#parla.NA">National Assembly</meeting>
+      </titleStmt>
+      <editionStmt>
+        <edition>1.0</edition>
+      </editionStmt>
+      <extent>
+        <measure unit="speeches" quantity="3" xml:lang="en">3 speeches</measure>
+        <measure unit="words" quantity="2624" xml:lang="en">2624 words</measure>
+      </extent>
+      <sourceDesc>
+        <bibl>
+          <title type="main" xml:lang="en">Proceedings of the National Assembly</title>
+          <idno type="URI">https://www.parliament.gov.za/storage/app/media/Docs/hansard/ff55b51e-536f-4214-85c2-5f6259579504.pdf</idno>
+          <date when="2020-02-25">25.02.2020</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p xml:lang="en">The South African Hansard Papers corpus</p>
+      </projectDesc>
+    </encodingDesc>
+    <profileDesc>
+      <settingDesc>
+        <setting>
+          <name type="place">Houses of Parliament</name>
+          <name type="city">Cape Town</name>
+          <name type="country" key="ZA">South Africa</name>
+          <date when="2020-02-25">25.02.2020</date>
+        </setting>
+      </settingDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="debateSection">
+        <note type="time">The House met at 14:00.</note>
+        <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+        <u xml:id="25-02-2020_u1" who="#houseChairperson">
+          <seg xml:lang="en">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules. Some of the amendments pertain to the sequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.</seg>
+        </u>
+      </div>
+    </body>
+    <body>
+      <div type="debateSection">
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 1</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">____</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">PROCEEDINGS OF THE NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">____</seg>
+        </u>
+        <note type="speaker">The House met at 14:00.</note>
+        <u>
+          <seg xml:lang="en">House Chairperson Ms M G Boroto took the Chair and requested</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">members to observe a moment of silence for prayer or</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">meditation.</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would</note>
+        <u>
+          <seg xml:lang="en">like to remind you that on 4 December 2019 the House adopted</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the Rules Committee report which introduced a number of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">amendments to our rules. Some of the amendments pertain to the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sequence of proceedings and Members’ Statements. To facilitate</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sufficient opportunity for Ministers’ Responses to Members’</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Statements, the sequence of proceedings has been amended so</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that Members’ Statements are now at the start of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">proceedings on days that they are scheduled by the programming</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">committee.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 2</seg>
+        </u>
+        <note type="speaker">The Rules Committee further agreed that the number of</note>
+        <u>
+          <seg xml:lang="en">Ministers’ Responses be increased from six to seven and that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">time allowed for Ministers’ Responses be increased from two</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">minutes to three minutes.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">With that background, I will now take the first item on the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Order Paper which is Members’ Statements. Does any member of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the ANC wish to make a statement?</seg>
+        </u>
+        <note type="speaker">The CHIEF WHIP OF THE OPPOSITION: Sorry Chair, on a point of</note>
+        <u>
+          <seg xml:lang="en">order.</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): Please take your seat.</note>
+        <u>
+          <seg xml:lang="en">Yes, what’s your point of order?</seg>
+        </u>
+        <note type="speaker">The CHIEF WHIP OF THE OPPOSITION: I’m terribly sorry to the</note>
+        <u>
+          <seg xml:lang="en">hon member for disrupting him, but House Chair, I have to just</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">look around this House and I think we need to note that there</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is one Minister in the House. So, we are about to do</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ministerial statements but there are not any Ministers in the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">House to hear them.</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the</note>
+        <u>
+          <seg xml:lang="en">House and I can say that I see a Minister and two Deputy</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 3</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ministers ... [Interjections.] ... and I believe ... Oh, I’m</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sorry, mama De Lille. I’m very sorry. I always look this side.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">My apologies. Mama De Lille is there. Let’s hope that as we</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">continue they will arrive because these are the rules that we</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">all adopted. Yes, hon Mente?</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms N V MENTE: House Chair, to say we must proceed ... they</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">will arrive ... how will they respond to something they did</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">not hear?</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): We have others that</note>
+        <u>
+          <seg xml:lang="en">will respond ... [Inaudible.] ... in the House.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms N V MENTE: No, no, no, no, no, no, the rule does not say</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that.</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): The rule says seven ...</note>
+        <u>
+          <seg xml:lang="en">yes, opportunities.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms N V MENTE: Yes, they are three now. They are currently</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">three.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 4</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): Hon Mahlangu, how do we</note>
+        <u>
+          <seg xml:lang="en">resolve this? We will resolve it together. Let’s resolve it</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">together.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms N V MENTE: Go to the next item on the Order Paper and then</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">we can come back to statements.</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): After having adopted</note>
+        <u>
+          <seg xml:lang="en">the rules I have to get advice because I can’t just flout the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">rules that we have adopted. Hon Chief Whip?</seg>
+        </u>
+        <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY: Hon House Chairperson, I</note>
+        <u>
+          <seg xml:lang="en">want to support the move that ... let’s start with the next</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">item. However, I must say it is uncalled for that we don’t</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">have Ministers and Deputy Ministers in the House when they</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">knew that Statements was going to be the first item. Thank</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">you. [Applause.]</seg>
+        </u>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you. I think that</note>
+        <u>
+          <seg xml:lang="en">is the wish of the members in the House. As the Chief Whip has</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">spoken and supports what you are saying, and I am advised by</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr Mahlangu that it is okay, I will proceed that way.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 5</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">CONSIDERATION OF REPORT OF PORTFOLIO COMMITTEE ON SCIENCE AND</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TECHNOLOGY ON SCIENCE AND TECHNOLOGY LAWS AMENDMENT BILL</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">There was no debate.</seg>
+        </u>
+        <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much,</note>
+        <u>
+          <seg xml:lang="en">House Chair. As indicated on the Order Paper ...</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">IsiXhosa:</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">...ndiphakamisa ukuba lo Mthetho-siHlomelo oYilwayo wemiThetho</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">yezobuNzululwazi nobuChwepheshe wamkelwe.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Motion agreed to.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Report accordingly adopted.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">SCIENCE AND TECHNOLOGY LAWS AMENDMENT BILL</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">(Second Reading debate)</seg>
+        </u>
+        <note type="speaker">The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY:</note>
+        <u>
+          <seg xml:lang="en">Thank you very much House Chairperson, the Deputy President,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Cabinet colleagues, members of the Portfolio Committee on</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Higher Education and the chairperson hon Mapulane, and hon</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 6</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">members, as a department we committed ourselves to position</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Science and Technology as a catalyst towards faster economic</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">growth and development. Whilst we acknowledge the challenges</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">facing a number of our state-owned enterprises, SOEs, there</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">are nevertheless those that are responding very positively to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the challenges of our country.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">This Bill will ensure that effectively we will be able to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harness the achievements of our SOEs. For instance, through</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the SA National Space Agency, the South African MeerKAT</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">project has been completed on time and within the budget of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">R3,2 billion. The benefits of hosting these telescopes include</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">a 75% local content component and direct investment of more</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">than R300 million in the Northern Cape by the SA Radio</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Astronomy Observatory alone.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Through the Technology Innovation Agency we continue to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harness the latest advances in smart agriculture. In this</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">regard, we are substantially expanding the agriculture and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">agroprocessing sector by supporting key value chains and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">products, developing new markets and reducing our reliance on</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">agricultural imports.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">IsiZulu:</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 7</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ngobuchwepheshe siwuHulumeni senza ngcono ulwazi ekutheni</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">senze izimpilo zabantu zibe ngcono. Kungakho sizoguqula</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">lemithetho namhlanje.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">English:</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">There had been an inconsistent and unco-ordinated management</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of public entities reporting to our Ministry, with different</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">requirements that regulate their operations.</seg>
+        </u>
+        <note type="speaker">The main reason for this Bill before you today is not to</note>
+        <u>
+          <seg xml:lang="en">simply ensure greater administrative efficiency, cost</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">containment and strategic alignment, but it also aims to drive</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the postschool knowledge and skills development imperatives</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">more decisively.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">An important dimension towards the realisation of our</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">objectives is that of harmonising the statutory provisions</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">which regulate the operations of all public entities falling</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">under our Ministry. This Bill seeks to, amongst others,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harmonise the processes for the determination of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">remuneration and allowances of the members and committees of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">boards or councils. The Bill also makes provision for the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">termination of membership of boards of the entities, as well</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">as the disqualification of members or potential members from</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 8</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the membership of such boards. The Bill also seeks to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harmonise the processes for the appointment of chief executive</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">officers, CEOs, of the entities.</seg>
+        </u>
+        <note type="speaker">The amendments will also correct the anomalous situation where</note>
+        <u>
+          <seg xml:lang="en">the Minister has had no say in the appointments of CEOs of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">some of our entities and would thus make provision for</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">consultation with the Minister during the appointment of such</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">CEOs.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">In the process of preparing this Bill, all interested and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">affected stakeholders were consulted individually and the Bill</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">was published in the Government Gazette for public comment in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">November 2017.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">In this context, it is crucial that we ensure that the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">nation’s future science, technology and innovation paradigm is</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">grounded on tried and tested principles of good governance.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">IsiZulu:</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Sethemba ukuthi amalungu ahloniphekile aleNdlu azoweseka</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">awuphasise loMthethosivivinyo ukuze siqubeke nalo msebenzi</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">omuhle esiwenzayo wokusebenzisa ubuchwepheshe ukuze senze</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">izimpilo zabantu bakithi zibe ngcono. Ngiyabonga. [Ihlombe.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 9</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr M P MAPULANE: House Chair, hon Minister Nzimande, hon</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">members, fellow South Africans, the Deputy President, it gives</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">great pleasure to present the committee report and to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">participate in this debate on the Science and Technology Laws</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Amendment Bill 42 of 2018.</seg>
+        </u>
+        <note type="speaker">The Bill was introduced and referred to the Fifth Parliament’s</note>
+        <u>
+          <seg xml:lang="en">Portfolio Committee on Science and Technology on 1 November</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">2018. On 5 December 2018, in terms of the joint rule 160 sub-</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">rule 6 the joint taking mechanism classified the Science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Technology Laws Amendment Bill as a section 75 Bill.</seg>
+        </u>
+        <note type="speaker">The committee calls for public submissions on the Science and</note>
+        <u>
+          <seg xml:lang="en">Technology Laws Amendment Bill from the 1 to 15 February 2019.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, because the Bill focuses exclusively on the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">operational and administrative governance procedures of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">entities that report to the Department of Science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Innovation, no submissions were received from the public.</seg>
+        </u>
+        <note type="speaker">The process to consider the amendment proposed by the Science</note>
+        <u>
+          <seg xml:lang="en">and Technology Laws Amendment Bill was done in collaboration</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">with the Parliament’s Legal Services, the Office of the State</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Law Advisor and the Department of Planning, Monitoring and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Evaluation. The Department of Planning, Monitoring and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 10</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Evaluation exempted the department from the application of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">socioeconomic impact assessment in respect of the Bill since</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">it did not directly affect the public.</seg>
+        </u>
+        <note type="speaker">The department briefed the committee on the Bill on 20</note>
+        <u>
+          <seg xml:lang="en">February 2019, two of the committee meetings on 27 and 6 March</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">were dedicated to the clause by clause consideration and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">adoption of the clause by clause amendments and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">committee’s report on the Bill, which the committee’s report</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">on the Bill and the allies were published on 11 March 2019.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, the committee’s report was not considered by the NA</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">due to the conclusion of the of the Fifth Parliament’s term.</seg>
+        </u>
+        <note type="speaker">The Bill was subsequently revived by this August House of the</note>
+        <u>
+          <seg xml:lang="en">Sixth Parliament last year on 29 October and referred to the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Portfolio Committee on Higher Education Science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Technology.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Following the briefing by the department on 20 November, the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">committee considered the Bill and the amendments effected by</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the previous portfolio committee and we are satisfied that the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">substance and the processes followed are in order and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">therefore are confident that this House can adopt the Science</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and Technology Amendment Bill as adopted.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 11</seg>
+        </u>
+        <note type="speaker">The objectives of the Science and Technology Laws Amendment</note>
+        <u>
+          <seg xml:lang="en">Bill are to ensure that the same governance principles and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">operational procedures are applied across the public entities</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that report to the Department of Science and Innovation. In</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">doing so, to negate the inconsistent, inadequate and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">uncoordinated management of these entities, each of which have</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">their own principle acts. The standardisation of governance</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and operational procedures of the public entities that report</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">to the department allows the department to efficiently manage</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">its administrative relationship with entities as well as more</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">effective and strategic oversight of the entity boards and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">council.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">It also affords the department through the Minister a voice in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the appointment of the entity’s Chief Executive Officers and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ensuring fiduciary responsibility with regard to the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">remuneration and allowance of board and council members and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">their committees.</seg>
+        </u>
+        <note type="speaker">The so called harmonisation has started by the department</note>
+        <u>
+          <seg xml:lang="en">during the fourth term of Parliament and has so far resulted</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in two amendment acts being passed and that is the Science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Technology Laws Amendment 16 of 2011 and the Science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Technology Laws Amendment Act 7 of 2014. The current Science</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 12</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and Technology Laws Amendment Bill specifically focus on the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">following five principal acts which are: the 2001 Academy of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Science of South Africa Act; the 2008 Human Science Research</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Act 1998; the Science Research Council Act of 2008; the South</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">African National Space Agency Act; and the Technology</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Innovation Act.</seg>
+        </u>
+        <note type="speaker">The Bill seeks to standardise the processes for the</note>
+        <u>
+          <seg xml:lang="en">termination of the membership of the boards or council,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">clarify the requirements for the disqualification of persons</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of membership of council and provide for the appointment of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">external persons to committees.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">It also ensures that the Minister responsible for science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">innovation can determine the remuneration and allowances of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the boards and council and their allowance.</seg>
+        </u>
+        <note type="speaker">The 1996 White Paper on science and technology introduced a</note>
+        <u>
+          <seg xml:lang="en">concept of a national system of innovation which is defined as</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">a network of institutions, organisations and policies that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">work together to achieve a common set of social and economic</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">goals and objectives for the development of science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">technology in our country.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 13</seg>
+        </u>
+        <note type="speaker">The department is responsible for developing, coordinating and</note>
+        <u>
+          <seg xml:lang="en">managing the system of innovation together with the eight</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">entities. However, 23 years after the promulgation of the 1996</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">White Paper on Science and Technology and following a number</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of reviews of the national system of innovation in the 1996</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">White Paper, including the recent approval by Cabinet of a new</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">White Paper on Science and Technology and Innovation in March</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">2019, the various reviews of the National System of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Innovation, NSI, and the White Paper show that despite</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">significant progress, challenges remain in attaining the ideal</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in the 1996 White Paper. Therefore, South Africa is not yet</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">fully benefited from the potential Science, Technology and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Innovation, STI, to advance the economy and improve the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">livelihoods of its citizens.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Key challenges constraining the performance of NSI are the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">inadequate and collaborative means of national STI agenda</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sitting, insufficient policy coherence, coordination, weak</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">partnership and so forth.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Now, a notable observation from the 2016/17 research and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">experimental development survey show that higher education</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sector was the largest contributed to the overall increase in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the gross expenditure on research and development of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 14</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">R827 million in constant 2010 values. The higher education</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sector contributed an amount of 790 to the increase in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">research and development. The research and development in the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">business sector increased by only 0.2% with State-owned</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">enterprises, SOEs, contributing R365 million which is</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">calculated in constant 2010 values to this. The private that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is business sector excluding the SOEs showed a decrease in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">research and development expenditure in constant 2010 values.</seg>
+        </u>
+        <note type="speaker">The government sector decreased by 2.4%, whereas the science</note>
+        <u>
+          <seg xml:lang="en">sector showed a marginal growth.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Therefore it is our call hon members to the business sector</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that they need to up their games and increase the investment</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in research and development so that the country is able to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">attain the 1.4% expenditure on the Gross domestic product,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">GDP, by 2019. We believe that this Science and Technology Laws</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Amendment Bill will contribute significantly towards that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">increase in research and development. I thank you</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms C V KING: Hon House Chairperson, the scientific perspective</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of the world, especially the living world, inexorably</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">impresses on us a dynamic picture of the world of entities and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">structures involved in continuous and incessant change and in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">process without ceasing.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 15</seg>
+        </u>
+        <note type="speaker">The proposed amendments of this Bill are of a technical nature</note>
+        <u>
+          <seg xml:lang="en">which seeks to harmonise the operations of entities in the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">science and technology sector to strengthen oversight and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">governance. Considering the technical nature of the Science</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and Technology Laws Amendment Bill, the initial introduction</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">at the end of the Fifth Parliament, did little justice on</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">discussion and consultation.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Improper norms and standards for entities resulted in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">inconsistent, inadequate and unco-ordinated management of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">public entities with different requirements regulating the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">operations and governance.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">On this basis this Bill seeks to harmonise the processes for</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">termination of membership of boards of entities, to clarify</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the requirements for disqualification of persons from</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">membership of boards and to provide for the appointment of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">external persons to committees of the boards.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Considering the recent flawed processes of public entity</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">boards as highlighted in the state capture reports, these</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">amendments are crucial to ensure that the Minister and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 16</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">chairpersons do not have autonomy over the boards and to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ensure that any amendment holds constitutional muster.</seg>
+        </u>
+        <note type="speaker">The Western Cape government in its submission of the Bill</note>
+        <u>
+          <seg xml:lang="en">expressed the importance of fit for purpose when appointed to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the boards, the inclusion of an appeals committee and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">chief executive officer, CEO’s term of office. Clause 22</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">interpretation of being convicted of fraud, corruption or any</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">other crime involving dishonesty, within a period of 10 years</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">preceding the date of nomination can be left open for abuse.</seg>
+        </u>
+        <note type="speaker">The time period should have been realistically considered.</note>
+        <u>
+          <seg xml:lang="en">Also placing the responsibility of determining fit for purpose</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in the domain of the court of law is limiting and should have</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">been added an additional insertion of “or a competent</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">tribunal”.</seg>
+        </u>
+        <note type="speaker">The DA was in favour of deleting any clauses that were</note>
+        <u>
+          <seg xml:lang="en">contrary to the Public Finance Management Act and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">insertion of the disclosure of conflict of interest clause.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">All inputs from various stakeholders were brought into</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">fruition in this Bill. A lethargic process to ensure enactment</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">should be avoided as happened in the previous Parliament</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">regarding this Bill.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 17</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Change is scientific; progress is ethical; change is</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">indubitable, whereas progress is a matter of controversy. This</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Bill is addressing ethical standards which should not be of a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">controversial nature to hinder progress. I thank you.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">[Applause.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr M N PAULSEN: Hon House Chairperson, the role of science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">technology, in particular research and development is the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">industrialisation and betterment of society. Highly</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">industrialised countries have used science and technology to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">drive industry in addressing the country’s challenges.</seg>
+        </u>
+        <note type="speaker">The Chinese government has placed emphasis through funding,</note>
+        <u>
+          <seg xml:lang="en">reform and societal status on science and technology as a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">fundamental part of the socioeconomic development of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">country as well as for national prestige.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">China has made rapid advances in areas such as education,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">infrastructure, high-tech manufacturing, academic publishing,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">patents and commercial applications and is now in some areas</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and by some measures a world leader. China is now increasingly</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">targeting indigenous innovation and aims to reform remaining</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">weaknesses.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 18</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Cuba, despite continued sanctions is able to function almost</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">independently because of the proper use of science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">technology, but more importantly their leadership within</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">science and technology. We have brother Blade and brother</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Buti.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, let us look at South Africa. Failure by the ruling</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">party to reconfigure research institutions post1994, has</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">resulted in these institutions continuing to operate in silos</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and playing no role in the reduction of unemployment and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">inequality. However also, science and technology is deemed as</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">elitist with very little accountability to the ruling party.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">If it was not elitist, our focus would have been on issues</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">which affects the poor masses in this country, the provision</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of decent water and sanitation, the harnessing of renewable</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">energy where implementation would be driven by a capable and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">capacitated state.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Minister Nzimande spoke of the Square Kilometre Array. Yes, it</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is in the Northern Cape, but the global headquarters are in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the UK. These headquarters will ultimately be the owners of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">any intellectual property emanating from the Square Kilometre</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Array.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 19</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, I am not surprised by the Minister’s lack of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">understanding of things that really matter. The University of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">KwaZulu-Natal is burning and there are serious allegations</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that a security service provider is responsible for the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">problems at the KwaZulu-Natal campuses. It is poor students</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">who are given the blame and Minister you are here sitting and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">speaking about the Square Kilometre Array.</seg>
+        </u>
+        <note type="speaker">The purpose of this Bill focuses on the need to harmonise the</note>
+        <u>
+          <seg xml:lang="en">entities within science and technology, but the Bill and these</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">institutions are operating within a policy framework that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">prioritises research for selfish interest and greed.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Harmonisation was already recommended in the Fourth Parliament</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and this House considered the First Amendment Bill in 2011.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">In April 2014, the Second Amendment Bill was considered.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Essentially the Second Amendment Bill proposed the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harmonisation of processes which included the appointment of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">chairpersons and members of boards of science and technology</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">entities, the qualifications of board members and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">dissolution of boards.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 20</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, what is laughable is the amendment of section 5 of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Act 26 of 2008. Paragraph 8 says and I quote, “The board must</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">be constituted in a manner that is broadly representatives of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the demographics of the country.”</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">South Africa is the only country where the government must</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">make laws to empower the majority group of its citizens. Black</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">people. In other countries the government makes laws to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">empower minority groups. That is how weak we are as a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">democracy and a country.</seg>
+        </u>
+        <note type="speaker">The current Bill was proposed in the Fifth Parliament, but</note>
+        <u>
+          <seg xml:lang="en">Parliament rose before the Bill could be considered. The</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">current committee constitutes none of the ANC members of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Fifth Parliament. You have just replaced all of them, no</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">continuity.</seg>
+        </u>
+        <note type="speaker">The research and development budget has declined and there has</note>
+        <u>
+          <seg xml:lang="en">been a loss of critical scientific skills.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">This department does not have a plan to ensure that Industry</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">4,0 does not lead to greater inequality between the working</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">class and those who continue to enjoy their historical</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">advantages.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 21</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Although an aspect in the Bill is a step in the right</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">direction, much more is required before the real benefit of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">science and technology will be realised. The EFF rejects this</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Bill. Thank you very much. [Applause.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr S L NGCOBO: Hon House Chair, this bill seeks to promote</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">accountability and transparency of boards and councils</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">regarding science and technology. We note the many technical</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">amendments of this Bill in providing sufficient powers to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ensure accountability and transparency in the boards and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">councils. The boards and councils oversee the work of various</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">entities in this department and act as a strategic mechanism</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ensuring functionality.</seg>
+        </u>
+        <note type="speaker">The IFP believes in making amendments that speak to appointing</note>
+        <u>
+          <seg xml:lang="en">those who are fit and proper. We are glad to see the board and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the Minister being compelled to engage each other in this</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">regard as a first step in appointing people who are fit and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">proper, through this Amendment Bill. The consultation between</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">both parties will reduce the potential for an individual to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">abuse the power.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">In a democracy, checks and balances are important in order to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ensure that the people govern through elected individuals.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 22</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Checks and balances work to promote accountability and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">transparency which must be the tool that people use to assess</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">their levels of satisfaction with government.</seg>
+        </u>
+        <note type="speaker">The public confidence in this department and some of its</note>
+        <u>
+          <seg xml:lang="en">entities is currently low and these amendments seek to redress</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the lost confidence. We saw the clear indications of the lack</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of confidence during the portfolio committee’s oversight and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">presentations made to it.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Public confidence must be built by showing that these entities</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">are free from corruption, nepotism and patronage. These</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">entities are seemingly run as if they are just a tuck shop.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Currently, South Africa has been left in the wake of grand</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">corruption by the former administration. We witness through</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">many commissions and the Zondo Commission, of a clear lack of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">attention paid to checks and balances, accountability and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">transparency.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">We maintain that only people who show excellence and who are</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">suitably qualified should be appointed in boards, councils or</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">official positions. In doing so, we will start to realise a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">professionally skilled public service. However, these</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 23</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">amendments alone won’t ensure the fully skilled public service</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that our nation deserves. We must guard against partisan</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">relationships at board and council levels to ensure that jobs</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">are given to those who are equal to the tasks required and not</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">because they are friends of the Ministers or other people. The</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">IFP supports this Bill. Thank you. [Applause.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Afrikaans:</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Dr W J BOSHOFF: Agb Voorsitter, dit is so dat wetenskap,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">tegnologie en innovasie een van daardie dryfkragte agter enige</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ekonomie is. In ’n ekonomie waar daar nie aandag aan die drie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">aspekte gegee word nie, kom so ’n ekonomie eintlik tot</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">stilstand. Dit is dus goed dat hierdie en vorige regerings</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">nogal aandag gegee het aan die totstandkoming van ’n hele</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">aantal wetenskaplike instellings, waarvan nie almal in hierdie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ministerie saamgevat is nie, maar wel agt belangrikes. Hierdie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">agt het elkeen ’n ander agtergrond soos die RGN, die Raad vir</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Geesteswetenskaplike Navorsing, maar ook al die ander, wat op</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">die menslike aspek van die ekonomie en die samelewing fokus.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Elkeen het op sy eie manier tot stand gekom en daarom is dit</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">’n goeie idee om ’n bietjie belyning in die organisasie van</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">hierdie instellings te bring.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 24</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Dit is belangrik dat daar deur hierdie wetsontwerp erken word</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">dat daar ’n geweldige skaarsheid - en die komitee het die</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">woord “dearth” [skaarsheid] gebruik - aan vaardighede en</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">kennis op die terrein van wetenskap, tegnologie en innovasie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is. As ’n mens kan sien dat daar wel so ’n skaarsheid is, dan</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is dit eintlik onverstaanbaar dat ’n mens daardie skaarsheid</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">kunsmatig vergroot deur middel van transformasieteikens en</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">swart ekonomiese bemagtiging, deur te sê dat soveel persent</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">van die kundiges uit ’n bepaalde seksie van die demografie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">moet kom.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Dit verslaan eintlik die doelwit, want ons het reeds te min</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">vaardighede. Ons moet elke persoon wat die kennis, die</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">vaardighede of die ervaring het om in hierdie terrein te dien,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">betrek en verwelkom. Ons moet niemand onwelkom laat voel nie.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Daar is baie keer ’n opvatting aan die regterkant van die</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Huis, maar partykeer ook aan die ander kant dat, as die VF</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Plus homself teen swart ekonomiese bemagtiging as ’n</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ekonomiese maatreël uitspreek, dit is asof die VF Plus sê dat</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">swart mense nie in staat is om die werk te doen nie. Dit is</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">baie ver van die waarheid af. Dit is nie die kwessie nie. Dit</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">gaan daaroor dat enige mens, ongeag afkoms, nasionaliteit,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">opvoeding, ensovoorts, in ’n posisie gestel word, nie op grond</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 25</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">van sy vaardighede, kennis of ervaring nie, maar op grond van</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">’n demografiese profiel.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Verder, as daardie persoon, as gevolg van sy demografiese</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">profiel, ook nie uit die pos vewyder kan word nie, dan is so</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">’n persoon geneig om nie juis te presteer nie. Verder, ’n</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ander persoon wat wel oor die kennis, vaardighede en ervaring</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">beskik, maar demografies verkeerd geplaas is, gaan doodgewoon</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">land uit na waar daar ’n behoefte is aan dit wat hy weet.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Wat meer is, van die talle en talle en talle swart persone wat</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in oorvloed oor die kennis, ervaring en vaardighede beskik om</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">hierdie poste te beklee, is so gesog, want elke</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">staatsonderneming, elke privaatonderneming en elkeen wat sake</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in hierdie land van ons doen, wil daardie mense hê om hul</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">bemagtigingspunte op te stapel en te kan sê dat hulle aan die</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">wetlike vereistes voldoen. Dit beteken dat hierdie mense nooit</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">lank genoeg in een pos bly om die ding werklik onder die knie</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">te kry en dit tot sy reg te laat kom nie.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">As die VF Plus sê dat ons hierdie wetsontwerp ondersteun, maar</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">dat ons dink dit moes verder gegaan het en ook gesê het dat</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">swart ekonomiese bemagtigingsteikens uit die terrein van</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">wetenskap en tegnologie gehaal moet word, dan is dit nie omdat</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 26</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">ons sê dat dit mense is wat nie oor die vaardighede beskik</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">nie. Inteendeel, dit is om erkenning te gee aan almal wat oor</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">hierdie kennis en vaardighede beskik en die vermoë het om</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Suid-Afrika verder te neem.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr W M THRING: Hon House Chair, the ACDP is cognisant of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">fact that this Bill which deals with the amendment of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Scientific Research Council Act of 1988, the Academy of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Science of South Africa Act of 2001, the Human Sciences</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Research Council Act of 2008, the Technology Innovation Agency</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Act of 2008, and the South African National Space Agency Act</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of 2008, essentially seeks to achieve the following: the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harmonisation of the process for the terminisation of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">membership of boards or councils, clarification of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">requirements for the disqualification of persons from</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">membership of boards or councils, as well as providing for</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">circumstances where members of boards or councils are</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">prohibited from participating or voting in the boards or</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">councils meetings, amongst other things.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Hon House Chair, if South Africa is to meaningfully compete in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the science and technology space, then it must have the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">administrative capacity and strength to do so, because any</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">organisation is only as strong as its internal ability to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 27</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">plan, strategise, envision and then implement. There can be no</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">external growth if the internal capacity or core of an</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">organisation has rotted or become weak. The ACDP is aware that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">this Bill seeks to strengthen the core within the science and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">technology sector. It is our view that if this is done</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">properly, efficiently and transparently, the external knock on</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">effect of preparing our students to become global players and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">contributors to the science and technology space can indeed</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">become a reality.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">We, within the African Christian Democratic Party, believe</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">that there is no lack of intelligence, ability and potential</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">among the students of South Africa. To a large extent,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">however, there has been a mismatch with respect to the skills</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">required by industry, and the skills produced within the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">education, science and technology sector. This is a recipe for</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">disaster, and will continue to be a drain on our industrial</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and economic recovery, which is so desperately needed.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">In conclusion, as this Bill has the noble intention of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harmonising termination processes and, in general,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">strengthening the administration processes in the boards and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">councils of the relevant entities, the ACDP is cautiously</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">optimistic that this internal administrative strengthening</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 28</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">process will have the positive leveraging effect of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">strengthening our skills capacity, and thereby unlocking the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">enormous potential of our students who will be able to do us</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">proud in the Fourth Industrial Revolution. The ACDP supports</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">this Bill. I thank you. [Applause.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr S N AUGUST: Thank you, House Chair. Good notes the December</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">2019 recommendations from the Portfolio Committee on Higher</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Education, Science and Technology that the National Assembly</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">passes the Bill. We thank the multiparty committee for their</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">work and welcome the amendments that aim to ensure that all</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">public entities comply with the Public Finance Management Act.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">I also appreciate the submission received that anyone with a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">criminal record must be disqualified. However, from my own</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">experience working in the justice sector, I know that,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">sometimes, criminals are able to be reformed.</seg>
+        </u>
+        <note type="speaker">The amendment to disqualify any person convicted for fraud,</note>
+        <u>
+          <seg xml:lang="en">corruption or any other crime involving dishonesty from being</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">considered for a board position for at least a decade is</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">accepted. However, we all know even without a criminal record,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the wrong people can still be appointed. We have seen how</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">corruption and maladministration results in the waste or theft</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of taxpayers’ money. To protect the poor and our country’s</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 29</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">finances, Good welcomes the stronger measures to ensure</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">compliance with the Public Finance Management Act and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Bill’s measures to clamp down on cadre deployment board</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">appointments by requiring the disclosure of any conflicts of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">interests.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Cadre deployment must be stopped. There are many qualified</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">skilled people with no party affiliation that can do the job.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">It is a fact that cadre deployment has destroyed the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">independence, and often functionality, of government</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">institutions. Good welcomes all efforts to stop corruption and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">cadre deployment and supports the amendments. Thank you.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Ms J S MANANISO: Chairperson, Deputy President, Ministers,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Deputy Ministers, hon members and fellow South Africans, I</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">want you to note that during our deliberations members of the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">opposition party didn’t have a say. At least they have</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">consulted and now we know that they are adopting the Bill.</seg>
+        </u>
+        <note type="speaker">The ANC as the governing party remains committed to our</note>
+        <u>
+          <seg xml:lang="en">people’s contract of better life for all. The ANC supports the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Science and Technology Laws Amendment Bill. The current</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">amendments are in response to the gaps identified in the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">previous Bill. Furthermore, it deals with codes of ethics and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 30</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">organisational culture. It has been a practice that most of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the departments with common interest have been working in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">silos using minimum resources.</seg>
+        </u>
+        <note type="speaker">The Bill is about harmonising the six public entities</note>
+        <u>
+          <seg xml:lang="en">reporting to the department in working together, collaborating</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and sharing best practices. The ANC wants to assure the people</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of South Africa that the Bill has went through formal legal</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">processes. The Bill is technical, administrative and is an</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">enabling legislation that addresses and promotes the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">following: good governance, transparency`, accountability,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">professionalism - skill-based, knowledge-based and experience-</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">based – skills retention, fair representation per</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">demographics. Most of us normally talk about institutional</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">memory. Colleagues, here we are not speaking about female and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">males, but we are speaking about gender demographics in terms</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of religion, sex, age, people with disability, lesbian, gay,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">bisexual, pansexual, transgender, gender queer, queer,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">intersexes, gender, asexual, and ally, LGBTQIA+, and everybody</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">who is part of the society.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Hon members, note that when we speak about science, technology</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and innovation we don’t speak human disruption, but disruptive</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">solutions. Understand what I am talking about. Don’t disrupt</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 31</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">us. We are speaking about disruptive solutions, information</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">technology, IT, innovations.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">This amendment Bill speaks to uniformity and it has clear</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">terms of references and time frames, which is five periods. It</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">seeks to strengthen collaborations and intergovernmental</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">relations and international relations. It is clear in terms of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">clarifications of powers and functions between Ministers and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">board council members and it speaks about value for money.</seg>
+        </u>
+        <note type="speaker">The current amendments will ensure that as a developmental</note>
+        <u>
+          <seg xml:lang="en">state, our state-owned enterprises, SOEs, play an important</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">role in growing our economy in addressing societal problems</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">through scientific research and technological innovation as</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">recognised by the National Development Plan, NDP.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">It has been proven that the following entities work together</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">in terms of knowledge production and innovation and the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">country is able to compete globally in science, technology and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">innovation: Academy of Science, Council for Scientific and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Industrial Research, Human Sciences Research Council, National</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Research Foundation, SA National Space Agency and Technology</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Innovation Agency.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 32</seg>
+        </u>
+        <note type="speaker">The Bill is about redressing and transforming the system as it</note>
+        <u>
+          <seg xml:lang="en">is constitutional mandate and we cannot negotiate the plight</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of our people. Scientific research and technological</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">innovation in our life time is an enabling and necessary</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">platform to fast-track our services to develop and grow South</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Africa together. It is important to note that we cannot speak</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">boldly about economic freedom in our lifetime without</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">investing in research and development and the advancement of</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">science, technology and innovation. As we normally say young</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">minds are innovative minds and investment therein is an</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">investment into the future.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Hon members, I would like to call on this august House to join</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the community of Mohlakeng in the West Rand in celebrating one</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of their own who has been appointed as first black female</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Geologist lecturer at the University of Pretoria, ms Mampho</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Maoyi. [Applause.] This shows that it is true when we say that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">South Africa is alive with possibilities.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">With this piece of legislation we must firmly place our nation</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">at the centre of the Fourth Industrial Revolution in order to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">address our triple challenges of poverty, inequality and</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">unemployment.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 33</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">There is nothing wrong with continuous planning. As the ANC we</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">pride ourselves with the NDP. If we fail to plan, we plan to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">fail. Let's keep working local and think globally.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">As I conclude, Deputy President, hon Ramaphosa, His Excellency</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the President, in his 2019 in his state of the nation address</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">debate emphasised on the significance of an activist</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">parliament. In the same breath with the same matter of social</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">compact, we would want to commit ourselves that we will,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">indeed, soldier on “thuma thina.” [send us]. Lastly, I would</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">like to speak about the issue of hon Boshof. Thank you as well</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">for giving the lecture to the FF Plus about us, black people,</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">of being capable. I thank you. [Applause.]</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Mr M G E HENDRICKS: Hon Chair, thank you very much for the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">opportunity. It was very encouraging to listen to the Minister</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">saying that the amendments are catalyst for economic growth.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">And I am very excited about the opportunities that the</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Minister highlighted for smart agriculture, and also that he</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">is very keen that his Ministry will now drive the skills</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">knowledge that we need.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">However, investment in research and innovation is still a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Cinderella when it comes to building a modern South Africa for</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">UNREVISED HANSARD</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">NATIONAL ASSEMBLY</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Page: 34</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the 21st and 22nd centuries. All we seem to have is just a</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">telescope. Our nuclear know how before apartheid has not been</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">harnessed. It could have assisted us today with our</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">electricity calamity, a calamity brought in by five</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">parliaments.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">It looks like we have no hope of sending a space mission to</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the moon. So there is no ambition amongst our brilliant young</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">scientists to aim for the skies.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">We do agree that the Minister must at least be consulted in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the appointed of CEOs in state-owned entities, SOEs, so that</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">he can take the blame if they mess up as it has happened over</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the past five parliaments. The Sixth Parliament must not be in</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">the same boat.</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Science and technology opportunities, especially at the most</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">senior levels, should have no racial discrimination. For once</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">I agree with the hon members of the FF Plus. It is very</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">important that South Africa takes advantage of the brilliance</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">and the innovation of its citizens and no one should be left</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">out to take South Africa to the 21st and 22nd centuries. Al</seg>
+        </u>
+        <u>
+          <seg xml:lang="en">Jama’ah supports amendments to the Bill.</seg>
+        </u>
+      </div>
+    </body>
+  </text>
+</TEI>

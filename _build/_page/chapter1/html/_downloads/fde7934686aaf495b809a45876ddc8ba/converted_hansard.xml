@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
+        <title type="sub">Minutes of the National Assembly of South Africa</title>
+        <meeting n="1" corresp="#DZ" ana="#parla.NA">National Assembly</meeting>
+      </titleStmt>
+      <editionStmt>
+        <edition>1.0</edition>
+      </editionStmt>
+      <extent>
+        <measure unit="speeches" quantity="3" xml:lang="en">3 speeches</measure>
+        <measure unit="words" quantity="2624" xml:lang="en">2624 words</measure>
+      </extent>
+      <sourceDesc>
+        <bibl>
+          <title type="main" xml:lang="en">Proceedings of the National Assembly</title>
+          <idno type="URI">https://www.parliament.gov.za/storage/app/media/Docs/hansard/ff55b51e-536f-4214-85c2-5f6259579504.pdf</idno>
+          <date when="2020-02-25">25.02.2020</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p xml:lang="en">The South African Hansard Papers corpus</p>
+      </projectDesc>
+    </encodingDesc>
+    <profileDesc>
+      <settingDesc>
+        <setting>
+          <name type="place">Houses of Parliament</name>
+          <name type="city">Cape Town</name>
+          <name type="country" key="ZA">South Africa</name>
+          <date when="2020-02-25">25.02.2020</date>
+        </setting>
+      </settingDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="debateSection">
+        <note type="time">The House met at 14:00.</note>
+        <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
+        <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+        <u xml:id="25-02-2020_u1" who="#houseChairperson">
+          <seg xml:lang="en">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules. Some of the amendments pertain to the sequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.</seg>
+        </u>
+      </div>
+    </body>
+  </text>
+</TEI>

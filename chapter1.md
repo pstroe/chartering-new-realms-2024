@@ -506,7 +506,13 @@ The output can thus not be evaluated with the prepared scripts.
 
 ### GPT-4o
 
-Please view my .xml file: [View XML File](../_static/gpt-results/converted_hansard.xml)
+| **Prompts**                                                                                     | **Results**                       |
+|--------------------------------------------------------------------------------------------------|------------------------------------|
+| Snippets from .txt and .xml file Please convert the txt file I have given you into an xml file following the same schema (uploaded part 1 of .txt file) | Click here to view {Download}`the first XML file<./chapter1_ZA-content/gpt-results/converted_hansard.xml>` |
+| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | Click here to view {Download}`the second XML file<./chapter1_ZA-content/gpt-results/converted_hansard_full.xml>`      |
+| Gave correct extract from .xml file. This is an extract of the .xml you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the .xml file. Note also that there is no need to repeat the page header every time - it can be omitted. | Click here to view {Download}`the third XML file<./chapter1_ZA-content/gpt-results/converted_hansard_adpated.xml>`|
+| You have now omitted the entirety of the textual data. Please make sure to include all speeches in you xml | Click here to view {Download}`the fourth XML file<./chapter1_ZA-content/gpt-results/converted_hansard_complete.xml>`  |
+
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 

@@ -506,36 +506,13 @@ The output can thus not be evaluated with the prepared scripts.
 
 ### GPT-4o
 
-```{code-cell} python
+| **Prompts**                                                                                     | **Results**                       |
+|--------------------------------------------------------------------------------------------------|------------------------------------|
+| Snippets from .txt and .xml file Please convert the txt file I have given you into an xml file following the same schema (uploaded part 1 of .txt file) | Click here to view {Download}`the first XML file<./chapter1_ZA-content/gpt-results/converted_hansard.xml>` |
+| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | Click here to view {Download}`the second XML file<./chapter1_ZA-content/gpt-results/converted_hansard_full.xml>`      |
+| Gave correct extract from .xml file. This is an extract of the .xml you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the .xml file. Note also that there is no need to repeat the page header every time - it can be omitted. | Click here to view {Download}`the third XML file<./chapter1_ZA-content/gpt-results/converted_hansard_adpated.xml>`|
+| You have now omitted the entirety of the textual data. Please make sure to include all speeches in you xml | Click here to view {Download}`the fourth XML file<./chapter1_ZA-content/gpt-results/converted_hansard_complete.xml>`  |
 
-from IPython.display import display, Javascript
-import pathlib
-
-# Function to create the pop-up window using JavaScript
-def show_xml_popup(file_path):
-    # Ensure the file exists
-    if not pathlib.Path(file_path).exists():
-        raise FileNotFoundError(f"The file {file_path} does not exist!")
-    
-    # Read the XML file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        xml_content = file.read()
-
-    # Escape the XML content for safe JavaScript embedding
-    escaped_content = xml_content.replace('<', '&lt;').replace('>', '&gt;')
-
-    # JavaScript to open a new window and display the XML
-    js_code = f"""
-    var newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-    newWindow.document.open();
-    newWindow.document.write('<pre>{escaped_content}</pre>');
-    newWindow.document.close();
-    """
-    # Display the JavaScript
-    display(Javascript(js_code))
-
-show_xml_popup('chapter1_ZA-content/gpt-results/converted_hansard.xml')
-```
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 

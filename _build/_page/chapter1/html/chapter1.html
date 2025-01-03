@@ -1206,38 +1206,27 @@ approaches had to be taken. Overall, the ParlaMint schema was simplified as to c
 </section>
 <section id="gpt-4o">
 <h3>GPT-4o<a class="headerlink" href="#gpt-4o" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Javascript</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-
-<span class="c1"># Function to create the pop-up window using JavaScript</span>
-<span class="k">def</span> <span class="nf">show_xml_popup</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-    <span class="c1"># Ensure the file exists</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The file </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2"> does not exist!&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Read the XML file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">xml_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-    <span class="c1"># Escape the XML content for safe JavaScript embedding</span>
-    <span class="n">escaped_content</span> <span class="o">=</span> <span class="n">xml_content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;lt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;gt;&#39;</span><span class="p">)</span>
-
-    <span class="c1"># JavaScript to open a new window and display the XML</span>
-    <span class="n">js_code</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    var newWindow = window.open(&#39;&#39;, &#39;_blank&#39;, &#39;width=800,height=600,scrollbars=yes&#39;);</span>
-<span class="s2">    newWindow.document.open();</span>
-<span class="s2">    newWindow.document.write(&#39;&lt;pre&gt;</span><span class="si">{</span><span class="n">escaped_content</span><span class="si">}</span><span class="s2">&lt;/pre&gt;&#39;);</span>
-<span class="s2">    newWindow.document.close();</span>
-<span class="s2">    &quot;&quot;&quot;</span>
-    <span class="c1"># Display the JavaScript</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="n">js_code</span><span class="p">))</span>
-
-<span class="n">show_xml_popup</span><span class="p">(</span><span class="s1">&#39;chapter1_ZA-content/gpt-results/converted_hansard.xml&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Prompts</strong></p></th>
+<th class="head"><p><strong>Results</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Snippets from .txt and .xml file Please convert the txt file I have given you into an xml file following the same schema (uploaded part 1 of .txt file)</p></td>
+<td><p>Click here to view <a class="reference download internal" download="" href="_downloads/fde7934686aaf495b809a45876ddc8ba/converted_hansard.xml"><code class="xref download docutils literal notranslate"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">XML</span> <span class="pre">file</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data.</p></td>
+<td><p>Click here to view <a class="reference download internal" download="" href="_downloads/1feaba27cb13b4ee295694320402ce84/converted_hansard_full.xml"><code class="xref download docutils literal notranslate"><span class="pre">the</span> <span class="pre">second</span> <span class="pre">XML</span> <span class="pre">file</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Gave correct extract from .xml file. This is an extract of the .xml you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the .xml file. Note also that there is no need to repeat the page header every time - it can be omitted.</p></td>
+<td><p>Click here to view <code class="xref download docutils literal notranslate"><span class="pre">the</span> <span class="pre">third</span> <span class="pre">XML</span> <span class="pre">file</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>You have now omitted the entirety of the textual data. Please make sure to include all speeches in you xml</p></td>
+<td><p>Click here to view <a class="reference download internal" download="" href="_downloads/f36d18ce8a3055fe9b2762cfb408c065/converted_hansard_complete.xml"><code class="xref download docutils literal notranslate"><span class="pre">the</span> <span class="pre">fourth</span> <span class="pre">XML</span> <span class="pre">file</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 </section>
