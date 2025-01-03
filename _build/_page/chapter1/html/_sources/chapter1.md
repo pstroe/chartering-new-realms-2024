@@ -507,6 +507,10 @@ The output can thus not be evaluated with the prepared scripts.
 ### GPT-4o
 
 ```{code-cell} python
+
+:tags: [thebe-init]
+print("This will run with Thebe!")
+
 from IPython.display import display, Javascript
 import pathlib
 
