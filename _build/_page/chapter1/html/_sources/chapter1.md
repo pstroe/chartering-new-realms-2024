@@ -508,9 +508,6 @@ The output can thus not be evaluated with the prepared scripts.
 
 ```{code-cell} python
 
-:tags: [thebe-init]
-print("This will run with Thebe!")
-
 from IPython.display import display, Javascript
 import pathlib
 
@@ -537,8 +534,6 @@ def show_xml_popup(file_path):
     # Display the JavaScript
     display(Javascript(js_code))
 
-# Example usage: call this function with the path to your XML file
-# Replace 'example.xml' with the path to your actual XML file
 show_xml_popup('chapter1_ZA-content/gpt-results/converted_hansard.xml')
 ```
 

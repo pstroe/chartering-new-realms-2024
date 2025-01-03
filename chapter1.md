@@ -506,36 +506,7 @@ The output can thus not be evaluated with the prepared scripts.
 
 ### GPT-4o
 
-```{code-cell} python
-
-from IPython.display import display, Javascript
-import pathlib
-
-# Function to create the pop-up window using JavaScript
-def show_xml_popup(file_path):
-    # Ensure the file exists
-    if not pathlib.Path(file_path).exists():
-        raise FileNotFoundError(f"The file {file_path} does not exist!")
-    
-    # Read the XML file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        xml_content = file.read()
-
-    # Escape the XML content for safe JavaScript embedding
-    escaped_content = xml_content.replace('<', '&lt;').replace('>', '&gt;')
-
-    # JavaScript to open a new window and display the XML
-    js_code = f"""
-    var newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-    newWindow.document.open();
-    newWindow.document.write('<pre>{escaped_content}</pre>');
-    newWindow.document.close();
-    """
-    # Display the JavaScript
-    display(Javascript(js_code))
-
-show_xml_popup('chapter1_ZA-content/gpt-results/converted_hansard.xml')
-```
+Please view my .xml file: [View XML File](../_static/gpt-results/converted_hansard.xml)
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
