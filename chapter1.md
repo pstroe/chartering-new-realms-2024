@@ -169,10 +169,39 @@ Example snippet from the converted xml file, showing part of text element contai
 ### Method 
 This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Flash and GPT-4o. 
 
-Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models , it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`. 
+Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output. A further issue in harnessing LLMs for data formatting lies in the costliness of the training and running of such models. Whilst there is an effort to optimize models, it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via few-shot prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. The model family was pretrained on 15T tokens which marks a large increase from Llama 2 with 1.8T tokens {cite:p}`dubey_2024`. 
 
 ```{figure} chapter1_ZA-content/images/llama_3.jpg
----
+---from IPython.display import display, Javascript
+import pathlib
+
+# Function to create the pop-up window using JavaScript
+def show_xml_popup(file_path):
+    # Ensure the file exists
+    if not pathlib.Path(file_path).exists():
+        raise FileNotFoundError(f"The file {file_path} does not exist!")
+    
+    # Read the XML file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        xml_content = file.read()
+
+    # Escape the XML content for safe JavaScript embedding
+    escaped_content = xml_content.replace('<', '&lt;').replace('>', '&gt;')
+
+    # JavaScript to open a new window and display the XML
+    js_code = f"""
+    var newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+    newWindow.document.open();
+    newWindow.document.write('<pre>{escaped_content}</pre>');
+    newWindow.document.close();
+    """
+    # Display the JavaScript
+    display(Javascript(js_code))
+
+# Example usage: call this function with the path to your XML file
+# Replace 'example.xml' with the path to your actual XML file
+show_xml_popup('example.xml')
+
 width: 650px
 align: center
 name: fig-llama_3
@@ -191,7 +220,8 @@ ADD GPT-4O TO THIS.
 - Gemini 1.5 Flash
 - GPT-4o
 
-Because of the various implementations of the LLMs, witch the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding xml section and instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through the repetition of the instruction, or through a guiding conversation. For a detailed description of the approaches, please view the [Experiments and Results](#Experiments and Results) section.
+Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different
+approaches had to be taken. Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding xml section and instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through the repetition of the instruction, or through a guiding conversation. For a detailed description of the approaches, please view the [Experiments and Results](#Experiments and Results) section.
 
 #### Evaluation
 To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
@@ -343,7 +373,7 @@ for sentence in random_sentences:
 ```
 
 ## Experiments and Results
-In a primary approach, the attempt was made to guide a locally run, smaller, LLM, Llama, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fullfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
+In a primary approach, the attempt was made to guide a locally run, smaller, LLM, Llama, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fulfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
 
 ### LLama Herd 
 The prompt for the Llama herd is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
@@ -473,6 +503,44 @@ It's output however, was unusable, as it refused to attempt the task and gave an
 - I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12.2024)
 
 The output can thus not be evaluated with the prepared scripts. 
+
+### GPT-4o
+
+```{code-cell} python
+
+:tags: [thebe-init]
+print("This will run with Thebe!")
+
+from IPython.display import display, Javascript
+import pathlib
+
+# Function to create the pop-up window using JavaScript
+def show_xml_popup(file_path):
+    # Ensure the file exists
+    if not pathlib.Path(file_path).exists():
+        raise FileNotFoundError(f"The file {file_path} does not exist!")
+    
+    # Read the XML file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        xml_content = file.read()
+
+    # Escape the XML content for safe JavaScript embedding
+    escaped_content = xml_content.replace('<', '&lt;').replace('>', '&gt;')
+
+    # JavaScript to open a new window and display the XML
+    js_code = f"""
+    var newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+    newWindow.document.open();
+    newWindow.document.write('<pre>{escaped_content}</pre>');
+    newWindow.document.close();
+    """
+    # Display the JavaScript
+    display(Javascript(js_code))
+
+# Example usage: call this function with the path to your XML file
+# Replace 'example.xml' with the path to your actual XML file
+show_xml_popup('chapter1_ZA-content/gpt-results/converted_hansard.xml')
+```
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
