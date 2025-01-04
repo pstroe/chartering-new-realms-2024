@@ -492,8 +492,7 @@ The experiment was insofar successful, as that when asking for help, Gemini atte
 
 ACTUALLY I NEED TO CHECK WHATEVER WAS GOING ON IN ATTEMPT 10
 ### GPT-4o
-With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. 
-(Something something about usefulness of these, find sources again)
+With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. With the subscription to the GPT-4o model comes the option of configuring custom GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions, uploading relevant documents, and integrating external tools or APIs. This customization process involves defining the model's purpose, specifying its interaction style, and supplying domain-specific knowledge to enhance its performance. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements, thereby improving efficiency and personalization in various application.{cite:p}`zhao_2024, garrido_2023, openai_2025`
 
 #### Try 1
 
