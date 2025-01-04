@@ -172,6 +172,7 @@ This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Fl
 Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output thus possibly minimizing the costliness of the running of such models. Whilst there is an effort to optimize models, it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. However, these smaller models come at a reduction of processing power, which may cause difficulties in processing the complex ParlaMint structure. 
 
 ```{figure} chapter1_ZA-content/images/llama_3.jpg
+---
 width: 650px
 align: center
 name: fig-llama_3
@@ -492,9 +493,9 @@ Knowledge: Snippet from a raw txt file, the corresponding XML file following the
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/converted_hansard_25_02_2020.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/complete_converted_hansard_25_02_2020.xml>`|
-|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/updated_converted_hansard_25_02_2020.xml>` |
-|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try1/complete_converted_hansard_25_02_2020.xml>`|
+|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try1/updated_converted_hansard_25_02_2020.xml>` |
+|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
 
 #### Try 2
 
@@ -505,9 +506,9 @@ Knowledge: the RNG file used to validate the ParlaMint schema
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_full.xml>`| 
-|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_updated.xml>` |
-|4| You have now stored the entirety of the speeches in the txt file in one <u> element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_final.xml>`  |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_full.xml>`| 
+|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_updated.xml>` |
+|4| You have now stored the entirety of the speeches in the txt file in one <u> element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_final.xml>`  |
 
 #### Try 3
 
