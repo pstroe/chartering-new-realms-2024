@@ -172,36 +172,6 @@ This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Fl
 Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output thus possibly minimizing the costliness of the running of such models. Whilst there is an effort to optimize models, it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. However, these smaller models come at a reduction of processing power, which may cause difficulties in processing the complex ParlaMint structure. 
 
 ```{figure} chapter1_ZA-content/images/llama_3.jpg
----from IPython.display import display, Javascript
-import pathlib
-
-# Function to create the pop-up window using JavaScript
-def show_xml_popup(file_path):
-    # Ensure the file exists
-    if not pathlib.Path(file_path).exists():
-        raise FileNotFoundError(f"The file {file_path} does not exist!")
-    
-    # Read the XML file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        xml_content = file.read()
-
-    # Escape the XML content for safe JavaScript embedding
-    escaped_content = xml_content.replace('<', '&lt;').replace('>', '&gt;')
-
-    # JavaScript to open a new window and display the XML
-    js_code = f"""
-    var newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-    newWindow.document.open();
-    newWindow.document.write('<pre>{escaped_content}</pre>');
-    newWindow.document.close();
-    """
-    # Display the JavaScript
-    display(Javascript(js_code))
-
-# Example usage: call this function with the path to your XML file
-# Replace 'example.xml' with the path to your actual XML file
-show_xml_popup('example.xml')
-
 width: 650px
 align: center
 name: fig-llama_3
