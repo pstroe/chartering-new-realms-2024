@@ -184,7 +184,8 @@ Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model wit
 
 GPT-4o was chosen for its accessibility, computational efficiency, and ease of use. Unlike larger, resource-intensive models, GPT-4o offers advanced capabilities while remaining efficient to run on standard hardware. Its intuitive design simplifies integration into workflows, making it an ideal choice for handling complex tasks like processing ParlaMint's XML structures without excessive computational demands. Additionally, OpenAI announced in a press conference that GPT-4o demonstrates significant advancements in linguistic, textual, and visual reasoning task {cite:p}`liu_2024`.
 
-With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents, which becomes the GPT's "knowledge". Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` Custom GPTs have been shown to outperform basic GPT models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involves information-retrieval. 
+With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` 
+Custom GPTs have been shown to outperform basic GPT models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involves information-retrieval. 
 
 
 **Models Used**
@@ -196,7 +197,7 @@ With the subscription to the GPT-4o model comes the option of configuring user-s
 
 Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. 
 
-Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](#Experiments and Results) section.
+Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](##Experiments and Results) section.
 
 #### Evaluation
 To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
@@ -400,9 +401,7 @@ df = pd.DataFrame(results)
 excel_file_path = 'output_results_with_average.xlsx' 
 df.to_excel(excel_file_path, index=False)
 
-print(f"Results have been written to {excel_file_path}")
-
-                       
+print(f"Results have been written to {excel_file_path}")           
 ```
 
 ## Experiments and Results
@@ -549,12 +548,17 @@ The experiment was insofar successful, as that when asking for help, Gemini atte
 
 ACTUALLY I NEED TO CHECK WHATEVER WAS GOING ON IN ATTEMPT 10
 
-### GPT-4o
-In order to have the custom GPT perform the XML-formattin task, the appraoch of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
+### Custom GPT
+When configuring a custom GPT, the user can set several different paramaters. For this paper, the paramaters "Additional Instructions", "Knowledge" and "New Capabilities" were of particular interest.
+In the "Additional Instructions" section, the user may provide detailed instructions or guidelines on how the GPT should behave, its functionalities, and any particular behaviors to avoid. {cite:p}`openai_creating`
+
+The "Knowledge" is provided by the user in the form of uploaded files, which provides addtional context for the GPT to reference. The "New Capabilities" consist of Web Browsing, DALL·E Image Generation, Canvas and Advanced Data Analysis, which allow the GPT to perform additional functionality. The options "Web Borwsing", "DALL·E Image Generation" and "Canvas" were disabled. {cite:p}`openai_creating, openai_knowledge`
+
+In order to have the custom GPT perform the XML-formatting task, the appraoch of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
 
 #### Try 1
 
-Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. 
+Additional Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. 
 
 Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema
 
@@ -567,7 +571,7 @@ Knowledge: Snippet from a raw txt file, the corresponding XML file following the
 
 #### Try 2
 
-Instructions: You are a txt to xml converter. You are given a txt file which you will convert into a downloadable xml file following the RelaxNG file which you were given.
+Additional Instructions: You are a txt to xml converter. You are given a txt file which you will convert into a downloadable xml file following the RelaxNG file which you were given.
 
 Knowledge: the RNG file used to validate the ParlaMint schema
 
@@ -580,7 +584,7 @@ Knowledge: the RNG file used to validate the ParlaMint schema
 
 #### Try 3
 
-Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. Additionally, you were also given a RelaxNG file which can be used to validate the xml files and illustrates the xml schema you will be following.
+Additional Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. Additionally, you were also given a RelaxNG file which can be used to validate the xml files and illustrates the xml schema you will be following.
 
 Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema, the RNG file used to validate the ParlaMint schema
 
