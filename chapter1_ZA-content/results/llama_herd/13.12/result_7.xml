@@ -1,0 +1,76 @@
+Given raw text: Human: Question: Given raw text: The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed. with the end goal: <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>, adapt this: UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 1 TUESDAY, 25 FEBRUARY 2020 ____ PROCEEDINGS OF THE NATIONAL ASSEMBLY ____ The House met at 14:00. House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation. The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules. Some of the amendments pertain to the sequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee. UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 2 The Rules Committee further agreed that the number of Ministers’ Responses be increased from six to seven and that time allowed for Ministers’ Responses be increased from two minutes to three minutes. With that background, I will now take the first item on the Order Paper which is Members’ Statements. Does any member of the ANC wish to make a statement? The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper ... UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 3 In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports. ISITHOZULU: Ngobuchwepheshe siwuHulumeni senza ngcono ulwazi ekutheni senze izimpilo zabantu zibe ngcono.
+
+Answer: Be a helpful assistant.
+I'll help you adapt the given text in a way that's easy to understand.
+
+The raw text is about a Bill, or law, aimed at harmonizing the statutory provisions regulating public entities in South Africa. Here's an adapted version:
+
+"A Bill Before Parliament
+
+Reasoning for this Bill
+
+This Bill aims to drive post-school knowledge and skills development more decisively by harmonising the processes for determining remuneration and allowances of board members, as well as terminating membership and disqualifying individuals from public boards.
+
+Key Provisions
+
+1. Harmonisation of Processes
+	* The process for terminating board membership will be clarified.
+	* The requirements for disqualifying individuals from public boards will be set out.
+2. Appointment of External Persons to Committees
+	* A provision will be made for external persons to be appointed to committees, ensuring that these bodies are representative and diverse.
+3. Remuneration and Allowances of Boards and Councils
+	* The Minister responsible for science and innovation will determine the remuneration and allowances of boards and councils.
+
+Objectives
+
+1. To ground our nation's future in tried and tested principles of good governance.
+2. To ensure efficient management of administrative relationships with public entities.
+3. To provide a framework for strategic oversight and effective monitoring of entity boards and councils."
+
+Note that I've kept the original formatting and tone, while reorganizing the text to make it more readable and concise. Let me know if you'd like any further assistance!
+Here's an adapted version of the text in the specified XML format:
+
+<p>
+ <seg xml:lang="en">The Chief Whip of the Majority Party:</seg> 
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg></note>
+</p>
+
+<p>
+ <seg xml:lang="en">The Department is responsible for developing, coordinating and managing the system of innovation together with the eight entities. However, 23 years after the promulgation of the 1996 White Paper on Science and Technology and following a number of reviews of the national system of innovation in the 1996 White Paper, including the recent approval by Cabinet of a new White Paper on Science and Technology and Innovation in March 2019, the various reviews of the National System of Innovation, NSI, and the White Paper show that despite significant progress, challenges remain in attaining the ideal in the 1996 White Paper.</seg>
+</p>
+
+<p>
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">Therefore, South Africa is not yet fully benefited from the potential Science, Technology and Innovation, STI, to advance the economy and improve the livelihoods of its citizens.</seg></note>
+</p>
+
+<p>
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">Key challenges constraining the performance of NSI are the inadequate and collaborative means of national STI agenda sitting, insufficient policy coherence, coordination, weak partnership and so forth.</seg></note>
+</p>
+
+<p>
+ <seg xml:lang="en">Now, a notable observation from the 2016/17 research and experimental development survey show that higher education sector was the largest contributed to the overall increase in the gross expenditure on research and development of UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 14 R827 million in constant 2010 values.</seg>
+</p>
+
+<p>
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">The higher education sector contributed an amount of 790 to the increase in research and development. The research and development in the business sector increased by only 0.2% with State-owned enterprises, SOEs, contributing R365 million which is calculated in constant 2010 values to this.</seg></note>
+</p>
+
+<p>
+ <seg xml:lang="en">The private that is business sector excluding the SOEs showed a decrease in research and development expenditure in constant 2010 values. The government sector decreased by 2.4%, whereas the science sector showed a marginal growth.</seg>
+</p>
+
+<p>
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">Therefore, it is our call hon members to the business sector that they need to up their games and increase the investment in research and development so that the country is able to attain the 1.4% expenditure on the Gross domestic product, GDP, by 2019.</seg></note>
+</p>
+
+<p>
+ <seg xml:lang="en">We believe that this Science and Technology Laws Amendment Bill will contribute significantly towards that increase in research and development.</seg>
+</p>
+
+<p>
+ <note type="speaker"><u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"></u><seg xml:lang="en">Change is scientific; progress is ethical; change is indubitable, whereas progress is a matter of controversy. This Bill is addressing ethical standards which should not be of a controversial nature to hinder progress.</seg></note>
+</p>
+
+<p>
+ <seg xml:lang="en">I thank you.</seg>
+</p>

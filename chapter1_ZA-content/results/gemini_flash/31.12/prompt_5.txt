@@ -1,0 +1,16 @@
+E $ help me format some text 
+
+G $ I can help you format text. Here are some tips:
+
+    Use a clear and consistent font.
+    Use a font size that is easy to read.
+    Use bold, italics, and underlining to emphasize important points.
+    Use headings and subheadings to organize your text.
+    Use white space to make your text easier to read.
+    Use bullet points and numbered lists to organize your text.
+    Use images and other visuals to break up your text and make it more engaging.
+
+If you have a specific question about how to format text, please let me know.
+
+E $ Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House 
+

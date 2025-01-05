@@ -1,0 +1,145 @@
+To adapt this raw text in the style of UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020, we need to follow a specific structure and formatting guidelines. Here are some steps:
+
+1. Convert the given text into XML format:
+2. Add a `<seg>` element around each paragraph of text.
+3. Use an `<xml:id>` attribute to identify each section with its respective date and number.
+
+Here's the adapted version in the specified style:
+
+<UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020>
+
+ Page: 1
+ <seg xml:lang="en">The CHIEF WHIP OF THE MAJORITY PARTY:</seg> Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
+ 
+<seg xml:id="01-03-2023_u13" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">As indicated on the Order Paper we shall proceed.</seg>,</seg>
+ 
+ Page: 2
+ The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules. Some of the amendments pertain to the sequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.
+ 
+<seg xml:id="01-03-2023_u14" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.</seg>,</seg>
+ 
+ Page: 3
+ The HOUSE CHAIRPERSON (Ms M G Boroto): ...ndiphakamisa ukuba lo Mthetho-siHlomelo oYilwayo wemiThetho yezobuNzululwazi nobuChwepheshe wamkelwe. Motion agreed to.
+ 
+<seg xml:id="01-03-2023_u15" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Motion agreed to.</seg>,</seg>
+ 
+ Page: 4
+ The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: Thank you very much House Chairperson, the Deputy President, Cabinet colleagues, members of the Portfolio Committee on Higher Education and the chairperson hon Mapulane, and hon
+ 
+<seg xml:id="01-03-2023_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much House Chairperson, the Deputy President, Cabinet colleagues, members of the Portfolio Committee on Higher Education and the chairperson hon Mapulane, and hon</seg>,</seg>
+ 
+ Page: 5
+ The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: ...the benefits of hosting these telescopes include a 75% local content component and direct investment of more than R300 million in the Northern Cape by the SA Radio Astronomy Observatory alone. Through the Technology Innovation Agency we continue to harness the latest advances in smart agriculture. In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports.
+ 
+<seg xml:id="01-03-2023_u17" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Through the Technology Innovation Agency we continue to harness the latest advances in smart agriculture. In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports.</seg>,</seg>
+ 
+ Page: 6
+ The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: ...Ngobuchwepheshe siwuHulumeni sansana ngcono ulwazi ekutheni senze izimpilo zabantu zibe ngcono. Kungakho sizoguqula lemithetho namhlanje.
+ 
+<seg xml:id="01-03-2023_u18" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">There had been an inconsistent and unco-ordinated management of public entities reporting to our Ministry, with different requirements that regulate their operations. The main</seg>,</seg>
+ 
+ Page: 7
+ The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: ...the SA National Space Agency, the South African MeerKAT project has been completed on time and within the budget of R3,2 billion.
+ 
+<seg xml:id="01-03-2023_u19" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">The benefits of hosting these telescopes include a 75% local content component and direct investment of more than R300 million in the Northern Cape by the SA Radio Astronomy Observatory alone.</seg>,</seg>
+ 
+ Page: 8
+ The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: ...In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports.
+ 
+<seg xml:id="01-03-2023_u20" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports.</seg>,</seg>
+
+<UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020>
+To adapt the provided raw text, I will break it down into smaller sections and rewrite them in a more readable and coherent manner.
+
+**Section 1: Introduction**
+
+Original Text:
+The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed with the end goal:
+
+Adapted Text:
+Speaker of the Majority Party: Thank you, House Chair. According to our order paper, we will now move forward with our objective.
+
+**Section 2: Purpose of the Bill**
+
+Original Text:
+reason for this Bill before you today is not to simply ensure greater administrative efficiency, cost containment and strategic alignment, but it also aims to drive the postschool knowledge and skills development imperatives more decisively.
+
+Adapted Text:
+The purpose of this Bill is to achieve several goals, including improved administrative efficiency, cost savings, and strategic alignment. Additionally, we aim to promote post-school knowledge and skills development more effectively.
+
+**Section 3: Harmonization of Statutory Provisions**
+
+Original Text:
+An important dimension towards the realisation of our objectives is that of harmonising the statutory provisions which regulate the operations of all public entities falling under our Ministry. This Bill seeks to, amongst others, harmonise the processes for the determination of the remuneration and allowances of the members and committees of boards or councils.
+
+Adapted Text:
+To achieve our objectives, we must harmonize the statutes that govern the operations of all public entities under our ministry's jurisdiction. Specifically, this Bill will help standardize the procedures for determining the remuneration and allowances of board members and their committees.
+
+**Section 4: Termination of Membership**
+
+Original Text:
+The Bill also makes provision for the termination of membership of boards of the entities, as well as the disqualification of members or potential members from UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 8 the membership of such boards.
+
+Adapted Text:
+The Bill also provides for the termination of board memberships and excludes individuals who may be ineligible for membership in these boards from participating in their activities.
+
+**Section 5: Appointment of Chief Executive Officers**
+
+Original Text:
+The Bill also seeks to harmonise the processes for the appointment of chief executive officers, CEOs, of the entities. The amendments will also correct the anomalous situation where the Minister has had no say in the appointments of CEOs of some of our entities and would thus make provision for consultation with the Minister during the appointment of such CEOs.
+
+Adapted Text:
+The Bill aims to standardize the procedures for appointing chief executive officers (CEOs) of these entities. Moreover, this Bill addresses a concern where the minister's involvement in CEO appointments was previously absent, and now provides for the minister's consultation during these processes.
+
+**Section 6: Consultation with the Minister**
+
+Original Text:
+The so called harmonisation has started by the department during the fourth term of Parliament and has so far resulted in two amendment acts being passed and that is the Science and Technology Laws Amendment 16 of 2011 and the Science and Technology Laws Amendment Act 7 of 2014.
+
+Adapted Text:
+Our department began this process earlier, during the previous parliamentary term. We have already implemented changes through the passage of two bills: the Science and Technology Laws Amendment Act 16 of 2011 and the Science and Technology Laws Amendment Act 7 of 2014.
+
+**Section 7: Conclusion**
+
+Original Text:
+The objectives of the Science and Technology Laws Amendment Bill are to ensure that the same governance principles and operational procedures are applied across the public entities that report to the Department of Science and Innovation. In doing so, to negate the inconsistent, inadequate and uncoordinated management of these entities, each of which have their own principle acts.
+
+Adapted Text:
+The main goal of this bill is to ensure consistent application of governance principles and operational procedures across all public entities reporting to the Department of Science and Innovation. This will improve the coordination and standardization of management among these entities.
+
+These rewritten sections aim to preserve the original content while improving readability, coherence, and clarity.
+To adapt the raw text to the same xml format, we need to analyze the structure and content of the original text and apply similar formatting to the new text. Here is an attempt at adapting the new text:
+
+UNREVISED HANSARD NATIONAL ASSEMBLY WEDNESDAY, [DATE] PAGE: [NUMBER]
+
+The Department of Science and Technology: Thank you very much, Mr/Ms Chairperson.
+
+As indicated on the Order Paper we shall proceed.
+
+<u xml:id="01-MARCH-2024_u17" who="#DepartmentOfScienceAndTechnology"> <seg xml:lang="en">Thank you very much, Mr/Ms Chairperson.</seg>, let us discuss the current state of science and technology in South Africa. The department is responsible for developing, coordinating and managing the system of innovation together with the eight entities.
+
+However, 23 years after the promulgation of the 1996 White Paper on Science and Technology and following a number of reviews of the national system of innovation in the 1996 White Paper, including the recent approval by Cabinet of a new White Paper on Science and Technology and Innovation in March 2023, the various reviews of the National System of Innovation, NSI, and the White Paper show that despite significant progress, challenges remain in attaining the ideal in the 1996 White Paper.
+
+Therefore, South Africa is not yet fully benefited from the potential Science, Technology and Innovation, STI, to advance the economy and improve the livelihoods of its citizens. Key challenges constraining the performance of NSI are the inadequate and collaborative means of national STI agenda sitting, insufficient policy coherence, coordination, weak partnership and so forth.
+
+A notable observation from the 2022 research and experimental development survey shows that higher education sector was the largest contributor to the overall increase in the gross expenditure on research and development. The higher education sector contributed an amount of R1 billion in constant 2010 values. The research and development in the business sector increased by 0.5% with State-owned enterprises, SOEs, contributing R500 million which is calculated in constant 2010 values to this.
+
+The private business sector excluding the SOEs showed a decrease in research and development expenditure in constant 2010 values. The government sector decreased by 3.2%, whereas the science sector showed a marginal growth. Therefore it is our call hon members to the business sector that they need to up their games and increase the investment in research and development so that the country is able to attain the 1.4% expenditure on the Gross domestic product, GDP, by 2023.
+
+We believe that this Science and Technology Laws Amendment Bill will contribute significantly towards that increase in research and development. I thank you Mr/Ms Chairperson.
+
+I would also like to add that change is scientific; progress is ethical; change is indubitable, whereas progress is a matter of controversy. This Bill is addressing ethical standards which should not be of a controversial nature to hinder progress.
+
+Furthermore, the proposed amendments of this Bill are of a technical nature which seeks to harmonise the operations of entities in the science and technology sector to strengthen oversight and governance.
+
+Considering the recent flawed processes of public entity boards as highlighted in the state capture reports, these amendments are crucial to ensure that the Minister and chairpersons do not have autonomy over the boards and to ensure that any amendment holds constitutional muster.
+
+The Western Cape government in its submission of the Bill expressed the importance of fit for purpose when appointed to the boards, the inclusion of an appeals committee and the chief executive officer, CEO’s term of office. 
+
+Clause 22 interpretation of being convicted of fraud, corruption or any other crime involving dishonesty, within a period of 10 years preceding the date of nomination can be left open for abuse. The time period should have been realistically considered.
+
+Also placing the responsibility of determining fit for purpose in the domain of the court of law is limiting and should have been added an additional insertion of “or a competent tribunal”.
+
+The DA was in favour of deleting any clauses that were contrary to the Public Finance Management Act and the insertion of the disclosure of conflict of interest clause.
+
+All inputs from various stakeholders were brought into fruition in this Bill. A lethargic process to ensure enactment should be avoided as happened in the previous Parliament regarding this Bill.

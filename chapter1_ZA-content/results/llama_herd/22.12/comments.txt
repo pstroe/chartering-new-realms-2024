@@ -1,0 +1,7 @@
+Model: llama 3 8B, Temperature: 0.1, Answer: Be a helpful assistant., Iterations: 4, Chunk Size: 1000
+
+Test 1: Prompt: f'Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.'
+Test 2: Prompt: f'Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.'
+Test 3: Prompt: f'Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.'
+
+Test 4: Prompt: f'Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text'
