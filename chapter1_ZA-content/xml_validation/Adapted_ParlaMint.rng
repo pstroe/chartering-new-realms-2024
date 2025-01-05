@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.tei-c.org/ns/1.0"
+         xmlns:xml="http://www.w3.org/XML/1998/namespace"
+         xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+    <start>
+        <element name="TEI">
+            <attribute name="xml:id">
+                <data type="ID"/>
+            </attribute>
+            <attribute name="xml:lang">
+                <data type="language"/>
+            </attribute>
+            <element name="teiHeader">
+                <element name="fileDesc">
+                    <element name="titleStmt">
+                        <oneOrMore>
+                            <element name="title">
+                                <attribute name="type">
+                                    <choice>
+                                        <value>main</value>
+                                        <value>sub</value>
+                                    </choice>
+                                </attribute>
+                                <choice>
+                                    <group>
+                                        <attribute name="xml:lang">
+                                            <data type="language"/>
+                                        </attribute>
+                                        <text/>
+                                    </group>
+                                    <group>
+                                        <optional>
+                                            <attribute name="xml:lang">
+                                                <data type="language"/>
+                                            </attribute>
+                                        </optional>
+                                        <text/>
+                                    </group>
+                                </choice>
+                            </element>
+                        </oneOrMore>
+                        <optional>
+                            <element name="meeting">
+                                <attribute name="n">
+                                    <data type="NCName"/>
+                                </attribute>
+                                <text/>
+                            </element>
+                        </optional>
+                    </element>
+                    <element name="editionStmt">
+                        <element name="edition">
+                            <text/>
+                        </element>
+                    </element>
+                    <element name="extent">
+                        <oneOrMore>
+                            <element name="measure">
+                                <attribute name="unit">
+                                    <choice>
+                                        <value>speeches</value>
+                                        <value>words</value>
+                                    </choice>
+                                </attribute>
+                                <attribute name="quantity">
+                                    <data type="integer"/>
+                                </attribute>
+                                <optional>
+                                    <attribute name="xml:lang">
+                                        <data type="language"/>
+                                    </attribute>
+                                </optional>
+                                <text/>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                    <element name="sourceDesc">
+                        <element name="bibl">
+                            <element name="title">
+                                <attribute name="type">
+                                    <value>main</value>
+                                </attribute>
+                                <attribute name="xml:lang">
+                                    <data type="language"/>
+                                </attribute>
+                                <text/>
+                            </element>
+                            <element name="idno">
+                                <attribute name="type">
+                                    <value>URI</value>
+                                </attribute>
+                                <text/>
+                            </element>
+                            <element name="date">
+                                <attribute name="when">
+                                    <data type="date"/>
+                                </attribute>
+                                <text/>
+                            </element>
+                        </element>
+                    </element>
+                </element>
+                <element name="encodingDesc">
+                    <element name="projectDesc">
+                        <oneOrMore>
+                            <element name="p">
+                                <attribute name="xml:lang">
+                                    <data type="language"/>
+                                </attribute>
+                                <text/>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                    <optional>
+                        <element name="tagsDecl">
+                            <text/>
+                        </element>
+                    </optional>
+                </element>
+                <element name="profileDesc">
+                    <element name="settingDesc">
+                        <element name="setting">
+                            <oneOrMore>
+                                <element name="name">
+                                    <attribute name="type">
+                                        <choice>
+                                            <value>place</value>
+                                            <value>city</value>
+                                            <value>country</value>
+                                        </choice>
+                                    </attribute>
+                                    <optional>
+                                        <attribute name="key">
+                                            <data type="NCName"/>
+                                        </attribute>
+                                    </optional>
+                                    <text/>
+                                </element>
+                            </oneOrMore>
+                            <element name="date">
+                                <attribute name="when">
+                                    <data type="date"/>
+                                </attribute>
+                                <text/>
+                            </element>
+                        </element>
+                    </element>
+                </element>
+            </element>
+            <element name="text">
+                <element name="body">
+                    <zeroOrMore>
+                        <element name="div">
+                            <attribute name="type">
+                                <value>debateSection</value>
+                            </attribute>
+                            <optional>
+                                <element name="head">
+                                    <text/>
+                                </element>
+                            </optional>
+                            <zeroOrMore>
+                                <choice>
+                                    <element name="note">
+                                        <attribute name="type">
+                                            <choice>
+                                                <value>time</value>
+                                                <value>speaker</value>
+                                                <value>narrative</value>
+                                                <value>debate</value>
+                                                <value>summary</value>
+                                            </choice>
+                                        </attribute>
+                                        <mixed>
+                                            <optional>
+                                                <element name="time">
+                                                    <attribute name="when">
+                                                        <data type="dateTime"/>
+                                                    </attribute>
+                                                    <text/>
+                                                </element>
+                                            </optional>
+                                        </mixed>
+                                    </element>
+                                    <element name="u">
+                                        <attribute name="xml:id">
+                                            <data type="ID"/>
+                                        </attribute>
+                                        <attribute name="who">
+                                            <data type="anyURI"/>
+                                        </attribute>
+                                        <zeroOrMore>
+                                            <choice>
+                                                <element name="note">
+                                                    <text/>
+                                                </element>
+                                                <element name="seg">
+                                                    <attribute name="xml:lang">
+                                                        <data type="language"/>
+                                                    </attribute>
+                                                    <zeroOrMore>
+                                                        <choice>
+                                                            <element name="vocal">
+                                                                <attribute name="type">
+                                                                    <choice>
+                                                                        <value>interruption</value>
+                                                                        <value>question</value>
+                                                                        <value>clarification</value>
+                                                                        <value>speaking</value>
+                                                                        <value>exclamation</value>
+                                                                        <value>laughter</value>
+                                                                        <value>shouting</value>
+                                                                        <value>murmuring</value>
+                                                                        <value>noise</value>
+                                                                        <value>signal</value>
+                                                                    </choice>
+                                                                </attribute>
+                                                                <element name="desc">
+                                                                    <optional>
+                                                                    <attribute name="xml:lang">
+                                                                          <data type="language"/>
+                                                                    </attribute>
+                                                                    </optional>
+                                                                    <text/>
+                                                                </element>
+                                                            </element>
+                                                            <element name="kinesic">
+                                                                <attribute name="type">
+                                                                    <choice>
+                                                                        <value>applause</value>
+                                                                        <value>ringing</value>
+                                                                        <value>signal</value>
+                                                                        <value>playback</value>
+                                                                        <value>gesture</value>
+                                                                        <value>smiling</value>
+                                                                        <value>laughter</value>
+                                                                        <value>snapping</value>
+                                                                        <value>noise</value>
+                                                                    </choice>
+                                                                </attribute>
+                                                                <element name="desc">
+                                                                    <optional>
+                                                                        <attribute name="xml:lang">
+                                                                            <data type="language"/>
+                                                                        </attribute>
+                                                                    </optional>
+                                                                    <text/>
+                                                                </element>
+                                                            </element>
+                                                            <element name="gap">
+                                                                <attribute name="reason">
+                                                                    <choice>
+                                                                        <value>inaudible</value>
+                                                                        <value>editorial</value>
+                                                                        <value>foreign</value>
+                                                                    </choice>
+                                                                </attribute>
+                                                                <element name="desc">
+                                                                    <text/>
+                                                                </element>
+                                                            </element>
+                                                            <text/>
+                                                        </choice>
+                                                    </zeroOrMore>
+                                                </element>
+                                                <element name="vocal">
+                                                    <attribute name="type">
+                                                        <choice>
+                                                            <value>interruption</value>
+                                                            <value>question</value>
+                                                            <value>clarification</value>
+                                                            <value>speaking</value>
+                                                            <value>exclamation</value>
+                                                            <value>laughter</value>
+                                                            <value>shouting</value>
+                                                            <value>murmuring</value>
+                                                            <value>noise</value>
+                                                            <value>signal</value>
+                                                        </choice>
+                                                    </attribute>
+                                                    <element name="desc">
+                                                        <optional>
+                                                            <attribute name="xml:lang">
+                                                                <data type="language"/>
+                                                            </attribute>
+                                                        </optional>
+                                                        <text/>
+                                                    </element>
+                                                </element>
+                                                <element name="kinesic">
+                                                    <attribute name="type">
+                                                        <choice>
+                                                            <value>applause</value>
+                                                            <value>ringing</value>
+                                                            <value>signal</value>
+                                                            <value>playback</value>
+                                                            <value>gesture</value>
+                                                            <value>smiling</value>
+                                                            <value>laughter</value>
+                                                            <value>snapping</value>
+                                                            <value>noise</value>
+                                                        </choice>
+                                                    </attribute>
+                                                    <element name="desc">
+                                                        <optional>
+                                                            <attribute name="xml:lang">
+                                                                <data type="language"/>
+                                                            </attribute>
+                                                        </optional>
+                                                        <text/>
+                                                    </element>
+                                                </element>
+                                            </choice>
+                                        </zeroOrMore>
+                                    </element>
+                                </choice>
+                            </zeroOrMore>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </element>
+        </element>
+    </start>
+</grammar>
