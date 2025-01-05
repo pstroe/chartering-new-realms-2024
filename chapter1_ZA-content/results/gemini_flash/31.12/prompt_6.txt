@@ -1,0 +1,32 @@
+E $ help me format some text 
+
+G $  can help you format text in a few different ways. I can:
+
+    Change the font and size of the text.
+    Make the text bold, italic, or underlined.
+    Add bullet points or numbered lists to the text.
+    Indent the text.
+    Align the text to the left, right, or center.
+
+To help me format your text, please provide me with the following information:
+
+    The text you want to format.
+    The specific formatting you want to apply.
+
+For example, you could say:
+
+    "Please format the following text:
+
+    This is an example of some text.
+
+    I want to make the text bold and italic."
+
+Once you provide me with this information, I will be able to format your text for you.
+
+E $ Your task: Given ….
+
+G $ *reply* 
+
+E $ format all of the text 
+
+G $ I'm not programmed to assist with that. 

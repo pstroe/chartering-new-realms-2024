@@ -1,0 +1,3120 @@
+PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same xml format. Format all of the text.
+
+[UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 1
+TUESDAY, 25 FEBRUARY 2020
+____
+PROCEEDINGS OF THE NATIONAL ASSEMBLY
+____
+The House met at 14:00.
+House Chairperson Ms M G Boroto took the Chair and requested
+members to observe a moment of silence for prayer or
+meditation.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would
+like to remind you that on 4 December 2019 the House adopted
+the Rules Committee report which introduced a number of
+amendments to our rules. Some of the amendments pertain to the
+sequence of proceedings and Members’ Statements. To facilitate
+sufficient opportunity for Ministers’ Responses to Members’
+Statements, the sequence of proceedings has been amended so
+that Members’ Statements are now at the start of the
+proceedings on days that they are scheduled by the programming
+committee.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 2
+The Rules Committee further agreed that the number of
+Ministers’ Responses be increased from six to seven and that
+time allowed for Ministers’ Responses be increased from two
+minutes to three minutes.
+With that background, I will now take the first item on the
+Order Paper which is Members’ Statements. Does any member of
+the ANC wish to make a statement?
+The CHIEF WHIP OF THE OPPOSITION: Sorry Chair, on a point of
+order.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Please take your seat.
+Yes, what’s your point of order?
+The CHIEF WHIP OF THE OPPOSITION: I’m terribly sorry to the
+hon member for disrupting him, but House Chair, I have to just
+look around this House and I think we need to note that there
+is one Minister in the House. So, we are about to do
+ministerial statements but there are not any Ministers in the
+House to hear them.
+The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the
+House and I can say that I see a Minister and two Deputy
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 3
+Ministers ... [Interjections.] ... and I believe ... Oh, I’m
+sorry, mama De Lille. I’m very sorry. I always look this side.
+My apologies. Mama De Lille is there. Let’s hope that as we
+continue they will arrive because these are the rules that we
+all adopted. Yes, hon Mente?
+Ms N V MENTE: House Chair, to say we must proceed ... they
+will arrive ... how will they respond to something they did
+not hear?
+The HOUSE CHAIRPERSON (Ms M G Boroto): We have others that
+will respond ... [Inaudible.] ... in the House.
+Ms N V MENTE: No, no, no, no, no, no, the rule does not say
+that.
+The HOUSE CHAIRPERSON (Ms M G Boroto): The rule says seven ...
+yes, opportunities.
+Ms N V MENTE: Yes, they are three now. They are currently
+three.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 4
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon Mahlangu, how do we
+resolve this? We will resolve it together. Let’s resolve it
+together.
+Ms N V MENTE: Go to the next item on the Order Paper and then
+we can come back to statements.
+The HOUSE CHAIRPERSON (Ms M G Boroto): After having adopted
+the rules I have to get advice because I can’t just flout the
+rules that we have adopted. Hon Chief Whip?
+The CHIEF WHIP OF THE MAJORITY PARTY: Hon House Chairperson, I
+want to support the move that ... let’s start with the next
+item. However, I must say it is uncalled for that we don’t
+have Ministers and Deputy Ministers in the House when they
+knew that Statements was going to be the first item. Thank
+you. [Applause.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you. I think that
+is the wish of the members in the House. As the Chief Whip has
+spoken and supports what you are saying, and I am advised by
+Mr Mahlangu that it is okay, I will proceed that way.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 5
+CONSIDERATION OF REPORT OF PORTFOLIO COMMITTEE ON SCIENCE AND
+TECHNOLOGY ON SCIENCE AND TECHNOLOGY LAWS AMENDMENT BILL
+There was no debate.
+The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much,
+House Chair. As indicated on the Order Paper ...
+IsiXhosa:
+...ndiphakamisa ukuba lo Mthetho-siHlomelo oYilwayo wemiThetho
+yezobuNzululwazi nobuChwepheshe wamkelwe.
+Motion agreed to.
+Report accordingly adopted.
+SCIENCE AND TECHNOLOGY LAWS AMENDMENT BILL
+(Second Reading debate)
+The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY:
+Thank you very much House Chairperson, the Deputy President,
+Cabinet colleagues, members of the Portfolio Committee on
+Higher Education and the chairperson hon Mapulane, and hon
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 6
+members, as a department we committed ourselves to position
+Science and Technology as a catalyst towards faster economic
+growth and development. Whilst we acknowledge the challenges
+facing a number of our state-owned enterprises, SOEs, there
+are nevertheless those that are responding very positively to
+the challenges of our country.
+This Bill will ensure that effectively we will be able to
+harness the achievements of our SOEs. For instance, through
+the SA National Space Agency, the South African MeerKAT
+project has been completed on time and within the budget of
+R3,2 billion. The benefits of hosting these telescopes include
+a 75% local content component and direct investment of more
+than R300 million in the Northern Cape by the SA Radio
+Astronomy Observatory alone.
+Through the Technology Innovation Agency we continue to
+harness the latest advances in smart agriculture. In this
+regard, we are substantially expanding the agriculture and
+agroprocessing sector by supporting key value chains and
+products, developing new markets and reducing our reliance on
+agricultural imports.
+IsiZulu:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 7
+Ngobuchwepheshe siwuHulumeni senza ngcono ulwazi ekutheni
+senze izimpilo zabantu zibe ngcono. Kungakho sizoguqula
+lemithetho namhlanje.
+English:
+There had been an inconsistent and unco-ordinated management
+of public entities reporting to our Ministry, with different
+requirements that regulate their operations.
+The main reason for this Bill before you today is not to
+simply ensure greater administrative efficiency, cost
+containment and strategic alignment, but it also aims to drive
+the postschool knowledge and skills development imperatives
+more decisively.
+An important dimension towards the realisation of our
+objectives is that of harmonising the statutory provisions
+which regulate the operations of all public entities falling
+under our Ministry. This Bill seeks to, amongst others,
+harmonise the processes for the determination of the
+remuneration and allowances of the members and committees of
+boards or councils. The Bill also makes provision for the
+termination of membership of boards of the entities, as well
+as the disqualification of members or potential members from
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 8
+the membership of such boards. The Bill also seeks to
+harmonise the processes for the appointment of chief executive
+officers, CEOs, of the entities.
+The amendments will also correct the anomalous situation where
+the Minister has had no say in the appointments of CEOs of
+some of our entities and would thus make provision for
+consultation with the Minister during the appointment of such
+CEOs.
+In the process of preparing this Bill, all interested and
+affected stakeholders were consulted individually and the Bill
+was published in the Government Gazette for public comment in
+November 2017.
+In this context, it is crucial that we ensure that the
+nation’s future science, technology and innovation paradigm is
+grounded on tried and tested principles of good governance.
+IsiZulu:
+Sethemba ukuthi amalungu ahloniphekile aleNdlu azoweseka
+awuphasise loMthethosivivinyo ukuze siqubeke nalo msebenzi
+omuhle esiwenzayo wokusebenzisa ubuchwepheshe ukuze senze
+izimpilo zabantu bakithi zibe ngcono. Ngiyabonga. [Ihlombe.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 9
+Mr M P MAPULANE: House Chair, hon Minister Nzimande, hon
+members, fellow South Africans, the Deputy President, it gives
+great pleasure to present the committee report and to
+participate in this debate on the Science and Technology Laws
+Amendment Bill 42 of 2018.
+The Bill was introduced and referred to the Fifth Parliament’s
+Portfolio Committee on Science and Technology on 1 November
+2018. On 5 December 2018, in terms of the joint rule 160 sub-
+rule 6 the joint taking mechanism classified the Science and
+Technology Laws Amendment Bill as a section 75 Bill.
+The committee calls for public submissions on the Science and
+Technology Laws Amendment Bill from the 1 to 15 February 2019.
+However, because the Bill focuses exclusively on the
+operational and administrative governance procedures of the
+entities that report to the Department of Science and
+Innovation, no submissions were received from the public.
+The process to consider the amendment proposed by the Science
+and Technology Laws Amendment Bill was done in collaboration
+with the Parliament’s Legal Services, the Office of the State
+Law Advisor and the Department of Planning, Monitoring and
+Evaluation. The Department of Planning, Monitoring and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 10
+Evaluation exempted the department from the application of the
+socioeconomic impact assessment in respect of the Bill since
+it did not directly affect the public.
+The department briefed the committee on the Bill on 20
+February 2019, two of the committee meetings on 27 and 6 March
+were dedicated to the clause by clause consideration and the
+adoption of the clause by clause amendments and the
+committee’s report on the Bill, which the committee’s report
+on the Bill and the allies were published on 11 March 2019.
+However, the committee’s report was not considered by the NA
+due to the conclusion of the of the Fifth Parliament’s term.
+The Bill was subsequently revived by this August House of the
+Sixth Parliament last year on 29 October and referred to the
+Portfolio Committee on Higher Education Science and
+Technology.
+Following the briefing by the department on 20 November, the
+committee considered the Bill and the amendments effected by
+the previous portfolio committee and we are satisfied that the
+substance and the processes followed are in order and
+therefore are confident that this House can adopt the Science
+and Technology Amendment Bill as adopted.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 11
+The objectives of the Science and Technology Laws Amendment
+Bill are to ensure that the same governance principles and
+operational procedures are applied across the public entities
+that report to the Department of Science and Innovation. In
+doing so, to negate the inconsistent, inadequate and
+uncoordinated management of these entities, each of which have
+their own principle acts. The standardisation of governance
+and operational procedures of the public entities that report
+to the department allows the department to efficiently manage
+its administrative relationship with entities as well as more
+effective and strategic oversight of the entity boards and
+council.
+It also affords the department through the Minister a voice in
+the appointment of the entity’s Chief Executive Officers and
+ensuring fiduciary responsibility with regard to the
+remuneration and allowance of board and council members and
+their committees.
+The so called harmonisation has started by the department
+during the fourth term of Parliament and has so far resulted
+in two amendment acts being passed and that is the Science and
+Technology Laws Amendment 16 of 2011 and the Science and
+Technology Laws Amendment Act 7 of 2014. The current Science
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 12
+and Technology Laws Amendment Bill specifically focus on the
+following five principal acts which are: the 2001 Academy of
+Science of South Africa Act; the 2008 Human Science Research
+Act 1998; the Science Research Council Act of 2008; the South
+African National Space Agency Act; and the Technology
+Innovation Act.
+The Bill seeks to standardise the processes for the
+termination of the membership of the boards or council,
+clarify the requirements for the disqualification of persons
+of membership of council and provide for the appointment of
+external persons to committees.
+It also ensures that the Minister responsible for science and
+innovation can determine the remuneration and allowances of
+the boards and council and their allowance.
+The 1996 White Paper on science and technology introduced a
+concept of a national system of innovation which is defined as
+a network of institutions, organisations and policies that
+work together to achieve a common set of social and economic
+goals and objectives for the development of science and
+technology in our country.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 13
+The department is responsible for developing, coordinating and
+managing the system of innovation together with the eight
+entities. However, 23 years after the promulgation of the 1996
+White Paper on Science and Technology and following a number
+of reviews of the national system of innovation in the 1996
+White Paper, including the recent approval by Cabinet of a new
+White Paper on Science and Technology and Innovation in March
+2019, the various reviews of the National System of
+Innovation, NSI, and the White Paper show that despite
+significant progress, challenges remain in attaining the ideal
+in the 1996 White Paper. Therefore, South Africa is not yet
+fully benefited from the potential Science, Technology and
+Innovation, STI, to advance the economy and improve the
+livelihoods of its citizens.
+Key challenges constraining the performance of NSI are the
+inadequate and collaborative means of national STI agenda
+sitting, insufficient policy coherence, coordination, weak
+partnership and so forth.
+Now, a notable observation from the 2016/17 research and
+experimental development survey show that higher education
+sector was the largest contributed to the overall increase in
+the gross expenditure on research and development of
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 14
+R827 million in constant 2010 values. The higher education
+sector contributed an amount of 790 to the increase in
+research and development. The research and development in the
+business sector increased by only 0.2% with State-owned
+enterprises, SOEs, contributing R365 million which is
+calculated in constant 2010 values to this. The private that
+is business sector excluding the SOEs showed a decrease in
+research and development expenditure in constant 2010 values.
+The government sector decreased by 2.4%, whereas the science
+sector showed a marginal growth.
+Therefore it is our call hon members to the business sector
+that they need to up their games and increase the investment
+in research and development so that the country is able to
+attain the 1.4% expenditure on the Gross domestic product,
+GDP, by 2019. We believe that this Science and Technology Laws
+Amendment Bill will contribute significantly towards that
+increase in research and development. I thank you
+Ms C V KING: Hon House Chairperson, the scientific perspective
+of the world, especially the living world, inexorably
+impresses on us a dynamic picture of the world of entities and
+structures involved in continuous and incessant change and in
+process without ceasing.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 15
+The proposed amendments of this Bill are of a technical nature
+which seeks to harmonise the operations of entities in the
+science and technology sector to strengthen oversight and
+governance. Considering the technical nature of the Science
+and Technology Laws Amendment Bill, the initial introduction
+at the end of the Fifth Parliament, did little justice on
+discussion and consultation.
+Improper norms and standards for entities resulted in
+inconsistent, inadequate and unco-ordinated management of
+public entities with different requirements regulating the
+operations and governance.
+On this basis this Bill seeks to harmonise the processes for
+termination of membership of boards of entities, to clarify
+the requirements for disqualification of persons from
+membership of boards and to provide for the appointment of
+external persons to committees of the boards.
+Considering the recent flawed processes of public entity
+boards as highlighted in the state capture reports, these
+amendments are crucial to ensure that the Minister and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 16
+chairpersons do not have autonomy over the boards and to
+ensure that any amendment holds constitutional muster.
+The Western Cape government in its submission of the Bill
+expressed the importance of fit for purpose when appointed to
+the boards, the inclusion of an appeals committee and the
+chief executive officer, CEO’s term of office. Clause 22
+interpretation of being convicted of fraud, corruption or any
+other crime involving dishonesty, within a period of 10 years
+preceding the date of nomination can be left open for abuse.
+The time period should have been realistically considered.
+Also placing the responsibility of determining fit for purpose
+in the domain of the court of law is limiting and should have
+been added an additional insertion of “or a competent
+tribunal”.
+The DA was in favour of deleting any clauses that were
+contrary to the Public Finance Management Act and the
+insertion of the disclosure of conflict of interest clause.
+All inputs from various stakeholders were brought into
+fruition in this Bill. A lethargic process to ensure enactment
+should be avoided as happened in the previous Parliament
+regarding this Bill.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 17
+Change is scientific; progress is ethical; change is
+indubitable, whereas progress is a matter of controversy. This
+Bill is addressing ethical standards which should not be of a
+controversial nature to hinder progress. I thank you.
+[Applause.]
+Mr M N PAULSEN: Hon House Chairperson, the role of science and
+technology, in particular research and development is the
+industrialisation and betterment of society. Highly
+industrialised countries have used science and technology to
+drive industry in addressing the country’s challenges.
+The Chinese government has placed emphasis through funding,
+reform and societal status on science and technology as a
+fundamental part of the socioeconomic development of the
+country as well as for national prestige.
+China has made rapid advances in areas such as education,
+infrastructure, high-tech manufacturing, academic publishing,
+patents and commercial applications and is now in some areas
+and by some measures a world leader. China is now increasingly
+targeting indigenous innovation and aims to reform remaining
+weaknesses.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 18
+Cuba, despite continued sanctions is able to function almost
+independently because of the proper use of science and
+technology, but more importantly their leadership within
+science and technology. We have brother Blade and brother
+Buti.
+However, let us look at South Africa. Failure by the ruling
+party to reconfigure research institutions post1994, has
+resulted in these institutions continuing to operate in silos
+and playing no role in the reduction of unemployment and
+inequality. However also, science and technology is deemed as
+elitist with very little accountability to the ruling party.
+If it was not elitist, our focus would have been on issues
+which affects the poor masses in this country, the provision
+of decent water and sanitation, the harnessing of renewable
+energy where implementation would be driven by a capable and
+capacitated state.
+Minister Nzimande spoke of the Square Kilometre Array. Yes, it
+is in the Northern Cape, but the global headquarters are in
+the UK. These headquarters will ultimately be the owners of
+any intellectual property emanating from the Square Kilometre
+Array.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 19
+However, I am not surprised by the Minister’s lack of
+understanding of things that really matter. The University of
+KwaZulu-Natal is burning and there are serious allegations
+that a security service provider is responsible for the
+problems at the KwaZulu-Natal campuses. It is poor students
+who are given the blame and Minister you are here sitting and
+speaking about the Square Kilometre Array.
+The purpose of this Bill focuses on the need to harmonise the
+entities within science and technology, but the Bill and these
+institutions are operating within a policy framework that
+prioritises research for selfish interest and greed.
+Harmonisation was already recommended in the Fourth Parliament
+and this House considered the First Amendment Bill in 2011.
+In April 2014, the Second Amendment Bill was considered.
+Essentially the Second Amendment Bill proposed the
+harmonisation of processes which included the appointment of
+chairpersons and members of boards of science and technology
+entities, the qualifications of board members and the
+dissolution of boards.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 20
+However, what is laughable is the amendment of section 5 of
+Act 26 of 2008. Paragraph 8 says and I quote, “The board must
+be constituted in a manner that is broadly representatives of
+the demographics of the country.”
+South Africa is the only country where the government must
+make laws to empower the majority group of its citizens. Black
+people. In other countries the government makes laws to
+empower minority groups. That is how weak we are as a
+democracy and a country.
+The current Bill was proposed in the Fifth Parliament, but
+Parliament rose before the Bill could be considered. The
+current committee constitutes none of the ANC members of the
+Fifth Parliament. You have just replaced all of them, no
+continuity.
+The research and development budget has declined and there has
+been a loss of critical scientific skills.
+This department does not have a plan to ensure that Industry
+4,0 does not lead to greater inequality between the working
+class and those who continue to enjoy their historical
+advantages.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 21
+Although an aspect in the Bill is a step in the right
+direction, much more is required before the real benefit of
+science and technology will be realised. The EFF rejects this
+Bill. Thank you very much. [Applause.]
+Mr S L NGCOBO: Hon House Chair, this bill seeks to promote
+accountability and transparency of boards and councils
+regarding science and technology. We note the many technical
+amendments of this Bill in providing sufficient powers to
+ensure accountability and transparency in the boards and
+councils. The boards and councils oversee the work of various
+entities in this department and act as a strategic mechanism
+ensuring functionality.
+The IFP believes in making amendments that speak to appointing
+those who are fit and proper. We are glad to see the board and
+the Minister being compelled to engage each other in this
+regard as a first step in appointing people who are fit and
+proper, through this Amendment Bill. The consultation between
+both parties will reduce the potential for an individual to
+abuse the power.
+In a democracy, checks and balances are important in order to
+ensure that the people govern through elected individuals.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 22
+Checks and balances work to promote accountability and
+transparency which must be the tool that people use to assess
+their levels of satisfaction with government.
+The public confidence in this department and some of its
+entities is currently low and these amendments seek to redress
+the lost confidence. We saw the clear indications of the lack
+of confidence during the portfolio committee’s oversight and
+presentations made to it.
+Public confidence must be built by showing that these entities
+are free from corruption, nepotism and patronage. These
+entities are seemingly run as if they are just a tuck shop.
+Currently, South Africa has been left in the wake of grand
+corruption by the former administration. We witness through
+many commissions and the Zondo Commission, of a clear lack of
+attention paid to checks and balances, accountability and
+transparency.
+We maintain that only people who show excellence and who are
+suitably qualified should be appointed in boards, councils or
+official positions. In doing so, we will start to realise a
+professionally skilled public service. However, these
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 23
+amendments alone won’t ensure the fully skilled public service
+that our nation deserves. We must guard against partisan
+relationships at board and council levels to ensure that jobs
+are given to those who are equal to the tasks required and not
+because they are friends of the Ministers or other people. The
+IFP supports this Bill. Thank you. [Applause.]
+Afrikaans:
+Dr W J BOSHOFF: Agb Voorsitter, dit is so dat wetenskap,
+tegnologie en innovasie een van daardie dryfkragte agter enige
+ekonomie is. In ’n ekonomie waar daar nie aandag aan die drie
+aspekte gegee word nie, kom so ’n ekonomie eintlik tot
+stilstand. Dit is dus goed dat hierdie en vorige regerings
+nogal aandag gegee het aan die totstandkoming van ’n hele
+aantal wetenskaplike instellings, waarvan nie almal in hierdie
+Ministerie saamgevat is nie, maar wel agt belangrikes. Hierdie
+agt het elkeen ’n ander agtergrond soos die RGN, die Raad vir
+Geesteswetenskaplike Navorsing, maar ook al die ander, wat op
+die menslike aspek van die ekonomie en die samelewing fokus.
+Elkeen het op sy eie manier tot stand gekom en daarom is dit
+’n goeie idee om ’n bietjie belyning in die organisasie van
+hierdie instellings te bring.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 24
+Dit is belangrik dat daar deur hierdie wetsontwerp erken word
+dat daar ’n geweldige skaarsheid - en die komitee het die
+woord “dearth” [skaarsheid] gebruik - aan vaardighede en
+kennis op die terrein van wetenskap, tegnologie en innovasie
+is. As ’n mens kan sien dat daar wel so ’n skaarsheid is, dan
+is dit eintlik onverstaanbaar dat ’n mens daardie skaarsheid
+kunsmatig vergroot deur middel van transformasieteikens en
+swart ekonomiese bemagtiging, deur te sê dat soveel persent
+van die kundiges uit ’n bepaalde seksie van die demografie
+moet kom.
+Dit verslaan eintlik die doelwit, want ons het reeds te min
+vaardighede. Ons moet elke persoon wat die kennis, die
+vaardighede of die ervaring het om in hierdie terrein te dien,
+betrek en verwelkom. Ons moet niemand onwelkom laat voel nie.
+Daar is baie keer ’n opvatting aan die regterkant van die
+Huis, maar partykeer ook aan die ander kant dat, as die VF
+Plus homself teen swart ekonomiese bemagtiging as ’n
+ekonomiese maatreël uitspreek, dit is asof die VF Plus sê dat
+swart mense nie in staat is om die werk te doen nie. Dit is
+baie ver van die waarheid af. Dit is nie die kwessie nie. Dit
+gaan daaroor dat enige mens, ongeag afkoms, nasionaliteit,
+opvoeding, ensovoorts, in ’n posisie gestel word, nie op grond
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 25
+van sy vaardighede, kennis of ervaring nie, maar op grond van
+’n demografiese profiel.
+Verder, as daardie persoon, as gevolg van sy demografiese
+profiel, ook nie uit die pos vewyder kan word nie, dan is so
+’n persoon geneig om nie juis te presteer nie. Verder, ’n
+ander persoon wat wel oor die kennis, vaardighede en ervaring
+beskik, maar demografies verkeerd geplaas is, gaan doodgewoon
+land uit na waar daar ’n behoefte is aan dit wat hy weet.
+Wat meer is, van die talle en talle en talle swart persone wat
+in oorvloed oor die kennis, ervaring en vaardighede beskik om
+hierdie poste te beklee, is so gesog, want elke
+staatsonderneming, elke privaatonderneming en elkeen wat sake
+in hierdie land van ons doen, wil daardie mense hê om hul
+bemagtigingspunte op te stapel en te kan sê dat hulle aan die
+wetlike vereistes voldoen. Dit beteken dat hierdie mense nooit
+lank genoeg in een pos bly om die ding werklik onder die knie
+te kry en dit tot sy reg te laat kom nie.
+As die VF Plus sê dat ons hierdie wetsontwerp ondersteun, maar
+dat ons dink dit moes verder gegaan het en ook gesê het dat
+swart ekonomiese bemagtigingsteikens uit die terrein van
+wetenskap en tegnologie gehaal moet word, dan is dit nie omdat
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 26
+ons sê dat dit mense is wat nie oor die vaardighede beskik
+nie. Inteendeel, dit is om erkenning te gee aan almal wat oor
+hierdie kennis en vaardighede beskik en die vermoë het om
+Suid-Afrika verder te neem.
+Mr W M THRING: Hon House Chair, the ACDP is cognisant of the
+fact that this Bill which deals with the amendment of the
+Scientific Research Council Act of 1988, the Academy of
+Science of South Africa Act of 2001, the Human Sciences
+Research Council Act of 2008, the Technology Innovation Agency
+Act of 2008, and the South African National Space Agency Act
+of 2008, essentially seeks to achieve the following: the
+harmonisation of the process for the terminisation of the
+membership of boards or councils, clarification of the
+requirements for the disqualification of persons from
+membership of boards or councils, as well as providing for
+circumstances where members of boards or councils are
+prohibited from participating or voting in the boards or
+councils meetings, amongst other things.
+Hon House Chair, if South Africa is to meaningfully compete in
+the science and technology space, then it must have the
+administrative capacity and strength to do so, because any
+organisation is only as strong as its internal ability to
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 27
+plan, strategise, envision and then implement. There can be no
+external growth if the internal capacity or core of an
+organisation has rotted or become weak. The ACDP is aware that
+this Bill seeks to strengthen the core within the science and
+technology sector. It is our view that if this is done
+properly, efficiently and transparently, the external knock on
+effect of preparing our students to become global players and
+contributors to the science and technology space can indeed
+become a reality.
+We, within the African Christian Democratic Party, believe
+that there is no lack of intelligence, ability and potential
+among the students of South Africa. To a large extent,
+however, there has been a mismatch with respect to the skills
+required by industry, and the skills produced within the
+education, science and technology sector. This is a recipe for
+disaster, and will continue to be a drain on our industrial
+and economic recovery, which is so desperately needed.
+In conclusion, as this Bill has the noble intention of
+harmonising termination processes and, in general,
+strengthening the administration processes in the boards and
+councils of the relevant entities, the ACDP is cautiously
+optimistic that this internal administrative strengthening
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 28
+process will have the positive leveraging effect of
+strengthening our skills capacity, and thereby unlocking the
+enormous potential of our students who will be able to do us
+proud in the Fourth Industrial Revolution. The ACDP supports
+this Bill. I thank you. [Applause.]
+Mr S N AUGUST: Thank you, House Chair. Good notes the December
+2019 recommendations from the Portfolio Committee on Higher
+Education, Science and Technology that the National Assembly
+passes the Bill. We thank the multiparty committee for their
+work and welcome the amendments that aim to ensure that all
+public entities comply with the Public Finance Management Act.
+I also appreciate the submission received that anyone with a
+criminal record must be disqualified. However, from my own
+experience working in the justice sector, I know that,
+sometimes, criminals are able to be reformed.
+The amendment to disqualify any person convicted for fraud,
+corruption or any other crime involving dishonesty from being
+considered for a board position for at least a decade is
+accepted. However, we all know even without a criminal record,
+the wrong people can still be appointed. We have seen how
+corruption and maladministration results in the waste or theft
+of taxpayers’ money. To protect the poor and our country’s
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 29
+finances, Good welcomes the stronger measures to ensure
+compliance with the Public Finance Management Act and the
+Bill’s measures to clamp down on cadre deployment board
+appointments by requiring the disclosure of any conflicts of
+interests.
+Cadre deployment must be stopped. There are many qualified
+skilled people with no party affiliation that can do the job.
+It is a fact that cadre deployment has destroyed the
+independence, and often functionality, of government
+institutions. Good welcomes all efforts to stop corruption and
+cadre deployment and supports the amendments. Thank you.
+Ms J S MANANISO: Chairperson, Deputy President, Ministers,
+Deputy Ministers, hon members and fellow South Africans, I
+want you to note that during our deliberations members of the
+opposition party didn’t have a say. At least they have
+consulted and now we know that they are adopting the Bill.
+The ANC as the governing party remains committed to our
+people’s contract of better life for all. The ANC supports the
+Science and Technology Laws Amendment Bill. The current
+amendments are in response to the gaps identified in the
+previous Bill. Furthermore, it deals with codes of ethics and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 30
+organisational culture. It has been a practice that most of
+the departments with common interest have been working in
+silos using minimum resources.
+The Bill is about harmonising the six public entities
+reporting to the department in working together, collaborating
+and sharing best practices. The ANC wants to assure the people
+of South Africa that the Bill has went through formal legal
+processes. The Bill is technical, administrative and is an
+enabling legislation that addresses and promotes the
+following: good governance, transparency`, accountability,
+professionalism - skill-based, knowledge-based and experience-
+based – skills retention, fair representation per
+demographics. Most of us normally talk about institutional
+memory. Colleagues, here we are not speaking about female and
+males, but we are speaking about gender demographics in terms
+of religion, sex, age, people with disability, lesbian, gay,
+bisexual, pansexual, transgender, gender queer, queer,
+intersexes, gender, asexual, and ally, LGBTQIA+, and everybody
+who is part of the society.
+Hon members, note that when we speak about science, technology
+and innovation we don’t speak human disruption, but disruptive
+solutions. Understand what I am talking about. Don’t disrupt
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 31
+us. We are speaking about disruptive solutions, information
+technology, IT, innovations.
+This amendment Bill speaks to uniformity and it has clear
+terms of references and time frames, which is five periods. It
+seeks to strengthen collaborations and intergovernmental
+relations and international relations. It is clear in terms of
+clarifications of powers and functions between Ministers and
+board council members and it speaks about value for money.
+The current amendments will ensure that as a developmental
+state, our state-owned enterprises, SOEs, play an important
+role in growing our economy in addressing societal problems
+through scientific research and technological innovation as
+recognised by the National Development Plan, NDP.
+It has been proven that the following entities work together
+in terms of knowledge production and innovation and the
+country is able to compete globally in science, technology and
+innovation: Academy of Science, Council for Scientific and
+Industrial Research, Human Sciences Research Council, National
+Research Foundation, SA National Space Agency and Technology
+Innovation Agency.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 32
+The Bill is about redressing and transforming the system as it
+is constitutional mandate and we cannot negotiate the plight
+of our people. Scientific research and technological
+innovation in our life time is an enabling and necessary
+platform to fast-track our services to develop and grow South
+Africa together. It is important to note that we cannot speak
+boldly about economic freedom in our lifetime without
+investing in research and development and the advancement of
+science, technology and innovation. As we normally say young
+minds are innovative minds and investment therein is an
+investment into the future.
+Hon members, I would like to call on this august House to join
+the community of Mohlakeng in the West Rand in celebrating one
+of their own who has been appointed as first black female
+Geologist lecturer at the University of Pretoria, ms Mampho
+Maoyi. [Applause.] This shows that it is true when we say that
+South Africa is alive with possibilities.
+With this piece of legislation we must firmly place our nation
+at the centre of the Fourth Industrial Revolution in order to
+address our triple challenges of poverty, inequality and
+unemployment.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 33
+There is nothing wrong with continuous planning. As the ANC we
+pride ourselves with the NDP. If we fail to plan, we plan to
+fail. Let's keep working local and think globally.
+As I conclude, Deputy President, hon Ramaphosa, His Excellency
+the President, in his 2019 in his state of the nation address
+debate emphasised on the significance of an activist
+parliament. In the same breath with the same matter of social
+compact, we would want to commit ourselves that we will,
+indeed, soldier on “thuma thina.” [send us]. Lastly, I would
+like to speak about the issue of hon Boshof. Thank you as well
+for giving the lecture to the FF Plus about us, black people,
+of being capable. I thank you. [Applause.]
+Mr M G E HENDRICKS: Hon Chair, thank you very much for the
+opportunity. It was very encouraging to listen to the Minister
+saying that the amendments are catalyst for economic growth.
+And I am very excited about the opportunities that the
+Minister highlighted for smart agriculture, and also that he
+is very keen that his Ministry will now drive the skills
+knowledge that we need.
+However, investment in research and innovation is still a
+Cinderella when it comes to building a modern South Africa for
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 34
+the 21st and 22nd centuries. All we seem to have is just a
+telescope. Our nuclear know how before apartheid has not been
+harnessed. It could have assisted us today with our
+electricity calamity, a calamity brought in by five
+parliaments.
+It looks like we have no hope of sending a space mission to
+the moon. So there is no ambition amongst our brilliant young
+scientists to aim for the skies.
+We do agree that the Minister must at least be consulted in
+the appointed of CEOs in state-owned entities, SOEs, so that
+he can take the blame if they mess up as it has happened over
+the past five parliaments. The Sixth Parliament must not be in
+the same boat.
+Science and technology opportunities, especially at the most
+senior levels, should have no racial discrimination. For once
+I agree with the hon members of the FF Plus. It is very
+important that South Africa takes advantage of the brilliance
+and the innovation of its citizens and no one should be left
+out to take South Africa to the 21st and 22nd centuries. Al
+Jama’ah supports amendments to the Bill.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 35
+IsiXhosa:
+Mnu B B NODADA: Sihlalo, malungu ahloniphekileyo ...
+English:
+... fellow South Africans ...
+IsiXhosa:
+... ndiyanibulisa ngale njikalanga, molweni.
+English:
+The DA supports the need to harmonise the provisions which
+regulate the operations and governance of the science and
+innovation public entities through the Amendment Bill in order
+to strengthen accountability and enhance consistency.
+It must be made clear that the DA in Parliament and the DA-led
+Western Cape government have been heavily involved in the
+process of strengthening this legislation because we believe
+that South Africa has neglected the importance of matching its
+policy commitment to improved education and skills with a
+dedicated focus on innovation and design to drive job creating
+economic growth.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 36
+The institutions created to promote innovation for growth have
+not been appropriately co-ordinated, funded or integrated with
+initiatives in the private sector.
+To be a winning nation, South Africa must also be a place
+where new ideas are generated. This includes ideas to improve
+the way we deliver services, ideas to connect people to each
+other and with the information they need to make informed
+decisions about their lives. It should include ideas for new
+products that can generate income, ideas to improve the
+efficiency of processes in both the public and private sector;
+and ideas to solve our key societal challenges, for example in
+education, health, housing, social protection and job
+creation.
+However, in order for us to do this effectively as a
+collective, we have to have a clear definition of what science
+and innovation means to us as South Africans and what role it
+should serve in advancing socioeconomic development. Let us
+not forget, in the past, the science narrative was shaped by a
+few, leaving the majority behind.
+This narrative is now changing and it is at this juncture that
+we must be very intentional in how we shape the conversations
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 37
+around science and innovation because they influence the kind
+of initiatives we take on to improve the quality of our lives.
+If we do not make a concerted effort to define this narrative,
+we run the risk of taking on science and innovation
+initiatives that don’t address South Africa’s triple challenge
+of poverty, inequality and unemployment.
+We will look back and ask ourselves, what good did it yield to
+shout on roof tops Fourth Industrial Revolution and yet, the
+inequality gaps are still wide and the basic fundamentals are
+still burning issues hindering the progress of underdeveloped
+communities? [Applause.]
+Therefore, there must be a coordinated effort to develop a
+value chain that will see science and innovation as an enabler
+of socioeconomic prosperity rather than a by-the-way elitist
+space.
+ANC Ministers who are out of touch with the harsh realities of
+our people continually insist on building smart cities,
+providing tablets to school learners, developing data and
+artificial intelligence policy’s for big business and
+entrepreneurs. And yet, the reality is, majority of public
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 38
+schools, especially in our rural and township communities, do
+not have fully functional and equipped science labs, a key
+component that gives a child the opportunity to practicalise
+science. [Applause.]
+Time and time again, we have heard sweeping statements made
+about bullet-trains and creating smart cities and yet we sit
+with an energy and water crisis in our rural and peri-urban
+communities.
+We are talking about developing data and artificial
+intelligence policies and yet we know all too well that for
+our scientists, engineers, technopreneurs and student
+entrepreneurs, the lack of funding remains a stumbling block
+that hinders research solutions being translated to impactful
+technology. We also know that access to market for our Small,
+Medium and Micro-sized Enterprises, SMMEs, thereafter is
+always a problem and yet the ANC-led government does not make
+enough noise on these key issues.
+If we are truly serious about creating a National System of
+Innovation, NSI, that is inclusive and advances socioeconomic
+development, we to have to find way of extending the
+conversation beyond ourselves. The inability for us to
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 39
+understand the real issues on the ground, on a much deeper
+level, will have us shooting in the dark and adopting
+technologies and systems that are not fit for context and will
+only widen the gap between insiders and outsiders.
+Therefore, the DA proposes the following in line with our
+innovation policy: Science needs to serve us by using it for
+problem-solving our societal problems such as education,
+skills development, safety, service delivery, National Student
+Financial Aid Scheme, NSFAS, which is a failing entity with
+their Information and Communications Technology, ICT, there’s
+a huge certification backlog where students can’t get their
+certificates, student housing and community development.
+We, however, commend the good work done by the Department of
+Science And Innovation even with their stringent budget;
+however, we do believe that the merger of the Department of
+Higher Education, Science and Innovation can use science as a
+tool to solve societal problems rather than to be seen as
+elitist spares.
+The boy who harnessed the wind is a true reflection of how we
+can contextualise science and channel it for the purpose of
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 40
+socioeconomic development. I thank you so much. [Applause.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon Ntshayisa, I just
+want to inform you, this is a debate and if you don’t speak
+before the official opposition, in as far as our conversions
+are set, you cannot speak now. So, I’m sorry, you were not in
+the House and we proceeded. Thank you.
+Ms N T MKHATSHWA: Hon Chairperson, hon deputy president, hon
+members of the House, and to the many of South Africans
+watching from home.
+As we enter into this new decode, we must emphasize the role
+of science and innovation in our society.
+From 4 to 7 February 2020, the Portfolio Committee on Higher
+Education, Science and Technology visited the Council for
+Scientific and Industrial Research, CSIR, in Pretoria. This
+was the first visit conducted by the committee to the CSIR.
+The thirst of members to see in reality the research,
+development and innovation projects that the deportment and
+its entities report on in Parliament, has finally, to some
+extent, been quenched.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 41
+I am tempted to say that every single member of this portfolio
+committee was excited by the work being done by the CSIR. And
+perhaps those that failed to see how young people are being
+included in the projects that are taking place in science may
+join us on our next oversight visit, hon Chairperson of the
+committee.
+Hon members, at the CSIR we witnessed research, development
+and innovation that is aligned to the objective of having
+science and innovation that contributes to on improved quality
+of life for all communities in South Africa.
+At the CSIR we viewed Umbiflow. The Umbiflow is a low-cost
+ultrasound device used to assess fetus health. The Umbiflow
+empowers nursing sisters, midwives and general practitioners
+in mobile, rural and low-resourced primary health core
+settings. It has gone beyond our borders to be further studied
+in Rwanda, Kenya, Ghana and India. Such innovations assist
+communities in ensuring successful births and therefore,
+reducing infant mortality.
+We also viewed the Biomanufacturing Industry Support
+Initiative, BIDC, which provides technical product and process
+development support to Small, Medium and Micro-sized
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 42
+Enterprises with the aim of creating and expanding
+biomanufacturing activity and associated job creation. Many of
+the products that have been supported by the BIDC derive from
+Indigenous Knowledge Systems. As I share this with members, I
+cannot help but say, this is a good story to tell.
+Hon members, these are but a few initiatives in only one of
+the eight entities of the deportment. So, you can only imagine
+the many other good projects that are taking place across all
+the other entities. Notwithstanding, of course, the challenges
+present. And yes, we could choose to succumb to the many
+difficult protracted problems that confront us, or we can
+choose to confront them with resolve, determination and
+action; as said by the President.
+These research, development and innovation projects are
+testament to our aims as a government to increase the
+wellbeing and prosperity of society through science,
+technology and innovation. Science and innovation remains a
+pivotal port of our democracy and requires a long term
+dedicated support.
+This one is for you, hon Boshoff.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 43
+Hon members, we must continue our efforts to ensure that the
+space is intersectional and geographically accessible to all.
+Whilst we see the increased inclusion of women in the boards
+of various entities we must continue to strive for the overall
+increase of women in the entire composition of the department
+and its entities.
+The President calls on young people and students to lead the
+skills revolution, and to be the champions of innovation.
+Therefore, we must ensure increased inclusion of young people
+from all ends of our country. It must never be that those that
+are located in institutions with geographic proximity to the
+campuses of entities be the only ones who gain the most
+opportunities. The entities must be accessible to, in
+particular those historically marginalized from such
+opportunities, hon Boshoff.
+We must continue to work at strengthening our strategies to
+fund the people’s research, to aid the development of the
+people’s research and to train the people to innovate!
+Hon members, no matter how great our research may be, it will
+never see the light of day without a solid base of governance
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 44
+and management. This Bill aims to ensure that the highest
+governance principles and procedures are applied across all
+entities; it aims to harmonise the processes for the
+termination from membership of boards or councils; to clarify
+the requirements for the disqualification of persons from
+membership of boards or councils; and to provide for the
+appointment of external persons to committees of boards or
+councils. We must support it!
+We must support it in ensuring that the bionetwork of science
+and innovation in this country is aided to fulfil our
+collective objectives and all the programmes of this
+department.
+This Amendment Bill is testament to the ANC’s commitment to
+improving the capacity of the state through its entities to
+meet its obligation to citizens in the areas of economic
+growth, job creation, social programmes and dealing with crime
+and corruption.
+To echo the sentiments of the President, each and every one of
+us have a task to hold those in places of responsibility
+accountable. This Amendment Bill will assist us as an ANC-led
+government to increase our vigilance in screening those we put
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 45
+in boards and ensuring that they meet the highest standards of
+ethics, morality and service to the people. Those appointed
+must serve the people with distinction. And, where they fail,
+we will, and we must ensure that there are consequences/
+Through this Amendment Bill, we again, echo the sentiments of
+the President, that we must ensure the restoration of public
+institutions to a higher standard of accountability and
+service.
+IsiZulu:
+Ma-Afrika amahle ...
+English:
+... let us push bock on the negativity at every turn. We have
+to show that the inches are all around us and we’re actively
+seeking them out.
+Through this Amendment Bill we must decisively alienate those
+that seek to regress the gains of our democracy.
+Hon Nodada, I don’t know how this Bill is elitist; I don’t
+know how this sector is elitist; when we, ourselves, have seen
+how indigenous knowledge systems are being formalized, are
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 46
+being made sure that they can be used for commercialisation
+through the BIDC that you, yourself, were present at during
+oversight. [Applause.]
+Hon Ngcobo of the IFP ...
+IsiZulu:
+... ama-tuckshops, kanjani ukuthi amabhodi ezinhlangano
+zikahulumeni zibe ama-tuckshops ...
+English:
+... when we saw the amazing work at CSIR? Where we saw how ...
+IsiZulu:
+... omama ezindaweni zasemakhaya ...
+English:
+... are going to be able to be assisted through the Umbiflow
+...
+IsiZulu:
+... kanjani ibe i-tuckshop? I-tuckshop ayiyenzi leyonto.
+English:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 47
+We must never allow ourselves to get to a point where young
+people stop dreaming. We must never allow ourselves to get to
+a point where we forget what has happened to this country and
+how we need to continuously work to ensuring that there is
+representation in all spaces of this government.
+The ANC moves in support of the Science and Innovation
+Amendment Bill. I thank you. [Applause.]
+The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY:
+House Chair, let me take this opportunity to thank hon Chair
+Mapulane, the members of the portfolio committee and all the
+parties and members who supported this piece of legislation;
+we say thank you to you, this is a foundation to build on the
+achievements that we have made.
+Hon Paulsen, sometimes ... well not sometimes ... there’s this
+wonderful saying “silence is golden”. When you don’t know what
+you say, the best thing to do is to simply shut up [Laughter.]
+because ...
+Mr W F PAULSEN: Hon House Chair, firstly, that’s not
+parliamentary language to tell me to shut up [Interjections.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 48
+that tsotsi [thug] must withdraw that, that tokolosh must
+withdraw that.
+Secondly, that Minister ...
+The HOUSE CHAIRPESRSON (Ms M G Boroto): Hon member, that’s not
+a point of order. I’m going to switch off your mic. You must
+raise a point of order and you haven’t.
+Mr W F PAULSEN: Okay ...
+The HOUSE CHAIRPESRSON (Ms M G Boroto): Hon member, that’s not
+a point of order. Sit down, please sit down.
+Mr W F PAULSEN: Okay, I’m asking the Minister to withdraw that
+unparliamentary word ...
+The HOUSE CHAIRPESRSON (Ms M G Boroto): Hon member, please sit
+down; you wasted time. I’m going to switch off your mic.
+Continue, hon Minister.
+IsiZulu:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 49
+UNGQONGQOSHE WEZEMFUNDO EPHAKEME, EZESAYENSI NEZOBUCHWEPHESHE:
+Ngesintu kuthiwa uma ungazi ukuthi uzothini ubohlala phansi
+uthule.
+English:
+Mr W F FABER: Chairperson, on a point of order. Rule 82, on
+the reference to a member in respectful terms. Member must
+refer to another member in respectful terms, and you cannot
+then say ‘shut up’ like the Minister. So, I don’t think there
+was any respect in that, Chairperson. [Interjections.]
+Ms H O MKHALIPHI: Chairperson, I’m rising on Rule 85,
+reflection upon members. The Minister can’t say ‘shut up’ to a
+member, please withdraw that. And you have only two minutes,
+Minister; otherwise you’re not going to speak.
+[Interjections.]
+The HOUSE CHAIRPERSON (MS M G BOROTO): Hon member, you said
+your point of order and I’m going to take it, but now you say
+something else, that’s wrong.
+Hon Minister, as you continue let us be reminded that the word
+‘shut up’ has been ruled unparliamentary; can you withdraw
+that as you continue.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 50
+IsiZulu:
+UNGQONGQOSHE WEZEMFUNDO EPHAKEME, EZESAYENSI NEZOBUCHWEPHESHE:
+Ngiyaxolisa Sihlalo weNdlu.
+USIHLALO WENDLU (Nk M G Boroto): Siyabonga. Qhubeka baba.
+English:
+The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY: Hon
+Boshoff, I think that ... you know very well, the skills
+shortages that you’re talking about it’s a direct result of
+apartheid; that crime against humanity. Redress based on
+affirmative action, amongst other things, is a necessary
+condition to actually address the skills shortages that were
+created by shutting out the majority of South Africans in
+having these necessary skills that we need, amongst others in
+science and technology. [Applause.]
+In fact, if there is one of the most serious crimes of
+apartheid was the denial of access to education and skills by
+the majority of the people. In fact, we should, and yourself,
+be learning from the history of the Afrikaners; with the
+policy of addressing the poor whites was actually aimed at
+uplifting poor Afrikaners in the past and there is nothing new
+that we are doing, except we are doing it for the majority
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 51
+rather than for the minority as it was done under apartheid.
+[Applause.]
+I want also to say that this is an important platform for us
+to continue to make sure that science, technology and
+innovation are harnessed and are accessible to the majority of
+the South Africans. Siyabonga [Thank you].
+Bill read a second time.
+NATIONAL PUBLIC HEALTH INSTITUTE OF SOUTH AFRICA
+(Consideration of Bill and of Report of Select Committee
+thereon)
+The HOUSE CHAIPERSON (Ms M G BOROTO): I will call up on the
+Chairperson of the ... [Interjections.]
+Ms M VENTE: Chairperson, I rise on a point of order. We agreed
+earlier on that we are moving the Member Statements because
+the Ministers were not in the House and that we will take the
+next item and then revert back to Member Statements. I think
+now it is an opportunity for statements.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 52
+The HOUSE CHAIPERSON (Ms M G BOROTO): ... may I plead with you
+that we start with it before the motions and finish this part
+as per my discretion. Hon Dhlomo, it is your time to introduce
+the Report.
+Dr S M DHLOMO: Hon Chair, the National Public Health
+Institutes of South Africa Bill, NAPHISA, was processed in
+both Houses in the 5th Parliament. It went through the process
+of revival in this House hence we are tabling it for
+consideration.
+In 1994, the democratic government began a process of
+transforming the deep-rooted dysfunctional public health
+system which manifested itself in the collusion of epidemics
+of communicable and non-communicable diseases in South Africa.
+The public health system has and continues to correct the
+colonial policies of subjugation and apartheid disposition
+which both determine inferior health care services to the
+majority of the South Africans.
+To this end, this Bill is imperative because it is a step
+towards refinement of the public health system for the people
+of South Africa. The aim of the NAPHISA Bill is to provide
+integrated and co-ordinated diseases and injury surveillance
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 53
+research, monitoring and evaluation of services and
+interventions directed towards the major public health
+problems affecting the South African population.
+The International Association of National Public Health
+Institutes serves as a strong advocate for countries to have a
+unified credible, legal structure such as NAPHISA to improve
+the protection of public health through collaboration,
+research and surveillance of various diseases, as we face the
+quadruple burden of disease in our country.
+Accordingly, the NAPHISA BILL is envisaged to enhance health
+systems effectiveness by performing some of the following
+functions.
+a. Co-ordinate, develop and maintain surveillance systems to
+collect, analyse and interpret health data to guide
+health interventions.
+b. Strengthen capacity in public and occupational health
+surveillance in order to reduce the burden of disease and
+injury.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 54
+c. Use surveillance data and other sources of information
+where appropriate to advice on the setting of health
+policies priorities and planning.
+d. Strengthen the cross-border regional and international
+collaboration on cancer surveillance, occupational
+health, non-communicable diseases, injuries and violence.
+e. Use public health information for monitoring and
+evaluation policy interventions.
+f. Strengthen advocacy, social mobilisation and partnerships
+in order to address all the other quadruple burden of
+disease I have mentioned above.
+The NAPHISA Bill recognises that South Africa does not have an
+integrated surveillance system, but different institutions
+that deal with different aspects of surveillance which leads
+to duplication, fragmentation, inefficiency and wastage of
+scares resources.
+In correcting this challenge, the Bill states that NAPHISA
+will comprise of all the following divisions. Cancer
+surveillance, occupational health, environmental health,
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 55
+communicable diseases, non-communicable disease, injury and
+violence prevention.
+The clustering of these divisions will make NAPHISA a national
+strategic entity that is remarried on safeguarding the public
+health system for our country.
+The National Development Plan, NDP, together with the World
+Health Organisation, WHO, underscores the importance of
+efficient strengthening and co-ordinated national health
+systems for prevention of illnesses and realisation of health
+outcomes. Furthermore, the International Association of
+National Public Health Institutes attributes better health
+outcomes for our countries that form national public health
+institutes and urge for countries to do the same.
+Some of the countries that have established national public
+institutions include Brazil, Finland, while others formed
+theirs more recently. Some of the national public institutes
+were formed in responses to public health challenges that
+highlighted the need for specific capacity leadership and co-
+ordination such as public health urgency of Canada which was
+formed following the 2002 severe acute respiratory syndrome,
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 56
+SARS, outbreak. Others resulted from restructuring of public
+care services such as the United Kingdom and China.
+The Bill is resuscitated from the 5th Parliament as I have
+mentioned where there was a consultation with social cluster
+departments namely, social development, education, women,
+children and people with disabilities.
+In conclusion, it is noted that since the outbreak novel of
+corona virus from China in December 2019, South Africa has not
+had any confirmed cases. Accordingly, this Bill has come at an
+opportune time for it to be processed as we may face global
+epidemiology of diseases, mitral valve, aorta, skeleton, and
+skin, Mass, Sars, Ebola, Listeriosis and novel Coronavirus,
+which all have devastating socio impact in the country. The
+committee is bringing the NAPHISA Bill to the House for
+consideration. I thank you. [Applause.]
+There was no debate.
+The CHIEF WHIP OF THE MAJORITY PARTY moved: moved that the
+Bill be passed.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 57
+Declarations of vote made on behalf of the Democratic
+Alliance, Economic Freedom Fighters, Inkatha Freedom Party,
+Freedom Front Plus, African Christian Democratic Party,
+National Freedom Party and African National Congress.
+Motion agreed to (Economic Freedom Fighters dissenting).
+Bill accordingly passed.
+Declaration of vote:
+Ms E R WILSON: House Chair, the chairperson of the portfolio
+committee has gone to great length to explain the purpose of
+the NAPHISA Bill for instance, monitoring communicable and
+non-communicable diseases, cancer and promoting co-operation
+between the republic and other countries to monitor
+epidemiological surveillance systems. The Bill states that the
+money will be appropriated by Parliament, fees received for
+services rendered and income earned on surplus monies
+deposited and invested.
+What the chairperson has not told us is what exactly the cost
+for establishing this unit or entity is? The Department of
+Health is in intensive care unit, ICU and bankrupt and they
+are still expecting billions for the National Health
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 58
+Insurance, NHI, despite Treasury making it quite clear NHI
+cannot be considered in the current economy. Meanwhile the
+health ombudsman who is dealing with billions of medical claim
+is underfunded, understaffed and unable to deal with the
+workload or to ensure that those who have legitimate claims
+are compensated.
+There is no mention of the role to be played by the Medical
+Research Council, Centre of Communicable Bill diseases or the
+Office of Health Standards Compliance, OHSC. They are already
+well established entities who have a great track record of
+research, monitoring and dealing with communicable diseases.
+They need to be included in an appeaseable. We must include
+them in all of our negotiations.
+Finally, the scope of health professionals is vast. There are
+nurses, doctors, physiotherapists, psychologists, dentists,
+ophalmics, scientists, allied workers to name just a few. How
+will every type of health professional be represented on the
+board or in these units.
+We supported the Bill from the outset and we will continue to
+do so but, be assured we will monitor the establishment of
+NAPHISA very carefully. There are a lot of unanswered
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 59
+questions and those questions are coming. We expect
+transparency, we expect honesty and we expect anybody being
+promoted to these boards as clean, above board and corrupt
+free. However, we will continue to support the Bill. I thank
+you.
+Declarations of vote (cont):
+Ms N N CHIRWA: House Chairperson, greetings to the commander-
+in-chief, Julius Malema and the ground forces and the leaders
+of the EFF ... [Interjections.] a Bill that is not cushioned
+by tangible means to address health issues is futile and
+nugatory as the government of the day. The Bill will not
+miraculously build 24 hour clinics in rural areas ...
+[Interjections.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): Order!
+Ms N N CHIRWA: ... or pay community health care workers who
+actually deliver a very vital aspect of primary health care
+decent salaries. The Bill will alleviate the shortage of
+workers and skilled doctors. It will not reduce litigation
+cases the department for negligence, violence, injuries and
+the killings of our people. In the Mamelodi Hospital, for
+example, the maternity ward, we only need seven nurses and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 60
+midwives to alleviate the issue of women giving birth by
+themselves and when accidents happen, health care workers
+being blamed for the department’s failure.
+The Bill will not be a solution for the water crisis
+experienced in hospitals in Hammanskraal, Thohoyandou, QwaQwa,
+Middelburg and Seshego, that sees patients not being operated
+on because there is no water. This Bill will not garner
+integrity for this department that is still found to be doing
+heinous crimes against HIV-positive women by not only stealing
+their antiretrovirals, ARVs, but also sterilising them without
+their consent.
+This Bill will not have us wake up with improved security
+systems to protect our medication that is stolen from our
+clinics every single week and the department acting shocked
+every time this happens.
+This Bill will also not be able to stop your health care
+workers from turning away our young women from accessing
+abortion services and telling them that they can’t offer it
+because it is not done. It will also not be more evidence that
+young people need pre-exposure prophylaxis, PrEP and post-
+exposure prophylaxis, PEP, on demand without having to
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 61
+experience trauma and sexual immorality for you to give them
+PrEP and PEP. This Bill will not deliver hearing aids to
+toddlers who are expected to pay R15 000 in Limpopo before
+getting hearing aids.
+This Bill will not service wheelchairs. This Bill will not
+fund medical researchers or better health conditioners of
+minors. It won’t diagnose and treat cancer patients in time.
+Nor will it provide children within the autism spectrum with
+the necessary educational developmental and psychological
+support.
+The EFF condemns the department, the Minister of Health and
+the President for the collapse, corruption and failure to
+prioritise primary health care, prevention, education on
+health care, building of clinics in each ward and all the
+aspects as per the aspirations of the Bill which don’t even
+need the structure to be established for these things to be
+done.
+This Bill is merely stealing time from our people, and in
+essence also taking lives from our people. It is just an
+opportunity for the thugs to continue to loot, and this is why
+we reject the Bill. Thank you. [Applause.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 62
+Ms M D HLENGWA: Hon House Chairperson, the ... [Inaudible.]
+service delivery and accountability for public health
+resources are essential in the public health services of this
+country. In South Africa where we have unequal resources
+distribution, poverty and inequality this becomes even more
+necessary and urgent.
+Public health care is essential but what we are witnessing in
+South Africa is a public health care service which is itself
+on life support. The SA Health Products Regulatory Authority,
+Sahpra, is for all intents and purposes becoming hostile
+towards our own doctors who have trained and qualified as
+medical professionals abroad, instead of finding solutions to
+fast-track and place these health care professionals in our
+hospitals, Sahpra is building barriers which prevent and
+frustrate their entry to practise in South Africa. Why is the
+Minister not intervening in this crisis?
+What we have been witnessing over the last 25 years in South
+Africa is the gradual erosion of our public service. We spend
+billions on health care and yet this country still suffers
+from a high burden of preventable illness and premature death.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 63
+South Africa is currently affected by what is being termed the
+quadruple burden of disease which is HIV/Aids, tuberculosis,
+TB, non-communicable diseases, trauma and a high level of
+maternal and child mortality. In addition, we are witnessing
+what we have previously being termed ... disease of influence
+such as diabetes, hypertension and cardiovascular diseases.
+This government has fallen short of its own promises as
+contained in its own 10-Point Health Care Plan of 2010. There
+is in fact no delivery. Where is the strengthening of research
+and development in our 10 Point Plan? The IFP supports.
+[Applause.]
+Mr P A VAN STADEN: House Chairperson, the Bill that is before
+the House is a good Bill on paper to get South Africa prepared
+to deal with a major epidemic outbreak like the coronavirus
+which is knocking on our front doors.
+This Bill will on paper organise various role-players like the
+National Institute for Communicable Diseases, NICD, the
+National Cancer Registry, NCR, and others to collaborate and
+to work together towards a common goal but we must not forget
+that this sector should and must have a joint operations
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 64
+committee and I hope that the aim of this Bill is to do
+exactly that.
+Attention should and must be given to the concerns of Cancer
+Association of South Africa, Cansa, about the cancer registry.
+We all know that this registry was out of date and of limited
+use, so we hope that this problem will receive attention.
+The FF Plus has a few concerns with this Bill which is the
+following; firstly, the institute must not become another
+state entity as stated under section 2 of this Bill; secondly,
+the power vested on the Minister to appoint members of the
+board as stipulated in section 5 of the Bill is a bit
+problematic as we believe that these powers must not be vested
+in one person alone but in a broader base of stakeholders.
+The question must be asked if there will be any money
+available in the health budget after tomorrow’s Budget Speech
+to get this institute running and begin its work. This
+Portfolio Committee on Health or this Sixth Parliament must
+monitor the Department of Health regarding the implementation
+of this institution. Therefore, time will tell if this
+institute will be a success or not. Thank you, House
+Chairperson.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 65
+Declarations of vote contd.
+Ms M E SUKERS: Hon Chairperson, the ACDP recognises the
+critical importance of legislation that would serve to enhance
+the health and wellbeing of our nation, given the current
+challenges we face locally, as well as globally, and the
+impact of these challenges on our economy.
+It is stated that the role of a National Health Institute is
+to provide leadership and directions to programmes that are
+designed to improve health and to support research in among
+other things, understanding of mental addictive and physical
+disorders. There is a critical need for an entity such as the
+National Institute for Injury and Violence Prevention that
+forms part of NAFISA. As such, we wish to highlight the
+following.
+The ACDP wishes to highlight the critical need for us to
+research and focus on mental health as a contributor to
+violence crimes against the most vulnerable people in our
+society – our women and children. The Minister of Social
+Development, Lindiwe Zulu, during our discussion on gender-
+based violence, GBV, said the following, and I quote, “We must
+get inside the heads of these people who commit such crimes.”
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 66
+Reportedly, a staggering 1 000 children are murdered annually
+in Cape Town alone. Our communities are suffering under
+violence. It is as such that the ACDP supports this
+legislation. We are asking that there needs to be critical
+research into psychiatric disorders and the significant impact
+that it has on our communities. We need to research
+effectively what will stop these violent crimes from being
+perpetrated upon our children.
+It has been reported that the man that is responsible for the
+death of Tasne Van Wyk was kept in his house because his
+family feared what he would do to children. We have to ask
+them. We need to then emphasise how important it is for the
+prevention of violence against women and children - that
+research be conducted. The ACDP supports this legislation.
+Mr A M SHAIK-EMAM: Hon House Chair, at the very outset, please
+allow me to tell you that the NFP supports the Bill tabled
+here today. Let me start of by saying that I just want to
+respond to the member from the EFF. She is correct when she
+says that this Bill is not going to give you more doctors, but
+if implemented, it simply means that you will not need as many
+doctors as you need today. [Applause.] [Laughter.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 67
+She is correct when she says it is not going to give you
+medicine, but if implemented, there will be a need for less
+medicine than we have at the moment. The reason for that is –
+she goes on to say – that there is no research. If you read
+the amendment to the Bill, it clearly talks about training and
+research, if necessary, in order to address challenges in the
+health sector.
+So, the purpose of this is – let me give you a good example
+and I hope that the department is taking cognisance of this:
+This particular province has the highest incidents of
+diabetes. We know the challenges of cancer we face in the
+country. I had the opportunity of sitting next to somebody on
+the plane recently and everyone in this House knows who she is
+but I won’t mention her name. Her research shows that even
+Sunlight liquid soap is one of the root causes of cancer.
+So, this Bill can address these issues in terms of its
+research to prevent people from picking up illnesses like
+cancer and diabetes – the effects of Coca Cola and everything
+else! I think we must welcome this initiative. This started
+previously with the former Minister of Health. He came and
+gave a detailed briefing to the committee. Let me also add
+that even the members of the EFF were there, supported it and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 68
+made input in that committee – the Portfolio Committee on
+Health.
+So, let us not come here and run everything down. When there
+is a good initiative which is going to benefit our people, let
+us support it. Equally, if there is a problem, we can address
+that too. However, if you run down everything – let me tell
+you that the emphasis here is on prevention, to be able to
+identify certain diseases and other things before they get out
+of hand. I think it is a commendable thing.
+Yes, there are going to be implications in terms of cots, but
+then we have to measure the value of the money that you are
+spending and what returns we are getting. If you save a
+hundred lives and spend R1 0000000, then you equate that, you
+basically saved R100 000000 in the country. So, yes indeed,
+the NFP will support this amendment. Thank you. [Applause.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): Again, I will ask: Are
+there any objections to this amending Bill being passed?
+[Interjections.] Ja, it is a long time. My apologies: The ANC
+should close the declarations. My apologies! The seats he
+took. Please hon members, sit here. I look at the seats; they
+remind me. Thank you. Continue!
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 69
+Mr K L JACOBS: Hon Chairperson, I am also happy that you
+didn’t deny me my first opportunity at this podium.
+[Applause.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): That means it is his
+maiden speech. We know the Rules about that.
+Mr K L JACOBS: Chair, access to health care became a basic
+human right in the democratic South Africa, with a right to
+health care services being provided for in three sections of
+the Constitution of South Africa. Section 27 of the
+Constitution of South Africa provides that every person has a
+right to have access to health care services and further
+places the state as a central role player in ensuring that it
+takes reasonable legislative and other measures within its
+available resources to achieve the progressive realisation of
+these rights.
+The National Development Plan, NDP, envisions a health system
+that works for everyone and produces positive health outcomes.
+Goal 6 of the NDP addresses the need for a complete reform in
+health systems through integrating the different parts of the
+health system. The NDP also emphasises the need for the
+development of an information system for managing diseases – a
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 70
+function which National Public Health Institute of SA,
+Naphisa, will fulfil through its integrated and co-ordinated
+disease and injury surveillance.
+The National Public Health Institute of South Africa Bill
+before us speaks to the establishment of a single national
+public entity. For the co-ordination of public health services
+to ensure that such services are evidence based through its
+research, surveillance, training, monitoring and evaluation.
+To hon Chirwa, I want to say the following: The Bill is not
+intended to provide clinical services. Please go and read the
+Bill and you will find that it is for the establishment of an
+expert national body to the further improvement of the health
+of the people of South Africa, responding to the major health
+problems affecting our people. It will monitor the welfare and
+health of the population on silly factors which could cause
+harm and develop and promote measures to improve the
+situation.
+We are reminded of the leadership and support that South
+Africa provided to Sierra Leon as some of the first responders
+in January 2015 with the outbreak of Ebola. There, south
+Africa showed that it is at the forefront and a leader in the
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 71
+health care system of the world, and contributing to health in
+the entire world. This institute will provide a national
+capacity to drive evidence-informed preventive health policy
+and programmes, as well as providing evidence on the social
+determinants of health. The research should generate new
+knowledge; make it easier to absorb innovations from
+international science network; and the application of such
+knowledge for new development.
+I wish to say to the FF-Plus, the ANC will also make certain
+that it is not just another state entity. In fact, if you look
+at the definition of this entity, then it will say that
+national Parliament thus will have oversight over this entity.
+So, this puts at rest those points which he raised. As the
+ANC, we remain committed to the promotion of health through
+preventive measures.
+The establishment of National Public Health Institute of SA
+will be one such method towards achieving the intended health
+goals and objective of the country. In conclusion thus, the
+ANC supports the National Public Health Institute of South
+Africa Bill as well as the committee report on the above
+subject matter. Thank you. [Applause.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 72
+The HOUSE CHAIRPERSON (Ms M G Boroto): I thank you, hon
+Jacobs. [Applause.] Hon members, are there any objections?
+[Interjections.] It is the EFF. That will be noted. In a way,
+the motion is carried through. The Bill will be sent to the
+President for ascend. Thank you very much. [Applause.]. We now
+revert back to what we were supposed to do at the beginning.
+We all know the reasons why we couldn’t proceed. So, can we
+proceed to the first item, which is the Member’s Statement?
+CENTRE OF SPECIALISATION AT BOLAND TVET COLLEGE
+(Member’s Statement)
+Mr M G MAHLAULE (ANC): Thank you, hon Chair. The ANC has
+always maintained that unlocking the energy and creativity of
+South Africa’s young and working people by building their
+skills and capacities is critical to the eradication of
+poverty, unemployment and inequality.
+We thus welcome the recent official opening of the centre of
+specialisation at the Boland Tvet College in Worcester,
+Western Cape focus on welding robotics.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 73
+The Centres of Specialisation Programme is a Department of
+Higher Education and Training initiative designed to meet two
+objectives simultaneously. Firstly, to address the demand for
+priority trades needed for the implementation of government’s
+National Development Plan in general and National
+Infrastructure Plan in particularly.
+Secondly, to contribute towards the building of the capacity
+of its public Tvet college system to deliver trade
+qualifications with the support of employer partners. This
+programme was created to assist selected Tvet, Technical and
+Vocational Education and Training, colleges to improve their
+capacity to develop competent artisans with industry partners,
+and to pioneer the way for transformation of the college
+system to make them more relevant and responsive to the demand
+of industry labour needs. Thank you.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you. Just a
+reminder, it’s quiet sometime having been doing this. Its 90
+seconds for the statement, just a reminder.
+KILLING OF TAZNE VAN WYK IN WESTERN CAPE
+(Member’s Statement)
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 74
+Ms A L A ABRAHAMS (DA): Thank you, House Chair. The use of the
+horrendous and senseless killing of Tazne van Wyk must shake
+this Parliament to its core for not protecting this young
+girl’s life.
+The DA sends our condolences to Tazne’s family, friends and
+her bereaved community. May her soul rest in peace and eternal
+glory. Tazne’s life was allegedly cut short by a man let out
+on parole, a violent offender with a criminal record dating
+back to the 1980s.
+The DA demands that Minister Lamola accounts to Parliament on
+the failure of the justice system in letting dangerous
+criminals back into society and putting citizens lives at
+risk. That is why the Minister must provide answers on what
+the conditions on which Tazne’s killer was granted parole and
+how was he being monitored by his department. It’s clear that
+the criminal justice system does not protect women and
+children. How many more women and children will need to die
+before this Parliament acts to keep them safe? Let her death
+not be in vain, act now. The Minister is not here and the
+Deputy Minister is just sitting there doing what - when women
+and children are dying every single day. We have so many
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 75
+incidents here in this country. But as time goes by, we have
+to take these issues. [Time expired] [Applause.]
+EFF MARCH TO ESKOM ON 28 FEBRUARY THIS WEEK
+(Member’s Statement)
+Ms N V MENTE (EFF): Thank you, House Chair. This coming
+Friday, 28 February 2020, the EFF will carry the cries of
+young and old, mothers and fathers, children, workers,
+professionals, business people and organised civil society
+when we march to Eskom.
+Our people have suffered enough loadshedding, their lives are
+interrupted unnecessarily so. Their lives are threatened and
+this has gone too long enough. Business have lost many days,
+many stock and many had to retrenched workers because of the
+loadshedding that impacted the performance of the economy.
+Many workers have lost their jobs because without stable
+electricity supply business cannot have long term plan, create
+jobs and contributes to the growing economy.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 76
+The people’s march will be taking place on Friday. It will
+start at nine o’clock in the morning from Innesfree Park. We
+will march to megawatt park.
+We call on the residents of Soweto, of Mamelodi, of
+Hammanskraal, of Thokozani, the residents of Orange Farm, of
+Vosloorus, Alexander, Diepsloot and all other areas to join
+people’s march to demand the stable affordable electricity.
+We call on all workers in factories, farms, constructing side
+and households. We call on South Africa to join us to call on
+Jamnadas must fall! [Time expired.] [Applause.]
+ENGEN GIFTS FUEL TANKS TO GIFT OF GIVERS
+(Member’s Statement)
+Mr M R MASHEGO (ANC): Thank you, Chair. The ANC want to
+welcome the generosity of a three-year contract as signed
+between Gift of the Givers and Engen, which will support the
+organisation’s humanitarian efforts.
+Engen donated R2 million and 150 JoJo tanks to Gift of the
+Givers, which will speed up their disaster relief work. Gift
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 77
+of the Givers was founded upon the principle of providing
+unconditional humanitarian assistance despite religion, race,
+colour, class or geographical boundaries.
+It is hoped that the donation would assist Gift of the Givers
+to deploy team members faster in an emergency. With the
+effects of climate change and the impact it has had on our
+weather patterns, natural disasters are becoming more
+prevalent and less predictable. Heat waves, droughts and
+floods are expected to get worse over the coming decades.
+Gift of the Givers founder and Chairperson Dr Imtiaz Sooliman
+said that the organisation’s convoys traveled long distances
+to deliver relief to those most in need, which was why this
+commitment from Engen would strengthen their ability to make
+an impact on the lives of our people.
+We urge all sectors in our society to work together and share
+collective responsibility to make a sustainable impact.
+Tshiven
+ḓa:
+Vho M R MASHEGO: Ndi khou livhuwa, Mudzulatshidulo.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 78
+STATE OF PUBLIC HEALTH IN SOUTH AFRICA
+(Member’s Statement)
+Ms M D HLENGWA (IFP): Hon Chairperson, the state of public
+health in South Africa leaves in a lot to be desired. The
+states in which hospitals in many parts of the country are
+indeed suddenly if they are at least descend looking and still
+standing, they either suffer or a shortage of staff and there
+are long queues or there is no medication.
+Public hospitals in the greater part of this country are in
+the need of the attention from the government. Those are live
+experiences. The recent report that HIV positive woman has
+lodged complains that there were sterilised in public
+hospitals without their informed concern comes as the last
+straw to have their rights to dignity, bodily integrity and
+freedom and security over their bodies violated at the hands
+of institutions that should be providing much needed
+protection and comforts is indeed a course for grave concern.
+We cannot keep quiet about this as investigation must be done
+because people need answers and there need to be guarantees in
+their dignity progress. [Time expired.] [Applause.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 79
+MUNICIPALITY VIOLATING ENVIRONMENTAL ACT
+(Member’s Statement)
+Ms H JORDAAN (FF PLUS): Hon House Chair, the Moqhaka Local
+municipality in the Free State has permitted the Vals River to
+be polluted by raw sewage that flows into the river from
+various sewage overflows for a number of years.
+Recently, the municipality intentionally permitted the local
+toilet paper factory to render research system around it in
+such chaos that these too are now contributing to the
+pollution problem.
+The local Anglo-Boer War Concentration Camps, a national
+heritage sites is completely covered in west coast by this
+creating a most unfortunate and unacceptable situation.
+The FF Plus laid criminal charges against the municipal
+manager of Moqhaka Local Municipality for the contravention of
+the relevant National Environmental Management Act. We employ
+the Department of Co-operative Governance to intervene in
+Moqhaka and ensure that they enforce their own bylaws.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 80
+We also employ the Department of Water and Sanitation to
+prioritise the contravention of the Nema, National
+Environmental Management Act, by local government on an urgent
+basis. Let us make no mistake. The pollution of our water
+sources which are already under immense stain is a criminal
+act and those responsible must held accountable. I thank you.
+DEPARTMENT OF ARTS AND CULTURE HOSTED INTERNATIONAL MOTHER
+LANGUAGE DAY CELEBRATIONS AT AMANGWE VILLAGE SPORTS GROUND IN
+KWAMBONAMBI, UMFOLOZI LOCAL MUNICIPALITY
+(Member’s Statement)
+Mr A M SEABI (ANC): Hon House Chairperson, the ANC-led
+government has been consistent in its pronouncements to ensure
+that we fast-track the promotion and implementation of
+indigenous languages in our country, including finalisation of
+language legislation in provinces for inclusion in the school
+curriculum.
+The Department of Arts and Culture, in partnership with the
+KwaZulu-Natal provincial Department for Arts, Culture, Sport
+and Recreation and PanSALB hosted the International Mother
+Language Day Celebrations to promote cultural diversity and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 81
+multilingualism on 21 February 2020, at Amangwe Village Sports
+Ground in KwaMbonambi, uMfolozi Local Municipality.
+The International Mother Language Day is used to create
+awareness and appreciation for cultural and linguistic
+diversity around the world. Worldwide, people identify
+themselves through their mother tongues. Mother language is
+the first language people use to communicate, to express their
+thoughts, emotions and ideas.
+The celebrations were aimed at highlighting the importance of
+indigenous languages and to inspire all South Africans,
+including those with special needs, to promote, preserve and
+protect all South African languages. Thank you.
+DA CONGRATULATES WESTERN CAPE PREMIER FOR THE DEPLOYMENT OF
+500 LAW ENFORCEMENT OFFICERS ON THE STREETS OF THE CITY OF
+CAPE TOWN
+(Member’s Statement)
+Mr A G WHITFIELDS (DA): Hon House Chairperson, the DA
+congratulates Premier Alan Winde and his team on the
+groundbreaking provincial safety plan and the deployment of
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 82
+the first 500, out of 3000 law enforcement officers unto the
+streets of Cape Town. [Applause.] Regrettably, the Minister of
+Police is not here today. He is presiding over the worst
+violent crime statistics in recent memory. He has instead
+chosen to put politics before the safety of the people of the
+Western Cape. Acting more like a cowboy than a Minister he
+referred to law enforcement officers as thugs, calling the
+deployment illegal while casting aspersions on the Premier and
+his government suggesting that they be arrested.
+The Minister would do well to take notes at this point. Not
+only can the city’s law enforcement officers much information,
+they know their left from their right and are appointed 100%
+in line with the Criminal Procedure Act. All criminal records
+are verified by SA Police Service, SAPS prior to their
+appointments. Officers have received all of the relevant
+training and every certificate and piece of paperwork is in
+place and signed off by the relevant authorities, including
+the SA Police Service.
+All staff on the city that carry firearms are fully competent
+to do so and have the required legal authority. Instead of
+playing politics, the Minister should give praise where it is
+due and get behind this excellent plan by providing us full
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 83
+support. It is not clear why the Minister of Police does not
+support this plan when it has already received the full
+support of the SA Police Service. I thank you. [Applause.]
+ANC-LED GOVERNMENT LAUNCHED THE HUMAN SETTLEMENTS DUNCAN
+VILLAGE REDEVOLOPMENT PROJECT IN THE EASTERN CAPE
+(Member’s Statement)
+Ms N N SIHLWAYI (ANC): Hon House Chair, the launch of the
+ambitious project to redevelop Duncan Village in the Eastern
+Cape...
+The HOUSE CHAIRPERSON (Ms M G Boroto): Can you please talk to
+your microphone, hon member?
+Ms N N SIHLWAYI (ANC): ... proves the commitment by the ANC-
+led government of ensuring that sustainable human settlements
+help transform the spatial legacy. Duncan Village is one of
+the old townships in South Africa and is a century old. There
+was hope and despair when ANC President Cyril Ramaphosa and
+the ANC NEC members visited this poor township in 2018, as
+part of ANC door-to door campaign and taking note of
+residents’ complaints. The ANC leadership witnessed first-hand
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 84
+the dejection of this area over their quality of life where
+shacks outnumbered formal households in the township of 80 000
+people.
+Recently, the three spheres of government signed a memorandum
+of understanding, paving the way for the reconstruction of the
+Duncan Village Development. After the signing ceremony the
+Housing Development Agency, HDA has identified land parcels
+for housing development within the area, in and around the
+city. [Time expired.]
+ANC DISMAYED AT CITY OF CAPE TOWN METROPOLITAN MUNICIPALITY’S
+UNDERSPENDING AND LACK OF SERVICE DELIVERY FOR POOR PEOPLE
+(Member’s Statement)
+Mr Z MLENZANA (ANC): Hon House Chairperson, the constant
+underspending of the City of Cape Town Metropolitan Municipality and
+lack of provision of basic services for the many impoverished people
+in this province, is a huge concern. Once again the Auditor-General
+Kimi Makwetu, flagged the city for materially underspending its
+operating budget to the amount of R2,4 billion and the capital
+budget to the amount of R1,3 billion. The Auditor General also
+flagged the appointment of law firms representing the city.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 85
+According to the report, approval to procure legal services was
+granted to the legal department by means of a council system of
+delegations that was not in line with the regulations.
+Not long ago the Cape Argus reported that the city’s water and
+sanitation directorate failed to spend R417 million meant to
+provide an additional supply to the city’s drinking water
+resources. It also emerged that the city’s transport
+directorate did not spend over R120 million of its annual
+budget. The ANC takes issue with the manner in which the
+budget is spent in the City of Cape Town Metropolitan
+Municipality, given that many of our people are affected by
+the underspending, which should be used to build a better life
+for all and their communities. Thank you.
+YOUTH UNEMPLOYMENT RATE STILL HIGH UNDER ANC-LED GOVERNMENT
+(Member’s Statement)
+Mr L MPHITI (DA): Hon House Chairperson, Statistics SA’s
+quarterly labour force survey reveals that youth unemployment
+amongst young people is at a staggering 3,3 million. More
+alarming is that unemployment amongst young people,
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 86
+particularly those aged between 25 and 34 is more than double
+that of those who are aged between 45 and 54.
+IsiXhosa:
+UMongameli makathethe inyaniso emsulwa. Ubalibele abahlali
+nolutsha lwaseSterkpruit, kwaSkisazana, kwaKhiba, eMjikelweni,
+eBlue Gums nezinye ilali endingazikhankanyanga.
+English:
+The ANC-led government is indeed incapable of creating an
+economic environment that is conducive for job creation. This
+affirms that young people still find themselves fighting for
+their dignity, livelihoods and survival. The facts speaks for
+themselves because 8,2 million of South Africa’s 20,4 million
+young South Africans are without jobs. There is however one
+place that is giving young people hope; that things can be
+better and that is the DA-led Western Cape government.
+[Applause.] It has created 24 000 jobs in the last quarter and
+maintained the lowest unemployment rate in the country.
+Therefore, the DA calls for this House to congratulate the
+Western Cape for creating job opportunities for the many young
+people in these devastating economic times. I thank you.
+[Applause.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 87
+PUPILS NOT ATTENDING SCHOOLS DUE TO ADMISSION PROBLEMS
+(Member’s Statement)
+IsiZulu:
+Nk H O MKHALIPHI (EFF): Sihlalo weNdlu, kusukela kuvulwe
+izikole kulo nyaka zingu-15 kuMasingana 2020, kusenezingane
+ezihleli emakhaya ezingazi noma zizogcina zithathiwe yini.
+English:
+Why? Because the Department of Basic Education lacks proper
+planning.
+IsiZulu:
+Lokho kuthinta izingane zethu. Zizogcina ziyimidlwembe,
+sizogcina zingabadlwenguli, zizogcina zibamba inkunzi ngoba
+uHulumeni ka-ANC ...
+English:
+... hates the youth of South Africa.
+IsiZulu:
+Ngikhuluma ngoNoluthando Nxumalo ...
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 88
+English:
+... a girl child who is looking to be admitted for Grade 11.
+IsiZulu:
+Akekho-ke ofuna ukumamukela.
+English:
+I have been speaking to the department. I have been speaking
+to the Minister of Basic Education.
+IsiZulu:
+Akukho mpendulo ephumayo ngalezi zingane. Ake nilaleleni la.
+[Ubuwelewele.]
+English:
+Seven kids in Sasalentsha Primary School were not admitted by
+principal Dlamini, saying to these kids that they must write a
+test. Thanks to the EFF ground forces and the EFF councillor
+who went and challenged principal Dlamini to say why was he
+saying that these kids must go and write a test before they
+get admitted. The department is there but it is not
+intervening. In higher education, the University of KwaZulu-
+Natal, UKZN, in the Durban University of Technology, DUT,
+Nzimande, is burning. [Interjections.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 89
+IsiZulu:
+USIHLALO WENDLU (Nk M G Boroto): Siyabonga, ima nje lapho.
+Siyabonga, isikhathi siphelile.
+English:
+No man! But this is very important House Chairperson.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you very much.
+The time is up.
+SOUTH AFRICA’S LACK OF COMPLIANCE WITH INTERNATIONAL STANDARDS
+IN CAR SAFETY REGULATIONS A CONCERN
+(Member’s Statement)
+Mr L M NTSHAYISA (AIC): Hon House Chairperson, the Transport
+and the Trade and Industry departments are said to have failed
+to comply with the international standards in modernising the
+country’s antiquated car safety regulations. Even the National
+Regulator for Compulsory Specifications admits much to these
+allegations.
+We learned through credit agencies, domestically and abroad,
+as in the Global New Car Assessment Programme and Automobile
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 90
+Association that South Africa still lacks both the electronic
+stability control, i.e, ESC, and antilock breaking systems
+which all have been made compulsory to be fitted as standard
+into our vehicles.
+In countries such as ours where car accidents claim innocent
+lives almost on a daily basis, these recent revelations have
+come as a great shock to us. Can these departments assure
+South African motorists that their vehicles are risk averse
+and safety proof? These departments must pull up their socks;
+the house is on fire. Maziye ke! [Let us do it.]
+INVESTIGATIONS INTO FORCED STERILISATION SPECULATIONS IN
+SOUTH AFRICAN HOSPITALS
+(Minister’s Response)
+THE MINISTER OF HEALTH: House Chairperson, there was an issue
+raised about the report released by the Commission for Gender
+Equality. I just wish to indicate that we have now been
+informed about that as it happened yesterday, unfortunately
+the report had not been brought to the attention of the
+Minister or the department before it was released, so we are
+not able to deal with it immediately.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 91
+Today we have asked for an urgent meeting with the
+commissioner so that we can look into the matter. The truth of
+the matter is that there is no government policy that should
+force anyone into sterilisation. We don’t believe that it is
+correct for anyone to be sterilised under duress. The matter
+will need attention and we will announce as soon as we have
+looked at the report and had a briefing. Thank you very much.
+INTERNATIONAL MOTHER LANGUAGE DAY CELEBRATION AND
+PROMOTION OF MOTHER TONGUE BY ARTS AND CULTURE DEPARTMENT
+(Minister’s Response)
+THE MINISTER OF SPORT, ARTS AND CULTURE: House Chairperson,
+thank you very much hon Seabi for observing a very important
+event, which is the International Mother Language Day. Every
+year the department gives bursaries to students studying
+languages in major universities like Wits University,
+University of Cape Town, University of Johannesburg, and so
+on.
+Firstly, we do this because it is quite important to emphasise
+the importance of mother tongue because our erstwhile
+colonisers couldn’t annihilate our languages, so we should
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 92
+continue to preserve them for posterity. Secondly, in Makhanda
+area, we have taken a decision to change the National English
+Literary Museum to be Amazwi South African Museum of
+Literature so that it doesn’t only develop English, but it
+also develops IsiXhosa in the Makhanda area.
+The last point is a call to our compatriots - especially white
+compatriots, to start learning African languages, especially
+basics, as it will augur well for social cohesion. We need to
+do that. We had a young lady there from Italy who was learning
+African languages - IsiZulu and IsiXhosa. If foreigners can do
+that, surely, South Africans can. Thank you very much.
+A CALL TO UNITE AND FIGHT AGAINST GENDER-BASED VIOLENCE
+(Minister’s Response)
+THE MINISTER OF SOCIAL DEVELOPMENT: Hon House Chairperson, I
+firstly would like to thank the member of the ACDP who
+reminded us that one of the biggest challenges we have in
+South Africa is about us pointing fingers to each other when
+we are supposed to deal with a very serious matter. The issue
+of violence against women and children is not a matter to
+politicise about; it is a matter for us to make commitment
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 93
+across party political lines. It is a matter that we need to
+be able to commit house to house, street to street, and family
+to family, in order for us to be able to deal with it.
+This is a matter that I would also like to say that the
+Minister of Police, the Minister of Justice, including the
+President himself, today are going to the field to visit the
+families of those that have been affected. The plea from me
+and the Minister of Social Development, and also from the
+branches of the ANC is that we should commit to working in our
+communities because this is a societal problem. It is a
+societal problem that we live with. Some people see it
+happening on a day-to-day basis, and they don’t lift a finger.
+So, this is not an issue for us to really make jokes about it,
+it is a matter that we all need to commit to do, and act in
+the best way we can. I thank you.
+CENTRE OF SPECIALISATION AT BOLAND TVET COLLEGE
+(Minister’s response)
+The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY:
+Chair, I want to thank hon Mahlaule for raising the issue of
+centres of specialisation, the aim of which is to accelerate
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 94
+quality artisan training. We intend to take this programme
+forward in our technical co-operation with the Germans, as per
+the agreement signed between President Ramaphosa and
+Chancellor Merkel.
+In particular, the centre of specialisation at Boland TVET
+college recently received robotic welding machines for student
+training. There is a very strong partnership with industry and
+the process of recruiting 820 apprentices has been started.
+The centre is also equipped with some of the latest technology
+in line with industry standards.
+I thank the member for raising such an important matter.
+KILLING OF TAZNE VAN WYK IN WESTERN CAPE
+(Minister’s response)
+The MINISTER IN THE PRESIDENCY: Chair, I concur with Minister
+Zulu that we need to intensify our community efforts to fight
+against gender-based violence. Equally, we concur with the
+colleague from the DA who said that the death of Tazne van Wyk
+is just one death too many. We need to do more. Enough is
+enough.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 95
+But all of us as a society need to deal with this phenomenon
+of killing of women and young children in our country. We need
+to hold hands.
+Of course, we continue to arrest those who kill, but the
+killings continue.
+An HON MEMBER: You release them!
+The MINISTER IN THE PRESIDENCY: Therefore, we agree that we
+should work together in our communities, in our streets,
+everywhere we are to fight against gender-based violence, the
+killing of our women and the killing of our children. Let’s
+fight this with everything we have in our power. Thank you.
+ANC-LED GOVERNMENT LAUNCHED THE HUMAN SETTLEMENTS DUNCAN
+VILLAGE REDEVOLOPMENT PROJECT IN THE EASTERN CAPE
+(Minister’s response)
+IsiXhosa:
+USEKELA MPHATHISWA WEZOKUHLALISWA KOLUNTU, AMANZI NOGUTYULO:
+Sihlalo weNdlu, ndiphakamisela ukubulela umama uSihlwayi
+ndisithi ewe, iDuncan Village isayinelwe kwiiofisi ezintathu.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 96
+Ukunyathela kukaMongameli Ramaphosa eDuncan Village kwenze
+umahluko omkhulu. Kuza kwakhiwa izindlu ezinga-5 500 kwaye
+abantu abaza kuxhamla ngama-20 000. Sithi halala Duncan
+Village, halala! [Kwaqhwatywa.]
+MUNICIPALITY VIOLATING ENVIRONMENTAL ACT
+(Minister’s response)
+The MINISTER OF CO-OPERATIVE GOVERNANCE AND TRADITIONAL
+AFFAIRS: Chair, I just want to say to the hon member who
+raised the issue of the pollution of the Vaal that it is
+indeed a very important matter. Government is seized with it.
+We are led by the Deputy President as we look at the matter.
+But it is clear that the problem is the aging infrastructure
+in the various municipalities. Therefore we have to address
+that and we are doing our best to do so. But it will not
+happen overnight because the aging infrastructure needs a lot
+of resources. It’s not just one municipality that needs its
+infrastructure refurbished.
+However, thank you for raising the issue. We are seized with
+it. Thank you.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 97
+The HOUSE CHAIRPERSON (Ms M G Boroto): Those who are not
+recognised today, this item has been moved to be the first
+item on days that we have motions.
+Mr J J W JULIUS: Chairperson, I rise on a point of order.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Wait, I’m still
+addressing the House; I will come to you.
+So, I’m just saying, we need to realise that it has changed.
+It is now the first item on those days. Hence we could not do
+it because the executive was not here when we started. But we
+heard seven of them, and that is the new Rule.
+Yes, what is your point of order, hon member?
+Mr J J W JULIUS: House Chair, I think you would have given us
+our daily bread ... Minister Cele, to please come and
+apologise today. I think the responses were very poor.
+The HOUSE CHAIRPERSON (Ms M G Boroto): No, hon member, that is
+not a point of order. I don’t understand what you mean by
+“daily bread” anyway!
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 98
+DEATH OF MARCELINO DOS SANTOS
+(Draft Resolution)
+Mr D M NKOSI: Chairperson, I move without notice:
+That the House-
+(1) notes that one of the founders member of the
+Mozambique Liberation Front, Frelimo, Marcelino dos
+Santos, died in Maputo on 11 February 2020, at the
+age of 90;
+(2) recalls that Marcelino’s activism began when he was
+elected Secretary-General of the Conference of
+Nationalist Organizations of the Portuguese
+Colonies at Casablanca;
+(3) further recalls that under surveillance from
+Portuguese police, he escaped to France where he
+worked with many other exiled African nationalists
+such as Guinea-Bissau’s Amilcar Cabral;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 99
+(4) remembers that in 1962, dos Santos with other
+leaders from other formations merged and formed
+Frelimo, under the leadership of Eduardo Mondlane;
+(5) further remembers that after the assassination of
+Mondlane in 1969, Samora Machel was elected
+President of Frelimo with dos Santos as the Deputy
+President;
+(6) understands that after independence in 1975, dos
+Santos became Minister of Planning and Development
+in Machel’s first government and later held several
+other senior positions including Speaker of
+Parliament; and
+(7) conveys its condolences to the government of the
+People’s Republic of Mozambique and the family of
+Marcelino dos Santos.
+Thank you.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you. Again, let
+me remind you about this that we also do the motions in 90
+seconds, neh? And please move as we continue.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 100
+Agreed to.
+DR BEYERS NAUDE MUNICIPALITY IN THE WORST DROUGHTS
+(Draft Resolution)
+Ms S J GRAHAM: House Chairperson, I move without notice:
+That the House-
+(1) notes that the Dr Beyers Naude municipal area in the
+Eastern Cape has been in the grips of one of the worst
+droughts in recent memory, leading to the drying up of
+the Nqweba Dam outside Graaff-Reinet;
+(2) acknowledges that Ms Corene Conradie established the
+Graaff-Reinet Water Crisis, which reached out to the
+Gift of the Givers for assistance;
+(3) recognises that the Gift of the Givers have
+subsequently drilled eight boreholes at local schools
+and one at the Midlands Hospital, with eight JoJo
+tanks per borehole, enabling local residents to
+collect water;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 101
+(4) further recognises that the Gift of the Givers
+established a permanent team in Graaff-Reinet that
+continues to deliver 25 000 litres of fresh water
+daily to residents by means of 34 community tanks
+throughout the town; and
+(5) conveys its heartfelt thanks to Ali Sablay, Dr Gideon
+Groenewald and the Gift of the Givers organisation for
+their role in averting a potential humanitarian crisis
+in Graaff-Reinet.
+I so move. [Applause.]
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, allow me
+to go back to the first motion because you didn’t remind me
+about this in time, I wonder why. We need to find out if there
+is an objection to the motion. So, we all forgot. Please
+accept my apologies.
+The first motion was moved by the ANC. Is there any objection?
+No objection, agreed to. The second motion was moved by the
+DA. Is there any objection? No objection, agreed to.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 102
+ANC GOVERNMENT DEFENDING PRESIDENT RAMAPHOSA IN THE MASSACRE
+OF MINEWORKERS
+(Draft Resolution)
+Ms N P SONTI: Hon House Chairperson, I move without notice:
+That the House-
+(1) notes that, since the massacre of mineworkers in
+2012 by the ANC government in defence of President
+Ramaphosa’s Black Economic Empowerment, BEE, scheme,
+and white bosses of Lonmin mine, the people of
+Marikana lives side by side with death and murder;
+(2) further notes that between November 2019 and
+February this year, four people have been shot and
+killed, namely, Kaizer Lungisa Madiba who was shot
+and killed in Marikana, Cebilisile Ngongo was shot
+and killed in Marikana, Mahamba Ngomti was shot and
+killed in Marikana, and Siyamthanda Mabhentsela was
+stabbed and killed in Marikana;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 103
+(3) acknowledges that Noziphiwo Ziya was also shot in
+Marikana and she is fighting for her life at the
+hospital;
+(4) further acknowledges that the killings in Marikana
+leave many wives, sisters and brothers, parents, and
+children without breadwinners;
+(5) condemns these senseless killings that continue
+while those responsible continue to kill without
+consequences;
+(6) realises that we are on our own, and those that are
+responsible for protecting us and maintain law and
+order don’t do that; and
+(7) sends its condolences to the bereaved families and
+wishes Noziphiwo Ziya a speedy recovery.
+Thanks, Chair.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Thank you very much.
+Are there any objections to the motion? No objection ...
+[Interjections.]
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 104
+Mr T N MMUTLE: Hon Chair, the ANC objects this mischievous
+motion.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon member, just say
+you object and leave out the other things. In light of the
+objection this will become a notice of a motion.
+DR ESTHER MAHLANGU MAKING HISTORY BY CREATING A PAINTING
+INSIDE THE NEW ROLLS-ROYCE PHANTOM
+(Draft Resolution)
+Ms V P MALOMANE: Hon House Chairperson, I move without notice:
+That the House-
+(1) notes that South Africa’s renowned and award-winning
+creative artist, Mama Dr Esther Mahlangu, has again
+made history by being the first African to be
+commissioned to create a painting for the gallery
+inside a new Rolls-Royce Phantom;
+(2) understands that she was commissioned by the esteemed
+brand to design the interior and exterior trim with
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 105
+her Ndebele heritage inspired artwork for the new
+Rolls-Royce Phantom;
+(3) remembers that she is no stranger to collaborating
+with prestigious brands as she previously collaborated
+with the BMW Group to redefine a BMW 7 Series in 2016;
+and
+(4) congratulates Dr Mahlangu on her achievements and
+wishes her well as she continues to soar to greater
+heights in her passion for the Ndebele inspired
+designs.
+I so move.
+Agreed to.
+RECENT INTERNATIONAL ACCOLADE OF THE WORLD CUP-WINNING
+SPRINGBOK RUGBY TEAM
+(Draft Resolution)
+Mr N SINGH: Chairperson, I move without notice:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 106
+That the House-
+(1) congratulates the World Cup-winning Springbok rugby
+team on their most recent international accolade,
+namely the awarding of the internationally acclaimed
+and prestigious Laureus Team of the Year Award, which
+was conferred upon the team in Berlin on Monday, 17
+February;
+(2) notes with pride that this is the second occasion in
+which the Springboks have won the Laureus accolade,
+the first being shortly after their World Cup victory
+in 2007;
+(3) recognises the important role that South African
+sportsmen and women play in not only creating social
+cohesion and nation-building in South Africa, but also
+the fine example they display as ambassadors on the
+international stage for the country and its citizens;
+(4) encourages all other South African sportsmen and women
+to emulate the example of the Springboks in reaching
+for the heights of the various sporting codes; and
+finally
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 107
+(5) calls upon government to capacitate every school in
+South Africa with adequate sporting codes and
+facilities, and to identify and nurture the vast
+sporting talent pool we have in this country from a
+young age, so that all South Africans can have the
+opportunity of excelling to the greatest heights of
+their sporting activities, should they wish to do so.
+I so move.
+Agreed to.
+OBSERVATION OF INTERNATIONAL MOTHER TONGUE DAY ON
+21 FEBRUARY 2020
+(Draft Resolution)
+Dr C P MULDER: Hon House Chairperson, I move without notice:
+That the House-
+(1) recognises that on 21 February 2020, International
+Mother Tongue Day was observed;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 108
+(2) notes that the United Nations Educational,
+Scientific and Cultural Organization, UNESCO,
+proclaimed this day, in 1999, to promote the
+preservation and protection of all languages;
+(3) further notes that:
+(a) this day, commemorated the day in 1952 when
+students were shot dead by the police while
+protesting for the recognition of their
+language, Bangla, as one of the two national
+languages of the former Eastern Pakistan (now
+Bangladesh); and
+(b) the purpose of this day is to promote language
+and cultural diversity;
+(4) agrees that mother tongue languages are powerful
+instruments and linguistic freedom is a basic human
+right;
+(5) further agrees that education in mother tongue is
+important and should be promoted;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 109
+(6) believes that in accordance with section 30 of the
+South African Constitution which says, everyone has
+the right to use the language of their choice; and
+therefore
+(7) reaffirms the protection and promotion of all
+languages in South Africa.
+I so move.
+Agreed to.
+ANTARCTIC EXPERIENCING A TEMPERATURE SPIKE
+(Draft Resolution)
+Ms T M A TONGWANE: Hon House Chairperson, I move without
+notice:
+That the House-
+(1) notes with great concern that the Antarctic has
+experienced a temperature spike as part of a warming
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 110
+climate trend that could impact on South African
+weather;
+(2) acknowledges that scientific findings have shown that
+higher temperatures over Antarctica may lead to
+massive melting of glaciers, contributing to a rise in
+the heights of sea levels with negative consequences
+for coastal areas, especially in South Africa;
+(3) further acknowledges that steps in finalising the
+Climate Change Bill which provides a regulatory
+framework for the effective management of inevitable
+climate change by enhancing adaptive capacity,
+strengthening resilience and reducing South Africa’s
+vulnerability to climate change is at an advance
+stage; and
+(4) welcomes the fact that governments must continue to
+help people to alleviate the effects of climate
+change, and most importantly, that our people must be
+ready to embrace adaptation strategies.
+Thank you.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 111
+Agreed to.
+Ms T L MARAWU: Hon House Chairperson, I move without notice:
+That the House-
+(1) notes that notes that Thulisile Khanyile, a six-
+month pregnant lady, was admitted at Mariannhill
+Hospital on 14 February 2020;
+(2) further notes that after being allegedly neglected
+by the hospital staff, she was assisted by fellow
+patients when she went into labour at 03h40 in the
+morning;
+(3) understands that her premature baby passed on eight
+hours after she was born; and
+(4) calls on the Ministry of Health to launch a full
+investigation into this unfortunate matter.
+I so move.
+Agreed to.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 112
+MIDVAAL LOCAL MUNICIPALITY AWARDED 6TH SUCCESSIVE CLEAN AUDIT
+(Draft Resolution)
+Mr A C ROOS: Hon House Chairperson, I move without notice:
+That the House-
+(1) notes that the Midvaal Local Municipality was
+recently awarded its 6th successive clean audit by
+the Auditor-General of South Africa;
+(2) further notes that the municipality continues to
+punch above its weight by attracting significant
+investments in its economy from local and
+international companies, including Heineken, Ferrero
+Rocher, Paramount Trailers, New Hope, BSI Steel and
+Twin Boats;
+(3) acknowledges that, as a result of the municipality’s
+ability to cut red tape, simplify procedures and by-
+laws to make it easier to do business and invest
+within the boundaries of the municipality, Sedibeng
+Brewery made a further R3,5 billion investment in
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 113
+the municipality, resulting in the creation of 3500
+construction jobs and 32 local farmers being
+supported on a regular basis;
+(4) further acknowledges the role that the
+municipality’s committed personnel and its senior
+management’s willingness to go the extra mile,
+played in delivering another clean audit;
+(5) commends Mayor Bongani Baloyi and the municipality’s
+personnel for their commitment to good governance
+and service delivery to the residents of Midvaal;
+and
+(6) congratulates the municipality on achieving its 6th
+successive clean audit.
+I so move. [Applause.]
+Agreed to.
+LEARNERS SOLD DRUGS AT L.D MOETANALO SECONDARY SCHOOL IN STEVE
+TSHWETE LOCAL MUNICIPALITY
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 114
+(Draft Resolution)
+Mr K CEZA: Hon House Chairperson, I move without notice:
+That the House-
+(1) notes that L.D Moetanalo secondary School in Steve
+Tshwete Local Municipality, in extension five ward
+28 has been turned into a drug house by drug pushers
+in that area;
+(2) further notes that learners are fed drugs in school
+on a daily basis instead of education;
+(3) acknowledges that the majority of learners never
+completed their studies and dropped out of school to
+roam around and commit crime;
+(4) further acknowledges that the matter has been
+reported many times and the school together with the
+members of the community have reported the matter to
+the police and the Department of Social Development,
+yet nothing has been done;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 115
+(5) recognises that gangsterism and violence are
+happening inside schools in Mhluzi township, one
+area where learners are supposed to feel safe, learn
+and prepare for their future as productive members
+of the society and improve their living conditions;
+(6) realises that the youth of today that we failed to
+protect, are the ones we will protect from tomorrow
+as a society;
+(7) calls on the people of Steve Tshwete local
+municipality to come together, organise and fight
+the problem of drug abuse, gangsterism and protect
+the future of our children.
+I so move.
+Not agreed to.
+TWO FINAL YEAR INFORMATION TECHNOLOGY STUDENTS AT THE TSHWANE
+UNIVERSITY OF TECHNOLOGY INVENTED A DEVICE CALLED C4ME
+(Draft Resolution)
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 116
+Ms D P SIBIYA: Hon House Chairperson, I move without notice:
+That the House -
+(1) notes that two final year Information Technology
+students at the Tshwane University of Technology,
+have invented a device called C4Me that will assist
+visually impaired people to move freely and know
+exactly where they are going;
+(2) acknowledges that Siphamandla Mgcina and Philanjalo
+Ndlovu have been working on the device since
+June 2019 and have recently travelled to Toronto in
+Canada, where they presented their device;
+(3) further acknowledges that their encounter with a
+visually impaired student at the Tshwane University
+of Technology campus inspired their innovative
+invention of C4Me;
+(4) understands that the device contains several sensors
+that guide the wearer by pinpointing their location
+and destination, and provides audio instructions to
+guide them; and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 117
+(5) congratulates Mgcina and Ndlovu on their achievement
+and hopes that this will encourage and inspire more
+young people to study technology.
+I so move. [Applause.]
+Agreed to
+The HOUSE CHAIRPERSON (Ms M G BOROTO): GOOD Party! Please send
+notes if you don’t want me to call your name and that you will
+not be doing anything on that item. And, I won’t call it at
+all if you send a note.
+SPEEDY RESPONSE BY THE CITY OF CAPE TOWN FIRE DEPARTMENT TO A
+FIRE THAT BROKE DOWN IN GOODWOOD
+(Draft Resolution)
+Mr A M SHAIK EMAM: Hon House Chairperson, I move without
+notice:
+That the House-
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 118
+(1) notes that on Sunday, 23 February 2020, a fire broke
+out near Voortrekker road in Goodwood;
+(2) further notes that it is alleged that vagrants who
+were burning cables started the fire;
+(3) understands that an emergency call was made to the
+City of Cape Town Fire Department,
+(4) further understands and that within five minutes the
+fire department responded positively with various
+vehicles from different fire stations - Goodwood,
+Bellville, Belhar, Brooklyn, Kraaifontein and
+Landsdowne;
+(5) acknowledges that the Station Commander from the
+Goodwod Fire Station, the Station Commander from
+Belhar, Senior Fire Fighters from the Brooklyn
+Station, Senior Fire Fighter Staedler from the
+Kraaifontein Station, Platoon Commander from the
+Landsdowne Station and the Station Commander from
+Bellville acted in the most exemplary manner and
+with the utmost of urgency ensuring the fire was
+extinguished; and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 119
+(6) also acknowledges that action by the above-mentioned
+officers prevented a major disaster in the area as
+the area is surrounded by many businesses;
+(7) therefore calls on this hon House to commend these
+officers for the speedy response to prevent a
+disaster; and
+(8) congratulate the City Of Cape town for the quick
+response time.
+I so move.
+Agreed to.
+THE APPOINTMENT OF MS HONEY MAMABOLO AS THE NEW MANAGING
+DIRECTOR OF THE SOUTH AFRICAN MINT COMPANY
+(Draft Resolution)
+Ms Z NKOMO: Hon House Chairperson, I move without notice:
+That the House-
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 120
+(1) welcomes the appointment of Ms Honey Mamabolo as the
+new Managing Director of the South African Mint
+Company, effective from 1 February 2020;
+(2) acknowledges that she has 20 years of experience
+across various industry sectors, including mining,
+retail banking, energy, development finance and
+manufacturing;
+(3) further acknowledges Ms Mamabolo’s role as Lead Co-
+ordinator of the Industrial Development
+Corporation’s Green Energy Efficiency Fund, and the
+launch thereof, which played a significant part in
+the energy market’s transformation by providing
+competitive funding for the implementation of energy
+efficiency and small-scale renewable energy projects
+by small and medium-sized enterprises and energy
+services companies;
+(4) proudly notes that she graduated as one of three
+first black female Chemical Engineering graduates
+from the University of Pretoria, and holds
+postgraduate qualifications in Financial Management,
+Strategy Planning and Change Management; and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 121
+(5) congratulates her on the appointment and believes
+that her agile leadership is critical in today’s
+volatile, uncertain, complex and ambiguous business
+environment.
+I thank you.
+Agreed to.
+MEC FOR EDUCATION IN GAUTENG, MR PANYAZA LESUFI’S EFFORTS IN
+INTRODUCING AN ACCESSIBLE ONLINE SCHOOL ADMISSION APPLICATION
+SYSTEM FOR LEARNERS
+(Draft Resolution)
+Mr L M NTSHAYISA: Hon House Chairperson, I move without
+notice:
+That the House-
+(1) notes the efforts by the MEC for Education in the
+Gauteng province, Mr Panyaza Lesufi, in introducing
+an accessible online school admission application
+system for learners in the province;
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 122
+(2) further notes that the MEC has responded to the
+broader school infrastructure challenges, especially
+in light of the reported incidents of pit latrines
+and drowning;
+(3) commends the MEC for his forthrightness in exercising
+urgency to cases of learner-bullying in public
+schools;
+(4) implores all the stakeholders in public schools,
+including educators, School Governing Bodies, teacher
+unions and parents to support this determined MEC;
+and
+(5) notes that this MEC is also equal to the task of
+dealing with the issues of Fourth Industrial
+Revolution.
+I so move.
+Agreed to.
+ATTACK OF A FEMALE METRORAIL TRAIN DRIVER
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 123
+(Draft Resolution)
+Mr W T LETSIE: House Chairperson, the ANC moves without
+notice:
+That the House –
+(1) notes with great concern the criminal attack of a
+female Metrorail train driver, Ms Nonhlanhla
+Dlamini, by commuters for refusing to stop between
+stations in KwaZulu-Natal on Tuesday, 18th February;
+(2) further notes that the attack took place between
+06:00 and 07:00 in the morning, and was left
+bleeding and emotionally distraught whilst waiting
+for an hour for help to arrive;
+(3) understands that the train was en route from Durban
+to Stanger when commuters wanted her to stop between
+stations;
+(4) further understands that when she refused, as it is
+not allowed and would have created a very dangerous
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 124
+situation for the commuters and train crew, she was
+then assaulted;
+(5) acknowledges that commuters had threatened to kill
+Ms Dlamini and hit her on the head and ear by some
+of the stones and was bleeding profusely;
+(6) urges Passenger Rail Agency of SA, Prasa, to ensure
+that systems are put in place to protect both the
+employees and commuters and to address the
+vandalism, arson and fare evasions that have
+negatively impacted on the services of the Prasa;
+and
+(7) wishes Ms Dlamini a speedy and full recovery.
+Agreed to.
+SOUTH AFRICA WINS 5TH INTERNATIONAL MOOT COURT COMPETITION
+(Draft Resolution)
+Ms C V KING: House Chairperson, the DA moves without notice:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 125
+That this House -
+(1) notes the participation of the South African team in
+the 5th International Schools Moot Court Competition
+held in Poland;
+(2) further notes the South African team competed
+against six countries which includes Bulgaria,
+Romania, Mongolia, St Maarten, USA and Venezuela;
+(3) also notes the 5th International School Moot Court
+Competition was a scene of conflict over the past
+decade in Tabanath;
+(4) acknowledges that in 2014, 2016 and 2018 South
+Africa obtained first, second and best presenter
+awards; and
+(5) congratulates Mihlali Stotile, Ondele Bede, Okhela
+Sigwela, Lizalise Dlomo, Sureshka Naidoo, Caitlin
+Schwarer, Nondumiso Ntshangase and Nosipho Dube on
+the victory after winning this competition against
+USA.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 126
+Agreed to.
+MUSLIM JUDICIAL COUNCIL CELEBRATES 75TH ANNIVERSARY
+(Draft Resolution)
+Mr M G E HENDRIKS: House Chairperson, Al-Jama-ah moves without
+notice:
+That the House –
+(1) congratulates the Muslim Judicial Council, MJC, on
+its 75th anniversary;
+(2) notes that today, South Africa remembers the
+foundation presidents of the MJC, Imam Achmat
+Behardien, leader of the MJC; Sheikh Sharkie
+Gamieldien and his successor Sheikh Nazeem Mohammed,
+who had close relationship with former President
+Nelson Mandela; and
+(3) wishes the Muslim community as the most peaceful
+community in South Africa; rejecting any form of
+extremism and responding with all its resources to
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 127
+relieve efforts to sow its unqualified patriotism
+and love for South Africa.
+Agreed to.
+NOTICES OF MOTION
+Mr E T MYENI: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ANC:
+That the House –
+(1) debates assessing the progress made at the October
+2019, Jobs Summit to assist small businesses through
+township supplier development programmes as well as
+development of youth entrepreneurship.
+Ms D VAN DER WALT: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the DA:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 128
+(1) debates the true status of Basic Education and what
+could be done to ensure viable solutions to enable
+our learners to be ready to participate in the 4th
+Industrial Revolution.
+Ms D B NGWENYA: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the EFF:
+That the House -
+(1) debates the vicious cycle of triple oppression based
+on race, class and gender that has not been broken
+for South African women, in particular black women
+in the past 25 years.
+Ms A GELA: House Chairperson, I hereby give notice of motion
+that on the next sitting of the House I shall move on behalf
+of the ANC:
+That the House –
+(1) debates the critical role that the private sector
+needs to play in improving the health system; and
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 129
+with the combined strength between the public and
+the private sector ensure action for real change.
+IsiXhosa:
+Sihlalo ohloniphekileyo, amacandelo abucala mawayeke ukuzenza
+oongcwele-ngcwele ekubeni nawo enamabibi awo. Siza kuyixoxa
+loo nto ngosuku esiyixoxa ngalo kuba kufuneka siyixoxile.
+Ms M D HLENGWA: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the IFP:
+That the House –
+(1) debates the issue of nonconsensual sterilization at
+public hospitals.
+Mr P MEY: House Chairperson, I hereby give notice of motion
+that on the next sitting of the House I shall move on behalf
+of the FFPlus:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 130
+(1) debates the possibility of allowing commercial
+farmers to construct earth dams with their own
+resources on their properties, with a view to
+provide water for their own purposes as well as to
+local rural communities and small emerging farmers
+who are suffering from a lack of water supply.
+Ms A MOTAUNG: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ANC:
+That the House –
+(1) debates strengthen competitions legislation to
+address concentration and barriers to new entrants,
+administered prices and improve ease of doing
+business.
+Mr S N SWART: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ACDP:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 131
+(1) debates the complete overhaul of the parole system
+given the brutal murder of an eight-year-old, Tazne
+van Wyk from Elsies River by a convicted criminal
+who was released on parole in 2018 after being
+sentenced to 10 years imprisonment for kidnapping,
+child abuse and culpable homicide of his own two-
+year-old son.
+Ms A WINKLER: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the DA:
+That the House –
+(1) debates how it intends to, as a matter of urgency,
+discuss the state of our river health in South
+Africa as result of environmentally debilitating,
+toxic sewerage spills and excessive pollution. It is
+time that environmental issues are treated with the
+urgency that they deserve.
+Mr B S MADLINGOZI: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the EFF:
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 132
+That the House –
+(1) debates fast-tracking of having our indigenous
+languages to be used in our national schools set
+books.
+Ms T I LEGWASE: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ANC:
+That the House –
+(1) debates tightening the current laws dealing with the
+activities of Foreign Intelligence Services, the
+abuse of the diplomatic immunities and acts of
+espionage in order to provide for the imposition of
+harsher sentences to serve as deterrent.
+Mr A M SHAIK EMAM: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the NFP:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 133
+(1) deliberates and resolves on the immediate
+unconditional downgrading of the South African
+embassy in Israel to a liaison office until Israel
+respects international law, respects the rights of
+Palestinian people to exist and comply with all
+international resolutions and agreements.
+Ms M A MOLEKWA: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ANC:
+That the House –
+(1) debates implementation of the Border Management
+Authority, BMA, to address the question of irregular
+migration and border management.
+Ms A S HLONGO: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the ANC:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 134
+(1) debates stopping the sexual exploitation of the
+girl-child so that they are allowed to grow up in
+safe, loving and nurturing environments and have the
+opportunity to play their important roles in
+society.
+Ms B S MASANGO: House Chairperson, I hereby give notice of
+motion that on the next sitting of the House I shall move on
+behalf of the DA:
+That the House –
+(1) debates the status of the government’s taking over
+the Bosasa Youth Development Centres throughout the
+country to protect the children receiving services
+from these centres.
+Ms T MGWEBA: House Chairperson, I hereby give notice of motion
+that on the next sitting of the House I shall move on behalf
+of the ANC:
+That the House –
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 135
+(1) debates increasing the levels of women empowerment
+especially in the private sector, so that through
+the empowerment of women in this sector, we are
+contributing to social transformation.
+Business concluded.
+The House adjourned at 16:45]

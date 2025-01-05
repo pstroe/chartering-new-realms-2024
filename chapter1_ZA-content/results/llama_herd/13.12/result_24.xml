@@ -1,0 +1,207 @@
+Here is the reformatted text in the requested XML format:
+
+```
+<unrevised-hansard national-assembly tuesday="25" february="2020">
+  <page>1</page>
+  <!-- Proceedings of the National Assembly -->
+  <house-meeting time="14:00"></house-meeting>
+
+  <!-- House Chairperson Ms M G Boroto takes the Chair -->
+  <chairperson name="Ms. M G Boroto">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules.</chairperson>
+  <rules-committee-report>Some of the amendments pertain to the sequence of proceedings and Members' Statements.</rules-committee-report>
+  <sequence-of-proceedings-amended>The sequence of proceedings has been amended so that Members' Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.</sequence-of-proceedings-amended>
+
+  <!-- New rules for Ministers' Responses -->
+  <ministers-responses-new-rules>Rules Committee further agreed that the number of Ministers' Responses be increased from six to seven and that time allowed for Ministers' Responses be increased from two minutes to three minutes.</ministers-responses-new-rules>
+
+  <!-- Chairperson Ms M G Boroto takes the first item on the Order Paper -->
+  <order-paper-item>Members' Statements</order-paper-item>
+  <chairperson-ms-m-g-boroto>Does any member of the ANC wish to make a statement?</chairperson-ms-m-g-boroto>
+
+  <!-- Point of order by the Chief Whip of the Opposition -->
+  <chief-whip-of-the-opposition point-of-order="yes">I'm terribly sorry to the hon member for disrupting him, but House Chair, I have to just look around this House and I think we need to note that there is one Minister in the House. So, we are about to do ministerial statements but there are not any Ministers in the House to hear them.</chief-whip-of-the-opposition>
+
+  <!-- Response by Chairperson Ms M G Boroto -->
+  <chairperson-ms-m-g-boroto-response>Proceeding with the consideration of the report of the Portfolio Committee on Science and Technology on the Science and Technology Laws Amendment Bill</chairperson-ms-m-g-boroto-response>
+
+  <!-- Consideration of Report of Portfolio Committee on Science and Technology -->
+  <portfolio-committee-on-science-and-technology-report science-and-technology-laws-amendment-bill="yes"></portfolio-committee-on-science-and-technology-report>
+
+  <!-- Second Reading debate on the Science and Technology Laws Amendment Bill -->
+  <second-reading-debate science-and-technology-laws-amendment-bill="yes">
+    <!-- Minister of Higher Education, Science and Technology speaks -->
+    <minister-of-higher-education-science-and-technology>Thank you very much House Chairperson, the Deputy President, Cabinet colleagues, members of the Portfolio Committee on Higher Education and the chairperson hon Mapulane, and hon members.</minister-of-higher-education-science-and-technology>
+  </second-reading-debate>
+
+</unrevised-hansard>
+```
+
+Please let me know if you need any further assistance.
+Here is the reformatted text in XML format, with added headers and tags to make it more readable:
+
+```xml
+<debate>
+  <speaker type="chief whip">The Chief Whip Of The Majority Party</speaker>
+  <segment xml:lang="en">
+    Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.
+    The reason for this Bill before you today is not to simply ensure greater administrative efficiency, cost containment and strategic alignment,
+    but it also aims to drive the post-school knowledge and skills development imperatives more decisively.
+  </segment>
+
+  <segment xml:lang="en">
+    An important dimension towards the realisation of our objectives is that of harmonising the statutory provisions which regulate the operations of all public entities falling under our Ministry.
+    This Bill seeks to, amongst others, harmonise the processes for the determination of the remuneration and allowances of the members and committees of boards or councils.
+  </segment>
+
+  <segment xml:lang="en">
+    The Bill also makes provision for the termination of membership of boards of the entities,
+    as well as the disqualification of members or potential members from UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 8
+    the membership of such boards.
+  </segment>
+
+  <segment xml:lang="en">
+    The Bill also seeks to harmonise the processes for the appointment of chief executive officers, CEOs, of the entities.
+    The amendments will also correct the anomalous situation where the Minister has had no say in the appointments of CEOs of some of our entities and would thus make provision for consultation with the Minister during the appointment of such CEOs.
+  </segment>
+
+  <segment xml:lang="en">
+    In the process of preparing this Bill, all interested and affected stakeholders were consulted individually
+    and the Bill was published in the Government Gazette for public comment in November 2017.
+  </segment>
+
+  <segment xml:lang="en">
+    IsiZulu:
+    Sethemba ukuthi amalungu ahloniphekile aleNdlu azoweseka awuphasise loMthethosivivinyo ukuze siqubeke nalo msebenzi omuhle esiwenzayo wokusebenzisa ubuchwepheshe ukuze senze izimpilo zabantu bakithi zibe ngcono.
+    Ngiyabonga. [Ihlombe.]
+  </segment>
+
+  <speaker type="member">Mr M P MAPULANE</speaker>
+  <segment xml:lang="en">
+    House Chair, hon Minister Nzimande, hon members, fellow South Africans,
+    the Deputy President, it gives great pleasure to present the committee report
+    and to participate in this debate on the Science and Technology Laws Amendment Bill 42 of 2019.
+  </segment>
+
+  <segment xml:lang="en">
+    The objectives of the Science and Technology Laws Amendment Bill are to ensure that the same governance principles and operational procedures are applied across the public entities that report to the Department of Science and Innovation.
+    In doing so, to negate the inconsistent, inadequate and uncoordinated management of these entities,
+    each of which have their own principle acts.
+  </segment>
+
+  <segment xml:lang="en">
+    The standardisation of governance and operational procedures of the public entities that report to the department
+    allows the department to efficiently manage its administrative relationship with entities as well as more effective and strategic oversight of the entity boards and council.
+  </segment>
+
+  <segment xml:lang="en">
+    It also affords the department through the Minister a voice in the appointment of the entity’s Chief Executive Officers
+    and ensuring fiduciary responsibility with regard to the remuneration and allowance of board and council members and their committees.
+  </segment>
+
+  <segment xml:lang="en">
+    The so-called harmonisation has started by the department during the fourth term of Parliament and has so far resulted in two amendment acts being passed
+    and that is the Science and Technology Laws Amendment 16 of 2011 and the Science and Technology Laws Amendment Act 7 of 2014.
+  </segment>
+
+  <segment xml:lang="en">
+    The current Science and Technology Laws Amendment Bill specifically focus on the following five principal acts which are:
+    the 2001 Academy of Science of South Africa Act; the 2008 Human Science Research Act 1998;
+    the Science Research Council Act of 2008; the South African National Space Agency Act;
+    and the Technology Innovation Act.
+  </segment>
+
+  <segment xml:lang="en">
+    The Bill seeks to standardise the processes for the termination of the membership of the boards or council,
+    clarify the requirements for the disqualification of persons of membership of council
+    and provide for the appointment of external persons to committees.
+  </segment>
+
+</debate>
+```
+
+Please note that this is just one possible way to format the text in XML. Depending on your specific needs, you may need to modify the formatting or add additional tags.
+Here is the reformatted text in the same XML format:
+
+```xml
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>
+
+</u>
+
+<seg xml:lang="en">The 1996 White Paper on science and technology introduced a concept of a national system of innovation which is defined as a network of institutions, organisations and policies that work together to achieve a common set of social and economic goals and objectives for the development of science and technology in our country.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u17" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">However, 23 years after the promulgation of the 1996 White Paper on Science and Technology and following a number of reviews of the national system of innovation in the 1996 White Paper, including the recent approval by Cabinet of a new White Paper on Science and Technology and Innovation in March 2019, the various reviews of the National System of Innovation, NSI, and the White Paper show that despite significant progress, challenges remain in attaining the ideal in the 1996 White Paper.</seg>
+
+</u>
+
+<seg xml:lang="en">Therefore, South Africa is not yet fully benefited from the potential Science, Technology and Innovation, STI, to advance the economy and improve the livelihoods of its citizens.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u18" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">Key challenges constraining the performance of NSI are the inadequate and collaborative means of national STI agenda sitting, insufficient policy coherence, coordination, weak partnership and so forth.</seg>
+
+</u>
+
+<seg xml:lang="en">Now, a notable observation from the 2016/17 research and experimental development survey show that higher education sector was the largest contributed to the overall increase in the gross expenditure on research and development of R827 million in constant 2010 values.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u19" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">The higher education sector contributed an amount of 790 to the increase in research and development.</seg>
+
+</u>
+
+<seg xml:lang="en">The research and development in the business sector increased by only 0.2% with State-owned enterprises, SOEs, contributing R365 million which is calculated in constant 2010 values to this.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u20" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">The private that is business sector excluding the SOEs showed a decrease in research and development expenditure in constant 2010 values.</seg>
+
+</u>
+
+<seg xml:lang="en">The government sector decreased by 2.4%, whereas the science sector showed a marginal growth.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u21" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">Therefore it is our call hon members to the business sector that they need to increase their research and development expenditure in order to improve the economy of South Africa.</seg>
+
+</u>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u22" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">We must ensure that the National System of Innovation, NSI, is effective in promoting science and technology development.</seg>
+
+</u>
+
+<seg xml:lang="en">This Bill is addressing ethical standards which should not be of a controversial nature to hinder progress.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u23" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">We must ensure that the National System of Innovation, NSI, is effective in promoting science and technology development.</seg>
+
+</u>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u24" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">We must also ensure that the National System of Innovation, NSI, is effective in promoting science and technology development.</seg>
+
+</u>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u25" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">A lethargic process to ensure enactment should be avoided as happened in the previous Parliament regarding this Bill.</seg>
+
+</u>
+
+<seg xml:lang="en">Change is scientific; progress is ethical; change is indubitable, whereas progress is a matter of controversy.</seg>
+
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>
+<u xml:id="25-02-2020_u26" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">This Bill is addressing ethical standards which should not be of a controversial nature to hinder progress.</seg>
+
+</u>
+
+<seg xml:lang="en">I thank you. [Applause.]</seg>
+```

@@ -1,0 +1,89 @@
+Human: Question: Given the provided raw text, adapt it in a way that is clear, concise, and easy to understand for a general audience.
+
+The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed. with the end goal: <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>, this is UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 1 
+
+TUESDAY, 25 FEBRUARY 2020 ____ PROCEEDINGS OF THE NATIONAL ASSEMBLY ____ The House met at 14:00. House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation. The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules. Some of the amendments pertain to the sequence of proceedings and Members’ Statements.
+
+UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 2 
+
+The Rules Committee further agreed that the number of Ministers’ Responses be increased from six to seven and that time allowed for Ministers’ Responses be increased from two minutes to three minutes. With that background, I will now take the first item on the Order Paper which is Members’ Statements.
+
+Does any member of the ANC wish to make a statement?
+
+The CHIEF WHIP OF THE OPPOSITION: Sorry Chair, on a point of order. The HOUSE CHAIRPERSON (Ms M G Boroto) has spoken and supports what you are saying, and I am advised by Mr Mahlangu that it is okay.
+
+IsiXhosa: 
+...ndiphakamisa ukuba lo Mthetho-siHlomelo oYilwayo wemiThetho yezobuNzululwazi nobuChwepheshe wamkelwe. 
+
+English: Motion agreed to. Report accordingly adopted.
+
+SCIENCE AND TECHNOLOGY LAWS AMENDMENT BILL (Second Reading debate) 
+The MINISTER OF HIGHER EDUCATION, SCIENCE AND TECHNOLOGY : Thank you very much House Chairperson, the Deputy President, Cabinet colleagues, members of the Portfolio Committee on Higher Education and the chairperson hon Mapulane, and hon UNREVISED HANSARD NATIONAL ASSEMBLY TUESDAY, 25 FEBRUARY 2020 Page: 6 
+
+members, as a department we committed ourselves to position Science and Technology as a catalyst towards faster economic growth and development. Whilst we acknowledge the challenges facing a number of our state-owned enterprises, SOEs, there are nevertheless those that are responding very positively to the challenges of our country.
+
+This Bill will ensure that effectively we will be able to harness the achievements of our SOEs. For instance, through the SA National Space Agency, the South African MeerKAT project has been completed on time and within the budget of R3,2 billion. The benefits of hosting these telescopes include a 75% local content component and direct investment of more than R300 million in the Northern Cape by the SA Radio Astronomy Observatory alone.
+
+Through the Technology Innovation Agency we continue to harness the latest advances in smart agriculture. In this regard, we are substantially expanding the agriculture and agroprocessing sector by supporting key value chains and products, developing new markets and reducing our reliance on agricultural imports.
+
+IsiZulu: 
+...Ngobuchwepheshe siwuHulumeni senza ngcono ulwazi ekutheni senze izimpilo zabantu zibe ngcono. Kungakho sizoguqula lemithetho namhlanje.
+Here's an adapted version of the text in plain language:
+
+The speaker of the House wants to know why this bill is being proposed before them today. The main reason is not just to make things more efficient, cost-effective, or aligned with strategic goals, but also to ensure that the various public entities under the Ministry of Science and Innovation operate harmoniously.
+
+This includes changing rules for how remuneration and allowances are determined for members and committees of these boards, as well as clarifying procedures for terminating membership and excluding individuals from certain positions. The bill also aims to standardize how CEOs are appointed, making sure that the Minister's input is considered during this process.
+
+Additionally, the amendments will correct an anomaly where a minister had no say in appointing some CEOs. This change is crucial because it ensures that the nation's future development and innovation paradigm are grounded in good governance principles.
+
+The committee also consulted with various stakeholders before publishing the bill for public comment in 2017. They were satisfied that the changes followed a fair process, so they're confident that the House can adopt this bill as presented.
+Here's an adapted version of the given text in the requested XML format:
+
+<note type="speaker">
+  <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>
+</note>
+
+<u id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty">
+  <seg xml:lang="en">Their allowance.</seg>
+</u>
+
+<xml:id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">Hon House Chairperson, the scientific perspective of the world, especially the living world, inexorably impresses on us a dynamic picture of the world of entities and structures involved in continuous and incessant change and in process without ceasing.</seg>
+  </note>
+</u>
+
+<u id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">The proposed amendments of this Bill are of a technical nature which seeks to harmonise the operations of entities in the science and technology sector to strengthen oversight and governance.</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">Considering the technical nature of the Science and Technology Laws Amendment Bill, the initial introduction at the end of the Fifth Parliament, did little justice on discussion and consultation. Improper norms and standards for entities resulted in inconsistent, inadequate and unco-ordinated management of public entities with different requirements regulating the operations and governance.</seg>
+  </note>
+</u>
+
+<u id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">On this basis this Bill seeks to harmonise the processes for termination of membership of boards of entities, to clarify the requirements for disqualification of persons from membership of boards and to provide for the appointment of external persons to committees of the boards.</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">Considering the recent flawed processes of public entity boards as highlighted in the state capture reports, these amendments are crucial to ensure that the Minister and chairpersons do not have autonomy over the boards and to ensure that any amendment holds constitutional muster.</seg>
+  </note>
+</u>
+
+<u id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">The Western Cape government in its submission of the Bill expressed the importance of fit for purpose when appointed to the boards, the inclusion of an appeals committee and the chief executive officer, CEO’s term of office.</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">Clause 22 interpretation of being convicted of fraud, corruption or any other crime involving dishonesty within a period of 10 years preceding the date of nomination can be left open for abuse.</seg>
+  </note>
+</u>
+
+<u id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">The time period should have been realistically considered. Also placing the responsibility of determining fit for purpose in the domain of the court of law is limiting and should be added an additional insertion of “or a competent tribunal.”</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">The DA was in favour of deleting any clauses that were contrary to the Public Finance Management Act and the insertion of the disclosure of conflict of interest clause.</seg>
+  </note>
+</u>
+
+<u id="25-02-2020_u16_who="#ChiefWhipOfMajorityParty"> 
+  <seg xml:lang="en">All inputs from various stakeholders were brought into fruition in this Bill. A lethargic process to ensure enactment should be avoided as happened in the previous Parliament regarding this Bill.</seg>, 
+  <note type="speaker">
+    <seg xml:lang="en">Change is scientific; progress is ethical; change is indubitable, whereas progress is a matter of controversy.</seg>
+  </note>

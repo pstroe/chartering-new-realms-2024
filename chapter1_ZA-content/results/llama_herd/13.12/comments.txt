@@ -1,0 +1,47 @@
+Model: llama 3.2 3B , Answer: Let's think step by step.
+
+Test 1: Prompt: If given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+
+Test 2: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.'
+Test 3: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.'
+Test 4: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.'
+
+
+Model: llama 3.2 1B , Answer: Let's think step by step.
+
+Test 5: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+Test 6: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+
+Model: llama 3.2 1B , Answer: Be a helpful assistant.
+
+Test 7: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+Test 8: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+Test 9: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+
+Model: llama 3.2 3B , Answer: Be a helpful assistant.
+
+Test 10: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+Test 11: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+Test 12: Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.
+
+Test 13: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 14: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 15: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+
+Model: llama 3.1 8B, Answer: Be a helpful assistant.
+Test 16: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 16: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 18: Given raw text: {example_txt} with the end goal: {example_xml}, format this: {chunk} into the same xml format.
+
+Test 19: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 20: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format.
+Test 21: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format.
+
+Test 22: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. 
+Test 23: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. 
+Test 24: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. 
+
+ADAPTED EXAMPLE: <note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>
+Test 25: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.
+Test 26: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.
+Test 27: Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text.
