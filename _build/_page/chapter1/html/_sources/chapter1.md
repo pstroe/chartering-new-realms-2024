@@ -473,16 +473,26 @@ TUESDAY, 25 FEBRUARY 2020
 Page: 2
 ```
 
-It's output however, was unusable, as it refused to attempt the task and gave answers such as: 
+It's output however, was mostly unusable, as it refused to attempt the task and gave answers such as: 
 
-- Sorry, I can't help you with that. (test_8, 27.12.2024)
-- I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search. (test_3, 27.12.2024)
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| help me format some text | None | can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
+|2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same xml format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
+|3|format all of the text | None | I'm not programmed to assist with that. |
 
-The output can thus not be evaluated with the prepared scripts. 
+The experiment was insofar successful, as that when asking for help, Gemini attempted to format the input, though in a first attempt, it did format the text according to the example (attempt 10), when rerunning the prompt (attempt 11) it neglected all speaker turns and created one large segment with the entire input placed within. 
 
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| I need help with some xml formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12 <./chapter1_ZA-content/gemini-results/31.12/attempt_11-1.xml>` |
+|2| Try again, pay attention to the speakers| None | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-2.xml>`|
+|3|Assign a separate speaker tag to each speaker please | None | View {Download}`third XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-3.xml>` |
+|4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
+
+ACTUALLY I NEED TO CHECK WHATEVER WAS GOING ON IN ATTEMPT 10
 ### GPT-4o
-With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. 
-(Something something about usefulness of these, find sources again)
+With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. With the subscription to the GPT-4o model comes the option of configuring custom GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions, uploading relevant documents, and integrating external tools or APIs. This customization process involves defining the model's purpose, specifying its interaction style, and supplying domain-specific knowledge to enhance its performance. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements, thereby improving efficiency and personalization in various application.{cite:p}`zhao_2024, garrido_2023, openai_2025`
 
 #### Try 1
 
