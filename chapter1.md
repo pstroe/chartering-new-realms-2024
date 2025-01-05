@@ -182,7 +182,10 @@ Llama 3 herd with parameters {cite:p}`dubey_2024`
 
 Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model with GPT-4 capabilities but a longer context window {cite:p}`gemini_2024`. It promises accuracy across a context window of 10 million token, whilst being relatively efficient and more efficient to serve then the Gemini 1.0 models {cite:p}`gemini_2024`, thus making it a promising candidate for formatting data as, especially in the case of ParlaMint, the complete context of the correct XML structure is relatively long.  
 
-ADD GPT-4O TO THIS.
+GPT-4o was chosen for its accessibility, computational efficiency, and ease of use. Unlike larger, resource-intensive models, GPT-4o offers advanced capabilities while remaining efficient to run on standard hardware. Its intuitive design simplifies integration into workflows, making it an ideal choice for handling complex tasks like processing ParlaMint's XML structures without excessive computational demands. Additionally, OpenAI announced in a press conference that GPT-4o demonstrates significant advancements in linguistic, textual, and visual reasoning task {cite:p}`liu_2024`.
+
+With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents, which becomes the GPT's "knowledge". Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` Custom GPTs have been shown to outperform basic GPT models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involves information-retrieval. 
+
 
 **Models Used**
 - Llama 3.2 1B
@@ -491,8 +494,9 @@ The experiment was insofar successful, as that when asking for help, Gemini atte
 |4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
 
 ACTUALLY I NEED TO CHECK WHATEVER WAS GOING ON IN ATTEMPT 10
+
 ### GPT-4o
-With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. With the subscription to the GPT-4o model comes the option of configuring custom GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions, uploading relevant documents, and integrating external tools or APIs. This customization process involves defining the model's purpose, specifying its interaction style, and supplying domain-specific knowledge to enhance its performance. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements.{cite:p}`zhao_2024, garrido_2023, openai_2025`
+In order to have the custom GPT perform the XML-formattin task, the appraoch of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
 
 #### Try 1
 
