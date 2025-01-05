@@ -273,82 +273,136 @@ To evaluate the content of the output of the LLMs tested, a percentage scale was
 import xml.etree.ElementTree as ET
 import random
 import re
+import os
+import pandas as pd
+from collections import OrderedDict
 
-# Path to the XML and txt file
-xml_file_path = 'test_objects/gold_standard.xml'  
-txt_file_path = 'test_objects/gold_standard.txt'  
-
-# Parse the XML file
-tree = ET.parse(xml_file_path)
-root = tree.getroot()
-
-# Define the namespace for TEI XML
-namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
-
-"""initiates the segment that the llm assigns to the text elements. Can be variable. 
-Correct tag: seg 
-Common other tags: note, 
+"""Script to evaluate all XML output files in a folder against its original. 
+Includes error handling for incomplete/incorrect XML schema where it parses the the erroneous file as TXT format.
 """
-text_seg = "seg"
 
-#configures the sampler size. 
-sampler = 10
+# Path to the folder containing XML files
+xml_folder_path = 'chapter1_ZA-content/gold_standard'  # Replace with the actual folder path containing XML files
+txt_file_path = 'chapter1_ZA-content/gold_standard'  # Replace with the actual path to your TXT file
 
-# Find all the text elements within the XML
-segments = root.findall(f'.//tei:{text_seg}', namespace)
-
-# List to store all sentences
-all_sentences = []
-
-# Function to split text into sentences
-def split_into_sentences(text):
-    # sentence splitting 
-    return re.split(r'(?<=\w[.!?]) +', text)
-
-# Loop through each text element, split text into sentences, and add to the list
-for seg in segments:
-    if seg.text:
-        sentences = split_into_sentences(seg.text.strip())
-        all_sentences.extend(sentences)
-
-# Randomly pick sentences
-random_sentences = random.sample(all_sentences, sampler) if len(all_sentences) >= sampler else all_sentences
-
-# Remove newline characters and extra spaces from the random sentences
-random_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in random_sentences]
-
-
-
-# Open the text file and read its content
+# Open the original file and reads its content, this serves as comparator for the processed XML files. 
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     txt_content = file.read()
 
-# Remove newline characters and extra spaces from the txt file content
+# Removes newline characters and extra spaces from the txt file content, ensures that the script is not bothered by the original format.
 txt_content = re.sub(r'\s+', ' ', txt_content.replace('\n', ' ').strip())
 
-# calculates how much of the sentence is found
+# Define the namespace for the TEI XML, given for ParlaMint, 
+namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
+
+#option to configure the tag where the text is contained. seg is the official ParlaMint tag. This is due to the script checking for content and not formatting, thus if the LLM formatted with a wrong tag, the tag could be adapted more easily.
+tag = "seg"
+
+#option to configure the sampler size from each XML file. Can be set at random, or calculated for a desired probability of reliability. 
+sampler = 50
+
+# Function to split text into sentences, used for the validation. 
+def split_into_sentences(text):
+    # Basic sentence splitting based on a simple regex. Not perfectly robust but when tested on the gold standard, output is at a 100%
+    return re.split(r'(?<=\w[.!?]) +', text)
+
+# Function to calculate how much of the sentence is found in the TXT content
 def calculate_match_percentage(sentence, txt_content):
     # Find the longest substring match in the text content
     match = re.search(re.escape(sentence), txt_content)
-    # Checks for any names in the sentences. Configured for the formatting of the original TXT file. 
-    name_space = re.search(r'([A-Z]{2,}(?:\s+[A-Z]{2,})+);', sentence)
     if match:
         match_len = len(match.group(0))  # Length of the match
         sentence_len = len(sentence)  # Length of the original sentence
         return (match_len / sentence_len) * 100  # Percentage of the sentence found
-    if name_space: 
-        print("Error in assigning speakers")
     return 0  # No match found
 
-# Check how many of the sentences are present in the TXT file
-print("\nChecking how much of the sentences are present in the TXT file:")
-for sentence in random_sentences:
-    match_percentage = calculate_match_percentage(sentence, txt_content)
-    if match_percentage > 0:
-        print(f"Found: {match_percentage:.2f}% of the sentence: {sentence}")
-    else:
-        print(f"Not found: {sentence}")
+#checks names in the XML files
+def check_names(sentences): 
+    for sentence in sentences: 
+        pattern = r"(?<!>)([A-Z]+(?: [A-Z]+)*)(?!>):"
+        # Find all matches
+        matches = re.findall(pattern, sentence)
+        # Count the number of matches
+        count = len(matches)
+        if count != 0: 
+            return(count)
 
+      
+
+# List to store results
+results = []
+
+#list to store the 
+all_sentences = []
+
+speaker_error = {}
+# Loop through all XML files in the folder
+for xml_file_name in os.listdir(xml_folder_path):
+    if xml_file_name.endswith('.xml'):  # Only process XML files
+        xml_file_path = os.path.join(xml_folder_path, xml_file_name)
+        
+        #handles the processing and selection of the n random sentences.
+        try:
+            # Try parsing the XML file
+            tree = ET.parse(xml_file_path)
+            root = tree.getroot()
+            # Find all the tag elements within the XML
+            segments = root.findall(f'.//tei:{tag}', namespace)
+            # Loop through each segment, split text into sentences, and add to the list
+            for seg in segments:
+                sentences = split_into_sentences(seg.strip())
+                #check for any names within the text, regex because the format is always the same for all debates. EX: MS BOROTO: 
+                speaker_error[xml_file_name] = check_names(sentences)
+                # ensure the randomness of the sampled sentences
+                sampled_sentences = random.sample(sentences, sampler) if len(sentences) >= sampler else sentences
+                all_sentences.extend(sampled_sentences)
+        except: # If XML parsing fails, open the file as a plain text file
+            print(f"XML parsing failed for {xml_file_name}, treating as plain text...")
+            with open(xml_file_path, 'r', encoding='utf-8') as file:
+                raw_content = file.read()
+                # Loop through each segment, split text into sentences, and add to the list
+                sentences = split_into_sentences(raw_content.strip()) 
+                speaker_error[xml_file_name] = check_names(sentences) 
+                # ensure the randomness of the sampled sentences
+                sampled_sentences = random.sample(sentences, sampler) if len(sentences) >= sampler else sentences
+                all_sentences.extend(sampled_sentences)
+
+        # Remove newline characters and extra spaces from the sampled sentences
+        sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sampled_sentences]
+
+        # List to store the match percentages for the current XML file
+        match_percentages = []
+
+        # Check how much of the sentences are present in the TXT file
+        for sentence in sampled_sentences:
+            match_percentage = calculate_match_percentage(sentence, txt_content)
+            match_percentages.append(match_percentage)
+
+        # Calculate the average match percentage for the current XML file
+        average_match_percentage = sum(match_percentages) / len(match_percentages) if match_percentages else 0
+
+        # Store the result for the current XML file in the results list
+        for i, percentage in enumerate(match_percentages, start=1):
+            file_error = speaker_error.get(xml_file_name, None)
+            results.append({
+                'XML File': xml_file_name,
+                'Sentence #': i,
+                'Sentence': sampled_sentences[i-1],
+                'Match Percentage': f"{percentage:.2f}%",
+                'Average Match Percentage': f"{average_match_percentage:.2f}%",
+                'Speaker Error': file_error
+            })
+
+# Create a DataFrame from the results
+df = pd.DataFrame(results)
+
+# Write the results to an Excel file
+excel_file_path = 'output_results_with_average.xlsx' 
+df.to_excel(excel_file_path, index=False)
+
+print(f"Results have been written to {excel_file_path}")
+
+                       
 ```
 
 ## Experiments and Results
