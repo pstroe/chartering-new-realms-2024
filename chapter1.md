@@ -21,19 +21,19 @@ Anouk Menzi, Elizabeth Wagner
 #We will write this in the end
 
 ## Introduction
-Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. An attempt at making data accessible, interoprable, and reusable can be found in the Text Encoding Initiative {cite:p}`burnard_2013`. In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing, using the ParlaMint schema, an interoperable TEI XML schema for transcripts of parliamentary proceedings. This approach could be promising in cases where there is much raw data but it is not accessible in any coherent structure, as is the case for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data are the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to structure this data into the ParliMint schema, the attempt has been labour-intensive and done only on a small scale {cite:p}`ogrodniczuk_2024`. This chapter shall thus attempt to format the parliamentary proceedings into an interoperable XML schema, by employing the aid of different LLMs without the use of industrial strength hardware. 
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. An attempt at making data accessible, interoprable, and reusable can be found in the Text Encoding Initiative, TEI {cite:p}`burnard_2013`. In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing, using the ParlaMint schema, an interoperable TEI XML schema for transcripts of parliamentary proceedings. This approach could be promising in cases where there is much raw data but it is not accessible in any coherent structure, as is the case, for example, for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data are the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to structure this data into the ParliMint schema, the attempt has been labour-intensive and performed on a small scale {cite:p}`ogrodniczuk_2024`. This chapter shall thus attempt to propose an approach to format the parliamentary proceedings into an interoperable XML schema, by employing the aid of different LLMs without the use of industrial strength hardware. 
 
 ## Relevant Literature 
 >Parliamentary proceedings (PP) are a rich source of data used by e.g. scholars in historiography, sociology, political science, linguistics, economics and economic history. As opposed to sources of most other language corpora, PP are not subject to copyright or personal privacy protections, and are typically available online thus making them ideal for compilation into corpora and open distribution. For these reasons many countries have already produced PP corpora, but each typically in their own encoding, thus limiting their comparability and utilisation in a multilingual setting.
 >{cite:p}`erjavec_2019`
 
-ParlaMint was suggested as an interoperable, adaptive framework of formatting non-standardised parliamentary proceedings {cite:p}`erjavec_2023`. A first attempt at including the South African Parliamentary Proceedings has been made by Ogrodniczuk {cite:t}`ogrodniczuk_2024`, highlighting again the difficulties of formatting an unstructed document into the ParlaMint scheme {cite:p}`erjavec_2023`. The experiment was conducted on a singular session with a rule based approach {cite:p}`ogrodniczuk_2024`. This proved difficult as all quotations had to be marked manually, thus making it a labour intensive process when considering the 25 years of proceedings available for download on [the website of the South African Parliament](https://www.parliament.gov.za/hansard) {cite:p}`ogrodniczuk_2024, truan_2021`. 
+ParlaMint was invented as an interoperable, adaptive framework of formatting non-standardised parliamentary proceedings {cite:p}`erjavec_2023`. A first attempt at including the South African Parliamentary Proceedings has been made by Ogrodniczuk {cite:t}`ogrodniczuk_2024`, highlighting again the difficulties of formatting an unstructed document into the ParlaMint scheme {cite:p}`erjavec_2023`. The experiment was conducted on a singular session with a rule based approach {cite:p}`ogrodniczuk_2024`. This proved difficult as all kinesic categories, which denotes descriptions of behaviour such as clapping and is transcriped in the transcripts, had to be marked manually, thus making it a labour intensive process when considering the 25 years of proceedings available for download on [the website of the South African Parliament](https://www.parliament.gov.za/hansard) {cite:p}`ogrodniczuk_2024, truan_2021`. 
 
-The primary attractivity of harnessing LLMs lies in their capability to process Natural Language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023` or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of the authors of this chapter, no attempts at harnessing LLMs for parliamentary corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized to their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`chen_2023`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, or rather correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
+This difficulty of the rule-based approach raised the question of whether LLMs could be harnessed to format the data. The primary attractivity of harnessing LLMs lies in their capability to process natural language inputs and their generalized applicability to unknown tasks {cite:p}`zhang_jellyfish_2024, narayan_2022`. In this they are more flexible than specialized tools. Their flexibility is especially appreciated when it comes to the robustness of processing as, because they are not rule based, they are able to adapt to unforseen circumstances {cite:p}`zhang_jellyfish_2024`. In this ability they have found a wide application ground within the field of linguistics such as in Zappavigna where ChatGPT was tasked with evaluating noisy social media data {cite:p}`zappavigna_2023`, extracting data points from unstructured documents {cite:p}`vijayan_2023`, or in the use of generative LLMs for corpus analysis {cite:p}`curry_2024`. As to the knowledge of the authors of this chapter, no attempts at harnessing LLMs for parliamentary corpus building specifically have been attempted. However, in the wider field of data curation and formatting, the capabilities of LLMs are utilized, for example in summarising healthcare data from semi-structured forms into possible schematas of illnesses {cite:p}`letinier_2021` or in processing natural language for the biomedical field into a reusable format {cite:p}`beck_2022`. These adaptations of LLMs are highly specialized to their respective tasks and have thus lost much of their generality which is so desired by data scientists in their quest for a one-stop-shop solution for data wrangling {cite:p}`chen_2023`. A further issue of these specialized tasks lie in the idea that LLMs also mark faulty data, or rather correct these errors, such as in customer databases {cite:p}`pookandy_2022`. A behaviour which, in the field of linguistics, is at its best irrelevant but rather more likely renders the data worthless as it would alter the transcripts. 
 
-In light of these added difficulties when it comes to language data, where the language itself is of importance, research has largely been based on developping a tool that, in its foundations, is based on LLMs but that also includes code with a rule-based approach to wrangle data {cite:p}`chen_2023, arora_2023`. Evaporate is capable of transforming various, semistructured inputs into a table output, its LLM components are based on using cloud solutions to run LLMs {cite:p}`arora_2023`. SEED works on a similar basis, though its output format can be customised [^footnote1]. A model specifically fine-tuned for dataprocessing is the jellyfish family [^footnote4], as proposed by Zhang et al. which is based on the smaller models of the Llama 3 family {cite:t}`zhang_jellyfish_2024`. These tools display a remarkable adaptivity to new tasks, especially with few-shot prompting, where a model or tool is supplied with several examples before it is set to the task {cite:p}`chen_2023`. However, this comes at a greater computational cost than when employing non-LLM or rule-based tools {cite:p}`arora_2023`. Considering this trade-off between robustness, human-costliness and energy-efficiency, any approach must be carefully calculated and balanced.
+In light of these added difficulties when it comes to language data, where the language itself is of importance rather than data points, research has largely been based on developping a tool that, in its foundations, is based on LLMs but that also includes code with a rule-based approach to wrangle data {cite:p}`chen_2023, arora_2023`. Evaporate is capable of transforming various, semistructured inputs into a table output, its LLM components are based on using cloud solutions to run LLMs {cite:p}`arora_2023`. SEED works on a similar basis, though its output format can be customised [^footnote1]. A model specifically fine-tuned for dataprocessing is the jellyfish family [^footnote4], as proposed by Zhang et al. which is based on the smaller models of the Llama 3 family {cite:t}`zhang_jellyfish_2024`. These tools display a remarkable adaptivity to new tasks, especially when employing few-shot prompting, where a model or tool is supplied with several examples before it is set to the task {cite:p}`chen_2023`. However, this comes at a greater computational cost than when employing rule-based tools {cite:p}`arora_2023`. Considering this trade-off between robustness, human-costliness and energy-efficiency, any approach must be carefully calculated and balanced.
 
-[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to test it. 
+[^footnote4]: The Jellyfish model requires a GPU with more than 15 GB of memory, we neither have a device available with such a GPU, nor does Google Colab support such memory use on their free plan, thus we are unable to include it in our tests. 
 
 [^footnote1]: SEED is currently undergoing restructuring and thus cannot be used. It seems to be a promising project for further investigation into processing raw data via LLM, see [SEED repository](https://anonymous.4open.science/r/SEED/paper.pdf). 
 
@@ -41,13 +41,13 @@ In light of these added difficulties when it comes to language data, where the l
 ## Data and Methods
 
 ### Data
-The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. It constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial governments/legislatures. 
+The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. The Hansard constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial legislatures {cite:t}`piombo_2005`. 
 
-The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed, but no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). {cite:t}`kotze_2020` remark that it is and remains unclear what substantially verbatim conotes in the sense of corrections towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`.[^footnote2] 
+The reports are majoritatively held in English, though when a speaker chooses to use another official language, it is transcribed and no English translation is given. "Hansard is a substantially verbatim report - with repetitions and redundancies omitted and obvious mistakes corrected - of parliamentary proceedings" (see [Website of the South African parliament](https://www.parliament.gov.za/hansard?sorts[language]=-1&page=5&offset=40)). Kotze and Van Rooy remark that it is, and remains unclear what substantially verbatim conotes in the sense of corrections towards an overstandardisation {cite:p}`kotze_2020, hibbert_2016, hibbert_2003`.[^footnote2] 
 
 [^footnote2]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`hibbert_2016, hibbert_2003`.
 
-The decision was made to process all reports of 2020 from the National Assembly, henceforth abbreviated as NA. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions. The decision to look at the NA was made to maximise the possible speaker count and because it holds the most sessions of all parliamentray chambers. In total 51 sessions were held in 2020.
+The decision was made to process a randomly selected transcript from the National Assembly, henceforth abbreviated NA, to assess whether the proposed approach is feasible, thus following the methodology of Ogrodniczuk {cite:t}`ogrodniczuk_2024`. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions, however the formatting for all of these transcripts follows the approximate same standards as those of the NA. The session selected was from the 25th of February 2020. 
 
 #### ParlaMint 
 
@@ -55,16 +55,15 @@ To ensure that the data in this corpus remains both human- and machine-readable 
 
 The decision to adopt TEI, and specifically the ParlaMint schema, was guided by several considerations, specifically the goal of adhering to the FAIR principles. TEI's flexibility allows for the encoding of a diverse range of textual features, including but not limited to metadata about speakers. The ParlaMint schema, as a specialized extension of TEI, was designed to standardise the encoding of parliamentary data across various languages and regions {cite:p}`ogrodniczuk_2024` and allows for the encoding of a wide variety of metadata while following a strict structure to enable maximal interoperability {cite:p}`erjavec_2023`. In addition to the strict encoding guidelines for data and metadata provided by the ParlaMint schema, it also allows for meticulous documentation of the process to enable reusability for future research using this data. Overall, the ParlaMint was designed to adhere to the FAIR principles as closely as possible {cite:p}`erjavec_2023`. 
 
-The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`. Each corpus was prepared in two versions, one being the filly marked-up corpus with speeches in plain text, the other being identical to the first but with added linguistic annotation {cite:p}`erjavec_2023`. Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
+The concluded ParlaMint I project entailed the encoding of corpora containing transcriptions of the sessions of 17 European national parliaments, resulting in a collection of half a billion words {cite:p}`erjavec_2022_TEI`. Each corpus was prepared in two versions, one being the fully marked-up corpus with speeches in plain text, the other being identical to the first but with added linguistic annotation {cite:p}`erjavec_2023`. Adhering to the ParlaMint schema while encoding the South African Hansard papers would allow this corpus to seamlessly integrate with the ParlaMint I project.
 
 A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. This corpus root encodes information such as the title and language of the corresponding transcripts, the number of speakers and speeches contained within them, and the time the transcriptions span. The corpus root file also contains information about the license the transcripts are published under and the place online where they can be downloaded. 
 To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
 
+##### Gold Standard
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-document downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into a TXT file. The content of this TXt file was not edited, save for occasional spelling errors within headers and subtitles. This TXT file was then converted to an XML file manually.
 
-#### Training Data
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occasional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
-
-A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus easier to maintain. {cite:p}`ParlaMint_2024`
+A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus easier to maintain {cite:p}`ParlaMint_2024`.
 
 Example structure of the corpus root file:
 
@@ -99,9 +98,6 @@ The ParlaMint schema also allows for the encoding of extensive metadata around s
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
-#### Pre-Processing
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-documents downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into text files. The content of these txt-files was not edited at all, save for occassional spelling errors within headers and subtitles. These txt files were then converted into xml files following the ParlaMint schema.
-
 The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample xml file was prepared. For this purpose, the txt file containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short txt was then converted into an xml file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different xml elements and attributes within the xml file to serve as example for the prompts served to the LLMs. 
 
 Example snippet from the converted xml file, showing part of the teiHeader element:
@@ -129,7 +125,7 @@ Example snippet from the converted xml file, showing part of the teiHeader eleme
 </TEI>
 ```
 
-As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file, which is used in the component file to identify the speaker and link them to the metadata file. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context to ensure a clean run of the LLM. In a next step, the speaker element could be called to insert the relevant ID.
+As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file, which is used in the component file to identify the speaker and link them to the metadata file. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context to ensure a clean run of the LLM. In a next step, the speaker element could be called upon to insert the relevant ID.
 
 Example snippet from the converted xml file, showing part of text element containing the speeches:
 
@@ -165,11 +161,10 @@ Example snippet from the converted xml file, showing part of text element contai
 </text>
 ```
 
-
 ### Method 
 This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Flash and GPT-4o. 
 
-Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output thus possibly minimizing the costliness of the running of such models. Whilst there is an effort to optimize models, it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. However, these smaller models come at a reduction of processing power, which may cause difficulties in processing the complex ParlaMint structure. 
+Llama makes multiple sets of pretrained models with different quantities of parameters available, thus, offering the possibility of maximising minimal parameter count to maximum quality output thus possibly minimizing the costliness of the running of such models. Whilst there is an effort to optimize models, it is still not possible to train a LLM locally on a standard laptop {cite:p}`zhang_jellyfish_2024`. However, it is possible to run some pretrained models locally, provided that their parameter count is relatively small, and adapt them to a specific task via prompting. In this context Llama offers small-scale options with their development of the general models Llama 3.2 1B, 3B, 8B and 70B, where especially the 1B and the 3B parameter models are runnable on mobile or edge devices {cite:p}`dubey_2024`. The smaller models are "best-in-class, outperforming alternative models with similar numbers of parameters" {cite:p}`dubey_2024`. However, these smaller models come at a reduction of processing power, which may cause difficulties in processing the complex ParlaMint structure. 
 
 ```{figure} chapter1_ZA-content/images/llama_3.jpg
 ---
@@ -180,14 +175,13 @@ name: fig-llama_3
 Llama 3 herd with parameters {cite:p}`dubey_2024`
 ```
 
-Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model with GPT-4 capabilities but a longer context window {cite:p}`gemini_2024`. It promises accuracy across a context window of 10 million token, whilst being relatively efficient and more efficient to serve then the Gemini 1.0 models {cite:p}`gemini_2024`, thus making it a promising candidate for formatting data as, especially in the case of ParlaMint, the complete context of the correct XML structure is relatively long.  
+Another model utilised was Gemini 1.5 Flash. Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model with GPT-4 capabilities but a longer context window {cite:p}`gemini_2024`. It promises accuracy across a context window of 10 million token, whilst being relatively efficient and more efficient to serve then the Gemini 1.0 models {cite:p}`gemini_2024`, thus making it a promising candidate for formatting data as, especially in the case of ParlaMint, the complete context of the correct XML structure is relatively long.  
 
 GPT-4o was chosen for its accessibility, computational efficiency, and ease of use. Unlike larger, resource-intensive models, GPT-4o offers advanced capabilities while remaining efficient to run on standard hardware. Additionally, OpenAI announced in a press conference that GPT-4o demonstrates significant advancements in linguistic, textual, and visual reasoning task {cite:p}`liu_2024`.
 
 With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` 
 
-Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involves information-retrieval. 
-
+Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involve information-retrieval. 
 
 **Models Used**
 - Llama 3.2 1B
@@ -198,11 +192,12 @@ Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in
 
 Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. 
 
-Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. Erjavec's most time consuming task when annotating a file by hand, was the marking of metalinguistic commentary, respectively, speaker and metalinguistic commentary differenciation {cite:t}`erjavec_2023`. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](##Experiments and Results) section.
+Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](experiments) section.
 
 #### Evaluation
-To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](##### Evaluation XML Schema) and the content, [Evaluation Content](##### Evaluation Content) of the processed file is assessed. 
+To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](evaluation_xml) and the content, [Evaluation Content](evaluation_content) of the processed file was assessed. 
 
+(evaluation_xml)=
 ##### Evaluation XML Schema
 To validate the XML schema of the files output by the LLMs, the RelaxNG {cite:p}`clark_2001` file format was chosen. A RelaxNG file is itself an XML file, which can be used to check and validate the structure of an XML file {cite:p}`van-der-vlist_2003`. This format was selected as there already exists an official RelaxNG file created by the ParlaMint team [^footnote9]. Due to the simplified nature of the XML schema followed within this paper, the ParlaMint RelaxNG file was adapted and simplified to better suit this project's needs.
 
@@ -265,10 +260,11 @@ If the XML file is valid, the output consists of a single line: "The XML file '{
 
 [^footnote9]: This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
 
+(evaluation_content)=
 ##### Evaluation Content
-To evaluate the content of the output of the LLMs tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original txt file on a token basis.
+To evaluate the content of the output of the LLMs tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original TXT file on a token basis.
 
-```{attention} This code needs to be configured for the xml tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag, though it is customisbale, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
+```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisbale, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
 ```
 
 ```{code-cell} python
@@ -329,21 +325,21 @@ def check_names(sentences):
         if count != 0: 
             return(count)
 
-      
-
 # List to store results
 results = []
 
-#list to store the 
+#list to store the complete sentences selected randomly  
 all_sentences = []
 
+#dictionary to store the amount of erroneously integrated speakers into the text for each file.
 speaker_error = {}
+
 # Loop through all XML files in the folder
 for xml_file_name in os.listdir(xml_folder_path):
     if xml_file_name.endswith('.xml'):  # Only process XML files
         xml_file_path = os.path.join(xml_folder_path, xml_file_name)
         
-        #handles the processing and selection of the n random sentences.
+        #handles the processing and selection of the n random sentences. Try/Except block to handle the possibly inconsistent formatting fo the XML structure. 
         try:
             # Try parsing the XML file
             tree = ET.parse(xml_file_path)
@@ -399,23 +395,24 @@ for xml_file_name in os.listdir(xml_folder_path):
 df = pd.DataFrame(results)
 
 # Write the results to an Excel file
-excel_file_path = 'output_results_with_average.xlsx' 
+excel_file_path = f'percentages.xlsx' 
 df.to_excel(excel_file_path, index=False)
 
 print(f"Results have been written to {excel_file_path}")           
 ```
 
+(experiments)=
 ## Experiments and Results
-In a primary approach, the attempt was made to guide locally run, smaller, LLMs, from the Llama herd, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fulfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
+In a primary approach, the attempt was made to guide locally run, smaller LLMs, from the Llama herd, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fulfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
 
-### LLama Herd 
-The prompt for the Llama herd is comprised of a shortened version of the input txt file and the corresponding xml file in the ParlaMint schema. This decision to utilize a standard prompting approach was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
+### Llama Herd 
+The prompt for the Llama herd is comprised of a shortened version of the TXT original file and it's corresponding XML gold standard in the ParlaMint schema. The decision to utilize a standard prompting approach for the Llama herd was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
-Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The setting of the model was varied to test whether different base settings would alter the responses given by the model. 
+Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The langchain Ollama link offers the option to employ persona prompting which was varied to test whether it influenced the models. h
 
 [^footnote]: For the newest updates and developments concerning Ollama, consult their [blog](https://ollama.com/blog).
 
-In the first attempt the model was given a prompt of the structure: 
+In the first attempt the model was given an example of the structure: 
 
 ```{code-cell} python
 example_xml = f'<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <u xml:id="25-02-2020_u16" who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>'
@@ -430,25 +427,31 @@ Make sure that you close Ollama before serving it on the command line, otherwise
 To exit Ollama in the command line press ctrl + c.
 ```
 
+```{attention} This code will fail unless langchain and Ollama are installed!
+```
+
 ```{code-cell} python
 import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 
+#implements the access to the folder with the original file from the 25.02
 folder_path = r'test_objects'
 
-
+#sets the mood of the model.
 template = """Question: {question}
 
+#persona prompting text
 Answer: Let's think step by step."""
 
+#calls the type of prompt
 prompt = ChatPromptTemplate.from_template(template)
 
 #specifies the model
 model = OllamaLLM(model="llama3.2")
 
-#chunks the files into manageable sizes for the LLMs context windows.
-def chunk_text(text, chunk_size=5000):
+#chunks the files into manageable sizes for the LLMs context windows. Chunk size can be customised, depending on the input frame and the context window of the model. 
+def chunk_text(text, chunk_size=1000):
     words = text.split()
     for i in range(0, len(words), chunk_size):
         yield ' '.join(words[i:i + chunk_size])
@@ -459,44 +462,34 @@ for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
+                #gives the file currently being processed.
                 print(f'Processing file: {filename}')
                 content = file.read()
+
+                #implements the output of the model into a list so that it can later be added to an xml file. 
                 document_list = []
                 i = 0 #counters for debugging
                 for chunk in chunk_text(content, chunk_size=1000):
                     try:
                         #actual prompt given to LLM
                         question = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
+                        #stores the response of the model in a variable
                         response = model(prompt.format(question=question))
                         document_list.append(response)
+                         # Limit iterations for testing
                         i += 1
-                        if i == 4:  # Limit iterations for testing
+                        if i == 4: 
                             break
+                    #error handling
                     except Exception as e:
                         print(f"Error processing chunk: {e}")
                 output_file = os.path.join(folder_path, f"{os.path.splitext(filename)[0]}.xml")
+                #write results to output file
                 with open(output_file, 'w', encoding='utf-8') as output:
                     output.write('\n'.join(document_list))
         except Exception as e:
             print(f"Error reading file {filename}: {e}")
-```
-
-```{attention} This code will fail unless langchain and Ollama are installed!
-```
-The input prompt was varied, and the global setting for the Llama family adapted. View the appendix for the specific settings and their corresponding results. 
-
-ADAPT THE STYLE APPROPRIATELY 
-```{code-cell} python
-import pandas as pd
-
-pd.set_option('display.max_colwidth', 0)
-excel_file = "ZA-content/comments.xlsx"
-sn = "13.12"
-
-comments = pd.read_excel(excel_file, sheet_name=sn)
-
-print(comments)
-```
+``` 
 
 ### Gemini 1.5 Flash
 To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether it's answers are similar in content. 
