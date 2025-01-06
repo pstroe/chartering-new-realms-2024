@@ -499,7 +499,7 @@ The results were mixed in quality. Llama 3 1B parameters mainly ignored the prom
 
 Llama 3 3B parameters showed similar problems, though it did not try to correct the data, rather it only sporadically, if at all, formated one or two utterances by a speaker. 
 
-|| **Prompts**                                                                                   | **Persona** | **Temperature** || **Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                   | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
 |2| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 2<./chapter1_ZA-content/results/llama_herd/13.12/result_2.xml>` |
 |10| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Be a helpful assistant.  | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 10<./chapter1_ZA-content/results/llama_herd/13.12/result_10.xml>` |
@@ -507,7 +507,7 @@ Llama 3 3B parameters showed similar problems, though it did not try to correct 
 
 Llama 3 8B parameters was very inconsistent in its replies. It ranged from simply formatting all text into bold as in result 27, to formatting only the speakers but not the text as in result 7, or formatting only the text but not the speaker as in result 12. 
 
-|| **Prompts**                                                                                   | **Persona** | **Temperature** || **Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                   | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
 |27| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | - |Snippets from TXT and XML file | View {Download}`llama 3 8B result 27<./chapter1_ZA-content/results/llama_herd/13.12/result_27.xml>` |
 |1| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | 0.1 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 1<./chapter1_ZA-content/results/llama_herd/22.12/result_1.xml>` |
