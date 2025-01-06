@@ -490,6 +490,33 @@ for filename in os.listdir(folder_path):
         except Exception as e:
             print(f"Error reading file {filename}: {e}")
 ``` 
+The results were mixed in quality. Llama 3 1B parameters mainly ignored the prompts and simply rephrased, summarized or corrected without attempting to format it into an XML structure. 
+
+|| **Prompts**                                                                                    | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|-----|----|------------------------------------|------------------------------------|
+|5| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 1B result 5<./chapter1_ZA-content/results/llama_herd/13.12/result_5.xml>` |
+|7| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Be a helpful assistant. | Snippets from TXT and XML file | View {Download}`llama 3 1B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
+
+Llama 3 3B parameters showed similar problems, though it did not try to correct the data, rather it only sporadically, if at all, formated one or two utterances by a speaker. 
+
+|| **Prompts**                                                                                   | **Persona** | **Temperature** || **Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
+|2| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 2<./chapter1_ZA-content/results/llama_herd/13.12/result_2.xml>` |
+|10| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Be a helpful assistant.  | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 10<./chapter1_ZA-content/results/llama_herd/13.12/result_10.xml>` |
+|17| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0 |Snippets from TXT and XML file | View {Download}`llama 3 3B result 17<./chapter1_ZA-content/results/llama_herd/22.12/result_10.xml>` |
+
+Llama 3 8B parameters was very inconsistent in its replies. It ranged from simply formatting all text into bold as in result 27, to formatting only the speakers but not the text as in result 7, or formatting only the text but not the speaker as in result 12. 
+
+|| **Prompts**                                                                                   | **Persona** | **Temperature** || **Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
+|27| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | - |Snippets from TXT and XML file | View {Download}`llama 3 8B result 27<./chapter1_ZA-content/results/llama_herd/13.12/result_27.xml>` |
+|1| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | 0.1 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 1<./chapter1_ZA-content/results/llama_herd/22.12/result_1.xml>` |
+|7| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0.05 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
+|12| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | View {Download}`llama 3 8B result 12<./chapter1_ZA-content/results/llama_herd/22.12/result_12.xml>` |
+
+```{note}
+The conclusive results for the Llama herd and it's corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/llama_herd>` folder of this chapter.
+```
 
 ### Gemini 1.5 Flash
 To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether it's answers are similar in content. 
@@ -510,28 +537,18 @@ meditation.
 The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would
 like to remind you that on 4 December 2019 the House adopted
 the Rules Committee report which introduced a number of
-amendments to our rules. Some of the amendments pertain to the
-sequence of proceedings and Members’ Statements. To facilitate
-sufficient opportunity for Ministers’ Responses to Members’
-Statements, the sequence of proceedings has been amended so
-that Members’ Statements are now at the start of the
-proceedings on days that they are scheduled by the programming
-committee.
-UNREVISED HANSARD
-NATIONAL ASSEMBLY
-TUESDAY, 25 FEBRUARY 2020
-Page: 2
+amendments to our rules. 
 ```
 
 It's output however, was mostly unusable, as it refused to attempt the task and gave answers such as: 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| help me format some text | None | can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
+|1| help me format some text | None | I can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
 |2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same xml format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
 |3|format all of the text | None | I'm not programmed to assist with that. |
 
-The experiment was successful insofar as when asking for help, Gemini attempted to format the input. In a first attempt it did format the text according to the example (attempt 10), though when re-running the prompt (attempt 11), it neglected all speaker turns and created one large segment containing the entire input. 
+The experiment was successful insofar as that when specifically asking for help, Gemini attempted to format the input. In a first attempt it did format the text into an XML structure, though when re-running the prompt, it neglected all speaker turns and created one large segment containing the entire input. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
@@ -540,7 +557,9 @@ The experiment was successful insofar as when asking for help, Gemini attempted 
 |3|Assign a separate speaker tag to each speaker please | None | View {Download}`third XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-3.xml>` |
 |4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
 
-ACTUALLY I NEED TO CHECK WHATEVER WAS GOING ON IN ATTEMPT 10
+```{note}
+The conclusive results for Gemini Flash and it's corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/gemini_flash>` folder of this chapter.
+```
 
 ### Custom GPT
 When configuring a custom GPT, the user can set several different paramaters. For this paper, the paramaters Additional Instructions, Knowledge and New Capabilities were of particular interest.
@@ -548,7 +567,7 @@ In the Additional Instructions section, the user may provide detailed instructio
 
 The Knowledge is provided by the user in the form of uploaded files, which provides addtional context for the GPT to reference. The New Capabilities consist of Web Browsing, DALL·E Image Generation, Canvas and Advanced Data Analysis, which allow the GPT to perform additional functionality. {cite:p}`openai_2025, openai_knowledge`
 
-In order to have the custom GPT perform the XML-formatting task, the appraoch of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
+In order to have the custom GPT perform the XML-formatting task, the approach of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
 
 #### Try 1
 
@@ -614,7 +633,7 @@ Many members of the SA parliament do not have their birth date published online.
 
 ## Conclusion 
 
-As pretrained LLMs show difficulties in formatting a large amount of documents into a highly specific format such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, whene again available, can be adapted better to the task. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`.
+As pretrained LLMs show difficulties in formatting a large amount of documents into a highly specific format such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, when again available, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`.
 
 ## Bibliography
 ```{bibliography}
