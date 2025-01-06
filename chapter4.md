@@ -17,9 +17,6 @@ jupytext:
 
 *Sonja Huber*
 
-note for the reviewers of the first draft:
-see [in brackets] what I plan on adding / changing or general notes. also, the chapters consisting mostly out of bullet points I still need to write.
-
 ## Abstract
 
 [I will write this at the very end]
@@ -235,62 +232,40 @@ Overall however, this network is of pretty high quality.
 Fig. 7: _generated Character Network Granit, colored for comparison with Figure 8_
 
 ![image of manually character network of Granit](images/Granit_M_colored2.png)
-Fig. 8: manually created Character Network Granit, colored for comparison with Figure 7_
+Fig. 8: _manually created Character Network Granit, colored for comparison with Figure 7_
+
+
+As a last example, Figures 9 and 10 show the character networks of _Kalkstein_, the longest of the six stories. While the comparison is not showing as big of a difference as in _Turmalin_, there is still quite a big difference between the two versions. Again, the model seems to have had a problem with the way the story is composed of three stories within each other. The outer-most layer is _Ich (Erzähler 1)_ telling the story that his _Friend (Erzähler 2)_ told a group of friends. The retelling of the story is the middle layer, and the inner-most layer is the _Pfarrer im Karr_ telling the story of his upbirnging and life. The last layer can be seen by some of the that only have connections to the _Pfarrer im Karr_ [TODO: color]. These characters mostly are missing in the generated network.
+![alt text](images/Kalkstein.png)
+Fig. 9: _generated Character Network Kalkstein_
+
+![alt text](images/Kalkstein_M.png)
+Fig. 10: _manually created Character Network Kalkstein_
+
+Of course, having only these three examples, no generally valid claims about the structure of the plot of Adalberts Stifters work or the literary period. Nevertheless, what in the manually created examples becomes visibles is that one commonality of these three stories is the fact that there are in each story a few characters with quite high connectivity that often are connected to stories within stories, or disjunct groups that also refer to stories within stories. However, the generated networks do overall lack in that aspect.
+
+
+As this chapter is too short to contain analysis of all the six stories, nevertheless here are the generated networks of the three remaining stories that maybe an interesed reader can compare on her or his own.
 
 
 ![alt text](images/Bergmilch.png)
-Fig. 4: _Character Network Bergmilch_
-
-![alt text](images/Granit.png)
-Fig. 5: _Character Network Granit_
-
-![alt text](images/Kalkstein.png)
-Fig. 6: _Character Network Kalkstein_
+Fig. 10: _Character Network Bergmilch_
 
 ![alt text](images/Katzensilber.png)
-Fig. 7: _Character Network Katzensilber_
-
-![alt text](images/Turmalin.png)
-Fig. 8: _Character Network Turmalin_
+Fig. 11: _Character Network Katzensilber_
 
 ![alt text](images/Bergkristall.png)
-Fig. 9: _Character Network Bergkristall_
-
-
-
-
-
-questions concerning the quality:
-- character disambiguation is still imperfect (see example turmalin)
-- what sort of interactions are seen as interactions? even though I clearly prompted (well debatable)
-- what happens in Binnenerzählungen (Granit und Turmalin)
-- compare to my own network of 1-2 stories I will reread
-- How well are the results explainable by what the model did output as well
-
-some Interpretation of the results
-- connectedness of nodes and the relevance of the characters
-- similar networks? differences?
-
-Methodenreflektion
-- Link to the comparison of texts from different genres, outside the canon that are fastly emerging (AI generated, fanfiction) that are too large for 1 or a group of researchers to read
-- What about this is DH (to me?)
-
-Since this 
-
+Fig. 12: _Character Network Bergkristall_
 
 ## Conclusion
 
-What did become clear the most during the evaluation of the results to me was that each step of this undertaking I did could be researched further. First of, prose being a more difficult textform to extract interactions from than dramas, where do humans see interactions, where does the AI? can these things be aligned with prompt engineering, or is it not necessarily in the most interest to do so?
+The immediate result seems to be that the generated networks do not capture the interactions sufficiently, or in other words, that AI is not ready for this task. However, to view this in a more productive lens, what parts of the experiment should be reexamined or bettered in another attempt to this task?
+First off, there would need to be a better way to ensure that all the characters are captured. Maybe through verticalizing the text and applying named entity recognition and coreference resolution that the model then can take into account additionally to the raw text and adapted prompting this problem might be adressed. 
+Secondly, it should be made even more clear what the model should be considering an interaction for a given research question. I did leave it somewhat open to interpretation of the model, but defining this more clearly might provide more consistent results.
+Then, to do a larger-scale extraction, setting up an automated way to extract the interaction matrix via an API or similar way would be a must.
 
-- what i could not show
-- what should be researched further
-- what i could show
-- potentials of AI in this field
+So, having pinpointed the issues that AI faces while extracting character networks from prose text, it seems that Morettis vision of being able to compare large bodies of networks from different genres, times or authors is not yet quite possible using AI tools. However, maybe there are different elements of books that might be extracted in large scale using AI and used to compare the works they were extracted from, so I want to encourage other scholars to do their own experiments. 
 
-open questions:
-- what do I do with the networks I do not correct
-
-## Ethics
 
 ## Bibliography
 
