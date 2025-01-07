@@ -189,6 +189,7 @@ Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in
 - Llama 3 8B
 - Gemini 1.5 Flash
 - GPT-4o
+- Custom GPT
 
 Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. 
 
@@ -608,10 +609,10 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/converted_hansard_25_02_2020.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try1/complete_converted_hansard_25_02_2020.xml>`|
-|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try1/updated_converted_hansard_25_02_2020.xml>` |
-|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try1/converted_hansard_25_02_2020.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try1/complete_converted_hansard_25_02_2020.xml>`|
+|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try1/updated_converted_hansard_25_02_2020.xml>` |
+|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
 
 #### Try 2
 
@@ -623,10 +624,10 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_full.xml>`| 
-|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_updated.xml>` |
-|4| You have now stored the entirety of the speeches in the txt file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_final.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_full.xml>`| 
+|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard_updated.xml>` |
+|4| You have now stored the entirety of the speeches in the txt file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_final.xml>`  |
 
 #### Try 3
 
@@ -638,10 +639,19 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_full.xml>`      |
-|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_adapted.xml>` |
-|4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_complete.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_full.xml>`      |
+|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_adapted.xml>` |
+|4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_complete.xml>`  |
+
+### GPT-4o
+
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| I have a txt file which needs to be converted into an xml file following a specific xml format, the ParlaMint schema.Here is a snippet of the txt file: [txt snippet]. The content of this snippet was converted into an xml schema, which looks like this: [xml snippet]. Please convert the txt file I have given you into a downloadable xml file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020.xml>` |
+|2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the xml file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_refined.xml>`|
+|3|You started off well, but stopped implementing the schema after a while. Please make sure to carry the schema through the entire document.| None | View {Download}`third XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_consistent.xml>` |
+|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020_fully_structured.xml>`  |
 
 
 ## Discussion 

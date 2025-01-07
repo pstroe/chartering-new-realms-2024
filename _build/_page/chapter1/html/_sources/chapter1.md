@@ -178,11 +178,8 @@ Llama 3 herd with parameters {cite:p}`dubey_2024`
 Another model utilised was Gemini 1.5 Flash. Gemini 1.5 Flash constitutes the attempt at constructing a lightweight model with GPT-4 capabilities but a longer context window {cite:p}`gemini_2024`. It promises accuracy across a context window of 10 million token, whilst being relatively efficient and more efficient to serve then the Gemini 1.0 models {cite:p}`gemini_2024`, thus making it a promising candidate for formatting data as, especially in the case of ParlaMint, the complete context of the correct XML structure is relatively long.  
 
 GPT-4o was chosen for its accessibility, computational efficiency, and ease of use. Unlike larger, resource-intensive models, GPT-4o offers advanced capabilities while remaining efficient to run on standard hardware. Additionally, OpenAI announced in a press conference that GPT-4o demonstrates significant advancements in linguistic, textual, and visual reasoning task {cite:p}`liu_2024`.
-GPT-4o was chosen for its accessibility, computational efficiency, and ease of use. Unlike larger, resource-intensive models, GPT-4o offers advanced capabilities while remaining efficient to run on standard hardware. Additionally, OpenAI announced in a press conference that GPT-4o demonstrates significant advancements in linguistic, textual, and visual reasoning task {cite:p}`liu_2024`.
 
 With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` 
-
-Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involves information-retrieval. 
 
 Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involve information-retrieval. 
 
@@ -192,6 +189,7 @@ Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in
 - Llama 3 8B
 - Gemini 1.5 Flash
 - GPT-4o
+- Custom GPT
 
 Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. 
 
@@ -611,10 +609,10 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try1/converted_hansard_25_02_2020.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try1/complete_converted_hansard_25_02_2020.xml>`|
-|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try1/updated_converted_hansard_25_02_2020.xml>` |
-|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try1/converted_hansard_25_02_2020.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try1/complete_converted_hansard_25_02_2020.xml>`|
+|3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try1/updated_converted_hansard_25_02_2020.xml>` |
+|4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
 
 #### Try 2
 
@@ -626,10 +624,10 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_full.xml>`| 
-|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_updated.xml>` |
-|4| You have now stored the entirety of the speeches in the txt file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try2/converted_hansard_final.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_full.xml>`| 
+|3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard_updated.xml>` |
+|4| You have now stored the entirety of the speeches in the txt file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_final.xml>`  |
 
 #### Try 3
 
@@ -641,10 +639,19 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_full.xml>`      |
-|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_adapted.xml>` |
-|4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/gpt-results/Try3/converted_hansard_complete.xml>`  |
+|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_full.xml>`      |
+|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_adapted.xml>` |
+|4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_complete.xml>`  |
+
+### GPT-4o
+
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
+|1| I have a txt file which needs to be converted into an xml file following a specific xml format, the ParlaMint schema.Here is a snippet of the txt file: [txt snippet]. The content of this snippet was converted into an xml schema, which looks like this: [xml snippet]. Please convert the txt file I have given you into a downloadable xml file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020.xml>` |
+|2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the xml file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_refined.xml>`|
+|3|You started off well, but stopped implementing the schema after a while. Please make sure to carry the schema through the entire document.| None | View {Download}`third XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_consistent.xml>` |
+|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet fro gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020_fully_structured.xml>`  |
 
 
 ## Discussion 
@@ -665,7 +672,7 @@ Many members of the SA parliament do not have their birth date published online.
 
 ## Conclusion 
 
-As pretrained LLMs show difficulties in formatting a large amount of documents into a highly specific format such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, when again available, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`.
+As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a currated dataset from the ParlaMint corpus to create a custom model specifically atuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see {cite:t}`sahoo_2024` for an overview of prompt engineering techniques).
 
 ## Bibliography
 ```{bibliography}
