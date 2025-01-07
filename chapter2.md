@@ -59,16 +59,14 @@ We constructed a corpus of Latin texts spanning both religious and non-religious
 Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *{cite:t}`ESV2001`*, the *{cite:t}`DRB1899`*, and the *{cite:t}`KJV1611`*. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
 
 <table>
-    <thead>
-        <tr>
-            <th style="text-align: center;">Tone</th>
-            <th style="text-align: center;"><b>Biblia Sacra iuxta Vulgatam Clementinam</b> <br>(405)</th>
-            <th style="text-align: center;"><b>Douay-Rheims Bible</b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</th>
-            <th style="text-align: center;"><b>King James Version</b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</th>
-            <th style="text-align: center;"><b>English Standard Version</b> <br>(translated and printed by Crossway, 2001)</th>
-        </tr>
-    </thead>
     <tbody>
+        <tr>
+            <td style="text-align: center;"><b>Tone</b></td>
+            <td style="text-align: center;"><b>Source: <i>Biblia Sacra iuxta Vulgatam Clementinam</i></b> <br>(405)</td>
+            <td style="text-align: center;"><b>Gold Standard 1: <i>Douay-Rheims Bible</i></b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
+            <td style="text-align: center;"><b>Gold Standard 2: <i>King James Version</i></b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
+            <td style="text-align: center;"><b>Gold Standard 3: <i>English Standard Version</i></b> <br>(translated and printed by Crossway, 2001)</td>
+        </tr>
         <tr><td style="text-align: center;">Neutral</td>
             <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
         </tr>
@@ -128,17 +126,10 @@ Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
 
 <table>
-    <thead>
-        <tr>
-            <th>Latin Source</th>
-            <th>Gold Standard Translation</th>
-        </tr>
-    </thead>
     <tbody>
-        <!-- Historia Regum Britanniae -->
         <tr>
-            <td style="text-align: center;"><b>Historia Regum Britanniae</b> <br>(Geoffrey of Monmouth, 1136)</td>
-            <td style="text-align: center;"><b>History of the Kings of Britain</b> <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
+            <td style="text-align: center;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Geoffrey of Monmouth, 1136)</td>
+            <td style="text-align: center;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
         </tr>
         <tr>
             <td style="text-align: center;" colspan="2">Book 1 Chapter 13</td>
@@ -153,8 +144,8 @@ To allow for an optimal comparison of MT performance, we aimed to choose neutral
             <td style="text-align: center;" colspan="2">Book 3 Chapter 4</td>
         </tr>
         <tr>
-            <td style="text-align: center;"><b>De Legibus</b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
-            <td style="text-align: center;"><b>On the Laws</b> <br>(translation by David Fott, 2014)</td>
+            <td style="text-align: center;"><b>Source: <i>De Legibus</i></b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
+            <td style="text-align: center;"><b>Gold Standard: <i>On the Laws</i></b> <br>(translation by David Fott, 2014)</td>
         </tr>
         <tr>
             <td style="text-align: center;" colspan="2">Book 1 Section 15, I</td>
