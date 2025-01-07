@@ -662,7 +662,7 @@ Many members of the SA parliament do not have their birth date published online.
 
 ## Conclusion 
 
-As pretrained LLMs show difficulties in formatting a large amount of documents into a highly specific format such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, when again available, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`.
+As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a currated dataset from the ParlaMint corpus to create a custom model specifically atuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see {cite:t}`sahoo_2024` for an overview of prompt engineering techniques).
 
 ## Bibliography
 ```{bibliography}
