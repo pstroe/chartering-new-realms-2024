@@ -85,8 +85,6 @@ To allow for an optimal comparison of MT performance, we aimed to choose neutral
         <tr>
             <td style="text-align: center;" colspan="2">Book 3 Chapter 4</td>
         </tr>
-
-        <!-- De Legibus -->
         <tr>
             <td style="text-align: center;"><b>De Legibus</b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
             <td style="text-align: center;"><b>On the Laws</b> <br>(translation by David Fott, 2014)</td>
