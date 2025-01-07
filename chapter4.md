@@ -229,10 +229,10 @@ Fig. 7: _generated Character Network Granit, colored for comparison with Figure 
 Fig. 8: _manually created Character Network Granit, colored for comparison with Figure 7_
 
 As a last example, Figures 9 and 10 show the character networks of _Kalkstein_, the longest of the six stories. While the comparison is not showing as extreme of a difference as in _Turmalin_, there is still quite a big difference between the two versions. Again, the model seems to have had a problem with the way the story is composed of three stories within each other. The outer-most layer is _Ich (Erzähler 1)_ telling the story that his _Friend (Erzähler 2)_ told a group of friends. The retelling of the story is the middle layer, and the inner-most layer is the _Pfarrer im Karr_ telling the story of his upbringing and life. The last layer can be seen by some of the that only have connections to the _Pfarrer im Karr_ [TODO: color]. These characters mostly are missing in the generated network.
-![image of generated character network of Kalkstein](images/Kalkstein.png)
+![image of generated character network of Kalkstein](images/Kalkstein_colored_2.png)
 Fig. 9: _generated Character Network Kalkstein_
 
-![image of manually character network of Kalkstein](images/Kalkstein_M.png)
+![image of manually character network of Kalkstein](images/Kalkstein_M_colored.png)
 Fig. 10: _manually created Character Network Kalkstein_
 
 Of course, having only these three examples, no generally valid claims about the structure of the plot of Adalberts Stifters work or the literary period. Nevertheless, what in the manually created examples becomes visibles is that one commonality of these three stories is the fact that there are in each story a few characters with quite high connectivity that often are connected to stories within stories, or disjunct groups that also refer to stories within stories. However, the generated networks do overall lack in that aspect.
@@ -240,13 +240,13 @@ Of course, having only these three examples, no generally valid claims about the
 As it is beyond the scope of this chapter to contain analysis of all the six stories, nevertheless here are the generated networks of the three remaining stories that maybe an interesed reader can compare on her or his own.
 
 
-![alt text](images/Bergmilch.png)
+![alt text](images/Bergmilch_1.png)
 Fig. 10: _Character Network Bergmilch_
 
-![alt text](images/Katzensilber.png)
+![alt text](images/Katzensilber_1.png)
 Fig. 11: _Character Network Katzensilber_
 
-![alt text](images/Bergkristall.png)
+![alt text](images/Bergkristall_1.png)
 Fig. 12: _Character Network Bergkristall_
 
 ## Conclusion
