@@ -16,29 +16,29 @@ jupytext:
 # Review feedback & To Dos
 What are the weaknesses / flaws of this chapter?
 - tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past.
-  -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
+    -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
 - Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive.
-  -> **done**, also added nonbreaking spaces before %
+    -> **done**, also added nonbreaking spaces before %
 - Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :)
-  -> **done?**
+    -> **done?**
 - Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables.
-  -> to be discussed
+    -> to be discussed
+    -> Check executability of code 
 - In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources.
-  -> to do
+    -> **done**
 - Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :).
-  -> to do
+    -> **done**
 - Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.
-- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.	
-  -> Add limitations (incl. limits of metrics)
-
-- Check executability of code -> Do we need the code?
+- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
+    -> **done**
 - Add some more sources (de legibus, historia etc., which versions)
+- check sources in text
 
 # Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
 ## Introduction
-In 1382, when the Latin Bible was first translated into English by John Wycliffe, this process required enormous human effort, extensive knowledge of both Latin and the vernacular, and years of labor by many religious scholars. The result of this translation - a religious text which could be understood by the common population - had groundbreaking and far-reaching impacts on culture and religion. One can hardly imagine how history might have changed had the Bible never been translated into English — or translated less carefully.
+In 1382, when the Latin Bible was first translated into English by scholars surrounding John Wycliffe, this process required years of enormous human effort by many religious scholars with extensive knowledge of both Latin and theology. The process this translation set in motion, ultimately resulting in a religious text which could be understood by the common population, had groundbreaking and far-reaching impacts on culture and religion {cite:p}`Taylor2019`. One can hardly imagine how history might have changed had the Bible never been translated into English — or translated less carefully.
 
 Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting that some MT systems can achieve a reasonably good translation quality {cite:p}`Volk2024`. However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works {cite:p}`Cespedosa2023`, of which the Bible with its poems and psalms contains many.
 
@@ -122,6 +122,10 @@ Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* 
         </tr>
     </tbody>
 </table>
+
+The poetic passages were drawn from 3 of the so called "Poetic Books" of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages {cite:p}`Hagan2022`, p. 15.
+
+Some of the poetic books contain texts which scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs {cite:p}`Staubli2018`.
 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
 
@@ -356,6 +360,15 @@ When comparing the metrics BLEU, ROUGE, chrF, and METEOR across the translations
 For non-Bible texts, BLEU again shows the largest variability, with scores spanning from 10.65&nbsp;% (Yandex) to 19.39&nbsp;% (Gemini). ROUGE follows, ranging from 40.74&nbsp;% (Yandex) to 47.94&nbsp;% (GPT-4o). chrF and METEOR, while showing smaller declines, still demonstrate meaningful gaps, with chrF ranging from 45.19&nbsp;% (Yandex) to 51.31&nbsp;% (GPT-4o) and METEOR from 43.13&nbsp;% (Yandex) to 48.80&nbsp;% (GPT-4o). Thus, while chrF and METEOR are slightly more conservative than BLEU and ROUGE, they still reflect noticeable drops in performance, particularly for more challenging text types.
 
 Across all tools, the metrics reveal a consistent trend: translations of texts with greater stylistic variability score lower. BLEU and ROUGE, which emphasize precision and recall for specific lexical and syntactic features, show sharper declines for such texts, highlighting the difficulty in preserving structural elements. Meanwhile, chrF, which balances character-level precision and recall, and METEOR, which incorporates synonym matching and semantic alignment, show relatively smaller variations between text types. This suggests that even when lexical and stylistic accuracy falter, tools maintain a fair degree of meaning preservation.
+
+## Limitations
+While this study provides valuable insights into the performance of modern MT systems on Latin texts, several limitations must be acknowledged: Firstly, metrics like BLEU, ROUGE-L, METEOR, and chrF offer quantitative measures of translation quality but are known to overlook aspects such as rhetorical style, emotional tone, or cultural context. Even by averaging different metrics, we cannot fully capture readability, interpretative accuracy, or the cultural appropriateness of translations without a human evaluation component, incorporating feedback from scholars and language experts.
+
+Secondly, the gold standard translations used in this study are themselves subjective interpretations of the Latin texts, particularly in the case of creative or poetic passages. Comparisons between the DRB, KJV, and ESV translations exemplify how translation decisions reflect different priorities. MT systems trained or evaluated against such diverse references may yield varying scores that reflect the gold standard's bias rather than the intrinsic quality of the translation.
+
+Lastly, while our corpus captures a range of styles, it remains limited in scope. The inclusion of only two non-religious texts (Historia Regum Britanniae and De Legibus) with a limited number of extracts restricts the generalizability of findings to other domains, such as scientific or philosophical Latin. It additionally is difficult to judge the independence of the translation results, as it seems clear that the performance of MT systems was influenced by the inclusion of religious Latin texts in their training data, raising questions about how representative these results are for broader Latin translation tasks.
+
+Future research should address these challenges by expanding corpus size and diversity, integrating qualitative evaluation methods, and exploring alternative metrics that better capture stylistic and semantic nuances.
 
 ## Conclusion
 This chapter highlights the varied performance of MT systems in translating Latin texts, revealing distinct strengths and weaknesses across different text types and evaluation metrics. GPT-4o consistently outperformed other systems, particularly with structured and repetitive content like religious texts, achieving the highest scores across BLEU, ROUGE-L, METEOR, and chrF. In contrast, Yandex struggled significantly, especially with stylistically diverse and complex texts. 
