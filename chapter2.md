@@ -61,20 +61,14 @@ Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* 
 <table>
     <thead>
         <tr>
-            <th>Tone</th>
-            <th>Latin Source</th>
-            <th>Gold Standard 1</th>
-            <th>Gold Standard 2</th>
-            <th>Gold Standard 3</th>
+            <th style="text-align: center;">Tone</th>
+            <th style="text-align: center;"><b>Biblia Sacra iuxta Vulgatam Clementinam</b> <br>(405)</th>
+            <th style="text-align: center;"><b>Douay-Rheims Bible</b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</th>
+            <th style="text-align: center;"><b>King James Version</b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</th>
+            <th style="text-align: center;"><b>English Standard Version</b> <br>(translated and printed by Crossway, 2001)</th>
         </tr>
     </thead>
     <tbody>
-        <tr><td style="text-align: center;"></td>
-            <td style="text-align: center;"><b>Biblia Sacra iuxta Vulgatam Clementinam</b> <br>(405)</td>
-            <td style="text-align: center;"><b>Douay-Rheims Bible</b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
-            <td style="text-align: center;"><b>King James Version</b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
-            <td style="text-align: center;"><b>English Standard Version</b> <br>(translated and printed by Crossway, 2001)</td>
-        </tr>
         <tr><td style="text-align: center;">Neutral</td>
             <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
         </tr>
@@ -130,7 +124,6 @@ Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* 
         </tr>
     </tbody>
 </table>
-
 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
 
