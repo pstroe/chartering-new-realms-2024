@@ -60,54 +60,20 @@ Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* 
 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
 
-<table>
-    <thead>
-        <tr>
-            <th>Latin Source</th>
-            <th>Gold Standard Translation</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="5" style="text-align: center;"><b>Historia Regum Britanniae</b> <br>(Geoffrey of Monmouth, 1136)</td>
-            <td style="text-align: center;">History of the Kings of Britain <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Chapter 13</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Chapter 2</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Chapter 6</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 3 Chapter 4</td>
-        </tr>
-        <tr>
-            <td rowspan="6" style="text-align: center;"><b>De Legibus</b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
-            <td style="text-align: center;">On the Laws <br>(translation by David Fott, 2014)</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 15, I</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 28, II</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 28, III</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 40</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 58</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">Book 1 Section 60</td>
-        </tr>
-    </tbody>
-</table>
+| **Latin Source**                              | **Gold Standard Translation**                                     |
+|-----------------------------------------------|-------------------------------------------------------------------|
+| **Historia Regum Britanniae** (Geoffrey of Monmouth, 1136) | *History of the Kings of Britain* (Aaron Thompson, 1718; revised by J. A. Giles, 1842) |
+| Book 1 Chapter 13                                                                                                |
+| Book 1 Chapter 2                                                                                                 |
+| Book 1 Chapter 6                                                                                                 |
+| Book 3 Chapter 4                                                                                                 |
+| **De Legibus** (Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959) | *On the Laws* (David Fott, 2014)                                  |
+| Book 1 Section 15, I                                                                                             |
+| Book 1 Section 28, II                                                                                            |
+| Book 1 Section 28, III                                                                                           |
+| Book 1 Section 40                                                                                                |
+| Book 1 Section 58                                                                                                |
+| Book 1 Section 60                                                                                                |
 
 This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations. 
 
