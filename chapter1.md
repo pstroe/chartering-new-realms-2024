@@ -279,9 +279,20 @@ from collections import OrderedDict
 Includes error handling for incomplete/incorrect XML schema where it parses the the erroneous file as TXT format.
 """
 
+import xml.etree.ElementTree as ET
+import random
+import re
+import os
+import pandas as pd
+from collections import OrderedDict
+
+"""Script to evaluate all XML output files in a folder against its original. 
+Includes error handling for incomplete/incorrect XML schema where it parses the the erroneous file as TXT format.
+"""
+
 # Path to the folder containing XML files
-xml_folder_path = 'chapter1_ZA-content/gold_standard'  # Replace with the actual folder path containing XML files
-txt_file_path = 'chapter1_ZA-content/gold_standard'  # Replace with the actual path to your TXT file
+xml_folder_path = 'test_objects/31.12'  # Replace with the actual folder path containing XML files
+txt_file_path = 'test_objects/uh_25.02.txt'  # Replace with the actual path to your TXT file
 
 # Open the original file and reads its content, this serves as comparator for the processed XML files. 
 with open(txt_file_path, 'r', encoding='utf-8') as file:
@@ -306,13 +317,14 @@ def split_into_sentences(text):
 
 # Function to calculate how much of the sentence is found in the TXT content
 def calculate_match_percentage(sentence, txt_content):
-    # Find the longest substring match in the text content
-    match = re.search(re.escape(sentence), txt_content)
-    if match:
-        match_len = len(match.group(0))  # Length of the match
-        sentence_len = len(sentence)  # Length of the original sentence
-        return (match_len / sentence_len) * 100  # Percentage of the sentence found
-    return 0  # No match found
+    # Split sentences into words and convert them to lowercase for case-insensitive comparison
+    sentence_set = set(sentence.split())
+    text_set = set(txt_content.split())
+    # Find the intersection of the two sets to get the common words
+    matching_words = sentence_set.intersection(text_set)
+    # Return the count of matching words
+    return len(matching_words)
+
 
 #checks names in the XML files
 def check_names(sentences): 
@@ -325,21 +337,24 @@ def check_names(sentences):
         if count != 0: 
             return(count)
 
+def remove_angle_brackets_content(input_string):
+    # Use regex to match and remove everything between '<' and '>'
+    return re.sub(r'<.*?>', '', input_string)
+      
+
 # List to store results
 results = []
 
-#list to store the complete sentences selected randomly  
+#list to store the 
 all_sentences = []
 
-#dictionary to store the amount of erroneously integrated speakers into the text for each file.
 speaker_error = {}
-
 # Loop through all XML files in the folder
 for xml_file_name in os.listdir(xml_folder_path):
     if xml_file_name.endswith('.xml'):  # Only process XML files
         xml_file_path = os.path.join(xml_folder_path, xml_file_name)
         
-        #handles the processing and selection of the n random sentences. Try/Except block to handle the possibly inconsistent formatting fo the XML structure. 
+        #handles the processing and selection of the n random sentences.
         try:
             # Try parsing the XML file
             tree = ET.parse(xml_file_path)
@@ -351,18 +366,22 @@ for xml_file_name in os.listdir(xml_folder_path):
                 sentences = split_into_sentences(seg.strip())
                 #check for any names within the text, regex because the format is always the same for all debates. EX: MS BOROTO: 
                 speaker_error[xml_file_name] = check_names(sentences)
+                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]
                 # ensure the randomness of the sampled sentences
-                sampled_sentences = random.sample(sentences, sampler) if len(sentences) >= sampler else sentences
+                sampled_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
                 all_sentences.extend(sampled_sentences)
         except: # If XML parsing fails, open the file as a plain text file
             print(f"XML parsing failed for {xml_file_name}, treating as plain text...")
             with open(xml_file_path, 'r', encoding='utf-8') as file:
                 raw_content = file.read()
-                # Loop through each segment, split text into sentences, and add to the list
+                # Loop through each segment, split text into sentences, and add to the list of possible sentences
                 sentences = split_into_sentences(raw_content.strip()) 
+                #removes possible XML tags when the file is parsed as TXT because the XML structure is incomplete.
+                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]
+                #appends the speaker error
                 speaker_error[xml_file_name] = check_names(sentences) 
                 # ensure the randomness of the sampled sentences
-                sampled_sentences = random.sample(sentences, sampler) if len(sentences) >= sampler else sentences
+                sampled_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
                 all_sentences.extend(sampled_sentences)
 
         # Remove newline characters and extra spaces from the sampled sentences
@@ -371,23 +390,33 @@ for xml_file_name in os.listdir(xml_folder_path):
         # List to store the match percentages for the current XML file
         match_percentages = []
 
+        #counter for calculating the match percentage, counts token of the XML file's sentences
+        counts_token = 0
+
         # Check how much of the sentences are present in the TXT file
         for sentence in sampled_sentences:
             match_percentage = calculate_match_percentage(sentence, txt_content)
             match_percentages.append(match_percentage)
 
+            #rudimentary splitting of tokens, approximation.
+            counts_token = counts_token + len(sentence.split())
+
         # Calculate the average match percentage for the current XML file
-        average_match_percentage = sum(match_percentages) / len(match_percentages) if match_percentages else 0
+        average_match_percentage = sum(match_percentages) / counts_token if match_percentages else 0
+        
 
         # Store the result for the current XML file in the results list
         for i, percentage in enumerate(match_percentages, start=1):
+            #retireves the speaker error via key which is the file name. 
             file_error = speaker_error.get(xml_file_name, None)
             results.append({
                 'XML File': xml_file_name,
                 'Sentence #': i,
+                #gives the sentence to check which sentences were checked.
                 'Sentence': sampled_sentences[i-1],
-                'Match Percentage': f"{percentage:.2f}%",
-                'Average Match Percentage': f"{average_match_percentage:.2f}%",
+                #average match percentage for entire sample size of a file.
+                'Average Match Percentage': f"{average_match_percentage}",
+                #speaker error, which denotes how many speaker were included in the text instead of separated into a specific tag system. 
                 'Speaker Error': file_error
             })
 
@@ -395,7 +424,7 @@ for xml_file_name in os.listdir(xml_folder_path):
 df = pd.DataFrame(results)
 
 # Write the results to an Excel file
-excel_file_path = f'percentages.xlsx' 
+excel_file_path = 'output_results_with_average.xlsx' 
 df.to_excel(excel_file_path, index=False)
 
 print(f"Results have been written to {excel_file_path}")           
