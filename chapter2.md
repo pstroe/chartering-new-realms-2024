@@ -56,7 +56,81 @@ Recent advancements in Large Language Models (LLMs) have further expanded the po
 We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
 ### Data
-Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *{cite:t}`ESV2001`*, the *{cite:t}`DRB1899`*, and the *{cite:t}`KJV1611`*. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style. 
+Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *{cite:t}`ESV2001`*, the *{cite:t}`DRB1899`*, and the *{cite:t}`KJV1611`*. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
+
+<table>
+    <thead>
+        <tr>
+            <th>Tone</th>
+            <th>Latin Source</th>
+            <th>Gold Standard 1</th>
+            <th>Gold Standard 2</th>
+            <th>Gold Standard 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td style="text-align: center;"></td>
+            <td style="text-align: center;"><b>Biblia Sacra iuxta Vulgatam Clementinam</b> <br>(405)</td>
+            <td style="text-align: center;"><b>Douay-Rheims Bible</b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
+            <td style="text-align: center;"><b>King James Version</b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
+            <td style="text-align: center;"><b>English Standard Version</b> <br>(translated and printed by Crossway, 2001)</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Deuteronomy 19: 15-17</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Ecclesiastes 3: 7-8</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Exodus 1: 8-14</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Exodus 7: 20-24</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Habakkuk 3: 17-19</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Isaiah 38: 9-20</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Job 14: 1-3</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Job 3: 11-13</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Song of Solomon 5: 12-14</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Psalm 149: 5-9</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;">Psalm 22: 4-6</td>
+            <td style="text-align: center;">Psalm 23: 4-6 (KJV)</td>
+            <td style="text-align: center;">Psalm 22: 4-6 (DRB)</td>
+            <td style="text-align: center;">Psalm 23: 4-6 (ESV)</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;">Psalm 87: 4-8</td>
+            <td style="text-align: center;">Psalm 88: 4-8 (DRB)</td>
+            <td style="text-align: center;">Psalm 88: 3-7 (KJV)</td>
+            <td style="text-align: center;">Psalm 88: 3-7 (ESV)</td>
+        </tr>
+    </tbody>
+</table>
+
 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
 
