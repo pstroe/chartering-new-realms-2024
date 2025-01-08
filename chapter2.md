@@ -32,6 +32,8 @@ What are the weaknesses / flaws of this chapter?
 - The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
     -> **done**
 - Add some more sources (de legibus, historia etc., which versions)
+    -> **done**
+
 - check sources in text
 
 # Chapter 2: How good is MT at translating Latin religious texts?
