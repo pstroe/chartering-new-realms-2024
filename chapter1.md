@@ -572,7 +572,7 @@ amendments to our rules.
 
 It's output however, was mostly unusable, as it refused to attempt the task and gave answers such as: 
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| help me format some text | None | I can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
 |2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same xml format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
@@ -580,7 +580,7 @@ It's output however, was mostly unusable, as it refused to attempt the task and 
 
 The experiment was successful insofar as that when specifically asking for help, Gemini attempted to format the input. In a first attempt it did format the text into an XML structure, though when re-running the prompt, it neglected all speaker turns and created one large segment containing the entire input. 
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| I need help with some xml formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12 <./chapter1_ZA-content/gemini-results/31.12/attempt_11-1.xml>` |
 |2| Try again, pay attention to the speakers| None | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-2.xml>`|
@@ -607,7 +607,7 @@ Knowledge: Snippet from a raw txt file, the corresponding XML file following the
 
 The options Web Borwsing, DALL·E Image Generation and Canvas were disabled. 
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try1/converted_hansard_25_02_2020.xml>` |
 |2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try1/complete_converted_hansard_25_02_2020.xml>`|
@@ -622,7 +622,7 @@ Knowledge: the RNG file used to validate the ParlaMint schema.
 
 The options Web Borwsing, DALL·E Image Generation and Canvas were disabled. 
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard.xml>` |
 |2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_full.xml>`| 
@@ -637,7 +637,7 @@ Knowledge: Snippet from a raw txt file, the corresponding XML file following the
 
 The options Web Borwsing, DALL·E Image Generation and Canvas were disabled. 
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard.xml>` |
 |2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_full.xml>`      |
@@ -646,7 +646,7 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 ### GPT-4o
 
-|| **Prompts**                                                                                    |**Additional Files/Information** | **Results**                       |
+|| **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| I have a txt file which needs to be converted into an xml file following a specific xml format, the ParlaMint schema.Here is a snippet of the txt file: [txt snippet]. The content of this snippet was converted into an xml schema, which looks like this: [xml snippet]. Please convert the txt file I have given you into a downloadable xml file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020.xml>` |
 |2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the xml file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_refined.xml>`|
@@ -656,11 +656,53 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
+The following is a summary of the most notable successes and issues within the outputs provided by the LLMs tested
 ### Llama Herd 
 
 ### Gemini 1.5 Flash 
 
+### Custom GPT
+#### Try 1
+The first output file consists of only 52 lines, with most of the content having been excluded. Upon being prompted to include the entire input, this issue improved in the second output file. However, the XML schema was not adhered to. Every single line contained within the input txt file was, in the output XML, contained in the "note" element from the ParlaMint schema, which is only meant to contain transcriber's notes.
+Through prompting, this issue was improved and the XML started to gain a more ParlaMint-like structure.
+
+```{code-cell} xml
+<note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the</note>
+        <u xml_id="u21_25-02-2020" who="#TheHOUSECHAIRPERSON(MsMGBoroto)">
+          <seg xml_lang="en">House and I can say that I see a Minister and two Deputy</seg>
+          <seg xml_lang="en">UNREVISED HANSARD</seg>
+          <seg xml_lang="en">NATIONAL ASSEMBLY</seg>
+          <seg xml_lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
+          <seg xml_lang="en">Page: 3</seg>
+```
+While the correct nesting of the elements was achieved, their contents were not correctly structured. For example, parts of speeches were contained within the "speaker" attribute of the "note" element. Additionally, the GPT failed to remove metadata, like page numbers and page headers, from the content, even though this was done in the example XML. It simply classified this metadata as part of the speeches. Another notable issue is the GPTs inability to identify the languages spoken, with it labelling every speech as English. 
+
+#### Try 2
+This GPT's first output had the same issue as the previous one, with it only consisting of 56 lines. The next attempt was better, though structurally the XML schema was not correct. Even though the GPT was reminded of the correct XML structure, its output did not improve. It attempted to format around 100 lines, with the rest of the txt input being contained within  asinge "seg" element. The fourth output was not any better. 
+
+#### Try 3
+Again, the first output was shortened and contained none of the speech conent of the txt file. The second output did contain the entire input, but was structured badly, with the "u" elements missing required attributes like the speaker. In its third attempt the GPT reverted back to the first output, with its XML output file only containing 41 lines. Its fourth attempt was structured similarly to the second output with little iprovement having been made. 
+
 ### GPT-4o 
+In its first attempt, GPT-4o output an XML file which did follow the ParlaMint structure properly in the beginning, but devolved into chaos after 40 lines. Here is what the main section containing the speeches looked like in this first attmpt:
+
+```{code-cell} xml
+<u who="#House met at 14"><seg xml:lang="en">House Chairperson Ms M G Boroto took the Chair and requested</seg></u>
+<u who="#House met at 14"><seg xml:lang="en">members to observe a moment of silence for prayer or</seg></u>
+<u who="#House met at 14"><seg xml:lang="en">meditation.</seg></u>
+<note type="speaker">HOUSE CHAIRPERSON (Ms M G Boroto)</note>
+<u who="#HOUSE CHAIRPERSON (Ms M G Boroto)"><seg xml:lang="en">like to remind you that on 4 December 2019 the House adopted</seg></u>
+<u who="#HOUSE CHAIRPERSON (Ms M G Boroto)"><seg xml:lang="en">the Rules Committee report which introduced a number of</seg></u>
+<u who="#HOUSE CHAIRPERSON (Ms M G Boroto)"><seg xml:lang="en">amendments to our rules. Some of the amendments pertain to the</seg></u>
+```
+While having a "seg" element contain a single line of the transciption is fine, a new "u" element should only be started when the speaker changes. After the intitial exchange between the House Chairperson and the Chief Whip of the Majority Party, GPT-4o assigned the same speaker, the Minister of Higher Education, to each utterance, which is obviously incorrect.
+
+The other three outputs did not improve at all. While the intial formatting remained accepatble, with it likely simply copying the input snippet, the input not contained in this snippet was formated into one single "seg" element. This means it completely neglected to identify speaker changes and represent them accordingly.
+
+More generally, GPT-4o failed completely to identify languages, marking every single utterance as being in English. Additionally, it failed to annotate transcriber's notes, like descriptions of applause, interruptions etc. 
+
+However, it managed quite well to output a valid XML file, even if it did not follow the schema it was tasked to encode the input into.
+
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
