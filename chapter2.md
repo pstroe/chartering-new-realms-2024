@@ -53,123 +53,128 @@ Recent advancements in Large Language Models (LLMs) have further expanded the po
 We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
 ### Data
-Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *{cite:t}`ESV2001`*, the *{cite:t}`DRB1899`*, and the *{cite:t}`KJV1611`*. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
+Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *English Standard Version* {cite:p}`ESV2001`, the *Douay-Rheims Bible* {cite:p}`DRB1899`, and the *King James Version* {cite:p}`KJV1611`. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
 
-<table>
+<table style="border-collapse: collapse; width: 100%;">
     <tbody>
-        <tr>
-            <td style="text-align: center;"><b>Tone</b></td>
-            <td style="text-align: center;"><b>Source: <i>Biblia Sacra iuxta Vulgatam Clementinam</i></b> <br>(405)</td>
-            <td style="text-align: center;"><b>Gold Standard 1: <i>Douay-Rheims Bible</i></b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
-            <td style="text-align: center;"><b>Gold Standard 2: <i>King James Version</i></b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
-            <td style="text-align: center;"><b>Gold Standard 3: <i>English Standard Version</i></b> <br>(translated and printed by Crossway, 2001)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey"><b>Tone</b></td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Source: <i>Vulgate</i></b> (405)</td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Gold Standard 1: <i>DRB</i></b> <br>(orig. 1582; cit. John Murphy Company, 1899)</td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Gold Standard 2: <i>KJV</i></b> <br>(orig. 1611; cit. Tyndale House, 1987)</td>
+            <td style="text-align: center"><b>Gold Standard 3: <i>ESV</i></b> <br>(Crossway, 2001)</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Deuteronomy 19: 15-17</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Ecclesiastes 3: 7-8</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Exodus 1: 8-14</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Exodus 7: 20-24</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Habakkuk 3: 17-19</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Isaiah 38: 9-20</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Job 14: 1-3</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Job 3: 11-13</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Song of Solomon 5: 12-14</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Psalm 149: 5-9</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
-            <td style="text-align: center;">Psalm 22: 4-6</td>
-            <td style="text-align: center;">Psalm 23: 4-6 (KJV)</td>
-            <td style="text-align: center;">Psalm 22: 4-6 (DRB)</td>
-            <td style="text-align: center;">Psalm 23: 4-6 (ESV)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 22: 4-6</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 23: 4-6</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 22: 4-6</td>
+            <td style="text-align: center;">Psalm 23: 4-6</td>
         </tr>
         <tr>
-            <td style="text-align: center;">Song</td>
-            <td style="text-align: center;">Psalm 87: 4-8</td>
-            <td style="text-align: center;">Psalm 88: 4-8 (DRB)</td>
-            <td style="text-align: center;">Psalm 88: 3-7 (KJV)</td>
-            <td style="text-align: center;">Psalm 88: 3-7 (ESV)</td>
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 87: 4-8</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 88: 4-8</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 88: 3-7</td>
+            <td style="text-align: center;">Psalm 88: 3-7</td>
         </tr>
     </tbody>
 </table>
 
-The poetic passages were drawn from 3 of the so called "Poetic Books" of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages {cite:p}`Hagan2022`, p. 15.
+The poetic passages were drawn from 3 of the so called "Poetic Books" of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages {cite:p}`Hagan2022`.
 
 Some of the poetic books contain texts which scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs {cite:p}`Staubli2018`.
 
 To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus* ({cite:p}`Cicero1959`, {cite:p}`CiceroFott2014`), a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae* ({cite:p}`Monmouth1136`, {cite:p}`Monmouth1999`), which includes descriptive historical narratives. 
 
-<table>
+<table style="border-collapse: collapse; width: 100%;">
     <tbody>
-        <tr>
-            <td style="text-align: center;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Geoffrey of Monmouth, 1136)</td>
-            <td style="text-align: center;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 2px;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Of Monmouth, 1136)</td>
+            <td style="text-align: center; padding: 2px;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(tr. Thompson, 1718; rev. Giles, 1842)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 13</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 2</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 6</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 3 Chapter 4</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 2px;"><b>Source: <i>De Legibus</i></b> <br>(Cicero, c. 52–43 BCE; ed. De Plinval, 1959)</td>
+            <td style="text-align: center; padding: 2px;"><b>Gold Standard: <i>On the Laws</i></b> <br>(tr. Fott, 2014)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 15, I</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 28, II</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 28, III</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 40</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 58</td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 13</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 2</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 6</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 3 Chapter 4</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;"><b>Source: <i>De Legibus</i></b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
-            <td style="text-align: center;"><b>Gold Standard: <i>On the Laws</i></b> <br>(translation by David Fott, 2014)</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 15, I</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 28, II</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 28, III</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 40</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 58</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 60</td>
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 60</td>
         </tr>
     </tbody>
 </table>
 
-This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations. 
+This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations.
 
 ### Metrics
 Translation quality was assessed using four widely recognized metrics: BLEU, ROUGE-L, METEOR, and chrF. Each metric captures a distinct dimension of translation quality, providing a comprehensive evaluation framework. All scores were calculated as percentages from 0 to 100. Thresholds were set to classify scores, with scores below 30 seen as faulty translations and scores exceeding 60 seen as high-quality translations.  
@@ -316,9 +321,9 @@ It is notable that translations scored against the *DRB* (e.g., Exodus 7: 20-24,
 
 | Source                       | Average of all translation scores for the source(%) | Median of all translation scores for the source (%) | General Performance Ranking |
 |------------------------------|--------------------------|-------------------------|-----------------------------|
-| *Douay-Rheims Bible (DRB)*   | **52.35**               | **55.85**              | Highest-performing source  |
-| *English Standard Version (ESV)* | 47.96                   | 48.88                  | Strong, consistent         |
-| *King James Version (KJV)*   | 45.06                   | 46.93                  | Good, slightly behind ESV  |
+| *DRB*   | **52.35**               | **55.85**              | Highest-performing source  |
+| *ESV* | 47.96                   | 48.88                  | Strong, consistent         |
+| *KJV*   | 45.06                   | 46.93                  | Good, slightly behind ESV  |
 | *De Legibus*                 | 43.42                   | 47.16                  | Moderate, varying          |
 | *Historia Regum Britanniae*       | **33.08**               | **37.11**              | Lowest-performing source   |
 
