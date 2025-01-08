@@ -53,7 +53,7 @@ Recent advancements in Large Language Models (LLMs) have further expanded the po
 We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
 ### Data
-Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *English Standard Version* {cite:p}`ESV2001`, the *Douay-Rheims Bible* {cite:p}`DRB1899`, and the *King James Version* {cite:p}`KJV1611`. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
+Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the {cite:t}`ESV2001`, the {cite:t}`DRB1899`, and the {cite:t}`KJV1611`. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
 
 <table style="border-collapse: collapse; width: 100%;">
     <tbody>
@@ -218,10 +218,11 @@ random_row = data.sample(n=1).iloc[0]  # Select a random row
 # Show in a table
 table = "| Header | Content |\n"
 table += "|--------|---------|\n"
-for column, value in random_row.items():
-    # Only show the first 400 characters
+
+for column, value in random_row.items(): # Only first 400 characters
     truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
     table += f"| {column} | {truncated_value} |\n"
+
 display(Markdown(table))
 ```
 
@@ -245,11 +246,12 @@ random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
 # Show in a table
 table_scores = "| Source | BLEU average | ROUGE average | chrF average | METEOR average |\n"
 table_scores += "|--------|--------------|---------------|--------------|----------------|\n"
-for column, value in random_row_scores.items():
-    # Only show the first 400 characters for the Source (although it shouldn't exceed 400 characters)
+
+for column, value in random_row_scores.items(): # Only first 400 characters
     truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
     table_scores += f"| {truncated_value} " if column == 'Source' else f"| {truncated_value} "
 table_scores += "|\n"
+
 display(Markdown(table_scores))
 ```
 
