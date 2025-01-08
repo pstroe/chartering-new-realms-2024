@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 2: How good is MT at translating Latin religious texts? &#8212; Chartering New Realms; AI as a Catalyst in Digital Humanities</title>
+    <title>Review feedback &amp; To Dos &#8212; Chartering New Realms; AI as a Catalyst in Digital Humanities</title>
   
   
   
@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -39,10 +41,11 @@
     <link rel="stylesheet" type="text/css" href="_static/lite/build/themes/@jupyterlab/theme-dark-high-contrast-extension/index.css?v=7ee8bf76" />
     <link rel="stylesheet" type="text/css" href="_static/lite/build/themes/@jupyterlab/theme-light-extension/index.css?v=a20e3b62" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -352,6 +355,7 @@
     <link rel="prev" title="Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -367,19 +371,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -387,7 +380,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -395,8 +387,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -412,7 +404,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -442,21 +435,17 @@
     
     
     <img src="_static/chartering-new-realms-logo.png" class="logo__image only-light" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
-    <script>document.write(`<img src="_static/chartering-new-realms-logo.png" class="logo__image only-dark" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>`);</script>
+    <img src="_static/chartering-new-realms-logo.png" class="logo__image only-dark pst-js-only" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -470,7 +459,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2: How good is MT at translating Latin religious texts?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review feedback &amp; To Dos</a></li>
+
 </ul>
 
     </div>
@@ -525,24 +515,6 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter2.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
       <li>
 <button onclick="initThebeSBT()"
   class="btn btn-sm btn-launch-thebe dropdown-item"
@@ -574,7 +546,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/pstroe/chartering-new-realms-2024" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -591,7 +563,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pstroe/chartering-new-realms-2024/issues/new?title=Issue%20on%20page%20%2Fchapter2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -622,6 +594,23 @@
       
       
       <li><a href="_sources/chapter2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/chapter2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -631,7 +620,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -674,24 +663,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -705,7 +686,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 2: How good is MT at translating Latin religious texts?</h1>
+    <h1>Review feedback & To Dos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -715,6 +696,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Review feedback &amp; To Dos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-how-good-is-mt-at-translating-latin-religious-texts">Chapter 2: How good is MT at translating Latin religious texts?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-work">Previous Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-data">Methods &amp; Data</a><ul class="nav section-nav flex-column">
@@ -732,7 +715,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-discussion">Results &amp; Discussion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-scores-within-sources">Comparing scores within sources</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-legibus">De Legibus</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-the-kings-of-britain">History of the Kings of Britain</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-regum-britanniae">Historia Regum Britanniae</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#religious-texts">Religious texts</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#job-3-11-13-in-detail">Job 3:11-13 in detail</a></li>
 </ul>
@@ -744,11 +727,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-scores-across-metrics">Comparing scores across metrics</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">Bibliography</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -759,42 +746,175 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-how-good-is-mt-at-translating-latin-religious-texts">
+  <section class="tex2jax_ignore mathjax_ignore" id="review-feedback-to-dos">
+<h1>Review feedback &amp; To Dos<a class="headerlink" href="#review-feedback-to-dos" title="Link to this heading">#</a></h1>
+<p>What are the weaknesses / flaws of this chapter?</p>
+<ul class="simple">
+<li><p>tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn’t set in the past.
+-&gt; <strong>checked</strong>, I think it’s consistent (Past tense for completed actions, present tense for general truths, findings etc.)</p></li>
+<li><p>Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with “ but in your case, because you already chose “ for the examples, I suggest to mark them in cursive.
+-&gt; <strong>done</strong>, also added nonbreaking spaces before %</p></li>
+<li><p>Data Section: It would help to have a list/matrix of your gold standard texts just for beauty’s sake :)
+-&gt; <strong>done?</strong></p></li>
+<li><p>Code section: I don’t think the included code is necessary, tbh I’d rather have the figures already preformatted in the paper, because they help your flow of argument. I’m more interested in how you calculated the scores, rather than the code to format the tables.
+-&gt; to be discussed
+-&gt; Check executability of code</p></li>
+<li><p>In the Intro section you call Wycliff’s translation one into the vernacular. I’d underline some of those claims with sources.
+-&gt; <strong>done</strong></p></li>
+<li><p>Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :).
+-&gt; <strong>done</strong></p></li>
+<li><p>Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I’ve written is bullshit because you have sources for that, ignore it, also I can’t really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.</p></li>
+<li><p>The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
+-&gt; <strong>done</strong></p></li>
+<li><p>Add some more sources (de legibus, historia etc., which versions)
+-&gt; <strong>done</strong></p></li>
+<li><p>check sources in text</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-2-how-good-is-mt-at-translating-latin-religious-texts">
 <h1>Chapter 2: How good is MT at translating Latin religious texts?<a class="headerlink" href="#chapter-2-how-good-is-mt-at-translating-latin-religious-texts" title="Link to this heading">#</a></h1>
 <p>Stefano Staffa, Andrea Scheck</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>In 1382, when the Latin Bible was first translated English by John Wycliffe, this process required enormous human effort, extensive knowledge of both Latin and the vernacular, and years of labor by many religious scholars. The result of this translation - a religious text which could be understood by the common population - had groundbreaking and far-reaching impacts on culture and religion. One can hardly imagine how history might have changed had the Bible never been translated into English—or translated less carefully.</p>
-<p>Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting that some MT systems can achieve a reasonably good translation quality <span id="id1">[<a class="reference internal" href="introduction.html#id13" title="Martin Volk, Dominic Philipp Fischer, Lukas Fischer, Patricia Scheurer, and Phillip Ströbel. Llm-based machine translation and summarization for latin. In LT4HALA. 2024. URL: https://doi.org/10.5167/uzh-259369.">Volk <em>et al.</em>, 2024</a>]</span>. However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works <span id="id2">[<a class="reference internal" href="introduction.html#id22" title="Ana Isabel Cespedosa Vázquez and Ruslan Mitkov. Machine translation of literary texts: genres, times and systems. In Raquel Lázaro Gutiérrez, Antonio Pareja, and Ruslan Mitkov, editors, Proceedings of the First Workshop on NLP Tools and Resources for Translation and Interpreting Applications, 48–53. Varna, Bulgaria, September 2023. INCOMA Ltd., Shoumen, Bulgaria. URL: https://aclanthology.org/2023.nlp4tia-1.7.">Cespedosa Vázquez and Mitkov, 2023</a>]</span>, of which the Bible with its poems and psalms contains many.</p>
-<p>Given that there are many Latin religious texts which remain untranslated to this day, this chapter raise the question: Does MT serve as a fitting tool for translating Latin religious text to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
+<p>In 1382, when the Latin Bible was first translated into English by scholars surrounding John Wycliffe, this process required years of enormous human effort by many religious scholars with extensive knowledge of both Latin and theology. The process this translation set in motion, ultimately resulting in a religious text which could be understood by the common population, had groundbreaking and far-reaching impacts on culture and religion <span id="id1">[<a class="reference internal" href="introduction.html#id29" title="Austin Taylor. The evolution of the bible in the english language. Tenor of Our Times, 8(1):193–206, 2019.">Taylor, 2019</a>]</span>. One can hardly imagine how history might have changed had the Bible never been translated into English — or translated less carefully.</p>
+<p>Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting that some MT systems can achieve a reasonably good translation quality <span id="id2">[<a class="reference internal" href="introduction.html#id30" title="Martin Volk, Dominic Philipp Fischer, Lukas Fischer, Patricia Scheurer, and Phillip Ströbel. Llm-based machine translation and summarization for latin. In LT4HALA. 2024. URL: https://doi.org/10.5167/uzh-259369.">Volk <em>et al.</em>, 2024</a>]</span>. However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works <span id="id3">[<a class="reference internal" href="introduction.html#id9" title="Ana Isabel Cespedosa Vázquez and Ruslan Mitkov. Machine translation of literary texts: genres, times and systems. In Raquel Lázaro Gutiérrez, Antonio Pareja, and Ruslan Mitkov, editors, Proceedings of the First Workshop on NLP Tools and Resources for Translation and Interpreting Applications, 48–53. Varna, Bulgaria, September 2023. INCOMA Ltd., Shoumen, Bulgaria. URL: https://aclanthology.org/2023.nlp4tia-1.7.">Cespedosa Vázquez and Mitkov, 2023</a>]</span>, of which the Bible with its poems and psalms contains many.</p>
+<p>Given that there are many Latin religious texts which remain untranslated to this day, this chapter raises the question: Does MT serve as a fitting tool for translating Latin religious texts to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
 By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts which could provide valuable insights into the historical and intellectual evolution of the Western world.</p>
 </section>
 <section id="previous-work">
 <h2>Previous Work<a class="headerlink" href="#previous-work" title="Link to this heading">#</a></h2>
-<p>Work on MT and language modelling for Latin has progressed significantly since the advent of MT, leveraging both traditional and modern approaches. <span id="id3">Martínez Garcia and García Tejedor [<a class="reference internal" href="introduction.html#id9" title="Eva Martínez Garcia and Álvaro García Tejedor. Latin-Spanish neural machine translation: from the Bible to saint augustine. In Rachele Sprugnoli and Marco Passarotti, editors, Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages, 94–99. Marseille, France, 2020. European Language Resources Association (ELRA). URL: https://aclanthology.org/2020.lt4hala-1.14.">2020</a>]</span> utilized the Bible as a parallel corpus to build a Transformer-based Neural Machine Translation (NMT) system for Latin-Spanish, addressing challenges associated with Latin’s complex morphology and low-resource nature. Similarly, <span id="id4">Christodoulopoulos and Steedman [<a class="reference internal" href="introduction.html#id10" title="Christos Christodoulopoulos and Mark Steedman. A massively parallel corpus: the bible in 100 languages. Language Resources and Evaluation, 49:1–21, 06 2014. URL: https://doi.org/10.1007/s10579-014-9287-y, doi:10.1007/s10579-014-9287-y.">2014</a>]</span> demonstrated the utility of the Bible as a parallel corpus in over 100 languages, including Latin, highlighting its structure and consistency as beneficial for multilingual NLP tasks. <span id="id5">Liu <em>et al.</em> [<a class="reference internal" href="introduction.html#id11" title="Ling Liu, Zach Ryan, and Mans Hulden. The usefulness of bibles in low-resource machine translation. Proceedings of the Workshop on Computational Methods for Endangered Languages, 1:, 01 2021. URL: https://doi.org/10.33011/computel.v1i.957, doi:10.33011/computel.v1i.957.">2021</a>]</span> further confirmed the effectiveness of using biblical texts for improving MT in low-resource settings, underscoring their relevance for Latin translation tasks.</p>
-<p>Beyond religious texts, <span id="id6">Fischer <em>et al.</em> [<a class="reference internal" href="introduction.html#id15" title="Lukas Fischer, Patricia Scheurer, Raphael Schwitter, and Martin Volk. Machine translation of 16th century letters from latin to german. In Proceedings of the Workshop on Computational Methods for Historical Texts. 01 2022.">2022</a>]</span> explored translating 16th-century Latin letters into German, emphasizing the importance of tailored training data for domain-specific translation. <span id="id7">Bistafa [<a class="reference internal" href="introduction.html#id12" title="Sylvio R. Bistafa. Translating scientific latin texts with artificial intelligence: the works of euler and contemporaries. 2024. URL: https://doi.org/10.48550/arXiv.2307.07520, arXiv:2307.07520, doi:10.48550/arXiv.2307.07520.">2024</a>]</span> examined the challenges of translating Latin scientific texts, particularly the works of mathematician Leonhard Euler, using artificial intelligence and revealing complexities in specialized vocabulary and syntax. These studies highlight the diversity of Latin translation tasks and the potential of MT systems in addressing them.</p>
-<p>Recent advancements in Large Language Models (LLMs) have further expanded the possibilities for Latin MT. <span id="id8">Volk <em>et al.</em> [<a class="reference internal" href="introduction.html#id13" title="Martin Volk, Dominic Philipp Fischer, Lukas Fischer, Patricia Scheurer, and Phillip Ströbel. Llm-based machine translation and summarization for latin. In LT4HALA. 2024. URL: https://doi.org/10.5167/uzh-259369.">2024</a>]</span> evaluated GPT-4o’s performance on both translation and summarization of Latin texts, achieving superior results compared to traditional MT systems and showcasing LLMs’ capabilities in handling historical and low-resource languages. <span id="id9">Riemenschneider and Frank [<a class="reference internal" href="introduction.html#id16" title="Frederick Riemenschneider and Anette Frank. Exploring large language models for classical philology. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 15181–15199. Toronto, Canada, jul 2023. Association for Computational Linguistics. URL: https://doi.org/10.18653/v1/2023.acl-long.846, doi:10.18653/v1/2023.acl-long.846.">2023</a>]</span> trained multilingual LLMs on Latin corpora, achieving state-of-the-art results for part-of-speech tagging and lemmatization, evaluated against the EvaLatin 2022 dataset. These works collectively provide a strong foundation for investigating LLM-based translation for Latin texts across religious and non-religious domains, as undertaken in this project.</p>
+<p>Work on MT and language modeling for Latin has progressed significantly since the advent of MT, leveraging both traditional and modern approaches. <span id="id4">Martínez Garcia and García Tejedor [<a class="reference internal" href="introduction.html#id24" title="Eva Martínez Garcia and Álvaro García Tejedor. Latin-Spanish neural machine translation: from the Bible to saint augustine. In Rachele Sprugnoli and Marco Passarotti, editors, Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages, 94–99. Marseille, France, 2020. European Language Resources Association (ELRA). URL: https://aclanthology.org/2020.lt4hala-1.14.">2020</a>]</span> utilized the Bible as a parallel corpus to build a Transformer-based Neural Machine Translation (NMT) system for Latin-Spanish, addressing challenges associated with Latin’s complex morphology and low-resource nature. Similarly, <span id="id5">Christodoulopoulos and Steedman [<a class="reference internal" href="introduction.html#id10" title="Christos Christodoulopoulos and Mark Steedman. A massively parallel corpus: the bible in 100 languages. Language Resources and Evaluation, 49:1–21, 06 2014. URL: https://doi.org/10.1007/s10579-014-9287-y, doi:10.1007/s10579-014-9287-y.">2014</a>]</span> demonstrated the utility of the Bible as a parallel corpus in over 100 languages, including Latin, highlighting its structure and consistency as beneficial for multilingual NLP tasks. <span id="id6">Liu <em>et al.</em> [<a class="reference internal" href="introduction.html#id23" title="Ling Liu, Zach Ryan, and Mans Hulden. The usefulness of bibles in low-resource machine translation. Proceedings of the 4th Workshop on the Use of Computational Methods in the Study of Endangered Languages, 1:44–50, 03 2021. URL: https://doi.org/10.33011/computel.v1i.957, doi:10.33011/computel.v1i.957.">2021</a>]</span> further confirmed the effectiveness of using biblical texts for improving MT in low-resource settings, underscoring their relevance for Latin translation tasks.</p>
+<p>Beyond religious texts, <span id="id7">Fischer <em>et al.</em> [<a class="reference internal" href="introduction.html#id15" title="Lukas Fischer, Patricia Scheurer, Raphael Schwitter, and Martin Volk. Machine translation of 16th century letters from latin to german. In Proceedings of the Workshop on Computational Methods for Historical Texts. 01 2022.">2022</a>]</span> explored translating 16th-century Latin letters into German, emphasizing the importance of tailored training data for domain-specific translation. <span id="id8">Bistafa [<a class="reference internal" href="introduction.html#id6" title="Sylvio R. Bistafa. Translating scientific latin texts with artificial intelligence: the works of euler and contemporaries. 2024. URL: https://doi.org/10.48550/arXiv.2307.07520, arXiv:2307.07520, doi:10.48550/arXiv.2307.07520.">2024</a>]</span> examined the challenges of translating Latin scientific texts, particularly the works of mathematician Leonhard Euler, using artificial intelligence and revealing complexities in specialized vocabulary and syntax. These studies highlight the diversity of Latin translation tasks and the potential of MT systems in addressing them.</p>
+<p>Recent advancements in Large Language Models (LLMs) have further expanded the possibilities for Latin MT. <span id="id9">Volk <em>et al.</em> [<a class="reference internal" href="introduction.html#id30" title="Martin Volk, Dominic Philipp Fischer, Lukas Fischer, Patricia Scheurer, and Phillip Ströbel. Llm-based machine translation and summarization for latin. In LT4HALA. 2024. URL: https://doi.org/10.5167/uzh-259369.">2024</a>]</span> evaluated GPT-4o’s performance on both translation and summarization of Latin texts, achieving superior results compared to traditional MT systems and showcasing LLMs’ capabilities in handling historical and low-resource languages. <span id="id10">Riemenschneider and Frank [<a class="reference internal" href="introduction.html#id27" title="Frederick Riemenschneider and Anette Frank. Exploring large language models for classical philology. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 15181–15199. Toronto, Canada, 07 2023. Association for Computational Linguistics. URL: https://doi.org/10.18653/v1/2023.acl-long.846, doi:10.18653/v1/2023.acl-long.846.">2023</a>]</span> trained multilingual LLMs on Latin corpora and evaluated them against the EvaLatin 2022 dataset, achieving state-of-the-art results for part-of-speech tagging and lemmatization. These works collectively provide a strong foundation for investigating LLM-based translation of Latin texts across religious and non-religious domains, as undertaken in this project.</p>
 </section>
 <section id="methods-data">
 <h2>Methods &amp; Data<a class="headerlink" href="#methods-data" title="Link to this heading">#</a></h2>
 <p>We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE.</p>
 <section id="data">
 <h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
-<p>Religious texts were sourced from the Biblia Sacra iuxta Vulgatam Clementinam and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the <span id="id10"><em>English Standard Version (ESV)</em> [<a class="reference internal" href="introduction.html#id23">2001</a>]</span>, the <span id="id11"><em>Douay-Rheims Bible (DRB)</em> [<a class="reference internal" href="introduction.html#id24">1899</a>]</span>, and the <span id="id12"><em>King James Version (KJV)</em> [<a class="reference internal" href="introduction.html#id25">1611</a>]</span>. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the DRB was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The KJV and the ESV drew from Hebrew, Greek and Latin and adopt a modernized style.</p>
-<p>To allow for an optimal comparison of MT performance, we aimed to chose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s De Legibus, a key legal text, and Geoffrey of Monmouth’s Historia Regum Britanniae, which includes descriptive historical narratives.</p>
+<p>Religious texts were sourced from the <em>Biblia Sacra iuxta Vulgatam Clementinam</em> and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the <em><span id="id11">Crossway [<a class="reference internal" href="introduction.html#id14" title="Crossway. English Standard Version. Crossway, Wheaton, IL, 2001. URL: https://www.biblegateway.com/versions/English-Standard-Version-ESV-Bible/.">2001</a>]</span></em>, the <em><span id="id12">at Douai and Rheims [<a class="reference internal" href="introduction.html#id13" title="English College at Douai and Rheims. Douay-Rheims Bible (DRB). John Murphy Company, Baltimore, 1899. Originally translated 1582–1610. URL: https://www.biblegateway.com/versions/Douay-Rheims-1899-American-Edition-DRA-Bible/.">1899</a>]</span></em>, and the <em><span id="id13">of England [<a class="reference internal" href="introduction.html#id20" title="Church of England. King James Version (KJV). Tyndale House, Cambridge, 1987. Originally translated 1611. URL: https://www.biblegateway.com/versions/King-James-Version-KJV-Bible/.">1987</a>]</span></em>. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the <em>DRB</em> was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The <em>KJV</em> and the <em>ESV</em> drew from Hebrew, Greek and Latin and adopt a modernized style.</p>
+<table>
+    <tbody>
+        <tr>
+            <td style="text-align: center;"><b>Tone</b></td>
+            <td style="text-align: center;"><b>Source: <i>Biblia Sacra iuxta Vulgatam Clementinam</i></b> <br>(405)</td>
+            <td style="text-align: center;"><b>Gold Standard 1: <i>Douay-Rheims Bible</i></b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
+            <td style="text-align: center;"><b>Gold Standard 2: <i>King James Version</i></b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
+            <td style="text-align: center;"><b>Gold Standard 3: <i>English Standard Version</i></b> <br>(translated and printed by Crossway, 2001)</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Deuteronomy 19: 15-17</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Ecclesiastes 3: 7-8</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Exodus 1: 8-14</td>
+        </tr>
+        <tr><td style="text-align: center;">Neutral</td>
+            <td style="text-align: center;" colspan="5">Exodus 7: 20-24</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Habakkuk 3: 17-19</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Isaiah 38: 9-20</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Job 14: 1-3</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Poetry</td>
+            <td style="text-align: center;" colspan="4">Job 3: 11-13</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Song of Solomon 5: 12-14</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;" colspan="4">Psalm 149: 5-9</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;">Psalm 22: 4-6</td>
+            <td style="text-align: center;">Psalm 23: 4-6 (KJV)</td>
+            <td style="text-align: center;">Psalm 22: 4-6 (DRB)</td>
+            <td style="text-align: center;">Psalm 23: 4-6 (ESV)</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">Song</td>
+            <td style="text-align: center;">Psalm 87: 4-8</td>
+            <td style="text-align: center;">Psalm 88: 4-8 (DRB)</td>
+            <td style="text-align: center;">Psalm 88: 3-7 (KJV)</td>
+            <td style="text-align: center;">Psalm 88: 3-7 (ESV)</td>
+        </tr>
+    </tbody>
+</table>
+<p>The poetic passages were drawn from 3 of the so called “Poetic Books” of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages <span id="id14">[]</span>, p. 15.</p>
+<p>Some of the poetic books contain texts which scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs <span id="id15">[]</span>.</p>
+<p>To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s <em>De Legibus</em>, a key legal text, and Geoffrey of Monmouth’s <em>Historia Regum Britanniae</em>, which includes descriptive historical narratives.</p>
+<table>
+    <tbody>
+        <tr>
+            <td style="text-align: center;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Geoffrey of Monmouth, 1136)</td>
+            <td style="text-align: center;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Chapter 13</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Chapter 2</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Chapter 6</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 3 Chapter 4</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><b>Source: <i>De Legibus</i></b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
+            <td style="text-align: center;"><b>Gold Standard: <i>On the Laws</i></b> <br>(translation by David Fott, 2014)</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 15, I</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 28, II</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 28, III</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 40</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 58</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">Book 1 Section 60</td>
+        </tr>
+    </tbody>
+</table>
 <p>This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations.</p>
 </section>
 <section id="metrics">
 <h3>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h3>
 <p>Translation quality was assessed using four widely recognized metrics: BLEU, ROUGE-L, METEOR, and chrF. Each metric captures a distinct dimension of translation quality, providing a comprehensive evaluation framework. All scores were calculated as percentages from 0 to 100. Thresholds were set to classify scores, with scores below 30 seen as faulty translations and scores exceeding 60 seen as high-quality translations.</p>
 <p><strong>Bilingual Evaluation Understudy (BLEU)</strong></p>
-<p>BLEU measures the overlap of n-grams (sequences of 1 to 4 words) between the MT and one or more reference translations <span id="id13">[<a class="reference internal" href="introduction.html#id5" title="Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. Bleu: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, 311–318. Philadelphia, Pennsylvania, USA, 2002. Association for Computational Linguistics. URL: https://doi.org/10.3115/1073083.1073135, doi:10.3115/1073083.1073135.">Papineni <em>et al.</em>, 2002</a>]</span>. It calculates precision for these n-grams and includes a brevity penalty to discourage overly short translations. The metric is particularly suited for evaluating literal translations where exact word matches are critical. However, BLEU is less effective for assessing translations with valid paraphrasing or synonym use, as it does not account for semantic similarity or contextual nuance. A BLEU score of 75 implies high fidelity, while scores below 30 suggest significant deviations from the reference.</p>
+<p>BLEU measures the overlap of n-grams (sequences of 1 to 4 words) between the MT and one or more reference translations <span id="id16">[<a class="reference internal" href="introduction.html#id25" title="Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. Bleu: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, 311–318. Philadelphia, Pennsylvania, USA, 2002. Association for Computational Linguistics. URL: https://doi.org/10.3115/1073083.1073135, doi:10.3115/1073083.1073135.">Papineni <em>et al.</em>, 2002</a>]</span>. It calculates precision for these n-grams and includes a brevity penalty to discourage overly short translations. The metric is particularly suited for evaluating literal translations where exact word matches are critical. However, BLEU is less effective for assessing translations with valid paraphrasing or synonym use, as it does not account for semantic similarity or contextual nuance. A BLEU score of 75 implies high fidelity, while scores below 30 suggest significant deviations from the reference.</p>
 <p><strong>Recall-Oriented Understudy for Gisting Evaluation (ROUGE-l)</strong></p>
-<p>ROUGE-L evaluates the longest common subsequence (LCS) between the machine-generated translation and the reference text <span id="id14">[<a class="reference internal" href="introduction.html#id6" title="Chin-Yew Lin and Franz Josef Och. Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04), 605–612. Barcelona, Spain, 2004. URL: https://doi.org/10.3115/1218955.1219032, doi:10.3115/1218955.1219032.">Lin and Och, 2004</a>]</span>. This emphasizes structural similarity, focusing on recall—the proportion of the reference that appears in the generated text. Unlike BLEU, ROUGE-L is not limited to contiguous n-grams, making it useful for evaluating texts with more flexible word order, such as Latin prose and poetry. It excels in identifying translations that preserve the overall structure and flow of the reference, even if individual word choices differ.</p>
+<p>ROUGE-L evaluates the longest common subsequence (LCS) between the machine-generated translation and the reference text <span id="id17">[<a class="reference internal" href="introduction.html#id22" title="Chin-Yew Lin and Franz Josef Och. Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04), 605–612. Barcelona, Spain, 2004. URL: https://doi.org/10.3115/1218955.1219032, doi:10.3115/1218955.1219032.">Lin and Och, 2004</a>]</span>. This emphasizes structural similarity, focusing on recall—the proportion of the reference that appears in the generated text. Unlike BLEU, ROUGE-L is not limited to contiguous n-grams, making it useful for evaluating texts with more flexible word order, such as Latin prose and poetry. It excels in identifying translations that preserve the overall structure and flow of the reference, even if individual word choices differ.</p>
 <p><strong>Metric for Evaluation of Translation with Explicit ORdering (METEOR)</strong></p>
-<p>METEOR extends beyond BLEU and ROUGE-L by incorporating precision, recall, and additional linguistic features such as stemming (reducing words to their root forms) and synonym matching <span id="id15">[<a class="reference internal" href="introduction.html#id7" title="Satanjeev Banerjee and Alon Lavie. METEOR: an automatic metric for MT evaluation with improved correlation with human judgments. In Jade Goldstein, Alon Lavie, Chin-Yew Lin, and Clare Voss, editors, Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization, 65–72. Ann Arbor, Michigan, 2005. Association for Computational Linguistics. URL: https://aclanthology.org/W05-0909.">Banerjee and Lavie, 2005</a>]</span>. It aligns words semantically rather than strictly lexically, enabling a better assessment of idiomatic expressions, paraphrasing, and non-literal translations. METEOR also assigns higher weights to exact matches while still rewarding partial matches and correct word order. This makes it particularly effective for evaluating poetic and figurative texts where semantic equivalence outweighs literal fidelity. Higher scores reflect greater similarity to the reference, factoring in synonyms and rephrased segments.</p>
+<p>METEOR extends beyond BLEU and ROUGE-L by incorporating precision, recall, and additional linguistic features such as stemming (reducing words to their root forms) and synonym matching <span id="id18">[<a class="reference internal" href="introduction.html#id5" title="Satanjeev Banerjee and Alon Lavie. METEOR: an automatic metric for MT evaluation with improved correlation with human judgments. In Jade Goldstein, Alon Lavie, Chin-Yew Lin, and Clare Voss, editors, Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization, 65–72. Ann Arbor, Michigan, 2005. Association for Computational Linguistics. URL: https://aclanthology.org/W05-0909.">Banerjee and Lavie, 2005</a>]</span>. It aligns words semantically rather than strictly lexically, enabling a better assessment of idiomatic expressions, paraphrasing, and non-literal translations. METEOR also assigns higher weights to exact matches while still rewarding partial matches and correct word order. This makes it particularly effective for evaluating poetic and figurative texts where semantic equivalence outweighs literal fidelity. Higher scores reflect greater similarity to the reference, factoring in synonyms and rephrased segments.</p>
 <p><strong>Character n-gram F-score (chrF)</strong></p>
-<p>chrF operates at the character level, comparing sequences of character n-grams between the machine translation and the reference text <span id="id16">[<a class="reference internal" href="introduction.html#id8" title="Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, Proceedings of the Tenth Workshop on Statistical Machine Translation, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: https://doi.org/10.18653/v1/W15-3049, doi:10.18653/v1/W15-3049.">Popović, 2015</a>]</span>. This fine-grained approach is especially advantageous for highly inflectional languages like Latin, where slight morphological differences (e.g., verb conjugations or noun declensions) can significantly alter meaning. By focusing on characters rather than words, chrF provides sensitivity to subtle grammatical nuances that may not be captured by word-based metrics. It also avoids penalizing legitimate variations in word segmentation or inflection. For Latin translations, chrF is particularly valuable for detecting morphological accuracy and alignment with the reference text.</p>
+<p>chrF operates at the character level, comparing sequences of character n-grams between the machine translation and the reference text <span id="id19">[<a class="reference internal" href="introduction.html#id26" title="Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, Proceedings of the Tenth Workshop on Statistical Machine Translation, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: https://doi.org/10.18653/v1/W15-3049, doi:10.18653/v1/W15-3049.">Popović, 2015</a>]</span>. This fine-grained approach is especially advantageous for highly inflectional languages like Latin, where slight morphological differences (e.g., verb conjugations or noun declensions) can significantly alter meaning. By focusing on characters rather than words, chrF provides sensitivity to subtle grammatical nuances that may not be captured by word-based metrics. It also avoids penalizing legitimate variations in word segmentation or inflection. For Latin translations, chrF is particularly valuable for detecting morphological accuracy and alignment with the reference text.</p>
 </section>
 <section id="tools">
 <h3>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h3>
@@ -831,8 +951,8 @@ By understanding these distinctions, we hope to contribute to future advancement
 </div>
 <section id="low-bleu-scores">
 <h3>Low BLEU scores<a class="headerlink" href="#low-bleu-scores" title="Link to this heading">#</a></h3>
-<p>Examining the scoring results, we observed low BLEU scores across texts, with an overall BLEU average of 24.86 %. Of the 49 translations, 35 received a BLEU score below the threshold of 30 %, indicating notable errors in lexical or syntactic accuracy. Since the scores of all metrics were averaged, these low BLEU scores negatively influenced the overall results of almost every translation. To address this, we also considered the median of the metrics alongside the average, mitigating the impact of outliers caused by low BLEU scores.</p>
-<p>While seemingly low, these scores align with prior research: Volk et al. (2024) observed a BLEU score of 25.22 % for Google Translate and 34.50 % for GPT-4o. Our findings, with BLEU averages of 25.32 % for Google Translate and 56.69 % for GPT-4o, indicate no major errors during the experiments but consistency in the outputs, while also highlighting a notable improvement in GPT-4o’s performance compared to earlier projects.</p>
+<p>Examining the scoring results, we can observe low BLEU scores across texts, with an overall BLEU average of 24.86 %. Of the 49 translations, 35 received a BLEU score below the threshold of 30 %, indicating notable errors in lexical or syntactic accuracy. Since the scores of all metrics were averaged, these low BLEU scores negatively influenced the overall results of almost every translation. To address this, we also considered the median of the metrics alongside the average, mitigating the impact of outliers caused by low BLEU scores.</p>
+<p>While seemingly low, these scores align with prior research: Volk et al. (2024) observed a BLEU score of 25.22 % for Google Translate and 34.50 % for GPT-4o. Our findings, with BLEU averages of 25.32 % for Google Translate and 56.69 % for GPT-4o, indicate no major errors during the experiments but consistency in the outputs, while also highlighting a notable improvement in GPT-4o’s performance compared to earlier projects.</p>
 <p>Executing code block 2 allows for a look into the scores for a random translation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,11 +981,11 @@ By understanding these distinctions, we hope to contribute to future advancement
 </section>
 <section id="error-proofing">
 <h3>Error proofing<a class="headerlink" href="#error-proofing" title="Link to this heading">#</a></h3>
-<p>Six translations received an overall average score below 30 %, indicating significant errors in the translation. These included Psalm 88:3-7 (DRB), Psalm 23:4-6 (DRB), Book 1 Chapter 13 of The History of the Kings of Britain, Job 3:11-13 (in both the ESV and KJV), and Book 1 Section 40 of De Legibus. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30 %, marking them as acceptable translations.</p>
+<p>Six translations received an overall average score below 30 %, indicating significant errors in the translation. These include Psalm 88:3-7 (<em>DRB</em>), Psalm 23:4-6 (<em>DRB</em>), Book 1 Chapter 13 of <em>Historia Regum Britanniae</em>, Job 3:11-13 (in both the <em>ESV</em> and <em>KJV</em>), and Book 1 Section 40 of <em>De Legibus</em>. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30 %, marking them as acceptable translations.</p>
 </section>
 <section id="retranslations">
 <h3>Retranslations<a class="headerlink" href="#retranslations" title="Link to this heading">#</a></h3>
-<p>After these corrections, three texts remained with an average score below 30 %: Book 1 Chapter 13 of the History of the Kings of Britain and Job 3: 11-13 in both ESV and KJV. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, which are particularly difficult for MT systems to handle <span id="id17">[<a class="reference internal" href="introduction.html#id4" title="Hengheng He. An intelligent algorithm for fast machine translation of long english sentences. Journal of Intelligent Systems, 32(1):20220257, 2023. URL: https://doi.org/10.1515/jisys-2022-0257, doi:10.1515/jisys-2022-0257.">He, 2023</a>]</span>. While this method improved the score for The History of the Kings of Britain by 1.8 %, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remained below 30 %. Possible reasons for these results are explored in detail in the following chapter.</p>
+<p>After these corrections, three texts remained with an average score below 30 %: Book 1 Chapter 13 of the <em>Historia Regum Britanniae</em> and Job 3: 11-13 in both <em>ESV</em> and <em>KJV</em>. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, which are particularly difficult for MT systems to handle <span id="id20">[<a class="reference internal" href="introduction.html#id19" title="Hengheng He. An intelligent algorithm for fast machine translation of long english sentences. Journal of Intelligent Systems, 32(1):20220257, 2023. URL: https://doi.org/10.1515/jisys-2022-0257, doi:10.1515/jisys-2022-0257.">He, 2023</a>]</span>. While this method improved the score for the <em>Historia Regum Britanniae</em> by 1.8 %, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remain below 30 %. Possible reasons for these results are explored in detail in the following chapter.</p>
 </section>
 </section>
 <section id="results-discussion">
@@ -877,25 +997,23 @@ By understanding these distinctions, we hope to contribute to future advancement
 <img alt="Scatter plot" src="https://github.com/user-attachments/assets/f86b18c9-e09b-4607-8be7-c755181ba1e9" /></p>
 <section id="de-legibus">
 <h4>De Legibus<a class="headerlink" href="#de-legibus" title="Link to this heading">#</a></h4>
-<p>All translations of De Legibus lie above the threshold of 30 %, with five of six excerpts scoring above 41 % when considering the average, and above 45 % when considering the median. The average and median scores for De Legibus generally fall within a narrow range, indicating consistent performance across different sections. The translation for Book 1 Section 60 received the highest scores (average of 46.82 %, median of 48.73 %), possibly due to its closer adherence to the original text in both structure and meaning. However, there is a notable outlier in Book 1 Section 40, which achieved an average of only 33.61 %.</p>
-<p>Examining <strong>Book 1 Section 40</strong> in detail, it becomes apparent that the gold standard translation diverges significantly from the Latin source, using fewer details and replacing long descriptive clauses with brief summaries. This abbreviation of content could cause fewer overlapping n-grams when compared to translations that more closely adhered to the original text. Additionally, the gold standard uses a more modernized tone, losing certain phrases such as the justification of crimes through “naturae iure” and softening the vivid imagery of torture. This semantic difference could reduce matches in metrics like METEOR and chrF.</p>
+<p>All translations of <em>De Legibus</em> lie above the threshold of 30 %, with five of six excerpts scoring above 41 % when considering the average, and above 45 % when considering the median. The average and median scores for <em>De Legibus</em> generally fall within a narrow range, indicating consistent performance across different sections. The translation for Book 1 Section 60 received the highest scores (average of 46.82 %, median of 48.73 %), possibly due to its closer adherence to the original text in both structure and meaning. However, there is a notable outlier in Book 1 Section 40, which achieved an average of only 33.61 %.</p>
+<p>Examining <strong>Book 1 Section 40</strong> in detail, it becomes apparent that the gold standard translation diverges significantly from the Latin source, using fewer details and replacing long descriptive clauses with brief summaries. This abbreviation of content could cause fewer overlapping n-grams when compared to translations that more closely adhere to the original text. Additionally, the gold standard uses a more modernized tone, losing certain phrases such as the justification of crimes through “naturae iure” and softening the vivid imagery of torture. This semantic difference could reduce matches in metrics like METEOR and chrF.</p>
 </section>
-<section id="history-of-the-kings-of-britain">
-<h4>History of the Kings of Britain<a class="headerlink" href="#history-of-the-kings-of-britain" title="Link to this heading">#</a></h4>
-<p>The translations for History of the Kings of Britain show a wider range of scores, with three of four translations achieving average scores above 30 %, but none exceeding 40 %. The average scores range from 27.33 % to 36.69 % with median scores falling between 30.30 % and 40.59 %. Notably, Book 1, Chapter 13 received the lowest average score and fell below the threshold of 30 %.</p>
-<p>Examining <strong>Book 1, Chapter 13</strong> in detail, it is notable that the Latin source uses a vivid, descriptive language, explicitely depicting the violence of Corineus’s actions. For example, the original describes him severing arms, decapitating enemies, and engaging in physical combat. The gold standard translation simplifies this text by consolidating actions and reducing the intensity. Instead, the gold standard translation uses phrases like “terrible slaughter” and omits the specific actions, which could lead to lower BLEU scores.</p>
-<p>As this text fell below the threshold of 30 %, it was one of the retranslations mentioned in the preceding chapter. This marginally improved the scores, with the average rising from 27.33 to 29.13, a percentage-wise improvement of approximately 6.57 %. Even the improved score from sentence-to-sentence-translation was not adequate enough to reach the 30 % threshold.</p>
+<section id="historia-regum-britanniae">
+<h4>Historia Regum Britanniae<a class="headerlink" href="#historia-regum-britanniae" title="Link to this heading">#</a></h4>
+<p>The translations for <em>Historia Regum Britanniae</em> show a wider range of scores, with three of four translations achieving average scores above 30 %, but none exceeding 40 %. The average scores range from 27.33 % to 36.69 % with median scores falling between 30.30 % and 40.59 %. Notably, Book 1, Chapter 13 received the lowest average score and fell below the threshold of 30 %.</p>
+<p>Examining <strong>Book 1, Chapter 13</strong> in detail, it is notable that the Latin source uses a vivid, descriptive language, explicitly depicting the violence of Corineus’s actions. For example, the original describes him severing arms, decapitating enemies, and engaging in physical combat. The gold standard translation simplifies this text by consolidating actions and reducing their intensity. Instead, the gold standard translation uses phrases like “terrible slaughter” and omits the specific actions, which could lead to lower BLEU scores.</p>
+<p>As this text fell below the threshold of 30 %, it was one of the retranslations mentioned in the preceding chapter. This marginally improved the scores, with the average rising from 27.33 to 29.13, a percentage-wise improvement of approximately 6.57 %. Even the improved score from sentence-to-sentence-translation was not adequate to reach the 30 % threshold.</p>
 </section>
 <section id="religious-texts">
 <h4>Religious texts<a class="headerlink" href="#religious-texts" title="Link to this heading">#</a></h4>
-<p>For the Bible translations using the KJV as the gold standard, 12 of 13 translations achieved an average score greater than 32.75 %, with the highest score reaching 64.05 %. Among these high-performing texts were neutral descriptions of law and genealogy, stories as well as songs and poems. The lowest score, recorded for Job 3:11-13, was 28.44 %, which deviated significantly from the other translations.</p>
-<p>For the Bible translations using the ESV as the gold standard, 12 out of 13 texts received an average score above 35.85 %, with the highest average score being 65.43 %. Most of the translations scored against the ESV gold standard showed consistently high scores across the BLEU, ROUGE, chrF, and METEOR metrics. The average scores for these texts generally remained well above 35 %, with scores consistently improving for passages like Psalm 23:4-6 (65.43 %) and Exodus 7:20-24 (61.25 %). Notably, three translations scored against the ESV gold standard achieve an average score above 60 %, making it the translation project with the largest number of “good” results. Within the translations, there was no clear trend of higher scores for neutral texts as opposed to songs or poems, however, the lowest score was recorded for the poem Job 3:11-13, at 27.54 %.</p>
-<p>For the Bible translations using the DRB as the gold standard, all texts received a score average above 45.41 %, with the highest average reaching 67.65 %, and the corresponding median at 73.06 %. Remarkably, even Job 3:11-13, which presented challenges and low scores for the other Bible versions, achieved a significantly better score of 46.52 % in the DRB translation. The DRB translations consistently achieved higher scores across all the MT systems and less variation in performance across the passages compared to both the KJV and ESV. Notably, this was the only translation project in which no translation had an average score  under 30 %, suggesting that the language style and structure of the DRB translation may be more amenable to machine translation systems, particularly in the semantic equivalence captured by the evaluation metrics (e.g., ROUGE, METEOR). The lowest score was recorded for Psalm 88:4-8, but at 45.41 %, it still performed significantly better than the same passage in the KJV and ESV translations.</p>
+<p>For the Bible translations using the <em>KJV</em> as the gold standard, 12 of 13 translations achieved an average score greater than 32.75 %, with the highest score reaching 64.05 %. Among these high-performing texts were neutral descriptions of law and genealogy, stories as well as songs and poems. The lowest score, recorded for Job 3:11-13, was 28.44 %, which deviates significantly from the other translations.</p>
+<p>For the Bible translations using the <em>ESV</em> as the gold standard, 12 out of 13 texts received an average score above 35.85 %, with the highest average score being 65.43 %. Most of the translations scored against the <em>ESV</em> gold standard show consistently high scores across the BLEU, ROUGE, chrF, and METEOR metrics. The average scores for these texts generally remain well above 35 %, with scores consistently improving for passages like Psalm 23:4-6 (65.43 %) and Exodus 7:20-24 (61.25 %). Notably, three translations scored against the <em>ESV</em> gold standard achieve an average score above 60 %, making it the translation project with the largest number of “good” results. Within the translations, there was no clear trend of higher scores for neutral texts as opposed to songs or poems, however, the lowest score was recorded for the poem Job 3:11-13, at 27.54 %.</p>
+<p>For the Bible translations using the <em>DRB</em> as the gold standard, all texts received a score average above 45.41 %, with the highest average reaching 67.65 %, and the corresponding median at 73.06 %. Remarkably, even Job 3:11-13, which presented a challenge for the other Bible versions, achieved a significantly better score of 46.52 % in the <em>DRB</em> translation. The <em>DRB</em> translations consistently achieved higher scores across all the MT systems and less variation in performance across the passages compared to both the <em>KJV</em> and <em>ESV</em>. Notably, this is the only translation project in which no translation had an average score  under 30 %, suggesting that the language style and structure of the <em>DRB</em> translation may be more amenable to machine translation systems, particularly in the semantic equivalence captured by the evaluation metrics (e.g., ROUGE, METEOR). The lowest score, recorded for Psalm 88:4-8 at 45.41 %, still lies significantly higher than for the same passage in the <em>KJV</em> and <em>ESV</em> translations.</p>
 <section id="job-3-11-13-in-detail">
 <h5>Job 3:11-13 in detail<a class="headerlink" href="#job-3-11-13-in-detail" title="Link to this heading">#</a></h5>
-<p>The Latin text of Job 3:11-13 contains highly poetic language that reflects emotional distress, characterized by the repetition of rhetorical “Why”-questions. This type of structure can pose challenges for any translators, as they may struggle to preserve the nuanced tone and rhetorical structure. This is amplified by the fact that the Latin word order is flexible and emphasizes certain elements for rhetorical effect, which is not always directly translatable into English. These challenges become evident when comparing the gold standard translation from KJV, ESV and DRB:</p>
-<p>While both KJV and ESV are faithful to the original meaning and easily readable for modern eyes, they use a modernized language structure that simplifies the emotional weight. For example, the poetic expression like “dormiens silerem” becomes the less expressive “lain still/down and been quiet”. The Latin differentiation between “in vulva” (approximately: “in the womb”) and “ex utero” (“out of the womb”) might have been a additional challenge for the translators, being translated to “at birth” or “from the womb”. Additionally, the expression “give up the ghost” in the KJV translation is a stylistically unique choice.</p>
-<p>In the DRB translation, the translation for the same excerpt received an acceptable average score, as the language and repetition from the Latin are preserved well in the DRB, allowing for more accurate semantic mappings. Notably, however, this translation does not read as a well-formed text to a modern reader, with some questions entirely lacking the subject “I”. While this might be close to the Latin original and also close to the MT results, it is hardly how we would form a sentence today.</p>
+<p>The Latin text of Job 3:11-13 contains highly poetic language that reflects emotional distress, characterized by the repetition of rhetorical “Why”-questions. This type of structure can pose challenges for any translators, as they may struggle to preserve the nuanced tone and rhetorical structure. This is amplified by the fact that the Latin word order is flexible and emphasizes certain elements for rhetorical effect, which is not always directly translatable into English. These challenges become evident when comparing the gold standard translation from <em>KJV</em>, <em>ESV</em> and <em>DRB</em>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Verse</p></th>
@@ -915,7 +1033,9 @@ By understanding these distinctions, we hope to contribute to future advancement
 </tbody>
 </table>
 </div>
-<p>The same challenges which led to deviation between the different gold standards also seem to have affected the MT systems. The repetition of  questions seems to have been highly difficult for MT, with systems appearing to interpret the words literally. Google Translate, Gemini and Yandex abandon the “Why” structure in the second sentence, asking “if” the speaker died; in the following sentences, they also lose the reference to the subject (“I”). Yandex was unable to reproduce the emotional tone, producing with very practical sounding sentences. Additionally, vocabulary ambiguities also occur due to the very limited context, with “perii” (perished) translated as “ruined” and “exceptus” (received) as “caught”.</p>
+<p>While both <em>KJV</em> and <em>ESV</em> are faithful to the original meaning and easily readable for modern eyes, they use a modernized language structure that simplifies the emotional weight. For example, the poetic expression “dormiens silerem” (approx.: “I would be silent while sleeping”) becomes the less expressive “lain still/down and been quiet”. The Latin differentiation between “in vulva” (approx.: “in the womb”) and “ex utero” (approx.: “out of the womb”) might have been an additional challenge for the translators, being translated to “at birth” or “from the womb”. Additionally, the expression “give up the ghost” in the <em>KJV</em> translation is a stylistically unique choice.</p>
+<p>In the <em>DRB</em> translation, where the translation for the same excerpt received an acceptable average score, the language and repetition of Latin are preserved well, allowing for more accurate semantic mappings. Notably, however, this translation does not read as a well-formed text to a modern reader, with some questions entirely lacking the subject “I”. While this might be close to the Latin original and also close to the MT results, it is hardly how we would form a sentence today.</p>
+<p>The same challenges which led to deviation between the different gold standards also seem to have affected the MT systems:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Latin</strong></p></th>
@@ -965,15 +1085,16 @@ By understanding these distinctions, we hope to contribute to future advancement
 </tbody>
 </table>
 </div>
-<p>A retranslation experiment, in which the text was translated sentence by sentence, showed an improvement in overall scores when compared to ESV and KJV, particularly in BLEU. This suggests that translating smaller units may help maintain structure and preserve n-gram matches, even in poetic or emotionally dense texts.</p>
+<p>The repetition of questions seems to have been highly difficult for MT, with systems appearing to interpret the words literally. Google Translate, Gemini and Yandex abandoned the “Why” structure in the second sentence, asking “if” the speaker died; in the following sentences, they also lost the reference to the subject (“I”). Yandex was unable to reproduce the emotional tone, resulting in very practical-sounding sentences. Additionally, vocabulary ambiguities also occurred due to the very limited context, with “perii” (perished) translated as “ruined” and “exceptus” (received) as “caught”.</p>
+<p>A retranslation experiment, in which the text was translated sentence by sentence, showed an improvement in overall scores when compared to <em>ESV</em> and <em>KJV</em>, particularly in BLEU. This suggests that translating smaller units may help maintain structure and preserve n-gram matches, even in poetic or emotionally dense texts.</p>
 </section>
 </section>
 </section>
 <section id="comparing-scores-across-sources">
 <h3>Comparing scores across sources<a class="headerlink" href="#comparing-scores-across-sources" title="Link to this heading">#</a></h3>
-<p>Overall, there seems to be no clear correlation between the scores and the “neutrality” of the text, neither within the religious texts nor across sources. Non-religious texts, on average, did not perform better than religious texts: While De Legibus had average scores mostly between 33.61 % - 48.54 % and History of the Kings of Britain scores ranged between 27.33 % - 36.69 %, religious texts showed higher overall scores and consistency across versions.  Even the lowest-performing religious texts (Job 3: 11-13) had scores comparable to or better than the poorest-performing non-religious texts.</p>
-<p>When directly comparing neutral tone excerpts to poems and songs, there is no consistent difference in score averages. The best-performing descriptive text translations, such as Exodus 7: 20-24 from the DRB, did score higher than most poetry. Yet, other descriptive texts like History of the Kings of Britain had lower scores, often around 30 - 40 %, being outperformed by poetry like Ecclesiastes 3: 7-8 at 63.84 % - 64.56 %.</p>
-<p>It is notable that translations scored against the DRB (e.g., Exodus 7: 20-24, Psalm 23, Ecclesiastes 3: 7-8) performed particularly well, often exceeding 50 % averages.</p>
+<p>Overall, there seems to be no clear correlation between the scores and the “neutrality” of the text, neither within the religious texts nor across sources. Non-religious texts, on average, did not perform better than religious texts: While <em>De Legibus</em> had average scores mostly between 33.61 % - 48.54 % and <em>Historia Regum Britanniae</em> scores ranged between 27.33 % - 36.69 %, religious texts showed higher overall scores and consistency across versions. Even the lowest-performing religious texts (Job 3: 11-13) had scores comparable to or better than the poorest-performing non-religious texts.</p>
+<p>When directly comparing neutral tone excerpts to poems and songs, there is no consistent difference in score averages. The best-performing descriptive text translations, such as Exodus 7: 20-24 from the <em>DRB</em>, did score higher than most poetry. Yet, other descriptive texts like <em>Historia Regum Britanniae</em> had lower scores, often around 30 - 40 %, being outperformed by poetry like Ecclesiastes 3: 7-8 at 63.84 % - 64.56 %.</p>
+<p>It is notable that translations scored against the <em>DRB</em> (e.g., Exodus 7: 20-24, Psalm 23, Ecclesiastes 3: 7-8) performed particularly well, with averages often exceeding 50 %.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Source</p></th>
@@ -1003,7 +1124,7 @@ By understanding these distinctions, we hope to contribute to future advancement
 <td><p>47.16</p></td>
 <td><p>Moderate, varying</p></td>
 </tr>
-<tr class="row-even"><td><p><em>History of the Kings</em></p></td>
+<tr class="row-even"><td><p><em>Historia Regum Britanniae</em></p></td>
 <td><p><strong>33.08</strong></p></td>
 <td><p><strong>37.11</strong></p></td>
 <td><p>Lowest-performing source</p></td>
@@ -1011,40 +1132,47 @@ By understanding these distinctions, we hope to contribute to future advancement
 </tbody>
 </table>
 </div>
-<p>A possible explanation for this is that the DRB, being the oldest Bible translation we included, was translated directly from Latin with strict adherence to the source text. Later translations like ESV and KJV included other sources (Hebrew and Greek) and adapted to the contemporary language of their time, which decreases literal similarity with the source. MT is therefore more likely to score better with the DRB as a target text, even if the resulting language may seem archaic.</p>
-<p>While the Bible has a formal, well-established vocabulary and highly consistent structure, De Legibus and History of the Kings both feature complex sentence structures, with subordinate clauses, jargon and references. This is a known challenge for MT systems. Additionally, religious Latin texts may have been more represented in the training data, as they are among the best known and most translated Latin sources.</p>
+<p>A possible explanation for this is that the <em>DRB</em>, being the oldest Bible translation we included, was translated directly from Latin with strict adherence to the source text. Later translations like the <em>ESV</em> and <em>KJV</em> included other sources (Hebrew and Greek) and were adapted to the contemporary language of their time, which decreases literal similarity with the source. MT is therefore more likely to score better with the <em>DRB</em> as a target text, even if the resulting language may seem archaic.</p>
+<p>While the Bible has a formal, well-established vocabulary and highly consistent structure, <em>De Legibus</em> and <em>Historia Regum Britanniae</em> both feature complex sentence structures, with subordinate clauses, jargon and references. This is a known challenge for MT systems. Additionally, religious Latin texts may have been more represented in the training data, as the Bible is among the best known and most translated Latin sources.</p>
 </section>
 <section id="comparing-scores-across-tools">
 <h3>Comparing scores across tools<a class="headerlink" href="#comparing-scores-across-tools" title="Link to this heading">#</a></h3>
 <p><strong>GPT-4o</strong></p>
-<p>GPT-4o emerges as the most versatile and reliable performer across all evaluated metrics. For biblical texts, it achieves the best results with a BLEU score of 28.74 % and a ROUGE score of 58.27 %, reflecting high accuracy in lexical and structural reproduction. The chrF score of 54.44 % and METEOR score of 57.28 % further underscore its ability to maintain semantic and stylistic alignment.
-For non-biblical texts, while its performance decreases slightly, with a BLEU score of 19.10 % and a ROUGE score of 47.94 %, GPT-4o remains robust and consistent, managing stylistic diversity better than other tools. Its particularly strong results for biblical texts suggest an aptitude for formal, repetitive, and structured content, though some challenges arise in handling more stylistically varied material.</p>
+<p>GPT-4o emerges as the most versatile and reliable performer across all evaluated metrics. For biblical texts, it achieves the best results with a BLEU score of 28.74 % and a ROUGE score of 58.27 %, reflecting high accuracy in lexical and structural reproduction. The chrF score of 54.44 % and METEOR score of 57.28 % further underscore its ability to maintain semantic and stylistic alignment.
+For non-biblical texts, while its performance decreases slightly, with a BLEU score of 19.10 % and a ROUGE score of 47.94 %, GPT-4o remains robust and consistent, managing stylistic diversity better than other tools. Its particularly strong results for biblical texts suggest an aptitude for formal, repetitive, and structured content, though some challenges arise in handling more stylistically varied material.</p>
 <p><strong>Google Translate</strong></p>
-<p>Google Translate delivers solid translation results but consistently ranks just below GPT-4o across all metrics. Its performance with biblical texts, reflected in a BLEU score of 26.98 %, ROUGE score of 57.43 %, and chrF score of 53.35 %, highlights its fluency and adequacy in reproducing structured content. A METEOR score of 53.36 % indicates reasonably strong semantic alignment.</p>
-<p>However, its capabilities diminish more noticeably with non-biblical texts, where it scores a BLEU of 18.37 % and a ROUGE of 46.08 %. The chrF score of 49.35 % and METEOR score of 47.02 % indicate greater difficulty in managing nuanced meanings and stylistic variability. This performance disparity suggests that Google Translate is particularly effective for formal, structured text but struggles with the complexities of informal or stylistically diverse material.</p>
+<p>Google Translate delivers solid translation results but consistently ranks just below GPT-4o across all metrics. Its performance with biblical texts, reflected in a BLEU score of 26.98 %, ROUGE score of 57.43 %, and chrF score of 53.35 %, highlights its fluency and adequacy in reproducing structured content. A METEOR score of 53.36 % indicates reasonably strong semantic alignment.</p>
+<p>However, its capabilities diminish more noticeably with non-biblical texts, where it scores a BLEU of 18.37 % and a ROUGE of 46.08 %. The chrF score of 49.35 % and METEOR score of 47.02 % indicate greater difficulty in managing nuanced meanings and stylistic variability. This performance disparity suggests that Google Translate is particularly effective for formal, structured text but struggles with the complexities of informal or stylistically diverse material.</p>
 <p><strong>Gemini</strong></p>
-<p>Gemini delivers balanced results and strong competitiveness, particularly when compared to Google Translate. For biblical texts, it performs well, achieving a BLEU score of 27.22 %, a ROUGE score of 56.54 %, and a chrF score of 52.71 %, indicating high fluency and coherence. Its METEOR score of 54.71 % further reflects strong semantic alignment, making it a reliable option for structured content like Bible texts.</p>
-<p>When translating non-biblical texts, Gemini faces slightly greater challenges but still performs admirably. Its BLEU score of 19.39 % and ROUGE score of 45.84 % indicate it handles stylistically diverse content on par with or slightly better than Google Translate in certain aspects. However, its chrF score of 48.37 % and METEOR score of 43.64 % highlight areas for improvement in capturing lexical richness and nuanced meaning.</p>
+<p>Gemini delivers balanced results and strong competitiveness, particularly when compared to Google Translate. For biblical texts, it performs well, achieving a BLEU score of 27.22 %, a ROUGE score of 56.54 %, and a chrF score of 52.71 %, indicating high fluency and coherence. Its METEOR score of 54.71 % further reflects strong semantic alignment, making it a reliable option for structured content like Bible texts.</p>
+<p>When translating non-biblical texts, Gemini faces slightly greater challenges but still performs admirably. Its BLEU score of 19.39 % and ROUGE score of 45.84 % indicate it handles stylistically diverse content on par with or slightly better than Google Translate in certain aspects. However, its chrF score of 48.37 % and METEOR score of 43.64 % highlight areas for improvement in capturing lexical richness and nuanced meaning.</p>
 <p><strong>Yandex</strong></p>
-<p>Yandex consistently underperforms relative to other tools, showing significant limitations in both precision and coherence. For biblical texts, it achieves a BLEU score of 18.68 % and a chrF score of 46.05 %, suggesting weaker lexical and structural fidelity. Its METEOR score of 47.52 % reflects moderate semantic alignment, though it struggles to preserve deeper meanings effectively.</p>
-<p>The tool’s challenges become more pronounced with non-biblical texts, where it scores only 10.65 % in BLEU and 45.19 % in chrF, with a METEOR score of 43.13 %. These results highlight its difficulty in adapting to diverse stylistic and syntactic demands, making it less suitable for high-quality translations across various content types.</p>
+<p>Yandex consistently underperforms relative to other tools, showing significant limitations in both precision and coherence. For biblical texts, it achieves a BLEU score of 18.68 % and a chrF score of 46.05 %, suggesting weaker lexical and structural fidelity. Its METEOR score of 47.52 % reflects moderate semantic alignment, though it struggles to preserve deeper meanings effectively.</p>
+<p>The tool’s challenges become more pronounced with non-biblical texts, where it scores only 10.65 % in BLEU and 45.19 % in chrF, with a METEOR score of 43.13 %. These results highlight its difficulty in adapting to diverse stylistic and syntactic demands, making it less suitable for high-quality translations across various content types.</p>
 </section>
 <section id="comparing-scores-across-metrics">
 <h3>Comparing scores across metrics<a class="headerlink" href="#comparing-scores-across-metrics" title="Link to this heading">#</a></h3>
-<p>When comparing the metrics BLEU, ROUGE, chrF, and METEOR across the translations, distinct patterns emerge. For Bible texts, BLEU scores show the widest variability, ranging from 18.68 % (Yandex) to 28.74 % (GPT-4o). METEOR follows closely with a range from 47.52 % (Yandex) to 57.28 % (GPT-4o). ROUGE scores are slightly narrower, ranging from 51.92 % (Yandex) to 58.27 % (GPT-4o), while chrF ranges from 46.05 % (Yandex) to 54.44 (GPT-4o). This indicates that while BLEU and METEOR are more sensitive to performance differences, ROUGE and chrF provide more stable evaluations.</p>
-<p>For non-Bible texts, BLEU again shows the largest variability, with scores spanning from 10.65 % (Yandex) to 19.39 % (Gemini). ROUGE follows, ranging from 40.74 % (Yandex) to 47.94 % (GPT-4o). chrF and METEOR, while showing less declines, still demonstrate meaningful gaps, with chrF ranging from 45.19 % (Yandex) to 51.31 % (GPT-4o) and METEOR from 43.13 % (Yandex) to 48.80 % (GPT-4o). Thus, while chrF and METEOR are slightly more conservative than BLEU and ROUGE, they still reflect noticeable drops in performance, particularly for more challenging text types.</p>
-<p>Across all tools, the metrics reveal a consistent trend: translations of texts with greater stylistic variability score lower. BLEU and ROUGE, which emphasize precision and recall for specific lexical and syntactic features, show sharper declines for such texts, highlighting the difficulty in preserving structural elements. Meanwhile, chrF, which balances character-level precision and recall and METEOR, which incorporates synonym matching and semantic alignment, show relatively smaller variations between text types. This suggests that even when lexical and stylistic accuracy falters, tools maintain a fair degree of meaning preservation.</p>
+<p>When comparing the metrics BLEU, ROUGE, chrF, and METEOR across the translations, distinct patterns emerge. For Bible texts, BLEU scores show the widest variability, ranging from 18.68 % (Yandex) to 28.74 % (GPT-4o). METEOR follows closely with a range from 47.52 % (Yandex) to 57.28 % (GPT-4o). ROUGE scores are slightly narrower, ranging from 51.92 % (Yandex) to 58.27 % (GPT-4o), while chrF ranges from 46.05 % (Yandex) to 54.44 % (GPT-4o). This indicates that while BLEU and METEOR are more sensitive to performance differences, ROUGE and chrF provide more stable evaluations.</p>
+<p>For non-Bible texts, BLEU again shows the largest variability, with scores spanning from 10.65 % (Yandex) to 19.39 % (Gemini). ROUGE follows, ranging from 40.74 % (Yandex) to 47.94 % (GPT-4o). chrF and METEOR, while showing smaller declines, still demonstrate meaningful gaps, with chrF ranging from 45.19 % (Yandex) to 51.31 % (GPT-4o) and METEOR from 43.13 % (Yandex) to 48.80 % (GPT-4o). Thus, while chrF and METEOR are slightly more conservative than BLEU and ROUGE, they still reflect noticeable drops in performance, particularly for more challenging text types.</p>
+<p>Across all tools, the metrics reveal a consistent trend: translations of texts with greater stylistic variability score lower. BLEU and ROUGE, which emphasize precision and recall for specific lexical and syntactic features, show sharper declines for such texts, highlighting the difficulty in preserving structural elements. Meanwhile, chrF, which balances character-level precision and recall, and METEOR, which incorporates synonym matching and semantic alignment, show relatively smaller variations between text types. This suggests that even when lexical and stylistic accuracy falter, tools maintain a fair degree of meaning preservation.</p>
 </section>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>While this study provides valuable insights into the performance of modern MT systems on Latin texts, several limitations must be acknowledged: Firstly, metrics like BLEU, ROUGE-L, METEOR, and chrF offer quantitative measures of translation quality but are known to overlook aspects such as rhetorical style, emotional tone, or cultural context. Even by averaging different metrics, we cannot fully capture readability, interpretative accuracy, or the cultural appropriateness of translations without a human evaluation component, incorporating feedback from scholars and language experts.</p>
+<p>Secondly, the gold standard translations used in this study are themselves subjective interpretations of the Latin texts, particularly in the case of creative or poetic passages. Comparisons between the DRB, KJV, and ESV translations exemplify how translation decisions reflect different priorities. MT systems trained or evaluated against such diverse references may yield varying scores that reflect the gold standard’s bias rather than the intrinsic quality of the translation.</p>
+<p>Lastly, while our corpus captures a range of styles, it remains limited in scope. The inclusion of only two non-religious texts (Historia Regum Britanniae and De Legibus) with a limited number of extracts restricts the generalizability of findings to other domains, such as scientific or philosophical Latin. It additionally is difficult to judge the independence of the translation results, as it seems clear that the performance of MT systems was influenced by the inclusion of religious Latin texts in their training data, raising questions about how representative these results are for broader Latin translation tasks.</p>
+<p>Future research should address these challenges by expanding corpus size and diversity, integrating qualitative evaluation methods, and exploring alternative metrics that better capture stylistic and semantic nuances.</p>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>This chapter highlights the varied performance of MT systems in translating Latin texts, revealing distinct strengths and weaknesses across different text types and evaluation metrics. GPT-4o consistently outperformed other systems, particularly with structured and repetitive content like religious texts, achieving the highest scores across BLEU, ROUGE-L, METEOR, and chrF. In contrast, systems like Yandex struggled significantly, especially with stylistically diverse and complex texts.</p>
-<p>Religious texts demonstrated higher overall translation quality compared to neutral texts, likely due to the structured and consistent nature of their source material. Notably, the DRB provided the most favorable benchmark, suggesting that older, more literal translations align better with MT capabilities. Here, it is important to note that the best scoring translation does not automatically equate to the most readable translation for modern readers. Additional challenges persisted with poetic and highly emotional passages, as MT systems often failed to replicate nuanced tone and rhetorical complexity.</p>
+<p>This chapter highlights the varied performance of MT systems in translating Latin texts, revealing distinct strengths and weaknesses across different text types and evaluation metrics. GPT-4o consistently outperformed other systems, particularly with structured and repetitive content like religious texts, achieving the highest scores across BLEU, ROUGE-L, METEOR, and chrF. In contrast, Yandex struggled significantly, especially with stylistically diverse and complex texts.</p>
+<p>Religious texts demonstrated higher overall translation quality compared to neutral texts, likely due to the structured and consistent nature of their source material. Notably, the <em>DRB</em> provides the most favorable benchmark, suggesting that older, more literal translations align better with MT capabilities. Here, it is important to note that the best scoring translation does not automatically equate to the most readable translation for modern readers. Additional challenges persist with poetic and highly emotional passages, as MT systems often fail to replicate nuanced tone and rhetorical complexity.</p>
 <p>The findings underscore the importance of text type and evaluation metric selection in MT research. While MT has advanced significantly, translating low-resource languages like Latin still demands refinements, particularly for creative and interpretive content. Future work could explore improved contextual understanding in MT systems and expand training datasets to include more diverse examples, aiding the broader goals of digital humanities and classical studies.</p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="id18">
-<h2>Tools<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<section id="id21">
+<h2>Tools<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>ChatGPT, Version 4o, OpenAI: <a class="reference external" href="https://chat.openai.com/">https://chat.openai.com/</a></p>
 <ul>
@@ -1073,71 +1201,75 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
 <section id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Link to this heading">#</a></h2>
 <p>{cite:p}``</p>
-<div class="docutils container" id="id19">
+<div class="docutils container" id="id22">
 <div role="list" class="citation-list">
-<div class="citation" id="id41" role="doc-biblioentry">
+<div class="citation" id="id32" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">1</a><span class="fn-bracket">]</span></span>
-<p><strong>missing editor in KJV1611</strong></p>
-</div>
-<div class="citation" id="id40" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">2</a><span class="fn-bracket">]</span></span>
-<p><strong>missing editor in DRB1899</strong></p>
-</div>
-<div class="citation" id="id39" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">3</a><span class="fn-bracket">]</span></span>
-<p><strong>missing editor in ESV2001</strong></p>
-</div>
-<div class="citation" id="id23" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">4</a><span class="fn-bracket">]</span></span>
-<p>Satanjeev Banerjee and Alon Lavie. METEOR: an automatic metric for MT evaluation with improved correlation with human judgments. In Jade Goldstein, Alon Lavie, Chin-Yew Lin, and Clare Voss, editors, <em>Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization</em>, 65–72. Ann Arbor, Michigan, 2005. Association for Computational Linguistics. URL: <a class="reference external" href="https://aclanthology.org/W05-0909">https://aclanthology.org/W05-0909</a>.</p>
-</div>
-<div class="citation" id="id28" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
-<p>Sylvio R. Bistafa. Translating scientific latin texts with artificial intelligence: the works of euler and contemporaries. 2024. URL: <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">https://doi.org/10.48550/arXiv.2307.07520</a>, <a class="reference external" href="https://arxiv.org/abs/2307.07520">arXiv:2307.07520</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">doi:10.48550/arXiv.2307.07520</a>.</p>
-</div>
-<div class="citation" id="id38" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">6</a><span class="fn-bracket">]</span></span>
-<p>Ana Isabel Cespedosa Vázquez and Ruslan Mitkov. Machine translation of literary texts: genres, times and systems. In Raquel Lázaro Gutiérrez, Antonio Pareja, and Ruslan Mitkov, editors, <em>Proceedings of the First Workshop on NLP Tools and Resources for Translation and Interpreting Applications</em>, 48–53. Varna, Bulgaria, September 2023. INCOMA Ltd., Shoumen, Bulgaria. URL: <a class="reference external" href="https://aclanthology.org/2023.nlp4tia-1.7">https://aclanthology.org/2023.nlp4tia-1.7</a>.</p>
-</div>
-<div class="citation" id="id26" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">7</a><span class="fn-bracket">]</span></span>
-<p>Christos Christodoulopoulos and Mark Steedman. A massively parallel corpus: the bible in 100 languages. <em>Language Resources and Evaluation</em>, 49:1–21, 06 2014. URL: <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">https://doi.org/10.1007/s10579-014-9287-y</a>, <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">doi:10.1007/s10579-014-9287-y</a>.</p>
-</div>
-<div class="citation" id="id31" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">8</a><span class="fn-bracket">]</span></span>
-<p>Lukas Fischer, Patricia Scheurer, Raphael Schwitter, and Martin Volk. Machine translation of 16th century letters from latin to german. In <em>Proceedings of the Workshop on Computational Methods for Historical Texts</em>. 01 2022.</p>
-</div>
-<div class="citation" id="id20" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">9</a><span class="fn-bracket">]</span></span>
-<p>Hengheng He. An intelligent algorithm for fast machine translation of long english sentences. <em>Journal of Intelligent Systems</em>, 32(1):20220257, 2023. URL: <a class="reference external" href="https://doi.org/10.1515/jisys-2022-0257">https://doi.org/10.1515/jisys-2022-0257</a>, <a class="reference external" href="https://doi.org/10.1515/jisys-2022-0257">doi:10.1515/jisys-2022-0257</a>.</p>
-</div>
-<div class="citation" id="id22" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">10</a><span class="fn-bracket">]</span></span>
-<p>Chin-Yew Lin and Franz Josef Och. Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In <em>Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04)</em>, 605–612. Barcelona, Spain, 2004. URL: <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">https://doi.org/10.3115/1218955.1219032</a>, <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">doi:10.3115/1218955.1219032</a>.</p>
-</div>
-<div class="citation" id="id27" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">11</a><span class="fn-bracket">]</span></span>
-<p>Ling Liu, Zach Ryan, and Mans Hulden. The usefulness of bibles in low-resource machine translation. <em>Proceedings of the Workshop on Computational Methods for Endangered Languages</em>, 1:, 01 2021. URL: <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">https://doi.org/10.33011/computel.v1i.957</a>, <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">doi:10.33011/computel.v1i.957</a>.</p>
-</div>
-<div class="citation" id="id25" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">12</a><span class="fn-bracket">]</span></span>
-<p>Eva Martínez Garcia and Álvaro García Tejedor. Latin-Spanish neural machine translation: from the Bible to saint augustine. In Rachele Sprugnoli and Marco Passarotti, editors, <em>Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages</em>, 94–99. Marseille, France, 2020. European Language Resources Association (ELRA). URL: <a class="reference external" href="https://aclanthology.org/2020.lt4hala-1.14">https://aclanthology.org/2020.lt4hala-1.14</a>.</p>
-</div>
-<div class="citation" id="id21" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
-<p>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. Bleu: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, <em>Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics</em>, 311–318. Philadelphia, Pennsylvania, USA, 2002. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">https://doi.org/10.3115/1073083.1073135</a>, <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">doi:10.3115/1073083.1073135</a>.</p>
+<p>English College at Douai and Rheims. <em>Douay-Rheims Bible (DRB)</em>. John Murphy Company, Baltimore, 1899. Originally translated 1582–1610. URL: <a class="reference external" href="https://www.biblegateway.com/versions/Douay-Rheims-1899-American-Edition-DRA-Bible/">https://www.biblegateway.com/versions/Douay-Rheims-1899-American-Edition-DRA-Bible/</a>.</p>
 </div>
 <div class="citation" id="id24" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">14</a><span class="fn-bracket">]</span></span>
-<p>Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, <em>Proceedings of the Tenth Workshop on Statistical Machine Translation</em>, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">https://doi.org/10.18653/v1/W15-3049</a>, <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">doi:10.18653/v1/W15-3049</a>.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">2</a><span class="fn-bracket">]</span></span>
+<p>Satanjeev Banerjee and Alon Lavie. METEOR: an automatic metric for MT evaluation with improved correlation with human judgments. In Jade Goldstein, Alon Lavie, Chin-Yew Lin, and Clare Voss, editors, <em>Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization</em>, 65–72. Ann Arbor, Michigan, 2005. Association for Computational Linguistics. URL: <a class="reference external" href="https://aclanthology.org/W05-0909">https://aclanthology.org/W05-0909</a>.</p>
 </div>
-<div class="citation" id="id32" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">15</a><span class="fn-bracket">]</span></span>
-<p>Frederick Riemenschneider and Anette Frank. Exploring large language models for classical philology. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, <em>Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em>, 15181–15199. Toronto, Canada, jul 2023. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/2023.acl-long.846">https://doi.org/10.18653/v1/2023.acl-long.846</a>, <a class="reference external" href="https://doi.org/10.18653/v1/2023.acl-long.846">doi:10.18653/v1/2023.acl-long.846</a>.</p>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">3</a><span class="fn-bracket">]</span></span>
+<p>Sylvio R. Bistafa. Translating scientific latin texts with artificial intelligence: the works of euler and contemporaries. 2024. URL: <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">https://doi.org/10.48550/arXiv.2307.07520</a>, <a class="reference external" href="https://arxiv.org/abs/2307.07520">arXiv:2307.07520</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2307.07520">doi:10.48550/arXiv.2307.07520</a>.</p>
+</div>
+<div class="citation" id="id28" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<p>Ana Isabel Cespedosa Vázquez and Ruslan Mitkov. Machine translation of literary texts: genres, times and systems. In Raquel Lázaro Gutiérrez, Antonio Pareja, and Ruslan Mitkov, editors, <em>Proceedings of the First Workshop on NLP Tools and Resources for Translation and Interpreting Applications</em>, 48–53. Varna, Bulgaria, September 2023. INCOMA Ltd., Shoumen, Bulgaria. URL: <a class="reference external" href="https://aclanthology.org/2023.nlp4tia-1.7">https://aclanthology.org/2023.nlp4tia-1.7</a>.</p>
 </div>
 <div class="citation" id="id29" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Christos Christodoulopoulos and Mark Steedman. A massively parallel corpus: the bible in 100 languages. <em>Language Resources and Evaluation</em>, 49:1–21, 06 2014. URL: <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">https://doi.org/10.1007/s10579-014-9287-y</a>, <a class="reference external" href="https://doi.org/10.1007/s10579-014-9287-y">doi:10.1007/s10579-014-9287-y</a>.</p>
+</div>
+<div class="citation" id="id33" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">6</a><span class="fn-bracket">]</span></span>
+<p>Crossway. <em>English Standard Version</em>. Crossway, Wheaton, IL, 2001. URL: <a class="reference external" href="https://www.biblegateway.com/versions/English-Standard-Version-ESV-Bible/">https://www.biblegateway.com/versions/English-Standard-Version-ESV-Bible/</a>.</p>
+</div>
+<div class="citation" id="id34" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>Lukas Fischer, Patricia Scheurer, Raphael Schwitter, and Martin Volk. Machine translation of 16th century letters from latin to german. In <em>Proceedings of the Workshop on Computational Methods for Historical Texts</em>. 01 2022.</p>
+</div>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">8</a><span class="fn-bracket">]</span></span>
+<p>Hengheng He. An intelligent algorithm for fast machine translation of long english sentences. <em>Journal of Intelligent Systems</em>, 32(1):20220257, 2023. URL: <a class="reference external" href="https://doi.org/10.1515/jisys-2022-0257">https://doi.org/10.1515/jisys-2022-0257</a>, <a class="reference external" href="https://doi.org/10.1515/jisys-2022-0257">doi:10.1515/jisys-2022-0257</a>.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">9</a><span class="fn-bracket">]</span></span>
+<p>Chin-Yew Lin and Franz Josef Och. Automatic evaluation of machine translation quality using longest common subsequence and skip-bigram statistics. In <em>Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04)</em>, 605–612. Barcelona, Spain, 2004. URL: <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">https://doi.org/10.3115/1218955.1219032</a>, <a class="reference external" href="https://doi.org/10.3115/1218955.1219032">doi:10.3115/1218955.1219032</a>.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">10</a><span class="fn-bracket">]</span></span>
+<p>Ling Liu, Zach Ryan, and Mans Hulden. The usefulness of bibles in low-resource machine translation. <em>Proceedings of the 4th Workshop on the Use of Computational Methods in the Study of Endangered Languages</em>, 1:44–50, 03 2021. URL: <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">https://doi.org/10.33011/computel.v1i.957</a>, <a class="reference external" href="https://doi.org/10.33011/computel.v1i.957">doi:10.33011/computel.v1i.957</a>.</p>
+</div>
+<div class="citation" id="id43" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">11</a><span class="fn-bracket">]</span></span>
+<p>Eva Martínez Garcia and Álvaro García Tejedor. Latin-Spanish neural machine translation: from the Bible to saint augustine. In Rachele Sprugnoli and Marco Passarotti, editors, <em>Proceedings of LT4HALA 2020 - 1st Workshop on Language Technologies for Historical and Ancient Languages</em>, 94–99. Marseille, France, 2020. European Language Resources Association (ELRA). URL: <a class="reference external" href="https://aclanthology.org/2020.lt4hala-1.14">https://aclanthology.org/2020.lt4hala-1.14</a>.</p>
+</div>
+<div class="citation" id="id39" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">12</a><span class="fn-bracket">]</span></span>
+<p>Church of England. <em>King James Version (KJV)</em>. Tyndale House, Cambridge, 1987. Originally translated 1611. URL: <a class="reference external" href="https://www.biblegateway.com/versions/King-James-Version-KJV-Bible/">https://www.biblegateway.com/versions/King-James-Version-KJV-Bible/</a>.</p>
+</div>
+<div class="citation" id="id44" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">13</a><span class="fn-bracket">]</span></span>
+<p>Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. Bleu: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, <em>Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics</em>, 311–318. Philadelphia, Pennsylvania, USA, 2002. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">https://doi.org/10.3115/1073083.1073135</a>, <a class="reference external" href="https://doi.org/10.3115/1073083.1073135">doi:10.3115/1073083.1073135</a>.</p>
+</div>
+<div class="citation" id="id45" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">14</a><span class="fn-bracket">]</span></span>
+<p>Maja Popović. ChrF: character n-gram F-score for automatic MT evaluation. In Ondřej Bojar, Rajan Chatterjee, Christian Federmann, Barry Haddow, Chris Hokamp, Matthias Huck, Varvara Logacheva, and Pavel Pecina, editors, <em>Proceedings of the Tenth Workshop on Statistical Machine Translation</em>, 392–395. Lisbon, Portugal, 2015. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">https://doi.org/10.18653/v1/W15-3049</a>, <a class="reference external" href="https://doi.org/10.18653/v1/W15-3049">doi:10.18653/v1/W15-3049</a>.</p>
+</div>
+<div class="citation" id="id46" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">15</a><span class="fn-bracket">]</span></span>
+<p>Frederick Riemenschneider and Anette Frank. Exploring large language models for classical philology. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, <em>Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em>, 15181–15199. Toronto, Canada, 07 2023. Association for Computational Linguistics. URL: <a class="reference external" href="https://doi.org/10.18653/v1/2023.acl-long.846">https://doi.org/10.18653/v1/2023.acl-long.846</a>, <a class="reference external" href="https://doi.org/10.18653/v1/2023.acl-long.846">doi:10.18653/v1/2023.acl-long.846</a>.</p>
+</div>
+<div class="citation" id="id48" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">16</a><span class="fn-bracket">]</span></span>
+<p>Austin Taylor. The evolution of the bible in the english language. <em>Tenor of Our Times</em>, 8(1):193–206, 2019.</p>
+</div>
+<div class="citation" id="id49" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id9">2</a>)</span>
 <p>Martin Volk, Dominic Philipp Fischer, Lukas Fischer, Patricia Scheurer, and Phillip Ströbel. Llm-based machine translation and summarization for latin. In <em>LT4HALA</em>. 2024. URL: <a class="reference external" href="https://doi.org/10.5167/uzh-259369">https://doi.org/10.5167/uzh-259369</a>.</p>
 </div>
 </div>
@@ -1153,8 +1285,8 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "pstroe/chartering-new-realms-2024",
+            ref: "chapter_2",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1195,7 +1327,8 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1204,6 +1337,8 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Review feedback &amp; To Dos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-how-good-is-mt-at-translating-latin-religious-texts">Chapter 2: How good is MT at translating Latin religious texts?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-work">Previous Work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-data">Methods &amp; Data</a><ul class="nav section-nav flex-column">
@@ -1221,7 +1356,7 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-discussion">Results &amp; Discussion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-scores-within-sources">Comparing scores within sources</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-legibus">De Legibus</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-the-kings-of-britain">History of the Kings of Britain</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-regum-britanniae">Historia Regum Britanniae</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#religious-texts">Religious texts</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#job-3-11-13-in-detail">Job 3:11-13 in detail</a></li>
 </ul>
@@ -1233,11 +1368,15 @@ For non-biblical texts, while its performance decreases slightly, with a BLEU sc
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-scores-across-metrics">Comparing scores across metrics</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">Bibliography</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -1285,8 +1424,8 @@ By Phillip B. Ströbel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
