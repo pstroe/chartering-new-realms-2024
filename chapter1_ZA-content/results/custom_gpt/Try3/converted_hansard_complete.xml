@@ -5,7 +5,7 @@
       <titleStmt>
         <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
         <title type="sub">Minutes of the National Assembly of South Africa</title>
-        <meeting n="1" corresp="#DZ" ana="#parla.NA">National Assembly</meeting>
+        <meeting n="1">National Assembly</meeting>
       </titleStmt>
       <editionStmt>
         <edition>1.0</edition>

@@ -5,7 +5,7 @@
       <titleStmt>
         <title xml:lang="en" type="main">South African parliamentary Hansard papers</title>
         <title type="sub">Minutes of the National Assembly of South Africa</title>
-        <meeting n="1" corresp="#DZ" ana="#parla.NA">National Assembly Proceedings</meeting>
+        <meeting n="1">National Assembly Proceedings</meeting>
       </titleStmt>
       <editionStmt>
         <edition>1.0</edition>
@@ -46,7 +46,7 @@
         </note>
         <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
         <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
-        <u xml:id="25-02-2020_u1" who="#houseChairperson">
+        <u xml:id="u1_25-02-2020" who="#houseChairperson">
           <seg xml:lang="en">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of amendments to our rules.</seg>
         </u>
       </div>

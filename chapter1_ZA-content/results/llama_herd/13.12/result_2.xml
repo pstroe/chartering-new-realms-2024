@@ -1,3 +1,4 @@
+<!-- 
 Here is a step-by-step guide on how to adapt the given raw text into a more coherent and readable format:
 
 1. Remove unnecessary details: Some sections of the original text contain unnecessary information, such as the speaker's name, ID number, or specific dates. Remove these details to make the text more concise.
@@ -66,51 +67,56 @@ To adapt the raw text, let's break it down into steps:
 The final answer is: The Science and Technology Laws Amendment Bill aims to enhance post-school knowledge and skills development by harmonizing the regulatory framework for public entities under our Ministry. This will improve governance, ensuring consistency in processes such as remuneration, termination of membership, and CEO appointments. It’s crucial that we adopt this Bill to ground our nation's future science, technology, and innovation paradigm on tried and tested principles of good governance.
 To adapt the provided raw text into the same XML format, we'll need to make some adjustments to the structure and content. Here's a possible adaptation:
 
-```xml
-<u xmlns="http://www.w3.org/1999/xlink" xml:id="25-02-2020_u17" 
+
+```xml -->
+
+<u xmlns="http://www.w3.org/1999/xlink" xml:id="u17_25-02-2020" 
      who="#WhitePaperOnScienceAndTechnology"> 
     <seg xml:lang="en">The 1996 White Paper on Science and Technology introduced a concept of a national system of innovation which is defined as a network of institutions, organisations and policies that work together to achieve a common set of social and economic goals and objectives for the development of science and technology in our country.</seg>, 
     <note type="speaker">White Paper on Science and Technology:</note> 
-    <u xml:id="25-02-2020_u18" who="#WhitePaperOnScienceAndTechnology"> 
+    <u xml:id="u18_25-02-2020" who="#WhitePaperOnScienceAndTechnology"> 
         <seg xml:lang="en">However, 23 years after the promulgation of the 1996 White Paper on Science and Technology and following a number of reviews of the national system of innovation in the 1996 White Paper, including the recent approval by Cabinet of a new White Paper on Science and Technology and Innovation in March 2019, the various reviews of the National System of Innovation, NSI, and the White Paper show that despite significant progress, challenges remain in attaining the ideal in the 1996 White Paper.</seg>, 
     </u>
 </u>
 
-<u xmlns="http://www.w3.org/1999/xlink" xml:id="25-02-2020_u19" 
+
+<u xmlns="http://www.w3.org/1999/xlink" xml:id="u19_25-02-2020" 
      who="#ChallengesInNationalSTIAgendaSitting"> 
     <seg xml:lang="en">Key challenges constraining the performance of NSI are the inadequate and collaborative means of national STI agenda sitting, insufficient policy coherence, coordination, weak partnership and so forth.</seg>, 
     <note type="speaker">Challenges in National STI Agenda Sitting:</note> 
-    <u xml:id="25-02-2020_u20" who="#ChallengesInNationalSTIAgendaSitting"> 
-        <seg xml:lang="en">Now, a notable observation from the 2016/17 research and experimental development survey show that higher education sector was the largest contributed to the overall increase in the gross expenditure on research and development of R827 million in constant 2010 values.</seg>, 
+    <u xml:id="u20_25-02-2020" who="#ChallengesInNationalSTIAgendaSitting"> 
+        <seg xml:lang="en">Now, a notable observation from the 2016/17 research and experimental development survey show that higher education sector was the largest contributed to the overall increase in the gross expenditure on research and development of R827 million in constant 2010 values.</seg> 
     </u>
 </u>
 
-<u xmlns="http://www.w3.org/1999/xlink" xml:id="25-02-2020_u21" 
+<u xmlns="http://www.w3.org/1999/xlink" xml:id="u21_25-02-2020" 
      who="#CallToBusinessSector"> 
     <seg xml:lang="en">We believe that this Science and Technology Laws Amendment Bill will contribute significantly towards that increase in research and development.</seg>, 
     <note type="speaker">Call to Business Sector:</note> 
-    <u xml:id="25-02-2020_u22" who="#CallToBusinessSector"> 
+    <u xml:id="u22_25-02-2020" who="#CallToBusinessSector"> 
         <seg xml:lang="en">I thank you Ms C V KING: Hon House Chairperson, the scientific perspective of the world, especially the living world, inexorably impresses on us a dynamic picture of the world of entities and structures involved in continuous and incessant change and in process without ceasing.</seg>, 
     </u>
 </u>
 
-<u xmlns="http://www.w3.org/1999/xlink" xml:id="25-02-2020_u23" 
+<u xmlns="http://www.w3.org/1999/xlink" xml:id="u23_25-02-2020" 
      who="#ImportanceOfFitForPurpose"> 
     <seg xml:lang="en">The Western Cape government in its submission of the Bill expressed the importance of fit for purpose when appointed to the boards, the inclusion of an appeals committee and the chief executive officer, CEO’s term of office.</seg>, 
     <note type="speaker">Importance of Fit for Purpose:</note> 
-    <u xml:id="25-02-2020_u24" who="#ImportanceOfFitForPurpose"> 
+    <u xml:id="u24_25-02-2020" who="#ImportanceOfFitForPurpose"> 
         <seg xml:lang="en">Change is scientific; progress is ethical; change is indubitable, whereas progress is a matter of controversy.</seg>, 
     </u>
 </u>
 
-<u xmlns="http://www.w3.org/1999/xlink" xml:id="25-02-2020_u25" 
+<u xmlns="http://www.w3.org/1999/xlink" xml:id="u25_25-02-2020" 
      who="#Conclusion"> 
     <seg xml:lang="en">I thank you.</seg>, 
     <note type="speaker">Conclusion:</note> 
-    <u xml:id="25-02-2020_u26" who="#Conclusion"> 
+    <u xml:id="u26_25-02-2020" who="#Conclusion"> 
         <seg xml:lang="en">[Applause.]</seg>, 
     </u>
 </u>
+
+<!--
 ```
 
-Please note that this adaptation is just one possible way to translate the original text into XML format, and there may be other ways to achieve a similar result.
+ Please note that this adaptation is just one possible way to translate the original text into XML format, and there may be other ways to achieve a similar result.-->
