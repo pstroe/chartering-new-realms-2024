@@ -22,8 +22,7 @@ What are the weaknesses / flaws of this chapter?
 - Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :)
     -> **done?**
 - Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables.
-    -> to be discussed
-    -> Check executability of code 
+    -> to be discussed: I think the code does not harm our paper and having all the results in the paper is not feasable. In the current version the code works, but can also be ignored if someone doesn't care.
 - In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources.
     -> **done**
 - Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :).
@@ -31,10 +30,6 @@ What are the weaknesses / flaws of this chapter?
 - Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.
 - The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
     -> **done**
-- Add some more sources (de legibus, historia etc., which versions)
-    -> **done**
-
-- check sources in text
 
 # Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
@@ -129,7 +124,7 @@ The poetic passages were drawn from 3 of the so called "Poetic Books" of the Bib
 
 Some of the poetic books contain texts which scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs {cite:p}`Staubli2018`.
 
-To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
+To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus* ({cite:p}`Cicero1959`, {cite:p}`CiceroFott2014`), a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae* ({cite:p}`Monmouth1136`, {cite:p}`Monmouth1999`), which includes descriptive historical narratives. 
 
 <table>
     <tbody>
