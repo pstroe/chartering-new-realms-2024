@@ -158,9 +158,9 @@ The following section discusses the methodology used to analyze the sentiment of
 
 Initially, we applied sentiment analysis using [VADER](https://vadersentiment.readthedocs.io/en/latest/) (Valence Aware Dictionary and sEntiment Reasoner). But because VADER is speficially trained on social media text, it proved to not perform adequately for our purposes. For instance, VADER often interprets key terms as neutral — such as "Jesus" — despite their significant positive connotations in the text. Conversely, terms like "God" are appropriately identified as positive. This inconsistency prompted a shift to more advanced tools.
 
-To address these challenges, we employed a pre-trained DistilBERT model fine-tuned for sentiment classification by [Huggingface](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english). While further fine-tuning the model specifically on biblical texts would likely improve performance further, the existing model demonstrated sufficient efficacy for this study.
+To address these challenges, we employed a pre-trained DistilBERT model fine-tuned for sentiment classification by [Huggingface](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english). While further fine-tuning the model specifically on biblical texts would likely improve performance further, this would have gone beyond the scope of our analysis.
 
-The sentiment analysis process involved applying the DistilBERT model to classify each verse in the dataset as either positive or negative, alongside a confidence score indicating the model's certainty for each prediction. The data was then grouped by Bible book and version to aggregate sentiment predictions for each group. To determine the overall sentiment of a book or version, we used a majority voting approach, where the most frequent sentiment label (positive or negative) among the verses defined the book's predominant sentiment. The results were compiled into a single DataFrame, summarizing sentiment trends across all books and versions.
+The sentiment analysis process involved applying the DistilBERT model to classify each verse in the dataset as either positive or negative, alongside a confidence score indicating the model's certainty for each prediction. The data was then grouped by Bible book and version to aggregate sentiment predictions for each group. To determine the overall sentiment of a book or version, we used the ratio of positive to negative verses, to get a first idea of the predominant sentiment of a book. The results were compiled into a single DataFrame, summarizing sentiment trends across all books and versions.
 
 To assess the model's performance, we analyzed a sample of verses from the OEB version of Revelation, a book expected to have a more negative tone due to its apocalyptic content. 
 
@@ -179,13 +179,19 @@ sentiment_df.head(10)
 As we can see, a verse like "The Revelation of Jesus Christ, which God gave to him to make known to his servants, concerning what must shortly take place, and which he sent and revealed by his angel to his servant John," is labeled positive with a high confidencd score of 0.969. This classification likely stems from the model detecting positive or anticipatory language, such as "Jesus Christ," "revealed," and "what must shortly take place." These terms often convey hope or importance, which the sentiment model associates with positivity, even though the verse has deeper theological and prophetic significance.
 
 In contrast, a verse like "I, John, who am your brother, and who share with you in the suffering and kingship and endurance of Jesus, found myself on the island called Patmos, for the sake of the message of God and the testimony to Jesus." is labeled negative with high confidence score of 0.917. While the overall tone seems more positive, as it expresses a sense of solidarity, endurance, and purpose, the model may classify it as negative due to the context of suffering and intensity of language. The model may focus more on negative keywords than biblical context.
-Taking these sentences as examples shows that while the model works well enough, it should be fine-tuned to biblical texts to capture some keywords better in the spirutual context.
-was labeled negative with a high confidence score of 0.917. While the verse's overall tone reflects solidarity, endurance, and purpose, the model likely focused on terms like "suffering" and interpreted them as indicators of negativity. This suggests that the model may weigh certain keywords more heavily than the broader context, highlighting a need for fine-tuning to better understand spiritual and theological nuances.
+Taking these sentences as examples shows that while the model likely works well enough to gain a first impression of the sentiment, it should be fine-tuned to biblical texts to capture some keywords better in the spirutual context.
 
-In summary, this workflow systematically analyzed sentiment trends across books in four Bible translations. It provided insights into the overall tone of each book and version—whether predominantly positive or negative—while also measuring the intensity of sentiment through confidence scores. To address potential biases in majority voting, we calculated the ratio of positive to negative sentiments, offering a more detailed view of sentiment dynamics.
+Because relying solely on the ratio of positive to negative verses does not account for potential misclassification—especially in books with only a few verses, where even small errors can heavily skew the results—we took an additional step to better understand the differences in sentiment between the four Bible versions. To address this, we incorporated Cohen’s $h$, which allowed us to quantify the magnitude of these differences in a more reliable and meaningful way. Unlike purely statistical tests, which determine if differences are unlikely due to chance, Cohen’s $h$ focuses on practical significance, helping us assess whether differences are substantial enough to matter. 
+While this approach does not account for cases of misclassification directly, it helps us give a sense of the current differences and how meaningful they are.
 
-This methodology establishes a robust framework for examining the emotional tones in biblical texts, contributing to a deeper understanding of theological and interpretative shifts across translations. The next section will explore these findings in greater detail.
+Cohen’s $h$ standardizes the difference between proportions on an arcsine scale, which reduces the impact of extreme values and ensures fair comparisons across datasets of varying sizes. The formula for Cohen’s $h$ is:
 
+$$
+h = 2 \cdot \left( \arcsin\left(\sqrt{p_1}\right) - \arcsin\left(\sqrt{p_2}\right) \right)
+$$
+
+where $p_1$ and $p_2$ represent the positivity proportions for two versions. This quantifies the magnitude of the difference in proportions. We categorized the effect sizes as negligible ($h$ < 0.1), small (0.1 ≤ $h$ < 0.2), moderate (0.2 ≤ $h$ < 0.5), and large ($h$ ≥ 0.5). By combining statistical and practical significance, we gained a nuanced understanding of translation differences.
+To streamline the process, we automated pairwise comparisons for all books, categorizing results by statistical and practical significance. This ensured consistency and helped identify patterns across translations, which will be discussed in the result section.
 
 ## Results and Analysis
 
@@ -242,6 +248,9 @@ These changes highlight the tension between staying true to the original text an
 
 
 ## Sentiment Analysis
+
+### Ratio of positive to negative verses
+
 The sentiment analysis of Bible books across various translations reveals that most books predominantly have a positive tone. As shown in {numref}`sentiment_per_book`, the ratio of positive to negative verses in each book indicates how often positive sentiment is expressed compared to negative sentiment. A ratio of 1 serves as the threshold, meaning an equal number of positive and negative verses, with ratios above 1 signaling more positivity and those below 1 suggesting more negativity. Interestingly, very few books come close to this threshold, and even fewer fall below it, highlighting the overall positive sentiment trend in the dataset.
 
 ```{figure} sentiment_per_book_by_version.png
@@ -257,17 +266,28 @@ Certain books stand out for their especially positive tone across all translatio
 
 Interestingly, Revelation and Esther present unique sentiment patterns. Revelation, despite its heavy focus on apocalyptic imagery and divine judgment, displays a balanced sentiment distribution across translations. This balance likely reflects its broader themes of hope, redemption, and ultimate victory, which counteract its darker elements. Esther, recounting the story of a Jewish woman saving her people, shows a generally positive tone, particularly in traditional translations ([Scripture Source](https://scripturesource.com/biblebookthemes/)). The OEB, however, leans slightly more negative, possibly due to differences in language or interpretive choices in modern translations.
 
-The findings also expose limitations in the sentiment analysis model. Theological terms like "justice" or "judgment" might be classified differently depending on their context, introducing potential biases. For example, terms related to divine judgment might skew negative even in contexts where their broader theological meaning is positive or redemptive.
+### Analysis of Cohen’s $h$ Results
 
-In summary, sentiment analysis reveals a consistently positive tone across Bible books and translations, with modern translations slightly amplifying positivity through simpler language. Books like Ephesians and Philemon reflect their positive themes of unity and reconciliation, while Revelation and Esther challenge expectations with more nuanced sentiment trends. These insights highlight the impact of translation choices, thematic emphasis, and linguistic style on how sentiment is perceived in religious texts.
+The results of Cohen’s $h$ indicate a range of differences in positivity proportions across Bible versions. The majority of pairwise comparisons (65.97%) show negligible differences in positivity proportions. This suggests that, for most books and versions, the model’s sentiment classifications are relatively similar, with little practical significance in the differences. These negligible differences imply a high degree of consistency in sentiment classification across the Bible versions studied, and they are unlikely to matter in practice.
+
+Approximately 26.39% of comparisons exhibit small differences in positivity proportions. These differences, while noticeable, are not substantial. They may reflect minor shifts in sentiment emphasis between versions, potentially due to translation choices, linguistic nuances, or even misclassification of verses.
+
+A smaller proportion, 7.64% of comparisons, show moderate differences, indicating more meaningful divergences in sentiment between versions. These moderate differences suggest that certain versions may interpret or present sentiment in ways that are more distinct, possibly influenced by the translators’ theological or stylistic choices.
+
+In Colossians, the WEB appears to have a slightly more positive tone compared to the older versions, DRB and KJV. Similarly, in James, the WEB also exhibits a slightly more positive tone than the KJV. In Philemon, the WEB stands out as the most positive of all versions.
+
+In Second John, the DRB shows a slightly more positive sentiment than the OEB and KJV, though not the WEB. Conversely, in Third John, the OEB is slightly more positive than the older versions, KJV and DRB.
+
+Overall, where moderate differences were observed, the WEB consistently appears to have the most positive tone, suggesting that modern versions such as WEB and OEB often present a more positive sentiment compared to older translations like KJV and DRB. An exception is Third John, where the DRB is the most positive.
+
 
 ## Conclusion
 
 Our application of n-grams, collocations, and sentiment analysis in comparing Bible translations highlights how religious texts adapt to changing linguistic, cultural, and theological contexts. Older translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) tend to preserve formal, archaic language that prioritizes doctrinal accuracy, while newer translations like the World English Bible (WEB) and Open English Bible (OEB) focus on making the text more accessible and engaging through simpler, conversational language. These differences affect both how the text is framed linguistically and how its sentiment is interpreted.
 
-Sentiment analysis shows that most books of the Bible have an overall positive tone, with similar trends across different translations. However, modern translations tend to slightly emphasize positivity, likely due to their more approachable language. Books like Ephesians and Philemon stand out with strongly positive themes of unity and reconciliation, while others, such as Revelation and Esther, show more complex sentiment patterns that challenge initial expectations. That said, the sentiment model has some limitations, especially when interpreting theological terms like "justice" or "judgment," which could lead to biases. The model would also benefit from fine-tuning to better handle biblical texts, and further work is needed to analyze verse-level sentiments more accurately.
+Analyzing both the sentiment ratios and practical significance offers an initial perspective on sentiment classification across Bible versions and provides a useful starting point for further analysis. However, to derive more meaningful insights, it is essential to fine-tune the model on Bible-specific texts to reduce misclassification. The findings presented here should be interpreted with caution, as the model was not trained on Bible texts, and only spot tests were performed. These tests indicated a degree of misclassification or unusual model behavior in certain cases. But overall, this first analysis indicates a slightly more positive tone in the newer Bible versions in some of the books analyzed.
 
-This study is limited by the selection of books analyzed, as not all books of the Bible were included. To ensure consistency, the same books were compared across all translations. While the findings reveal key themes, input from experts could add valuable insights into the theological and linguistic details, helping to verify and refine the results.
+Lastly, this study is limited by the selection of books analyzed, as not all books of the Bible were included. To ensure consistency, the same books were compared across all translations. While the findings reveal key themes, input from experts could add valuable insights into the theological and linguistic details, helping to verify and refine the results, especially in terms of sentiment analysis.
 
 ## References
 
