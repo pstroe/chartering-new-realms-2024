@@ -11,22 +11,17 @@ execute:
   execute_notebooks: false
   execution_cache_path: _build/.jupyter_cache
   
-# Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
     targetname: book.tex
 
-# Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references_chap2.bib
 
-# Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  branch: main
+  url: https://github.com/pstroe/chartering-new-realms-2024
+  branch: chapter_2
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
@@ -37,7 +32,6 @@ sphinx:
 
 launch_buttons:
   thebe: true
-  binderhub_url: https://mybinder.org/v2/gh/pstroe/chartering-new-realms-2024/chapter_2
   binder_url: https://mybinder.org
 
 # Thebe configuration
