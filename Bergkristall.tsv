@@ -1,0 +1,13 @@
+Characters	Pfarrer	Schuster	Tobias	Färber	Färberin	Schustersfrau	Konrad	Sanna	Mutter	Vater	Magd	Großmutter
+Pfarrer	0	0	0	0	0	0	0	0	0	0	0	0
+Schuster	0	0	1	0	0	1	1	1	1	1	1	1
+Tobias	0	1	0	0	0	0	0	0	0	0	0	0
+Färber	0	0	0	0	0	0	0	0	1	0	0	0
+Färberin	0	0	0	0	0	1	1	1	1	1	0	0
+Schustersfrau	0	1	0	1	1	0	1	1	1	1	1	1
+Konrad	0	1	0	0	1	1	0	1	0	1	1	0
+Sanna	0	1	0	1	1	1	0	0	1	1	1	1
+Mutter	0	1	0	0	0	1	1	1	0	1	1	0
+Vater	0	1	0	0	0	1	1	1	1	0	0	0
+Magd	0	1	0	0	0	1	1	1	1	0	0	0
+Großmutter	0	1	0	1	0	1	1	1	1	0	0	1
