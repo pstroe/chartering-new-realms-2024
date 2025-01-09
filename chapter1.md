@@ -815,6 +815,8 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
 
+An overview of the XML validation results for each LLM can be found {doc}`here <../chapter1_ZA-content/results/xml_validation.xlsx>`
+
 ### Llama Herd 
 The Llama models failed entirely in producing well-formed XMLs that adhered to the ParlaMint schema. Their outputs were not valid XML files at all, with the structure lacking the basic syntax required for XML validation. As a result, the validation script failed completely, rendering the outputs unusable for any meaningful processing or schema compliance.
 
