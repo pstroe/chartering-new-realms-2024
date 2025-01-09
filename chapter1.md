@@ -817,15 +817,15 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 ## Discussion 
 STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
-The following is a summary of the most notable successes and issues within the outputs provided by the LLMs tested
+
 ### Llama Herd 
+The Llama models failed entirely in producing well-formed XMLs that adhered to the ParlaMint schema. Their outputs were not valid XML files at all, with the structure lacking the basic syntax required for XML validation. As a result, the validation script failed completely, rendering the outputs unusable for any meaningful processing or schema compliance.
 
 ### Gemini 1.5 Flash 
+Gemini largely failed to produce any output at all in most attempts. On the rare occasions it did generate XML output, it was incorrect both structurally and content-wise, failing to adhere to the ParlaMint schema or accurately represent the input data. However, the XML syntax was mostly correct, with proper tag closures and formatting, demonstrating a basic understanding of XML structure despite the overall inadequacy of the results.
 
 ### Custom GPT
-#### Try 1
-The first output file consists of only 52 lines, with most of the content having been excluded. Upon being prompted to include the entire input, this issue improved in the second output file. However, the XML schema was not adhered to. Every single line contained within the input TXT file was, in the output XML, contained in the "note" element from the ParlaMint schema, which is only meant to contain transcriber's notes.
-Through prompting, this issue was improved and the XML started to gain a more ParlaMint-like structure.
+The custom GPTs' attempts at generating XML output exhibited recurring issues. Across all three cutsom GPTs the first outputs were incomplete, omitting much of the content. Later attempts included the entire input but failed to adhere to the ParlaMint XML schema. Speech content was incorrectly nested in "note" elements, parts of speeches were contained within the "speaker" attribute, metadata such as page numbers and headers were retained as part of the speeches, treanscriber's notes were handled incorrectly, and languages were universally mislabeled as English. Despite prompting, structural issues persisted, such as missing attributes in "u" elements, inconsistent line counts, and a failure to follow the example XML's formatting. Across multiple attempts, only minimal improvements were achieved, the most promising of which was the first GPT's final attempt: 
 
 ```{code-cell} xml
 <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the</note>
@@ -836,16 +836,15 @@ Through prompting, this issue was improved and the XML started to gain a more Pa
           <seg xml_lang="en">TUESDAY, 25 FEBRUARY 2020</seg>
           <seg xml_lang="en">Page: 3</seg>
 ```
-While the correct nesting of the elements was achieved, their contents were not correctly structured. For example, parts of speeches were contained within the "speaker" attribute of the "note" element. Additionally, the GPT failed to remove metadata, like page numbers and page headers, from the content, even though this was done in the example XML. It simply classified this metadata as part of the speeches. Another notable issue is the GPTs inability to identify the languages spoken, with it labelling every speech as English. 
 
-#### Try 2
-This GPT's first output had the same issue as the previous one, with it only consisting of 56 lines. The next attempt was better, though structurally the XML schema was not correct. Even though the GPT was reminded of the correct XML structure, its output did not improve. It attempted to format around 100 lines, with the rest of the TXT input being contained within  asinge "seg" element. The fourth output was not any better. 
+This seems to indicate that giving the custom GPT the gold standard TXT and XML files was the most successful, though more prompting and more attempts did nothing to improve this final output. 
 
-#### Try 3
-Again, the first output was shortened and contained none of the speech conent of the TXT file. The second output did contain the entire input, but was structured badly, with the "u" elements missing required attributes like the speaker. In its third attempt the GPT reverted back to the first output, with its XML output file only containing 41 lines. Its fourth attempt was structured similarly to the second output with little iprovement having been made. 
+Despite the issues with content accuracy and schema adherence, the custom GPTs consistently produced well-formed XMLs. The syntax was valid, with correctly closed tags and mostly proper nesting of elements, even when the content within the elements or their attributes was incorrect. This demonstrates the GPTs' capability to handle the structural requirements of XML, albeit with challenges in adhering to the specificity of the ParlaMint schema.
+
 
 ### GPT-4o 
-In its first attempt, GPT-4o output an XML file which did follow the ParlaMint structure properly in the beginning, but devolved into chaos after 40 lines. Here is what the main section containing the speeches looked like in this first attmpt:
+
+In its first attempt, GPT-4o produced an XML file that initially adhered to the ParlaMint structure but  became disorganized after 40 lines. Below is an excerpt from the section containing the speeches in this initial attempt:
 
 ```{code-cell} xml
 <u who="#House met at 14"><seg xml:lang="en">House Chairperson Ms M G Boroto took the Chair and requested</seg></u>
@@ -856,14 +855,10 @@ In its first attempt, GPT-4o output an XML file which did follow the ParlaMint s
 <u who="#HOUSE CHAIRPERSON (Ms M G Boroto)"><seg xml:lang="en">the Rules Committee report which introduced a number of</seg></u>
 <u who="#HOUSE CHAIRPERSON (Ms M G Boroto)"><seg xml:lang="en">amendments to our rules. Some of the amendments pertain to the</seg></u>
 ```
-While having a "seg" element contain a single line of the transciption is fine, a new "u" element should only be started when the speaker changes. After the intitial exchange between the House Chairperson and the Chief Whip of the Majority Party, GPT-4o assigned the same speaker, the Minister of Higher Education, to each utterance, which is obviously incorrect.
 
-The other three outputs did not improve at all. While the intial formatting remained accepatble, with it likely simply copying the input snippet, the input not contained in this snippet was formated into one single "seg" element. This means it completely neglected to identify speaker changes and represent them accordingly.
+Although having a "seg" element contain a single line of transcription is acceptable, a new "u" element should only begin when there is a change in speaker. However, after the initial exchange between the House Chairperson and the Chief Whip of the Majority Party, GPT-4o incorrectly attributed all subsequent utterances to the same speaker, the Minister of Higher Education—an obvious error. The subsequent three outputs showed no improvement. While the initial formatting was acceptable—likely because it copied the provided input snippet—GPT-4o processed the rest of the input into a single "seg" element. This approach completely ignored speaker changes and failed to represent them correctly. More broadly, GPT-4o struggled with key tasks: it failed to identify languages, labeling all utterances as English, and neglected to annotate transcriber's notes, such as descriptions of applause or interruptions. 
 
-More generally, GPT-4o failed completely to identify languages, marking every single utterance as being in English. Additionally, it failed to annotate transcriber's notes, like descriptions of applause, interruptions etc. 
-
-However, it managed quite well to output a valid XML file, even if it did not follow the schema it was tasked to encode the input into.
-
+Despite these issues, GPT-4o did succeed in producing valid XML files, even if they failed to follow the specific schema required for encoding the input.
 
 ### Limitations
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
