@@ -21,7 +21,7 @@ Anouk Menzi, Elizabeth Wagner
 #We will write this in the end
 
 ## Introduction
-Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. An attempt at making data accessible, interoprable, and reusable can be found in the Text Encoding Initiative, TEI {cite:p}`burnard_2013`. In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing, using the ParlaMint schema, an interoperable TEI XML schema for transcripts of parliamentary proceedings. This approach could be promising in cases where there is much raw data but it is not accessible in any coherent structure, as is the case, for example, for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data are the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to structure this data into the ParliMint schema, the attempt has been labour-intensive and performed on a small scale {cite:p}`ogrodniczuk_2024`. This chapter shall thus attempt to propose an approach to format the parliamentary proceedings into an interoperable XML schema, by employing the aid of different LLMs without the use of industrial strength hardware. 
+Scholars spend many hours on preprocessing raw data into structured collections that suit their needs {cite:p}`chen_2023`. This process is time and resource intensive, especially when dealing with natural language. Considering the current trend in the digital humanities away from big data towards massive data, the questions of making data Findable, Accessible, Interoperable, and Reusable {cite:p}`wilkinson_2016` have become a focus area of constructing data collections {cite:p}`ide_2003, könig_2021`. An attempt at making data findable, accessible, interoprable, and reusable can be found in the Text Encoding Initiative, TEI {cite:p}`burnard_2013`. In this chapter, we propose an approach to the construction of structured data collections with the assistance of Large Language Models, LLMs, to reduce the amount of human labour invested in preprocessing, using the ParlaMint schema, an interoperable TEI XML schema for transcripts of parliamentary proceedings. This approach could be promising in cases where there is much raw data but it is not accessible in any coherent structure, as is the case, for example, for the variations of South African English {cite:p}`barnard_2014, jeffery_2003, pienaar_2011`. One such source of raw data are the South African parliamentary proceedings. The South African Parliament supplies transcripts of its parliamentary proceedings online, and whilst attempts have been made to structure this data into the ParliMint schema, the attempt has been labour-intensive and performed on a small scale {cite:p}`ogrodniczuk_2024`. This chapter shall thus attempt to propose an approach to format the parliamentary proceedings into an interoperable XML schema, by employing the aid of different LLMs without the use of industrial strength hardware. 
 
 ## Relevant Literature 
 >Parliamentary proceedings (PP) are a rich source of data used by e.g. scholars in historiography, sociology, political science, linguistics, economics and economic history. As opposed to sources of most other language corpora, PP are not subject to copyright or personal privacy protections, and are typically available online thus making them ideal for compilation into corpora and open distribution. For these reasons many countries have already produced PP corpora, but each typically in their own encoding, thus limiting their comparability and utilisation in a multilingual setting.
@@ -61,7 +61,7 @@ A ParlaMint corpus is contained within a teiCorpus element, which includes a tei
 To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus more easy to maintain. {cite:p}`ParlaMint_2024`
 
 ##### Gold Standard
-The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-document downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into a TXT file. The content of this TXt file was not edited, save for occasional spelling errors within headers and subtitles. This TXT file was then converted to an XML file manually.
+The preprocessing of the transcriptions involved several steps to ensure consistency and compliance with the ParlaMint schema. This included turning the PDF-document downloaded from the South African parliament's website {cite:p}`hansardSA_2020` into a TXT file. The content of this TXT file was not edited, save for occasional spelling errors within headers and subtitles. This TXT file was then converted to an XML file manually.
 
 A ParlaMint corpus is contained within a teiCorpus element, which includes a teiHeader for overarching metadata and multiple TEI elements, each representing a distinct component of the corpus, typically corresponding to a single day's transcripts. To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In this setup, the main corpus file, called the corpus root, references individual files, the corpus component files. Thus, each day's transcripts are stored in a separate file, with the overarching structure being represented in the corpus root. This approach facilitates scalability and makes the corpus easier to maintain {cite:p}`ParlaMint_2024`.
 
@@ -98,7 +98,7 @@ The ParlaMint schema also allows for the encoding of extensive metadata around s
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
-The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample xml file was prepared. For this purpose, the txt file containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short txt was then converted into an xml file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different xml elements and attributes within the xml file to serve as example for the prompts served to the LLMs. 
+The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample XML file was prepared. For this purpose, the tTXTfile containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short TXT was then converted into an XML file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different xml elements and attributes within the XML file to serve as example for the prompts served to the LLMs. 
 
 Example snippet from the converted xml file, showing part of the teiHeader element:
 
@@ -181,7 +181,7 @@ GPT-4o was chosen for its accessibility, computational efficiency, and ease of u
 
 With the subscription to the GPT-4o model comes the option of configuring user-specific GPTs. Custom GPTs are specialized models tailored to perform specific tasks. Users can configure these models without coding by providing clear instructions and uploading relevant documents. Once configured, custom GPTs operate by leveraging the provided instructions and data to generate responses aligned with the user's requirements. {cite:p}`zhao_2024, garrido_2023, openai_2025` 
 
-Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and teaching {cite:p}`garrido_2023`, especially when the tasks involve information-retrieval. 
+Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in specialised, domain-specific tasks in fields such as medicine {cite:p}`liu_2024, muti_2024` and education {cite:p}`garrido_2023`, especially when the tasks involve information-retrieval. 
 
 **Models Used**
 - Llama 3.2 1B
@@ -191,7 +191,7 @@ Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in
 - GPT-4o
 - Custom GPT
 
-Because of the various implementations of the LLMs, with the Llama herd being locally run, and Gemini and GPT-4o being run through their online interface, different approaches had to be taken. 
+Because of the various implementations of the LLMs, with the Llama herd being run locally, and Gemini, GPT-4o and the custom GPTs being run through their online interface, different approaches had to be taken. 
 
 Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](experiments) section.
 
@@ -225,9 +225,9 @@ def validate_xml(relaxng_file, xml_file):
             xml_doc = etree.parse(xml_file_obj)
         
         if relaxng.validate(xml_doc):
-            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema.")
+            print(f"The XML file '{xml_file}' is valid according to the RelaxNG schema")
         else:
-            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema.\n")
+            print(f"The XML file '{xml_file}' is NOT valid according to the RelaxNG schema\n")
             print("Validation errors:")
 
             error_count = 0
@@ -257,7 +257,9 @@ if __name__ == "__main__":
     validate_xml(relaxng_file, xml_file)
 
 ```
-If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema.". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
+If the XML file is valid, the output consists of a single line: "The XML file '{xml_file}' is valid according to the RelaxNG schema". If the XML file is not valid, the script outputs a list of all errors with their corresponding line numbers and error types. Additionally, it outputs a total sum of errors and a sum of each type of error, which facilitates the comparison across different evaluations.
+
+Where the validation using a RelaxNG file falls short is when the tested XML file is not well-formed, when the XML is syntax is not adhered to. For instance, the script will fail immediately if the tested file is missing an XML tag (< or >) or when an element is not properly closed. It also cannot validate the correctness of the content of the XML elements, an issue that was manually evaluated. 
 
 [^footnote9]: This RelaxNG file can be accessed on the ParlaMint project's GitHub repository, in the [Schema](https://github.com/clarin-eric/ParlaMint/tree/main/Schema) folder.
 
@@ -570,7 +572,7 @@ the Rules Committee report which introduced a number of
 amendments to our rules. 
 ```
 
-It's output however, was mostly unusable, as it refused to attempt the task and gave answers such as: 
+Its output, however, was mostly unusable, as it refused to attempt the task and gave answers such as: 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
@@ -597,7 +599,174 @@ In the Additional Instructions section, the user may provide detailed instructio
 
 The Knowledge is provided by the user in the form of uploaded files, which provides addtional context for the GPT to reference. The New Capabilities consist of Web Browsing, DALL·E Image Generation, Canvas and Advanced Data Analysis, which allow the GPT to perform additional functionality. {cite:p}`openai_2025, openai_knowledge`
 
-In order to have the custom GPT perform the XML-formatting task, the approach of interactive or multi-shot reasoning was chosen, as it has been shown that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
+In order to have the custom GPT perform the XML-formatting task, the approach of interactive or multi-shot reasoning was chosen, as it has been suggested that this improves GPT's performance compared to a single-shot reasoning approach {cite:p}`truhn_2023`.
+
+Three custom GPTs were trained with each GPT being configured with slightly different parameters. However, each GPT was at some point in the interaction, given two matching snippets from the input TXT file and its corresponding XML file.
+
+Snippet from the TXT file:
+
+```{code-cell} xml
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 1
+TUESDAY, 25 FEBRUARY 2020
+____
+PROCEEDINGS OF THE NATIONAL ASSEMBLY
+____
+The House met at 14:00.
+House Chairperson Ms M G Boroto took the Chair and requested
+members to observe a moment of silence for prayer or
+meditation.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Hon members, I would
+like to remind you that on 4 December 2019 the House adopted
+the Rules Committee report which introduced a number of
+amendments to our rules. Some of the amendments pertain to the
+sequence of proceedings and Members’ Statements. To facilitate
+sufficient opportunity for Ministers’ Responses to Members’
+Statements, the sequence of proceedings has been amended so
+that Members’ Statements are now at the start of the
+proceedings on days that they are scheduled by the programming
+committee.
+UNREVISED HANSARD
+NATIONAL ASSEMBLY
+TUESDAY, 25 FEBRUARY 2020
+Page: 2
+The Rules Committee further agreed that the number of
+Ministers’ Responses be increased from six to seven and that
+time allowed for Ministers’ Responses be increased from two
+minutes to three minutes.
+With that background, I will now take the first item on the
+Order Paper which is Members’ Statements. Does any member of
+the ANC wish to make a statement?
+The CHIEF WHIP OF THE OPPOSITION: Sorry Chair, on a point of
+order.
+The HOUSE CHAIRPERSON (Ms M G Boroto): Please take your seat.
+Yes, what’s your point of order?
+The CHIEF WHIP OF THE OPPOSITION: I’m terribly sorry to the
+hon member for disrupting him, but House Chair, I have to just
+look around this House and I think we need to note that there
+is one Minister in the House. So, we are about to do
+ministerial statements but there are not any Ministers in the
+House to hear them.
+The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the
+House and I can say that I see a Minister and two Deputy
+```
+
+Snippet from the XML file: 
+
+```{code-cell} xml
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
+    <teiHeader>
+     <fileDesc>
+       <titleStmt>
+            <title type="main" xml:lang="en">South African parliamentary Hansard papers</title>
+            <title type="sub">Minutes of the National Assembly of South Africa</title>
+            <meeting n="uh_1"</meeting> 
+       </titleStmt>
+
+
+       <editionStmt>
+            <edition>1.0</edition>
+       </editionStmt>
+
+
+       <extent> 
+            <measure unit="speeches" quantity="3"
+            xml:lang="en">3 speeches</measure>
+            <measure unit="words" quantity="2624"
+            xml:lang="en">2624 words</measure>
+       </extent>
+
+       <sourceDesc> 
+            <bibl>
+            <title type="main" xml:lang="en">Proceedings of the National Assembly</title>
+            <idno type="URI">https://www.parliament.gov.za/storage/app/media/Docs/hansard/ff55b51e-536f-4214-85c2-5f6259579504.pdf</idno>
+            <date when="2020-02-25">25.02.2020</date>
+            </bibl>
+       </sourceDesc>
+
+     </fileDesc>
+
+     <encodingDesc> 
+        <projectDesc> 
+            <p xml:lang="en">The South African Hansard Papers corpus</ref>
+              Here we could add a description of our project, if we wanted to.</p>
+        </projectDesc>
+
+     </encodingDesc>
+
+     <profileDesc>
+        <settingDesc>
+            <setting> 
+                <name type="place">Houses of Parliament</name>
+                <name type="city">Cape Town</name>
+                <name type="country" key="ZA">South Africa</name>
+                <date when="2020-02-25">25.02.2020</>
+            </setting>
+        </settingDesc>
+     </profileDesc>
+
+    </teiHeader>
+
+    <text>
+        <body>
+            <div type="debateSection">
+             <note type="time">The House met at <time when="2020-02-25T014:00:00">14:00</time>.</note>
+             <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
+             <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+             <u xml:id="u1_25-02-2020" who="#houseChairperson">
+                <seg xml:lang="en">Hon members, I would
+                    like to remind you that on 4 December 2019 the House adopted
+                    the Rules Committee report which introduced a number of
+                    amendments to our rules. Some of the amendments pertain to the
+                    sequence of proceedings and Members’ Statements. To facilitate
+                    sufficient opportunity for Ministers’ Responses to Members’
+                    Statements, the sequence of proceedings has been amended so
+                    that Members’ Statements are now at the start of the
+                    proceedings on days that they are scheduled by the programming
+                    committee.
+                    </seg>
+                <seg xml:lang="en">The Rules Committee further agreed that the number of
+                    Ministers’ Responses be increased from six to seven and that
+                    time allowed for Ministers’ Responses be increased from two
+                    minutes to three minutes.
+                    With that background, I will now take the first item on the
+                    Order Paper which is Members’ Statements. Does any member of
+                    the ANC wish to make a statement?
+                </seg>
+             </u>
+             <note type="speaker">The CHIEF WHIP OF THE OPPOSITION:</note>
+             <u xml:id="u2_25-02-2020" who="#ChiefWhipOfOpposition"> 
+                <seg xml:lang="en">
+                    Sorry Chair, on a point of order.
+                </seg>
+             </u>
+             <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+             <u xml:id="u3_25-02-2020" who="#houseChairperson">
+                <seg xml:lang="en">
+                    Please take your seat. Yes, what’s your point of order?
+                </seg>
+             </u>
+             <note type="speaker">The CHIEF WHIP OF THE OPPOSITION:</note>
+             <u xml:id="u4_25-02-2020" who="#ChiefWhipOfOpposition"> 
+                <seg xml:lang="en">
+                    I’m terribly sorry to the
+                    hon member for disrupting him, but House Chair, I have to just
+                    look around this House and I think we need to note that there
+                    is one Minister in the House. So, we are about to do
+                    ministerial statements but there are not any Ministers in the
+                    House to hear them.
+                </seg>
+             </u>
+             <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
+             <u xml:id="u5_25-02-2020" who="#houseChairperson">
+                <seg xml:lang="en">
+                    I’m looking around the
+                    House and I can say that I see a Minister and two Deputy
+                <\seg>
+```
 
 #### Try 1
 
