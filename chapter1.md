@@ -101,9 +101,9 @@ The ParlaMint schema also allows for the encoding of extensive metadata around s
 
 [^footnote3]: For more information about the structure of the ParlaMint schema visit their [GitHub repository](https://github.com/clarin-eric/ParlaMint).
 
-The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample XML file was prepared. For this purpose, the tTXTfile containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short TXT was then converted into an XML file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different xml elements and attributes within the XML file to serve as example for the prompts served to the LLMs. 
+The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample XML file was prepared. For this purpose, the TXT file containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short TXT was then converted into an XML file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different XML elements and attributes within the XML file to serve as example for the prompts served to the LLMs. 
 
-Example snippet from the converted xml file, showing part of the teiHeader element:
+Example snippet from the converted XML file, showing part of the teiHeader element:
 
 ```{code-cell} xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
@@ -130,7 +130,7 @@ Example snippet from the converted xml file, showing part of the teiHeader eleme
 
 As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file, which is used in the component file to identify the speaker and link them to the metadata file. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context to ensure a clean run of the LLM. In a next step, the speaker element could be called upon to insert the relevant ID.
 
-Example snippet from the converted xml file, showing part of text element containing the speeches:
+Example snippet from the converted XML file, showing part of text element containing the speeches:
 
 ```{code-cell} xml
 <text>
@@ -490,13 +490,13 @@ for filename in os.listdir(folder_path):
                 print(f'Processing file: {filename}')
                 content = file.read()
 
-                #implements the output of the model into a list so that it can later be added to an xml file. 
+                #implements the output of the model into a list so that it can later be added to an XML file. 
                 document_list = []
                 i = 0 #counters for debugging
                 for chunk in chunk_text(content, chunk_size=1000):
                     try:
                         #actual prompt given to LLM
-                        question = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same xml format?'
+                        question = f'If given raw text: {example_txt} with the end goal: {example_xml}, can you adapt this: {chunk} into the same XML format?'
                         #stores the response of the model in a variable
                         response = model(prompt.format(question=question))
                         document_list.append(response)
@@ -518,34 +518,34 @@ The results were mixed in quality. Llama 3 1B parameters mainly ignored the prom
 
 || **Prompts**                                                                                    | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|-----|----|------------------------------------|------------------------------------|
-|5| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 1B result 5<./chapter1_ZA-content/results/llama_herd/13.12/result_5.xml>` |
-|7| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Be a helpful assistant. | Snippets from TXT and XML file | View {Download}`llama 3 1B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
+|5| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same XML format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 1B result 5<./chapter1_ZA-content/results/llama_herd/13.12/result_5.xml>` |
+|7| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same XML format. | Answer: Be a helpful assistant. | - |Snippets from TXT and XML file | View {Download}`llama 3 1B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
 
 Llama 3 3B parameters showed similar problems, though it did not try to correct the data, rather it only sporadically, if at all, formated one or two utterances by a speaker. 
 
 || **Prompts**                                                                                   | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
-|2| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 2<./chapter1_ZA-content/results/llama_herd/13.12/result_2.xml>` |
-|10| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format. | Answer: Be a helpful assistant.  | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 10<./chapter1_ZA-content/results/llama_herd/13.12/result_10.xml>` |
-|17| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0 |Snippets from TXT and XML file | View {Download}`llama 3 3B result 17<./chapter1_ZA-content/results/llama_herd/22.12/result_10.xml>` |
+|2| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same XMLformat. | Answer: Let's think step by step | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 2<./chapter1_ZA-content/results/llama_herd/13.12/result_2.xml>` |
+|10| Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same XML format. | Answer: Be a helpful assistant.  | - |Snippets from TXT and XML file | View {Download}`llama 3 3B result 10<./chapter1_ZA-content/results/llama_herd/13.12/result_10.xml>` |
+|17| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0 |Snippets from TXT and XML file | View {Download}`llama 3 3B result 17<./chapter1_ZA-content/results/llama_herd/22.12/result_10.xml>` |
 
 Llama 3 8B parameters was very inconsistent in its replies. It ranged from simply formatting all text into bold as in result 27, to formatting only the speakers but not the text as in result 7, or formatting only the text but not the speaker as in result 12. 
 
 || **Prompts**                                                                                   | **Persona** | **Temperature** | **Additional Files/Information** | **Results**                       |
 |----|--------------------------------------------------------------------------------------------------|-------|-------|------------------------------------|------------------------------------|
-|27| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | - |Snippets from TXT and XML file | View {Download}`llama 3 8B result 27<./chapter1_ZA-content/results/llama_herd/13.12/result_27.xml>` |
-|1| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. | Answer: Be a helpful assistant | 0.1 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 1<./chapter1_ZA-content/results/llama_herd/22.12/result_1.xml>` |
-|7| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0.05 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
-|12| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | View {Download}`llama 3 8B result 12<./chapter1_ZA-content/results/llama_herd/22.12/result_12.xml>` |
+|27| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. | Answer: Be a helpful assistant | - |Snippets from TXT and XML file | View {Download}`llama 3 8B result 27<./chapter1_ZA-content/results/llama_herd/13.12/result_27.xml>` |
+|1| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. | Answer: Be a helpful assistant | 0.1 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 1<./chapter1_ZA-content/results/llama_herd/22.12/result_1.xml>` |
+|7| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. Give only the formated text. | Answer: Be a helpful assistant.  | 0.05 |Snippets from TXT and XML file | View {Download}`llama 3 8B result 7<./chapter1_ZA-content/results/llama_herd/13.12/result_7.xml>` |
+|12| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. Give only the formated text. |-|-|-| View {Download}`llama 3 8B result 12<./chapter1_ZA-content/results/llama_herd/22.12/result_12.xml>` |
 
 ```{note}
 The conclusive results for the Llama herd and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/llama_herd>` folder of this chapter.
 ```
 
 ### Gemini 1.5 Flash
-To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether its answers are similar in content. 
+To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example XML and an example TXT, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether its answers are similar in content. 
 
-```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same xml format. Format all of the text.
+```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same XML format. Format all of the text.
 [UNREVISED HANSARD
 NATIONAL ASSEMBLY
 TUESDAY, 25 FEBRUARY 2020
@@ -569,14 +569,14 @@ Its output, however, was mostly unusable, as it refused to attempt the task and 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| help me format some text | None | I can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
-|2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same xml format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
+|2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same XML format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
 |3|format all of the text | None | I'm not programmed to assist with that. |
 
 The experiment was successful insofar as that when specifically asking for help, Gemini attempted to format the input. In a first attempt it did format the text into an XML structure, though when re-running the prompt, it neglected all speaker turns and created one large segment containing the entire input. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| I need help with some xml formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12 <./chapter1_ZA-content/gemini-results/31.12/attempt_11-1.xml>` |
+|1| I need help with some XML formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12 <./chapter1_ZA-content/gemini-results/31.12/attempt_11-1.xml>` |
 |2| Try again, pay attention to the speakers| None | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-2.xml>`|
 |3|Assign a separate speaker tag to each speaker please | None | View {Download}`third XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-3.xml>` |
 |4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
@@ -762,22 +762,22 @@ Snippet from the XML file:
 
 #### Try 1
 
-Additional Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. 
+Additional Instructions: You are a TXT to XML converter. You are given sample corresponding TXT and XML files, with the XML file being the converted version of the TXT file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other TXT files. 
 
-Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema.
+Knowledge: Snippet from a raw TXT file, the corresponding XML file following the ParlaMint schema.
 
 The options Web Borwsing, DALL·E Image Generation and Canvas were disabled. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try1/converted_hansard_25_02_2020.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try1/complete_converted_hansard_25_02_2020.xml>`|
+|1| Please convert the TXT file I have given you into an XML file following the same schema |Snippets from TXT and XML file, uploaded part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try1/converted_hansard_25_02_2020.xml>` |
+|2| Please note that your final result should include the entire content of the TXT file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try1/complete_converted_hansard_25_02_2020.xml>`|
 |3|This is what the XML schema is supposed to look like. Please note that a new "u" element is used every time the speaker changes. The speeches are contained within the "seg" element. The "note" element is used for transcriber's notes.| Correct snippet from XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try1/updated_converted_hansard_25_02_2020.xml>` |
 |4| It is looking much better. Please contain entire speeches in one <seg> element instead of starting a new one for each line break.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020.xml>`  |
 
 #### Try 2
 
-Additional Instructions: You are a txt to xml converter. You are given a txt file which you will convert into a downloadable xml file following the RelaxNG file which you were given.
+Additional Instructions: You are a TXT to XML converter. You are given a TXT file which you will convert into a downloadable XML file following the RelaxNG file which you were given.
 
 Knowledge: the RNG file used to validate the ParlaMint schema.
 
@@ -785,32 +785,32 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the txt file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_full.xml>`| 
+|1| Please convert the TXT file I have given you into an XML file following the same schema |Snippets from TXT and XML file, uploaded part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the TXT file. You have omitted a large part of the original data I gave you.| None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_full.xml>`| 
 |3|Please note that this is what the XML schema is supposed to look like. Please omit the page headers and please include entire utterances within the <seg> element. There is no need to split them up by line breaks.| Correct snippet XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try2/converted_hansard_updated.xml>` |
-|4| You have now stored the entirety of the speeches in the txt file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_final.xml>`  |
+|4| You have now stored the entirety of the speeches in the TXT file in one "u" element. Please take care to start a new "u" element every time the speaker changes and to store their speeches in the "seg" element.| None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt//Try2/converted_hansard_final.xml>`  |
 
 #### Try 3
 
-Additional Instructions: You are a txt to xml converter. You are given sample corresponding txt and xml files, with the xml file being the converted version of the txt file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other txt files. Additionally, you were also given a RelaxNG file which can be used to validate the xml files and illustrates the xml schema you will be following.
+Additional Instructions: You are a TXT to XML converter. You are given sample corresponding TXT and XML files, with the XML file being the converted version of the TXT file. These files contain the same information and illustrate the xml schema that you will adhere to when converting other TXT files. Additionally, you were also given a RelaxNG file which can be used to validate the XML files and illustrates the XML schema you will be following.
 
-Knowledge: Snippet from a raw txt file, the corresponding XML file following the ParlaMint schema, the RNG file used to validate the ParlaMint schema.
+Knowledge: Snippet from a raw TXT file, the corresponding XML file following the ParlaMint schema, the RNG file used to validate the ParlaMint schema.
 
 The options Web Borwsing, DALL·E Image Generation and Canvas were disabled. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| Please convert the txt file I have given you into an xml file following the same schema |Snippets from txt and XML file, uploaded part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard.xml>` |
-|2| Please note that your final result should include the entire content of the .txt file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_full.xml>`      |
-|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the .txt file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_adapted.xml>` |
+|1| Please convert the TXT file I have given you into an XML file following the same schema |Snippets from TXT and XML file, uploaded part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard.xml>` |
+|2| Please note that your final result should include the entire content of the TXT file. You have omitted a large part of the raw data. | None | View {Download}`second XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_full.xml>`      |
+|3|This is an extract of the XML you provided. It is correct. Please keep the same schema when adapting the rest of the TXT file into the XML schema. Note also that there is no need to repeat the page header every time - please omit it. | Correct snippet from previously output XML file | View {Download}`third XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_adapted.xml>` |
 |4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_complete.xml>`  |
 
 ### GPT-4o
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| I have a txt file which needs to be converted into an xml file following a specific xml format, the ParlaMint schema.Here is a snippet of the txt file: [txt snippet]. The content of this snippet was converted into an xml schema, which looks like this: [xml snippet]. Please convert the txt file I have given you into a downloadable xml file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw txt data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020.xml>` |
-|2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the xml file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_refined.xml>`|
+|1| I have a TXT file which needs to be converted into an XML file following a specific XML format, the ParlaMint schema.Here is a snippet of the TXT file: [TXT snippet]. The content of this snippet was converted into an XML schema, which looks like this: [XML snippet]. Please convert the TXT file I have given you into a downloadable XML file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020.xml>` |
+|2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the XML file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_refined.xml>`|
 |3|You started off well, but stopped implementing the schema after a while. Please make sure to carry the schema through the entire document.| None | View {Download}`third XML file<./chapter1_ZA-content/results/gpt4o/HansardSA_25_Feb_2020_consistent.xml>` |
 |4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try1/final_updated_converted_hansard_25_02_2020_fully_structured.xml>`  |
 
@@ -824,7 +824,7 @@ The following is a summary of the most notable successes and issues within the o
 
 ### Custom GPT
 #### Try 1
-The first output file consists of only 52 lines, with most of the content having been excluded. Upon being prompted to include the entire input, this issue improved in the second output file. However, the XML schema was not adhered to. Every single line contained within the input txt file was, in the output XML, contained in the "note" element from the ParlaMint schema, which is only meant to contain transcriber's notes.
+The first output file consists of only 52 lines, with most of the content having been excluded. Upon being prompted to include the entire input, this issue improved in the second output file. However, the XML schema was not adhered to. Every single line contained within the input TXT file was, in the output XML, contained in the "note" element from the ParlaMint schema, which is only meant to contain transcriber's notes.
 Through prompting, this issue was improved and the XML started to gain a more ParlaMint-like structure.
 
 ```{code-cell} xml
@@ -839,10 +839,10 @@ Through prompting, this issue was improved and the XML started to gain a more Pa
 While the correct nesting of the elements was achieved, their contents were not correctly structured. For example, parts of speeches were contained within the "speaker" attribute of the "note" element. Additionally, the GPT failed to remove metadata, like page numbers and page headers, from the content, even though this was done in the example XML. It simply classified this metadata as part of the speeches. Another notable issue is the GPTs inability to identify the languages spoken, with it labelling every speech as English. 
 
 #### Try 2
-This GPT's first output had the same issue as the previous one, with it only consisting of 56 lines. The next attempt was better, though structurally the XML schema was not correct. Even though the GPT was reminded of the correct XML structure, its output did not improve. It attempted to format around 100 lines, with the rest of the txt input being contained within  asinge "seg" element. The fourth output was not any better. 
+This GPT's first output had the same issue as the previous one, with it only consisting of 56 lines. The next attempt was better, though structurally the XML schema was not correct. Even though the GPT was reminded of the correct XML structure, its output did not improve. It attempted to format around 100 lines, with the rest of the TXT input being contained within  asinge "seg" element. The fourth output was not any better. 
 
 #### Try 3
-Again, the first output was shortened and contained none of the speech conent of the txt file. The second output did contain the entire input, but was structured badly, with the "u" elements missing required attributes like the speaker. In its third attempt the GPT reverted back to the first output, with its XML output file only containing 41 lines. Its fourth attempt was structured similarly to the second output with little iprovement having been made. 
+Again, the first output was shortened and contained none of the speech conent of the TXT file. The second output did contain the entire input, but was structured badly, with the "u" elements missing required attributes like the speaker. In its third attempt the GPT reverted back to the first output, with its XML output file only containing 41 lines. Its fourth attempt was structured similarly to the second output with little iprovement having been made. 
 
 ### GPT-4o 
 In its first attempt, GPT-4o output an XML file which did follow the ParlaMint structure properly in the beginning, but devolved into chaos after 40 lines. Here is what the main section containing the speeches looked like in this first attmpt:
@@ -869,7 +869,7 @@ However, it managed quite well to output a valid XML file, even if it did not fo
 Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
 Prompt Engineering on local LLMs (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
 
-Note for limitations: we do not populate the metadata files, because very specific real world knowledge would be needed, and it is easier and computationally more efficient to populate this metadate with a rule-based approach once the base xml of the speeches themselves are parsed/created by the LLM. 
+Note for limitations: we do not populate the metadata files, because very specific real world knowledge would be needed, and it is easier and computationally more efficient to populate this metadate with a rule-based approach once the base XML of the speeches themselves are parsed/created by the LLM. 
 Many members of the SA parliament do not have their birth date published online. 
 
 

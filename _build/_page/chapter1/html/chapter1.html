@@ -955,7 +955,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <li><p>Custom GPT</p></li>
 </ul>
 <p>Because of the various implementations of the LLMs, with the Llama herd being run locally, and Gemini, GPT-4o and the custom GPTs being run through their online interface, different approaches had to be taken.</p>
-<p>Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions <span id="id55">[<a class="reference internal" href="#id114" title="Pranab Sahoo, Ayush Kumar Singh, Sriparna Saha, and et al. A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications. 2024. Version Number: 1. URL: https://arxiv.org/abs/2402.07927 (visited on 2024-12-13), doi:10.48550/ARXIV.2402.07927.">Sahoo <em>et al.</em>, 2024</a>]</span>. Depending on whether the LLM was called via API or it’s online interface, it was either guided onwards through repeating the instruction, or iterative refinement <span id="id56">[<a class="reference internal" href="#id104" title="Aishwarya Vijayan. A Prompt Engineering Approach for Structured Data Extraction from Unstructured Text Using Conversational LLMs. In 2023 6th International Conference on Algorithms, Computing and Artificial Intelligence, 183–189. Sanya China, December 2023. ACM. URL: https://dl.acm.org/doi/10.1145/3639631.3639663 (visited on 2024-11-27), doi:10.1145/3639631.3639663.">Vijayan, 2023</a>]</span>. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the <a class="reference internal" href="#experiments"><span class="std std-ref">Experiments and Results</span></a> section.</p>
+<p>Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions <span id="id55">[<a class="reference internal" href="#id114" title="Pranab Sahoo, Ayush Kumar Singh, Sriparna Saha, and et al. A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications. 2024. Version Number: 1. URL: https://arxiv.org/abs/2402.07927 (visited on 2024-12-13), doi:10.48550/ARXIV.2402.07927.">Sahoo <em>et al.</em>, 2024</a>]</span>. Depending on whether the LLM was called via API or its online interface, it was either guided onwards through repeating the instruction, or iterative refinement <span id="id56">[<a class="reference internal" href="#id104" title="Aishwarya Vijayan. A Prompt Engineering Approach for Structured Data Extraction from Unstructured Text Using Conversational LLMs. In 2023 6th International Conference on Algorithms, Computing and Artificial Intelligence, 183–189. Sanya China, December 2023. ACM. URL: https://dl.acm.org/doi/10.1145/3639631.3639663 (visited on 2024-11-27), doi:10.1145/3639631.3639663.">Vijayan, 2023</a>]</span>. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the <a class="reference internal" href="#experiments"><span class="std std-ref">Experiments and Results</span></a> section.</p>
 <section id="evaluation">
 <h4>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h4>
 <p>To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, <a class="reference internal" href="#evaluation-xml"><span class="std std-ref">Evaluation XML Schema</span></a> and the content, <a class="reference internal" href="#evaluation-content"><span class="std std-ref">Evaluation Content</span></a> of the processed file was assessed.</p>
@@ -1193,7 +1193,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <p>In a primary approach, the attempt was made to guide locally run, smaller LLMs, from the Llama herd, via prompt engineering with a standard prompting approach but enriched with an example <span id="id61">[<a class="reference internal" href="#id82" title="Humza Naveed, Asad Ullah Khan, Shi Qiu, and others. A Comprehensive Overview of Large Language Models. 2023. Version Number: 9. doi:10.48550/ARXIV.2307.06435.">Naveed <em>et al.</em>, 2023</a>, <a class="reference internal" href="#id104" title="Aishwarya Vijayan. A Prompt Engineering Approach for Structured Data Extraction from Unstructured Text Using Conversational LLMs. In 2023 6th International Conference on Algorithms, Computing and Artificial Intelligence, 183–189. Sanya China, December 2023. ACM. URL: https://dl.acm.org/doi/10.1145/3639631.3639663 (visited on 2024-11-27), doi:10.1145/3639631.3639663.">Vijayan, 2023</a>, <a class="reference internal" href="#id109" title="Shengyu Zhang, Linfeng Dong, Xiaoya Li, and et al. Instruction Tuning for Large Language Models: A Survey. 2023. Version Number: 5. URL: https://arxiv.org/abs/2308.10792, doi:10.48550/ARXIV.2308.10792.">Zhang <em>et al.</em>, 2023</a>]</span>. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fulfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output.</p>
 <section id="llama-herd">
 <h3>Llama Herd<a class="headerlink" href="#llama-herd" title="Link to this heading">#</a></h3>
-<p>The prompt for the Llama herd is comprised of a shortened version of the TXT original file and it’s corresponding XML gold standard in the ParlaMint schema. The decision to utilize a standard prompting approach for the Llama herd was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.</p>
+<p>The prompt for the Llama herd is comprised of a shortened version of the TXT original file and its corresponding XML gold standard in the ParlaMint schema. The decision to utilize a standard prompting approach for the Llama herd was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.</p>
 <p>Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes <a class="footnote-reference brackets" href="#footnote" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. Langchain offers flexibility with regards to customisation <span id="id63">[<a class="reference internal" href="#id103" title="Pere Martra. LangChain and Agents. In Large Language Models Projects, pages 63–132. Apress, Berkeley, CA, 2024. URL: https://link.springer.com/10.1007/979-8-8688-0515-8_3 (visited on 2024-11-27), doi:10.1007/979-8-8688-0515-8_3.">Martra, 2024</a>]</span>. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The langchain Ollama link offers the option to employ persona prompting which was varied to test whether it influenced the models. h</p>
 <p>In the first attempt the model was given an example of the structure:</p>
 <div class="cell docutils container">
@@ -1300,9 +1300,9 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 <tr class="row-odd"><td><p>7</p></td>
 <td><p>Given raw text: {example_txt} with the end goal: {example_xml}, adapt this: {chunk} into the same xml format.</p></td>
 <td><p>Answer: Be a helpful assistant.</p></td>
+<td><p>-</p></td>
 <td><p>Snippets from TXT and XML file</p></td>
 <td><p>View <a class="reference download internal" download="" href="_downloads/b1b03acafda80dfd94650c0bdc14b92c/result_7.xml"><code class="xref download docutils literal notranslate"><span class="pre">llama</span> <span class="pre">3</span> <span class="pre">1B</span> <span class="pre">result</span> <span class="pre">7</span></code></a></p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -1378,22 +1378,22 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 </tr>
 <tr class="row-odd"><td><p>12</p></td>
 <td><p>Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text.</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 <td><p>View <a class="reference download internal" download="" href="_downloads/48f20a04967509459dd62b9a651358fb/result_12.xml"><code class="xref download docutils literal notranslate"><span class="pre">llama</span> <span class="pre">3</span> <span class="pre">8B</span> <span class="pre">result</span> <span class="pre">12</span></code></a></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The conclusive results for the Llama herd and it’s corresponding commentary can be found in the <span class="xref std std-doc">results</span> folder of this chapter.</p>
+<p>The conclusive results for the Llama herd and its corresponding commentary can be found in the <span class="xref std std-doc">results</span> folder of this chapter.</p>
 </div>
 </section>
 <section id="gemini-1-5-flash">
 <h3>Gemini 1.5 Flash<a class="headerlink" href="#gemini-1-5-flash" title="Link to this heading">#</a></h3>
-<p>To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini’s primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models <span id="id64">[<a class="reference internal" href="#id115" title="Gemini Team, Petko Georgiev, and et Lei, Ving Ian al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. 2024. Version Number: 5. URL: https://arxiv.org/abs/2403.05530 (visited on 2024-12-29), doi:10.48550/ARXIV.2403.05530.">Gemini Team <em>et al.</em>, 2024</a>]</span>. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether it’s answers are similar in content.</p>
+<p>To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini’s primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models <span id="id64">[<a class="reference internal" href="#id115" title="Gemini Team, Petko Georgiev, and et Lei, Ving Ian al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. 2024. Version Number: 5. URL: https://arxiv.org/abs/2403.05530 (visited on 2024-12-29), doi:10.48550/ARXIV.2403.05530.">Gemini Team <em>et al.</em>, 2024</a>]</span>. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether its answers are similar in content.</p>
 <p>Its output, however, was mostly unusable, as it refused to attempt the task and gave answers such as:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1457,7 +1457,7 @@ To manage large corpora more easily, ParlaMint uses the XInclude mechanism. In t
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The conclusive results for Gemini Flash and it’s corresponding commentary can be found in the <span class="xref std std-doc">results</span> folder of this chapter.</p>
+<p>The conclusive results for Gemini Flash and its corresponding commentary can be found in the <span class="xref std std-doc">results</span> folder of this chapter.</p>
 </div>
 </section>
 <section id="custom-gpt">
