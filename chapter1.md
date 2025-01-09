@@ -40,6 +40,9 @@ In light of these added difficulties when it comes to language data, where the l
 
 ## Data and Methods
 
+```{warning} Due to jupyterlite not supporting many of the modules used in this method, many of the code-blocks in this paper are not executable. Please export the code and the corresponding files to run it locally if required. See the [Thebe documentation](https://jupyterbook.org/en/stable/interactive/thebe.html) for more details.
+```
+
 ### Data
 The data was extracted from the official website for the Hansard of the Parliament of the Republic of South Africa. The Hansard constitutes the transcripts of the mini plenary sessions of the National Assembly, the National Council of Provinces, the National Assembly, and any joint sessions. The National Assembly is formed by 400 members from the various South African political parties. The National Assembly is elected by the voting population of South Africa. The National Council of Provinces, NCoP, is formed with 90 provincial delegates which translates to 10 delegates for each province. It is thus composed regardless of population distribution. The NCoP is chosen by the provincial legislatures {cite:t}`piombo_2005`. 
 
@@ -271,17 +274,6 @@ To evaluate the content of the output of the LLMs tested, a percentage scale was
 ```
 
 ```{code-cell} python
-import xml.etree.ElementTree as ET
-import random
-import re
-import os
-import pandas as pd
-from collections import OrderedDict
-
-"""Script to evaluate all XML output files in a folder against its original. 
-Includes error handling for incomplete/incorrect XML schema where it parses the the erroneous file as TXT format.
-"""
-
 import xml.etree.ElementTree as ET
 import random
 import re
