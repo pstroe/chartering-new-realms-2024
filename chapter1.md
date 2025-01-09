@@ -196,7 +196,7 @@ Custom GPTs have been shown to outperform basic models like GPT-3.5 and GPT-4 in
 
 Because of the various implementations of the LLMs, with the Llama herd being run locally, and Gemini, GPT-4o and the custom GPTs being run through their online interface, different approaches had to be taken. 
 
-Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or it's online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](experiments) section.
+Overall, the ParlaMint schema was simplified as to compartementalize the different elements of the structure. The input prompt was always structured by giving an example of the raw data, an example of the structured, corresponding XML section and a set of instructions {cite:p}`sahoo_2024`. Depending on whether the LLM was called via API or its online interface, it was either guided onwards through repeating the instruction, or iterative refinement {cite:p}`vijayan_2023`. Furthermore, persona prompting and chain of thought prompting was attempted where appropriate. For a detailed description of the approaches, please view the [Experiments and Results](experiments) section.
 
 #### Evaluation
 To evaluate the work of the LLMs automatically, a twofold approach was selected, where both the structure, [Evaluation XML Schema](evaluation_xml) and the content, [Evaluation Content](evaluation_content) of the processed file was assessed. 
@@ -430,7 +430,7 @@ print(f"Results have been written to {excel_file_path}")
 In a primary approach, the attempt was made to guide locally run, smaller LLMs, from the Llama herd, via prompt engineering with a standard prompting approach but enriched with an example {cite:p}`vijayan_2023, zhang_2023, naveed_2023`. This approach was chosen to assess whether a smaller, and thus less costly, LLM could fulfill the task requirements. Furthermore, two larger LLMs, Gemini and GPT-4o, were tested through their online chat interface, to assess whether they produce a different, possibly a more stable output. 
 
 ### Llama Herd 
-The prompt for the Llama herd is comprised of a shortened version of the TXT original file and it's corresponding XML gold standard in the ParlaMint schema. The decision to utilize a standard prompting approach for the Llama herd was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
+The prompt for the Llama herd is comprised of a shortened version of the TXT original file and its corresponding XML gold standard in the ParlaMint schema. The decision to utilize a standard prompting approach for the Llama herd was made to accomodate the context windows of the models tested. To work with the context window given, the files had to be chunked. The decision was made not to enlargen the context windows as larger context windows generally amplify hallucinations, which in the case of data formatting would be detrimental.
 
 Ollama was chosen as basesoftware as it offers the smaller Llama 3.2 models in downloadable form. Furthermore, Ollama is linked to langchain to customise its prompting abilities, as Ollama offers limited customization options, though this is subject to changes [^footnote]. Langchain offers flexibility with regards to customisation {cite:p}`martra_2024`. Thus, the temperature of the model was arranged between 0-0.3 to minimize creativity within the responses. The langchain Ollama link offers the option to employ persona prompting which was varied to test whether it influenced the models. h
 
@@ -539,11 +539,11 @@ Llama 3 8B parameters was very inconsistent in its replies. It ranged from simpl
 |12| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same xml format. Format all of the text. Give only the formated text. | View {Download}`llama 3 8B result 12<./chapter1_ZA-content/results/llama_herd/22.12/result_12.xml>` |
 
 ```{note}
-The conclusive results for the Llama herd and it's corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/llama_herd>` folder of this chapter.
+The conclusive results for the Llama herd and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/llama_herd>` folder of this chapter.
 ```
 
 ### Gemini 1.5 Flash
-To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether it's answers are similar in content. 
+To assess whether a larger LLM gives a better output, Gemini 1.5 Flash was tested in its online chat interface. Gemini's primary attractiveness for this task lies in its long context windows of up to 10 million token and its superior efficiency over the GPT models {cite:p}`gemini_2024`. As the online chat interface does not allow file input, the prompt was structured to contain both an example xml and an example txt, as well as a chunk of a file to be processed. See below for an example of the structure. The file was chunked into 4000 word segments to respect the input maximum of 5108 tokens of each call for Gemini 1.5 Flash. Every conversation was held thrice to assess the answer scheme of the LLM and whether its answers are similar in content. 
 
 ```{example} PROMPT:[Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text into the same xml format. Format all of the text.
 [UNREVISED HANSARD
@@ -582,7 +582,7 @@ The experiment was successful insofar as that when specifically asking for help,
 |4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
 
 ```{note}
-The conclusive results for Gemini Flash and it's corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/gemini_flash>` folder of this chapter.
+The conclusive results for Gemini Flash and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/gemini_flash>` folder of this chapter.
 ```
 
 ### Custom GPT
