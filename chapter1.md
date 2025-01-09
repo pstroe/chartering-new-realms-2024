@@ -265,13 +265,11 @@ Where the validation using a RelaxNG file falls short is when the tested XML fil
 
 (evaluation_content)=
 ##### Evaluation Content
-To evaluate the content of the output of the LLMs tested, a percentage scale was chosen. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and compares them to the original TXT file on a token basis.
+To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions {cite:p}`fischer-starcke_2009`. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance {cite:p}`beijering_2008`.
 
-```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisbale, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
-```
+```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisable, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.```
 
-```{attention} This code will fail due to the restrictions of JupyterLite.
-```
+```{attention} This code will fail due to the restrictions of JupyterLite.```
 
 ```{code-cell} python
 import xml.etree.ElementTree as ET
