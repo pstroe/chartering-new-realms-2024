@@ -270,6 +270,9 @@ To evaluate the content of the output of the LLMs tested, a percentage scale was
 ```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisbale, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
 ```
 
+```{attention} This code will fail due to the restrictions of JupyterLite.
+```
+
 ```{code-cell} python
 import xml.etree.ElementTree as ET
 import random
@@ -277,13 +280,14 @@ import re
 import os
 import pandas as pd
 from collections import OrderedDict
+from Levenshtein import distance as levenshtein_distance
 
 """Script to evaluate all XML output files in a folder against its original. 
-Includes error handling for incomplete/incorrect XML schema where it parses the the erroneous file as TXT format.
+Includes error handling for incomplete/incorrect XML schema where it parses the erroneous file as TXT format.
 """
 
 # Path to the folder containing XML files
-xml_folder_path = 'test_objects/31.12'  # Replace with the actual folder path containing XML files
+xml_folder_path = 'test_objects/gpt_4o'  # Replace with the actual folder path containing XML files
 txt_file_path = 'test_objects/uh_25.02.txt'  # Replace with the actual path to your TXT file
 
 # Open the original file and reads its content, this serves as comparator for the processed XML files. 
@@ -296,119 +300,123 @@ txt_content = re.sub(r'\s+', ' ', txt_content.replace('\n', ' ').strip())
 # Define the namespace for the TEI XML, given for ParlaMint, 
 namespace = {'tei': 'http://www.tei-c.org/ns/1.0'}
 
-#option to configure the tag where the text is contained. seg is the official ParlaMint tag. This is due to the script checking for content and not formatting, thus if the LLM formatted with a wrong tag, the tag could be adapted more easily.
-tag = "seg"
+# Option to configure the tag where the text is contained. 'seg' is the official ParlaMint tag.
+tag = "text"
 
-#option to configure the sampler size from each XML file. Can be set at random, or calculated for a desired probability of reliability. 
+# Option to configure the sampler size from each XML file. Can be set at random, or calculated for a desired probability of reliability. 
 sampler = 50
 
-# Function to split text into sentences, used for the validation. 
+# Function to split text into sentences
 def split_into_sentences(text):
-    # Basic sentence splitting based on a simple regex. Not perfectly robust but when tested on the gold standard, output is at a 100%
-    return re.split(r'(?<=\w[.!?]) +', text)
+    # Basic sentence splitting based on a simple regex. Not perfectly robust but when tested on the gold standard, output is at 100%
+    
+    #r'(?<=\w[.!?]) +'
+    return re.split(r'(?<=\w[.!?])\s*(?=\w)', text)
 
-# Function to calculate how much of the sentence is found in the TXT content
-def calculate_match_percentage(sentence, txt_content):
-    # Split sentences into words and convert them to lowercase for case-insensitive comparison
-    sentence_set = set(sentence.split())
-    text_set = set(txt_content.split())
-    # Find the intersection of the two sets to get the common words
-    matching_words = sentence_set.intersection(text_set)
-    # Return the count of matching words
-    return len(matching_words)
+# Function to generate 5-grams from a sentence
+def generate_5grams(sentence):
+    words = sentence.split()
+    return [tuple(words[i:i+5]) for i in range(len(words) - 4)]
 
+# Function to calculate how much of the sentence is found in the TXT content using 5-grams and Levenshtein distance
+def calculate_match_percentage_using_5grams_and_levenshtein(sentence, txt_content):
+    # Generate 5-grams for the sentence
+    sentence_5grams = generate_5grams(sentence)
+    
+    # Split txt_content into sentences and generate 5-grams for each
+    txt_sentences = split_into_sentences(txt_content)
+    txt_5grams = [generate_5grams(txt_sentence) for txt_sentence in txt_sentences]
+    
+    # Find the sentence from txt_content with the most matching 5-grams
+    max_match_count = 0
+    best_matching_sentence = ""
+    for i, txt_grams in enumerate(txt_5grams):
+        match_count = len(set(sentence_5grams) & set(txt_grams))  # Count matching 5-grams
+        if match_count > max_match_count:
+            max_match_count = match_count
+            best_matching_sentence = txt_sentences[i]
+    
+    # Compute Levenshtein distance between the sentence and the best matching sentence
+    levenshtein_dist = levenshtein_distance(sentence, best_matching_sentence)
+    
+    return max_match_count, best_matching_sentence, levenshtein_dist
 
-#checks names in the XML files
+# Function to check for speaker names in the sentence
 def check_names(sentences): 
     for sentence in sentences: 
         pattern = r"(?<!>)([A-Z]+(?: [A-Z]+)*)(?!>):"
-        # Find all matches
         matches = re.findall(pattern, sentence)
-        # Count the number of matches
         count = len(matches)
         if count != 0: 
             return(count)
 
+# Function to remove content between angle brackets
 def remove_angle_brackets_content(input_string):
-    # Use regex to match and remove everything between '<' and '>'
     return re.sub(r'<.*?>', '', input_string)
-      
 
 # List to store results
 results = []
 
-#list to store the 
+# List to store all sampled sentences
 all_sentences = []
 
+# Dictionary to track speaker errors
 speaker_error = {}
+
 # Loop through all XML files in the folder
 for xml_file_name in os.listdir(xml_folder_path):
+    print(xml_file_name)
     if xml_file_name.endswith('.xml'):  # Only process XML files
         xml_file_path = os.path.join(xml_folder_path, xml_file_name)
-        
-        #handles the processing and selection of the n random sentences.
+
         try:
             # Try parsing the XML file
             tree = ET.parse(xml_file_path)
             root = tree.getroot()
-            # Find all the tag elements within the XML
             segments = root.findall(f'.//tei:{tag}', namespace)
-            # Loop through each segment, split text into sentences, and add to the list
+
+            # Loop through each segment and extract sentences
             for seg in segments:
-                sentences = split_into_sentences(seg.strip())
-                #check for any names within the text, regex because the format is always the same for all debates. EX: MS BOROTO: 
-                speaker_error[xml_file_name] = check_names(sentences)
-                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]
-                # ensure the randomness of the sampled sentences
-                sampled_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
-                all_sentences.extend(sampled_sentences)
-        except: # If XML parsing fails, open the file as a plain text file
+                sentences = split_into_sentences(seg.strip())  # Split text into sentences
+                speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
+                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove XML tags
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
+                all_sentences.extend(sampled_sentences)  # Add to the global list
+        except:
+            # If XML parsing fails, read the file as plain text
             print(f"XML parsing failed for {xml_file_name}, treating as plain text...")
             with open(xml_file_path, 'r', encoding='utf-8') as file:
                 raw_content = file.read()
-                # Loop through each segment, split text into sentences, and add to the list of possible sentences
-                sentences = split_into_sentences(raw_content.strip()) 
-                #removes possible XML tags when the file is parsed as TXT because the XML structure is incomplete.
-                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]
-                #appends the speaker error
-                speaker_error[xml_file_name] = check_names(sentences) 
-                # ensure the randomness of the sampled sentences
-                sampled_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
-                all_sentences.extend(sampled_sentences)
-
-        # Remove newline characters and extra spaces from the sampled sentences
-        sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sampled_sentences]
-
-        # List to store the match percentages for the current XML file
+                sentences = split_into_sentences(raw_content.strip())  # Split sentences from raw content
+                sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove tags
+                speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
+                all_sentences.extend(sampled_sentences)  # Add to the global list
+        # List to store match percentages for the current file
         match_percentages = []
-
-        #counter for calculating the match percentage, counts token of the XML file's sentences
         counts_token = 0
 
-        # Check how much of the sentences are present in the TXT file
+        # Check for sentence match percentage with the TXT content
         for sentence in sampled_sentences:
-            match_percentage = calculate_match_percentage(sentence, txt_content)
-            match_percentages.append(match_percentage)
+            match_count, matching_sentence, levenshtein_dist = calculate_match_percentage_using_5grams_and_levenshtein(sentence, txt_content)
+            match_percentages.append((match_count, matching_sentence, levenshtein_dist))
 
-            #rudimentary splitting of tokens, approximation.
-            counts_token = counts_token + len(sentence.split())
-
-        # Calculate the average match percentage for the current XML file
-        average_match_percentage = sum(match_percentages) / counts_token if match_percentages else 0
+            counts_token += len(sentence.split())
+        
         
 
-        # Store the result for the current XML file in the results list
-        for i, percentage in enumerate(match_percentages, start=1):
-            #retireves the speaker error via key which is the file name. 
+        # Store results
+        for i, (match_count, matching_sentence, levenshtein_dist) in enumerate(match_percentages, start=1):
             file_error = speaker_error.get(xml_file_name, None)
             results.append({
                 'XML File': xml_file_name,
                 'Sentence #': i,
-                #gives the sentence to check which sentences were checked.
                 'Sentence': sampled_sentences[i-1],
-                #average match percentage for entire sample size of a file.
-                'Average Match Percentage': f"{average_match_percentage}",
-                #speaker error, which denotes how many speaker were included in the text instead of separated into a specific tag system. 
+                'Best Matching Sentence': matching_sentence,
+                'Matching 5-grams Count': match_count,
+                'Levenshtein Distance': levenshtein_dist,
                 'Speaker Error': file_error
             })
 
@@ -416,10 +424,10 @@ for xml_file_name in os.listdir(xml_folder_path):
 df = pd.DataFrame(results)
 
 # Write the results to an Excel file
-excel_file_path = 'output_results_with_average.xlsx' 
+excel_file_path = 'new_test/output_results_with_average.xlsx'
 df.to_excel(excel_file_path, index=False)
 
-print(f"Results have been written to {excel_file_path}")           
+print(f"Results have been written to {excel_file_path}")       
 ```
 
 (experiments)=
@@ -450,6 +458,7 @@ To exit Ollama in the command line press ctrl + c.
 
 ```{attention} This code will fail unless langchain and Ollama are installed!
 ```
+
 
 ```{code-cell} python
 import os
