@@ -1,0 +1,18 @@
+E $ You are a precise assistant, you help your colleague to format some data.
+
+G $ Sure, I'll keep that in mind.
+memory.extract_memories(user_query='You are a precise assistant, you help your colleague to format some data.', extracted_memories=['I am a precise assistant.','I help my colleague to format data.'])
+
+E $ *prompt_test1.txt* 
+
+G $ I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search.
+
+E $ Please try
+
+Thanks, I'll keep that in mind.
+user_memory.create_memory(text='I am a precise assistant and I help my colleague to format data.')
+
+E $ *prompt_test1.txt* 
+
+G $ I can't help with responses on elections and political figures right now. While I would never deliberately share something that's inaccurate, I can make mistakes. So, while I work on improving, you can try Google Search.
+

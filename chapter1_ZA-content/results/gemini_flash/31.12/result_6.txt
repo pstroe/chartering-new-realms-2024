@@ -1,0 +1,18 @@
+Here's the formatted text according to the provided example:
+
+```xml
+<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> 
+<who="#ChiefWhipOfMajorityParty"> 
+<seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>
+</who>
+```
+
+**Explanation of the Formatting:**
+
+* **`<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note>`:** This line creates a note that identifies the speaker. 
+* **`<who="#ChiefWhipOfMajorityParty">`:** This line assigns an identifier (in this case, `#ChiefWhipOfMajorityParty`) to the speaker. This can be used for cross-referencing or indexing.
+* **`<seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>`:** This line contains the actual spoken text, enclosed within `<seg>` tags. The `xml:lang="en"` attribute specifies the language of the text (in this case, English).
+
+This format can be applied consistently to the rest of the provided text to create a structured and machine-readable representation of the parliamentary proceedings.
+
+
