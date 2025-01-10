@@ -549,7 +549,7 @@ The experiment was successful insofar as that when specifically asking for help,
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| I need help with some XML formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-1.txt>` |
 |2| Try again, pay attention to the speakers| None | View {Download}`output attempt 11 2 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`|
-|3|Assign a separate speaker tag to each speaker please | None | View {Download}`output attempt 11 3 31.12<./chapter1_ZA-content/gemini-results/31.12/result_11-2.txt>` |
+|3|Assign a separate speaker tag to each speaker please | None | View {Download}`output attempt 11 3 31.12<./chapter1_ZA-content//results/gemini_flash/31.12/result_11-2.txt>` |
 |4| Find all speakers in the text | None | View {Download}`output attempt 11 4 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`  |
 
 ```{note}
