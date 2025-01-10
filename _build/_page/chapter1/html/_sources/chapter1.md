@@ -40,7 +40,7 @@ In light of these added difficulties when it comes to language data, where the l
 
 ## Data and Methods
 
-```{warning} Due to jupyterlite not supporting many of the modules used in this method, many of the code-blocks in this paper are not executable. Please export the code and the corresponding files to run it locally if required. See the [Thebe documentation](https://jupyterbook.org/en/stable/interactive/thebe.html) for more details.
+```{warning} Due to jupyterlite not supporting some of the modules used in this method, some of the code-blocks in this paper are not executable. Please export the code and the corresponding files to run it locally if required. See the [Thebe documentation](https://jupyterbook.org/en/stable/interactive/thebe.html) for more details.
 ```
 
 ### Data
@@ -210,7 +210,7 @@ Where the validation using a RelaxNG file falls short is when the tested XML fil
 
 (evaluation_content)=
 ##### Evaluation Content
-To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions {cite:p}`fischer-starcke_2009`. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance {cite:p}`beijering_2008`.
+To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions {cite:p}`fischer-starcke_2009`. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance {cite:p}`beijering_2008`. 
 
 ```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisable, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
 ```
@@ -232,8 +232,8 @@ Includes error handling for incomplete/incorrect XML schema where it parses the 
 """
 
 # Path to the folder containing XML files
-xml_folder_path = '../chapter1_ZA-content/gold_standard'  
-txt_file_path = '../chapter1_ZA-content/gold_standard/gold_standard.txt'  
+xml_folder_path = 'chapter1_ZA-content/gold_standard'  
+txt_file_path = 'chapter1_ZA-content/gold_standard/gold_standard.txt'  
 
 # Open the original file and reads its content, this serves as comparator for the processed XML files. 
 with open(txt_file_path, 'r', encoding='utf-8') as file:
@@ -314,6 +314,7 @@ for xml_file_name in os.listdir(xml_folder_path):
     if xml_file_name.endswith('.xml'):  # Only process XML files
         xml_file_path = os.path.join(xml_folder_path, xml_file_name)
 
+#due to expected faulty formating, a try/except block is implemented to still give a valid content evaluation. 
         try:
             # Try parsing the XML file
             tree = ET.parse(xml_file_path)
@@ -325,7 +326,7 @@ for xml_file_name in os.listdir(xml_folder_path):
                 sentences = split_into_sentences(seg.strip())  # Split text into sentences
                 speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
                 sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove XML tags
-                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless #samples the random sentences
                 sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
                 all_sentences.extend(sampled_sentences)  # Add to the global list
         except:
@@ -336,7 +337,7 @@ for xml_file_name in os.listdir(xml_folder_path):
                 sentences = split_into_sentences(raw_content.strip())  # Split sentences from raw content
                 sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove tags
                 speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
-                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless #samples the random sentences
                 sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
                 all_sentences.extend(sampled_sentences)  # Add to the global list
         # List to store match percentages for the current file
@@ -349,7 +350,6 @@ for xml_file_name in os.listdir(xml_folder_path):
             match_percentages.append((match_count, matching_sentence, levenshtein_dist))
 
             counts_token += len(sentence.split())
-        
         
 
         # Store results
@@ -374,6 +374,24 @@ df.to_excel(excel_file_path, index=False)
 
 print(f"Results have been written to {excel_file_path}")       
 ```
+In a second step, the input sequence of the XML file was normalized by the input sequence matched from the gold-standard via character count. 
+
+$$
+abs(a-b)/((a+b)/2)_=_c
+a_=_XML
+b_=_gold_standard
+$$
+
+The Levenshtein distance was normalized by the character count of the sentence extracted from the XML file. Then the count of the matching 5-grams was normalized by the character count of the sentence extracted from the XML file.
+
+$$
+c+d-f_=_e
+c_=_normalized_characters
+d_=_normalized_levenshtein_distance
+f_=_normalized_ngram_count
+$$
+
+The average of the resulting error score was calculated across each run. If the average error score is below 0, the match is perfect, if the score is between 0 and 0.5, the match is imperfect but a substantial amount of the sentence could be matched. If the score is between 0.5 and 3, where 3 is the maximum score of the metric, the XML is unusable and the content of the XML is completly different from the gold standard.
 
 (experiments)=
 ## Experiments and Results
@@ -492,7 +510,7 @@ Llama 3 8B parameters was very inconsistent in its replies. It ranged from simpl
 |12| Given: {example_txt} with the goal: {example_xml}, format this: {chunk} into the same XML format. Format all of the text. Give only the formated text. |-|-|-| View {Download}`llama 3 8B result 12<./chapter1_ZA-content/results/llama_herd/22.12/result_12.xml>` |
 
 ```{note}
-The conclusive results for the Llama herd and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/llama_herd>` folder of this chapter.
+The conclusive results for the Llama herd and its corresponding commentary can be found in the results folder of this chapter: chapter1_ZA-content/results/llama_herd.
 ```
 
 ### Gemini 1.5 Flash
@@ -522,20 +540,20 @@ Its output, however, was mostly unusable, as it refused to attempt the task and 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| help me format some text | None | I can help you format text in a few different ways. I can: Change the font and size of the text. Make the text bold, italic, or underlined. Add bullet points or numbered lists to the text. Indent the text. Align the text to the left, right, or center. To help me format your text, please provide me with the following information: The text you want to format. The specific formatting you want to apply. For example, you could say: "Please format the following text: This is an example of some text. I want to make the text bold and italic." Once you provide me with this information, I will be able to format your text for you. |
-|2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same XML format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_6-1.xml>`|
+|2| Your task: Given: [The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.] with the goal [<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>] format the following text  into the same XML format. Format all of the text.| 4000 token chunk of 25.02 transcript | View {Download}`output attempt 6 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_6.txt>`|
 |3|format all of the text | None | I'm not programmed to assist with that. |
 
 The experiment was successful insofar as that when specifically asking for help, Gemini attempted to format the input. In a first attempt it did format the text into an XML structure, though when re-running the prompt, it neglected all speaker turns and created one large segment containing the entire input. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| I need help with some XML formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12 <./chapter1_ZA-content/gemini-results/31.12/attempt_11-1.xml>` |
-|2| Try again, pay attention to the speakers| None | View {Download}`second XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-2.xml>`|
-|3|Assign a separate speaker tag to each speaker please | None | View {Download}`third XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-3.xml>` |
-|4| Find all speakers in the text | None | View {Download}`fourth XML file<./chapter1_ZA-content/gemini-results/31.12/attempt_11-4.xml>`  |
+|1| I need help with some XML formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-1.txt>` |
+|2| Try again, pay attention to the speakers| None | View {Download}`output attempt 11 2 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`|
+|3|Assign a separate speaker tag to each speaker please | None | View {Download}`output attempt 11 3 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>` |
+|4| Find all speakers in the text | None | View {Download}`output attempt 11 4 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`  |
 
 ```{note}
-The conclusive results for Gemini Flash and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/gemini_flash>` folder of this chapter.
+The conclusive results for Gemini Flash and its corresponding commentary can be found in the results folder of this chapter: chapter1_ZA-content/results/gemini_flash.
 ```
 (gpt_attempt)=
 ### Custom GPTs
@@ -766,13 +784,13 @@ In this attempt, the chat interface of ChatGPT-4o was used. It was given the sam
 |1| I have a TXT file which needs to be converted into an XML file following a specific XML format, the ParlaMint schema. Here is a snippet of the TXT file: [TXT snippet]. The content of this snippet was converted into an XML schema, which looks like this: [XML snippet]. Please convert the TXT file I have given you into a downloadable XML file following the same schema. I have also given you an .rng file illustrating the schema.| uploaded RelaxNG file, part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020.xml>` |
 |2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the XML file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_refined.xml>`|
 |3|You started off well, but stopped implementing the schema after a while. Please make sure to carry the schema through the entire document.| None | View {Download}`third XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_consistent.xml>` |
-|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_02_2020_fully_structured.xml>`  |
+|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_fully_structured.xml>`  |
 
 
 ## Discussion 
 An overview of the XML validation results for each LLM can be found {doc}`here <../chapter1_ZA-content/results/xml_validation.xlsx>`, an overview of the content validation results for each LLM can be found {doc}`there <../chapter1_ZA-content/results/content_validation.xlsx>`.
 
-```{figure} chapter1_ZA-content/images/visualisations_errors.png
+```{figure} chapter1_ZA-content/images/visualisation_errors.png
 ---
 width: 650px
 align: center
@@ -786,7 +804,6 @@ The Llama models failed entirely in producing well-formed XMLs that adhered to t
 
 ```{figure} chapter1_ZA-content/images/error_scores_llama.png
 ---
-width: 650px
 align: center
 name: fig-errors_llama
 ---
@@ -852,7 +869,7 @@ GPT-4o managed to semi-successfully reproduce the content of the input with an e
 ### Limitations
 This chapter was met with several limitations. A primary issue is the nature of Large Language Model, specifically it's generative prowess. Even when running the exact same parameters and inputs several times, the output could always differ, thus making it difficult to indicate whether an approach proved more or less promising because it could not be rerun to generate the exact same output. 
 
-An additional problem, but also promise, lies in the swift moving field of machine learning. Many of the tools used, such as the Llama API, is rapidly developing, making finding accurate documentation difficult. The commercial nature of many of the models make it difficult to accurately give statements about their configuration and their capabilities, especially when the release papers of such models are not peer-reviewed. The different ways to access these models further complicate a structured approach to testing them, as all models are available through different platforms and with different possible adaptable parameters as emphasised when comparing GPT and the Llama herd. A more structured approach to these different tools would have led to a more stable study. 
+An additional problem, but also promise, lies in the swift moving field of machine learning. Many of the tools used, such as the Llama API, are rapidly developing, making finding accurate documentation difficult. The commercial nature of many of the models make it difficult to accurately give statements about their configuration and their capabilities, especially when the release papers of such models are not peer-reviewed. The different ways to access these models further complicate a structured approach to testing them, as all models are available through different platforms and with different possible adaptable parameters as emphasised when comparing GPT and the Llama herd. A more structured approach to these different tools would have led to a more stable study. 
 
 Indeed, another limitation of this study lies in the limited prompting approach taken. Sahoo et al. suggest many more which could prove more fruitful to establish whether prompt engineering per se is infeasible or just the prompts employed by us and suggested by Vijayan {cite:t}`sahoo_2024, vijayan_2023`. 
 
@@ -861,6 +878,12 @@ Furthermore, the ParlaMint scheme relies on very specific world knowledge, such 
 ## Conclusion 
 This paper has demonstrated that the small scale herd Llama 3 by Meta is not suitable for formatting data into the ParlaMint scheme out of the box, furthermore, it illustrated that models with rigid content censorship systems, such as Gemini, are unsuitable for dealing with parliamentary texts as these texts are a reflection of the issues present within a society and thus do not omit violence. The most promising candidate evaluated are the GPT models. Nonetheless, the GPT models were unable in their present state to complete the task to a satisfactory level. 
 As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a curated dataset from the ParlaMint corpus to create a custom model specifically attuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see Sahoo et al. {cite:t}`sahoo_2024` for an overview of prompt engineering techniques). 
+
+## Tools 
+
+(1) Chang, M.; Morgan, J. Ollama. https://ollama.com/.
+(2) ChatGPT, 2024. https://chatgpt.com/.
+(3) Gemini 1.5 Flash, 2024. https://gemini.google.com/app.
 
 ## Bibliography
 ```{bibliography}

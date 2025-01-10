@@ -376,20 +376,20 @@ print(f"Results have been written to {excel_file_path}")
 ```
 In a second step, the input sequence of the XML file was normalized by the input sequence matched from the gold-standard via character count. 
 
-\begin
+$$
 abs(a-b)/((a+b)/2)_=_c
 a_=_XML
 b_=_gold_standard
-\end
+$$
 
 The Levenshtein distance was normalized by the character count of the sentence extracted from the XML file. Then the count of the matching 5-grams was normalized by the character count of the sentence extracted from the XML file.
 
-\begin
+$$
 c+d-f_=_e
 c_=_normalized_characters
 d_=_normalized_levenshtein_distance
 f_=_normalized_ngram_count
-\end
+$$
 
 The average of the resulting error score was calculated across each run. If the average error score is below 0, the match is perfect, if the score is between 0 and 0.5, the match is imperfect but a substantial amount of the sentence could be matched. If the score is between 0.5 and 3, where 3 is the maximum score of the metric, the XML is unusable and the content of the XML is completly different from the gold standard.
 
@@ -549,7 +549,7 @@ The experiment was successful insofar as that when specifically asking for help,
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
 |1| I need help with some XML formatting. I have this example text: "The CHIEF WHIP OF THE MAJORITY PARTY: Thank you very much, House Chair. As indicated on the Order Paper we shall proceed." And I need it formatted into this shape: "<note type="speaker">The CHIEF WHIP OF THE MAJORITY PARTY:</note> <who="#ChiefWhipOfMajorityParty"> <seg xml:lang="en">Thank you very much, House Chair. As indicated on the Order Paper we shall proceed.</seg>". Help me format the following text: | 4000 token chunk of 25.02 transcript | View {Download}`output attempt 11 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-1.txt>` |
 |2| Try again, pay attention to the speakers| None | View {Download}`output attempt 11 2 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`|
-|3|Assign a separate speaker tag to each speaker please | None | View {Download}`output attempt 11 3 31.12<./chapter1_ZA-content//results/gemini_flash/31.12/result_11-2.txt>` |
+|3|Assign a separate speaker tag to each speaker please | None | View {Download}`output attempt 11 3 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>` |
 |4| Find all speakers in the text | None | View {Download}`output attempt 11 4 31.12<./chapter1_ZA-content/results/gemini_flash/31.12/result_11-2.txt>`  |
 
 ```{note}
@@ -790,7 +790,7 @@ In this attempt, the chat interface of ChatGPT-4o was used. It was given the sam
 ## Discussion 
 An overview of the XML validation results for each LLM can be found {doc}`here <../chapter1_ZA-content/results/xml_validation.xlsx>`, an overview of the content validation results for each LLM can be found {doc}`there <../chapter1_ZA-content/results/content_validation.xlsx>`.
 
-```{figure} chapter1_ZA-content/images/visualisations_errors.png
+```{figure} chapter1_ZA-content/images/visualisation_errors.png
 ---
 width: 650px
 align: center
@@ -804,7 +804,6 @@ The Llama models failed entirely in producing well-formed XMLs that adhered to t
 
 ```{figure} chapter1_ZA-content/images/error_scores_llama.png
 ---
-width: 650px
 align: center
 name: fig-errors_llama
 ---
