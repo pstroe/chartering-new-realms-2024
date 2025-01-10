@@ -826,18 +826,51 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 
 
 ## Discussion 
-STRUCTURE IT AS AN OVERALL DISCUSSION? DO YOU WANNA COMPARE THE SCORES TO EACH OTHER HERE? 
+An overview of the XML validation results for each LLM can be found {doc}`here <../chapter1_ZA-content/results/xml_validation.xlsx>`, an overview of the content validation results for each LLM can be found {doc}`there <../chapter1_ZA-content/results/content_validation.xlsx>`.
 
-An overview of the XML validation results for each LLM can be found {doc}`here <../chapter1_ZA-content/results/xml_validation.xlsx>`
+```{figure} chapter1_ZA-content/images/visualisations_errors.png
+---
+width: 650px
+align: center
+name: fig-errors
+---
+Content error scores of the tested models. 
+```
 
 ### Llama Herd 
 The Llama models failed entirely in producing well-formed XMLs that adhered to the ParlaMint schema. Their outputs were not valid XML files at all, with the structure lacking the basic syntax required for XML validation. As a result, the validation script failed completely, rendering the outputs unusable for any meaningful processing or schema compliance.
 
+```{figure} chapter1_ZA-content/images/error_scores_llama.png
+---
+width: 650px
+align: center
+name: fig-errors_llama
+---
+Content error scores of the Llama herd. 
+```
+
+Llama 3.2 1B failed entirely at reproducing the content given faithfully. All its error scores were above 0.5 and thus indicate that its output is unusable. This is in concordance with the results, that showed that the model would frequently ignore the prompt given and instead correct or summarize the content given. Llama 3.2 3B and Llama 3 8B Instruct perfomed better, though only 20% of results for Llama 3.2 3B and 19% for Llama 3 8B Instruct were below the 0.5 mark, with none in the negative, thus indicating that whilst some content would have been reproduced faithfully, some was omitted or altered. 
+
+Llama 3.2 1B can thus be discarded to attempt formatting such a complex format as the ParlaMint scheme via Prompt Engineering. Llama 3.2 3B and Llama 3 8B Instruct are also largely to be dismissed, mainly because of their inability to adapt to the ParlaMint scheme. 
+
 ### Gemini 1.5 Flash 
 Gemini largely failed to produce any output at all in most attempts. On the rare occasions it did generate XML output, it was incorrect both structurally and content-wise, failing to adhere to the ParlaMint schema or accurately represent the input data. However, the XML syntax was mostly correct, with proper tag closures and formatting, demonstrating a basic understanding of XML structure despite the overall inadequacy of the results.
 
+Thus, the content evaluation is also largely futile for Gemini. Overall, it scored the worst when analysing its content score, with an average error score of 2.12, setting it well above the benchmark of 0.5 for semi-faithful reproduction of content. 
+
+```{figure} chapter1_ZA-content/images/error_scores_gemini.png
+---
+width: 650px
+align: center
+name: fig-errors_gemini
+---
+Content error scores of Gemini 1.5 Flash. 
+```
+
+The refusal of Gemini to attempt formatting, can predominantly be attributed to the topic discussed in parliamentary debates, specifically the transcripts of the 25th of February where rape is thematized. Due to this restrictiveness of Gemini, it can be dismissed as possible candidate for any further experiments formatting parliamentary debates, unless the censorship of the model is relaxed in further releases. 
+
 ### Custom GPT
-The custom GPTs' attempts at generating XML output exhibited recurring issues. Across all three cutsom GPTs the first outputs were incomplete, omitting much of the content. Later attempts included the entire input but failed to adhere to the ParlaMint XML schema. Speech content was incorrectly nested in "note" elements, parts of speeches were contained within the "speaker" attribute, metadata such as page numbers and headers were retained as part of the speeches, treanscriber's notes were handled incorrectly, and languages were universally mislabeled as English. Despite prompting, structural issues persisted, such as missing attributes in "u" elements, inconsistent line counts, and a failure to follow the example XML's formatting. Across multiple attempts, only minimal improvements were achieved, the most promising of which was the first GPT's final attempt: 
+The custom GPTs' attempts at generating XML output exhibited recurring issues. Across all three custom GPTs the first outputs were incomplete, omitting much of the content. Later attempts included the entire input but failed to adhere to the ParlaMint XML schema. Speech content was incorrectly nested in "note" elements, parts of speeches were contained within the "speaker" attribute, metadata such as page numbers and headers were retained as part of the speeches, transcriber's notes were handled incorrectly, and languages were universally mislabeled as English. Despite prompting, structural issues persisted, such as missing attributes in "u" elements, inconsistent line counts, and a failure to follow the example XML's formatting. Across multiple attempts, only minimal improvements were achieved, the most promising of which was the first GPT's final attempt: 
 
 ```{code-cell} xml
 <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto): I’m looking around the</note>
@@ -849,14 +882,12 @@ The custom GPTs' attempts at generating XML output exhibited recurring issues. A
           <seg xml_lang="en">Page: 3</seg>
 ```
 
-This seems to indicate that giving the custom GPT the gold standard TXT and XML files was the most successful, though more prompting and more attempts did nothing to improve this final output. 
+This seems to indicate that giving the custom GPT the gold standard TXT and XML files was the most successful. Overall, the custom GPT's content meet the content benchmark of 0.5 two out of three times, though again it did not reach a negative score which would have been indicative of a perfect reproduction of the input. Though it must be noted that more prompting and more attempts did nothing to improve this final output. 
 
 Despite the issues with content accuracy and schema adherence, the custom GPTs consistently produced well-formed XMLs. The syntax was valid, with correctly closed tags and mostly proper nesting of elements, even when the content within the elements or their attributes was incorrect. This demonstrates the GPTs' capability to handle the structural requirements of XML, albeit with challenges in adhering to the specificity of the ParlaMint schema.
 
-
 ### GPT-4o 
-
-In its first attempt, GPT-4o produced an XML file that initially adhered to the ParlaMint structure but  became disorganized after 40 lines. Below is an excerpt from the section containing the speeches in this initial attempt:
+In its first attempt, GPT-4o produced an XML file that initially adhered to the ParlaMint structure but became disorganized after 40 lines. Below is an excerpt from the section containing the speeches in this initial attempt:
 
 ```{code-cell} xml
 <u who="#House met at 14"><seg xml:lang="en">House Chairperson Ms M G Boroto took the Chair and requested</seg></u>
@@ -872,17 +903,20 @@ Although having a "seg" element contain a single line of transcription is accept
 
 Despite these issues, GPT-4o did succeed in producing valid XML files, even if they failed to follow the specific schema required for encoding the input.
 
+GPT-4o managed to semi-successfully reproduce the content of the input with an error score of 0.22, indicating that there were still some issues, though that the content was not compltely redacted or rewritten. Thus it can be concluded that the GPT models offer the most promising candidates for further research or possibly finetuning to be adapted specifically to formatting parliamentary debates into ParlaMint schemas. 
+
 ### Limitations
-Problems: specific world knowledge that is needed to fill in the metadata, size of context window, computational power/resources. 
-Prompt Engineering on local LLMs (Why it doesn't work for this specific case, why it didn't work for us.) -> the limited context window paired with the large input, the inability to work with unaltered text, computational issues/hardware issues. Batching didn't work.
+This chapter was met with several limitations. A primary issue is the nature of Large Language Model, specifically it's generative prowess. Even when running the exact same parameters and inputs several times, the output could always differ, thus making it difficult to indicate whether an approach proved more or less promising because it could not be rerun to generate the exact same output. 
 
-Note for limitations: we do not populate the metadata files, because very specific real world knowledge would be needed, and it is easier and computationally more efficient to populate this metadate with a rule-based approach once the base XML of the speeches themselves are parsed/created by the LLM. 
-Many members of the SA parliament do not have their birth date published online. 
+An additional problem, but also promise, lies in the swift moving field of machine learning. Many of the tools used, such as the Llama API, is rapidly developing, making finding accurate documentation difficult. The commercial nature of many of the models make it difficult to accurately give statements about their configuration and their capabilities, especially when the release papers of such models are not peer-reviewed. The different ways to access these models further complicate a structured approach to testing them, as all models are available through different platforms and with different possible adaptable parameters as emphasised when comparing GPT and the Llama herd. A more structured approach to these different tools would have led to a more stable study. 
 
+Indeed, another limitation of this study lies in the limited prompting approach taken. Sahoo et al. suggest many more which could prove more fruitful to establish whether prompt engineering per se is infeasible or just the prompts employed by us and suggested by Vijayan {cite:t}`sahoo_2024, vijayan_2023`. 
+
+Furthermore, the ParlaMint scheme relies on very specific world knowledge, such as metadata concerned with the speakers present in the debates. It would need to have access to this information on speakers to generate appropriate and factually correct responses. This is especially difficult in the case of South Africa, as many of the data points required to be collected about representatives, are not accessible for all members of parliament (ex. birthdates). It thus makes it hard if not impossible to complete the metadata for the entire corpus. 
 
 ## Conclusion 
-
-As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a currated dataset from the ParlaMint corpus to create a custom model specifically atuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see {cite:t}`sahoo_2024` for an overview of prompt engineering techniques).
+This paper has demonstrated that the small scale herd Llama 3 by Meta is not suitable for formatting data into the ParlaMint scheme out of the box, furthermore, it illustrated that models with rigid content censorship systems, such as Gemini, are unsuitable for dealing with parliamentary texts as these texts are a reflection of the issues present within a society and thus do not omit violence. The most promising candidate evaluated are the GPT models. Nonetheless, the GPT models were unable in their present state to complete the task to a satisfactory level. 
+As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a curated dataset from the ParlaMint corpus to create a custom model specifically attuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see Sahoo et al. {cite:t}`sahoo_2024` for an overview of prompt engineering techniques). 
 
 ## Bibliography
 ```{bibliography}
