@@ -199,8 +199,7 @@ By the end of this step, the script generates a CSV file that consolidates metad
 
 ![screenshot of the csv file](images/csv.png)
 <figcaption>Figure 1: Structured metadata stored in the CSV file, displaying fields such as file_name, article_title, journal_title, and others.</figcaption>
-
-
+<br>
 3. Step 3: Importing Metadata into SQLite
 
 The third step of the experiment involves importing the metadata stored in the CSV file into an SQLite database. We also write a Python script to achieve this.
@@ -254,8 +253,7 @@ By the end of this step, we import the metadata into the SQLite database to make
 
 ![screenshot of the SQLite](images/SQLite.png)
 <figcaption>Figure 2: SQLite interface showing the imported metadata from the CSV file, with each row representing a single record and columns matching the CSV fields. All extracted metadata can be managed, retrieved, viewed, and further processed through this platform.</figcaption>
-
-
+<br>
 This experiment extracted metadata from PDF files, converted it into a structured CSV file, and stored it in a database for further analysis. By using shell scripts and Python tools, the workflow achieved both efficiency and consistency. This established a robust pipeline, transforming raw data into a searchable database, which facilitates in-depth metadata analysis.
 
 ## Results
