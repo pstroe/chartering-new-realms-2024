@@ -50,7 +50,7 @@ The transcripts are majoritatively held in English, though when a speaker choose
 
 [^footnote2]: For a more detailed discussion of editing practices in the South African Hansard view {cite:p}`hibbert_2016, hibbert_2003`.
 
-The decision was made to process a randomly selected transcript from the National Assembly, henceforth abbreviated NA, to assess whether the proposed approach is feasible, thus following the methodology of Ogrodniczuk {cite:t}`ogrodniczuk_2024`. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions, however the formatting for all of these transcripts follows the approximate same standards as those of the NA. The session selected was from the 25th of February 2020. 
+The decision was made to process a randomly selected transcript from the National Assembly, henceforth abbreviated NA, to assess whether the proposed approach is feasible, thus following the methodology of {cite:t}`ogrodniczuk_2024`. The data thus excludes any other years, all joint sittings, all meetings of the NCoP and all mini plenary sessions, however the formatting for all of these transcripts follows the approximate same standards as those of the NA. The session selected was from the 25th of February 2020. 
 
 #### ParlaMint 
 
@@ -100,66 +100,9 @@ The ParlaMint schema also allows for the encoding of extensive metadata around s
 
 The first step was to prepare the corpus root file which contains the metadata about the South African Hansard papers. In a next step, a sample XML file was prepared. For this purpose, the TXT file containing the transcripts of the session of the National Assembly held on 25.02.2020 was selected. A shortened version of around 17 pages was created, containing around three speeches and the introductory conversation of that session. This short TXT was then converted into an XML file, adhering to the ParlaMint schema. It was judged that these 17 pages contained enough variation in speakers and discourse as to provide a wide array of different XML elements and attributes within the XML file to serve as example for the prompts served to the LLMs. 
 
-Example snippet from the converted XML file, showing part of the teiHeader element:
-
-```{code-cell} xml
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HansardSA_NA_2020" xml:lang="en">
-    <teiHeader>
-     <fileDesc>
-       <titleStmt>
-            <title type="main" xml:lang="en">South African Hansard papers</title>
-            <title type="sub">Minutes of the National Assembly of South Africa</title>
-            <meeting n="1" corresp="#DZ" </meeting> 
-       </titleStmt>
-       ...
-      <profileDesc>
-        <settingDesc>
-            <setting> 
-                <name type="place">Houses of Parliament</name>
-                <name type="city">Cape Town</name>
-                <name type="country" key="ZA">South Africa</name>
-                <date when="2020-02-25">25.02.2020</>
-            </setting>
-        </settingDesc>
-     </profileDesc>
-</TEI>
-```
-
 As described above, speaker metadata is stored in a separate file, which is referenced as necessary. Specifically, a unique ID is defined for each speaker within this speaker metadata file, which is used in the component file to identify the speaker and link them to the metadata file. To facilitate the prompt engineering at first, the decision was made to forgo the speaker metadata context to ensure a clean run of the LLM. In a next step, the speaker element could be called upon to insert the relevant ID.
 
-Example snippet from the converted XML file, showing part of text element containing the speeches:
-
-```{code-cell} xml
-<text>
-  <body>
-    <div type="debateSection">
-      <note type="time">The House met at <time when="2020-02-25T014:00:00">14:00</time>.</note>
-      <note type="narrative">House Chairperson Ms M G Boroto took the Chair and requested members to observe a moment of silence for prayer or meditation.</note>
-      <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
-      <u xml:id="25-02-2020_u1" who="#houseChairperson">
-        <seg xml:lang="en">Hon members, I would like to remind you that on 4 December 2019 the House adopted the Rules Committee report which introduced a number of
-            amendments to our rules. Some of the amendments pertain to thesequence of proceedings and Members’ Statements. To facilitate sufficient opportunity for Ministers’ Responses to Members’ Statements, the sequence of proceedings has been amended so that Members’ Statements are now at the start of the proceedings on days that they are scheduled by the programming committee.
-            </seg>
-        <seg xml:lang="en">The Rules Committee further agreed that the number of Ministers’ Responses be increased from six to seven and that time allowed for ministers’ Responses be increased from two minutes to three minutes. With that background, I will now take the first item on the Order Paper which is Members’ Statements. Does any member of the ANC wish to make a statement?
-        </seg>
-      </u>
-      <note type="speaker">The CHIEF WHIP OF THE OPPOSITION:</note>
-      <u xml:id="25-02-2020_u2" who="#ChiefWhipOfOpposition"> 
-        <seg xml:lang="en">
-            Sorry Chair, on a point of order.
-        </seg>
-      </u>
-      <note type="speaker">The HOUSE CHAIRPERSON (Ms M G Boroto):</note>
-      <u xml:id="25-02-2020_u3" who="#houseChairperson">
-        <seg xml:lang="en">
-            Please take your seat. Yes, what’s your point of order?
-        </seg>
-      </u>
-      ...
-    </div>
-  </body>
-</text>
-```
+For an example of the adapted XML file for this project, see [Custom GPTs](gpt_attempt).
 
 ### Method 
 This chapter uses the newest releases of the Llama 3 model family, Gemini 1.5 Flash, GPT-4o, and the custom GPTs. 
@@ -594,8 +537,8 @@ The experiment was successful insofar as that when specifically asking for help,
 ```{note}
 The conclusive results for Gemini Flash and its corresponding commentary can be found in the {doc}`results<../chapter1_ZA-content/results/gemini_flash>` folder of this chapter.
 ```
-
-### Custom GPT
+(gpt_attempt)=
+### Custom GPTs
 When configuring a custom GPT, the user can set several different paramaters. For this paper, the paramaters Additional Instructions, Knowledge and New Capabilities were of particular interest.
 In the Additional Instructions section, the user may provide detailed instructions or guidelines on how the GPT should behave, its functionalities, and any particular behaviors to avoid. {cite:p}`openai_2025`
 
@@ -816,13 +759,14 @@ The options Web Borwsing, DALL·E Image Generation and Canvas were disabled.
 |4| You have now omitted the entirety of the textual data. Please make sure to include all speeches in your XML. | None | View {Download}`fourth XML file<./chapter1_ZA-content/results/custom_gpt/Try3/converted_hansard_complete.xml>`  |
 
 ### GPT-4o
+In this attempt, the chat interface of ChatGPT-4o was used. It was given the same example snippets of the TXT and XML files within the prompt as the custom GPTs, both the TXT and XML gold standard files and the RelaxNG file to illustrate the XML structure. 
 
 || **Prompts**                                                                                    |**Additional Files/Information** | **Output**                       |
 |----|--------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------|
-|1| I have a TXT file which needs to be converted into an XML file following a specific XML format, the ParlaMint schema.Here is a snippet of the TXT file: [TXT snippet]. The content of this snippet was converted into an XML schema, which looks like this: [XML snippet]. Please convert the TXT file I have given you into a downloadable XML file following the same schema. I have also given you an .rng file illustrating the schema.|uploaded RelaxNG file, part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020.xml>` |
+|1| I have a TXT file which needs to be converted into an XML file following a specific XML format, the ParlaMint schema. Here is a snippet of the TXT file: [TXT snippet]. The content of this snippet was converted into an XML schema, which looks like this: [XML snippet]. Please convert the TXT file I have given you into a downloadable XML file following the same schema. I have also given you an .rng file illustrating the schema.| uploaded RelaxNG file, part 1 of raw TXT data | View {Download}`first XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020.xml>` |
 |2|Please note that utterances are stored in the "seg" element, with metadata about the utterance stored in the parent element "u". A new "u" element ist started every time the speaker changes. Please remember the snippet of the XML file I have given you and try again.| None | View {Download}`second XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_refined.xml>`|
 |3|You started off well, but stopped implementing the schema after a while. Please make sure to carry the schema through the entire document.| None | View {Download}`third XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_consistent.xml>` |
-|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/gpt_4o/Try1/final_updated_converted_hansard_25_02_2020_fully_structured.xml>`  |
+|4| Here is a reminder as to how the schema should look: [XML snippet] Please follow this schema through the entire document, which you have failed to do before.| Snippet from gold standard XML file | View {Download}`fourth XML file<./chapter1_ZA-content/results/gpt_4o/HansardSA_25_Feb_2020_fully_structured.xml>`  |
 
 
 ## Discussion 
