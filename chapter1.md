@@ -880,6 +880,12 @@ Furthermore, the ParlaMint scheme relies on very specific world knowledge, such 
 This paper has demonstrated that the small scale herd Llama 3 by Meta is not suitable for formatting data into the ParlaMint scheme out of the box, furthermore, it illustrated that models with rigid content censorship systems, such as Gemini, are unsuitable for dealing with parliamentary texts as these texts are a reflection of the issues present within a society and thus do not omit violence. The most promising candidate evaluated are the GPT models. Nonetheless, the GPT models were unable in their present state to complete the task to a satisfactory level. 
 As pretrained LLMs show difficulties when modelling data into complex formats such as the ParlaMint, further research is necessary on whether tools such as Evaporate or SEED, which are partially rulebased, can be adapted better to the task {cite:p}`aorora_2023, chen_2023`. A different approach could lie in accessing stronger hardware through cloud computing platforms such as google colab to run models such as Jellyfish which are specialized on the task of formatting data {cite:p}`zhang_jellyfish_2024`. It might also be possible to fine-tune a model with a curated dataset from the ParlaMint corpus to create a custom model specifically attuned to formatting data into the ParlaMint schema. Furthermore, different prompting approaches might show more fruitful (see Sahoo et al. {cite:t}`sahoo_2024` for an overview of prompt engineering techniques). 
 
+## Tools 
+
+(1) Chang, M.; Morgan, J. Ollama. https://ollama.com/.
+(2) ChatGPT, 2024. https://chatgpt.com/.
+(3) Gemini 1.5 Flash, 2024. https://gemini.google.com/app.
+
 ## Bibliography
 ```{bibliography}
 :style: plain
