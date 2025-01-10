@@ -292,5 +292,3 @@ By embracing digital tools, we can ensure that feminist legacies are not only pr
 ## Tools and References
 
 ```{bibliography} references_chapter9.bib
-
-aabbcc
