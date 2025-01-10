@@ -376,20 +376,20 @@ print(f"Results have been written to {excel_file_path}")
 ```
 In a second step, the input sequence of the XML file was normalized by the input sequence matched from the gold-standard via character count. 
 
-$$
+\begin
 abs(a-b)/((a+b)/2)_=_c
 a_=_XML
 b_=_gold_standard
-$$ 
+\end
 
 The Levenshtein distance was normalized by the character count of the sentence extracted from the XML file. Then the count of the matching 5-grams was normalized by the character count of the sentence extracted from the XML file.
 
-$$
+\begin
 c+d-f_=_e
 c_=_normalized_characters
 d_=_normalized_levenshtein_distance
 f_=_normalized_ngram_count
-$$ 
+\end
 
 The average of the resulting error score was calculated across each run. If the average error score is below 0, the match is perfect, if the score is between 0 and 0.5, the match is imperfect but a substantial amount of the sentence could be matched. If the score is between 0.5 and 3, where 3 is the maximum score of the metric, the XML is unusable and the content of the XML is completly different from the gold standard.
 
