@@ -273,6 +273,7 @@ To evaluate the content of the output of the LLMs tested an approach based on th
 ```
 
 ```{code-cell} python
+:thebe:
 %pip install levenshtein
 
 import xml.etree.ElementTree as ET
@@ -288,8 +289,8 @@ Includes error handling for incomplete/incorrect XML schema where it parses the 
 """
 
 # Path to the folder containing XML files
-xml_folder_path = 'chapter1_ZA-content/gold_standard'  
-txt_file_path = 'chapter1_ZA-content/gold_standard/gold_standard.txt'  
+xml_folder_path = '../chapter1_ZA-content/gold_standard'  
+txt_file_path = '../chapter1_ZA-content/gold_standard/gold_standard.txt'  
 
 # Open the original file and reads its content, this serves as comparator for the processed XML files. 
 with open(txt_file_path, 'r', encoding='utf-8') as file:
