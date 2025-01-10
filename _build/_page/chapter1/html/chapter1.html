@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/lite/build/themes/@jupyterlab/theme-dark-extension/index.css?v=337a7842" />
@@ -958,7 +958,9 @@
 <p>Using a short Python script, the adapted RelaxNG file was used to evaluate and validate all XML files:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install lxml
+
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="k">def</span> <span class="nf">validate_xml</span><span class="p">(</span><span class="n">relaxng_file</span><span class="p">,</span> <span class="n">xml_file</span><span class="p">):</span>
@@ -1018,11 +1020,15 @@
 <section id="evaluation-content">
 <span id="id59"></span><h5>Evaluation Content<a class="headerlink" href="#evaluation-content" title="Link to this heading">#</a></h5>
 <p>To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions <span id="id60">[<a class="reference internal" href="#id123" title="Bettina Fischer-Starcke. Keywords and frequent phrases of Jane Austen’s \textit Pride and Prejudice: A corpus-stylistic analysis. International Journal of Corpus Linguistics, 14(4):492–523, December 2009. URL: http://www.jbe-platform.com/content/journals/10.1075/ijcl.14.4.03fis (visited on 2024-04-18), doi:10.1075/ijcl.14.4.03fis.">Fischer-Starcke, 2009</a>]</span>. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance <span id="id61">[<a class="reference internal" href="#id122" title="Karin Beijering, Charlotte Gooskens, and Wilbert Heeringa. Predicting intelligibility and perceived linguistic distance by means of the Levenshtein algorithm. Linguistics in the Netherlands, 25:13–24, October 2008. URL: http://www.jbe-platform.com/content/journals/10.1075/avt.25.05bei (visited on 2025-01-09), doi:10.1075/avt.25.05bei.">Beijering <em>et al.</em>, 2008</a>]</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">{attention}</span> <span class="pre">This</span> <span class="pre">code</span> <span class="pre">needs</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">configured</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">XML</span> <span class="pre">tag</span> <span class="pre">that</span> <span class="pre">denotes</span> <span class="pre">where</span> <span class="pre">the</span> <span class="pre">text</span> <span class="pre">content</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">is</span> <span class="pre">stored.</span> <span class="pre">The</span> <span class="pre">ParlaMint</span> <span class="pre">scheme</span> <span class="pre">specifies</span> <span class="pre">this</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">*seg*</span> <span class="pre">tag.</span> <span class="pre">In</span> <span class="pre">this</span> <span class="pre">script</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">customisable,</span> <span class="pre">to</span> <span class="pre">allow</span> <span class="pre">for</span> <span class="pre">output</span> <span class="pre">from</span> <span class="pre">LLMs</span> <span class="pre">which</span> <span class="pre">configure</span> <span class="pre">this</span> <span class="pre">tag</span> <span class="pre">wrongly,</span> <span class="pre">to</span> <span class="pre">allow</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">consistent</span> <span class="pre">check</span> <span class="pre">of</span> <span class="pre">content.</span> <span class="pre">Furthermore,</span> <span class="pre">a</span> <span class="pre">regular</span> <span class="pre">expression</span> <span class="pre">was</span> <span class="pre">configured</span> <span class="pre">to</span> <span class="pre">check</span> <span class="pre">whether</span> <span class="pre">the</span> <span class="pre">speaker</span> <span class="pre">segmentation</span> <span class="pre">was</span> <span class="pre">successful.</span> <span class="pre">The</span> <span class="pre">code</span> <span class="pre">below</span> <span class="pre">is</span> <span class="pre">configured</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">gold</span> <span class="pre">standard.</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">{attention}</span> <span class="pre">This</span> <span class="pre">code</span> <span class="pre">will</span> <span class="pre">fail</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">restrictions</span> <span class="pre">of</span> <span class="pre">JupyterLite.</span></code></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the <em>seg</em> tag. In this script it is customisable, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install levenshtein
+
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1035,8 +1041,8 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="c1"># Path to the folder containing XML files</span>
-<span class="n">xml_folder_path</span> <span class="o">=</span> <span class="s1">&#39;test_objects/gpt_4o&#39;</span>  <span class="c1"># Replace with the actual folder path containing XML files</span>
-<span class="n">txt_file_path</span> <span class="o">=</span> <span class="s1">&#39;test_objects/uh_25.02.txt&#39;</span>  <span class="c1"># Replace with the actual path to your TXT file</span>
+<span class="n">xml_folder_path</span> <span class="o">=</span> <span class="s1">&#39;chapter1_ZA-content/gold_standard&#39;</span>  
+<span class="n">txt_file_path</span> <span class="o">=</span> <span class="s1">&#39;chapter1_ZA-content/gold_standard/gold_standard.txt&#39;</span>  
 
 <span class="c1"># Open the original file and reads its content, this serves as comparator for the processed XML files. </span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">txt_file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -1172,7 +1178,7 @@
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
 <span class="c1"># Write the results to an Excel file</span>
-<span class="n">excel_file_path</span> <span class="o">=</span> <span class="s1">&#39;new_test/output_results_with_average.xlsx&#39;</span>
+<span class="n">excel_file_path</span> <span class="o">=</span> <span class="s1">&#39;chapter1_ZA-content/gold_standard/gold_standard.xlsx&#39;</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">excel_file_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Results have been written to </span><span class="si">{</span><span class="n">excel_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>       
@@ -1208,11 +1214,13 @@
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>This code will fail unless langchain and Ollama are installed!</p>
+<p>This code will fail because Ollama is a standalone piece of software!</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install langchain
+
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
 <span class="kn">from</span> <span class="nn">langchain_ollama.llms</span> <span class="kn">import</span> <span class="n">OllamaLLM</span>
 

@@ -273,6 +273,7 @@ To evaluate the content of the output of the LLMs tested an approach based on th
 ```
 
 ```{code-cell} python
+:thebe:
 %pip install levenshtein
 
 import xml.etree.ElementTree as ET
