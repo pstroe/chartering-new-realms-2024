@@ -197,6 +197,8 @@ with open(output_csv, "w", newline="", encoding="utf-8") as csvfile:
 
 By the end of this step, the script generates a CSV file that consolidates metadata from all XML files in a structured and searchable format. This automation not only saves time but also minimizes the risk of human error in data entry.
 
+![screenshot of the csv file](images/csv.png)
+
 3. Step 3: Importing Metadata into SQLite
 
 The third step of the experiment involves importing the metadata stored in the CSV file into an SQLite database. We also write a Python script to achieve this.
@@ -247,6 +249,8 @@ df.to_sql("feminist_metadata", conn, if_exists="append", index=False)
 The if_exists="append" parameter ensures that new data is added to the table without overwriting existing records.
 
 By the end of this step, we import the metadata into the SQLite database to make it ready for efficient querying and analysis. The automation of this process streamlines data management and allows for more sophisticated data operations in future research.
+
+![screenshot of the SQLite](images/SQLite.png)
 
 This experiment extracted metadata from PDF files, converted it into a structured CSV file, and stored it in a database for further analysis. By using shell scripts and Python tools, the workflow achieved both efficiency and consistency. This established a robust pipeline, transforming raw data into a searchable database, which facilitates in-depth metadata analysis.
 
