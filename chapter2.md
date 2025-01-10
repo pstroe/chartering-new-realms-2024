@@ -259,6 +259,7 @@ After these corrections, three texts remained with an average score below 30&nbs
 Considering the averages and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
 
 Figure 1 shows a box plot for the score averages per source, marking the outliers, quartiles and average of averages (in orange):
+
 <img width="615" alt="box plot" src="https://github.com/user-attachments/assets/a4419dc7-fab0-4019-b424-9bf258250737" />
 
 #### De Legibus
