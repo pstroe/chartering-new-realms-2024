@@ -198,6 +198,7 @@ with open(output_csv, "w", newline="", encoding="utf-8") as csvfile:
 By the end of this step, the script generates a CSV file that consolidates metadata from all XML files in a structured and searchable format. This automation not only saves time but also minimizes the risk of human error in data entry.
 
 ![screenshot of the csv file](images/csv.png)
+<figcaption>Figure 1: Structured metadata stored in the CSV file, displaying fields such as file_name, article_title, journal_title, and others.</figcaption>
 
 3. Step 3: Importing Metadata into SQLite
 
@@ -251,6 +252,7 @@ The if_exists="append" parameter ensures that new data is added to the table wit
 By the end of this step, we import the metadata into the SQLite database to make it ready for efficient querying and analysis. The automation of this process streamlines data management and allows for more sophisticated data operations in future research.
 
 ![screenshot of the SQLite](images/SQLite.png)
+<figcaption>Figure 2: SQLite interface showing the imported metadata from the CSV file, with each row representing a single record and columns matching the CSV fields. All extracted metadata can be managed, retrieved, viewed, and further processed through this platform.</figcaption>
 
 This experiment extracted metadata from PDF files, converted it into a structured CSV file, and stored it in a database for further analysis. By using shell scripts and Python tools, the workflow achieved both efficiency and consistency. This established a robust pipeline, transforming raw data into a searchable database, which facilitates in-depth metadata analysis.
 
