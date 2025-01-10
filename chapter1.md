@@ -40,7 +40,7 @@ In light of these added difficulties when it comes to language data, where the l
 
 ## Data and Methods
 
-```{warning} Due to jupyterlite not supporting many of the modules used in this method, many of the code-blocks in this paper are not executable. Please export the code and the corresponding files to run it locally if required. See the [Thebe documentation](https://jupyterbook.org/en/stable/interactive/thebe.html) for more details.
+```{warning} Due to jupyterlite not supporting some of the modules used in this method, some of the code-blocks in this paper are not executable. Please export the code and the corresponding files to run it locally if required. See the [Thebe documentation](https://jupyterbook.org/en/stable/interactive/thebe.html) for more details.
 ```
 
 ### Data
@@ -210,7 +210,7 @@ Where the validation using a RelaxNG file falls short is when the tested XML fil
 
 (evaluation_content)=
 ##### Evaluation Content
-To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions {cite:p}`fischer-starcke_2009`. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance {cite:p}`beijering_2008`.
+To evaluate the content of the output of the LLMs tested an approach based on the Levenshtein distance was adapted. To avoid looping through each file, the decision was made to base the validation script on a random sampler of sentences. It samples a specified number of sentences from the processed XML file and chunks the sentence into 5-grams. 5-grams are generally more flexible than an entire sentence whilst simultaneously being of a size large enough to not be confused with common expressions {cite:p}`fischer-starcke_2009`. This approach was chosen to match sentences even when a word or sequence of the selected sentence does not match exactly, and to make the script more robust for  typeset errors. These 5-grams are then matched up to a sentence from the TXT file with the highest match score. Then the sentence extracted from the XML is compared to the sentence from the  and compares them to the original TXT file employing the Levenshtein distance {cite:p}`beijering_2008`. 
 
 ```{attention} This code needs to be configured for the XML tag that denotes where the text content of the file is stored. The ParlaMint scheme specifies this with the *seg* tag. In this script it is customisable, to allow for output from LLMs which configure this tag wrongly, to allow for a consistent check of content. Furthermore, a regular expression was configured to check whether the speaker segmentation was successful. The code below is configured for the gold standard.
 ```
@@ -232,8 +232,8 @@ Includes error handling for incomplete/incorrect XML schema where it parses the 
 """
 
 # Path to the folder containing XML files
-xml_folder_path = '../chapter1_ZA-content/gold_standard'  
-txt_file_path = '../chapter1_ZA-content/gold_standard/gold_standard.txt'  
+xml_folder_path = 'chapter1_ZA-content/gold_standard'  
+txt_file_path = 'chapter1_ZA-content/gold_standard/gold_standard.txt'  
 
 # Open the original file and reads its content, this serves as comparator for the processed XML files. 
 with open(txt_file_path, 'r', encoding='utf-8') as file:
@@ -314,6 +314,7 @@ for xml_file_name in os.listdir(xml_folder_path):
     if xml_file_name.endswith('.xml'):  # Only process XML files
         xml_file_path = os.path.join(xml_folder_path, xml_file_name)
 
+#due to expected faulty formating, a try/except block is implemented to still give a valid content evaluation. 
         try:
             # Try parsing the XML file
             tree = ET.parse(xml_file_path)
@@ -325,7 +326,7 @@ for xml_file_name in os.listdir(xml_folder_path):
                 sentences = split_into_sentences(seg.strip())  # Split text into sentences
                 speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
                 sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove XML tags
-                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless #samples the random sentences
                 sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
                 all_sentences.extend(sampled_sentences)  # Add to the global list
         except:
@@ -336,7 +337,7 @@ for xml_file_name in os.listdir(xml_folder_path):
                 sentences = split_into_sentences(raw_content.strip())  # Split sentences from raw content
                 sentences_tagless = [remove_angle_brackets_content(item) for item in sentences]  # Remove tags
                 speaker_error[xml_file_name] = check_names(sentences)  # Check for speaker names
-                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless
+                sam_sentences = random.sample(sentences_tagless, sampler) if len(sentences_tagless) >= sampler else sentences_tagless #samples the random sentences
                 sampled_sentences = [re.sub(r'\s+', ' ', sentence.replace('\n', ' ').strip()) for sentence in sam_sentences]
                 all_sentences.extend(sampled_sentences)  # Add to the global list
         # List to store match percentages for the current file
@@ -349,7 +350,6 @@ for xml_file_name in os.listdir(xml_folder_path):
             match_percentages.append((match_count, matching_sentence, levenshtein_dist))
 
             counts_token += len(sentence.split())
-        
         
 
         # Store results
@@ -374,6 +374,24 @@ df.to_excel(excel_file_path, index=False)
 
 print(f"Results have been written to {excel_file_path}")       
 ```
+In a second step, the input sequence of the XML file was normalized by the input sequence matched from the gold-standard via character count. 
+
+$$
+abs(a-b)/((a+b)/2)_=_c
+a_=_XML
+b_=_gold_standard
+$$ 
+
+The Levenshtein distance was normalized by the character count of the sentence extracted from the XML file. Then the count of the matching 5-grams was normalized by the character count of the sentence extracted from the XML file.
+
+$$
+c+d-f_=_e
+c_=_normalized_characters
+d_=_normalized_levenshtein_distance
+f_=_normalized_ngram_count
+$$ 
+
+The average of the resulting error score was calculated across each run. If the average error score is below 0, the match is perfect, if the score is between 0 and 0.5, the match is imperfect but a substantial amount of the sentence could be matched. If the score is between 0.5 and 3, where 3 is the maximum score of the metric, the XML is unusable and the content of the XML is completly different from the gold standard.
 
 (experiments)=
 ## Experiments and Results
