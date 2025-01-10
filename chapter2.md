@@ -15,21 +15,14 @@ jupytext:
 
 # Review feedback & To Dos
 What are the weaknesses / flaws of this chapter?
-- tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past.
-    -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
-- Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive.
-    -> **done**, also added nonbreaking spaces before %
-- Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :)
-    -> **done?**
-- Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables.
-    -> to be discussed: I think the code does not harm our paper and having all the results in the paper is not feasable. In the current version the code works, but can also be ignored if someone doesn't care.
-- In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources.
-    -> **done**
-- Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :).
-    -> **done**
-- Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.
-- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
-    -> **done**
+- tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past. -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
+- Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive. -> **done**, also added nonbreaking spaces before %
+- Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :) -> **done?** unsure if it's understandable
+- Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables. -> to be discussed: I think the code does not harm our paper and having all the results in the paper is not feasable. In the current version the code works, but can also be ignored if someone doesn't care.
+- In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources. -> **done**
+- Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :). -> **done**
+- Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.  -> **done**
+- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality. -> **done** in limitations section
 
 # Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
@@ -263,10 +256,10 @@ After these corrections, three texts remained with an average score below 30&nbs
 
 ## Results & Discussion
 ### Comparing scores within sources
-Considering the average and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
+Considering the averages and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
 
-Figure 1 shows a scatter plot of the average scores for the text excerpts of each source, arranged in ascending order of values:
-![Scatter plot](https://github.com/user-attachments/assets/f86b18c9-e09b-4607-8be7-c755181ba1e9)
+Figure 1 shows a box plot for the score averages per source, marking the outliers, quartiles and average of averages (in orange):
+<img width="615" alt="box plot" src="https://github.com/user-attachments/assets/a4419dc7-fab0-4019-b424-9bf258250737" />
 
 #### De Legibus
 All translations of *De Legibus* lie above the threshold of 30&nbsp;%, with five of six excerpts scoring above 41&nbsp;% when considering the average, and above 45&nbsp;% when considering the median. The average and median scores for *De Legibus* generally fall within a narrow range, indicating consistent performance across different sections. The translation for Book 1 Section 60 received the highest scores (average of 46.82&nbsp;%, median of 48.73&nbsp;%), possibly due to its closer adherence to the original text in both structure and meaning. However, there is a notable outlier in Book 1 Section 40, which achieved an average of only 33.61&nbsp;%.
