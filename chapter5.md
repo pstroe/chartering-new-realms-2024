@@ -213,6 +213,64 @@ Looking at the n-grams from different Bible translations gives us helpful insigh
 
 In *Philippians* (Book ID 2), the differences in style and theological emphasis stand out clearly. Older translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) use phrases such as "Christ Jesus" and "Lord Jesus Christ" frequently, showing their focus on traditional Christological titles. On the other hand, the Open English Bible (OEB) and World English Bible (WEB) prefer phrases like "Union with Christ Jesus" and "Spreading the good news," which sound more modern and relational. This shift points to how newer translations aim to balance staying true to doctrine while being more accessible to contemporary readers.
 
+```{code-cell} python
+:tags: [hide-input, remove-cell]
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Data for 4-grams
+data = {
+    'DRB': ['am made a minister', 'giving thanks to god', 'the lord jesus christ', 'jerome epist ad algas'],
+    'OEB': ['spreading the good news', 'union with christ jesus', 'the lord jesus christ', 'animated by one spirit'],
+    'WEB': ['the lord jesus christ', 'smelling fragrance an acceptable', 'humility each counting others', 'every knee should bow'],
+    'KJV': ['am made a minister', 'the lord jesus christ', 'malice blasphemy filthy communication', 'neither greek nor jew']
+}
+
+# Convert data into a DataFrame
+df = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in data.items()]))
+
+# Transpose DataFrame for better visualization
+df_transposed = df.T
+
+# Collect all unique 4-grams
+all_ngrams = df.values.flatten()
+unique_ngrams = [ngram for ngram in all_ngrams if ngram and list(all_ngrams).count(ngram) == 1]
+common_ngrams = [ngram for ngram in all_ngrams if ngram and list(all_ngrams).count(ngram) > 1]
+# Create the table plot
+fig, ax = plt.subplots(figsize=(12, 6))
+
+# Drawing table grid
+ax.set_xlim(-0.5, len(df.columns) - 0.5)
+ax.set_ylim(-0.5, len(df_transposed) - 0.5)
+ax.set_xticks(range(len(df.columns)))
+ax.set_yticks(range(len(df_transposed)))
+ax.set_xticklabels(df.columns, rotation=90, fontsize=10)
+ax.set_yticklabels(df_transposed.index, fontsize=10)
+
+# Color cells based on unique or common 4-grams
+for y, bible in enumerate(df_transposed.index):
+    for x, ngram in enumerate(df_transposed.loc[bible]):
+        if pd.notna(ngram):
+            color = 'green' if ngram in common_ngrams else 'red'
+            ax.add_patch(plt.Rectangle((x - 0.5, y - 0.5), 1, 1, color=color, alpha=0.6))
+            ax.text(x, y, ngram, ha='center', va='center', fontsize=8)
+
+# Format table plot
+ax.set_xticks(range(len(df.columns)))
+ax.set_yticks(range(len(df_transposed)))
+ax.set_xticklabels(df.columns)
+ax.set_yticklabels(df_transposed.index)
+ax.grid(visible=False)
+ax.set_title('4-Gram Visualization by Bible Version', fontsize=14)
+ax.tick_params(left=False, bottom=False)
+ax.set_frame_on(False)
+
+plt.tight_layout()
+```
+```{code-cell} python
+:thebe:
+plt.show()
+``````
 In *Acts* (Book ID 4), there’s a lot of variety in both style and theology across translations. The DRB and KJV often stick with formal expressions like "The Holy Ghost" and "The Lord Jesus Christ." By contrast, the OEB and WEB use updated terms like "The Holy Spirit" and inclusive phrases such as "Believers in Christ." The WEB, in particular, leans into storytelling with phrases like "The commanding officer" and "They heard," showing how modern translations try to make the text more engaging and relatable.
 
 The findings in *Psalms* (Book ID 10) highlight the ongoing simplification of language in newer translations. Older versions, such as the DRB and KJV, keep traditional phrases like "O Lord" and "His mercy endureth for ever." Modern versions like the OEB and WEB replace these with "Lord’s voice" and "Loving kindness endures forever," making the text feel more emotionally resonant. The WEB even uses "Give thanks to Yahweh," showing an effort to include transliterated divine names, which reflects both cultural sensitivity and theological inclusivity.
