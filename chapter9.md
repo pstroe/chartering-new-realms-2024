@@ -58,7 +58,7 @@ However, the intersection of feminist archives and digital humanities is not wit
 
 For this study, a dataset of 50 PDF documents was selected to represent key U.S. feminist texts, including manifestos, journal articles, academic papers, and reports. These documents span several decades, beginning from the 1960s to the present, and reflect the evolving themes within the feminist movement. The texts cover a wide range of topics, including reproductive rights, gender equality, intersectionality, labor rights, and social justice. Sources included academic platforms such as JSTOR and SSOAR.
 
-The selection of documents was designed to ensure a broad representation of feminist thought, encompassing both foundational texts and more recent writings that address contemporary feminist issues. By focusing on U.S. feminist literature, the study aims to capture significant historical shifts within the movement, as well as the intersectional developments that have emerged in more recent decades. Sources were drawn from platforms such as: {cite:p}`jstor`, {cite:p}`bepress`, {cite:p}`mpra`, {cite:p}`greattransition`, {cite:p}`ssoar`.
+The selection of documents was designed to ensure a broad representation of feminist thought, encompassing both foundational texts and more recent writings that address contemporary feminist issues. By focusing on U.S. feminist literature, the study aims to capture significant historical shifts within the movement, as well as the intersectional developments that have emerged in more recent decades. Sources were drawn from platforms such as: {cite:p}`jstor`, {cite:p}`bepress`, {cite:p}`mpra`, {cite:p}`greattransition`, {cite:p}`ssoar`. 
 
 #### Workflow
 
