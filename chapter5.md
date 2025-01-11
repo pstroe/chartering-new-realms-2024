@@ -221,12 +221,166 @@ In summary, the findings from the n-gram analysis reveal significant changes in 
 Looking at the n-grams from different Bible translations gives us helpful insights into how choices in wording reflect changes in style, theological focus, and interpretation. This section dives into specific books—Philippians, Acts, Psalms, and 1 Corinthians—to show how these shifts play out over time, highlighting the balance between doctrinal priorities and changes in language.
 
 In *Philippians* (Book ID 2), the differences in style and theological emphasis stand out clearly. Older translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) use phrases such as "Christ Jesus" and "Lord Jesus Christ" frequently, showing their focus on traditional Christological titles. On the other hand, the Open English Bible (OEB) and World English Bible (WEB) prefer phrases like "Union with Christ Jesus" and "Spreading the good news," which sound more modern and relational. This shift points to how newer translations aim to balance staying true to doctrine while being more accessible to contemporary readers.
+The graph compares 4-grams (four-word phrases) across four Bible versions: DRB, OEB, WEB, and KJV. Green highlights phrases found in all versions, like "the lord jesus christ," showing shared themes. Red marks unique phrases, reflecting differences in translation style or focus.
+```{code-cell} python
+:tags: [hide-input]
+:thebe:
+import matplotlib.pyplot as plt
+import pandas as pd
 
-In *Acts* (Book ID 4), there’s a lot of variety in both style and theology across translations. The DRB and KJV often stick with formal expressions like "The Holy Ghost" and "The Lord Jesus Christ." By contrast, the OEB and WEB use updated terms like "The Holy Spirit" and inclusive phrases such as "Believers in Christ." The WEB, in particular, leans into storytelling with phrases like "The commanding officer" and "They heard," showing how modern translations try to make the text more engaging and relatable.
+# Data for 4-grams
+data = {
+    'DRB': ['am made a minister', 'giving thanks to god', 'the lord jesus christ', 'jerome epist ad algas'],
+    'OEB': ['spreading the good news', 'union with christ jesus', 'the lord jesus christ', 'animated by one spirit'],
+    'WEB': ['the lord jesus christ', 'smelling fragrance an acceptable', 'humility each counting others', 'every knee should bow'],
+    'KJV': ['am made a minister', 'the lord jesus christ', 'malice blasphemy filthy communication', 'neither greek nor jew']
+}
+
+# Convert data into a DataFrame
+df = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in data.items()]))
+
+# Transpose DataFrame for better visualization
+df_transposed = df.T
+
+# Collect all unique 4-grams
+all_ngrams = df.values.flatten()
+# Prepare data for the table visualization
+all_unique_ngrams = pd.unique(all_ngrams)
+data_matrix = pd.DataFrame(index=df_transposed.index, columns=all_unique_ngrams)
+
+# Populate the matrix
+for bible, row in df_transposed.iterrows():
+    for ngram in row:
+        if pd.notna(ngram):
+            data_matrix.loc[bible, ngram] = ngram
+
+# Adjust the plot to remove x-axis labels
+fig, ax = plt.subplots(figsize=(15, 8))
+
+# Draw the grid
+ax.set_xlim(-0.5, len(data_matrix.columns) - 0.5)
+ax.set_ylim(-0.5, len(data_matrix.index) - 0.5)
+ax.set_xticks(range(len(data_matrix.columns)))
+ax.set_yticks(range(len(data_matrix.index)))
+ax.set_xticklabels([])  # Remove x-axis labels
+ax.set_yticklabels(data_matrix.index, fontsize=10)
+
+# Populate the grid with text and color
+for y, bible in enumerate(data_matrix.index):
+    for x, ngram in enumerate(data_matrix.columns):
+        text = data_matrix.loc[bible, ngram]
+        if pd.notna(text):
+            # Check conditions for coloring
+            occurrences = sum(
+                text in df_transposed.loc[bible_version].dropna().values
+                for bible_version in data_matrix.index
+            )
+            if occurrences == len(data_matrix.index):  # Common across all books
+                color = 'green'
+            elif occurrences == 1:  # Unique to one book
+                color = 'red'
+            else:
+                color = 'white'
+
+            # Add the rectangle and text
+            ax.add_patch(plt.Rectangle((x - 0.5, y - 0.5), 1, 1, color=color, alpha=0.6))
+            ax.text(
+                x, y, text, ha='center', va='center', fontsize=8,
+                bbox=dict(boxstyle="round,pad=0.3", edgecolor='none', facecolor='white')
+            )
+
+# Final adjustments to the plot
+ax.grid(visible=False)
+ax.set_title('4-Gram Visualization with Unique and Common Highlights', fontsize=14)
+ax.tick_params(left=False, bottom=False)
+ax.set_frame_on(False)
+
+plt.tight_layout()
+plt.show()
+``````
+This finding suggests that while the Bible versions share core theological expressions, the unique phrases highlight variations in translation approaches and interpretive emphasis.
 
 The findings in *Psalms* (Book ID 10) highlight the ongoing simplification of language in newer translations. Older versions, such as the DRB and KJV, keep traditional phrases like "O Lord" and "His mercy endureth for ever." Modern versions like the OEB and WEB replace these with "Lord’s voice" and "Loving kindness endures forever," making the text feel more emotionally resonant. The WEB even uses "Give thanks to Yahweh," showing an effort to include transliterated divine names, which reflects both cultural sensitivity and theological inclusivity.
 
-In *1 Corinthians* (Book ID 15), the focus shifts to how different translations tackle doctrinal and linguistic challenges. The KJV, for example, emphasizes theological exactness with phrases like "Dead rise not again" and "Our Lord Jesus Christ." Modern translations like the OEB and WEB, however, aim for clarity, using terms like "Gift of tongues" and "Union with Christ Jesus" to make the text easier to understand. This trend aligns with {cite:t}`Smith2008`'s article, which talks about how modern translations adapt theological ideas for today’s readers. The OEB also includes more practical language, like "Let everyone remain faithful," showing a focus on ethical guidance.
+In *1 Corinthians* (Book ID 15), the focus shifts to how different translations tackle doctrinal and linguistic challenges. The KJV, for example, emphasizes theological exactness with phrases like "Dead rise not again" and "Our Lord Jesus Christ." Modern translations like the OEB and WEB, however, aim for clarity, using terms like "Gift of tongues" and "Union with Christ Jesus" to make the text easier to understand. This trend aligns with [Smith's article](https://journals.co.za/doi/pdf/10.10520/AJA19968167_53), which talks about how modern translations adapt theological ideas for today’s readers. The OEB also includes more practical language, like "Let everyone remain faithful," showing a focus on ethical guidance.
+This plot highlights three-grams from Corinthians First across four Bible versions, with shared phrases in green and unique ones in red, emphasizing commonalities and distinct phrasing between translations.
+```{code-cell} python
+:tags: [hide-input]
+:thebe:
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Data for 3-grams
+data = {
+    'DRB': ['lord jesus christ', 'thanks to god', 'christ jesus who', 'in christ jesus'],
+    'OEB': ['don’t you know', 'the good news', 'gift of preaching', 'gift of ‘tongues'],
+    'WEB': ['don t you', 'the good news', 'lord jesus christ', 'i don t'],
+    'KJV': ['whether they be', 'lest any man', 'let no man', 'a faithful minister']
+}
+
+# Convert data into a DataFrame
+df = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in data.items()]))
+
+# Transpose DataFrame for better visualization
+df_transposed = df.T
+
+# Collect all unique 3-grams
+all_ngrams = df.values.flatten()
+# Prepare data for the table visualization
+all_unique_ngrams = pd.unique(all_ngrams)
+data_matrix = pd.DataFrame(index=df_transposed.index, columns=all_unique_ngrams)
+
+# Populate the matrix
+for bible, row in df_transposed.iterrows():
+    for ngram in row:
+        if pd.notna(ngram):
+            data_matrix.loc[bible, ngram] = ngram
+
+# Adjust the plot to remove x-axis labels
+fig, ax = plt.subplots(figsize=(15, 8))
+
+# Draw the grid
+ax.set_xlim(-0.5, len(data_matrix.columns) - 0.5)
+ax.set_ylim(-0.5, len(data_matrix.index) - 0.5)
+ax.set_xticks(range(len(data_matrix.columns)))
+ax.set_yticks(range(len(data_matrix.index)))
+ax.set_xticklabels([])  # Remove x-axis labels
+ax.set_yticklabels(data_matrix.index, fontsize=10)
+
+# Populate the grid with text and color
+for y, bible in enumerate(data_matrix.index):
+    for x, ngram in enumerate(data_matrix.columns):
+        text = data_matrix.loc[bible, ngram]
+        if pd.notna(text):
+            # Check conditions for coloring
+            occurrences = sum(
+                text in df_transposed.loc[bible_version].dropna().values
+                for bible_version in data_matrix.index
+            )
+            if occurrences == len(data_matrix.index):  # Common across all books
+                color = 'green'
+            elif occurrences == 1:  # Unique to one book
+                color = 'red'
+            else:
+                color = 'white'
+
+            # Add the rectangle and text
+            ax.add_patch(plt.Rectangle((x - 0.5, y - 0.5), 1, 1, color=color, alpha=0.6))
+            ax.text(
+                x, y, text, ha='center', va='center', fontsize=8,
+                bbox=dict(boxstyle="round,pad=0.3", edgecolor='none', facecolor='white')
+            )
+
+# Final adjustments to the plot
+ax.grid(visible=False)
+ax.set_title('3-Gram Visualization with Unique and Common Highlights', fontsize=14)
+ax.tick_params(left=False, bottom=False)
+ax.set_frame_on(False)
+
+plt.tight_layout()
+plt.show()
+```
+The plot shows strong overlap in core theological phrases, like "lord jesus christ," while unique expressions, such as "gift of ‘tongues" in OEB and "a faithful minister" in KJV, reflect each version’s interpretative nuances.
 
 In summary, looking at these books shows how translation choices mirror changing priorities in theology, style, and cultural sensitivity. Older translations like the DRB and KJV stick to formal, traditional language, while newer ones like the OEB and WEB focus on being relatable and easy to read. These shifts reveal how Bible translations adapt over time to meet the needs of different audiences. Future research could build on this by exploring how these trends shape how readers engage with and interpret scripture.
 
