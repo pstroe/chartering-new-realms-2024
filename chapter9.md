@@ -36,18 +36,6 @@ Furthermore, the study delves into the broader implications of using AI-driven t
 
 Ultimately, the goal is not merely to assess the technical performance of CERMINE but to highlight the transformative potential of digital tools in preserving feminist legacies. By doing so, this study aims to contribute to the growing body of work in digital humanities, offering insights that extend beyond feminist archives to encompass broader archival practices and methodologies.
 
-## Relevant literature
-
-Over the years, various methods have been developed to automate the extraction of metadata from documents. The primary methods can be divided into rule-based, machine learning-based, and hybrid approaches. Each of these techniques has its strengths and weaknesses, and understanding these helps contextualize the approach adopted in this study.
-
-**Rule-Based Methods:** Rule-based systems rely on predefined patterns and rules to extract metadata from documents. For example, {cite:p}`hashmi2020rule` demonstrated a rule-based method that converts PDF files into XML and uses logic to extract metadata fields. While this method is efficient for well-structured documents, it becomes problematic when dealing with non-standard formats, such as those with varying layouts or noisy data, such as handwritten annotations.
-
-**Machine Learning-Based Methods:** Machine learning models, particularly supervised learning, have shown great potential in extracting metadata from documents. {cite:p}`nayaka2023efficient` applied deep learning techniques to classify and extract algorithm-related metadata from academic articles, achieving an impressive 94.23% classification accuracy. However, these models require large labeled datasets for training, which can be resource-intensive to acquire. Moreover, they may be less effective when dealing with diverse formats or non-traditional document structures.
-
-**Hybrid Approaches:** Hybrid systems combine the best of both rule-based and machine learning methods. CERMINE, for example, uses a hybrid approach that integrates rule-based and machine learning techniques, allowing it to handle a wide range of document types and layouts. {cite:p}`tkaczyk2015cermine` demonstrated that CERMINE achieved high precision by combining geometric and textual analysis. The system has been particularly effective in extracting metadata from academic documents and scientific literature, making it a suitable choice for this study on feminist literature.
-
-The study builds upon the understanding that automated metadata generation must balance efficiency and accuracy. As {cite:p}`greenberg2004metadata` noted, "The best metadata generation option is to integrate both human and automatic processes". This dual approach ensures richer and more reliabale metadata extraction.
-
 **Application-Specific Research**
 
 Some studies optimize metadata extraction for specific contexts. {cite:p}`cortez2009flexible` modified the FLUX-CiM system for metadata extraction in multiple domains and highlighted the advantages of applying domain-specific knowledge. {cite:p}`khan2023metadata` addressed the challenges faced by low-resource languages in digital news archives and suggested strategies to improve metadata extraction. {cite:p}`nayaka2023efficient` developed a framework that extracts algorithm-specific metadata by automating the identification of pseudo-code and related attributes, which supports academic searches. Riley (2017) analyzed metadata types and their applications in cultural heritage, where she provided a comprehensive overview of best practices and standards.
@@ -70,7 +58,7 @@ However, the intersection of feminist archives and digital humanities is not wit
 
 For this study, a dataset of 50 PDF documents was selected to represent key U.S. feminist texts, including manifestos, journal articles, academic papers, and reports. These documents span several decades, beginning from the 1960s to the present, and reflect the evolving themes within the feminist movement. The texts cover a wide range of topics, including reproductive rights, gender equality, intersectionality, labor rights, and social justice. Sources included academic platforms such as JSTOR and SSOAR.
 
-The selection of documents was designed to ensure a broad representation of feminist thought, encompassing both foundational texts and more recent writings that address contemporary feminist issues. By focusing on U.S. feminist literature, the study aims to capture significant historical shifts within the movement, as well as the intersectional developments that have emerged in more recent decades. 
+The selection of documents was designed to ensure a broad representation of feminist thought, encompassing both foundational texts and more recent writings that address contemporary feminist issues. By focusing on U.S. feminist literature, the study aims to capture significant historical shifts within the movement, as well as the intersectional developments that have emerged in more recent decades. Sources were drawn from platforms such as: {cite:p}`jstor`  {cite:p}`bepress`   {cite:p}`mpra` {cite:p}`greattransition ` {cite:p}`ssoar `.
 
 #### Workflow
 
