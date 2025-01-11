@@ -1,0 +1,53 @@
+Version,Book,Chapter,Verse,Text,sentiment,sentiment_score
+DRB,The Second Epistle of St. John the Apostle,1,1,"The Ancient to the lady Elect and her children, whom I love in the truth: and not I only, but also all they that have known the truth, The ancient.... That is, the ancient bishop St. John, being the only one of the twelve apostles then living. To the lady Elect.... Some conjecture that Electa might be the name of a family, or of a particular church; but the general opinion is, that it is the proper name of a lady, so eminent for her piety and great charity, as to merit this Epistle from St. John.",POSITIVE,0.9485670328140259
+DRB,The Second Epistle of St. John the Apostle,1,2,For the sake of the truth which dwelleth in us and shall be with us for ever.,POSITIVE,0.8985013365745544
+DRB,The Second Epistle of St. John the Apostle,1,3,"Grace be with you, mercy and peace from God the Father and from Christ Jesus the Son of the Father: in truth and charity.",POSITIVE,0.9996771812438965
+DRB,The Second Epistle of St. John the Apostle,1,4,"I was exceeding glad that I found of thy children walking in truth, as we have received a commandment from the Father.",POSITIVE,0.9958940744400024
+DRB,The Second Epistle of St. John the Apostle,1,5,"And now I beseech thee, lady, not as writing a new commandment to thee, but that which we have had from the beginning, that we love one another.",POSITIVE,0.9977091550827026
+DRB,The Second Epistle of St. John the Apostle,1,6,"And this is charity: That we walk according to his commandments. For this is the commandment that, as you have heard from the beginning, you should walk in the same:",POSITIVE,0.9411056041717529
+DRB,The Second Epistle of St. John the Apostle,1,7,For many seducers are gone out into the world who confess not that Jesus Christ is come in the flesh. This is a seducer and an antichrist.,NEGATIVE,0.5546689033508301
+DRB,The Second Epistle of St. John the Apostle,1,8,"Look to yourselves, that you lose not the things which you have wrought: but that you may receive a full reward.",POSITIVE,0.9993463158607483
+DRB,The Second Epistle of St. John the Apostle,1,9,"Whosoever revolteth and continueth not in the doctrine of Christ hath not God. He that continueth in the doctrine, the same hath both the Father and the Son.",NEGATIVE,0.966285228729248
+DRB,The Second Epistle of St. John the Apostle,1,10,"If any man come to you and bring not this doctrine, receive him not into the house nor say to him: God speed you. Nor say to him, God speed you.... This admonition is in general, to forewarn the faithful of the dangers which may arise from a familiarity with those who have prevaricated and gone from the true faith, and with such as teach false doctrine. But this is not forbidding a charity for all men, by which we ought to wish and pray for the eternal salvation of every one, even of our enemies.",POSITIVE,0.522592306137085
+DRB,The Second Epistle of St. John the Apostle,1,11,"For he that saith unto him: God speed you, communicateth with his wicked works.",POSITIVE,0.9983258843421936
+DRB,The Second Epistle of St. John the Apostle,1,12,"Having more things to write unto you, I would not by paper and ink: for I hope that I shall be with you and speak face to face, that your joy may be full.",POSITIVE,0.9986236095428467
+DRB,The Second Epistle of St. John the Apostle,1,13,The children of thy sister Elect salute thee.,POSITIVE,0.999510645866394
+KJV,The Second Epistle General of John,1,1,"The elder unto the elect lady and her children, whom I love in the truth; and not I only, but also all they that have known the truth;",POSITIVE,0.9983083009719849
+KJV,The Second Epistle General of John,1,2,"For the truth’s sake, which dwelleth in us, and shall be with us for ever.",POSITIVE,0.9942992925643921
+KJV,The Second Epistle General of John,1,3,"Grace be with you, mercy, and peace, from God the Father, and from the Lord Jesus Christ, the Son of the Father, in truth and love.",POSITIVE,0.999768078327179
+KJV,The Second Epistle General of John,1,4,"I rejoiced greatly that I found of thy children walking in truth, as we have received a commandment from the Father.",POSITIVE,0.9979640245437622
+KJV,The Second Epistle General of John,1,5,"And now I beseech thee, lady, not as though I wrote a new commandment unto thee, but that which we had from the beginning, that we love one another.",POSITIVE,0.9973849654197693
+KJV,The Second Epistle General of John,1,6,"And this is love, that we walk after his commandments. This is the commandment, That, as ye have heard from the beginning, ye should walk in it.",POSITIVE,0.9997065663337708
+KJV,The Second Epistle General of John,1,7,"For many deceivers are entered into the world, who confess not that Jesus Christ is come in the flesh. This is a deceiver and an antichrist.",NEGATIVE,0.7413382530212402
+KJV,The Second Epistle General of John,1,8,"Look to yourselves, that we lose not those things which we have wrought, but that we receive a full reward.",POSITIVE,0.999550998210907
+KJV,The Second Epistle General of John,1,9,"Whosoever transgresseth, and abideth not in the doctrine of Christ, hath not God. He that abideth in the doctrine of Christ, he hath both the Father and the Son.",NEGATIVE,0.9641652703285217
+KJV,The Second Epistle General of John,1,10,"If there come any unto you, and bring not this doctrine, receive him not into your house, neither bid him God speed:",NEGATIVE,0.9933117628097534
+KJV,The Second Epistle General of John,1,11,For he that biddeth him God speed is partaker of his evil deeds.,NEGATIVE,0.9439372420310974
+KJV,The Second Epistle General of John,1,12,"Having many things to write unto you, I would not write with paper and ink: but I trust to come unto you, and speak face to face, that our joy may be full.",POSITIVE,0.9996166229248047
+KJV,The Second Epistle General of John,1,13,The children of thy elect sister greet thee. Amen.,POSITIVE,0.9970396161079407
+OEB,2 John,1,1,"From the elder, to the lady chosen by God and her children. I truly love you all, and I am not the only one but all who know the truth love you as well.",POSITIVE,0.9998369216918945
+OEB,2 John,1,2,"We love you for the sake of the truth, which lives in us and will be with us forever.",POSITIVE,0.9996864795684814
+OEB,2 John,1,3,"Grace, mercy, and peace will be ours – the gift of God, the Father, and of Jesus Christ, the Father’s Son – in truth and love.",POSITIVE,0.9998428821563721
+OEB,2 John,1,4,"It was a great joy to me to find the lives of some of your children guided by the truth, in obedience to the command that we received from the Father.",POSITIVE,0.9998551607131958
+OEB,2 John,1,5,"And now I implore you, dear lady, let us love one another This is not a new command I am writing to you. It is the command we have had from the beginning. – Let us love one another.",POSITIVE,0.870026171207428
+OEB,2 John,1,6,"And this is love – to live in obedience to the Father’s commands. This is the command as you learned from the beginning, to live a life of love.",POSITIVE,0.9996359348297119
+OEB,2 John,1,7,I say this because many deceivers have gone out into the world – men who do not acknowledge that Jesus Christ came in flesh and blood. Any such person is a deceiver and antichrist.,NEGATIVE,0.981186032295227
+OEB,2 John,1,8,Take care so that you do not what we have worked for but instead receive your full reward.,POSITIVE,0.9953688979148865
+OEB,2 John,1,9,Anyone who goes beyond and fails to live inside of the teaching of Christ does not have God. The person who lives inside that teaching – they have both the Father and the Son.,NEGATIVE,0.8802801966667175
+OEB,2 John,1,10,"If anyone comes to you and does not bring this teaching, do not receive them into your house or even welcome them;",NEGATIVE,0.9983417987823486
+OEB,2 John,1,11,because the person who welcomes them is sharing with them in his evil work.,NEGATIVE,0.9771900773048401
+OEB,2 John,1,12,"Though I have many other things to tell you, I would rather not use paper and ink. Instead I hope to come and see you, and to speak with you face to face, so that our joy may be complete.",POSITIVE,0.9997619986534119
+OEB,2 John,1,13,"The children of your sister, who is chosen by God, send you their greetings.",POSITIVE,0.9984157085418701
+WEB,2 John,1,1,"The elder, to the chosen lady and her children, whom I love in truth; and not I only, but also all those who know the truth;",POSITIVE,0.9994184970855713
+WEB,2 John,1,2,"for the truth's sake, which remains in us, and it will be with us forever:",POSITIVE,0.9986631870269775
+WEB,2 John,1,3,"Grace, mercy, and peace will be with us, from God the Father, and from the Lord Jesus Christ, the Son of the Father, in truth and love.",POSITIVE,0.999797523021698
+WEB,2 John,1,4,"I rejoice greatly that I have found some of your children walking in truth, even as we have been commanded by the Father.",POSITIVE,0.9983025789260864
+WEB,2 John,1,5,"Now I beg you, dear lady, not as though I wrote to you a new commandment, but that which we had from the beginning, that we love one another.",POSITIVE,0.9993183612823486
+WEB,2 John,1,6,"This is love, that we should walk according to his commandments. This is the commandment, even as you heard from the beginning, that you should walk in it.",POSITIVE,0.9995920062065125
+WEB,2 John,1,7,"For many deceivers have gone out into the world, those who don't confess that Jesus Christ came in the flesh. This is the deceiver and the Antichrist.",POSITIVE,0.7277113199234009
+WEB,2 John,1,8,"Watch yourselves, that we don't lose the things which we have accomplished, but that we receive a full reward.",POSITIVE,0.9997767806053162
+WEB,2 John,1,9,"Whoever transgresses and doesn't remain in the teaching of Christ, doesn't have God.  He who remains in the teaching, the same has both the Father and the Son.",NEGATIVE,0.9847058653831482
+WEB,2 John,1,10,"If anyone comes to you, and doesn't bring this teaching, don't receive him into your house, and don't welcome him,",NEGATIVE,0.9983172416687012
+WEB,2 John,1,11,for he who welcomes him participates in his evil works.,NEGATIVE,0.9121556282043457
+WEB,2 John,1,12,"Having many things to write to you, I don't want to do so with paper and ink, but I hope to come to you, and to speak face to face, that our joy may be made full.",POSITIVE,0.9997565150260925
+WEB,2 John,5,21,"Little children, keep yourselves from idols.",POSITIVE,0.9533490538597107
