@@ -421,6 +421,12 @@ This study has several limitations that should be considered when interpreting t
 
 Despite these limitations, the study highlights how linguistic patterns and sentiment in Bible translations have evolved over time. The results show a clear shift in modern translations toward simpler, more inclusive language, reflecting changing priorities in accessibility and engagement. Future research could refine these findings by incorporating more comprehensive datasets, fine-tuning sentiment models for religious texts, and integrating expert input to better capture theological nuances.
 
+## Tools
+
+ChatGPT, Version 4o, OpenAI: https://chat.openai.com/
+- Help with formatting and structure
+- Help with preliminary interpretation of results
+
 ## References
 
 ```{bibliography}
