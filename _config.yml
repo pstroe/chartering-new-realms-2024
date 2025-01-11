@@ -28,7 +28,9 @@ latex:
 bibtex_bibfiles:
   - references_chapter5.bib
 
-
+sphinx:
+  config:
+    bibtex_reference_style: author_year
 
 # Information about where the book exists on the web
 repository:
