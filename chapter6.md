@@ -226,3 +226,5 @@ Harraj, A. E., & Raissouni, N. (2015). OCR accuracy improvement on document imag
 El Harraj, A., & Raissouni, N. (2015). Toward indoor and outdoor surveillance using an improved fast background subtraction algorithm. International Journal of Computer, Control, Quantum and Information Engineering, 9(4), 595-600.
 
 Mursari, L. R., & Wibowo, A. (2021). The effectiveness of image preprocessing on digital handwritten scripts recognition with the implementation of OCR Tesseract. Computer Engineering and Applications Journal, 10(3), 177-186.
+
+
