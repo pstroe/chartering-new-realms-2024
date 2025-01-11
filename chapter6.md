@@ -48,7 +48,7 @@ To demonstrate the diversity and limitations of OCR recognition capabilities, we
 
 These manuscripts include ancient Chinese poetry and Buddhist scriptures. One of them is "Bring in the Wine", a famous poem by the renowned Chinese poet Li Bai, which appears in the Dunhuang manuscripts under the title "惜罇空". One manuscript is excerpt from the Diamond Sutra, the other one is excerpt from the Lotus Sutra. The images of the manuscripts can be viewed as following pictures. 
 
-![alt text](image-1.png)
+![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/1.jpg)
 ![alt text](image-4.png)
 ![alt text](image-3.png)
 
