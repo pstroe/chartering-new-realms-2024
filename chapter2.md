@@ -46,7 +46,7 @@ Recent advancements in Large Language Models (LLMs) have further expanded the po
 We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
 ### Data
-Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the {cite:t}`ESV2001`, the {cite:t}`DRB1899`, and the {cite:t}`KJV1611`. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
+Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations, the *English Standard Version* (ESV), the *Douay-Rheims Bible* (DRB), and the *King James Version* (KJV). The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
 
 <table style="border-collapse: collapse; width: 100%;">
     <tbody>
@@ -390,11 +390,15 @@ The findings underscore the importance of text type and evaluation metric select
   - Translation of text passages
 
 ## Bibliography
-{cite:p}``
 ```{bibliography} references_chap2.bib
 :style: plain
-:filter: docname in docnames
 ```
+
+### Bible versions used:
+- Michaele Tvveedale. *Biblia Sacra iuxta Vulgatam Clementinam*. Londoni: Vulsearch, 2006. Originally published 1592.
+- John Murphy, editor. *Douay-Rheims Bible (DRB)*. Baltimore: John Murphy Company, 1899. Originally translated 1582–1610. URL: https://www.biblegateway.com/versions/Douay-Rheims-1899-American-Edition-DRA-Bible/.
+- Crossway Bibles, editor. *English Standard Version (ESV)*. Wheaton, IL: Crossway, 2001. URL: https://www.biblegateway.com/versions/English-Standard-Version-ESV-Bible/.
+- Church of England, editor. *King James Version (KJV)*. Cambridge: Tyndale House, 1987. Originally translated 1611. URL: https://www.biblegateway.com/versions/King-James-Version-KJV-Bible/.
 
 ## Appendix
 <sup>1</sup>	Prompt used for GPT-4o and Gemini during the experiments: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases." (followed by Latin excerpt)

@@ -15,37 +15,25 @@ jupytext:
 
 # Review feedback & To Dos
 What are the weaknesses / flaws of this chapter?
-- tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past.
-    -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
-- Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive.
-    -> **done**, also added nonbreaking spaces before %
-- Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :)
-    -> **done?**
-- Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables.
-    -> to be discussed
-    -> Check executability of code 
-- In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources.
-    -> **done**
-- Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :).
-    -> **done**
-- Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.
-- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality.
-    -> **done**
-- Add some more sources (de legibus, historia etc., which versions)
-    -> **done**
-
-- check sources in text
+- tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past. -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
+- Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive. -> **done**, also added nonbreaking spaces before %
+- Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :) -> **done?** unsure if it's understandable
+- Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables. -> to be discussed: I think the code does not harm our paper and having all the results in the paper is not feasable. In the current version the code works, but can also be ignored if someone doesn't care.
+- In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources. -> **done**
+- Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :). -> **done**
+- Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.  -> **done**
+- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality. -> **done** in limitations section
 
 # Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
 ## Introduction
-In 1382, when the Latin Bible was first translated into English by scholars surrounding John Wycliffe, this process required years of enormous human effort by many religious scholars with extensive knowledge of both Latin and theology. The process this translation set in motion, ultimately resulting in a religious text which could be understood by the common population, had groundbreaking and far-reaching impacts on culture and religion {cite:p}`Taylor2019`. One can hardly imagine how history might have changed had the Bible never been translated into English — or translated less carefully.
+In 1382, when the Latin Bible was first translated into English by scholars surrounding John Wycliffe, this process required years of enormous human effort by many religious scholars with extensive knowledge of both Latin and theology. The process this translation set in motion, ultimately resulting in a religious text that could be understood by the common population, had groundbreaking and far-reaching impacts on culture and religion {cite:p}`Taylor2019`. One can hardly imagine how history might have changed had the Bible never been translated into English — or translated less carefully.
 
 Almost 650 years later, Machine Translation (MT) has reduced the effort required for translation processes from years to minutes. Even low-resource languages, like Latin, are increasingly translated with the assistance of these tools, with studies suggesting that some MT systems can achieve a reasonably good translation quality {cite:p}`Volk2024`. However, while MT systems perform efficiently on many genres, they still face challenges when dealing with more creative works {cite:p}`Cespedosa2023`, of which the Bible with its poems and psalms contains many.
 
-Given that there are many Latin religious texts which remain untranslated to this day, this chapter raises the question: Does MT serve as a fitting tool for translating Latin religious texts to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
-By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts which could provide valuable insights into the historical and intellectual evolution of the Western world.
+Given that there are many Latin religious texts that remain untranslated to this day, this chapter raises the question: Does MT serve as a fitting tool for translating Latin religious texts to English? To explore this, we examine the performance of four advanced MT systems (GPT-4o, Gemini, Google Translate, and Yandex) when handling Latin religious texts compared to more neutral, descriptive Latin passages. By comparing the results to each other and to the gold standard human translation, we aim to shed light on the efficacy and limitations of MT in translating Latin, identifying which tools are better suited for specific genres of texts.
+By understanding these distinctions, we hope to contribute to future advancements in MT for low-resource languages and support the translation of the vast untranslated Latin texts that could provide valuable insights into the historical and intellectual evolution of the Western world.
 
 ## Previous Work
 Work on MT and language modeling for Latin has progressed significantly since the advent of MT, leveraging both traditional and modern approaches. {cite:t}`Martinez2020` utilized the Bible as a parallel corpus to build a Transformer-based Neural Machine Translation (NMT) system for Latin-Spanish, addressing challenges associated with Latin's complex morphology and low-resource nature. Similarly, {cite:t}`Christodoulopoulos2014` demonstrated the utility of the Bible as a parallel corpus in over 100 languages, including Latin, highlighting its structure and consistency as beneficial for multilingual NLP tasks. {cite:t}`Liu2021` further confirmed the effectiveness of using biblical texts for improving MT in low-resource settings, underscoring their relevance for Latin translation tasks. 
@@ -58,123 +46,128 @@ Recent advancements in Large Language Models (LLMs) have further expanded the po
 We constructed a corpus of Latin texts spanning both religious and non-religious genres to evaluate translation performance across diverse stylistic and thematic categories. The dataset contains 1’398 unique Latin words and 1’685 unique English words. Of these, religious texts contribute 566 unique Latin words and 937 unique English words, while non-religious texts comprise 832 unique Latin words and 748 unique English words. The dataset includes approximately 180 sentences drawn from texts written between the 1st century BCE and the 12th century CE. 
 
 ### Data
-Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations from the *{cite:t}`ESV2001`*, the *{cite:t}`DRB1899`*, and the *{cite:t}`KJV1611`*. The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
+Religious texts were sourced from the *Biblia Sacra iuxta Vulgatam Clementinam* {cite:p}`Biblia2006` and comprise 60 passages distributed across 4 songs, 3 poetic passages, and 4 neutral passages. Each Latin text is paired with three English translations, the *English Standard Version* (ESV), the *Douay-Rheims Bible* (DRB), and the *King James Version* (KJV). The inclusion of three Bible versions captures theological, cultural, and stylistic differences, providing a nuanced basis for comparison. For instance, the *DRB* was translated directly from the Latin Vulgate and, as a result, adheres more closely to Latin phrasing. The *KJV* and the *ESV* drew from Hebrew, Greek and Latin and adopt a modernized style.
 
-<table>
+<table style="border-collapse: collapse; width: 100%;">
     <tbody>
-        <tr>
-            <td style="text-align: center;"><b>Tone</b></td>
-            <td style="text-align: center;"><b>Source: <i>Biblia Sacra iuxta Vulgatam Clementinam</i></b> <br>(405)</td>
-            <td style="text-align: center;"><b>Gold Standard 1: <i>Douay-Rheims Bible</i></b> <br>(original translation 1582–1610; modern text printed by John Murphy Company, 1899)</td>
-            <td style="text-align: center;"><b>Gold Standard 2: <i>King James Version</i></b> <br>(original translation 1611; modern text edited by Tyndale House, New Cambridge Paragraph Bible, 1987)</td>
-            <td style="text-align: center;"><b>Gold Standard 3: <i>English Standard Version</i></b> <br>(translated and printed by Crossway, 2001)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey"><b>Tone</b></td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Source: <i>Vulgate</i></b> (405)</td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Gold Standard 1: <i>DRB</i></b> <br>(orig. 1582; cit. John Murphy Company, 1899)</td>
+            <td style="text-align: center; border-right: 1px solid grey"><b>Gold Standard 2: <i>KJV</i></b> <br>(orig. 1611; cit. Tyndale House, 1987)</td>
+            <td style="text-align: center"><b>Gold Standard 3: <i>ESV</i></b> <br>(Crossway, 2001)</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">1 Chronicles 2: 21-23</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Deuteronomy 19: 15-17</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Ecclesiastes 3: 7-8</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Exodus 1: 8-14</td>
         </tr>
-        <tr><td style="text-align: center;">Neutral</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Neutral</td>
             <td style="text-align: center;" colspan="5">Exodus 7: 20-24</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Habakkuk 3: 17-19</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Isaiah 38: 9-20</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Job 14: 1-3</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Poetry</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Poetry</td>
             <td style="text-align: center;" colspan="4">Job 3: 11-13</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Song of Solomon 5: 12-14</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
             <td style="text-align: center;" colspan="4">Psalm 149: 5-9</td>
         </tr>
-        <tr>
-            <td style="text-align: center;">Song</td>
-            <td style="text-align: center;">Psalm 22: 4-6</td>
-            <td style="text-align: center;">Psalm 23: 4-6 (KJV)</td>
-            <td style="text-align: center;">Psalm 22: 4-6 (DRB)</td>
-            <td style="text-align: center;">Psalm 23: 4-6 (ESV)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 22: 4-6</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 23: 4-6</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 22: 4-6</td>
+            <td style="text-align: center;">Psalm 23: 4-6</td>
         </tr>
         <tr>
-            <td style="text-align: center;">Song</td>
-            <td style="text-align: center;">Psalm 87: 4-8</td>
-            <td style="text-align: center;">Psalm 88: 4-8 (DRB)</td>
-            <td style="text-align: center;">Psalm 88: 3-7 (KJV)</td>
-            <td style="text-align: center;">Psalm 88: 3-7 (ESV)</td>
+            <td style="text-align: center; border-right: 1px solid grey; padding: 4px;">Song</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 87: 4-8</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 88: 4-8</td>
+            <td style="text-align: center; border-right: 1px solid grey;">Psalm 88: 3-7</td>
+            <td style="text-align: center;">Psalm 88: 3-7</td>
         </tr>
     </tbody>
 </table>
 
-The poetic passages were drawn from 3 of the so called "Poetic Books" of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages {cite:p}`Hagan2022`, p. 15.
+The poetic passages were drawn from 3 of the so-called "Poetic Books" of the Bible, which include Job, Proverbs, Ecclesiastes and more. These texts are characterized by traditional features of Hebrew poetry such as repetition of ideas and metaphors, and are usually formatted as shorter lines than descriptive passages {cite:p}`Hagan2022`.
 
-Some of the poetic books contain texts which scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs {cite:p}`Staubli2018`.
+Some of the poetic books contain texts that scholars believe were intended to be performed as song, as indicated by superscripts or subscripts. We further categorised these poems as songs {cite:p}`Staubli2018`.
 
-To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus*, a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae*, which includes descriptive historical narratives. 
+To allow for an optimal comparison of MT performance, we aimed to choose neutral, descriptive Latin passages as sources for the non-religious excerpts. As many well-established Latin works with English translations tend to be religious, philosophical, or fictional, identifying a truly neutral text was a challenge. We selected Cicero’s *De Legibus* ({cite:p}`Cicero1959`, {cite:p}`CiceroFott2014`), a key legal text, and Geoffrey of Monmouth’s *Historia Regum Britanniae* ({cite:p}`Monmouth1136`, {cite:p}`Monmouth1999`), which includes descriptive historical narratives. 
 
-<table>
+<table style="border-collapse: collapse; width: 100%;">
     <tbody>
-        <tr>
-            <td style="text-align: center;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Geoffrey of Monmouth, 1136)</td>
-            <td style="text-align: center;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(original translation by Aaron Thompson, 1718; revised by J. A. Giles, 1842)</td>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 2px;"><b>Source: <i>Historia Regum Britanniae</i></b> <br>(Of Monmouth, 1136)</td>
+            <td style="text-align: center; padding: 2px;"><b>Gold Standard: <i>History of the Kings of Britain</i></b> <br>(tr. Thompson, 1718; rev. Giles, 1842)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 13</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 2</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Chapter 6</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 3 Chapter 4</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; border-right: 1px solid grey; padding: 2px;"><b>Source: <i>De Legibus</i></b> <br>(Cicero, c. 52–43 BCE; ed. De Plinval, 1959)</td>
+            <td style="text-align: center; padding: 2px;"><b>Gold Standard: <i>On the Laws</i></b> <br>(tr. Fott, 2014)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 15, I</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 28, II</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 28, III</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 40</td>
+        </tr>
+        <tr style="border-bottom: 1px solid grey;">
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 58</td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 13</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 2</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Chapter 6</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 3 Chapter 4</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;"><b>Source: <i>De Legibus</i></b> <br>(Marcus Tullius Cicero, approx. 52–43 BCE; edited by Georges de Plinval, 1959)</td>
-            <td style="text-align: center;"><b>Gold Standard: <i>On the Laws</i></b> <br>(translation by David Fott, 2014)</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 15, I</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 28, II</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 28, III</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 40</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 58</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">Book 1 Section 60</td>
+            <td style="text-align: center; padding: 2px;" colspan="2">Book 1 Section 60</td>
         </tr>
     </tbody>
 </table>
 
-This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations. 
+This combination of literal and non-literal translations was expected to highlight interpretative variations for MT systems. Poetic passages, in particular, require systems to balance semantic accuracy with stylistic complexity, while neutral texts test straightforward syntactical translations.
 
 ### Metrics
 Translation quality was assessed using four widely recognized metrics: BLEU, ROUGE-L, METEOR, and chrF. Each metric captures a distinct dimension of translation quality, providing a comprehensive evaluation framework. All scores were calculated as percentages from 0 to 100. Thresholds were set to classify scores, with scores below 30 seen as faulty translations and scores exceeding 60 seen as high-quality translations.  
@@ -218,10 +211,11 @@ random_row = data.sample(n=1).iloc[0]  # Select a random row
 # Show in a table
 table = "| Header | Content |\n"
 table += "|--------|---------|\n"
-for column, value in random_row.items():
-    # Only show the first 400 characters
+
+for column, value in random_row.items(): # Only first 400 characters
     truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
     table += f"| {column} | {truncated_value} |\n"
+
 display(Markdown(table))
 ```
 
@@ -245,11 +239,12 @@ random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
 # Show in a table
 table_scores = "| Source | BLEU average | ROUGE average | chrF average | METEOR average |\n"
 table_scores += "|--------|--------------|---------------|--------------|----------------|\n"
-for column, value in random_row_scores.items():
-    # Only show the first 400 characters for the Source (although it shouldn't exceed 400 characters)
+
+for column, value in random_row_scores.items(): # Only first 400 characters
     truncated_value = str(value)[:400] + "..." if len(str(value)) > 400 else str(value)
     table_scores += f"| {truncated_value} " if column == 'Source' else f"| {truncated_value} "
 table_scores += "|\n"
+
 display(Markdown(table_scores))
 ```
 
@@ -257,14 +252,15 @@ display(Markdown(table_scores))
 Six translations received an overall average score below 30&nbsp;%, indicating significant errors in the translation. These include Psalm 88:3-7 (*DRB*), Psalm 23:4-6 (*DRB*), Book 1 Chapter 13 of *Historia Regum Britanniae*, Job 3:11-13 (in both the *ESV* and *KJV*), and Book 1 Section 40 of *De Legibus*. Upon review, we identified issues in three of the corresponding gold standard translations, where they had been either incorrectly or incompletely processed. After addressing these discrepancies, the average score for the affected excerpts increased to slightly above 30&nbsp;%, marking them as acceptable translations.
 
 ### Retranslations
-After these corrections, three texts remained with an average score below 30&nbsp;%: Book 1 Chapter 13 of the *Historia Regum Britanniae* and Job 3: 11-13 in both *ESV* and *KJV*. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, which are particularly difficult for MT systems to handle {cite:p}`He2023`. While this method improved the score for the *Historia Regum Britanniae* by 1.8&nbsp;%, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remain below 30&nbsp;%. Possible reasons for these results are explored in detail in the following chapter.
+After these corrections, three texts remained with an average score below 30&nbsp;%: Book 1 Chapter 13 of the *Historia Regum Britanniae* and Job 3: 11-13 in both *ESV* and *KJV*. To address this, we adjusted the translation workflow by translating each sentence individually rather than entire paragraphs. This approach aimed to mitigate the challenges posed by long, syntactically complex structures, that are particularly difficult for MT systems to handle {cite:p}`He2023`. While this method improved the score for the *Historia Regum Britanniae* by 1.8&nbsp;%, it did not result in significant changes for Job 3:11-13. Ultimately, the average scores for all three excerpts remain below 30&nbsp;%. Possible reasons for these results are explored in detail in the following chapter.
 
 ## Results & Discussion
 ### Comparing scores within sources
-Considering the average and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
+Considering the averages and median values of all chosen metrics, we compared the translation quality between the different genres of text. The highest and lowest scores per text source were examined further to be sure there were no processing errors.
 
-Figure 1 shows a scatter plot of the average scores for the text excerpts of each source, arranged in ascending order of values:
-![Scatter plot](https://github.com/user-attachments/assets/f86b18c9-e09b-4607-8be7-c755181ba1e9)
+Figure 1 shows a box plot for the score averages per source, marking the outliers, quartiles and average of averages (in orange):
+
+<img width="646" alt="Box plot_Averages_Latin" src="https://github.com/user-attachments/assets/60b04156-c8c4-48a5-af8b-b29589a74c61" />
 
 #### De Legibus
 All translations of *De Legibus* lie above the threshold of 30&nbsp;%, with five of six excerpts scoring above 41&nbsp;% when considering the average, and above 45&nbsp;% when considering the median. The average and median scores for *De Legibus* generally fall within a narrow range, indicating consistent performance across different sections. The translation for Book 1 Section 60 received the highest scores (average of 46.82&nbsp;%, median of 48.73&nbsp;%), possibly due to its closer adherence to the original text in both structure and meaning. However, there is a notable outlier in Book 1 Section 40, which achieved an average of only 33.61&nbsp;%.
@@ -296,7 +292,7 @@ While both *KJV* and *ESV* are faithful to the original meaning and easily reada
 
 In the *DRB* translation, where the translation for the same excerpt received an acceptable average score, the language and repetition of Latin are preserved well, allowing for more accurate semantic mappings. Notably, however, this translation does not read as a well-formed text to a modern reader, with some questions entirely lacking the subject "I". While this might be close to the Latin original and also close to the MT results, it is hardly how we would form a sentence today.
 
-The same challenges which led to deviation between the different gold standards also seem to have affected the MT systems:
+The same challenges that led to deviation between the different gold standards also seem to have affected the MT systems:
 
 | **Latin**                                      | **GPT-4o**                                                                                   | **Google Translate**                                                                    | **Gemini**                                                                               | **Yandex**                                                                |
 |------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
@@ -321,9 +317,9 @@ It is notable that translations scored against the *DRB* (e.g., Exodus 7: 20-24,
 
 | Source                       | Average of all translation scores for the source(%) | Median of all translation scores for the source (%) | General Performance Ranking |
 |------------------------------|--------------------------|-------------------------|-----------------------------|
-| *Douay-Rheims Bible (DRB)*   | **52.35**               | **55.85**              | Highest-performing source  |
-| *English Standard Version (ESV)* | 47.96                   | 48.88                  | Strong, consistent         |
-| *King James Version (KJV)*   | 45.06                   | 46.93                  | Good, slightly behind ESV  |
+| *DRB*   | **52.35**               | **55.85**              | Highest-performing source  |
+| *ESV* | 47.96                   | 48.88                  | Strong, consistent         |
+| *KJV*   | 45.06                   | 46.93                  | Good, slightly behind ESV  |
 | *De Legibus*                 | 43.42                   | 47.16                  | Moderate, varying          |
 | *Historia Regum Britanniae*       | **33.08**               | **37.11**              | Lowest-performing source   |
 
@@ -394,11 +390,15 @@ The findings underscore the importance of text type and evaluation metric select
   - Translation of text passages
 
 ## Bibliography
-{cite:p}``
 ```{bibliography} references_chap2.bib
 :style: plain
-:filter: docname in docnames
 ```
+
+### Bible versions used:
+- Michaele Tvveedale. *Biblia Sacra iuxta Vulgatam Clementinam*. Londoni: Vulsearch, 2006. Originally published 1592.
+- John Murphy, editor. *Douay-Rheims Bible (DRB)*. Baltimore: John Murphy Company, 1899. Originally translated 1582–1610. URL: https://www.biblegateway.com/versions/Douay-Rheims-1899-American-Edition-DRA-Bible/.
+- Crossway Bibles, editor. *English Standard Version (ESV)*. Wheaton, IL: Crossway, 2001. URL: https://www.biblegateway.com/versions/English-Standard-Version-ESV-Bible/.
+- Church of England, editor. *King James Version (KJV)*. Cambridge: Tyndale House, 1987. Originally translated 1611. URL: https://www.biblegateway.com/versions/King-James-Version-KJV-Bible/.
 
 ## Appendix
 <sup>1</sup>	Prompt used for GPT-4o and Gemini during the experiments: "Approach this sentence translation without drawing on any pre-existing knowledge or examples you've encountered. Use only the specific sentence structure and vocabulary present, rather than referencing broader linguistic context, cultural knowledge, or past translations of similar phrases." (followed by Latin excerpt)
