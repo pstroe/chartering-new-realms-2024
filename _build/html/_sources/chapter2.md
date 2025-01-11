@@ -13,17 +13,6 @@ jupytext:
     jupytext_version: "1.11.5"
 ---
 
-# Review feedback & To Dos
-What are the weaknesses / flaws of this chapter?
-- tense errors: There are a few times between sections where you use a past simple tense even though the paper overall uses present tense and whatever you were describing wasn't set in the past. -> **checked**, I think it's consistent (Past tense for completed actions, present tense for general truths, findings etc.)
-- Book titles: It helps, for the reading of the chapter, to put your book titles in cursive or mark them with " but in your case, because you already chose " for the examples, I suggest to mark them in cursive. -> **done**, also added nonbreaking spaces before %
-- Data Section: It would help to have a list/matrix of your gold standard texts just for beauty's sake :) -> **done?** unsure if it's understandable
-- Code section: I don't think the included code is necessary, tbh I'd rather have the figures already preformatted in the paper, because they help your flow of argument. I'm more interested in how you calculated the scores, rather than the code to format the tables. -> to be discussed: I think the code does not harm our paper and having all the results in the paper is not feasable. In the current version the code works, but can also be ignored if someone doesn't care.
-- In the Intro section you call Wycliff's translation one into the vernacular. I'd underline some of those claims with sources. -> **done**
-- Also, but this might just be the student of literature in me: make clear what you mean by poetic style. Is it the non-literal language of the bible? The rhyme scheme applied to some verses? The structure of the text which deviates heavily from narrative structures? Or maybe the disregard for standardized syntax in verses? It would flesh out the possible difficulties of an MT system more, imo :). -> **done**
-- Maybe a limitations section would be cool? Because in your presentation you already mentioned a lot of these limitations. Also as a note: If anything I've written is bullshit because you have sources for that, ignore it, also I can't really judge the content very aptly because I have no clue what the research about MT says at the moment, it seems sound to me, but then obviously I am really not an expert on this.  -> **done**
-- The use of metrics like BLEU, ROUGE, and METEOR provides quantitative results but may overlook nuanced aspects of translation quality. -> **done** in limitations section
-
 # Chapter 2: How good is MT at translating Latin religious texts?
 Stefano Staffa, Andrea Scheck
 
