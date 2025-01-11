@@ -50,7 +50,7 @@ These manuscripts include ancient Chinese poetry and Buddhist scriptures. One of
 
 ![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/1.jpg)
 ![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/2.jpg)
-![alt text](image-3.png)
+![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/3.jpg)
 
 For the purpose of this paper and to improve the accuracy of OCR in processing ancient Chinese texts, this study employs pre-processing and post-processing methods. This study also uses natural language processing methods and the pre-trained language model GuwenBERT. GuwenBERT is trained on the Daizhige corpus of ancient Chinese literature, which includes 15,694 ancient texts with a total character count of 1.7 billion. It enhances OCR accuracy in two primary ways: correcting recognition errors and improving the interpretation of ambiguous or partially recognized characters. The model's training on the Daizhige corpus allows it to understand the linguistic patterns and contextual relationships specific to ancient Chinese, enabling it to predict and correct errors that traditional OCR systems might overlook. Additionally, GuwenBERT is used to refine the segmentation of text, ensuring that phrases, clauses, and sentences are correctly parsed according to classical grammar. It also assists in the disambiguation of polysemous characters, leveraging contextual cues to identify the most likely meanings within the document. These capabilities make GuwenBERT an essential tool for bridging the gap between modern NLP techniques and the complex demands of ancient text digitization, ultimately facilitating more accurate digital preservation and analysis of historical Chinese literature.
 
@@ -189,7 +189,7 @@ Post-processing offers several significant advantages. GuwenBERT’s pre-trained
 
 ## Conclusion
 
-![alt text](image-5.png)
+![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/222.png)
 
 According to pre-processing and post-processing method, it has some conclusions. Based on the output results of OCR pre-processing, we can draw some conclusions. In the manuscript of "Bring in the Wine", the noise removal method resulted in the lowest number of unrecognizable characters among the three methods. In the manuscript "Dinomond Sutra", the contrast enhancement and binarization pre-processing method achieved the highest accuracy, while the noise removal processing method also delivered the highest accuracy. The function of pre-processing removes noises of the old picture and make the picture clearer to easily to identity words in the pictures.
 
@@ -200,9 +200,9 @@ There are some limitations to this project. The fonts on the images in the datas
 Additionally, the post-processing step, while effective in refining OCR outputs, has its own limitations. It relies heavily on contextual information, which can lead to errors if the context is ambiguous or insufficient. In cases where the original text is a handwritten manuscript, such as the Dunhuang manuscripts, copying mistakes are common. The model may “correct” these mistakes based on its learned patterns, inadvertently producing content that deviates from the original source. This could result in an output that is technically accurate but no longer faithful to the historical document. This highlights the need for cautious interpretation of post-processed results, particularly when dealing with historical texts where preserving the original errors is crucial for authenticity and research.
 
 ## Appendix
-![alt text](image-8.png)
+![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/IMG_2358.JPG)
 
-![alt text](image-10.png)
+![alt text](https://github.com/Kouyou0823/chartering-new-realms-2024/blob/main/IMG_2364.JPG)
 
 ## Reference
 
