@@ -455,3 +455,4 @@ Lastly, this study is limited by the selection of books analyzed, as not all boo
 ## References
 
 ```{bibliography}
+:style: plain
