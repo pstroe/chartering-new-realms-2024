@@ -66,19 +66,6 @@ The KJV (1611) ({cite:p}`britannica_king_james_version`) and DRB (1582–1610) (
 
 The DRB emphasizes Catholic theology, as in Matthew 6:11 “supersubstantial bread”, ({cite:p}`drb1582`), while the KJV uses “daily bread” ({cite:p}`kjv1611`) The WEB and OEB, based on diverse manuscripts, aim for broader accessibility, omitting theological specifics like the Trinitarian reference in 1 John 5:7–8 ({cite:p}`web2000`, {cite:p}`oeb2010`).
 
-```{code-cell} python
-:thebe:
-with open("KJV_old_testament.tsv", "r") as f:
-    i = 0
-    for line in f.readlines():
-        a,b,c = line.split("\t")
-        if 0 < i < 4:
-            print(c)
-        i += 1
-        if i > 4:
-            break
-```
-
 ### Data Set
 After cleaning and aligning the data, we focused on 24 books that appear in all four Bible versions for better comparability. The books in the dataset can be seen in {numref}`Verse distribution`. The figure uses the OEB book titles, as these are short and contain the most important part about the titel. In total, 23,615 verses were analyzed across the four versions, with Psalms containing by far the most verses. The verses from the other books are distributed more evenly, as shown in {numref}`Verse distribution`.
 
