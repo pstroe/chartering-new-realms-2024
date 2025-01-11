@@ -20,22 +20,20 @@ bibliography: references_chapter5.bib
 
 ## Abstract
 
-This chapter explores how English Bible translations have changed over time and how these changes affect the way people understand theology. It focuses on four key translations: the Douay-Rheims Bible (1582–1610), King James Version (1611), World English Bible (2000), and Open English Bible (2010). These translations show how language, culture, and theology have influenced the way the Bible is written and interpreted.
+This chapter uses text mining methods to explore how four English Bible translations—Douay-Rheims Bible (DRB), King James Version (KJV), World English Bible (WEB), and Open English Bible (OEB)—have changed in language and tone over time. By analyzing patterns in vocabulary, phrasing, and sentiment, we uncover trends that show how translations adapt to modern readers.
 
-Using tools like n-grams, collocations, and sentiment analysis, this chapter finds patterns in the text that reveal shifts in style, vocabulary, and meaning. Older versions like the Douay-Rheims and King James tend to use formal and traditional language, while newer versions like the World English Bible and Open English Bible aim to be easier to read and understand. Sentiment analysis also shows that most books of the Bible are written in a positive tone, although the way this positivity comes across can vary depending on the translation.
-
-This research highlights how translations balance staying true to the original meaning with adapting to modern readers’ needs. By showing how language changes shape theological ideas, this chapter contributes to both digital humanities and the study of religion, making it easier to see how translations affect the way people connect with scripture.
+The results show that newer translations, like the WEB and OEB, use simpler and more inclusive language compared to the formal and traditional style of older versions like the DRB and KJV. Sentiment analysis shows that most books have a positive tone in all versions, with modern translations being slightly more positive in some cases. This study highlights how Bible translations evolve to balance staying true to the original text with making scripture more accessible and relatable for contemporary audiences
 
 ## Introduction
-Religious texts, like the Bible, are cornerstones of spiritual and cultural guidance, shaping societies and beliefs for centuries. Each new translation of these texts is not a simple linguistic substitution but reflects shifts in language, culture, and theology. This chapter investigates how incremental changes in translation influence theological understanding, subtly reshaping interpretations over time. By examining major English Bible translations, including the Douay-Rheims (1582–1610) ({cite:p}`drb1582`), King James Version (1611) ({cite:p}`kjv1611`), World English Bible (2000) ({cite:p}`web2000`), and Open English Bible (2010) ({cite:p}`oeb2010`), we uncover how scripture evolves to reflect its socio-historical context.
+Religious texts, like the Bible, are cornerstones of spiritual and cultural guidance, shaping societies and beliefs for centuries. Each new translation of these texts is not a simple linguistic substitution but reflects shifts in language, culture, and theology. This chapter investigates how incremental changes in translation influence theological understanding, subtly reshaping interpretations over time. By examining major English Bible translations, including the Douay-Rheims (1582–1610) ({cite:p}`drb1582`), King James Version (1611) ({cite:p}`kjv1611`), World English Bible (2000) ({cite:p}`web2000`), and Open English Bible (2010) ({cite:p}`oeb2010`), we analyze how translation choices shape the language, style, and accessibility of scripture over time.
 
-Translation, though intended to stay true to the original, often involves interpretive choices influenced by translators' cultural and theological frameworks. This study addresses how these choices have shaped and reflected shifts in theological focus over centuries. Using text mining techniques such as n-grams and collocations, and sentiment analysis, we systematically analyze thematic patterns and linguistic changes across translations, revealing subtle shifts that might not be evident in qualitative analysis. 
+Translation, while aiming to stay true to the original, often involves interpretive choices shaped by cultural and linguistic priorities. This study investigates how these choices influence the language and style of English Bible translations over time. Using text mining techniques such as n-grams, collocations, and sentiment analysis, we analyze patterns in vocabulary, phrasing, and tone, uncovering subtle changes that might be overlooked in qualitative analysis.
 
-By tracing these changes, this research provides empirical evidence of the interplay between scripture and context, offering a novel perspective on the evolution of religious translation and its impact on theological discourse. It highlights how language acts as a dynamic medium through which faith, values, and beliefs are continually reinterpreted, contributing to both digital humanities and the study of theological evolution.
+By examining these changes, this research provides a data-driven perspective on the evolution of Bible translations, showing how language adapts to meet the needs of contemporary readers while maintaining core theological messages. It contributes to digital humanities and translation studies by illustrating how linguistic shifts influence the accessibility and interpretation of sacred texts.
 
 ## Related Work
 
-The translation of religious texts, particularly the Bible, represents a unique intersection of linguistic fidelity, theological intent, and cultural adaptation. Scholars have extensively analyzed how translation methodologies reflect and shape broader societal and theological frameworks, offering a rich foundation for understanding their evolution.
+The translation of religious texts, particularly the Bible, involves balancing linguistic accuracy, theological meaning, and cultural context. Scholars have explored how different translation approaches influence the way these texts are understood, providing valuable insights into their development over time.
  
 {cite:t}`Stine2018` investigates the historical challenges of translating the Bible, focusing on the Good News Bible as a case study. His work explores how dynamic equivalence—a translation strategy prioritizing accessibility—reshapes the interpretive experience of scripture.
 Stine demonstrates how the Good News Bible sought to make biblical texts comprehensible to modern readers by rephrasing theological and linguistic constructs to align with contemporary language norms. However, this strategy often required interpretive decisions that subtly redefined theological emphases to achieve clarity and inclusivity.
@@ -57,20 +55,16 @@ This critique underscores the translator’s role as a cultural mediator, negoti
 Wendland argues that existing paradigms, such as dynamic equivalence and direct translation, often overlook the literary and rhetorical qualities of the source text. His LiFE model advocates for preserving these artistic dimensions while adapting the text to the linguistic and cultural norms of the target audience.
 By combining literary fidelity with functional clarity, Wendland’s approach offers a holistic framework that addresses the dual challenges of preserving theological depth and engaging diverse audiences. His insights provide a nuanced strategy for navigating the complexities of sacred text translation.
 
-Together, these works illustrate the multifaceted challenges of religious text translation, where linguistic, theological, and cultural factors intersect. They provide valuable theoretical and practical insights into the evolving priorities of translators.
-While Stine and Smith examine the trade-offs between readability and fidelity, Brown’s sociocognitive model situates these debates within the broader framework of human cognition. Adeyefa highlights the socio-linguistic forces shaping retranslation efforts, and Wendland integrates literary and functional goals to create a balanced translation strategy.
-
 Building on these foundations, our study employs computational text mining to trace the theological and linguistic shifts in English Bible translations over time. By systematically analyzing thematic patterns and linguistic trends, we provide a data-driven perspective that complements and extends the theoretical and qualitative frameworks established by prior research.
-
 
 
 ## Data
 
-The data set used to explore theological shifts over time consits of the following four English Bible versions: the King James Version (KJV), Douay-Rheims Version (DRV), World English Bible (WEB), and Open English Bible (OEB). These translations reveal how language, theology, and translation philosophies have evolved, shaping readers' understanding of scripture.
+The data set used to explore theological shifts over time, referred to using the following abbreviations throughout this chapter, consits of the following four English Bible versions: the King James Version (KJV), Douay-Rheims Bible (DRB), World English Bible (WEB), and Open English Bible (OEB). These translations reveal how language, theology, and translation philosophies have evolved, shaping readers' understanding of scripture.
 
-The KJV (1611) ({cite:p}`britannica_king_james_version`) and DRV (1582–1610) ({cite:p}`britannica_douai_reims_bible`) reflect formal, word-for-word approaches, preserving original structure but often making the text less accessible. In contrast, the modern WEB (2000) ({cite:p}`web2000`) and OEB (2010) ({cite:p}`oeb2010`) prioritize readability, with the OEB adopting a thought-for-thought approach. For example, Psalm 23:2 in the KJV reads, “He maketh me to lie down in green pastures: he leadeth me beside the still waters.” while the OEB says, “He lays me down in green pastures. He gently leads me to waters of rest”.
+The KJV (1611) ({cite:p}`britannica_king_james_version`) and DRB (1582–1610) ({cite:p}`britannica_douai_reims_bible`) reflect formal, word-for-word approaches, preserving original structure but often making the text less accessible. In contrast, the modern WEB (2000) ({cite:p}`web2000`) and OEB (2010) ({cite:p}`oeb2010`) prioritize readability, with the OEB adopting a thought-for-thought approach. For example, Psalm 23:2 in the KJV reads, “He maketh me to lie down in green pastures: he leadeth me beside the still waters” (({cite:p}kjv1611)) while the OEB says, “He lays me down in green pastures. He gently leads me to waters of rest” ({cite:p}oeb2010).
 
-The DRV emphasizes Catholic theology, as in Matthew 6:11 (“supersubstantial bread”), while the KJV uses “daily bread.” The WEB and OEB, based on diverse manuscripts, aim for broader accessibility, omitting theological specifics like the Trinitarian reference in 1 John 5:7–8.
+The DRB emphasizes Catholic theology, as in Matthew 6:11 “supersubstantial bread”, ({cite:p}`drb1582`), while the KJV uses “daily bread” ({cite:p}`kjv1611`) The WEB and OEB, based on diverse manuscripts, aim for broader accessibility, omitting theological specifics like the Trinitarian reference in 1 John 5:7–8 ({cite:p}`web2000`, {cite:p}`oeb2010`).
 
 ```{code-cell} python
 :thebe:
@@ -88,7 +82,7 @@ with open("KJV_old_testament.tsv", "r") as f:
 ### Data Set
 After cleaning and aligning the data, we focused on 24 books that appear in all four Bible versions for better comparability. The books in the dataset can be seen in {numref}`Verse distribution`. The figure uses the OEB book titles, as these are short and contain the most important part about the titel. In total, 23,615 verses were analyzed across the four versions, with Psalms containing by far the most verses. The verses from the other books are distributed more evenly, as shown in {numref}`Verse distribution`.
 
-```{figure} verse_dist_by_book.png
+```{figure} chapter5_images/verse_dist_by_book.png
 ---
 name: Verse distribution
 ---
@@ -104,7 +98,7 @@ Title alignment was another important task to figure out which books are present
 
 We did not align verses between the versions, which could have affected the granularity of our analysis. Although we cannot be fully certain that all books are identical across versions, the verse distribution by book strongly supports the idea that the books are the same across the versions, as shown in {numref}`Verse distribution version`. In most cases, the number of verses per book is consistent, except for Esther and Psalms, where the DRB version has slightly more verses. This could be due to differences in extraction logic or the inclusion of additional verses in DRB, but it is considered negligible for our analysis.
 
-```{figure} verse_dist.png
+```{figure} chapter5_images/verse_dist.png
 ---
 name: Verse distribution version
 ---
@@ -158,33 +152,23 @@ There were some challenges during this process:
 ### Sentiment Analysis
 The following section discusses the methodology used to analyze the sentiment of the books across the different Bible versions.
 
+Initially, we applied sentiment analysis using VADER (Valence Aware Dictionary and sEntiment Reasoner) ({cite:p}`VADER2014`), a tool widely used for analyzing sentiment in social media and informal text domains. However, domain-specific challenges, such as the unique vocabulary and style of biblical texts, limited its effectiveness. This aligns with findings by {cite:t}`liu2012`, who notes that sentiment models trained on general-purpose data often struggle with context-specific domains.
+
 Initially, we applied sentiment analysis using VADER (Valence Aware Dictionary and sEntiment Reasoner) ({cite:p}`VADER2014`). But because VADER is speficially trained on social media text, it proved to not perform adequately for our purposes. For instance, VADER often interprets key terms as neutral — such as "Jesus" — despite their significant positive connotations in the text. Conversely, terms like "God" are appropriately identified as positive. This inconsistency prompted a shift to more advanced tools.
 
-To address these challenges, we employed a pre-trained DistilBERT model fine-tuned for sentiment classification by HuggingFace({cite:p}`hf_canonical_model_maintainers_2022`). While further fine-tuning the model specifically on biblical texts would likely improve performance further, this would have gone beyond the scope of our analysis.
+To address these challenges, we employed the pre-trained `distilbert-base-uncased-finetuned-sst-2-english` model, a DistilBERT variant fine-tuned for sentiment classification by HuggingFace({cite:p}`hf_canonical_model_maintainers_2022`). Transformer-based models like DistilBERT excel in capturing contextual nuances, making them better suited for complex texts such as scripture, where sentiment can depend on subtle linguistic and theological cues ({cite:p}`devlin2018`). While further fine-tuning the model specifically on biblical texts would likely improve performance further, this would have gone beyond the scope of our analysis.
 
 The sentiment analysis process involved applying the DistilBERT model to classify each verse in the dataset as either positive or negative, alongside a confidence score indicating the model's certainty for each prediction. The data was then grouped by Bible book and version to aggregate sentiment predictions for each group. To determine the overall sentiment of a book or version, we used the ratio of positive to negative verses, to get a first idea of the predominant sentiment of a book. The results were compiled into a single DataFrame, summarizing sentiment trends across all books and versions.
 
-To assess the model's performance, we analyzed a sample of verses from the OEB version of Revelation, a book expected to have a more negative tone due to its apocalyptic content. 
+To assess the model's performance, we analyzed a sample of verses from the OEB version of Revelation ({cite:p`oeb2010`}), a book expected to have a more negative tone due to its apocalyptic content. 
 
-The results provide a closer look at how the sentiment model interprets biblical language: (CODE NOT WORKING YET):
-
-```{code-cell} python
-:thebe:
-import pandas as pd
-
-# Load the saved DataFrame
-sentiment_df = pd.read_csv('sentiment_revelation_ex_results.csv') 
-# Display the first 10 rows as a DataFrame
-sentiment_df.head(10)
-```
-
-As we can see, a verse like "The Revelation of Jesus Christ, which God gave to him to make known to his servants, concerning what must shortly take place, and which he sent and revealed by his angel to his servant John," is labeled positive with a high confidencd score of 0.969. This classification likely stems from the model detecting positive or anticipatory language, such as "Jesus Christ," "revealed," and "what must shortly take place." These terms often convey hope or importance, which the sentiment model associates with positivity, even though the verse has deeper theological and prophetic significance.
+The results provide a closer look at how the sentiment model interprets biblical language. A verse like "The Revelation of Jesus Christ, which God gave to him to make known to his servants, concerning what must shortly take place, and which he sent and revealed by his angel to his servant John," is labeled positive with a high confidencd score of 0.969. This classification likely stems from the model detecting positive or anticipatory language, such as "Jesus Christ," "revealed," and "what must shortly take place." These terms often convey hope or importance, which the sentiment model associates with positivity, even though the verse has deeper theological and prophetic significance.
 
 In contrast, a verse like "I, John, who am your brother, and who share with you in the suffering and kingship and endurance of Jesus, found myself on the island called Patmos, for the sake of the message of God and the testimony to Jesus." is labeled negative with high confidence score of 0.917. While the overall tone seems more positive, as it expresses a sense of solidarity, endurance, and purpose, the model may classify it as negative due to the context of suffering and intensity of language. The model may focus more on negative keywords than biblical context.
 
-Another spot test conducted in Second John reveals different behavior by the model. In the DRB, the verse reads: "For many seducers are gone out into the world who confess not that Jesus Christ is come in the flesh. This is a seducer and an antichrist." (DRB, The Second Epistle of St. John the Apostle 1:7). The model categorizes this verse as negative, with a confidence score of 0.55.
+Another spot test conducted in Second John reveals different behavior by the model. In the DRB, verse 1:7 reads: "For many seducers are gone out into the world who confess not that Jesus Christ is come in the flesh. This is a seducer and an antichrist" ({cite:p`drb1582`}). The model categorizes this verse as negative, with a confidence score of 0.55.
 
-In contrast, the same verse in the WEB translation reads: "For many deceivers have gone out into the world, those who don't confess that Jesus Christ came in the flesh. This is the deceiver and the Antichrist." (WEB, Second John 1:7). Here, the model categorizes the verse as positive, with a significantly higher confidence score of 0.73.
+In contrast, the same verse 1:7 in the WEB translation reads: "For many deceivers have gone out into the world, those who don't confess that Jesus Christ came in the flesh. This is the deceiver and the Antichrist." ({cite:p`web2000`}). Here, the model categorizes the verse as positive, with a significantly higher confidence score of 0.73.
 
 While the confidence score for the negatively classified verse in the DRB is only moderately high, it is noteworthy that the untrained DistilBERT model classifies two very similar verses with differing sentiments. This divergence highlights potential challenges in sentiment classification for closely related yet differently worded translations.
 
@@ -211,7 +195,7 @@ The analysis of n-grams from multiple Bible translations reveals significant sty
 
 A key observation pertains to the stylistic divergence between traditional and modern translations. For instance, older translations such as the Douay-Rheims Bible (DRB) and King James Version (KJV) retain formal expressions and archaic language, as shown by phrases like "Saith unto them" and "Verily I say unto you". By contrast, contemporary translations like the Open English Bible (OEB) and World English Bible (WEB) show a deliberate simplification of language, using phrases such as "Jesus said to them" or "Truly, I tell you". This finding supports earlier claims by {cite:t}`Smith2008` that modern translations prioritize accessibility and reader comprehension. Moreover, the frequent use of conversational markers, such as "Don’t" and "They said", in WEB suggests a narrative focus aimed at engaging contemporary audiences.
 
-Another interesting observation is how different translations emphasize theology in their own ways. Older versions like the Douay-Rheims Bible (DRB) and King James Version (KJV) often stick to formal, traditional expressions such as "Holy Ghost" and "Our Lord Jesus Christ," which show a focus on maintaining doctrinal consistency. On the other hand, newer translations take a different approach, using language that feels more relational and inclusive. For instance, the Open English Bible (OEB) uses "Holy Spirit" instead of "Holy Ghost," which feels more in tune with modern religious language. The OEB also introduces phrases like "Union with Christ Jesus," adding a personal and relational tone that wasn’t as present in the older versions.
+Another interesting observation is how different translations emphasize theology in their own ways. Older versions like the DRB and KJV often stick to formal, traditional expressions such as "Holy Ghost" and "Our Lord Jesus Christ," which show a focus on maintaining doctrinal consistency. On the other hand, newer translations take a different approach, using language that feels more relational and inclusive. For instance, OEB uses "Holy Spirit" instead of "Holy Ghost," which feels more in tune with modern religious language. The OEB also introduces phrases like "Union with Christ Jesus," adding a personal and relational tone that wasn’t as present in the older versions.
 
 Another notable point involves the evolution of word choices in different translations. For instance, the term "Ghost" in the KJV is replaced by "Spirit" in the OEB and WEB, which seems to reflect a deliberate attempt to modernize the vocabulary. Similarly, while older translations use words like "Verily," more recent translations prefer "Truly," suggesting a focus on simplicity and accessibility. These lexical changes appear to stem from evolving linguistic norms and the goal of making the text more relevant to contemporary readers. An interesting example is the replacement of "Gospel" (KJV) with "Good News" (OEB), a shift that conveys the traditional meaning in a more straightforward manner.
 
@@ -220,7 +204,7 @@ In summary, the findings from the n-gram analysis reveal significant changes in 
 #### Book-Specific Analysis: Insights from N-Gram Patterns
 Looking at the n-grams from different Bible translations gives us helpful insights into how choices in wording reflect changes in style, theological focus, and interpretation. This section dives into specific books—Philippians, Acts, Psalms, and 1 Corinthians—to show how these shifts play out over time, highlighting the balance between doctrinal priorities and changes in language.
 
-In *Philippians* (Book ID 2), the differences in style and theological emphasis stand out clearly. Older translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) use phrases such as "Christ Jesus" and "Lord Jesus Christ" frequently, showing their focus on traditional Christological titles. On the other hand, the Open English Bible (OEB) and World English Bible (WEB) prefer phrases like "Union with Christ Jesus" and "Spreading the good news," which sound more modern and relational. This shift points to how newer translations aim to balance staying true to doctrine while being more accessible to contemporary readers.
+In Philippians, the differences in style and theological emphasis stand out clearly. Older translations like the DRB and KJV use phrases such as "Christ Jesus" and "Lord Jesus Christ" frequently, showing their focus on traditional Christological titles. On the other hand, the OEB and WEB prefer phrases like "Union with Christ Jesus" and "Spreading the good news," which sound more modern and relational. This shift points to how newer translations aim to balance staying true to doctrine while being more accessible to contemporary readers.
 The graph compares 4-grams (four-word phrases) across four Bible versions: DRB, OEB, WEB, and KJV. Green highlights phrases found in all versions, like "the lord jesus christ," showing shared themes. Red marks unique phrases, reflecting differences in translation style or focus.
 ```{code-cell} python
 :tags: [hide-input]
@@ -300,9 +284,9 @@ plt.show()
 ``````
 This finding suggests that while the Bible versions share core theological expressions, the unique phrases highlight variations in translation approaches and interpretive emphasis.
 
-The findings in *Psalms* (Book ID 10) highlight the ongoing simplification of language in newer translations. Older versions, such as the DRB and KJV, keep traditional phrases like "O Lord" and "His mercy endureth for ever." Modern versions like the OEB and WEB replace these with "Lord’s voice" and "Loving kindness endures forever," making the text feel more emotionally resonant. The WEB even uses "Give thanks to Yahweh," showing an effort to include transliterated divine names, which reflects both cultural sensitivity and theological inclusivity.
+The findings in Psalms highlight the ongoing simplification of language in newer translations. Older versions, such as the DRB and KJV, keep traditional phrases like "O Lord" and "His mercy endureth for ever." Modern versions like the OEB and WEB replace these with "Lord’s voice" and "Loving kindness endures forever," making the text feel more emotionally resonant. The WEB even uses "Give thanks to Yahweh," showing an effort to include transliterated divine names, which reflects both cultural sensitivity and theological inclusivity.
 
-In *1 Corinthians* (Book ID 15), the focus shifts to how different translations tackle doctrinal and linguistic challenges. The KJV, for example, emphasizes theological exactness with phrases like "Dead rise not again" and "Our Lord Jesus Christ." Modern translations like the OEB and WEB, however, aim for clarity, using terms like "Gift of tongues" and "Union with Christ Jesus" to make the text easier to understand. This trend aligns with [Smith's article](https://journals.co.za/doi/pdf/10.10520/AJA19968167_53), which talks about how modern translations adapt theological ideas for today’s readers. The OEB also includes more practical language, like "Let everyone remain faithful," showing a focus on ethical guidance.
+In 1 Corinthians, the focus shifts to how different translations tackle doctrinal and linguistic challenges. The KJV, for example, emphasizes theological exactness with phrases like "Dead rise not again" and "Our Lord Jesus Christ." Modern translations like the OEB and WEB, however, aim for clarity, using terms like "Gift of tongues" and "Union with Christ Jesus" to make the text easier to understand. This trend aligns with [Smith's article](https://journals.co.za/doi/pdf/10.10520/AJA19968167_53), which talks about how modern translations adapt theological ideas for today’s readers. The OEB also includes more practical language, like "Let everyone remain faithful," showing a focus on ethical guidance.
 This plot highlights three-grams from Corinthians First across four Bible versions, with shared phrases in green and unique ones in red, emphasizing commonalities and distinct phrasing between translations.
 ```{code-cell} python
 :tags: [hide-input]
@@ -416,7 +400,7 @@ These changes highlight the tension between staying true to the original text an
 
 The sentiment analysis of Bible books across various translations reveals that most books predominantly have a positive tone. As shown in {numref}`sentiment_per_book`, the ratio of positive to negative verses in each book indicates how often positive sentiment is expressed compared to negative sentiment. A ratio of 1 serves as the threshold, meaning an equal number of positive and negative verses, with ratios above 1 signaling more positivity and those below 1 suggesting more negativity. Interestingly, very few books come close to this threshold, and even fewer fall below it, highlighting the overall positive sentiment trend in the dataset.
 
-```{figure} sentiment_per_book_by_version.png
+```{figure} chapter5_images/sentiment_per_book_by_version.png
 ---
 name: sentiment_per_book
 ---
@@ -431,7 +415,7 @@ Interestingly, Revelation and Esther present unique sentiment patterns. Revelati
 
 ### Analysis of Cohen’s $h$ Results
 
-The results of Cohen’s $h$ indicate a range of differences in positivity proportions across Bible versions. The majority of pairwise comparisons (65.97%) show negligible differences in positivity proportions. This suggests that, for most books and versions, the model’s sentiment classifications are relatively similar, with little practical significance in the differences. These negligible differences imply a high degree of consistency in sentiment classification across the Bible versions studied, and they are unlikely to matter in practice.
+The results of Cohen’s $h$ indicate a range of differences in positivity proportions across Bible versions. The majority of pairwise comparisons (65.97%) show negligible differences in positivity proportions. This suggests that, for most books and Bible versions, the model’s sentiment classifications are relatively similar, with little practical significance in the differences. These negligible differences imply a high degree of consistency in sentiment classification across the Bible versions studied, and they are unlikely to matter in practice.
 
 Approximately 26.39% of comparisons exhibit small differences in positivity proportions. These differences, while noticeable, are not substantial. They may reflect minor shifts in sentiment emphasis between versions, potentially due to translation choices, linguistic nuances, or even misclassification of verses.
 
@@ -444,13 +428,11 @@ In Second John, the DRB shows a slightly more positive sentiment than the OEB an
 Overall, where moderate differences were observed, the WEB consistently appears to have the most positive tone, suggesting that modern versions such as WEB and OEB often present a more positive sentiment compared to older translations like KJV and DRB. An exception is Third John, where the DRB is the most positive.
 
 
-## Conclusion
+## Limitations and Conclusion
 
-Our application of n-grams, collocations, and sentiment analysis in comparing Bible translations highlights how religious texts adapt to changing linguistic, cultural, and theological contexts. Older translations like the Douay-Rheims Bible (DRB) and King James Version (KJV) tend to preserve formal, archaic language that prioritizes doctrinal accuracy, while newer translations like the World English Bible (WEB) and Open English Bible (OEB) focus on making the text more accessible and engaging through simpler, conversational language. These differences affect both how the text is framed linguistically and how its sentiment is interpreted.
+This study has several limitations that should be considered when interpreting the findings. First, the dataset includes only 24 books common to all four translations, which may limit the generalizability of the results. Additionally, the sentiment analysis relied on a pre-trained model not fine-tuned on biblical texts, which could lead to misclassification of context-specific terms. Finally, differences in verse formatting across translations posed challenges for alignment, although these discrepancies were deemed negligible for the analysis.
 
-Analyzing both the sentiment ratios and practical significance offers an initial perspective on sentiment classification across Bible versions and provides a useful starting point for further analysis. However, to derive more meaningful insights, it is essential to fine-tune the model on Bible-specific texts to reduce misclassification. The findings presented here should be interpreted with caution, as the model was not trained on Bible texts, and only spot tests were performed to validate the model's output. These tests indicated a degree of misclassification or unusual model behavior in certain cases. But overall, this first analysis indicates a slightly more positive tone in the newer Bible versions in some of the books analyzed.
-
-Lastly, this study is limited by the selection of books analyzed, as not all books of the Bible were included. To ensure consistency, the same books were compared across all translations. While the findings reveal key themes, input from experts could add valuable insights into the theological and linguistic details, helping to verify and refine the results, especially in terms of sentiment analysis.
+Despite these limitations, the study highlights how linguistic patterns and sentiment in Bible translations have evolved over time. The results show a clear shift in modern translations toward simpler, more inclusive language, reflecting changing priorities in accessibility and engagement. Future research could refine these findings by incorporating more comprehensive datasets, fine-tuning sentiment models for religious texts, and integrating expert input to better capture theological nuances.
 
 ## References
 
