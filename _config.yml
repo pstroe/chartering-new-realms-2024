@@ -8,16 +8,17 @@ logo: chartering-new-realms-logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: false
+  execution_cache_path: _build/.jupyter_cache
 
-# Define the name of the latex output file for PDF builds
+# Define the name of the LaTeX output file for PDF builds
 latex:
   latex_documents:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+  - references_chapter3.bib
 
 # Information about where the book exists on the web
 repository:
@@ -25,8 +26,46 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# HTML theme and custom CSS for font size adjustments
 html:
   use_issues_button: true
   use_repository_button: true
+  theme:
+    name: pydata_sphinx_theme
+    options:
+      navbar_end: ["repository-button", "search-field"]
+      show_nav_level: 2
+      font_size: '16px'  # Adjust global font size if the theme supports it
+  extra_css:
+    - _static/custom.css  # Reference to the custom CSS file for further styling
+  extra_static_paths:
+    - _static
+  copy_static_files: true
+  static:
+    - UPDATE_test/preprocessed
+
+# Enable Thebe for interactive code execution
+sphinx:
+  extra_extensions:
+    - sphinx_thebe
+
+
+launch_buttons:
+  thebe: true
+
+# Thebe configuration for enabling interactive cells
+thebe:
+  use_jupyterlite: true
+  lite_url: "_static/lite"
+  codemirror_theme: "abcdef"
+  selector: "div.cell"
+
+
+# Ensure this static directory includes your custom.css file for additional styling
+# Place custom.css in the _static folder and define any required CSS adjustments
+
+exclude_patterns:
+  - "**/huggingface_hub/**"
+  - "**/.ipynb_checkpoints/**"
+  - "**/jupyterbook_env/**"
+  - "**/myenv/**"
