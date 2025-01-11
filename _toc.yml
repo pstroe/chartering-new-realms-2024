@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
@@ -16,4 +17,24 @@ chapters:
 - file: chapter8
 - file: chapter9
 - file: chapter10
+=======
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: preface
+- file: introduction
+- file: chapter1
+- file: chapter2
+- file: chapter3
+- file: chapter4
+- file: chapter5
+- file: chapter6
+- file: chapter7
+- file: chapter8
+- file: chapter9
+- file: chapter10
+>>>>>>> 90fa69c4ca70a3891f3feaa2e038837592869c59
 - file: conclusion
