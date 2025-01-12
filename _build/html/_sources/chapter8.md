@@ -441,7 +441,8 @@ investigate the model’s adaptability to other historical periods, such as the 
 
 By advancing these areas, multimodal AI can serve as a catalyst for interdisciplinary innovation, reshaping how we engage with and interpret the cultural artifacts of the past. Through continued collaboration between AI researchers and historians, this technology holds the promise of democratizing access to historical knowledge while preserving its richness for future generations.
 
-
+## Tools
+A tool that it is used writing this chapter is ChatGpt.
 ## References
 
 Learning Transferable Visual Models From Natural Language Supervision.Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.2021.https://arxiv.org/abs/2103.00020
