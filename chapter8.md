@@ -257,7 +257,7 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
-
+![alt text](download.png "Title")
 ```
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
