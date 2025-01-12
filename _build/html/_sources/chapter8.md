@@ -140,8 +140,24 @@ By advancing these areas, multimodal AI can serve as a catalyst for interdiscipl
 
 ## References
 
-Alec Radford, 2021. Learning Transferable Visual Models From Natural Language Supervision
+Learning Transferable Visual Models From Natural Language Supervision.Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.2021.https://arxiv.org/abs/2103.00020
 
-Johannes Lehmann, 2020. Visual and Textual Representations in Historical Archives
+A Data Set and a Convolutional Model for Iconography Classification in Paintings.Federico Milani, Piero Fraternali.2020.https://arxiv.org/abs/2010.11697
 
-Wentao Zhao, 2022. Big Transfer Learning for Fine Art Classification
+Classifying paintings by artistic genre: An analysis of features & classifiers.Jana Zujovic, Lisa Gandy, Scott Friedman, Bryan Pardo, and Thrasyvoulos N Pappas. 2009.https://ieeexplore.ieee.org/document/5293271
+
+Big Transfer Learning for Fine Art Classification.Wentao Zhao, Wei Jiang, Xinguo Qiu.2022.https://onlinelibrary.wiley.com/doi/10.1155/2022/1764606
+
+MIBench: Evaluating Multimodal Large Language Models over Multiple Images.Haowei Liu, Xi Zhang, Haiyang Xu, Yaya Shi, Chaoya Jiang, Ming Yan, Ji Zhang, Fei Huang, Chunfeng Yuan, Bing Li, Weiming Hu.2024.https://arxiv.org/abs/2407.15272
+
+MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models.Fanqing Meng, Jin Wang, Chuanhao Li, Quanfeng Lu, Hao Tian, Jiaqi Liao, Xizhou Zhu, Jifeng Dai, Yu Qiao, Ping Luo, Kaipeng Zhang, Wenqi Shao. 2024. https://arxiv.org/abs/2408.02718
+
+Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences.Xiyao Wang, Yuhang Zhou, Xiaoyu Liu, Hongjin Lu, Yuancheng Xu, Feihong He, Jaehong Yoon, Taixi Lu, Gedas Bertasius, Mohit Bansal, Huaxiu Yao, Furong Huang.2024. https://arxiv.org/abs/2401.10529
+
+Multimodal Large Language Models: A Survey.Jiayang Wu, Wensheng Gan, Zefeng Chen, Shicheng Wan, Philip S. Yu.2023.https://arxiv.org/abs/2311.13165
+
+The Revolution of Multimodal Large Language Models: A Survey.Davide Caffagni, Federico Cocchi, Luca Barsellotti, Nicholas Moratelli, Sara Sarto, Lorenzo Baraldi, Lorenzo Baraldi, Marcella Cornia, Rita Cucchiara.2024.https://arxiv.org/abs/2402.12451 
+
+PHD: Pixel-Based Language Modeling of Historical Documents.Nadav Borenstein, Phillip Rust, Desmond Elliott, Isabelle Augenstein.2023.https://aclanthology.org/2023.emnlp-main.7/
+
+A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment.Tianhe Wu, Kede Ma, Jie Liang, Yujiu Yang, Lei Zhang.2024.https://arxiv.org/abs/2403.10854
