@@ -192,7 +192,7 @@ import pandas as pd
 import random
 from IPython.display import display, Markdown
 
-csv_path = "data/translations.csv"  # CSV with translations, placed in data folder on binder of this project
+csv_path = "chapter2_data/translations.csv"  # CSV with translations, placed in data folder on binder of this project
 data = pd.read_csv(csv_path, delimiter=';')
 
 random_row = data.sample(n=1).iloc[0]  # Select a random row
@@ -220,7 +220,7 @@ import pandas as pd
 import random
 from IPython.display import display, Markdown
 
-csv_path_scores = "data/scores.csv"  # CSV with scores, placed in data folder on binder of this project
+csv_path_scores = "chapter2_data/scores.csv"  # CSV with scores, placed in data folder on binder of this project
 data_scores = pd.read_csv(csv_path_scores, delimiter=';')
 
 random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
