@@ -1,3 +1,8 @@
 jupyter-book
 matplotlib
 numpy
+pandas
+sacrebleu
+rouge-score
+nltk
+thebe
