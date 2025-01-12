@@ -14,6 +14,8 @@ kernelspec:
 
 # Chapter 6: Enhancing OCR Accuracy for Historical Texts: A Study on Pre-processing and Post-processing Techniques for Dunhuang Manuscripts
 
+Jiangnan Zhang, Shijin Zhou
+
 ## Abstract
 
 This research delves into the application of optical character recognition (OCR) on Dunhuang manuscripts, a collection of historical documents found within the Mogao Caves. These documents are celebrated for their linguistic diversity and cultural significance. In this work, we highlight the performances of pre-processing and post-processing techniques in improving OCR recognition accuracy regarding classical Chinese. Pre-processing methods, such as contrast enhancement, binarization, and denoising, improve image quality by increasing input clarity and reducing recognition errors. On the other hand, post-processing effectively optimizes the OCR output by correcting errors based on the linguistic context and recovering missing text using a classical Chinese language model, GuwenBERT. However, its performance largely depends on the quality of the surrounding context. This analysis provides insights into how pre-processing and post-processing can be effectively used to breathe new life into ancient Dunhuang manuscripts, ensuring their digital preservation for generations to come.
