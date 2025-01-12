@@ -421,25 +421,21 @@ output_class=class_names[np.argmax(pred)]
 print("The predicted class is", output_class)
 ```
 
-## Conclusion
-
-This study highlights the potential of multimodal language models to analyze and classify Renaissance graphic images, surpassing the gap between computational tools and historical analysis. Key findings are the follwing.
-Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, the classificier of Renaissance-era achieved traing accuracy of 100 percent nad validation accuracy of 95 percent, wheras the cassifier for renesance images reached training accuracy of 95 precent and validation accuracy of 79 percent, indicating the model’s adaptability to historical specifications. Lastly, the findings underscore the utility of multimodal language models in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets. 
-
+## Limitations
 Despite its successes, the study also revealed significant limitations. 
 Firstly, the model struggled to interpret abstract and allegorical imagery, which often requires contextual knowledge that goes beyond visual or textual inputs. Secondly, generated captions, while plausible, occasionally lacked the depth and specificity of expert analyses, particularly for highly nuanced works.
-Lastly, the dataset’s Eurocentric focus limited the generalizability of findings to other cultural or historical contexts.
+Lastly, the dataset’s ArtDL focus limited the generalizability of findings to other cultural or historical contexts.
 
 Addressing these challenges presents exciting opportunities for advancing the field. 
 Firstly, incorporate graphic images and textual descriptions from non-European cultures and periods, such as Islamic scientific illustrations, East Asian woodblock prints, or Pre-Columbian art. This would enhance the model’s generalization capabilities and cultural inclusivity. 
-Secondly, develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery. 
-
-Thirdly, extend the textual preprocessing pipeline to include original languages (e.g., Latin, Italian, Greek) alongside translations, enabling the model to preserve linguistic nuances and historical authenticity. 
-
-Fourthly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Fifthly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
+Secondly, develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery. Secondly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Thirdly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
 investigate the model’s adaptability to other historical periods, such as the Baroque or Enlightenment, to establish its versatility across diverse artistic and scientific traditions.
 
 By advancing these areas, multimodal AI can serve as a catalyst for interdisciplinary innovation, reshaping how we engage with and interpret the cultural artifacts of the past. Through continued collaboration between AI researchers and historians, this technology holds the promise of democratizing access to historical knowledge while preserving its richness for future generations.
+
+## Conclusion
+This study highlights the potential of multimodal language models to analyze and classify Renaissance graphic images, surpassing the gap between computational tools and historical analysis. Key findings are the following.
+Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, the classifier of Renaissance-era achieved training accuracy of 100 percent and validation accuracy of 95 percent, whereas the classifier for renaissance images reached training accuracy of 95 percent and validation accuracy of 79 percent, indicating the model’s adaptability to historical specifications. Lastly, the findings underscore the utility of multimodal language models in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets. With this said i want to conclude my work on this chapter.
 
 ## Tools
 A tool that it is used writing this chapter is ChatGpt.
