@@ -444,9 +444,9 @@ By advancing these areas, multimodal AI can serve as a catalyst for interdiscipl
 
 ## References
 
-[1]:Learning Transferable Visual Models From Natural Language Supervision.Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.2021.https://arxiv.org/abs/2103.00020
+Learning Transferable Visual Models From Natural Language Supervision.Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.2021.https://arxiv.org/abs/2103.00020
 
-[2]:A Data Set and a Convolutional Model for Iconography Classification in Paintings.Federico Milani, Piero Fraternali.2020.https://arxiv.org/abs/2010.11697
+A Data Set and a Convolutional Model for Iconography Classification in Paintings.Federico Milani, Piero Fraternali.2020.https://arxiv.org/abs/2010.11697
 
 Classifying paintings by artistic genre: An analysis of features & classifiers.Jana Zujovic, Lisa Gandy, Scott Friedman, Bryan Pardo, and Thrasyvoulos N Pappas. 2009.https://ieeexplore.ieee.org/document/5293271
 
