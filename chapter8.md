@@ -76,11 +76,12 @@ As a model for classification i was using ResNet-50. ResNet-50 is a 50-layer dee
 Third layer 1 × 1 convolution which restores dimensionality. These layers are followed by batch normalization and ReLU activation. The residual block’s output is added to its input via a shortcut connection, forming the “residual” mapping. This residual mapping simplifies the learning process, as the network focuses on learning incremental transformations instead of the entire mapping. ResNet-50 starts with a single 7×7 convolutional layer and a max-pooling layer, followed by the four stages of residual blocks. After the final stage, the network uses global average pooling, a fully connected layer, and a softmax activation for classification. The number of filters increases progressively in the residual blocks, starting at 64 in the first stage and reaching 512 in the final stage. The use of skip connections mitigates degradation in very deep networks by ensuring critical information is retained, even as the network depth increases. With 50 layers and approximately 25.6 million parameters, ResNet-50 strikes a balance between depth and computational efficiency. The network is designed to handle input images of size 224×224×3 (RGB). ResNet-50 incorporates batch normalization, He initialization, and ReLU activations for faster and more stable training. ResNet-50 has become a foundational model in computer vision due to its versatility and performance. Pre-trained ResNet-50 models achieve state-of-the-art results on datasets like ImageNet. It serves as a robust backbone for tasks like object detection, semantic segmentation, and medical image analysis. Its deep hierarchical features are effective for tasks requiring high-level feature representations. ResNet-50 is part of a family that scales well, with deeper variants like ResNet-101 and ResNet-152 offering higher accuracy. The bottleneck design and residual learning improve computational efficiency and reduce training difficulty. Pre-trained ResNet-50 models generalize well to diverse datasets and domains. Despite its efficiency, ResNet-50 can be resource-intensive, requiring significant memory and compute power. Optimizations such as quantization and model pruning are often necessary for deployment on resource-constrained devices. ResNet-50 is a pioneering architecture that combines depth with efficiency, leveraging residual learning to achieve remarkable performance in a wide range of vision tasks. Its innovations have influenced numerous modern architectures, solidifying its place as a cornerstone in deep learning.
 
 Regarding the methodology of the experiments, firstly i train and evaluate the ResNet-50 model on the photos dataset. Secondly, i take the first image of the renaissance to see in the model correctly identifies the image. The same image is the first image of the deposition class of the renaissance_photos. Thridly, i train and evaluate a second ResNet-50 model on the renaissance_photos. Lastly, I take the first image of the deposition to see in the second model correctly identifies the image.
+
 ## Experiments & Results
 In the following section i describe the experiments and present the results of the model.
-Firstly, i describe the training and the evaluation process of the classifier that makes destinction between renesance paintings and photos of flowers.
+Firstly, i describe the training and the evaluation process of the classifier that makes distinction between renaissance paintings and photos of flowers.
 
-At the begining of the code i import the libraries which purpose will be describe in the follwings.
+At the beginning of the code i import the libraries which purpose will be describe in the followings.
 Tensorflow should be installed inorder to import libraries from it.
 ```
 !pip install tensorflow
@@ -101,7 +102,7 @@ from tensorflow.python.keras.layers import Dense, Flatten
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 ```
-Dowloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.
+Downloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.
 ```
 import pathlib
 dataset_url = "https://www.dropbox.com/scl/fi/ul3bigvwu6ij8n3mo8n7n/photos.tar?rlkey=fsf330upjvsd0y666ruw6hqz6&st=c2culq23&dl=1"
@@ -114,7 +115,7 @@ renaissance = list(data_dir.glob('renaissance/*'))
 print(renaissance[0])
 PIL.Image.open(str(renaissance[0]))
 ```
-Here we are spliting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty precent for validation. Also we will use resulution for images 180 by 180 pixels. This code should output that are ound 3104 files belonging to 4 classes.
+Here we are splitting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty percent for validation. Also we will use resolution for images 180 by 180 pixels. This code should output that are found 3104 files belonging to 4 classes.
 Using 2484 files for training.
 ```
 img_height,img_width=180,180
@@ -127,7 +128,7 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-Simularry as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
+Similarly as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
 Using 620 files for validation.
 ```
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
@@ -138,7 +139,7 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-The four classes found are the names of the folders in the dataset. As an ouput we should get ['daisy', 'renaissance', 'roses', 'sunflowers'] which corespond with the four names of the classes. The model should learn how to recognize all four classes.
+The four classes found are the names of the folders in the dataset. As an output we should get ['daisy', 'renaissance', 'roses', 'sunflowers'] which correspond with the four names of the classes. The model should learn how to recognize all four classes.
 ```
 class_names = train_ds.class_names
 print(class_names)
@@ -155,7 +156,7 @@ for images, labels in train_ds.take(1):
     plt.title(class_names[labels[i]])
     plt.axis("off")
 ```
-From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that it will be added will be learing the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again. 
+From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that will be added, will be leering the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again. 
 ```
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Flatten, Dense, Input
@@ -191,11 +192,11 @@ resnet_model = Model(inputs=input_layer, outputs=output_layer)
 # Display the model summary
 resnet_model.summary()
 ```
-After the model is ready an optimizer using Adam, a cross entropy loss fuction and accuracy for metric should be added.
+After the model is ready an optimizer using Adam, a cross entropy loss function and accuracy for metric should be added.
 ```
 resnet_model.compile(optimizer=Adam(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 ```
-Then the training and validaton dataset should be provided. For acheving good accuracy for epochs is put value of ten. 
+Then the training and validation dataset should be provided. For achieving good accuracy for epochs is put value of ten. 
 ```
 resnet_model.compile(
     optimizer='adam',  # You can choose other optimizers like SGD or RMSprop
@@ -211,7 +212,7 @@ history = resnet_model.fit(
     epochs=epochs
 )
 ```
-The model log is stored in vaiable called history. We are accesing the training accuracy and validaton accuracy. We can visualize the by ploting the values. For the training accuracy 100 percent is reached and for validaton accuracy 95 percent. 
+The model log is stored in variable called history. We are accessing the training accuracy and validation accuracy. We can visualize the by plotting the values. For the training accuracy 100 percent is reached and for validation accuracy 95 percent. 
 ```
 fig1 = plt.gcf()
 plt.plot(history.history['accuracy'])
@@ -224,8 +225,10 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
-![alt text](download.png "Title")
-Simularry, we are accesing the training loss and validaton accuracy. We can visualize the by ploting the values. For the training loss 100 percent is reached zero percent and for validaton loss 17 percent.
+![alt text](./figures/1.png "Title")
+
+
+Similarly, we are accessing the training loss and validation accuracy. We can visualize the by plotting the values. For the training loss 100 percent is reached zero percent and for validation loss 17 percent.
 
 ```
 plt.plot(history.history['loss'])
@@ -237,7 +240,10 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
-We are using imread fuction to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resulution. The output we get is four dimensions value sine the model is trained on multiple images at the time.
+![alt text](./figures/2.png "Title")
+
+
+We are using imread function to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resolution. The output we get is four dimensions value sine the model is trained on multiple images at the time.
 ```
 import cv2
 image=cv2.imread(str(renaissance[0]))
@@ -245,31 +251,32 @@ image_resized= cv2.resize(image, (img_height,img_width))
 image=np.expand_dims(image_resized,axis=0)
 print(image.shape)
 ```
-The model should give a prediction on the image that is put as an input. The model should output an arry of numbers because the softmax fuction gives probability for each class.
+The model should give a prediction on the image that is put as an input. The model should output an array of numbers because the softmax function gives probability for each class.
 ```
 pred=resnet_model.predict(image)
 print(pred)
 ```
-We are interested for the maximum value that the softmax fuction will provide so we are using np.argmax. The ouput index of the class should be renaissance.
+We are interested for the maximum value that the softmax function will provide so we are using np.argmax. The output index of the class should be renaissance.
 ```
 output_class=class_names[np.argmax(pred)]
 print("The predicted class is", output_class)
 ```
-Secondly, i describe the training and the evaluation process of the classifier that makes specific destinction between renesance paintings.
-
+Secondly, i describe the training and the evaluation process of the classifier that makes specific destination between renaissance paintings.
+The dataset need training and evaluation of the second model is downloaded from url of the dropbox source. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called renaissance_photos.
 ```
 import pathlib
 dataset_url = "https://www.dropbox.com/scl/fi/m08kciucvchzt1soktlbj/renaissance_photos.tar?rlkey=c3viskzdizumv8mhd3rrlt4i5&st=pph6a4yc&dl=1"
 data_dir = tf.keras.utils.get_file('renaissance_photos', origin=dataset_url, untar=True)
 data_dir = pathlib.Path(data_dir)
 ```
-
+We are taking the first image from the deposition class. Note that image is the same first image from the renaissance class from the previous dataset.
 ```
 deposition = list(data_dir.glob('deposition/*'))
 print(deposition[0])
 PIL.Image.open(str(deposition[0]))
 ```
-
+Here the splitting of the dataset for training and testing is done. For training we will use eighty percent of the dataset and twenty percent for validation. Also we will use resolution for images 180 by 180 pixels. This code should output that are found 3258 files belonging to 3 classes.
+Using 2607 files for training.
 ```
 img_height,img_width=180,180
 batch_size=32
@@ -281,7 +288,8 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-
+Similarly as for the training there will be data for validation. This code should output that are found 3258 files belonging to 3 classes.
+Using 615 files for validation.
 ```
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   data_dir,
@@ -291,12 +299,12 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-
+The three classes found are the names of the folders in the dataset. As an output we should get ['annunciation', 'crucifixion', 'deposition'] which correspond with the three names of the classes. The model should learn how to recognize all three classes.
 ```
 class_names = train_ds.class_names
 print(class_names)
 ```
-
+At this point the pretraing is done. We can check how the model can make a classification. For output we should get images with the class names on which they belong.
 ```
 import matplotlib.pyplot as plt
 
@@ -308,7 +316,7 @@ for images, labels in train_ds.take(1):
     plt.title(class_names[labels[i]])
     plt.axis("off")
 ```
-
+From this point on starts the training process of the second model. We are implementing the ResNet50 model. The 512 neurons that will be added will be leering the new weights. The rest of the weight and hidden layers will stay the same. As an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again. 
 ```
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Flatten, Dense, Input
@@ -344,11 +352,11 @@ resnet_model = Model(inputs=input_layer, outputs=output_layer)
 # Display the model summary
 resnet_model.summary()
 ```
-
+After the model is ready an optimizer using Adam, a cross entropy loss function and accuracy for metric should be added.
 ```
 resnet_model.compile(optimizer=Adam(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 ```
-
+Then the training and validation dataset should be provided. For achieving good accuracy for epochs is put value of ten.
 ```
 resnet_model.compile(
     optimizer='adam',  # You can choose other optimizers like SGD or RMSprop
@@ -364,7 +372,7 @@ history = resnet_model.fit(
     epochs=epochs
 )
 ```
-
+The model log is stored in variable called history. We are accessing the training accuracy and validation accuracy. We can visualize the by plotting the values. For the training accuracy 95 percent is reached and for validation accuracy 80 percent.
 ```
 fig1 = plt.gcf()
 plt.plot(history.history['accuracy'])
@@ -377,7 +385,10 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
+![alt text](./figures/3.png "Title")
 
+
+Similarly, we are accessing the training loss and validation accuracy. We can visualize the by plotting the values. For the training loss 100 percent is reached ten percent and for validation loss 55 percent.
 ```
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
@@ -388,7 +399,10 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
+![alt text](./figures/4.png "Title")
 
+
+We are using imread function to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resolution. The output we get is four dimensions value sine the model is trained on multiple images at the time.
 ```
 import cv2
 image=cv2.imread(str(deposition[0]))
@@ -396,12 +410,12 @@ image_resized= cv2.resize(image, (img_height,img_width))
 image=np.expand_dims(image_resized,axis=0)
 print(image.shape)
 ```
-
+The model should give a prediction on the image that is put as an input. The model should output an array of numbers because the softmax function gives probability for each class.
 ```
 pred=resnet_model.predict(image)
 print(pred)
 ```
-
+We are interested for the maximum value that the softmax function will provide so we are using np.argmax. The output index of the class should be deposition.
 ```
 output_class=class_names[np.argmax(pred)]
 print("The predicted class is", output_class)
