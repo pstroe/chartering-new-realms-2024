@@ -49,7 +49,7 @@ In the survey by Caffagni et al. (2024)[[9]](#9) it is provided a comprehensive 
 
 The study by Borenstein et al. (2023)[[10]](#10) introduces PHD, a pixel-based language model designed for historical documents. Unlike traditional methods that rely on OCR, PHD treats documents as images, capturing both textual and visual nuances. Pre-trained on synthetic and real historical scans from the 1700-1900 period, PHD demonstrates proficiency in reconstructing masked image patches and exhibits notable language understanding capabilities. Its application to historical question-answering tasks underscores its utility in analyzing historical documents. 
 
-The paper by Wu et al. (2024) explores[[11]](#11) the potential of MLLMs in Image Quality Assessment (IQA), a domain traditionally dominated by models focusing solely on visual inputs. The study investigates various prompting systems and evaluates multiple MLLMs on visual attributes pertinent to image quality, including structural distortions and color differences. Findings suggest that while certain MLLMs, like GPT-4V, align reasonably with human perception, challenges remain in discriminating fine-grained quality variations.
+The paper by Wu et al. (2024)[[11]](#11) explores the potential of MLLMs in Image Quality Assessment (IQA), a domain traditionally dominated by models focusing solely on visual inputs. The study investigates various prompting systems and evaluates multiple MLLMs on visual attributes pertinent to image quality, including structural distortions and color differences. Findings suggest that while certain MLLMs, like GPT-4V, align reasonably with human perception, challenges remain in discriminating fine-grained quality variations.
 
 In the paper Schneider et al.(2024)[[12]](#12) it is introduced M5, a comprehensive benchmark designed to evaluate large multimodal models on vision-language tasks within multilingual and multicultural contexts. M5 includes eight datasets covering five tasks in 41 languages, emphasizing underrepresented languages and culturally diverse images. The benchmark assesses models' abilities to understand and reason about images from various cultural and historical backgrounds, highlighting performance disparities between high- and low-resource languages. 
 
@@ -442,26 +442,26 @@ A tool that it is used writing this chapter is ChatGpt.
 
 <a id="1">[1]</a> Learning Transferable Visual Models From Natural Language Supervision.Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.2021.https://arxiv.org/abs/2103.00020
 
-<a id="2">[2]</a>A Data Set and a Convolutional Model for Iconography Classification in Paintings.Federico Milani, Piero Fraternali.2020.https://arxiv.org/abs/2010.11697
+<a id="2">[2]</a> A Data Set and a Convolutional Model for Iconography Classification in Paintings.Federico Milani, Piero Fraternali.2020.https://arxiv.org/abs/2010.11697
 
-<a id="3">[3]</a>Classifying paintings by artistic genre: An analysis of features & classifiers.Jana Zujovic, Lisa Gandy, Scott Friedman, Bryan Pardo, and Thrasyvoulos N Pappas. 2009.https://ieeexplore.ieee.org/document/5293271
+<a id="3">[3]</a> Classifying paintings by artistic genre: An analysis of features & classifiers.Jana Zujovic, Lisa Gandy, Scott Friedman, Bryan Pardo, and Thrasyvoulos N Pappas. 2009.https://ieeexplore.ieee.org/document/5293271
 
-<a id="4">[4]</a>Big Transfer Learning for Fine Art Classification.Wentao Zhao, Wei Jiang, Xinguo Qiu.2022.https://onlinelibrary.wiley.com/doi/10.1155/2022/1764606
+<a id="4">[4]</a> Big Transfer Learning for Fine Art Classification.Wentao Zhao, Wei Jiang, Xinguo Qiu.2022.https://onlinelibrary.wiley.com/doi/10.1155/2022/1764606
 
-<a id="5">[5]</a>MIBench: Evaluating Multimodal Large Language Models over Multiple Images.Haowei Liu, Xi Zhang, Haiyang Xu, Yaya Shi, Chaoya Jiang, Ming Yan, Ji Zhang, Fei Huang, Chunfeng Yuan, Bing Li, Weiming Hu.2024.https://arxiv.org/abs/2407.15272
+<a id="5">[5]</a> MIBench: Evaluating Multimodal Large Language Models over Multiple Images.Haowei Liu, Xi Zhang, Haiyang Xu, Yaya Shi, Chaoya Jiang, Ming Yan, Ji Zhang, Fei Huang, Chunfeng Yuan, Bing Li, Weiming Hu.2024.https://arxiv.org/abs/2407.15272
 
-<a id="6">[6]</a>MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models.Fanqing Meng, Jin Wang, Chuanhao Li, Quanfeng Lu, Hao Tian, Jiaqi Liao, Xizhou Zhu, Jifeng Dai, Yu Qiao, Ping Luo, Kaipeng Zhang, Wenqi Shao. 2024. https://arxiv.org/abs/2408.02718
+<a id="6">[6]</a> MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models.Fanqing Meng, Jin Wang, Chuanhao Li, Quanfeng Lu, Hao Tian, Jiaqi Liao, Xizhou Zhu, Jifeng Dai, Yu Qiao, Ping Luo, Kaipeng Zhang, Wenqi Shao. 2024. https://arxiv.org/abs/2408.02718
 
-<a id="7">[7]</a>Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences.Xiyao Wang, Yuhang Zhou, Xiaoyu Liu, Hongjin Lu, Yuancheng Xu, Feihong He, Jaehong Yoon, Taixi Lu, Gedas Bertasius, Mohit Bansal, Huaxiu Yao, Furong Huang.2024. https://arxiv.org/abs/2401.10529
+<a id="7">[7]</a> Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences.Xiyao Wang, Yuhang Zhou, Xiaoyu Liu, Hongjin Lu, Yuancheng Xu, Feihong He, Jaehong Yoon, Taixi Lu, Gedas Bertasius, Mohit Bansal, Huaxiu Yao, Furong Huang.2024. https://arxiv.org/abs/2401.10529
 
-<a id="8">[8]</a>Multimodal Large Language Models: A Survey.Jiayang Wu, Wensheng Gan, Zefeng Chen, Shicheng Wan, Philip S. Yu.2023.https://arxiv.org/abs/2311.13165
+<a id="8">[8]</a> Multimodal Large Language Models: A Survey.Jiayang Wu, Wensheng Gan, Zefeng Chen, Shicheng Wan, Philip S. Yu.2023.https://arxiv.org/abs/2311.13165
 
-<a id="9">[9]</a>The Revolution of Multimodal Large Language Models: A Survey.Davide Caffagni, Federico Cocchi, Luca Barsellotti, Nicholas Moratelli, Sara Sarto, Lorenzo Baraldi, Lorenzo Baraldi, Marcella Cornia, Rita Cucchiara.2024.https://arxiv.org/abs/2402.12451 
+<a id="9">[9]</a> The Revolution of Multimodal Large Language Models: A Survey.Davide Caffagni, Federico Cocchi, Luca Barsellotti, Nicholas Moratelli, Sara Sarto, Lorenzo Baraldi, Lorenzo Baraldi, Marcella Cornia, Rita Cucchiara.2024.https://arxiv.org/abs/2402.12451 
 
-<a id="10">[10]</a>PHD: Pixel-Based Language Modeling of Historical Documents.Nadav Borenstein, Phillip Rust, Desmond Elliott, Isabelle Augenstein.2023.https://aclanthology.org/2023.emnlp-main.7/
+<a id="10">[10]</a> PHD: Pixel-Based Language Modeling of Historical Documents.Nadav Borenstein, Phillip Rust, Desmond Elliott, Isabelle Augenstein.2023.https://aclanthology.org/2023.emnlp-main.7/
 
-<a id="11">[11]</a>A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment.Tianhe Wu, Kede Ma, Jie Liang, Yujiu Yang, Lei Zhang.2024.https://arxiv.org/abs/2403.10854
+<a id="11">[11]</a> A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment.Tianhe Wu, Kede Ma, Jie Liang, Yujiu Yang, Lei Zhang.2024.https://arxiv.org/abs/2403.10854
 
-<a id="12">[12]</a>M5: A Diverse Benchmark to Assess the Performance of Large Multimodal Models Across Multilingual and Multicultural Vision-Language Tasks.Florian Schneider, Sunayana Sitaram.2024.https://aclanthology.org/2024.findings-emnlp.250/
+<a id="12">[12]</a> M5: A Diverse Benchmark to Assess the Performance of Large Multimodal Models Across Multilingual and Multicultural Vision-Language Tasks.Florian Schneider, Sunayana Sitaram.2024.https://aclanthology.org/2024.findings-emnlp.250/
 
-<a id="13">[13]</a>SEED-Bench-2: Benchmarking Multimodal Large Language Models.Bohao Li, Yuying Ge, Yixiao Ge, Guangzhi Wang, Rui Wang, Ruimao Zhang, Ying Shan.2023.https://arxiv.org/abs/2311.17092
+<a id="13">[13]</a> SEED-Bench-2: Benchmarking Multimodal Large Language Models.Bohao Li, Yuying Ge, Yixiao Ge, Guangzhi Wang, Rui Wang, Ruimao Zhang, Ying Shan.2023.https://arxiv.org/abs/2311.17092
