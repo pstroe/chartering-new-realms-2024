@@ -492,3 +492,7 @@ The Revolution of Multimodal Large Language Models: A Survey.Davide Caffagni, Fe
 PHD: Pixel-Based Language Modeling of Historical Documents.Nadav Borenstein, Phillip Rust, Desmond Elliott, Isabelle Augenstein.2023.https://aclanthology.org/2023.emnlp-main.7/
 
 A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment.Tianhe Wu, Kede Ma, Jie Liang, Yujiu Yang, Lei Zhang.2024.https://arxiv.org/abs/2403.10854
+
+M5: A Diverse Benchmark to Assess the Performance of Large Multimodal Models Across Multilingual and Multicultural Vision-Language Tasks.Florian Schneider, Sunayana Sitaram.2024.https://aclanthology.org/2024.findings-emnlp.250/
+
+SEED-Bench-2: Benchmarking Multimodal Large Language Models.Bohao Li, Yuying Ge, Yixiao Ge, Guangzhi Wang, Rui Wang, Ruimao Zhang, Ying Shan.2023.https://arxiv.org/abs/2311.17092
