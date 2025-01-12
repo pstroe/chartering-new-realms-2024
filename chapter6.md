@@ -51,9 +51,11 @@ These manuscripts include ancient Chinese poetry and Buddhist scriptures. One of
 ![alt text](Images/1.jpg)
 
 https://idp.bl.uk/collection/F276F7E1C246524B9946D0C23C36818D/
+
 ![alt text](Images/2.jpg)
 
 https://idp.bl.uk/collection/D057BD4CD4C8044DA09DEB268058A3F5/?return=%2Fcollection%2F%3Fterm%3DPelliot%2520chinois%25202895
+
 ![alt text](Images/3.jpg)
 
 https://idp.bl.uk/collection/D506A896798E440CADF24647329370DE/?return=%2Fcollection%2F%3Fterm_pressmark%255B%255D%3Dpc%253AS.1048
