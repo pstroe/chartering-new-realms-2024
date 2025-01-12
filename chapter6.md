@@ -212,12 +212,14 @@ Additionally, the post-processing step, while effective in refining OCR outputs,
 
 ![alt text](Images/6.jpg)
 
-## Reference
-
+## Tools
+ChatGPT, Version 4o, OpenAl: https://chat.openai.com/
 Gulian OCR System: http://ocr.ancientbooks.cn/index
-
 GuwenBERT: https://github.com/Ethan-yt/guwenbert
+Google Translate, Google: https://translate.google.com/
+Deepl: https://www.deepl.com/en/translator
 
+## Reference
 IDP: https://idp.bl.uk/ 
 
 Hajiali, M. (2023). OCR Post-processing Using Large Language Models.
