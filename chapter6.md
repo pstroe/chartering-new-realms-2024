@@ -49,10 +49,13 @@ To demonstrate the diversity and limitations of OCR recognition capabilities, we
 These manuscripts include ancient Chinese poetry and Buddhist scriptures. One of them is "Bring in the Wine", a famous poem by the renowned Chinese poet Li Bai, which appears in the Dunhuang manuscripts under the title "惜罇空". One manuscript is excerpt from the Diamond Sutra, the other one is excerpt from the Lotus Sutra. The images of the manuscripts can be viewed as following pictures. 
 
 ![alt text](Images/1.jpg)
+
 https://idp.bl.uk/collection/F276F7E1C246524B9946D0C23C36818D/
 ![alt text](Images/2.jpg)
+
 https://idp.bl.uk/collection/D057BD4CD4C8044DA09DEB268058A3F5/?return=%2Fcollection%2F%3Fterm%3DPelliot%2520chinois%25202895
 ![alt text](Images/3.jpg)
+
 https://idp.bl.uk/collection/D506A896798E440CADF24647329370DE/?return=%2Fcollection%2F%3Fterm_pressmark%255B%255D%3Dpc%253AS.1048
 
 For the purpose of this paper and to improve the accuracy of OCR in processing ancient Chinese texts, this study employs pre-processing and post-processing methods. This study also uses natural language processing methods and the pre-trained language model GuwenBERT. GuwenBERT is trained on the Daizhige corpus of ancient Chinese literature, which includes 15,694 ancient texts with a total character count of 1.7 billion. It enhances OCR accuracy in two primary ways: correcting recognition errors and improving the interpretation of ambiguous or partially recognized characters. The model's training on the Daizhige corpus allows it to understand the linguistic patterns and contextual relationships specific to ancient Chinese, enabling it to predict and correct errors that traditional OCR systems might overlook. Additionally, GuwenBERT is used to refine the segmentation of text, ensuring that phrases, clauses, and sentences are correctly parsed according to classical grammar. It also assists in the disambiguation of polysemous characters, leveraging contextual cues to identify the most likely meanings within the document. These capabilities make GuwenBERT an essential tool for bridging the gap between modern NLP techniques and the complex demands of ancient text digitization, ultimately facilitating more accurate digital preservation and analysis of historical Chinese literature.
