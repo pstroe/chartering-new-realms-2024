@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 6: Enhancing OCR Accuracy for Historical Texts: A Study on Pre-processing and Post-processing Techniques for Dunhuang Manuscripts &#8212; Chartering New Realms; AI as a Catalyst in Digital Humanities</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/chartering-new-realms-logo.png" class="logo__image only-light" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
+    <img src="_static/chartering-new-realms-logo.png" class="logo__image only-dark pst-js-only" alt="Chartering New Realms; AI as a Catalyst in Digital Humanities - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to “Chartering New Realms: AI as a Catalyst in Digital Humanities”
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6: Enhancing OCR Accuracy for Historical Texts: A Study on Pre-processing and Post-processing Techniques for Dunhuang Manuscripts</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 6: Enhancing OCR Accuracy for Historical Texts: A Study on Pre-processing and Post-processing Techniques for Dunhuang Manuscripts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literature-review">Literature Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contrast-enhancement">Contrast enhancement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binarization">Binarization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">Noise Removal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing">Post-processing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-enhancing-ocr-accuracy-for-historical-texts-a-study-on-pre-processing-and-post-processing-techniques-for-dunhuang-manuscripts">
+<h1>Chapter 6: Enhancing OCR Accuracy for Historical Texts: A Study on Pre-processing and Post-processing Techniques for Dunhuang Manuscripts<a class="headerlink" href="#chapter-6-enhancing-ocr-accuracy-for-historical-texts-a-study-on-pre-processing-and-post-processing-techniques-for-dunhuang-manuscripts" title="Link to this heading">#</a></h1>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h2>
+<p>This research delves into the application of optical character recognition (OCR) on Dunhuang manuscripts, a collection of historical documents found within the Mogao Caves. These documents are celebrated for their linguistic diversity and cultural significance. In this work, we highlight the performances of pre-processing and post-processing techniques in improving OCR recognition accuracy regarding classical Chinese. Pre-processing methods, such as contrast enhancement, binarization, and denoising, improve image quality by increasing input clarity and reducing recognition errors. On the other hand, post-processing effectively optimizes the OCR output by correcting errors based on the linguistic context and recovering missing text using a classical Chinese language model, GuwenBERT. However, its performance largely depends on the quality of the surrounding context. This analysis provides insights into how pre-processing and post-processing can be effectively used to breathe new life into ancient Dunhuang manuscripts, ensuring their digital preservation for generations to come.</p>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The Dunhuang manuscripts, discovered in the Mogao Caves along the ancient Silk Road, represent a remarkable repository of cultural, religious, and linguistic heritage. Between the late 4th and early 11th centuries, these manuscripts encompass diverse languages and scripts, including Chinese, Tibetan, Sanskrit, and Uyghur, reflecting the rich multicultural exchanges of medieval Central Asia. Preserving and studying these invaluable documents is critical for understanding the historical interactions of societies along the Silk Road.</p>
+<p>In recent years, significant progress has been made in the digitization of historical Dunhuang manuscripts, with institutions and projects worldwide working to preserve and study these invaluable cultural artifacts. For example, the International Dunhuang Project (IDP) has played an essential role in the digitization and cataloging of the Dunhuang manuscripts, creating a huge digital archive accessible globally. These projects focus on preserving high-resolution images, detailed metadata, and transliterations. They simplify manuscript studies and promote collaborations, not only safeguarded these fragile documents but also enabled further computational analysis.</p>
+<p>OCR (Optical Character Recognition) technology converts text from images into an electronically readable format, enabling it to be processed as plain text. This transformation facilitates tasks such as editing and text manipulation using language technology tools, including machine translation, text analysis, question-answering systems, and search engines <span id="id1">[]</span>. For ancient Chinese texts, such as the Dunhuang manuscripts, Optical Character Recognition (OCR) has become an essential tool in the digitization workflow. OCR facilitates the extraction of text from images, enabling large-scale analysis of these historical texts.</p>
+<p>However, applying OCR to Dunhuang manuscripts poses unique challenges. These manuscripts are handwritten, with diverse styles, faded ink, and ancient, non-standard characters. Unlike modern printed texts, where OCR achieves high accuracy, the complexity of classical Chinese requires specialized approaches. For low-resolution or incomplete texts, like those in the Dunhuang collection, additional processing and optimization are needed to improve recognition accuracy. In this study, we explore methods to tailor OCR techniques specifically for classical Chinese texts, combining pre-processing and post-processing to tackle the unique challenges of these manuscripts.</p>
+<p>OCR processing can be divided into pre-processing and post-processing, as they address different challenges in improving text recognition. Pre-processing focuses on enhancing image quality using methods such as contrast enhancement, binarization, and noise removal. These techniques help highlight text, eliminate ambiguous regions, and reduce visual distortions, resulting in clearer input for OCR systems. Post-processing, on the other hand, refines the recognized text by leveraging language models, such as a classical Chinese BERT model GuwenBERT, to correct errors based on context and fill in missing text.</p>
+<p>For OCR selection, we used Gulian OCR, developed by the Gulian Company, it’s an intelligent OCR system for ancient Chinese books based on machine learning technology. It specializes in processing various formats, including block-printed and handwritten manuscripts. The system features smart layout analysis, intelligent component annotation, and efficient output of annotated results. By applying Gulian OCR, we analyzed the OCR recognition results at two stages: before and after pre-processing, and before and after post-processing. By separately analyzing the impact of pre-processing and post-processing, we aimed to evaluate how each step contributes to improving text recognition accuracy and reducing errors. This dual comparison provides a comprehensive understanding of the roles and effectiveness of pre-processing and post-processing in the OCR workflow.</p>
+</section>
+<section id="literature-review">
+<h2>Literature Review<a class="headerlink" href="#literature-review" title="Link to this heading">#</a></h2>
+<p>During the 2010s, advancements in deep learning technology, along with significant improvements in computing power and the expansion of training datasets, have significantly boosted OCR performance. Previous research showed that recognition accuracies have surpassed 99% for handwritten Arabic numerals and 95% for English alphabets <span id="id2">[]</span>. However, Chinese character recognition lags behind with an accuracy of around 90%, largely due to the complexity and vast diversity of its character set <span id="id3">[]</span>. Nevertheless, continuous efforts in expanding databases and developing deep learning models have been steadily improving its performanc <span id="id4">[]</span>.</p>
+<p>Traditional full-text digital libraries, particularly those focused on premodern Chinese texts, have traditionally employed a centralized, top-down approach to content creation and management. In this framework, written materials are first scanned, then transcribed either manually or using Optical Character Recognition (OCR) technology. The transcriptions are subsequently corrected, reviewed, annotated, and ultimately integrated into a system in their final usable form. This method, rooted in conventional academic publishing practices, offers a straightforward and technically manageable approach. However, while effective for smaller-scale projects, this strategy struggles to address the challenges posed by the rapid growth of digitization efforts and the increasing volume of historical materials being processed by libraries globally <span id="id5">[]</span>.</p>
+<p>For OCR pre-processing, binarization is crucial for improving OCR accuracy by separating text from the background in historical manuscripts <span id="id6">[]</span>. Contrast adjustment can effectively handle lighting variations and the irregular distribution of image illumination (Harraj &amp; Raissouni, 2015). Noise removal is a critical pre-processing step to enhance OCR accuracy by addressing background noise and text interference resulting from scanning or document quality issues <span id="id7">[]</span>.</p>
+<p>For OCR post-processing using language models, it generally involves three key steps: identifying incorrect words, generating a list of possible corrections, and selecting the most accurate replacement for the erroneous word. It employs language models and word embeddings to detect recognition errors introduced by OCR systems. Furthermore, the generative capabilities of these models are utilized to propose correction candidates, offering potential solutions for addressing these errors <span id="id8">[]</span>.</p>
+</section>
+<section id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<p>To demonstrate the diversity and limitations of OCR recognition capabilities, we have selected several ancient Chinese manuscripts from the Dunhuang collection. Most of these electronic manuscripts come from the IDP (International Dunhuang Project), a global collaborative project aimed at preserving and studying the Dunhuang heritage and its invaluable manuscripts. IDP project’s main task is to digitize and preserve a vast collection of ancient manuscripts, documents, and artworks from the Dunhuang Mogao Caves and surrounding areas.</p>
+<p>These manuscripts include ancient Chinese poetry and Buddhist scriptures. One of them is “Bring in the Wine”, a famous poem by the renowned Chinese poet Li Bai, which appears in the Dunhuang manuscripts under the title “惜罇空”. One manuscript is excerpt from the Diamond Sutra, the other one is excerpt from the Lotus Sutra. The images of the manuscripts can be viewed as following pictures.</p>
+<p><img alt="alt text" src="_images/image-1.png" />
+<img alt="alt text" src="_images/image-4.png" />
+<img alt="alt text" src="_images/image-3.png" /></p>
+<p>For the purpose of this paper and to improve the accuracy of OCR in processing ancient Chinese texts, this study employs pre-processing and post-processing methods. This study also uses natural language processing methods and the pre-trained language model GuwenBERT. GuwenBERT is trained on the Daizhige corpus of ancient Chinese literature, which includes 15,694 ancient texts with a total character count of 1.7 billion. It enhances OCR accuracy in two primary ways: correcting recognition errors and improving the interpretation of ambiguous or partially recognized characters. The model’s training on the Daizhige corpus allows it to understand the linguistic patterns and contextual relationships specific to ancient Chinese, enabling it to predict and correct errors that traditional OCR systems might overlook. Additionally, GuwenBERT is used to refine the segmentation of text, ensuring that phrases, clauses, and sentences are correctly parsed according to classical grammar. It also assists in the disambiguation of polysemous characters, leveraging contextual cues to identify the most likely meanings within the document. These capabilities make GuwenBERT an essential tool for bridging the gap between modern NLP techniques and the complex demands of ancient text digitization, ultimately facilitating more accurate digital preservation and analysis of historical Chinese literature.</p>
+</section>
+<section id="method">
+<h2>Method<a class="headerlink" href="#method" title="Link to this heading">#</a></h2>
+<p>n this section, it exhaustively details some approaches about pre-processing and post-processing explicitly. Pre-processing is the initial stage of image processing before being sent to the OCR process <span id="id9">[]</span>. Pre-processing and post-processing are essential stages in Optical Character Recognition systems to enhance accuracy and output quality. Pre-processing focuses on improving OCR accuracy by pre-processing the input document images <span id="id10">[]</span>. These steps prepare the image for accurate character recognition. Post-processing, on the other hand, is applied to the OCR output to refine results by correcting errors using language models, dictionaries, or rule-based algorithms. Together, these techniques significantly improve OCR performance and reliability in practical applications.</p>
+<p>During the OCR recognition process, we specifically use OCR platforms designed for recognizing and processing ancient Chinese texts called Gulian OCR Systems, which are specially developed to handle ancient documents, manuscripts, inscriptions, and other non-modern texts using optical character recognition technology.</p>
+<section id="pre-processing">
+<h3>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h3>
+<p>In this section, we provide the key stages of our approach, specifically focusing on contrast enhancement, binarization, noise removal. Each of these steps plays a crucial role in preparing the image for accurate and reliable OCR  processing. In code script, it uses OpenCV which is a powerful computer vision library.</p>
+<section id="contrast-enhancement">
+<h4>Contrast enhancement<a class="headerlink" href="#contrast-enhancement" title="Link to this heading">#</a></h4>
+<p>The key step in our pre-processing approaches is to improve the contrast of the overall objects present in the processed image. This part will use CLAHE as a useful contrast enhancement. CLAHE enhances the contrast of an image by locally applying Contrast Limited Histogram Equalization on small data regions called tiles rather than the entire image <span id="id11">[]</span>. To prevent over-amplification of noise, a contrast limit is imposed on the histogram, clipping excessive intensity frequencies and redistributing them. After processing, the regions are seamlessly combined through interpolation, resulting in a full image with improved contrast and detail, particularly in areas with varying lighting conditions. Contrast enhancement methods are not intended to increase or supplement the intrinsic structural information in an image but rather to improve the image contrast and hypothetically to enhance particular characteristics <span id="id12">[]</span>.</p>
+<p>By enhancing local contrast and preserving fine details, CLAHE improves the visibility of text in challenging conditions, such as faded documents or low-light photographs. Its ability to prevent over-enhancement of noise through contrast clipping ensures better OCR accuracy without introducing artifacts. Overall, CLAHE contributes to more reliable text recognition by creating a balanced and clear input image for OCR systems. We can process these images directly using python code and OpenCV.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="c1"># Read the grayscale image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;2.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+<span class="c1"># Create a CLAHE object</span>
+<span class="n">clahe</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">createCLAHE</span><span class="p">(</span><span class="n">clipLimit</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">tileGridSize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># Apply CLAHE</span>
+<span class="n">enhanced_image</span> <span class="o">=</span> <span class="n">clahe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="c1"># Save or display the result</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;enhanced_image.jpg&#39;</span><span class="p">,</span> <span class="n">enhanced_image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Enhanced Image&#39;</span><span class="p">,</span> <span class="n">enhanced_image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="binarization">
+<h4>Binarization<a class="headerlink" href="#binarization" title="Link to this heading">#</a></h4>
+<p>Ancient Chinese paper was primarily made from plant fibers such as hemp, mulberry bark, and straw. Over time, due to oxidation, the paper gradually turns yellow. Text written on these pages also deteriorates with age, with the paper becoming discolored or showing signs of fingerprints and ink diffusion. The combination of yellowed backgrounds and faded ink increases the difficulty of OCR in recognizing ancient Chinese manuscripts.</p>
+<p>Image binarization plays a critical role in processing ancient Chinese manuscripts. The purpose of this method is to binarize images of handwritten or printed text documents captured via scanning or photography. The desired outcome of the binarization process is a two-tone image with black text displayed on a white background <span id="id13">[]</span>.This effectively removes the yellowed background, retaining only the text, which makes it more prominent. It also enhances the contrast between the text and the background, significantly improving OCR’s ability to detect and recognize the text.</p>
+<p>Image binarization uses Otsu’s method. It begins with grayscale conversion, where color images are simplified into grayscale to reduce data complexity. Binarization is performed using Otsu’s algorithm, which automatically determines the optimal threshold to classify pixels into foreground and background based on intensity distribution <span id="id14">[]</span>. In conclusion, image binarization, particularly using Otsu’s method, serves as a powerful tool for enhancing the legibility of ancient Chinese manuscripts and overcoming the challenges posed by their aged and degraded conditions. By transforming yellowed backgrounds into clean white and improving the visibility of faded text, binarization not only aids in preserving these historical documents but also significantly enhances the accuracy and efficiency of OCR systems. This process paves the way for better digital archiving and broader accessibility to ancient textual heritage. The code script using OTSU is below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="c1"># Load the image in grayscale</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;2.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+<span class="c1"># Apply Otsu&#39;s binarization</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">binary_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span> <span class="o">+</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_OTSU</span><span class="p">)</span>
+<span class="c1"># Save the result</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;binary_image_otsu.jpg&#39;</span><span class="p">,</span> <span class="n">binary_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="noise-removal">
+<h4>Noise Removal<a class="headerlink" href="#noise-removal" title="Link to this heading">#</a></h4>
+<p>Noise in OCR images can come from various sources, including background artifacts, irregularities in lighting, distortion from scanning or image acquisition, and other irrelevant patterns that might interfere with text recognition <span id="id15">[]</span>. Pre-processing noise removal helps OCR models by reducing unnecessary information, allowing them to focus on the relevant characters and improve text extraction.</p>
+<p>Non-Local Means denoising is an advanced technique commonly used in optical character recognition pre-processing to reduce noise in images while preserving important details like text clarity. This method is particularly effective in scenarios where traditional denoising methods like Gaussian or median filters may blur the image or distort text. Unlike conventional filters that only consider nearby pixels, NLM denoising compares every pixel with all other pixels in the image, looking for similar patterns or regions. One of the main benefits of NLM is its ability to preserve sharp edges and fine details (such as text) while reducing noise. It avoids the blurring effects that might be seen with other techniques, making it especially valuable for OCR applications where text clarity is critical.</p>
+<p>Non-Local Means denoising offers a powerful solution for improving OCR results by reducing noise while preserving important image details. Its ability to handle complex noise patterns makes it ideal for pre-processing scanned or photographed documents, leading to higher-quality text extraction.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+
+<span class="c1"># Read the noisy image in grayscale</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;2.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Error: Could not load image. Check the file path.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use Non-Local Means Denoising for strong denoising</span>
+<span class="n">denoised_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">fastNlMeansDenoising</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">templateWindowSize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">searchWindowSize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># Save and display the result</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;strongly_denoised_image.jpg&#39;</span><span class="p">,</span> <span class="n">denoised_image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Strongly Denoised Image&#39;</span><span class="p">,</span> <span class="n">denoised_image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="post-processing">
+<h3>Post-processing<a class="headerlink" href="#post-processing" title="Link to this heading">#</a></h3>
+<p>In this section, GuwenBERT was utilized to post-process OCR results generated by Gulian OCR, focusing on uncertain segments of text. The uncertain parts of the OCR output were marked with [MASK], enabling the language model to predict and replace them with the most contextually appropriate content.</p>
+<p>The implementation involved encoding the input text with [MASK] tokens at positions of uncertainty. The GuwenBERT model, specifically its masked language modeling (MLM) capability, was applied to iteratively predict the most probable token for each [MASK]. During each iteration, the first [MASK] was replaced with the top prediction based on the model’s logits, and the process was repeated until all [MASK] tokens were resolved. This iterative replacement ensured that predictions for each [MASK] utilized an updated context, reflecting prior replacements.</p>
+<p>For example, the input text “一切有為法，如夢幻泡影，如露亦如電，應作如是[MASK]。佛說是經已，長老[MASK]菩提，及諸比[MASK]、比丘尼、優婆塞、優婆夷，一切世間天人，阿[MASK]羅，聞佛所說，皆大歡喜，信受奉行。” was processed step-by-step, with GuwenBERT filling in [MASK] tokens such as “泡” and “作”, resulting in “  一切有為法，如夢幻泡影，如露亦如電，應作如是观。佛說是經已，長老须菩提，及諸比丘、比丘尼、優婆塞、優婆夷，一切世間天人，阿罗羅，聞佛所說，皆大歡喜，信受奉行。”. In the image analyzed, GuwenBERT successfully corrected the [MASK] tokens, resulting in an accuracy improvement from 92% to 98%, demonstrating its potential for enhancing OCR outputs. The code script using GuwenBERT is as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForMaskedLM</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+<span class="c1"># Load the GuwenBERT model</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;ethanyt/guwenbert-base&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForMaskedLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;ethanyt/guwenbert-base&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">correct_text_with_mlm</span><span class="p">(</span><span class="n">masked_text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Input text containing multiple [MASK] tokens, and iteratively correct each [MASK].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Encode the input text</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">masked_text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+    <span class="n">mask_token_indices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">mask_token_id</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># Initialize corrected text</span>
+    <span class="n">corrected_text</span> <span class="o">=</span> <span class="n">masked_text</span>
+    
+    <span class="k">for</span> <span class="n">mask_index</span> <span class="ow">in</span> <span class="n">mask_token_indices</span><span class="p">:</span>
+        <span class="c1"># Process one [MASK] at a time</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">corrected_text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+        <span class="n">mask_token_index</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">mask_token_id</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># Get model predictions</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">logits</span>
+        
+        <span class="c1"># Retrieve the highest probability prediction</span>
+        <span class="n">predicted_id</span> <span class="o">=</span> <span class="n">logits</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mask_token_index</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">predicted_token</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">predicted_id</span><span class="p">)</span>
+        
+        <span class="c1"># Replace the first [MASK] with the predicted token</span>
+        <span class="n">corrected_text</span> <span class="o">=</span> <span class="n">corrected_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[MASK]&quot;</span><span class="p">,</span> <span class="n">predicted_token</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">corrected_text</span>
+
+<span class="c1"># Input text with [MASK]</span>
+<span class="n">masked_text</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;一切有為法，如夢幻泡影，如露亦如電，應作如是[MASK]。佛說是經已，長老[MASK]菩提，及諸比[MASK]、比丘尼、優婆塞、優婆夷，一切世間天人，阿[MASK]羅，聞佛所說，皆大歡喜，信受奉行。&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Correct the text</span>
+<span class="n">corrected_text</span> <span class="o">=</span> <span class="n">correct_text_with_mlm</span><span class="p">(</span><span class="n">masked_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Corrected text: &quot;</span><span class="p">,</span> <span class="n">corrected_text</span><span class="p">)</span>
+
+<span class="n">Corrected</span> <span class="n">text</span><span class="p">:</span>  <span class="n">一切有為法</span><span class="err">，</span><span class="n">如夢幻泡影</span><span class="err">，</span><span class="n">如露亦如電</span><span class="err">，</span><span class="n">應作如是观</span><span class="err">。</span><span class="n">佛說是經已</span><span class="err">，</span><span class="n">長老须菩提</span><span class="err">，</span><span class="n">及諸比丘</span><span class="err">、</span><span class="n">比丘尼</span><span class="err">、</span><span class="n">優婆塞</span><span class="err">、</span><span class="n">優婆夷</span><span class="err">，</span><span class="n">一切世間天人</span><span class="err">，</span><span class="n">阿罗羅</span><span class="err">，</span><span class="n">聞佛所說</span><span class="err">，</span><span class="n">皆大歡喜</span><span class="err">，</span><span class="n">信受奉行</span><span class="err">。</span>
+</pre></div>
+</div>
+<p>Post-processing offers several significant advantages. GuwenBERT’s pre-trained contextual understanding enables it to predict tokens that semantically align with the surrounding text, effectively addressing the unique challenges posed by ancient or damaged manuscripts. Additionally, by dynamically adapting to diverse contexts, the model can process various text structures and styles, which is particularly critical for historical and complex documents. The iterative process progressively refines predictions, ensuring improved accuracy and consistency with each step by systematically addressing errors. Furthermore, the automation of post-processing  can be an efficient solution for processing large-scale OCR outputs, such as those required in digitizing vast collections of historical texts. Thus, this combination of contextual adaptability, iterative refinement, and automation underscores post-processing value in overcoming the limitations of traditional OCR systems.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p><img alt="alt text" src="_images/image-5.png" /></p>
+<p>According to pre-processing and post-processing method, it has some conclusions. Based on the output results of OCR pre-processing, we can draw some conclusions. In the manuscript of “Bring in the Wine”, the noise removal method resulted in the lowest number of unrecognizable characters among the three methods. In the manuscript “Dinomond Sutra”, the contrast enhancement and binarization pre-processing method achieved the highest accuracy, while the noise removal processing method also delivered the highest accuracy. The function of pre-processing removes noises of the old picture and make the picture clearer to easily to identity words in the pictures.</p>
+<p>For post-processing approach, we uses GuwenBERT’s pretrained contextual knowledge to effectively address OCR errors in ancient Chinese texts. It can accurately predicts  part of missing or mistaken  parts, offering an automated and efficient solution that reduces the need for manual corrections, particularly in large-scale OCR tasks.</p>
+<p>There are some limitations to this project. The fonts on the images in the dataset are severely damaged, with some characters being blurred and unclear. Many existing Chinese OCR recognition software struggle to accurately identify these blurred ancient Chinese characters.</p>
+<p>Additionally, the post-processing step, while effective in refining OCR outputs, has its own limitations. It relies heavily on contextual information, which can lead to errors if the context is ambiguous or insufficient. In cases where the original text is a handwritten manuscript, such as the Dunhuang manuscripts, copying mistakes are common. The model may “correct” these mistakes based on its learned patterns, inadvertently producing content that deviates from the original source. This could result in an output that is technically accurate but no longer faithful to the historical document. This highlights the need for cautious interpretation of post-processed results, particularly when dealing with historical texts where preserving the original errors is crucial for authenticity and research.</p>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h2>
+<p><img alt="alt text" src="_images/image-8.png" /></p>
+<p><img alt="alt text" src="_images/image-10.png" /></p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<p>Gulian OCR System: <a class="reference external" href="http://ocr.ancientbooks.cn/index">http://ocr.ancientbooks.cn/index</a></p>
+<p>GuwenBERT: <a class="github reference external" href="https://github.com/Ethan-yt/guwenbert">Ethan-yt/guwenbert</a></p>
+<p>IDP: <a class="reference external" href="https://idp.bl.uk/">https://idp.bl.uk/</a></p>
+<p>Hajiali, M. (2023). OCR Post-processing Using Large Language Models.</p>
+<p>Baldominos, A., Saez, Y., &amp; Isasi, P. (2019). A survey of handwritten character recognition with mnist and emnist. Applied Sciences, 9(15), 3169.</p>
+<p>Chang, C. C., Arora, A., Perera, L. P. G., Etter, D., Povey, D., &amp; Khudanpur, S. (2019, September). Optical character recognition with Chinese and Korean character decomposition. In 2019 International Conference on Document Analysis and Recognition Workshops (ICDARW)(Vol. 5, pp. 134-139). IEEE.</p>
+<p>Lee, A., Yu, H., &amp; Min, G. (2024). An algorithm of line segmentation and reading order sorting based on adjacent character detection: A post-processing of OCR for digitization of Chinese historical texts. Journal of Cultural Heritage, 67, 80-91.</p>
+<p>Sturgeon, D. (2021). Chinese Text Project: A dynamic digital library of premodern Chinese. Digital Scholarship in the Humanities, 36(Supplement_1), i101-i112.</p>
+<p>Yousefi, J. (2011). Image binarization using Otsu thresholding algorithm. Ontario, Canada: University of Guelph, 10.</p>
+<p>Bloechle, J. L., Hennebert, J., &amp; Gisler, C. (2023, August). YinYang, a fast and robust adaptive document image binarization for optical character recognition. In Proceedings of the ACM Symposium on Document Engineering 2023 (pp. 1-4).</p>
+<p>Farahmand, A., Sarrafzadeh, H., &amp; Shanbehzadeh, J. (2013). Document image noises and removal methods.</p>
+<p>Harraj, A. E., &amp; Raissouni, N. (2015). OCR accuracy improvement on document images through a novel pre-processing approach. arXiv preprint arXiv:1509.03456.</p>
+<p>El Harraj, A., &amp; Raissouni, N. (2015). Toward indoor and outdoor surveillance using an improved fast background subtraction algorithm. International Journal of Computer, Control, Quantum and Information Engineering, 9(4), 595-600.</p>
+<p>Mursari, L. R., &amp; Wibowo, A. (2021). The effectiveness of image preprocessing on digital handwritten scripts recognition with the implementation of OCR Tesseract. Computer Engineering and Applications Journal, 10(3), 177-186.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literature-review">Literature Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contrast-enhancement">Contrast enhancement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binarization">Binarization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-removal">Noise Removal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing">Post-processing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Phillip B. Ströbel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
