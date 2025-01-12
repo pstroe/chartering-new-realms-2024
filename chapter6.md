@@ -188,7 +188,7 @@ Additionally, the post-processing step, while effective in refining OCR outputs,
 
 ## Appendix
 ![alt text](https://github.com/kiky97/kiki/blob/main/p9.jpg)
-![alt text](https://github.com/kiky97/kiki/blob/main/p10.jpg)
+![alt text](https://github.com/kiky97/kiki/blob/main/p11.jpg)
 
 ## Reference
 
