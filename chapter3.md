@@ -228,6 +228,14 @@ The findings illustrate how media narratives are deeply rooted in the cultural, 
 
 <a href="https://drive.switch.ch/index.php/s/Ma6NWoJKBlfkwuQ" target="_blank">Click here to access all the data, code, and visualizations</a>
 
+# Tools
+ChatGPT, Version 4o, OpenAI: https://chat.openai.com/
+
+Help with formatting and structure
+
+Help with optimizing the code and debugging 
+
+
 # References
 
 David M. Blei, Andrew Y. Ng, and Michael I. Jordan (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3(Jan):993–1022. Link : "https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf"
