@@ -59,182 +59,23 @@ The paper by Li et al. (2023) introduces SEED-Bench-2, which is a comprehensive 
 These foundational works have helped shape the direction of this study, underscoring the potential and challenges of applying multimodal models to historical and artistic analysis. While progress has been made in integrating visual and textual data, the need for more sophisticated models that can handle domain-specific knowledge, symbolic interpretation, and cultural nuances remains pressing. The present study seeks to build on these contributions by tailoring a multimodal language model specifically for the Renaissance period, pushing the boundaries of what AI can achieve in the realm of cultural heritage preservation and analysis.
 
 ## Data & Methodology
-In this section i describe the datasets and the arhitecture behind the model that were used in the experiments. 
+In this section i describe the datasets and the architecture behind the model that were used in the experiments. 
 ### Data Collection
-The datasets contain collection of images of flowers and paintings from the Renaissance period extracted from the ArtDL dataset.The ArtDL dataset is a specialized collection of visual and metadata resources designed for applications in art history, cultural heritage, and computer vision. It serves as a critical resource for researchers and practitioners aiming to develop and train artificial intelligence (AI) models capable of understanding, classifying, and analyzing works of art. The dataset bridges the gap between traditional art history and modern AI techniques, offering a rich repository for interdisciplinary research.
+The datasets contain collection of images of flowers and paintings from the Renaissance period extracted from the ArtDL dataset.The ArtDL dataset is a specialized collection of visual and metadata resources designed for applications in art history, cultural heritage, and computer vision. It serves as a critical resource for researchers and practitioners aiming to develop and train artificial intelligence (AI) models capable of understanding, classifying, and analyzing works of art. The dataset bridges the gap between traditional art history and modern AI techniques, offering a rich repository for interdisciplinary research. The primary goal of the ArtDL dataset is to enable AI-driven exploration of the visual and contextual aspects of art. This includes tasks such as following. Firstly, art classification by style, genre, or artist. Secondly, recognition of artistic techniques and materials. Thirdly, semantic segmentation of artworks to identify objects, figures, or motifs. Lastly, cultural heritage preservation through detailed digital documentation and analysis. The dataset is tailored for tasks requiring fine-grained understanding, making it a valuable tool for advancing AI in domains where nuance and contextual knowledge are paramount.
+The ArtDL dataset typically includes thousands of artworks in high resolution, encompassing a wide range of styles, periods, and media.Images are sourced from diverse collections, including paintings, sculptures, manuscripts, prints, and digital artworks.
+Comprehensive metadata accompanies each image. The dataset spans centuries, from ancient art to contemporary works.Geographically diverse, featuring art from Western, Eastern, African, and Indigenous cultures. ArtDL enables a wide range of applications in art history, AI, and cultural preservation. AI models trained on ArtDL can classify works by style, facilitating studies on the evolution of artistic trends. The dataset aids in identifying artists or workshops responsible for unsigned or disputed works. Enables the study of cultural influences, symbolism, and artistic techniques across regions and periods. Supports virtual museum experiences and conservation efforts by providing high-quality digital replicas and analysis tools. Combines art history with cutting-edge AI, fostering collaboration between researchers in both fields. A wide variety of artistic styles, periods, and cultures ensures comprehensive coverage. Images and metadata are meticulously curated for accuracy and detail, ensuring reliability for academic and commercial applications. Despite its value, ArtDL faces challenges. Overrepresentation of certain styles, periods, or cultures, potentially limiting the generalizability of trained models. Restrictions on certain artworks may limit access to a broader range of images. The nuanced nature of art makes annotation labor-intensive and requires domain expertise.
 
-Purpose and Objectives
-The primary goal of the ArtDL dataset is to enable AI-driven exploration of the visual and contextual aspects of art. This includes tasks such as:
+There are 19 specific categories in the ArtDL dataset which are based on the Iconclass classification system and represent key themes or subjects commonly depicted in Christian art, particularly from the Renaissance period. These categories include characters, events, and motifs central to Christian iconography. The there categories used in the dataset are the following. First category is The Annunciation to Mary and an example is the angel Gabriel announcing to Mary that she will conceive Jesus. Second category is The Crucifixion and an example is Jesus on the cross, flanked by mourners or Roman soldiers. Last category is The Deposition and an example is the removal of Jesus' body from the cross.
+These categories are rooted in Christian theology and are commonly explored in art history, making the dataset especially useful for iconographic studies and automated recognition in art analysis. The ArtDL dataset is a transformative resource for AI-driven art analysis and cultural heritage research. By combining visual data with rich metadata and annotations, it provides a foundation for advancing both technological innovation and our understanding of human creativity.
 
-Art classification by style, genre, or artist.
-Recognition of artistic techniques and materials.
-Semantic segmentation of artworks to identify objects, figures, or motifs.
-Cultural heritage preservation through detailed digital documentation and analysis.
-The dataset is tailored for tasks requiring fine-grained understanding, making it a valuable tool for advancing AI in domains where nuance and contextual knowledge are paramount.
-
-Contents and Structure
-The ArtDL dataset typically includes the following components:
-
-High-Resolution Art Images:
-
-Thousands of artworks in high resolution, encompassing a wide range of styles, periods, and media.
-Images are sourced from diverse collections, including paintings, sculptures, manuscripts, prints, and digital artworks.
-Metadata:
-
-Comprehensive metadata accompanies each image, providing details such as:
-Title of the work.
-Artist’s name and nationality.
-Year of creation.
-Artistic style (e.g., Baroque, Impressionism, Modernism).
-Medium and materials used.
-Provenance and current location.
-The metadata is structured for easy integration with AI pipelines and research queries.
-Annotations:
-
-Detailed annotations for tasks like object detection, segmentation, and attribute recognition.
-Semantic labels for visual elements, such as figures, landscapes, and architectural details.
-Temporal and Geographical Diversity:
-
-The dataset spans centuries, from ancient art to contemporary works.
-Geographically diverse, featuring art from Western, Eastern, African, and Indigenous cultures.
-Applications
-ArtDL enables a wide range of applications in art history, AI, and cultural preservation:
-
-Artistic Style Recognition:
-AI models trained on ArtDL can classify works by style, facilitating studies on the evolution of artistic trends.
-Artist Attribution:
-The dataset aids in identifying artists or workshops responsible for unsigned or disputed works.
-Cultural Analysis:
-Enables the study of cultural influences, symbolism, and artistic techniques across regions and periods.
-Augmented Reality and Digital Preservation:
-Supports virtual museum experiences and conservation efforts by providing high-quality digital replicas and analysis tools.
-Key Features and Benefits
-Interdisciplinary Utility:
-Combines art history with cutting-edge AI, fostering collaboration between researchers in both fields.
-Rich Diversity:
-A wide variety of artistic styles, periods, and cultures ensures comprehensive coverage.
-High Quality:
-Images and metadata are meticulously curated for accuracy and detail, ensuring reliability for academic and commercial applications.
-Challenges
-Despite its value, ArtDL faces challenges, including:
-
-Dataset Bias:
-Overrepresentation of certain styles, periods, or cultures, potentially limiting the generalizability of trained models.
-Copyright Constraints:
-Restrictions on certain artworks may limit access to a broader range of images.
-Annotation Complexity:
-The nuanced nature of art makes annotation labor-intensive and requires domain expertise.
-In summary, the ArtDL dataset is a transformative resource for AI-driven art analysis and cultural heritage research. By combining visual data with rich metadata and annotations, it provides a foundation for advancing both technological innovation and our understanding of human creativity.
-
-The 19 specific categories in the ArtDL dataset are based on the Iconclass classification system and represent key themes or subjects commonly depicted in Christian art, particularly from the Renaissance period. These categories include characters, events, and motifs central to Christian iconography. Here’s a breakdown of the categories:
-
-The Annunciation to Mary
-(e.g., the angel Gabriel announcing to Mary that she will conceive Jesus).
-
-The Visitation
-(e.g., Mary's visit to her cousin Elizabeth, who is pregnant with John the Baptist).
-
-The Nativity
-(e.g., the birth of Jesus, often with Mary, Joseph, and the animals in the stable).
-
-The Adoration of the Magi
-(e.g., the three wise men presenting gifts to the infant Jesus).
-
-The Flight into Egypt
-(e.g., Mary, Joseph, and the infant Jesus fleeing King Herod's decree).
-
-The Baptism of Christ
-(e.g., John the Baptist baptizing Jesus in the River Jordan).
-
-The Last Supper
-(e.g., Jesus sharing his final meal with the apostles before his crucifixion).
-
-The Agony in the Garden
-(e.g., Jesus praying in the Garden of Gethsemane before his arrest).
-
-The Arrest of Christ
-(e.g., Jesus being apprehended by soldiers, often involving Judas' betrayal).
-
-The Crucifixion
-(e.g., Jesus on the cross, flanked by mourners or Roman soldiers).
-
-The Deposition
-(e.g., the removal of Jesus' body from the cross).
-
-The Lamentation
-(e.g., Mary and others mourning over the body of Jesus).
-
-The Resurrection
-(e.g., Jesus rising from the tomb).
-
-The Ascension
-(e.g., Jesus ascending to Heaven in the presence of his disciples).
-
-Pentecost
-(e.g., the Holy Spirit descending upon the apostles).
-
-The Last Judgment
-(e.g., Christ judging the souls of the dead, often with angels and devils).
-
-The Virgin and Child
-(e.g., Mary holding the infant Jesus, often with symbolic objects).
-
-The Madonna and Child with Saints
-(e.g., Mary and the infant Jesus surrounded by various saints).
-
-The Holy Family
-(e.g., depictions of Jesus, Mary, and Joseph together).
-
-These categories are rooted in Christian theology and are commonly explored in art history, making the dataset especially useful for iconographic studies and automated recognition in art analysis.
-
-The dataset collection photos contains of four classes of images. The daisy class contains of 633 images. The renaissance class contains of 1131 images which are taken from the ArtDL dataset. The roses class contains of 641 images. The sunflowers class contains 699 images. In contrast, the dataset renaissance_photos contains of three classes. The annunciation class which contains paintings from the theme The Annunciation to Mary has 1249 images. The crucifixion class which contains paintins from the theme Crucifixion of Jesus has 810 images. The deposition class which contains painting from the theme Deposition of Jesus from the cross has 1199 images.
+The dataset collection photos contains of four classes of images. The daisy class contains of 633 images. The renaissance class contains of 1131 images which are taken from the ArtDL dataset. The roses class contains of 641 images. The sunflowers class contains 699 images. In contrast, the dataset renaissance_photos contains of three classes. The annunciation class which contains paintings from the theme The Annunciation to Mary has 1249 images. The crucifixion class which contains paintings from the theme Crucifixion of Jesus has 810 images. The deposition class which contains painting from the theme Deposition of Jesus from the cross has 1199 images.
 
 ### Model Architecture
 
-As a model for classification i was using ResNet-50. ResNet-50 is a 50-layer deep convolutional neural network. It is part of the Residual Network (ResNet) family, which revolutionized deep learning by enabling the training of very deep networks through the use of residual learning. The core innovation in ResNet is the skip connection, which bypasses one or more layers by adding the input of a block directly to its output. This approach alleviates the vanishing gradient problem, allowing gradients to flow effectively even in extremely deep architectures.
+As a model for classification i was using ResNet-50. ResNet-50 is a 50-layer deep convolutional neural network. It is part of the Residual Network (ResNet) family, which revolutionized deep learning by enabling the training of very deep networks through the use of residual learning. The core innovation in ResNet is the skip connection, which bypasses one or more layers by adding the input of a block directly to its output. This approach alleviates the vanishing gradient problem, allowing gradients to flow effectively even in extremely deep architectures. ResNet-50 is composed of 50 layers, organized into 16 bottleneck residual blocks spread across four stages. Each block has a bottleneck design with three convolutional layers. First layer 1 × 1 convolution which reduces dimensionality. Second layer 3 × 3 convolution which processes spatial features.
+Third layer 1 × 1 convolution which restores dimensionality. These layers are followed by batch normalization and ReLU activation. The residual block’s output is added to its input via a shortcut connection, forming the “residual” mapping. This residual mapping simplifies the learning process, as the network focuses on learning incremental transformations instead of the entire mapping. ResNet-50 starts with a single 7×7 convolutional layer and a max-pooling layer, followed by the four stages of residual blocks. After the final stage, the network uses global average pooling, a fully connected layer, and a softmax activation for classification. The number of filters increases progressively in the residual blocks, starting at 64 in the first stage and reaching 512 in the final stage. The use of skip connections mitigates degradation in very deep networks by ensuring critical information is retained, even as the network depth increases. With 50 layers and approximately 25.6 million parameters, ResNet-50 strikes a balance between depth and computational efficiency. The network is designed to handle input images of size 224×224×3 (RGB). ResNet-50 incorporates batch normalization, He initialization, and ReLU activations for faster and more stable training. ResNet-50 has become a foundational model in computer vision due to its versatility and performance. Pre-trained ResNet-50 models achieve state-of-the-art results on datasets like ImageNet. It serves as a robust backbone for tasks like object detection, semantic segmentation, and medical image analysis. Its deep hierarchical features are effective for tasks requiring high-level feature representations. ResNet-50 is part of a family that scales well, with deeper variants like ResNet-101 and ResNet-152 offering higher accuracy. The bottleneck design and residual learning improve computational efficiency and reduce training difficulty. Pre-trained ResNet-50 models generalize well to diverse datasets and domains. Despite its efficiency, ResNet-50 can be resource-intensive, requiring significant memory and compute power. Optimizations such as quantization and model pruning are often necessary for deployment on resource-constrained devices. ResNet-50 is a pioneering architecture that combines depth with efficiency, leveraging residual learning to achieve remarkable performance in a wide range of vision tasks. Its innovations have influenced numerous modern architectures, solidifying its place as a cornerstone in deep learning.
 
-Architecture of ResNet-50
-ResNet-50 is composed of 50 layers, organized into 16 bottleneck residual blocks spread across four stages. Each block has a bottleneck design with three convolutional layers:
-
-1 × 1 convolution: Reduces dimensionality.
-3 × 3 convolution: Processes spatial features.
-1 × 1 convolution: Restores dimensionality.
-These layers are followed by batch normalization and ReLU activation. The residual block’s output is added to its input via a shortcut connection, forming the “residual” mapping. This residual mapping simplifies the learning process, as the network focuses on learning incremental transformations instead of the entire mapping.
-
-ResNet-50 starts with a single 
-7
-×
-7
-7×7 convolutional layer and a max-pooling layer, followed by the four stages of residual blocks. After the final stage, the network uses global average pooling, a fully connected layer, and a softmax activation for classification. The number of filters increases progressively in the residual blocks, starting at 64 in the first stage and reaching 512 in the final stage.
-
-Key Features
-Residual Learning: The use of skip connections mitigates degradation in very deep networks by ensuring critical information is retained, even as the network depth increases.
-Depth and Parameters: With 50 layers and approximately 25.6 million parameters, ResNet-50 strikes a balance between depth and computational efficiency.
-Input Size: The network is designed to handle input images of size 
-224
-×
-224
-×
-3
-224×224×3 (RGB).
-Training Techniques: ResNet-50 incorporates batch normalization, He initialization, and ReLU activations for faster and more stable training.
-Applications
-ResNet-50 has become a foundational model in computer vision due to its versatility and performance. It is widely used for:
-
-Image Classification: Pre-trained ResNet-50 models achieve state-of-the-art results on datasets like ImageNet.
-Transfer Learning: It serves as a robust backbone for tasks like object detection (e.g., Faster R-CNN), semantic segmentation (e.g., Mask R-CNN), and medical image analysis.
-Feature Extraction: Its deep hierarchical features are effective for tasks requiring high-level feature representations.
-Advantages
-Scalability: ResNet-50 is part of a family that scales well, with deeper variants like ResNet-101 and ResNet-152 offering higher accuracy.
-Efficiency: The bottleneck design and residual learning improve computational efficiency and reduce training difficulty.
-Generalization: Pre-trained ResNet-50 models generalize well to diverse datasets and domains.
-Challenges
-Despite its efficiency, ResNet-50 can be resource-intensive, requiring significant memory and compute power. Optimizations such as quantization and model pruning are often necessary for deployment on resource-constrained devices.
-
-In summary, ResNet-50 is a pioneering architecture that combines depth with efficiency, leveraging residual learning to achieve remarkable performance in a wide range of vision tasks. Its innovations have influenced numerous modern architectures, solidifying its place as a cornerstone in deep learning.
-
-Regarding the methodlogy of the experiments, firstly i train and evaluate the ResNet-50 model on the photos dataset. Secondly, i take the first image of the renaissance to see in the model correctly indetifies the image. The same image is the first image of the deposition class of the renaissance_photos. Thridly, i train and evaluate a second ResNet-50 model on the renaissance_photos. Lastly, I take the first image of the deposition to see in the second model correctly indetifies the image.
-
+Regarding the methodology of the experiments, firstly i train and evaluate the ResNet-50 model on the photos dataset. Secondly, i take the first image of the renaissance to see in the model correctly identifies the image. The same image is the first image of the deposition class of the renaissance_photos. Thridly, i train and evaluate a second ResNet-50 model on the renaissance_photos. Lastly, I take the first image of the deposition to see in the second model correctly identifies the image.
 ## Experiments & Results
 In the following section i describe the experiments and present the results of the model.
 Firstly, i describe the training and the evaluation process of the classifier that makes destinction between renesance paintings and photos of flowers.
