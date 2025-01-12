@@ -790,12 +790,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-protocols">Training Protocols</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-results">Experiments &amp; Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-analysis">Quantitative Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis">Comparative Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expanded-qualitative-analysis">Expanded Qualitative Analysis</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-results">Experiments &amp; Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
@@ -911,22 +906,21 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 </section>
 <section id="experiments-results">
 <h2>Experiments &amp; Results<a class="headerlink" href="#experiments-results" title="Permalink to this heading">#</a></h2>
-<section id="quantitative-analysis">
-<h3>Quantitative Analysis<a class="headerlink" href="#quantitative-analysis" title="Permalink to this heading">#</a></h3>
-<p>Quantitative metrics were central to evaluating the model’s performance. Several standard benchmarks were employed:</p>
-<p>-Image-Text Retrieval Accuracy: At 86%, the model demonstrated a high degree of competence in pairing visual inputs with their correct captions, underscoring its capacity for cross-modal alignment.</p>
-<p>-BLEU and METEOR Scores: BLEU (0.74) and METEOR (0.68) scores reflected the quality and semantic relevance of the generated captions.</p>
-<p>-FID Score: A score of 26.8 highlighted the stylistic coherence of outputs.</p>
-<p>First model</p>
+<p>In the following section i describe the experiments and present the results of the model.
+Firstly, i describe the training and the evaluation process of the classifier that makes destinction between renesance paintings and photos of flowers.</p>
+<p>At the begining of the code i import the libraries which purpose will be describe in the follwings.
+Tensorflow should be installed inorder to import libraries from it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install tensorflow
 </pre></div>
 </div>
+<p>For ploting of the results i will need to import matplotlib.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">PIL</span>
 </pre></div>
 </div>
+<p>Importing the libraries after installing tensorflow.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
@@ -935,17 +929,21 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
 </pre></div>
 </div>
+<p>Dowloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.dropbox.com/scl/fi/ul3bigvwu6ij8n3mo8n7n/photos.tar?rlkey=fsf330upjvsd0y666ruw6hqz6&amp;st=c2culq23&amp;dl=1&quot;</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>From the dataset of the renaissance images we pick the first one which will serve as a picture for classification.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">renaissance</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;renaissance/*&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
+<p>Here we are spliting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty precent for validation. Also we will use resulution for images 180 by 180 pixels. This code should output that are ound 3104 files belonging to 4 classes.
+Using 2484 files for training.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span>
 <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span>
 <span class="n">train_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
@@ -957,6 +955,8 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Simularry as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
+Using 620 files for validation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">val_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
   <span class="n">data_dir</span><span class="p">,</span>
   <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -966,10 +966,12 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The four classes found are the names of the folders in the dataset. As an ouput we should get [‘daisy’, ‘renaissance’, ‘roses’, ‘sunflowers’] which corespond with the four names of the classes. The model should learn how to recognize all four classes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class_names</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">class_names</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>At this point we can check how the model can make classification based on pretraing. For output we should get images with the class names on which they belong.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -981,6 +983,7 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that it will be added will be learing the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Input</span>
 
@@ -1016,9 +1019,11 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="n">resnet_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>After the model is ready an optimizer using Adam, a cross entropy loss fuction and accuracy for metric should be added.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>Then the training and validaton dataset should be provided. For acheving good accuracy for epochs is put value of ten.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
     <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>  <span class="c1"># You can choose other optimizers like SGD or RMSprop</span>
     <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>  <span class="c1"># Adjust based on your output type</span>
@@ -1034,6 +1039,7 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>The model log is stored in vaiable called history. We are accesing the training accuracy and validaton accuracy. We can visualize the by ploting the values. For the training accuracy 100 percent is reached and for validaton accuracy 95 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">])</span>
@@ -1046,7 +1052,8 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><img alt="alt text" src="_images/download.png" /></p>
+<p><img alt="alt text" src="_images/download.png" />
+Simularry, we are accesing the training loss and validaton accuracy. We can visualize the by ploting the values. For the training loss 100 percent is reached zero percent and for validaton loss 17 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -1057,6 +1064,7 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>We are using imread fuction to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resulution. The output we get is four dimensions value sine the model is trained on multiple images at the time.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="n">image</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="n">image_resized</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="p">))</span>
@@ -1064,18 +1072,17 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The model should give a prediction on the image that is put as an input. The model should output an arry of numbers because the softmax fuction gives probability for each class.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span><span class="o">=</span><span class="n">resnet_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>We are interested for the maximum value that the softmax fuction will provide so we are using np.argmax. The ouput index of the class should be renaissance.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output_class</span><span class="o">=</span><span class="n">class_names</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The predicted class is&quot;</span><span class="p">,</span> <span class="n">output_class</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-<p>Second model</p>
+<p>Secondly, i describe the training and the evaluation process of the classifier that makes specific destinction between renesance paintings.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.dropbox.com/scl/fi/m08kciucvchzt1soktlbj/renaissance_photos.tar?rlkey=c3viskzdizumv8mhd3rrlt4i5&amp;st=pph6a4yc&amp;dl=1&quot;</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;renaissance_photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1212,30 +1219,19 @@ Supplementary Metadata: Catalog entries, thematic tags, and stylistic labels wer
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The predicted class is&quot;</span><span class="p">,</span> <span class="n">output_class</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">deposition</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</section>
-<section id="comparative-analysis">
-<h3>Comparative Analysis<a class="headerlink" href="#comparative-analysis" title="Permalink to this heading">#</a></h3>
-<p>The model was benchmarked against generic multimodal models such as CLIP and BLIP. Results indicated significant performance gains due to domain-specific fine-tuning.</p>
-</section>
-<section id="expanded-qualitative-analysis">
-<h3>Expanded Qualitative Analysis<a class="headerlink" href="#expanded-qualitative-analysis" title="Permalink to this heading">#</a></h3>
-<p>Expert evaluations provided deeper insights into the model’s interpretative accuracy:</p>
-<p>-Symbolism Interpretation: While capable of describing overt features (e.g., halos or scales), the model often lacked the depth to analyze symbolic layers fully.</p>
-<p>-Regional Styles: Experts praised the model’s nuanced recognition of stylistic variations, such as Northern Europe’s Gothic detailing versus Italian Humanism.</p>
-</section>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<p>This study highlights the potential of multimodal language models to analyze and interpret Renaissance graphic images, bridging the gap between computational tools and historical analysis. Key findings are the follwing.
-Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, outputs were linguistically coherent and stylistically aligned with Renaissance-era descriptions, indicating the model’s adaptability to historical contexts.
-Lastly, the findings underscore the utility of MLMs in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets. Despite its successes, the study also revealed significant limitations.
+<p>This study highlights the potential of multimodal language models to analyze and classify Renaissance graphic images, surpassing the gap between computational tools and historical analysis. Key findings are the follwing.
+Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, the classificier of Renaissance-era achieved traing accuracy of 100 percent nad validation accuracy of 95 percent, wheras the cassifier for renesance images reached training accuracy of 95 precent and validation accuracy of 79 percent, indicating the model’s adaptability to historical specifications. Lastly, the findings underscore the utility of multimodal language models in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets.</p>
+<p>Despite its successes, the study also revealed significant limitations.
 Firstly, the model struggled to interpret abstract and allegorical imagery, which often requires contextual knowledge that goes beyond visual or textual inputs. Secondly, generated captions, while plausible, occasionally lacked the depth and specificity of expert analyses, particularly for highly nuanced works.
-Lastly, the dataset’s Eurocentric focus limited the generalizability of findings to other cultural or historical contexts.
-Addressing these challenges presents exciting opportunities for advancing the field. Firstly, incorporate graphic images and textual descriptions from non-European cultures and periods, such as Islamic scientific illustrations, East Asian woodblock prints, or Pre-Columbian art. This would enhance the model’s generalization capabilities and cultural inclusivity. Secondly,
-develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery. Thirdly, extend the textual preprocessing pipeline to include original languages (e.g., Latin, Italian, Greek) alongside translations, enabling the model to preserve linguistic nuances and historical authenticity. Fourthly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Fifthly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
+Lastly, the dataset’s Eurocentric focus limited the generalizability of findings to other cultural or historical contexts.</p>
+<p>Addressing these challenges presents exciting opportunities for advancing the field.
+Firstly, incorporate graphic images and textual descriptions from non-European cultures and periods, such as Islamic scientific illustrations, East Asian woodblock prints, or Pre-Columbian art. This would enhance the model’s generalization capabilities and cultural inclusivity.
+Secondly, develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery.</p>
+<p>Thirdly, extend the textual preprocessing pipeline to include original languages (e.g., Latin, Italian, Greek) alongside translations, enabling the model to preserve linguistic nuances and historical authenticity.</p>
+<p>Fourthly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Fifthly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
 investigate the model’s adaptability to other historical periods, such as the Baroque or Enlightenment, to establish its versatility across diverse artistic and scientific traditions.</p>
 <p>By advancing these areas, multimodal AI can serve as a catalyst for interdisciplinary innovation, reshaping how we engage with and interpret the cultural artifacts of the past. Through continued collaboration between AI researchers and historians, this technology holds the promise of democratizing access to historical knowledge while preserving its richness for future generations.</p>
 </section>
@@ -1322,12 +1318,7 @@ investigate the model’s adaptability to other historical periods, such as the 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-protocols">Training Protocols</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-results">Experiments &amp; Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-analysis">Quantitative Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-analysis">Comparative Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expanded-qualitative-analysis">Expanded Qualitative Analysis</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-results">Experiments &amp; Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>

@@ -132,27 +132,22 @@ The model employed contrastive learning to align visual and textual modalities e
 -Hardware: Training was conducted on NVIDIA A100 GPUs, utilizing PyTorch and Hugging Face Transformers.
 
 ## Experiments & Results
-### Quantitative Analysis
-Quantitative metrics were central to evaluating the model's performance. Several standard benchmarks were employed:
+In the following section i describe the experiments and present the results of the model.
+Firstly, i describe the training and the evaluation process of the classifier that makes destinction between renesance paintings and photos of flowers.
 
--Image-Text Retrieval Accuracy: At 86%, the model demonstrated a high degree of competence in pairing visual inputs with their correct captions, underscoring its capacity for cross-modal alignment.
-
--BLEU and METEOR Scores: BLEU (0.74) and METEOR (0.68) scores reflected the quality and semantic relevance of the generated captions.
-
--FID Score: A score of 26.8 highlighted the stylistic coherence of outputs.
-
-First model
+At the begining of the code i import the libraries which purpose will be describe in the follwings.
+Tensorflow should be installed inorder to import libraries from it.
 ```
 !pip install tensorflow
 ```
-
+For ploting of the results i will need to import matplotlib.
 ```
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import PIL
 ```
-
+Importing the libraries after installing tensorflow.
 ```
 import tensorflow as tf
 from tensorflow import keras
@@ -161,20 +156,21 @@ from tensorflow.python.keras.layers import Dense, Flatten
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 ```
-
+Dowloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.
 ```
 import pathlib
 dataset_url = "https://www.dropbox.com/scl/fi/ul3bigvwu6ij8n3mo8n7n/photos.tar?rlkey=fsf330upjvsd0y666ruw6hqz6&st=c2culq23&dl=1"
 data_dir = tf.keras.utils.get_file('photos', origin=dataset_url, untar=True)
 data_dir = pathlib.Path(data_dir)
 ```
-
+From the dataset of the renaissance images we pick the first one which will serve as a picture for classification.
 ```
 renaissance = list(data_dir.glob('renaissance/*'))
 print(renaissance[0])
 PIL.Image.open(str(renaissance[0]))
 ```
-
+Here we are spliting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty precent for validation. Also we will use resulution for images 180 by 180 pixels. This code should output that are ound 3104 files belonging to 4 classes.
+Using 2484 files for training.
 ```
 img_height,img_width=180,180
 batch_size=32
@@ -186,7 +182,8 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-
+Simularry as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
+Using 620 files for validation.
 ```
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   data_dir,
@@ -196,12 +193,12 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 ```
-
+The four classes found are the names of the folders in the dataset. As an ouput we should get ['daisy', 'renaissance', 'roses', 'sunflowers'] which corespond with the four names of the classes. The model should learn how to recognize all four classes.
 ```
 class_names = train_ds.class_names
 print(class_names)
 ```
-
+At this point we can check how the model can make classification based on pretraing. For output we should get images with the class names on which they belong. 
 ```
 import matplotlib.pyplot as plt
 
@@ -213,7 +210,7 @@ for images, labels in train_ds.take(1):
     plt.title(class_names[labels[i]])
     plt.axis("off")
 ```
-
+From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that it will be added will be learing the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again. 
 ```
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Flatten, Dense, Input
@@ -249,11 +246,11 @@ resnet_model = Model(inputs=input_layer, outputs=output_layer)
 # Display the model summary
 resnet_model.summary()
 ```
-
+After the model is ready an optimizer using Adam, a cross entropy loss fuction and accuracy for metric should be added.
 ```
 resnet_model.compile(optimizer=Adam(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 ```
-
+Then the training and validaton dataset should be provided. For acheving good accuracy for epochs is put value of ten. 
 ```
 resnet_model.compile(
     optimizer='adam',  # You can choose other optimizers like SGD or RMSprop
@@ -269,7 +266,7 @@ history = resnet_model.fit(
     epochs=epochs
 )
 ```
-
+The model log is stored in vaiable called history. We are accesing the training accuracy and validaton accuracy. We can visualize the by ploting the values. For the training accuracy 100 percent is reached and for validaton accuracy 95 percent. 
 ```
 fig1 = plt.gcf()
 plt.plot(history.history['accuracy'])
@@ -283,6 +280,8 @@ plt.legend(['train', 'validation'])
 plt.show()
 ```
 ![alt text](download.png "Title")
+Simularry, we are accesing the training loss and validaton accuracy. We can visualize the by ploting the values. For the training loss 100 percent is reached zero percent and for validaton loss 17 percent.
+
 ```
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
@@ -293,7 +292,7 @@ plt.xlabel('Epochs')
 plt.legend(['train', 'validation'])
 plt.show()
 ```
-
+We are using imread fuction to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resulution. The output we get is four dimensions value sine the model is trained on multiple images at the time.
 ```
 import cv2
 image=cv2.imread(str(renaissance[0]))
@@ -301,22 +300,18 @@ image_resized= cv2.resize(image, (img_height,img_width))
 image=np.expand_dims(image_resized,axis=0)
 print(image.shape)
 ```
-
+The model should give a prediction on the image that is put as an input. The model should output an arry of numbers because the softmax fuction gives probability for each class.
 ```
 pred=resnet_model.predict(image)
 print(pred)
 ```
-
+We are interested for the maximum value that the softmax fuction will provide so we are using np.argmax. The ouput index of the class should be renaissance.
 ```
 output_class=class_names[np.argmax(pred)]
 print("The predicted class is", output_class)
 ```
+Secondly, i describe the training and the evaluation process of the classifier that makes specific destinction between renesance paintings.
 
-```
-PIL.Image.open(str(renaissance[0]))
-```
-
-Second model
 ```
 import pathlib
 dataset_url = "https://www.dropbox.com/scl/fi/m08kciucvchzt1soktlbj/renaissance_photos.tar?rlkey=c3viskzdizumv8mhd3rrlt4i5&st=pph6a4yc&dl=1"
@@ -467,32 +462,26 @@ output_class=class_names[np.argmax(pred)]
 print("The predicted class is", output_class)
 ```
 
-```
-PIL.Image.open(str(deposition[0]))
-```
-
-### Comparative Analysis
-The model was benchmarked against generic multimodal models such as CLIP and BLIP. Results indicated significant performance gains due to domain-specific fine-tuning.
-
-### Expanded Qualitative Analysis
-Expert evaluations provided deeper insights into the model's interpretative accuracy:
-
--Symbolism Interpretation: While capable of describing overt features (e.g., halos or scales), the model often lacked the depth to analyze symbolic layers fully.
-
--Regional Styles: Experts praised the model’s nuanced recognition of stylistic variations, such as Northern Europe’s Gothic detailing versus Italian Humanism.
-
 ## Conclusion
 
-This study highlights the potential of multimodal language models to analyze and interpret Renaissance graphic images, bridging the gap between computational tools and historical analysis. Key findings are the follwing.
-Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, outputs were linguistically coherent and stylistically aligned with Renaissance-era descriptions, indicating the model’s adaptability to historical contexts.
-Lastly, the findings underscore the utility of MLMs in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets. Despite its successes, the study also revealed significant limitations. 
+This study highlights the potential of multimodal language models to analyze and classify Renaissance graphic images, surpassing the gap between computational tools and historical analysis. Key findings are the follwing.
+Firstly, the model demonstrated strong performance in aligning images and captions, showcasing its ability to capture the interplay between visual and textual modalities. Secondly, the classificier of Renaissance-era achieved traing accuracy of 100 percent nad validation accuracy of 95 percent, wheras the cassifier for renesance images reached training accuracy of 95 precent and validation accuracy of 79 percent, indicating the model’s adaptability to historical specifications. Lastly, the findings underscore the utility of multimodal language models in areas such as cultural preservation, art education, and digital humanities, offering tools for automatic annotation and interpretation of historical datasets. 
+
+Despite its successes, the study also revealed significant limitations. 
 Firstly, the model struggled to interpret abstract and allegorical imagery, which often requires contextual knowledge that goes beyond visual or textual inputs. Secondly, generated captions, while plausible, occasionally lacked the depth and specificity of expert analyses, particularly for highly nuanced works.
 Lastly, the dataset’s Eurocentric focus limited the generalizability of findings to other cultural or historical contexts.
-Addressing these challenges presents exciting opportunities for advancing the field. Firstly, incorporate graphic images and textual descriptions from non-European cultures and periods, such as Islamic scientific illustrations, East Asian woodblock prints, or Pre-Columbian art. This would enhance the model’s generalization capabilities and cultural inclusivity. Secondly,
-develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery. Thirdly, extend the textual preprocessing pipeline to include original languages (e.g., Latin, Italian, Greek) alongside translations, enabling the model to preserve linguistic nuances and historical authenticity. Fourthly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Fifthly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
+
+Addressing these challenges presents exciting opportunities for advancing the field. 
+Firstly, incorporate graphic images and textual descriptions from non-European cultures and periods, such as Islamic scientific illustrations, East Asian woodblock prints, or Pre-Columbian art. This would enhance the model’s generalization capabilities and cultural inclusivity. 
+Secondly, develop hybrid models that combine multimodal AI with symbolic reasoning frameworks, such as knowledge graphs, to enable deeper interpretation of allegorical and abstract imagery. 
+
+Thirdly, extend the textual preprocessing pipeline to include original languages (e.g., Latin, Italian, Greek) alongside translations, enabling the model to preserve linguistic nuances and historical authenticity. 
+
+Fourthly, improve the model’s ability to differentiate between substyles within the Renaissance, such as the Gothic-inspired elements of Northern Europe or the humanist innovations of Italy. Fifthly, explore the integration of MLMs into interactive platforms, such as virtual museum tours or AI-powered learning applications. By presenting historical insights dynamically, such tools could engage broader audiences. Lastly,
 investigate the model’s adaptability to other historical periods, such as the Baroque or Enlightenment, to establish its versatility across diverse artistic and scientific traditions.
 
 By advancing these areas, multimodal AI can serve as a catalyst for interdisciplinary innovation, reshaping how we engage with and interpret the cultural artifacts of the past. Through continued collaboration between AI researchers and historians, this technology holds the promise of democratizing access to historical knowledge while preserving its richness for future generations.
+
 
 ## References
 
