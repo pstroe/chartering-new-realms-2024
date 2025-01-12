@@ -146,8 +146,6 @@ A Data Set and a Convolutional Model for Iconography Classification in Paintings
 
 Classifying paintings by artistic genre: An analysis of features & classifiers.Jana Zujovic, Lisa Gandy, Scott Friedman, Bryan Pardo, and Thrasyvoulos N Pappas. 2009.https://ieeexplore.ieee.org/document/5293271
 
-
-
 Big Transfer Learning for Fine Art Classification.Wentao Zhao, Wei Jiang, Xinguo Qiu.2022.https://onlinelibrary.wiley.com/doi/10.1155/2022/1764606
 
 MIBench: Evaluating Multimodal Large Language Models over Multiple Images.Haowei Liu, Xi Zhang, Haiyang Xu, Yaya Shi, Chaoya Jiang, Ming Yan, Ji Zhang, Fei Huang, Chunfeng Yuan, Bing Li, Weiming Hu.2024.https://arxiv.org/abs/2407.15272
