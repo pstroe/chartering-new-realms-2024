@@ -187,7 +187,7 @@ There are some limitations to this project. The fonts on the images in the datas
 Additionally, the post-processing step, while effective in refining OCR outputs, has its own limitations. It relies heavily on contextual information, which can lead to errors if the context is ambiguous or insufficient. In cases where the original text is a handwritten manuscript, such as the Dunhuang manuscripts, copying mistakes are common. The model may “correct” these mistakes based on its learned patterns, inadvertently producing content that deviates from the original source. This could result in an output that is technically accurate but no longer faithful to the historical document. This highlights the need for cautious interpretation of post-processed results, particularly when dealing with historical texts where preserving the original errors is crucial for authenticity and research.
 
 ## Appendix
-![alt text](https://github.com/kiky97/kiki/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250112095649.png)
+![alt text](https://github.com/kiky97/kiki/blob/main/picture-3.jpg)
 
 ![alt text](https://github.com/kiky97/kiki/blob/main/picture-1.jpg)
 
