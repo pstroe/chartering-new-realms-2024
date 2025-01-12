@@ -116,6 +116,7 @@ Quantitative metrics were central to evaluating the model's performance. Several
 
 -FID Score: A score of 26.8 highlighted the stylistic coherence of outputs.
 
+First model
 ```
 !pip install tensorflow
 ```
@@ -136,6 +137,161 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 ```
 
+```
+import pathlib
+dataset_url = "https://www.dropbox.com/scl/fi/ul3bigvwu6ij8n3mo8n7n/photos.tar?rlkey=fsf330upjvsd0y666ruw6hqz6&st=c2culq23&dl=1"
+data_dir = tf.keras.utils.get_file('photos', origin=dataset_url, untar=True)
+data_dir = pathlib.Path(data_dir)
+```
+
+```
+renaissance = list(data_dir.glob('renaissance/*'))
+print(renaissance[0])
+PIL.Image.open(str(renaissance[0]))
+```
+
+```
+img_height,img_width=180,180
+batch_size=32
+train_ds = tf.keras.preprocessing.image_dataset_from_directory(
+  data_dir,
+  validation_split=0.2,
+  subset="training",
+  seed=123,
+  image_size=(img_height, img_width),
+  batch_size=batch_size)
+```
+
+```
+val_ds = tf.keras.preprocessing.image_dataset_from_directory(
+  data_dir,
+  validation_split=0.2,
+  subset="validation",
+  seed=123,
+  image_size=(img_height, img_width),
+  batch_size=batch_size)
+```
+
+```
+class_names = train_ds.class_names
+print(class_names)
+```
+
+```
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 10))
+for images, labels in train_ds.take(1):
+  for i in range(6):
+    ax = plt.subplot(3, 3, i + 1)
+    plt.imshow(images[i].numpy().astype("uint8"))
+    plt.title(class_names[labels[i]])
+    plt.axis("off")
+```
+
+```
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Flatten, Dense, Input
+
+resnet_model = Sequential()
+
+# Load the pre-trained ResNet50 model without the top layer
+input_shape = (180, 180, 3)
+
+# Create an input layer
+input_layer = Input(shape=input_shape)
+
+# Load the pre-trained ResNet50 model without the top layer
+pretrained_model = tf.keras.applications.ResNet50(
+    include_top=False,
+    input_tensor=input_layer,
+    pooling='avg',
+    weights='imagenet'
+)
+
+# Freeze the layers of the pre-trained model
+pretrained_model.trainable = False
+
+# Add custom layers on top of the ResNet50 base
+x = pretrained_model.output
+x = Flatten()(x)
+x = Dense(512, activation='relu')(x)
+output_layer = Dense(5, activation='softmax')(x)
+
+# Create the complete model
+resnet_model = Model(inputs=input_layer, outputs=output_layer)
+
+# Display the model summary
+resnet_model.summary()
+```
+
+```
+resnet_model.compile(optimizer=Adam(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
+```
+
+```
+resnet_model.compile(
+    optimizer='adam',  # You can choose other optimizers like SGD or RMSprop
+    loss='sparse_categorical_crossentropy',  # Adjust based on your output type
+    metrics=['accuracy']  # Metrics to track during training
+)
+
+# Train the model
+epochs = 10
+history = resnet_model.fit(
+    train_ds,
+    validation_data=val_ds,
+    epochs=epochs
+)
+```
+
+```
+fig1 = plt.gcf()
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.axis(ymin=0.4,ymax=1)
+plt.grid()
+plt.title('Model Accuracy')
+plt.ylabel('Accuracy')
+plt.xlabel('Epochs')
+plt.legend(['train', 'validation'])
+plt.show()
+```
+
+```
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.grid()
+plt.title('Model Loss')
+plt.ylabel('Loss')
+plt.xlabel('Epochs')
+plt.legend(['train', 'validation'])
+plt.show()
+```
+
+```
+import cv2
+image=cv2.imread(str(renaissance[0]))
+image_resized= cv2.resize(image, (img_height,img_width))
+image=np.expand_dims(image_resized,axis=0)
+print(image.shape)
+```
+
+```
+pred=resnet_model.predict(image)
+print(pred)
+```
+
+```
+output_class=class_names[np.argmax(pred)]
+print("The predicted class is", output_class)
+```
+
+```
+PIL.Image.open(str(renaissance[0]))
+```
+
+Second model
 ```
 import pathlib
 dataset_url = "https://www.dropbox.com/scl/fi/m08kciucvchzt1soktlbj/renaissance_photos.tar?rlkey=c3viskzdizumv8mhd3rrlt4i5&st=pph6a4yc&dl=1"
