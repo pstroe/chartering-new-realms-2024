@@ -848,8 +848,8 @@ Third layer 1 × 1 convolution which restores dimensionality. These layers are f
 <section id="experiments-results">
 <h2>Experiments &amp; Results<a class="headerlink" href="#experiments-results" title="Permalink to this heading">#</a></h2>
 <p>In the following section i describe the experiments and present the results of the model.
-Firstly, i describe the training and the evaluation process of the classifier that makes destinction between renesance paintings and photos of flowers.</p>
-<p>At the begining of the code i import the libraries which purpose will be describe in the follwings.
+Firstly, i describe the training and the evaluation process of the classifier that makes distinction between renaissance paintings and photos of flowers.</p>
+<p>At the beginning of the code i import the libraries which purpose will be describe in the followings.
 Tensorflow should be installed inorder to import libraries from it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install tensorflow
 </pre></div>
@@ -870,7 +870,7 @@ Tensorflow should be installed inorder to import libraries from it.</p>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
 </pre></div>
 </div>
-<p>Dowloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.</p>
+<p>Downloading the dataset need training and evaluation of the model. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called photos.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.dropbox.com/scl/fi/ul3bigvwu6ij8n3mo8n7n/photos.tar?rlkey=fsf330upjvsd0y666ruw6hqz6&amp;st=c2culq23&amp;dl=1&quot;</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -883,7 +883,7 @@ Tensorflow should be installed inorder to import libraries from it.</p>
 <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>Here we are spliting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty precent for validation. Also we will use resulution for images 180 by 180 pixels. This code should output that are ound 3104 files belonging to 4 classes.
+<p>Here we are splitting the dataset for training and testing. For training we will use eighty percent of the dataset and twenty percent for validation. Also we will use resolution for images 180 by 180 pixels. This code should output that are found 3104 files belonging to 4 classes.
 Using 2484 files for training.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span>
 <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span>
@@ -896,7 +896,7 @@ Using 2484 files for training.</p>
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Simularry as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
+<p>Similarly as for the training there will be data for validation. This code should output that are found 3104 files belonging to 4 classes.
 Using 620 files for validation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">val_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
   <span class="n">data_dir</span><span class="p">,</span>
@@ -907,7 +907,7 @@ Using 620 files for validation.</p>
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The four classes found are the names of the folders in the dataset. As an ouput we should get [‘daisy’, ‘renaissance’, ‘roses’, ‘sunflowers’] which corespond with the four names of the classes. The model should learn how to recognize all four classes.</p>
+<p>The four classes found are the names of the folders in the dataset. As an output we should get [‘daisy’, ‘renaissance’, ‘roses’, ‘sunflowers’] which correspond with the four names of the classes. The model should learn how to recognize all four classes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class_names</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">class_names</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
 </pre></div>
@@ -924,7 +924,7 @@ Using 620 files for validation.</p>
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that it will be added will be learing the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again.</p>
+<p>From this point on starts the training process of the model. Firstly, we add a new network and make sure that the layers will be added sequentially. Secondly, we are implementing the ResNet50 model. The weight that will be used will be that ones that are trained on Imagenet problem. Thirdly, the 512 neurons that will be added, will be leering the new weights. The rest of the weight and hidden layers will stay the same. Finally, as an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Input</span>
 
@@ -960,11 +960,11 @@ Using 620 files for validation.</p>
 <span class="n">resnet_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>After the model is ready an optimizer using Adam, a cross entropy loss fuction and accuracy for metric should be added.</p>
+<p>After the model is ready an optimizer using Adam, a cross entropy loss function and accuracy for metric should be added.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Then the training and validaton dataset should be provided. For acheving good accuracy for epochs is put value of ten.</p>
+<p>Then the training and validation dataset should be provided. For achieving good accuracy for epochs is put value of ten.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
     <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>  <span class="c1"># You can choose other optimizers like SGD or RMSprop</span>
     <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>  <span class="c1"># Adjust based on your output type</span>
@@ -980,7 +980,7 @@ Using 620 files for validation.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>The model log is stored in vaiable called history. We are accesing the training accuracy and validaton accuracy. We can visualize the by ploting the values. For the training accuracy 100 percent is reached and for validaton accuracy 95 percent.</p>
+<p>The model log is stored in variable called history. We are accessing the training accuracy and validation accuracy. We can visualize the by plotting the values. For the training accuracy 100 percent is reached and for validation accuracy 95 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">])</span>
@@ -993,8 +993,8 @@ Using 620 files for validation.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><img alt="alt text" src="_images/download.png" />
-Simularry, we are accesing the training loss and validaton accuracy. We can visualize the by ploting the values. For the training loss 100 percent is reached zero percent and for validaton loss 17 percent.</p>
+<p><img alt="alt text" src="_images/1.png" /></p>
+<p>Similarly, we are accessing the training loss and validation accuracy. We can visualize the by plotting the values. For the training loss 100 percent is reached zero percent and for validation loss 17 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -1005,7 +1005,8 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We are using imread fuction to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resulution. The output we get is four dimensions value sine the model is trained on multiple images at the time.</p>
+<p><img alt="alt text" src="_images/2.png" /></p>
+<p>We are using imread function to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resolution. The output we get is four dimensions value sine the model is trained on multiple images at the time.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="n">image</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">renaissance</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="n">image_resized</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="p">))</span>
@@ -1013,28 +1014,32 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The model should give a prediction on the image that is put as an input. The model should output an arry of numbers because the softmax fuction gives probability for each class.</p>
+<p>The model should give a prediction on the image that is put as an input. The model should output an array of numbers because the softmax function gives probability for each class.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span><span class="o">=</span><span class="n">resnet_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We are interested for the maximum value that the softmax fuction will provide so we are using np.argmax. The ouput index of the class should be renaissance.</p>
+<p>We are interested for the maximum value that the softmax function will provide so we are using np.argmax. The output index of the class should be renaissance.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output_class</span><span class="o">=</span><span class="n">class_names</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The predicted class is&quot;</span><span class="p">,</span> <span class="n">output_class</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Secondly, i describe the training and the evaluation process of the classifier that makes specific destinction between renesance paintings.</p>
+<p>Secondly, i describe the training and the evaluation process of the classifier that makes specific destination between renaissance paintings.
+The dataset need training and evaluation of the second model is downloaded from url of the dropbox source. Furthermore, printing the path of the location where this dataset is stored. The dataset should be stored in a folder called renaissance_photos.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.dropbox.com/scl/fi/m08kciucvchzt1soktlbj/renaissance_photos.tar?rlkey=c3viskzdizumv8mhd3rrlt4i5&amp;st=pph6a4yc&amp;dl=1&quot;</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;renaissance_photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>We are taking the first image from the deposition class. Note that image is the same first image from the renaissance class from the previous dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deposition</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;deposition/*&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">deposition</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">deposition</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
+<p>Here the splitting of the dataset for training and testing is done. For training we will use eighty percent of the dataset and twenty percent for validation. Also we will use resolution for images 180 by 180 pixels. This code should output that are found 3258 files belonging to 3 classes.
+Using 2607 files for training.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span>
 <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span>
 <span class="n">train_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
@@ -1046,6 +1051,8 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Similarly as for the training there will be data for validation. This code should output that are found 3258 files belonging to 3 classes.
+Using 615 files for validation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">val_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
   <span class="n">data_dir</span><span class="p">,</span>
   <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -1055,10 +1062,12 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The three classes found are the names of the folders in the dataset. As an output we should get [‘annunciation’, ‘crucifixion’, ‘deposition’] which correspond with the three names of the classes. The model should learn how to recognize all three classes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class_names</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">class_names</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>At this point the pretraing is done. We can check how the model can make a classification. For output we should get images with the class names on which they belong.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -1070,6 +1079,7 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>From this point on starts the training process of the second model. We are implementing the ResNet50 model. The 512 neurons that will be added will be leering the new weights. The rest of the weight and hidden layers will stay the same. As an output will get the number of parameters trainable and non trainable parameters because the ResNet50 model will not learn again.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Input</span>
 
@@ -1105,9 +1115,11 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="n">resnet_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>After the model is ready an optimizer using Adam, a cross entropy loss function and accuracy for metric should be added.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>Then the training and validation dataset should be provided. For achieving good accuracy for epochs is put value of ten.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resnet_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
     <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>  <span class="c1"># You can choose other optimizers like SGD or RMSprop</span>
     <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>  <span class="c1"># Adjust based on your output type</span>
@@ -1123,6 +1135,7 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>The model log is stored in variable called history. We are accessing the training accuracy and validation accuracy. We can visualize the by plotting the values. For the training accuracy 95 percent is reached and for validation accuracy 80 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">])</span>
@@ -1135,6 +1148,8 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><img alt="alt text" src="_images/3.png" /></p>
+<p>Similarly, we are accessing the training loss and validation accuracy. We can visualize the by plotting the values. For the training loss 100 percent is reached ten percent and for validation loss 55 percent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -1145,6 +1160,8 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><img alt="alt text" src="_images/4.png" /></p>
+<p>We are using imread function to get the renaissance image that we will make the prediction. We are resizing the image because the model learned on that resolution. The output we get is four dimensions value sine the model is trained on multiple images at the time.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="n">image</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">deposition</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="n">image_resized</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">img_height</span><span class="p">,</span><span class="n">img_width</span><span class="p">))</span>
@@ -1152,10 +1169,12 @@ Simularry, we are accesing the training loss and validaton accuracy. We can visu
 <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>The model should give a prediction on the image that is put as an input. The model should output an array of numbers because the softmax function gives probability for each class.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span><span class="o">=</span><span class="n">resnet_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>We are interested for the maximum value that the softmax function will provide so we are using np.argmax. The output index of the class should be deposition.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output_class</span><span class="o">=</span><span class="n">class_names</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The predicted class is&quot;</span><span class="p">,</span> <span class="n">output_class</span><span class="p">)</span>
 </pre></div>
