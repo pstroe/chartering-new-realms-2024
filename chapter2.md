@@ -185,14 +185,14 @@ Automated scoring scripts, written in Python, were used to evaluate the MT again
 ## Experiments
 The experimental setup began with selecting original Latin excerpts from the aforementioned sources and their corresponding gold-standard translations. The excerpts were translated from Latin to English individually using the web interfaces of Google Translate and Yandex. For GPT-4o and Gemini, translations were conducted in separate conversations, preceded by a standardized prompt to limit the influence of prior knowledge or external context on the outputs<sup>1</sup>. Each translation was then scored against the gold standard using the four metrics (BLEU, ROUGE, METEOR, and chrF), resulting in a matrix with four translations per excerpt and four scores per translation.
 
-Executing code block 2 allows for a look into a random translation result:
+Executing code block 1 allows for a look into a random translation result:
 ```{code-cell} python
 :thebe:
 import pandas as pd
 import random
 from IPython.display import display, Markdown
 
-csv_path = "data/translations.csv"  # CSV with all translations
+csv_path = "chapter2_data/translations.csv"  # CSV with translations, placed in data folder on binder of this project
 data = pd.read_csv(csv_path, delimiter=';')
 
 random_row = data.sample(n=1).iloc[0]  # Select a random row
@@ -220,7 +220,7 @@ import pandas as pd
 import random
 from IPython.display import display, Markdown
 
-csv_path_scores = "data/scores.csv"  # CSV with all scores
+csv_path_scores = "chapter2_data/scores.csv"  # CSV with scores, placed in data folder on binder of this project
 data_scores = pd.read_csv(csv_path_scores, delimiter=';')
 
 random_row_scores = data_scores.sample(n=1).iloc[0]  # Select a random row
