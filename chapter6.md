@@ -189,8 +189,6 @@ Additionally, the post-processing step, while effective in refining OCR outputs,
 ## Appendix
 ![alt text](https://github.com/kiky97/kiki/blob/main/picture-3.jpg)
 
-![alt text](https://github.com/kiky97/kiki/blob/main/picture-1.jpg)
-
 ## Reference
 
 Gulian OCR System: http://ocr.ancientbooks.cn/index
